@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: Spherical-Support Event Query API
+  version: 1.0.0
+  description: Restricted reference contract for direct state, next-event, compatibility, lineage and auditable-absence queries.
+paths:
+  /state/{entity_id}:
+    get:
+      summary: Evaluate state at a requested time without a mandatory global frame replay.
+      parameters:
+        - in: path
+          name: entity_id
+          required: true
+          schema: {type: string}
+        - in: query
+          name: t
+          required: true
+          schema: {type: number}
+      responses:
+        '200':
+          description: Typed state
+          content:
+            application/json:
+              schema: {$ref: '../schemas/state.schema.json'}
+  /events/next:
+    post:
+      summary: Find the earliest admitted root satisfying relation, support and compatibility.
+      responses:
+        '200':
+          description: Verified event or no admitted event
+          content:
+            application/json:
+              schema: {$ref: '../schemas/event.schema.json'}
+  /compatibility/evaluate:
+    post:
+      summary: Evaluate a versioned coupling/access predicate with reason codes.
+      responses:
+        '200':
+          description: Compatibility decision
+          content:
+            application/json:
+              schema: {$ref: '../schemas/compatibility_predicate.schema.json'}
+  /expectations:
+    post:
+      summary: Register an obligation that can later support an auditable absence event.
+      responses:
+        '201': {description: Expectation registered}
+  /expectations/{expectation_id}/close:
+    post:
+      summary: Close a due interval; emit satisfied, absent or unknown. Missing coverage can never become absence.
+      responses:
+        '200':
+          description: Outcome
+  /lineage/{entity_id}:
+    get:
+      summary: Reconstruct provenance and split/merge/branch history.
+      responses:
+        '200':
+          description: Lineage graph
+          content:
+            application/json:
+              schema: {$ref: '../schemas/lineage.schema.json'}

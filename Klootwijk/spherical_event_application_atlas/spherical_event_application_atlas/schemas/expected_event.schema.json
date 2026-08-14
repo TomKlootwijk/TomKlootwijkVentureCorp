@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/spherical-event/expected_event.schema.json",
+  "title": "Expected Event Obligation",
+  "description": "A declared expectation that gives absence a semantic basis. No expectation means no legitimate absence event.",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "timeValue": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "description": "Continuous model time or an ISO 8601 timestamp."
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "method": {
+          "type": "string"
+        },
+        "interval": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "value",
+        "method"
+      ]
+    },
+    "reasonCode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    }
+  },
+  "properties": {
+    "expectation_id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "relation_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "#/$defs/timeValue"
+    },
+    "due_interval": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/timeValue"
+      }
+    },
+    "support_contract": {
+      "type": "object"
+    },
+    "compatibility_contract": {
+      "type": "object"
+    },
+    "coverage_requirements": {
+      "type": "object"
+    },
+    "authority": {
+      "type": "object"
+    },
+    "consent_context": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "valid_exception_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "predicate_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "satisfied",
+        "absent",
+        "unknown",
+        "cancelled",
+        "excepted"
+      ]
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "expectation_id",
+    "entity_id",
+    "relation_id",
+    "created_at",
+    "due_interval",
+    "support_contract",
+    "compatibility_contract",
+    "coverage_requirements",
+    "authority",
+    "predicate_version",
+    "status",
+    "schema_version"
+  ]
+}

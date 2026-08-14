@@ -1,0 +1,34 @@
+{
+  "absence_event_id": "e806212f-66d4-432a-ba79-c10fb6a53f6c",
+  "expectation_id": "scan-zone-B-exit",
+  "entity_id": "pallet-8491",
+  "relation_id": "epcis-zone-exit",
+  "emitted_at": 136.0,
+  "due_interval": [
+    120.0,
+    135.0
+  ],
+  "coverage_complete": true,
+  "coverage_evidence": [
+    {
+      "source_id": "reader-B7",
+      "start": 120.0,
+      "end": 135.0,
+      "healthy": true,
+      "reason": ""
+    }
+  ],
+  "support_valid": true,
+  "compatibility_valid": true,
+  "matching_event_count": 0,
+  "exception_checked": true,
+  "reason_codes": [
+    "EXPECTED_EVENT_NOT_OBSERVED_WITH_VALID_COVERAGE"
+  ],
+  "confidence": {
+    "value": 1.0,
+    "method": "deterministic coverage and event-log check"
+  },
+  "predicate_version": "warehouse-routing-3.2",
+  "schema_version": "1.0"
+}

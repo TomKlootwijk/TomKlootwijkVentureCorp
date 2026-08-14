@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/spherical-event/state.schema.json",
+  "title": "Spherical-Support Event Calculus State",
+  "description": "A typed state in which position is only one coordinate family. Time, phase, sheet, lineage and branch remain explicit.",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "timeValue": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "description": "Continuous model time or an ISO 8601 timestamp."
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "method": {
+          "type": "string"
+        },
+        "interval": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "value",
+        "method"
+      ]
+    },
+    "reasonCode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    }
+  },
+  "properties": {
+    "entity_id": {
+      "type": "string"
+    },
+    "t": {
+      "$ref": "#/$defs/timeValue"
+    },
+    "position": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1
+    },
+    "orientation": {
+      "type": [
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "phase": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "sheet": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "lineage_address": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "parity": {
+      "type": [
+        "integer",
+        "boolean"
+      ],
+      "enum": [
+        0,
+        1,
+        false,
+        true
+      ]
+    },
+    "attributes": {
+      "type": "object"
+    },
+    "source": {
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "entity_id",
+    "t",
+    "sheet",
+    "lineage_address",
+    "branch",
+    "schema_version"
+  ]
+}

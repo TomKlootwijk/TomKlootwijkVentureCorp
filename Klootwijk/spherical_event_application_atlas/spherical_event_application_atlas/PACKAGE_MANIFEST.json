@@ -1,0 +1,559 @@
+{
+  "package": "spherical_event_application_atlas",
+  "file_count": 92,
+  "total_bytes": 10934490,
+  "files": [
+    {
+      "path": "CLAIM_BOUNDARIES.md",
+      "category": "Report companion",
+      "bytes": 1899,
+      "sha256": "03118dbeddbd3b2f6414a575c0cfdf50f1194322e7f8afffa3c6b141f64a51d3"
+    },
+    {
+      "path": "EXECUTIVE_BRIEF.md",
+      "category": "Report companion",
+      "bytes": 1609,
+      "sha256": "779578fa755a2a7a3e78d60ec053df22b9a41b3b6c046f6e1849e54fb598422f"
+    },
+    {
+      "path": "High_Impact_Application_Atlas.html",
+      "category": "Report companion",
+      "bytes": 313021,
+      "sha256": "a70c0a0a3a13572a64433003938ec6a250cb74d8f810924f0907638b68dd9bca"
+    },
+    {
+      "path": "High_Impact_Application_Atlas.md",
+      "category": "Report companion",
+      "bytes": 84341,
+      "sha256": "f92d8d9529b2d434d44f3acfff9967328a91d94bc4a3090d5e5fc95d44b54d1d"
+    },
+    {
+      "path": "High_Impact_Application_Atlas.pdf",
+      "category": "Primary report",
+      "bytes": 3728652,
+      "sha256": "cfc132b0231d5321aa542d939c71f3734d874ab509e0197f1500ef8b7ce9c16b"
+    },
+    {
+      "path": "README.md",
+      "category": "Report companion",
+      "bytes": 2727,
+      "sha256": "024e506cb2e15b0e08e24b3b9d47af2e69e468ca9b928e10dfa4f9bc98c68f34"
+    },
+    {
+      "path": "SOURCES.md",
+      "category": "Report companion",
+      "bytes": 1027,
+      "sha256": "efef8975dceda1bad951576a2c01bc65cbc30e9413955242aa9811fe6255d6ad"
+    },
+    {
+      "path": "VALIDATION.md",
+      "category": "Report companion",
+      "bytes": 1304,
+      "sha256": "d6dccdca6f53d0e9c372866a76fda0c83f74bbe6893860ae5633e7a4d9d6f7e8"
+    },
+    {
+      "path": "data/README.md",
+      "category": "Structured data",
+      "bytes": 1006,
+      "sha256": "58f8b34dc22e813a7f416a2d665433ff749c6091432bdf2cb10d493c5db5bc46"
+    },
+    {
+      "path": "data/application_atlas.csv",
+      "category": "Structured data",
+      "bytes": 83820,
+      "sha256": "8490d7fd87c7ff39e34c9b3e0bb8ec9844a3ffbf663661a07f3fcd245a44d9c7"
+    },
+    {
+      "path": "data/application_atlas.json",
+      "category": "Structured data",
+      "bytes": 116276,
+      "sha256": "29d86bbbbfba8ab2cad0adbabe2b5986a99c3a08fd6facda9bdff821bdf6512d"
+    },
+    {
+      "path": "data/application_evidence_links.csv",
+      "category": "Structured data",
+      "bytes": 52908,
+      "sha256": "878752ed41dfca2f80196ba130d273f6eb83d5e59fc0dba2575e3ddea015a8a6"
+    },
+    {
+      "path": "data/application_graph.graphml",
+      "category": "Structured data",
+      "bytes": 105881,
+      "sha256": "9f8d11c771b66a2c64f3a0d2e0b9d96866f54886b4c2c190b0061fd7f8e9a20e"
+    },
+    {
+      "path": "data/domain_operator_matrix.csv",
+      "category": "Structured data",
+      "bytes": 613,
+      "sha256": "4e0f32723d3d0b8c35a942087dfcf6d953300e1f4c59b377b12b9b71b73b17c6"
+    },
+    {
+      "path": "data/evidence_registry.csv",
+      "category": "Structured data",
+      "bytes": 8468,
+      "sha256": "73439fd74e0a9e3fa931a2db8cca3dfa43b2b8e55a6b5e7fac79b76db781a718"
+    },
+    {
+      "path": "data/evidence_registry.json",
+      "category": "Structured data",
+      "bytes": 12899,
+      "sha256": "21bb8e3877c4dbc4837eab77bd56aa24a284a5da4b487b3099f8ba5734fa97ac"
+    },
+    {
+      "path": "data/maturity_summary.csv",
+      "category": "Structured data",
+      "bytes": 837,
+      "sha256": "a7b64dfa0434fd6f090ded1764d782eededd27df827d21bf7b0b0a30cdda10aa"
+    },
+    {
+      "path": "data/metrics_dictionary.csv",
+      "category": "Structured data",
+      "bytes": 3572,
+      "sha256": "aa9e85f03299be56f5f72df59d040f78bbd4c3c4e41633167a24804397e4aeff"
+    },
+    {
+      "path": "data/negative_event_examples.csv",
+      "category": "Structured data",
+      "bytes": 2203,
+      "sha256": "6cb913eaf93314614461ac0f1b1034c393ad2a309f251369036a36c015fcdaad"
+    },
+    {
+      "path": "data/operator_application_ontology.jsonld",
+      "category": "Structured data",
+      "bytes": 90364,
+      "sha256": "f84044a67f102203cc1776f384c4d2ebfaef0159f8ab7103a5804f26f39f7a90"
+    },
+    {
+      "path": "data/package_summary.json",
+      "category": "Structured data",
+      "bytes": 436,
+      "sha256": "9fc042004fae07731c76d2e806b291331dcb8c03f41c3ed22f9918ec2023c2bf"
+    },
+    {
+      "path": "data/pilot_portfolio.csv",
+      "category": "Structured data",
+      "bytes": 3232,
+      "sha256": "cef1a8c52620456bf4b0f27cfcb532dbe9a63bc96c48cff61725fa29141b313b"
+    },
+    {
+      "path": "data/replacement_addition_matrix.csv",
+      "category": "Structured data",
+      "bytes": 4513,
+      "sha256": "914f54c797ef8c06be3b77c204a12a0e759d570dd083f8e347e61818aa855e75"
+    },
+    {
+      "path": "diagrams/01_universal_query_event_architecture.png",
+      "category": "Diagram",
+      "bytes": 143037,
+      "sha256": "02b427b1f5cff349e71321f21ef01fadbd87376cee02d562d629620881eeb6b3"
+    },
+    {
+      "path": "diagrams/01_universal_query_event_architecture.svg",
+      "category": "Diagram",
+      "bytes": 6488,
+      "sha256": "b271ac3cf756dac978daa120bd4b9ac6f2a55550d296dc5b7054b1c27e64f27b"
+    },
+    {
+      "path": "diagrams/02_evidence_claim_ladder.png",
+      "category": "Diagram",
+      "bytes": 186227,
+      "sha256": "5c08c6f89e810e39d9ed0aecb1d7b7b06d9fed9652e2e1d38696c339a0b3e165"
+    },
+    {
+      "path": "diagrams/02_evidence_claim_ladder.svg",
+      "category": "Diagram",
+      "bytes": 6843,
+      "sha256": "a3948dc9a71575bf30686721e5adb130c21118b141ab8f38e417b5b81d7e04ae"
+    },
+    {
+      "path": "diagrams/03_auditable_absence_state_machine.png",
+      "category": "Diagram",
+      "bytes": 215581,
+      "sha256": "88c91c8196ff81baed56717dec692509a02e3fe55ae52e788ed6448b0b9de194"
+    },
+    {
+      "path": "diagrams/03_auditable_absence_state_machine.svg",
+      "category": "Diagram",
+      "bytes": 7275,
+      "sha256": "30bce44b31f164e4ac89bfdb650799b9ef6e19bd31636f9a2c5b27319150374a"
+    },
+    {
+      "path": "diagrams/04_replacement_addition_spectrum.png",
+      "category": "Diagram",
+      "bytes": 196591,
+      "sha256": "450d12faa0dbb0f0a87dbbde0631e78100dd3a5320b05ad3f9714618c62dacab"
+    },
+    {
+      "path": "diagrams/04_replacement_addition_spectrum.svg",
+      "category": "Diagram",
+      "bytes": 5978,
+      "sha256": "9f13753568cf193e4fc95e25396c311faa9e28a06d51ae7ed75549293a37f45c"
+    },
+    {
+      "path": "diagrams/05_mri_application_ladder.png",
+      "category": "Diagram",
+      "bytes": 200844,
+      "sha256": "2c18830a4a03a1990c75931fd70c7344aed572dc82a974adf99c3ed8b705974c"
+    },
+    {
+      "path": "diagrams/05_mri_application_ladder.svg",
+      "category": "Diagram",
+      "bytes": 6653,
+      "sha256": "98de69b3ad4dd7df703b4af11c4d3a9ba0a32fcd7061e2bbaa16630e84877830"
+    },
+    {
+      "path": "diagrams/06_asml_lithography_augmentation.png",
+      "category": "Diagram",
+      "bytes": 199490,
+      "sha256": "7785300bc331c2788cff6bdc8be8912bf0426e75452ff97305ebaed6e6b4652e"
+    },
+    {
+      "path": "diagrams/06_asml_lithography_augmentation.svg",
+      "category": "Diagram",
+      "bytes": 4850,
+      "sha256": "d58eead14b9517d0dbf267f0bab24f57f1bc1d26c4ba174e44a7e58b3f2fb1e1"
+    },
+    {
+      "path": "diagrams/07_cradle_to_life_health_journey.png",
+      "category": "Diagram",
+      "bytes": 236244,
+      "sha256": "c3231e4d61cacb871e01d29300c63bfa493c30229ddcea9c62e72776ee3f395c"
+    },
+    {
+      "path": "diagrams/07_cradle_to_life_health_journey.svg",
+      "category": "Diagram",
+      "bytes": 7240,
+      "sha256": "cf5fd21de26efd844231f30b2a672f34a7a6f28239a66a15746b3f77a78de5c4"
+    },
+    {
+      "path": "diagrams/08_energy_grid_pipeline_solar.png",
+      "category": "Diagram",
+      "bytes": 217575,
+      "sha256": "c6597425974c4330e316a9a858889ef883a0ae5620015b160404e83d0a3d68e3"
+    },
+    {
+      "path": "diagrams/08_energy_grid_pipeline_solar.svg",
+      "category": "Diagram",
+      "bytes": 4673,
+      "sha256": "790e96b6b826a2cbc381fa3980ff43b8af69759d367eeb6cc897d3e37224ecec"
+    },
+    {
+      "path": "diagrams/09_analog_digital_graphics_pipeline.png",
+      "category": "Diagram",
+      "bytes": 225727,
+      "sha256": "12e64260d31eabcafab6bdb67023f7760f26d0c7aaf0947db0644be5a6f2d08d"
+    },
+    {
+      "path": "diagrams/09_analog_digital_graphics_pipeline.svg",
+      "category": "Diagram",
+      "bytes": 6707,
+      "sha256": "4814c7d02121db984837d5d5247d5f6f0a8bee0043dae1bf2e57d580a8e142c3"
+    },
+    {
+      "path": "diagrams/10_warehouse_delivery_lineage.png",
+      "category": "Diagram",
+      "bytes": 160821,
+      "sha256": "fcd1a6be5fc73686ad5ffe178285a2d98a2a301c22a094284ee31a7d93c7b931"
+    },
+    {
+      "path": "diagrams/10_warehouse_delivery_lineage.svg",
+      "category": "Diagram",
+      "bytes": 6608,
+      "sha256": "1506fdb5a6c13581b82d47506670302eff17be049c1f699f4225753b65df4686"
+    },
+    {
+      "path": "diagrams/11_smart_city_governance.png",
+      "category": "Diagram",
+      "bytes": 224722,
+      "sha256": "2ef4466d55297df2c259a927a9960efb6a54867974ccf41ca11337a2e6d147b5"
+    },
+    {
+      "path": "diagrams/11_smart_city_governance.svg",
+      "category": "Diagram",
+      "bytes": 4811,
+      "sha256": "3b975db91139c5d1ce2bb0c5b1825e6b86b0511c9e925c4501b1a60c09cc897a"
+    },
+    {
+      "path": "diagrams/12_research_documentation_provenance.png",
+      "category": "Diagram",
+      "bytes": 177056,
+      "sha256": "640130461f41578a907ace8216b9ceb99a2b0c4fdafead66739a7e7a01f4b549"
+    },
+    {
+      "path": "diagrams/12_research_documentation_provenance.svg",
+      "category": "Diagram",
+      "bytes": 5541,
+      "sha256": "db3574ebea4649eec97897369e115316d8e1e8f0f9be5226412f6aa5e89a762c"
+    },
+    {
+      "path": "diagrams/13_benchmark_metric_stack.png",
+      "category": "Diagram",
+      "bytes": 158560,
+      "sha256": "a0cfb0578aed4cda7a8acd85f5a6f0e3b3beaf1706e8f74c52c28e7c46dbeef4"
+    },
+    {
+      "path": "diagrams/13_benchmark_metric_stack.svg",
+      "category": "Diagram",
+      "bytes": 4374,
+      "sha256": "fd8fd5afd16b78dffbb03fd08eb6056cdd8122e7e6d055f835cbe474d35a2727"
+    },
+    {
+      "path": "diagrams/README.md",
+      "category": "Diagram",
+      "bytes": 569,
+      "sha256": "29ba3a2ae3dd1490a23febd1b86806608150caca9bbd8e248e877785f536b763"
+    },
+    {
+      "path": "prototype/README.md",
+      "category": "Reference prototype",
+      "bytes": 980,
+      "sha256": "7a75beb1359da7fe4a5edfd3b044273eb57f2d3695056d8a978e3e40ecea7d34"
+    },
+    {
+      "path": "prototype/event_engine.py",
+      "category": "Reference prototype",
+      "bytes": 11728,
+      "sha256": "6d75a5a94a2343105d4333e286c172622fee1075fb4b2907a64b5d52bca116a9"
+    },
+    {
+      "path": "prototype/example_outputs/energy_pipeline.json",
+      "category": "Reference prototype",
+      "bytes": 1906,
+      "sha256": "2ebc32ad76a3adf9efced6682ebdcbc46e5f145ba5ee77192e608101fd23ee94"
+    },
+    {
+      "path": "prototype/example_outputs/hospital_journey.json",
+      "category": "Reference prototype",
+      "bytes": 816,
+      "sha256": "013009f9173d3d716a75b6edca296229be294121ab3aa91919494a41ab646d0d"
+    },
+    {
+      "path": "prototype/example_outputs/mental_health_research.json",
+      "category": "Reference prototype",
+      "bytes": 201,
+      "sha256": "b6f3f0fca363a50161866dcfc7845e9d37296cb25fa0e4ded7a7017f57868231"
+    },
+    {
+      "path": "prototype/example_outputs/solar_grid.json",
+      "category": "Reference prototype",
+      "bytes": 945,
+      "sha256": "f33ca0781a9f30bb2cc653271e92d76e5ad4f2eec41adb84137ed32735275184"
+    },
+    {
+      "path": "prototype/example_outputs/warehouse_delivery.json",
+      "category": "Reference prototype",
+      "bytes": 795,
+      "sha256": "c26d3f3dc6d73454ea7f725812a0ed6e75d06615b4010ec9a6a04d48985f295f"
+    },
+    {
+      "path": "prototype/examples/energy_pipeline.py",
+      "category": "Reference prototype",
+      "bytes": 1739,
+      "sha256": "d173e06e0a53846782b1f590cc2f880e0522859f0c1c99e9c2bf286c71770288"
+    },
+    {
+      "path": "prototype/examples/hospital_journey.py",
+      "category": "Reference prototype",
+      "bytes": 849,
+      "sha256": "cab017fc714e96ebc40aee847342b0849aa47ea5eded8bbc3be63e9af1351b72"
+    },
+    {
+      "path": "prototype/examples/mental_health_research.py",
+      "category": "Reference prototype",
+      "bytes": 1047,
+      "sha256": "36cb31ffe69b78941cb78ac471113b303e73f357a5de9b0f8d6ee084300acd75"
+    },
+    {
+      "path": "prototype/examples/solar_grid.py",
+      "category": "Reference prototype",
+      "bytes": 1231,
+      "sha256": "eb687e4ee7731603c712a2e84b36c7ba14d92cb0ac9c613ea76d48ebe76f4b67"
+    },
+    {
+      "path": "prototype/examples/warehouse_delivery.py",
+      "category": "Reference prototype",
+      "bytes": 719,
+      "sha256": "495041fc0201b559e6726ab250db2ef39b4448ef45a806542252497688e8ec82"
+    },
+    {
+      "path": "prototype/query_api.yaml",
+      "category": "Reference prototype",
+      "bytes": 2077,
+      "sha256": "3911fd1301b12be76f0b52ac6ee35d8b7e2b7d46ab7583b243d2809323db782c"
+    },
+    {
+      "path": "prototype/tests/test_event_engine.py",
+      "category": "Reference prototype",
+      "bytes": 2498,
+      "sha256": "bddc16a8abdf45f699b346b41340451d04288fcb76760850fa54275a70a2319a"
+    },
+    {
+      "path": "schemas/README.md",
+      "category": "Schema",
+      "bytes": 704,
+      "sha256": "042c8bd2302f87857f96498df0eaecfcddfd810107154f51308a34b8e9616031"
+    },
+    {
+      "path": "schemas/absence_event.schema.json",
+      "category": "Schema",
+      "bytes": 3148,
+      "sha256": "79f46f3efd8e407fb1ca328861339bd865c0cd67d84c8621ca28aa0ff2a6a8e2"
+    },
+    {
+      "path": "schemas/application_record.schema.json",
+      "category": "Schema",
+      "bytes": 1353,
+      "sha256": "71d7b80593d73c2e5c21124812b3ffd2decc165af023b2623082f25cb1ea71ef"
+    },
+    {
+      "path": "schemas/compatibility_predicate.schema.json",
+      "category": "Schema",
+      "bytes": 1367,
+      "sha256": "013379363baabf6a8e98828d69801de96edbbf3975957ff305e8b4e43b6c1b15"
+    },
+    {
+      "path": "schemas/event.schema.json",
+      "category": "Schema",
+      "bytes": 4073,
+      "sha256": "79be0e24773f3319f9b03c81fd1799bfa40434017087295bc70b9dbe23a6e36b"
+    },
+    {
+      "path": "schemas/expected_event.schema.json",
+      "category": "Schema",
+      "bytes": 2813,
+      "sha256": "0e9b557f3d938ed2b8a66a9ae25bc118038f134d4a2a54f489da2f6b40ecbe94"
+    },
+    {
+      "path": "schemas/lineage.schema.json",
+      "category": "Schema",
+      "bytes": 2352,
+      "sha256": "2be01114dc80840f3efa0b79d23829506b63877774f66046685b72260b9a14df"
+    },
+    {
+      "path": "schemas/state.schema.json",
+      "category": "Schema",
+      "bytes": 2484,
+      "sha256": "893655e1b1e43f6a6ca357b76fb3841a9c7c83c8e45d09e3dbe6dc0f63a9a38f"
+    },
+    {
+      "path": "sector_briefs/biomedical___healthcare.md",
+      "category": "Sector brief",
+      "bytes": 20870,
+      "sha256": "843932a1619b8a5920831d6d1ad56dbb662c6ab29e9194d17ba9449560cb7a87"
+    },
+    {
+      "path": "sector_briefs/digital__compute___data_pipelines.md",
+      "category": "Sector brief",
+      "bytes": 13379,
+      "sha256": "198216ed6337c4b5675f2ad542983f0289132dc3daeb4c6b49effc6344aa014c"
+    },
+    {
+      "path": "sector_briefs/energy__climate___infrastructure.md",
+      "category": "Sector brief",
+      "bytes": 16189,
+      "sha256": "b61bdcd7ca30f0e6273e4e08920755c89db59ccc7868d326a0495bbfb47aa407"
+    },
+    {
+      "path": "sector_briefs/research___documentation_management.md",
+      "category": "Sector brief",
+      "bytes": 6524,
+      "sha256": "de81656d53661d5d86765e0dbf83abe908b9d75f5b0f1830ca8380e5c404bc25"
+    },
+    {
+      "path": "sector_briefs/semiconductor___physical_manufacturing.md",
+      "category": "Sector brief",
+      "bytes": 12478,
+      "sha256": "fd99c2da114c1a9d12a6643f5d84403843c220397aa94e37e4810be3c3aef16e"
+    },
+    {
+      "path": "sector_briefs/smart_cities___municipal_governance.md",
+      "category": "Sector brief",
+      "bytes": 8740,
+      "sha256": "0d881ae5f9460a568f5704ac0d1b7dddc55fbd98601f2ef136bd030ca9ad7dfa"
+    },
+    {
+      "path": "sector_briefs/warehousing__logistics___supply_chains.md",
+      "category": "Sector brief",
+      "bytes": 7983,
+      "sha256": "5e9c00923b5535a07b42cf61fd2a733149e49ab8326bb4cf09d3b3d38dc50653"
+    },
+    {
+      "path": "source/SOURCE_PAGE_MAP.md",
+      "category": "Source/provenance",
+      "bytes": 1362,
+      "sha256": "671125ac963a5d928fd1503078b6db996d0ad441488a5b70d3384e94e8cef026"
+    },
+    {
+      "path": "source/Topological_Cross_Domain_Corpus_Report_source.pdf",
+      "category": "Source/provenance",
+      "bytes": 2400500,
+      "sha256": "dde0ba0961c46faed2f0ed970eee7a8ce5963f7e43f648de4f72ddb3a826f4c8"
+    },
+    {
+      "path": "source/evidence_snapshots/source_page_13.png",
+      "category": "Source/provenance",
+      "bytes": 175722,
+      "sha256": "95e7cce3d175984ac55040c6ab4f159e765cabefaad61a40e012f4a0e2ca7bca"
+    },
+    {
+      "path": "source/evidence_snapshots/source_page_16.png",
+      "category": "Source/provenance",
+      "bytes": 122845,
+      "sha256": "a4f30186bfe708e09a13494dbe3d415f98b82273f440896028b01dcd2764e05b"
+    },
+    {
+      "path": "source/evidence_snapshots/source_page_18.png",
+      "category": "Source/provenance",
+      "bytes": 158394,
+      "sha256": "ce476188dbb6b99462d16be205ace696f904bad5c4d9ac2f0db88589a7d3bb1e"
+    },
+    {
+      "path": "source/evidence_snapshots/source_page_25.png",
+      "category": "Source/provenance",
+      "bytes": 172416,
+      "sha256": "5a2e11cca5f3a4ccc01167ac89b3c55454ea2420faf0b9b2bf9cef535a0d351e"
+    },
+    {
+      "path": "source/evidence_snapshots/source_page_38.png",
+      "category": "Source/provenance",
+      "bytes": 195406,
+      "sha256": "fe878a65deda7627fbad05dbe6dee8d35013302ce6d4e1999963a45f03bce53a"
+    },
+    {
+      "path": "source/evidence_snapshots/source_page_39.png",
+      "category": "Source/provenance",
+      "bytes": 175843,
+      "sha256": "f6b27eae16164d6a3e8d792ee0db906c73e8076602607f5917ee0f1c1aa7293a"
+    },
+    {
+      "path": "source/evidence_snapshots/source_page_41.png",
+      "category": "Source/provenance",
+      "bytes": 153824,
+      "sha256": "79ce24032c4b36f9ba1b2e131139899a4aa2019eba375c513f6e4e41d5956cea"
+    },
+    {
+      "path": "templates/absence_event_governance_checklist.md",
+      "category": "Template",
+      "bytes": 895,
+      "sha256": "b609b02f9a82982150a21ef1e26cf6d020351a9c2faf6333c86c7a9d7c3fcea9"
+    },
+    {
+      "path": "templates/application_intake.yaml",
+      "category": "Template",
+      "bytes": 551,
+      "sha256": "ce47dbe6bbbb5949149da626fe6002a89662a18654e54bd47f25e050ab301763"
+    },
+    {
+      "path": "templates/benchmark_protocol.md",
+      "category": "Template",
+      "bytes": 750,
+      "sha256": "b7e1eef553ae33d3bab51f73c46cf8b142746e7cb64b7edafc026aa6bfcb357b"
+    },
+    {
+      "path": "templates/pilot_charter.md",
+      "category": "Template",
+      "bytes": 1301,
+      "sha256": "ebb72d26d9458c310d6414e513d85dc015e52832964dea2280b1ac51fb92e4d7"
+    }
+  ]
+}

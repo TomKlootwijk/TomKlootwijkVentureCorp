@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/spherical-event/lineage.schema.json",
+  "title": "Lineage and Provenance Graph",
+  "description": "Identity and provenance across derivation, split, merge, transformation and branch creation.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "graph_id": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "lineage_address": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "lineage_address"
+        ]
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string",
+            "enum": [
+              "derived_from",
+              "split_from",
+              "merged_from",
+              "transformed_from",
+              "version_of",
+              "observed_by",
+              "controlled_by",
+              "invalidated_by"
+            ]
+          },
+          "event_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "timestamp": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ]
+          },
+          "attributes": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "source",
+          "target",
+          "relation",
+          "timestamp"
+        ]
+      }
+    },
+    "reconciliation_policy": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "graph_id",
+    "nodes",
+    "edges",
+    "reconciliation_policy",
+    "schema_version"
+  ]
+}

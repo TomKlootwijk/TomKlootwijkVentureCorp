@@ -1,0 +1,7 @@
+{
+  "expectation_id": "research-diary-window-12",
+  "reason_codes": [
+    "OBSERVATION_COVERAGE_INCOMPLETE"
+  ],
+  "detail": "No absence event emitted: missing telemetry is not evidence of absence."
+}

@@ -1,0 +1,15 @@
+{
+  "application_count": 95,
+  "domain_counts": {
+    "Biomedical & healthcare": 20,
+    "Digital, compute & data pipelines": 15,
+    "Energy, climate & infrastructure": 18,
+    "Research & documentation management": 8,
+    "Semiconductor & physical manufacturing": 14,
+    "Smart cities & municipal governance": 10,
+    "Warehousing, logistics & supply chains": 10
+  },
+  "source_count": 36,
+  "pilot_count": 16,
+  "metric_count": 38
+}

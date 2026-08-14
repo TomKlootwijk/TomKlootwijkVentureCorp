@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/spherical-event/application_record.schema.json",
+  "title": "Application Atlas Record",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "application": {
+      "type": "string"
+    },
+    "current_baseline": {
+      "type": "string"
+    },
+    "proposed_role": {
+      "type": "string"
+    },
+    "boundary": {
+      "type": "string"
+    },
+    "maturity": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "string"
+    },
+    "core_operators": {
+      "type": "string"
+    },
+    "exemplar_event_guard": {
+      "type": "string"
+    },
+    "auditable_absence": {
+      "type": "string"
+    },
+    "candidate_metrics": {
+      "type": "string"
+    },
+    "minimum_pilot": {
+      "type": "string"
+    },
+    "principal_risks": {
+      "type": "string"
+    },
+    "references": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "domain",
+    "application",
+    "current_baseline",
+    "proposed_role",
+    "boundary",
+    "maturity",
+    "evidence",
+    "core_operators",
+    "exemplar_event_guard",
+    "auditable_absence",
+    "candidate_metrics",
+    "minimum_pilot",
+    "principal_risks",
+    "references"
+  ]
+}

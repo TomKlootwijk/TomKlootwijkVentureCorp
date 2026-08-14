@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<key id="kind" for="node" attr.name="kind" attr.type="string"/>
+<key id="label" for="node" attr.name="label" attr.type="string"/>
+<key id="domain" for="node" attr.name="domain" attr.type="string"/>
+<key id="relation" for="edge" attr.name="relation" attr.type="string"/>
+<graph id="application_atlas" edgedefault="directed">
+<node id="op_analog_photonic_front_end"><data key="kind">operator</data><data key="label">analog/photonic front end</data></node>
+<node id="op_auditable_absence"><data key="kind">operator</data><data key="label">auditable absence</data></node>
+<node id="op_compatibility_gate"><data key="kind">operator</data><data key="label">compatibility gate</data></node>
+<node id="op_counterfactual_branch"><data key="kind">operator</data><data key="label">counterfactual branch</data></node>
+<node id="op_direct_state_query"><data key="kind">operator</data><data key="label">direct state query</data></node>
+<node id="op_guard_event_surface"><data key="kind">operator</data><data key="label">guard/event surface</data></node>
+<node id="op_lineage_provenance"><data key="kind">operator</data><data key="label">lineage/provenance</data></node>
+<node id="op_local_support"><data key="kind">operator</data><data key="label">local support</data></node>
+<node id="op_materialized_view"><data key="kind">operator</data><data key="label">materialized view</data></node>
+<node id="op_next_event_solve"><data key="kind">operator</data><data key="label">next-event solve</data></node>
+<node id="ref_C0"><data key="kind">reference</data><data key="label">Topological Cross-Domain Synthesis of the Spherical Substrate Corpus</data></node>
+<node id="ref_R1"><data key="kind">reference</data><data key="label">Magnetic Resonance Imaging (MRI)</data></node>
+<node id="ref_R2"><data key="kind">reference</data><data key="label">Magnetic resonance imaging (MRI) scans</data></node>
+<node id="ref_R3"><data key="kind">reference</data><data key="label">Sparse MRI: The application of compressed sensing for rapid MR imaging</data></node>
+<node id="ref_R4"><data key="kind">reference</data><data key="label">Magnetic resonance fingerprinting</data></node>
+<node id="ref_R5"><data key="kind">reference</data><data key="label">Testing and Labeling Medical Devices for Safety in the Magnetic Resonance Environment</data></node>
+<node id="ref_R6"><data key="kind">reference</data><data key="label">FHIR R5 Specification</data></node>
+<node id="ref_R7"><data key="kind">reference</data><data key="label">FHIR Subscription</data></node>
+<node id="ref_R8"><data key="kind">reference</data><data key="label">Ethics and governance of artificial intelligence for health</data></node>
+<node id="ref_R9"><data key="kind">reference</data><data key="label">Ethics and governance of artificial intelligence for health: guidance on large multi-modal models</data></node>
+<node id="ref_R10"><data key="kind">reference</data><data key="label">WHO guideline: recommendations on digital interventions for health system strengthening</data></node>
+<node id="ref_R11"><data key="kind">reference</data><data key="label">Research Domain Criteria (RDoC) Initiative</data></node>
+<node id="ref_R12"><data key="kind">reference</data><data key="label">Computational lithography</data></node>
+<node id="ref_R13"><data key="kind">reference</data><data key="label">EUV lithography systems</data></node>
+<node id="ref_R14"><data key="kind">reference</data><data key="label">ASML and imec open joint High NA EUV Lithography Lab</data></node>
+<node id="ref_R15"><data key="kind">reference</data><data key="label">NIST Framework and Roadmap for Smart Grid Interoperability Standards, Release 4.0</data></node>
+<node id="ref_R16"><data key="kind">reference</data><data key="label">Digital Twin + AI: Control Room of the Future</data></node>
+<node id="ref_R17"><data key="kind">reference</data><data key="label">IEEE 1547-2018 Based Interoperable PV Inverter with Advanced Grid-Support Functions</data></node>
+<node id="ref_R18"><data key="kind">reference</data><data key="label">Best Practices in Photovoltaic System Operations and Maintenance</data></node>
+<node id="ref_R19"><data key="kind">reference</data><data key="label">Leak Detection Systems Fact Sheet</data></node>
+<node id="ref_R20"><data key="kind">reference</data><data key="label">Pipeline Safety: Requirement of Valve Installation and Minimum Rupture Detection Standards</data></node>
+<node id="ref_R21"><data key="kind">reference</data><data key="label">NIST Smart Cities and Communities Framework Series</data></node>
+<node id="ref_R22"><data key="kind">reference</data><data key="label">Smart Cities and Communities: A Key Performance Indicators Framework</data></node>
+<node id="ref_R23"><data key="kind">reference</data><data key="label">GeoReport v2</data></node>
+<node id="ref_R24"><data key="kind">reference</data><data key="label">OGC SensorThings API Standard</data></node>
+<node id="ref_R25"><data key="kind">reference</data><data key="label">ISO 37120: Sustainable cities and communities - Indicators for city services and quality of life</data></node>
+<node id="ref_R26"><data key="kind">reference</data><data key="label">EPCIS and Core Business Vocabulary</data></node>
+<node id="ref_R27"><data key="kind">reference</data><data key="label">GS1 Global Traceability Standard</data></node>
+<node id="ref_R28"><data key="kind">reference</data><data key="label">PROV-O: The PROV Ontology</data></node>
+<node id="ref_R29"><data key="kind">reference</data><data key="label">The FAIR Guiding Principles for scientific data management and stewardship</data></node>
+<node id="ref_R30"><data key="kind">reference</data><data key="label">A 128x128 120 dB 15 us latency asynchronous temporal contrast vision sensor</data></node>
+<node id="ref_R31"><data key="kind">reference</data><data key="label">A 10.4-ENOB 0.92-5.38 uW Event-Driven Level-Crossing ADC</data></node>
+<node id="ref_R32"><data key="kind">reference</data><data key="label">Deep learning with coherent nanophotonic circuits</data></node>
+<node id="ref_R33"><data key="kind">reference</data><data key="label">Time of Impact Dataset for Continuous Collision Detection and a Scalable Conservative Algorithm</data></node>
+<node id="ref_R34"><data key="kind">reference</data><data key="label">A Generalized Continuous Collision Detection Framework of Polynomial Trajectory for Mobile Robots</data></node>
+<node id="ref_R35"><data key="kind">reference</data><data key="label">A Risk Management Approach to Smart City Cybersecurity and Privacy</data></node>
+<node id="app_BIO-01"><data key="kind">application</data><data key="label">MRI adaptive acquisition and sequence orchestration</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-02"><data key="kind">application</data><data key="label">MRI physics-constrained direct parameter query</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-03"><data key="kind">application</data><data key="label">MRI narrow diagnostic instrument as an alternative to full imaging</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-04"><data key="kind">application</data><data key="label">MRI motion, respiratory and cardiac event gating</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-05"><data key="kind">application</data><data key="label">MRI safety and implant compatibility engine</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-06"><data key="kind">application</data><data key="label">Ultrasound echo-event acquisition and beam control</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-07"><data key="kind">application</data><data key="label">CT/PET task-specific sparse acquisition</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-08"><data key="kind">application</data><data key="label">Microscopy and cell-culture event microscope</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-09"><data key="kind">application</data><data key="label">ICU and ward event-native patient monitoring</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-10"><data key="kind">application</data><data key="label">Surgical navigation and tool-tissue time-of-contact</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-11"><data key="kind">application</data><data key="label">Medication, infusion and closed-loop therapy guard engine</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-12"><data key="kind">application</data><data key="label">Cradle-to-life longitudinal patient journey substrate</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-13"><data key="kind">application</data><data key="label">Maternal, fetal, birth and neonatal journey coordination</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-14"><data key="kind">application</data><data key="label">Hospital flow, beds, theatres and discharge event twin</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-15"><data key="kind">application</data><data key="label">Mental-health longitudinal care and research substrate</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-16"><data key="kind">application</data><data key="label">Clinical trial and observational study event graph</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-17"><data key="kind">application</data><data key="label">Biomedical sample and biobank lineage</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-18"><data key="kind">application</data><data key="label">Protein dynamics and molecular-event simulation</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-19"><data key="kind">application</data><data key="label">CRISPR and gene-editing in-silico candidate pruning</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_BIO-20"><data key="kind">application</data><data key="label">Public-health event and service-absence observatory</data><data key="domain">Biomedical &amp; healthcare</data></node>
+<node id="app_PHY-01"><data key="kind">application</data><data key="label">ASML/EUV event-native exposure and scanner control</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-02"><data key="kind">application</data><data key="label">Computational lithography hotspot query engine</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-03"><data key="kind">application</data><data key="label">Reduced-order Maxwell/rigorous simulation query service</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-04"><data key="kind">application</data><data key="label">Reticle, wafer and process lineage graph</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-05"><data key="kind">application</data><data key="label">Wafer-stage and robot continuous motion scheduling</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-06"><data key="kind">application</data><data key="label">Fab chamber next-fault digital twin</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-07"><data key="kind">application</data><data key="label">Metrology optical prefilter and B.C.E. detector</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-08"><data key="kind">application</data><data key="label">PCB routing, revision and signal-integrity event graph</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-09"><data key="kind">application</data><data key="label">Pick-and-place event-native cell</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-10"><data key="kind">application</data><data key="label">Additive manufacturing melt-pool event control</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-11"><data key="kind">application</data><data key="label">CNC and tool-wear next-event control</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-12"><data key="kind">application</data><data key="label">Industrial optical spectroscopy classifier</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-13"><data key="kind">application</data><data key="label">Quality inspection as direct relation query</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_PHY-14"><data key="kind">application</data><data key="label">Photonic relation kernel for fixed industrial queries</data><data key="domain">Semiconductor &amp; physical manufacturing</data></node>
+<node id="app_ENG-01"><data key="kind">application</data><data key="label">Grid state and contingency query substrate</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-02"><data key="kind">application</data><data key="label">Distributed energy and microgrid compatibility router</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-03"><data key="kind">application</data><data key="label">Protection and disturbance event engine</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-04"><data key="kind">application</data><data key="label">Solar PV string and module event twin</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-05"><data key="kind">application</data><data key="label">Solar inverter and MPPT event-native control</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-06"><data key="kind">application</data><data key="label">Battery state-of-health and thermal-runaway guard engine</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-07"><data key="kind">application</data><data key="label">EV charging and fleet energy routing</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-08"><data key="kind">application</data><data key="label">Gas, oil, hydrogen and CO2 pipeline leak/rupture event twin</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-09"><data key="kind">application</data><data key="label">Water distribution leak and service-loss event system</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-10"><data key="kind">application</data><data key="label">Industrial combustion, boilers and process heat next-event optimization</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-11"><data key="kind">application</data><data key="label">Fossil-fuel reduction through event-native operations</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-12"><data key="kind">application</data><data key="label">Data-center and AI energy workload router</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-13"><data key="kind">application</data><data key="label">Building HVAC and indoor-environment event twin</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-14"><data key="kind">application</data><data key="label">Wind turbine and rotating-equipment next-fault engine</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-15"><data key="kind">application</data><data key="label">District heating, cooling and thermal-network routing</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-16"><data key="kind">application</data><data key="label">Carbon and energy provenance ledger</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-17"><data key="kind">application</data><data key="label">Renewable curtailment and storage counterfactual planner</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_ENG-18"><data key="kind">application</data><data key="label">Environmental sensing with event/absence semantics</data><data key="domain">Energy, climate &amp; infrastructure</data></node>
+<node id="app_DIG-01"><data key="kind">application</data><data key="label">Equation-world simulation kernel</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-02"><data key="kind">application</data><data key="label">Raymarching/rasterization bypass for state and collision</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-03"><data key="kind">application</data><data key="label">Dense linear-algebra avoidance planner</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-04"><data key="kind">application</data><data key="label">Event-driven analog-to-digital conversion layer</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-05"><data key="kind">application</data><data key="label">Event-camera perception substrate</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-06"><data key="kind">application</data><data key="label">Photonic/mixed-signal query accelerator</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-07"><data key="kind">application</data><data key="label">Novelty-proportional state storage</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-08"><data key="kind">application</data><data key="label">Auditable absence and negative-event ledger</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-09"><data key="kind">application</data><data key="label">Data-pipeline state and lineage engine</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-10"><data key="kind">application</data><data key="label">Cybersecurity trust-zone and policy event system</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-11"><data key="kind">application</data><data key="label">Distributed-system reconstruction and branch debugging</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-12"><data key="kind">application</data><data key="label">AI memory and retrieval with provenance and support</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-13"><data key="kind">application</data><data key="label">Model monitoring and deployment event graph</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-14"><data key="kind">application</data><data key="label">Network and telecom event-native monitoring</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_DIG-15"><data key="kind">application</data><data key="label">AR/VR and simulation foveated query substrate</data><data key="domain">Digital, compute &amp; data pipelines</data></node>
+<node id="app_LOG-01"><data key="kind">application</data><data key="label">Warehouse event twin and inventory truth</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-02"><data key="kind">application</data><data key="label">AMR and forklift continuous routing</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-03"><data key="kind">application</data><data key="label">Pick-path and wave planning as event scheduling</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-04"><data key="kind">application</data><data key="label">Cold-chain and condition lineage</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-05"><data key="kind">application</data><data key="label">Last-mile delivery event and promise engine</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-06"><data key="kind">application</data><data key="label">Port, terminal and yard coordination</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-07"><data key="kind">application</data><data key="label">Food provenance and recall event graph</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-08"><data key="kind">application</data><data key="label">Medical-device and medicine supply chain</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-09"><data key="kind">application</data><data key="label">Returns, repair and circular-economy lineage</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_LOG-10"><data key="kind">application</data><data key="label">Supply-chain risk and counterfactual branch planner</data><data key="domain">Warehousing, logistics &amp; supply chains</data></node>
+<node id="app_CIV-01"><data key="kind">application</data><data key="label">Municipal service obligation and 311 event graph</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-02"><data key="kind">application</data><data key="label">Transit arrival and missed-service ledger</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-03"><data key="kind">application</data><data key="label">Traffic, curb and intersection event control</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-04"><data key="kind">application</data><data key="label">Water, sewer, waste and street-asset lifecycle</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-05"><data key="kind">application</data><data key="label">Emergency response common event substrate</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-06"><data key="kind">application</data><data key="label">Permitting, licensing and inspection event pipeline</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-07"><data key="kind">application</data><data key="label">Budget, procurement and contract lineage</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-08"><data key="kind">application</data><data key="label">Policy simulation with isolated counterfactual branches</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-09"><data key="kind">application</data><data key="label">Rights-preserving municipal data spaces</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_CIV-10"><data key="kind">application</data><data key="label">Community well-being and service-outcome atlas</data><data key="domain">Smart cities &amp; municipal governance</data></node>
+<node id="app_RES-01"><data key="kind">application</data><data key="label">Claim-evidence-provenance graph</data><data key="domain">Research &amp; documentation management</data></node>
+<node id="app_RES-02"><data key="kind">application</data><data key="label">Negative-result and non-observation registry</data><data key="domain">Research &amp; documentation management</data></node>
+<node id="app_RES-03"><data key="kind">application</data><data key="label">Electronic lab notebook as event-sourced experiment</data><data key="domain">Research &amp; documentation management</data></node>
+<node id="app_RES-04"><data key="kind">application</data><data key="label">Living systematic review and evidence map</data><data key="domain">Research &amp; documentation management</data></node>
+<node id="app_RES-05"><data key="kind">application</data><data key="label">Regulatory and quality-management evidence bundle</data><data key="domain">Research &amp; documentation management</data></node>
+<node id="app_RES-06"><data key="kind">application</data><data key="label">Software and computational-environment lineage</data><data key="domain">Research &amp; documentation management</data></node>
+<node id="app_RES-07"><data key="kind">application</data><data key="label">Research portfolio and funding lineage</data><data key="domain">Research &amp; documentation management</data></node>
+<node id="app_RES-08"><data key="kind">application</data><data key="label">Knowledge transfer and institutional memory substrate</data><data key="domain">Research &amp; documentation management</data></node>
+<edge id="e0" source="app_BIO-01" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e1" source="app_BIO-01" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e2" source="app_BIO-01" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e3" source="app_BIO-01" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e4" source="app_BIO-01" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e5" source="app_BIO-01" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e6" source="app_BIO-01" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e7" source="app_BIO-01" target="ref_R1"><data key="relation">supported_by</data></edge>
+<edge id="e8" source="app_BIO-01" target="ref_R2"><data key="relation">supported_by</data></edge>
+<edge id="e9" source="app_BIO-01" target="ref_R3"><data key="relation">supported_by</data></edge>
+<edge id="e10" source="app_BIO-01" target="ref_R5"><data key="relation">supported_by</data></edge>
+<edge id="e11" source="app_BIO-02" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e12" source="app_BIO-02" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e13" source="app_BIO-02" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e14" source="app_BIO-02" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e15" source="app_BIO-02" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e16" source="app_BIO-02" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e17" source="app_BIO-02" target="ref_R3"><data key="relation">supported_by</data></edge>
+<edge id="e18" source="app_BIO-02" target="ref_R4"><data key="relation">supported_by</data></edge>
+<edge id="e19" source="app_BIO-03" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e20" source="app_BIO-03" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e21" source="app_BIO-03" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e22" source="app_BIO-03" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e23" source="app_BIO-03" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e24" source="app_BIO-03" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e25" source="app_BIO-03" target="ref_R1"><data key="relation">supported_by</data></edge>
+<edge id="e26" source="app_BIO-03" target="ref_R4"><data key="relation">supported_by</data></edge>
+<edge id="e27" source="app_BIO-03" target="ref_R5"><data key="relation">supported_by</data></edge>
+<edge id="e28" source="app_BIO-04" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e29" source="app_BIO-04" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e30" source="app_BIO-04" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e31" source="app_BIO-04" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e32" source="app_BIO-04" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e33" source="app_BIO-04" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e34" source="app_BIO-04" target="ref_R1"><data key="relation">supported_by</data></edge>
+<edge id="e35" source="app_BIO-04" target="ref_R3"><data key="relation">supported_by</data></edge>
+<edge id="e36" source="app_BIO-05" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e37" source="app_BIO-05" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e38" source="app_BIO-05" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e39" source="app_BIO-05" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e40" source="app_BIO-05" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e41" source="app_BIO-05" target="ref_R5"><data key="relation">supported_by</data></edge>
+<edge id="e42" source="app_BIO-05" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e43" source="app_BIO-06" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e44" source="app_BIO-06" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e45" source="app_BIO-06" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e46" source="app_BIO-06" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e47" source="app_BIO-06" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e48" source="app_BIO-06" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e49" source="app_BIO-06" target="ref_R31"><data key="relation">supported_by</data></edge>
+<edge id="e50" source="app_BIO-07" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e51" source="app_BIO-07" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e52" source="app_BIO-07" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e53" source="app_BIO-07" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e54" source="app_BIO-07" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e55" source="app_BIO-07" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e56" source="app_BIO-08" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e57" source="app_BIO-08" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e58" source="app_BIO-08" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e59" source="app_BIO-08" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e60" source="app_BIO-08" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e61" source="app_BIO-08" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e62" source="app_BIO-08" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e63" source="app_BIO-08" target="ref_R30"><data key="relation">supported_by</data></edge>
+<edge id="e64" source="app_BIO-09" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e65" source="app_BIO-09" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e66" source="app_BIO-09" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e67" source="app_BIO-09" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e68" source="app_BIO-09" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e69" source="app_BIO-09" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e70" source="app_BIO-09" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e71" source="app_BIO-09" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e72" source="app_BIO-09" target="ref_R7"><data key="relation">supported_by</data></edge>
+<edge id="e73" source="app_BIO-09" target="ref_R8"><data key="relation">supported_by</data></edge>
+<edge id="e74" source="app_BIO-09" target="ref_R10"><data key="relation">supported_by</data></edge>
+<edge id="e75" source="app_BIO-10" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e76" source="app_BIO-10" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e77" source="app_BIO-10" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e78" source="app_BIO-10" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e79" source="app_BIO-10" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e80" source="app_BIO-10" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e81" source="app_BIO-10" target="ref_R33"><data key="relation">supported_by</data></edge>
+<edge id="e82" source="app_BIO-10" target="ref_R34"><data key="relation">supported_by</data></edge>
+<edge id="e83" source="app_BIO-11" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e84" source="app_BIO-11" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e85" source="app_BIO-11" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e86" source="app_BIO-11" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e87" source="app_BIO-11" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e88" source="app_BIO-11" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e89" source="app_BIO-11" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e90" source="app_BIO-11" target="ref_R7"><data key="relation">supported_by</data></edge>
+<edge id="e91" source="app_BIO-11" target="ref_R8"><data key="relation">supported_by</data></edge>
+<edge id="e92" source="app_BIO-12" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e93" source="app_BIO-12" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e94" source="app_BIO-12" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e95" source="app_BIO-12" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e96" source="app_BIO-12" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e97" source="app_BIO-12" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e98" source="app_BIO-12" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e99" source="app_BIO-12" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e100" source="app_BIO-12" target="ref_R7"><data key="relation">supported_by</data></edge>
+<edge id="e101" source="app_BIO-12" target="ref_R8"><data key="relation">supported_by</data></edge>
+<edge id="e102" source="app_BIO-12" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e103" source="app_BIO-13" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e104" source="app_BIO-13" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e105" source="app_BIO-13" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e106" source="app_BIO-13" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e107" source="app_BIO-13" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e108" source="app_BIO-13" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e109" source="app_BIO-13" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e110" source="app_BIO-13" target="ref_R8"><data key="relation">supported_by</data></edge>
+<edge id="e111" source="app_BIO-14" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e112" source="app_BIO-14" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e113" source="app_BIO-14" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e114" source="app_BIO-14" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e115" source="app_BIO-14" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e116" source="app_BIO-14" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e117" source="app_BIO-14" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e118" source="app_BIO-14" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e119" source="app_BIO-14" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e120" source="app_BIO-14" target="ref_R7"><data key="relation">supported_by</data></edge>
+<edge id="e121" source="app_BIO-14" target="ref_R10"><data key="relation">supported_by</data></edge>
+<edge id="e122" source="app_BIO-15" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e123" source="app_BIO-15" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e124" source="app_BIO-15" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e125" source="app_BIO-15" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e126" source="app_BIO-15" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e127" source="app_BIO-15" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e128" source="app_BIO-15" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e129" source="app_BIO-15" target="ref_R8"><data key="relation">supported_by</data></edge>
+<edge id="e130" source="app_BIO-15" target="ref_R9"><data key="relation">supported_by</data></edge>
+<edge id="e131" source="app_BIO-15" target="ref_R10"><data key="relation">supported_by</data></edge>
+<edge id="e132" source="app_BIO-15" target="ref_R11"><data key="relation">supported_by</data></edge>
+<edge id="e133" source="app_BIO-16" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e134" source="app_BIO-16" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e135" source="app_BIO-16" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e136" source="app_BIO-16" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e137" source="app_BIO-16" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e138" source="app_BIO-16" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e139" source="app_BIO-16" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e140" source="app_BIO-16" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e141" source="app_BIO-16" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e142" source="app_BIO-17" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e143" source="app_BIO-17" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e144" source="app_BIO-17" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e145" source="app_BIO-17" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e146" source="app_BIO-17" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e147" source="app_BIO-17" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e148" source="app_BIO-17" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e149" source="app_BIO-17" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e150" source="app_BIO-18" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e151" source="app_BIO-18" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e152" source="app_BIO-18" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e153" source="app_BIO-18" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e154" source="app_BIO-18" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e155" source="app_BIO-18" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e156" source="app_BIO-18" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e157" source="app_BIO-19" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e158" source="app_BIO-19" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e159" source="app_BIO-19" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e160" source="app_BIO-19" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e161" source="app_BIO-19" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e162" source="app_BIO-19" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e163" source="app_BIO-19" target="ref_R8"><data key="relation">supported_by</data></edge>
+<edge id="e164" source="app_BIO-19" target="ref_R9"><data key="relation">supported_by</data></edge>
+<edge id="e165" source="app_BIO-20" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e166" source="app_BIO-20" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e167" source="app_BIO-20" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e168" source="app_BIO-20" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e169" source="app_BIO-20" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e170" source="app_BIO-20" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e171" source="app_BIO-20" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e172" source="app_BIO-20" target="ref_R7"><data key="relation">supported_by</data></edge>
+<edge id="e173" source="app_BIO-20" target="ref_R8"><data key="relation">supported_by</data></edge>
+<edge id="e174" source="app_BIO-20" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e175" source="app_PHY-01" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e176" source="app_PHY-01" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e177" source="app_PHY-01" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e178" source="app_PHY-01" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e179" source="app_PHY-01" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e180" source="app_PHY-01" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e181" source="app_PHY-01" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e182" source="app_PHY-01" target="ref_R12"><data key="relation">supported_by</data></edge>
+<edge id="e183" source="app_PHY-01" target="ref_R13"><data key="relation">supported_by</data></edge>
+<edge id="e184" source="app_PHY-01" target="ref_R14"><data key="relation">supported_by</data></edge>
+<edge id="e185" source="app_PHY-02" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e186" source="app_PHY-02" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e187" source="app_PHY-02" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e188" source="app_PHY-02" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e189" source="app_PHY-02" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e190" source="app_PHY-02" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e191" source="app_PHY-02" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e192" source="app_PHY-02" target="ref_R12"><data key="relation">supported_by</data></edge>
+<edge id="e193" source="app_PHY-03" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e194" source="app_PHY-03" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e195" source="app_PHY-03" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e196" source="app_PHY-03" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e197" source="app_PHY-03" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e198" source="app_PHY-03" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e199" source="app_PHY-03" target="ref_R12"><data key="relation">supported_by</data></edge>
+<edge id="e200" source="app_PHY-03" target="ref_R13"><data key="relation">supported_by</data></edge>
+<edge id="e201" source="app_PHY-04" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e202" source="app_PHY-04" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e203" source="app_PHY-04" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e204" source="app_PHY-04" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e205" source="app_PHY-04" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e206" source="app_PHY-04" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e207" source="app_PHY-04" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e208" source="app_PHY-04" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e209" source="app_PHY-05" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e210" source="app_PHY-05" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e211" source="app_PHY-05" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e212" source="app_PHY-05" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e213" source="app_PHY-05" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e214" source="app_PHY-05" target="ref_R33"><data key="relation">supported_by</data></edge>
+<edge id="e215" source="app_PHY-05" target="ref_R34"><data key="relation">supported_by</data></edge>
+<edge id="e216" source="app_PHY-06" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e217" source="app_PHY-06" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e218" source="app_PHY-06" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e219" source="app_PHY-06" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e220" source="app_PHY-06" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e221" source="app_PHY-06" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e222" source="app_PHY-06" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e223" source="app_PHY-07" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e224" source="app_PHY-07" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e225" source="app_PHY-07" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e226" source="app_PHY-07" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e227" source="app_PHY-07" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e228" source="app_PHY-07" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e229" source="app_PHY-08" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e230" source="app_PHY-08" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e231" source="app_PHY-08" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e232" source="app_PHY-08" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e233" source="app_PHY-08" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e234" source="app_PHY-08" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e235" source="app_PHY-09" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e236" source="app_PHY-09" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e237" source="app_PHY-09" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e238" source="app_PHY-09" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e239" source="app_PHY-09" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e240" source="app_PHY-09" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e241" source="app_PHY-09" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e242" source="app_PHY-09" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e243" source="app_PHY-09" target="ref_R33"><data key="relation">supported_by</data></edge>
+<edge id="e244" source="app_PHY-09" target="ref_R34"><data key="relation">supported_by</data></edge>
+<edge id="e245" source="app_PHY-10" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e246" source="app_PHY-10" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e247" source="app_PHY-10" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e248" source="app_PHY-10" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e249" source="app_PHY-10" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e250" source="app_PHY-10" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e251" source="app_PHY-11" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e252" source="app_PHY-11" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e253" source="app_PHY-11" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e254" source="app_PHY-11" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e255" source="app_PHY-11" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e256" source="app_PHY-11" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e257" source="app_PHY-11" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e258" source="app_PHY-12" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e259" source="app_PHY-12" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e260" source="app_PHY-12" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e261" source="app_PHY-12" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e262" source="app_PHY-12" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e263" source="app_PHY-12" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e264" source="app_PHY-13" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e265" source="app_PHY-13" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e266" source="app_PHY-13" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e267" source="app_PHY-13" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e268" source="app_PHY-13" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e269" source="app_PHY-13" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e270" source="app_PHY-13" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e271" source="app_PHY-13" target="ref_R30"><data key="relation">supported_by</data></edge>
+<edge id="e272" source="app_PHY-14" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e273" source="app_PHY-14" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e274" source="app_PHY-14" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e275" source="app_PHY-14" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e276" source="app_PHY-14" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e277" source="app_PHY-14" target="ref_R32"><data key="relation">supported_by</data></edge>
+<edge id="e278" source="app_ENG-01" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e279" source="app_ENG-01" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e280" source="app_ENG-01" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e281" source="app_ENG-01" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e282" source="app_ENG-01" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e283" source="app_ENG-01" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e284" source="app_ENG-01" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e285" source="app_ENG-01" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e286" source="app_ENG-01" target="ref_R15"><data key="relation">supported_by</data></edge>
+<edge id="e287" source="app_ENG-01" target="ref_R16"><data key="relation">supported_by</data></edge>
+<edge id="e288" source="app_ENG-02" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e289" source="app_ENG-02" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e290" source="app_ENG-02" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e291" source="app_ENG-02" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e292" source="app_ENG-02" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e293" source="app_ENG-02" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e294" source="app_ENG-02" target="ref_R15"><data key="relation">supported_by</data></edge>
+<edge id="e295" source="app_ENG-02" target="ref_R17"><data key="relation">supported_by</data></edge>
+<edge id="e296" source="app_ENG-03" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e297" source="app_ENG-03" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e298" source="app_ENG-03" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e299" source="app_ENG-03" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e300" source="app_ENG-03" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e301" source="app_ENG-03" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e302" source="app_ENG-03" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e303" source="app_ENG-03" target="ref_R15"><data key="relation">supported_by</data></edge>
+<edge id="e304" source="app_ENG-04" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e305" source="app_ENG-04" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e306" source="app_ENG-04" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e307" source="app_ENG-04" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e308" source="app_ENG-04" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e309" source="app_ENG-04" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e310" source="app_ENG-04" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e311" source="app_ENG-04" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e312" source="app_ENG-04" target="ref_R17"><data key="relation">supported_by</data></edge>
+<edge id="e313" source="app_ENG-04" target="ref_R18"><data key="relation">supported_by</data></edge>
+<edge id="e314" source="app_ENG-05" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e315" source="app_ENG-05" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e316" source="app_ENG-05" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e317" source="app_ENG-05" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e318" source="app_ENG-05" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e319" source="app_ENG-05" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e320" source="app_ENG-05" target="ref_R17"><data key="relation">supported_by</data></edge>
+<edge id="e321" source="app_ENG-05" target="ref_R31"><data key="relation">supported_by</data></edge>
+<edge id="e322" source="app_ENG-06" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e323" source="app_ENG-06" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e324" source="app_ENG-06" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e325" source="app_ENG-06" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e326" source="app_ENG-06" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e327" source="app_ENG-06" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e328" source="app_ENG-06" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e329" source="app_ENG-07" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e330" source="app_ENG-07" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e331" source="app_ENG-07" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e332" source="app_ENG-07" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e333" source="app_ENG-07" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e334" source="app_ENG-07" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e335" source="app_ENG-07" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e336" source="app_ENG-07" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e337" source="app_ENG-07" target="ref_R15"><data key="relation">supported_by</data></edge>
+<edge id="e338" source="app_ENG-08" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e339" source="app_ENG-08" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e340" source="app_ENG-08" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e341" source="app_ENG-08" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e342" source="app_ENG-08" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e343" source="app_ENG-08" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e344" source="app_ENG-08" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e345" source="app_ENG-08" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e346" source="app_ENG-08" target="ref_R19"><data key="relation">supported_by</data></edge>
+<edge id="e347" source="app_ENG-08" target="ref_R20"><data key="relation">supported_by</data></edge>
+<edge id="e348" source="app_ENG-09" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e349" source="app_ENG-09" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e350" source="app_ENG-09" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e351" source="app_ENG-09" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e352" source="app_ENG-09" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e353" source="app_ENG-09" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e354" source="app_ENG-09" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e355" source="app_ENG-09" target="ref_R23"><data key="relation">supported_by</data></edge>
+<edge id="e356" source="app_ENG-09" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e357" source="app_ENG-10" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e358" source="app_ENG-10" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e359" source="app_ENG-10" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e360" source="app_ENG-10" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e361" source="app_ENG-10" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e362" source="app_ENG-10" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e363" source="app_ENG-10" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e364" source="app_ENG-11" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e365" source="app_ENG-11" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e366" source="app_ENG-11" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e367" source="app_ENG-11" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e368" source="app_ENG-11" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e369" source="app_ENG-11" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e370" source="app_ENG-11" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e371" source="app_ENG-11" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e372" source="app_ENG-11" target="ref_R15"><data key="relation">supported_by</data></edge>
+<edge id="e373" source="app_ENG-11" target="ref_R18"><data key="relation">supported_by</data></edge>
+<edge id="e374" source="app_ENG-11" target="ref_R19"><data key="relation">supported_by</data></edge>
+<edge id="e375" source="app_ENG-12" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e376" source="app_ENG-12" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e377" source="app_ENG-12" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e378" source="app_ENG-12" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e379" source="app_ENG-12" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e380" source="app_ENG-12" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e381" source="app_ENG-12" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e382" source="app_ENG-12" target="ref_R32"><data key="relation">supported_by</data></edge>
+<edge id="e383" source="app_ENG-13" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e384" source="app_ENG-13" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e385" source="app_ENG-13" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e386" source="app_ENG-13" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e387" source="app_ENG-13" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e388" source="app_ENG-13" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e389" source="app_ENG-13" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e390" source="app_ENG-13" target="ref_R21"><data key="relation">supported_by</data></edge>
+<edge id="e391" source="app_ENG-13" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e392" source="app_ENG-14" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e393" source="app_ENG-14" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e394" source="app_ENG-14" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e395" source="app_ENG-14" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e396" source="app_ENG-14" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e397" source="app_ENG-14" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e398" source="app_ENG-14" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e399" source="app_ENG-15" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e400" source="app_ENG-15" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e401" source="app_ENG-15" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e402" source="app_ENG-15" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e403" source="app_ENG-15" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e404" source="app_ENG-15" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e405" source="app_ENG-15" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e406" source="app_ENG-16" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e407" source="app_ENG-16" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e408" source="app_ENG-16" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e409" source="app_ENG-16" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e410" source="app_ENG-16" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e411" source="app_ENG-16" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e412" source="app_ENG-16" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e413" source="app_ENG-16" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e414" source="app_ENG-17" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e415" source="app_ENG-17" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e416" source="app_ENG-17" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e417" source="app_ENG-17" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e418" source="app_ENG-17" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e419" source="app_ENG-17" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e420" source="app_ENG-17" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e421" source="app_ENG-17" target="ref_R15"><data key="relation">supported_by</data></edge>
+<edge id="e422" source="app_ENG-17" target="ref_R16"><data key="relation">supported_by</data></edge>
+<edge id="e423" source="app_ENG-18" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e424" source="app_ENG-18" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e425" source="app_ENG-18" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e426" source="app_ENG-18" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e427" source="app_ENG-18" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e428" source="app_ENG-18" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e429" source="app_ENG-18" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e430" source="app_DIG-01" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e431" source="app_DIG-01" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e432" source="app_DIG-01" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e433" source="app_DIG-01" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e434" source="app_DIG-01" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e435" source="app_DIG-01" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e436" source="app_DIG-01" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e437" source="app_DIG-01" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e438" source="app_DIG-02" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e439" source="app_DIG-02" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e440" source="app_DIG-02" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e441" source="app_DIG-02" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e442" source="app_DIG-02" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e443" source="app_DIG-02" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e444" source="app_DIG-02" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e445" source="app_DIG-02" target="ref_R33"><data key="relation">supported_by</data></edge>
+<edge id="e446" source="app_DIG-03" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e447" source="app_DIG-03" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e448" source="app_DIG-03" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e449" source="app_DIG-03" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e450" source="app_DIG-03" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e451" source="app_DIG-03" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e452" source="app_DIG-03" target="ref_R32"><data key="relation">supported_by</data></edge>
+<edge id="e453" source="app_DIG-04" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e454" source="app_DIG-04" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e455" source="app_DIG-04" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e456" source="app_DIG-04" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e457" source="app_DIG-04" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e458" source="app_DIG-04" target="ref_R31"><data key="relation">supported_by</data></edge>
+<edge id="e459" source="app_DIG-05" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e460" source="app_DIG-05" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e461" source="app_DIG-05" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e462" source="app_DIG-05" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e463" source="app_DIG-05" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e464" source="app_DIG-05" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e465" source="app_DIG-05" target="ref_R30"><data key="relation">supported_by</data></edge>
+<edge id="e466" source="app_DIG-06" target="op_analog_photonic_front_end"><data key="relation">uses</data></edge>
+<edge id="e467" source="app_DIG-06" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e468" source="app_DIG-06" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e469" source="app_DIG-06" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e470" source="app_DIG-06" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e471" source="app_DIG-06" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e472" source="app_DIG-06" target="ref_R32"><data key="relation">supported_by</data></edge>
+<edge id="e473" source="app_DIG-07" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e474" source="app_DIG-07" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e475" source="app_DIG-07" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e476" source="app_DIG-07" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e477" source="app_DIG-07" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e478" source="app_DIG-07" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e479" source="app_DIG-07" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e480" source="app_DIG-08" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e481" source="app_DIG-08" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e482" source="app_DIG-08" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e483" source="app_DIG-08" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e484" source="app_DIG-08" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e485" source="app_DIG-08" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e486" source="app_DIG-08" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e487" source="app_DIG-08" target="ref_R7"><data key="relation">supported_by</data></edge>
+<edge id="e488" source="app_DIG-08" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e489" source="app_DIG-08" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e490" source="app_DIG-09" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e491" source="app_DIG-09" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e492" source="app_DIG-09" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e493" source="app_DIG-09" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e494" source="app_DIG-09" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e495" source="app_DIG-09" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e496" source="app_DIG-09" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e497" source="app_DIG-09" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e498" source="app_DIG-10" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e499" source="app_DIG-10" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e500" source="app_DIG-10" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e501" source="app_DIG-10" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e502" source="app_DIG-10" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e503" source="app_DIG-10" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e504" source="app_DIG-10" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e505" source="app_DIG-10" target="ref_R35"><data key="relation">supported_by</data></edge>
+<edge id="e506" source="app_DIG-11" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e507" source="app_DIG-11" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e508" source="app_DIG-11" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e509" source="app_DIG-11" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e510" source="app_DIG-11" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e511" source="app_DIG-11" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e512" source="app_DIG-11" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e513" source="app_DIG-12" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e514" source="app_DIG-12" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e515" source="app_DIG-12" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e516" source="app_DIG-12" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e517" source="app_DIG-12" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e518" source="app_DIG-12" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e519" source="app_DIG-12" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e520" source="app_DIG-12" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e521" source="app_DIG-13" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e522" source="app_DIG-13" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e523" source="app_DIG-13" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e524" source="app_DIG-13" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e525" source="app_DIG-13" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e526" source="app_DIG-13" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e527" source="app_DIG-13" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e528" source="app_DIG-13" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e529" source="app_DIG-14" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e530" source="app_DIG-14" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e531" source="app_DIG-14" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e532" source="app_DIG-14" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e533" source="app_DIG-14" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e534" source="app_DIG-14" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e535" source="app_DIG-15" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e536" source="app_DIG-15" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e537" source="app_DIG-15" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e538" source="app_DIG-15" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e539" source="app_DIG-15" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e540" source="app_DIG-15" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e541" source="app_LOG-01" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e542" source="app_LOG-01" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e543" source="app_LOG-01" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e544" source="app_LOG-01" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e545" source="app_LOG-01" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e546" source="app_LOG-01" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e547" source="app_LOG-01" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e548" source="app_LOG-01" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e549" source="app_LOG-02" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e550" source="app_LOG-02" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e551" source="app_LOG-02" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e552" source="app_LOG-02" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e553" source="app_LOG-02" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e554" source="app_LOG-02" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e555" source="app_LOG-02" target="ref_R33"><data key="relation">supported_by</data></edge>
+<edge id="e556" source="app_LOG-02" target="ref_R34"><data key="relation">supported_by</data></edge>
+<edge id="e557" source="app_LOG-03" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e558" source="app_LOG-03" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e559" source="app_LOG-03" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e560" source="app_LOG-03" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e561" source="app_LOG-03" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e562" source="app_LOG-03" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e563" source="app_LOG-03" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e564" source="app_LOG-04" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e565" source="app_LOG-04" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e566" source="app_LOG-04" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e567" source="app_LOG-04" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e568" source="app_LOG-04" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e569" source="app_LOG-04" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e570" source="app_LOG-04" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e571" source="app_LOG-04" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e572" source="app_LOG-05" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e573" source="app_LOG-05" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e574" source="app_LOG-05" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e575" source="app_LOG-05" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e576" source="app_LOG-05" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e577" source="app_LOG-05" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e578" source="app_LOG-05" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e579" source="app_LOG-05" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e580" source="app_LOG-05" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e581" source="app_LOG-05" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e582" source="app_LOG-06" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e583" source="app_LOG-06" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e584" source="app_LOG-06" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e585" source="app_LOG-06" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e586" source="app_LOG-06" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e587" source="app_LOG-06" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e588" source="app_LOG-06" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e589" source="app_LOG-06" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e590" source="app_LOG-06" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e591" source="app_LOG-06" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e592" source="app_LOG-07" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e593" source="app_LOG-07" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e594" source="app_LOG-07" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e595" source="app_LOG-07" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e596" source="app_LOG-07" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e597" source="app_LOG-07" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e598" source="app_LOG-07" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e599" source="app_LOG-08" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e600" source="app_LOG-08" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e601" source="app_LOG-08" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e602" source="app_LOG-08" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e603" source="app_LOG-08" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e604" source="app_LOG-08" target="ref_R6"><data key="relation">supported_by</data></edge>
+<edge id="e605" source="app_LOG-08" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e606" source="app_LOG-08" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e607" source="app_LOG-09" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e608" source="app_LOG-09" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e609" source="app_LOG-09" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e610" source="app_LOG-09" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e611" source="app_LOG-09" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e612" source="app_LOG-09" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e613" source="app_LOG-09" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e614" source="app_LOG-09" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e615" source="app_LOG-10" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e616" source="app_LOG-10" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e617" source="app_LOG-10" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e618" source="app_LOG-10" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e619" source="app_LOG-10" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e620" source="app_LOG-10" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e621" source="app_LOG-10" target="ref_R26"><data key="relation">supported_by</data></edge>
+<edge id="e622" source="app_LOG-10" target="ref_R27"><data key="relation">supported_by</data></edge>
+<edge id="e623" source="app_CIV-01" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e624" source="app_CIV-01" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e625" source="app_CIV-01" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e626" source="app_CIV-01" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e627" source="app_CIV-01" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e628" source="app_CIV-01" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e629" source="app_CIV-01" target="ref_R21"><data key="relation">supported_by</data></edge>
+<edge id="e630" source="app_CIV-01" target="ref_R23"><data key="relation">supported_by</data></edge>
+<edge id="e631" source="app_CIV-01" target="ref_R25"><data key="relation">supported_by</data></edge>
+<edge id="e632" source="app_CIV-02" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e633" source="app_CIV-02" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e634" source="app_CIV-02" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e635" source="app_CIV-02" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e636" source="app_CIV-02" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e637" source="app_CIV-02" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e638" source="app_CIV-02" target="ref_R21"><data key="relation">supported_by</data></edge>
+<edge id="e639" source="app_CIV-02" target="ref_R22"><data key="relation">supported_by</data></edge>
+<edge id="e640" source="app_CIV-02" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e641" source="app_CIV-03" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e642" source="app_CIV-03" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e643" source="app_CIV-03" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e644" source="app_CIV-03" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e645" source="app_CIV-03" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e646" source="app_CIV-03" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e647" source="app_CIV-03" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e648" source="app_CIV-03" target="ref_R21"><data key="relation">supported_by</data></edge>
+<edge id="e649" source="app_CIV-03" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e650" source="app_CIV-03" target="ref_R33"><data key="relation">supported_by</data></edge>
+<edge id="e651" source="app_CIV-04" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e652" source="app_CIV-04" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e653" source="app_CIV-04" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e654" source="app_CIV-04" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e655" source="app_CIV-04" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e656" source="app_CIV-04" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e657" source="app_CIV-04" target="ref_R21"><data key="relation">supported_by</data></edge>
+<edge id="e658" source="app_CIV-04" target="ref_R22"><data key="relation">supported_by</data></edge>
+<edge id="e659" source="app_CIV-04" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e660" source="app_CIV-04" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e661" source="app_CIV-05" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e662" source="app_CIV-05" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e663" source="app_CIV-05" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e664" source="app_CIV-05" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e665" source="app_CIV-05" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e666" source="app_CIV-05" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e667" source="app_CIV-05" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e668" source="app_CIV-05" target="ref_R21"><data key="relation">supported_by</data></edge>
+<edge id="e669" source="app_CIV-05" target="ref_R24"><data key="relation">supported_by</data></edge>
+<edge id="e670" source="app_CIV-05" target="ref_R35"><data key="relation">supported_by</data></edge>
+<edge id="e671" source="app_CIV-06" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e672" source="app_CIV-06" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e673" source="app_CIV-06" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e674" source="app_CIV-06" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e675" source="app_CIV-06" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e676" source="app_CIV-06" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e677" source="app_CIV-06" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e678" source="app_CIV-07" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e679" source="app_CIV-07" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e680" source="app_CIV-07" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e681" source="app_CIV-07" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e682" source="app_CIV-07" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e683" source="app_CIV-07" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e684" source="app_CIV-07" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e685" source="app_CIV-07" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e686" source="app_CIV-08" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e687" source="app_CIV-08" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e688" source="app_CIV-08" target="op_next_event_solve"><data key="relation">uses</data></edge>
+<edge id="e689" source="app_CIV-08" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e690" source="app_CIV-08" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e691" source="app_CIV-08" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e692" source="app_CIV-08" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e693" source="app_CIV-08" target="ref_R22"><data key="relation">supported_by</data></edge>
+<edge id="e694" source="app_CIV-08" target="ref_R25"><data key="relation">supported_by</data></edge>
+<edge id="e695" source="app_CIV-09" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e696" source="app_CIV-09" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e697" source="app_CIV-09" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e698" source="app_CIV-09" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e699" source="app_CIV-09" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e700" source="app_CIV-09" target="ref_R21"><data key="relation">supported_by</data></edge>
+<edge id="e701" source="app_CIV-09" target="ref_R35"><data key="relation">supported_by</data></edge>
+<edge id="e702" source="app_CIV-10" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e703" source="app_CIV-10" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e704" source="app_CIV-10" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e705" source="app_CIV-10" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e706" source="app_CIV-10" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e707" source="app_CIV-10" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e708" source="app_CIV-10" target="ref_R22"><data key="relation">supported_by</data></edge>
+<edge id="e709" source="app_CIV-10" target="ref_R25"><data key="relation">supported_by</data></edge>
+<edge id="e710" source="app_RES-01" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e711" source="app_RES-01" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e712" source="app_RES-01" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e713" source="app_RES-01" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e714" source="app_RES-01" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e715" source="app_RES-01" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e716" source="app_RES-01" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e717" source="app_RES-01" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e718" source="app_RES-02" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e719" source="app_RES-02" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e720" source="app_RES-02" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e721" source="app_RES-02" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e722" source="app_RES-02" target="op_guard_event_surface"><data key="relation">uses</data></edge>
+<edge id="e723" source="app_RES-02" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e724" source="app_RES-02" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e725" source="app_RES-03" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e726" source="app_RES-03" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e727" source="app_RES-03" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e728" source="app_RES-03" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e729" source="app_RES-03" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e730" source="app_RES-03" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e731" source="app_RES-03" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e732" source="app_RES-04" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e733" source="app_RES-04" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e734" source="app_RES-04" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e735" source="app_RES-04" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e736" source="app_RES-04" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e737" source="app_RES-04" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e738" source="app_RES-04" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e739" source="app_RES-04" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e740" source="app_RES-04" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e741" source="app_RES-05" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e742" source="app_RES-05" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e743" source="app_RES-05" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e744" source="app_RES-05" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e745" source="app_RES-05" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e746" source="app_RES-05" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e747" source="app_RES-05" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e748" source="app_RES-06" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e749" source="app_RES-06" target="op_counterfactual_branch"><data key="relation">uses</data></edge>
+<edge id="e750" source="app_RES-06" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e751" source="app_RES-06" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e752" source="app_RES-06" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e753" source="app_RES-06" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e754" source="app_RES-06" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e755" source="app_RES-07" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e756" source="app_RES-07" target="op_local_support"><data key="relation">uses</data></edge>
+<edge id="e757" source="app_RES-07" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e758" source="app_RES-07" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e759" source="app_RES-07" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e760" source="app_RES-07" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e761" source="app_RES-07" target="ref_R28"><data key="relation">supported_by</data></edge>
+<edge id="e762" source="app_RES-07" target="ref_R29"><data key="relation">supported_by</data></edge>
+<edge id="e763" source="app_RES-08" target="op_lineage_provenance"><data key="relation">uses</data></edge>
+<edge id="e764" source="app_RES-08" target="op_compatibility_gate"><data key="relation">uses</data></edge>
+<edge id="e765" source="app_RES-08" target="op_auditable_absence"><data key="relation">uses</data></edge>
+<edge id="e766" source="app_RES-08" target="op_materialized_view"><data key="relation">uses</data></edge>
+<edge id="e767" source="app_RES-08" target="op_direct_state_query"><data key="relation">uses</data></edge>
+<edge id="e768" source="app_RES-08" target="ref_C0"><data key="relation">supported_by</data></edge>
+<edge id="e769" source="app_RES-08" target="ref_R28"><data key="relation">supported_by</data></edge>
+</graph>
+</graphml>

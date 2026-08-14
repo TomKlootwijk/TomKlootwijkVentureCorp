@@ -1,0 +1,17 @@
+id,pilot,sector,scope,horizon,gate
+P01,Equation World Zero,Digital core,Implement six queries on one relation family and benchmark against frame stepping.,3-6 months,Go if event solving + lineage is cheaper at equal correctness.
+P02,Auditable absence ledger,Cross-domain data,"Deploy ExpectedEvent/AbsenceEvent in hospital follow-up, shipment scan or municipal SLA.",3 months,Go if unknown vs absent classification improves without excessive false absence.
+P03,MRI adaptive raw-data replay,Biomedical imaging,Replay archived k-space/physiology data to test support- and guard-driven acquisition decisions.,6-12 months,Go only with preserved task performance and uncertainty.
+P04,Quantitative MR direct query phantom,Biomedical imaging,"Compare direct parameter estimation, MRF-style approach and image-first baseline.",9-18 months,Go if task accuracy/scan time improve under safety constraints.
+P05,Cradle-to-life care journey,Health information,FHIR/PROV event graph for maternal-neonatal or chronic-care pathway.,6-12 months,"Go if identity, consent and care-gap auditability improve."
+P06,Mental-health patient-controlled registry,Mental health,"Longitudinal goals, context, consent and research measures with no automated diagnosis.",12 months,"Go only with independent ethics, patient control and low harm."
+P07,Lithography hotspot event solver,Semiconductor,Local support and guard queries on a synthetic/public mask benchmark.,6-12 months,Go if hotspot recall and runtime beat baseline without missed long-range effects.
+P08,Fab next-fault shadow twin,Manufacturing,One chamber subsystem with continuous relations and event predictions.,6-12 months,Go if false alarms and lead time meet preset thresholds.
+P09,Hollowlens metrology proxy,Physical/photonic,Optofluidic or fixed photonic prefilter plus digital sidecar and matched electronic baseline.,12-24 months,Go only on end-to-end verified events/J and stability.
+P10,PV array event twin,Solar,"String-level faults, absence semantics and O&M workflow.",6-12 months,Go if energy recovery exceeds sensor/control burden.
+P11,Pipeline leak replay and test loop,Infrastructure,Historical transients plus controlled leak/negative-pressure-wave tests.,9-18 months,Go only with regulatory-grade sensitivity and false-alarm bounds.
+P12,Warehouse event truth zone,Logistics,"EPCIS lineage, expected scans and AMR time-of-conflict in one zone.",6 months,Go if inventory accuracy and throughput improve.
+P13,Municipal service obligation graph,Civic,"Pothole, streetlight or waste service with Open311 and explicit SLA absence.",6 months,Go if closure evidence and equity improve.
+P14,Research claim-evidence graph,Documentation,Convert one report or systematic review to PROV/FAIR event graph.,3-6 months,Go if review/update and audit time fall.
+P15,Event ADC sensing benchmark,Mixed signal,"Level-crossing plus reference sampling on vibration, ECG or environmental signal.",6-12 months,Go if end-to-end energy falls at equal reconstruction/event performance.
+P16,Photonic query-kernel benchmark,Compute hardware,"Stable transform with full source, detector, ADC/DAC and calibration accounting.",12-24 months,Go only if end-to-end J/query beats electronic reference.

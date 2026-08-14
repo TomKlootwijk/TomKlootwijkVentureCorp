@@ -1,0 +1,23 @@
+application_id: ""
+domain: ""
+question: ""
+current_baseline: ""
+proposed_role: "addition | bounded-partial-replacement | frontier"
+physical_or_institutional_layers_to_retain: []
+state_schema_ref: "schemas/state.schema.json"
+relation_family: ""
+local_support: ""
+compatibility_predicate: ""
+guard_or_event_surface: ""
+transition: ""
+lineage_rules: ""
+expected_event: null
+coverage_contract: null
+uncertainty_contract: ""
+matched_baseline: ""
+metrics: []
+energy_boundary: []
+governance_boundary: []
+minimum_pilot: ""
+kill_criteria: []
+evidence_refs: []

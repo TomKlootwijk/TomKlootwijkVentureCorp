@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/spherical-event/event.schema.json",
+  "title": "Verified Compatibility Event",
+  "description": "An auditable event emitted only after relation/guard crossing, support admission and compatibility.",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "timeValue": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "description": "Continuous model time or an ISO 8601 timestamp."
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "method": {
+          "type": "string"
+        },
+        "interval": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "value",
+        "method"
+      ]
+    },
+    "reasonCode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    }
+  },
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "relation_id": {
+      "type": "string"
+    },
+    "transition_id": {
+      "type": "string"
+    },
+    "t_star": {
+      "$ref": "#/$defs/timeValue"
+    },
+    "time_interval": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/timeValue"
+      }
+    },
+    "support_admitted": {
+      "type": "boolean"
+    },
+    "support_id": {
+      "type": "string"
+    },
+    "compatible": {
+      "type": "boolean"
+    },
+    "compatibility_reason_codes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reasonCode"
+      }
+    },
+    "predicate_version": {
+      "type": "string"
+    },
+    "guard_crossed": {
+      "type": "boolean"
+    },
+    "guard_value": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "root_multiplicity": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "confidence": {
+      "$ref": "#/$defs/confidence"
+    },
+    "pre_state_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "post_state_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lineage_parent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "branch_created": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "parity_before": {
+      "type": [
+        "integer",
+        "boolean",
+        "null"
+      ]
+    },
+    "parity_after": {
+      "type": [
+        "integer",
+        "boolean",
+        "null"
+      ]
+    },
+    "invariant_report": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "event_id",
+    "entity_id",
+    "relation_id",
+    "transition_id",
+    "t_star",
+    "support_admitted",
+    "compatible",
+    "predicate_version",
+    "guard_crossed",
+    "confidence",
+    "invariant_report",
+    "schema_version"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "support_admitted": {
+            "const": true
+          },
+          "compatible": {
+            "const": true
+          },
+          "guard_crossed": {
+            "const": true
+          }
+        }
+      },
+      "then": {},
+      "else": {
+        "description": "A record may be retained as a rejected candidate, but it is not a verified event."
+      }
+    }
+  ]
+}

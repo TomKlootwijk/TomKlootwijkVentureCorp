@@ -1,0 +1,11 @@
+domain,expectation,required_support,deadline_condition,emitted_state,caveat
+Hospital follow-up,Follow-up visit or contact due,"Care pathway, consent, contact channels valid",Due interval closes with no compatible contact/visit,Absent follow-up,"Do not emit if patient opted out, transferred care or contact coverage failed."
+MRI sequence,Physiology or calibration event required,"Sensor attached, channel healthy, sequence window active",Window closes with no event,Missing required acquisition support,"Result is inconclusive, not negative anatomy."
+Warehouse,Expected pallet scan at zone exit,Reader coverage and task assignment valid,Pallet exits time window without scan,Unobserved movement or process exception,Distinguish reader failure from item absence.
+Delivery,Expected handoff by promise window,"Vehicle, parcel and route tracking valid",Window closes without proof or exception,Failed/late delivery,"Recipient unavailability is a reason code, not silent failure."
+Pipeline,Expected valve closure after rupture identification,Valve command path and feedback sensor healthy,Required time closes without closed-state event,Mitigation failure,Escalate; do not infer from pressure alone.
+Solar,Expected generation under irradiance support,"Irradiance, inverter availability and telemetry valid",Generation relation not observed,Underperformance/fault candidate,"Night, curtailment and telemetry outage are separate sectors."
+Transit,Scheduled trip arrival,AVL coverage and trip not cancelled,Stop window closes without arrival,Missed trip,Unknown if AVL is down or detour unreported.
+Municipal service,Inspection or repair promised,"Work order active, access available",SLA interval closes,Overdue service,"Waiver, resident access failure and weather delay are typed reasons."
+Research,Pre-registered observation expected,Protocol power and instrument detection support valid,Experiment completes without event,Supported null/non-observation,Instrument failure or underpowered design remains unknown.
+Data pipeline,Expected artifact/test/approval,Job and repository available,Deadline closes without artifact,Blocked release,"Differentiate queued, failed, skipped and never required."

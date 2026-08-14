@@ -1,0 +1,39 @@
+metric,unit_or_definition,interpretation
+Theta_verified,verified events / second,"Events satisfying support, compatibility, guard and confidence."
+Theta_E,verified events / joule,"Includes sensing/source, conversion, actuation, control, calibration and storage."
+eta_route,verified / admitted,Correct routing among admitted candidates.
+R_support,all candidates / supported candidates,Pruning due to local radial/angular/causal/semantic support.
+R_compat,supported / solver-entering candidates,"Pruning due to physical, policy, identity and mode compatibility."
+L50,median event latency,Median time from physical or digital condition to verified event.
+L99,99th percentile event latency,"Tail latency including settling, network and control."
+P_miss,missed-event probability,Probability of failing to emit a required event.
+P_false,false-event probability,Probability of emitting an unjustified event.
+P_abs_false,false-absence probability,Absence emitted despite an unobserved or late compatible event.
+P_unknown,unknown/missing-coverage fraction,Cases that cannot be classified as present or absent.
+coverage_support,time/space within certified observation support,Required for meaningful negative events.
+lineage_completeness,reconstructable transitions / required transitions,"Coverage of parent/child, split/merge and provenance edges."
+replay_fidelity,reconstructed state matches reference,Correctness of seed+grammar+log reconstruction.
+branch_growth,active branch nodes / scenario,Counterfactual growth and pruning burden.
+expression_growth,relation complexity vs grammar depth,Algebraic closure and normalization burden.
+solver_work,root/constraint operations per verified event,Core event-solver cost.
+materialization_avoided,bytes or operations not materialized,State/view work avoided by direct queries.
+calibration_burden,time and energy per calibration interval,May erase analog/photonic advantage.
+drift,transfer error vs time/temperature,Stability of physical and learned models.
+fallback_rate,queries sent to conventional reference,Measures boundedness and practical coverage.
+diagnostic_task_perf,"sensitivity, specificity, AUC or calibrated utility",Biomedical outcome at a declared task.
+scan_time,minutes per completed diagnostic task,MRI/imaging operational metric.
+dose_or_exposure,"radiation, RF/SAR, optical or phototoxic exposure",Physical acquisition burden.
+overlay_focus_dose,semiconductor process accuracy metrics,Lithography-specific performance.
+wafers_per_hour,completed wafers / hour at quality,Manufacturing throughput.
+Wh_per_control_J,delivered energy per control-system joule,Solar/grid controller efficiency.
+curtailment_avoided,MWh or percent,Renewable utilization impact.
+leak_detect_time,time from leak onset to verified alarm,Pipeline/water safety.
+isolated_volume,material released before isolation,Pipeline consequence metric.
+inventory_accuracy,correct physical/system matches,Warehouse truth metric.
+orders_per_hour,verified orders completed / hour,Warehouse throughput.
+miles_per_delivery,distance / completed delivery,Logistics efficiency.
+service_sla_met,municipal obligations met / due,Municipal service outcome.
+equity_gap,difference across neighborhoods or groups,Must be contextual and privacy-preserving.
+audit_reconstruction_time,time to reconstruct a decision or event,Governance/research value.
+reproduction_success,independent reruns matching declared result,Research reproducibility.
+kgCO2e_net,verified lifecycle greenhouse-gas change,Includes rebound and system boundary.

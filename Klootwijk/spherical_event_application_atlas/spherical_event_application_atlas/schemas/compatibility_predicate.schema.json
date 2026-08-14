@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/spherical-event/compatibility_predicate.schema.json",
+  "title": "Compatibility Predicate",
+  "description": "Versioned physical, policy, identity, mode, temporal and consent conditions controlling coupling.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "predicate_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "input_schema_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "decision": {
+      "type": "boolean"
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evaluated_at": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ]
+    },
+    "authority": {
+      "type": "object"
+    },
+    "fallback_policy": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "predicate_id",
+    "version",
+    "conditions",
+    "decision",
+    "reason_codes",
+    "evaluated_at",
+    "authority",
+    "fallback_policy",
+    "schema_version"
+  ]
+}

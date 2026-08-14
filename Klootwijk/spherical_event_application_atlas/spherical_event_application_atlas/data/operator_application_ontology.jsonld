@@ -1,0 +1,2398 @@
+{
+  "@context": {
+    "@vocab": "https://example.org/spherical-event/",
+    "name": "http://schema.org/name",
+    "description": "http://schema.org/description",
+    "domain": "http://schema.org/applicationCategory",
+    "references": "http://schema.org/citation",
+    "usesOperator": {
+      "@id": "usesOperator",
+      "@type": "@id"
+    },
+    "supportedBy": {
+      "@id": "supportedBy",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "operator:analog-photonic-front-end",
+      "@type": "Operator",
+      "name": "analog/photonic front end"
+    },
+    {
+      "@id": "operator:auditable-absence",
+      "@type": "Operator",
+      "name": "auditable absence"
+    },
+    {
+      "@id": "operator:compatibility-gate",
+      "@type": "Operator",
+      "name": "compatibility gate"
+    },
+    {
+      "@id": "operator:counterfactual-branch",
+      "@type": "Operator",
+      "name": "counterfactual branch"
+    },
+    {
+      "@id": "operator:direct-state-query",
+      "@type": "Operator",
+      "name": "direct state query"
+    },
+    {
+      "@id": "operator:guard-event-surface",
+      "@type": "Operator",
+      "name": "guard/event surface"
+    },
+    {
+      "@id": "operator:lineage-provenance",
+      "@type": "Operator",
+      "name": "lineage/provenance"
+    },
+    {
+      "@id": "operator:local-support",
+      "@type": "Operator",
+      "name": "local support"
+    },
+    {
+      "@id": "operator:materialized-view",
+      "@type": "Operator",
+      "name": "materialized view"
+    },
+    {
+      "@id": "operator:next-event-solve",
+      "@type": "Operator",
+      "name": "next-event solve"
+    },
+    {
+      "@id": "reference:C0",
+      "@type": "EvidenceSource",
+      "name": "Topological Cross-Domain Synthesis of the Spherical Substrate Corpus",
+      "description": "Query-first state/event calculus, support, compatibility, lineage, projection boundary, benchmarks and failure criteria.",
+      "url": "source/Topological_Cross_Domain_Corpus_Report_source.pdf",
+      "organization": "User-supplied corpus reconstruction",
+      "year": "2026"
+    },
+    {
+      "@id": "reference:R1",
+      "@type": "EvidenceSource",
+      "name": "Magnetic Resonance Imaging (MRI)",
+      "description": "MRI hardware and signal acquisition baseline.",
+      "url": "https://www.fda.gov/radiation-emitting-products/medical-imaging/mri-magnetic-resonance-imaging",
+      "organization": "U.S. FDA",
+      "year": "2018"
+    },
+    {
+      "@id": "reference:R2",
+      "@type": "EvidenceSource",
+      "name": "Magnetic resonance imaging (MRI) scans",
+      "description": "Clinical role and soft-tissue imaging baseline.",
+      "url": "https://www.nibib.nih.gov/science-education/science-topics/magnetic-resonance-imaging-mri",
+      "organization": "NIBIB/NIH",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R3",
+      "@type": "EvidenceSource",
+      "name": "Sparse MRI: The application of compressed sensing for rapid MR imaging",
+      "description": "Undersampled MRI and structured reconstruction precedent.",
+      "url": "https://doi.org/10.1002/mrm.21391",
+      "organization": "Lustig, Donoho and Pauly",
+      "year": "2007"
+    },
+    {
+      "@id": "reference:R4",
+      "@type": "EvidenceSource",
+      "name": "Magnetic resonance fingerprinting",
+      "description": "Direct quantitative tissue-parameter estimation precedent.",
+      "url": "https://doi.org/10.1038/nature11971",
+      "organization": "Ma et al.",
+      "year": "2013"
+    },
+    {
+      "@id": "reference:R5",
+      "@type": "EvidenceSource",
+      "name": "Testing and Labeling Medical Devices for Safety in the Magnetic Resonance Environment",
+      "description": "Safety boundary for MRI additions and replacements.",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/testing-and-labeling-medical-devices-safety-magnetic-resonance-mr-environment",
+      "organization": "U.S. FDA",
+      "year": "2023"
+    },
+    {
+      "@id": "reference:R6",
+      "@type": "EvidenceSource",
+      "name": "FHIR R5 Specification",
+      "description": "Patient, Encounter, EpisodeOfCare, Observation, Consent, Provenance, AuditEvent and subscriptions.",
+      "url": "https://hl7.org/fhir/",
+      "organization": "HL7",
+      "year": "2023"
+    },
+    {
+      "@id": "reference:R7",
+      "@type": "EvidenceSource",
+      "name": "FHIR Subscription",
+      "description": "Proactive event notifications in health systems.",
+      "url": "https://fhir.hl7.org/fhir/subscription.html",
+      "organization": "HL7",
+      "year": "2023"
+    },
+    {
+      "@id": "reference:R8",
+      "@type": "EvidenceSource",
+      "name": "Ethics and governance of artificial intelligence for health",
+      "description": "Rights, accountability, transparency and human oversight.",
+      "url": "https://www.who.int/publications/i/item/9789240029200",
+      "organization": "World Health Organization",
+      "year": "2021"
+    },
+    {
+      "@id": "reference:R9",
+      "@type": "EvidenceSource",
+      "name": "Ethics and governance of artificial intelligence for health: guidance on large multi-modal models",
+      "description": "Governance of multimodal health AI.",
+      "url": "https://www.who.int/publications/i/item/9789240084759",
+      "organization": "World Health Organization",
+      "year": "2025"
+    },
+    {
+      "@id": "reference:R10",
+      "@type": "EvidenceSource",
+      "name": "WHO guideline: recommendations on digital interventions for health system strengthening",
+      "description": "Digital interventions are not substitutes for functioning health systems.",
+      "url": "https://www.who.int/publications/i/item/9789241550505",
+      "organization": "World Health Organization",
+      "year": "2019"
+    },
+    {
+      "@id": "reference:R11",
+      "@type": "EvidenceSource",
+      "name": "Research Domain Criteria (RDoC) Initiative",
+      "description": "Dimensional, longitudinal and multi-unit mental-health research framing.",
+      "url": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc",
+      "organization": "NIMH",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R12",
+      "@type": "EvidenceSource",
+      "name": "Computational lithography",
+      "description": "Scanner, mask and process co-optimization baseline.",
+      "url": "https://www.asml.com/products/computational-lithography",
+      "organization": "ASML",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R13",
+      "@type": "EvidenceSource",
+      "name": "EUV lithography systems",
+      "description": "EUV/High-NA physical projection system baseline.",
+      "url": "https://www.asml.com/products/euv-lithography-systems",
+      "organization": "ASML",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R14",
+      "@type": "EvidenceSource",
+      "name": "ASML and imec open joint High NA EUV Lithography Lab",
+      "description": "Current High-NA ecosystem and process-development context.",
+      "url": "https://www.asml.com/news/press-releases/2024/asml-imec-opening-high-na-euv-lithography-lab",
+      "organization": "ASML and imec",
+      "year": "2024"
+    },
+    {
+      "@id": "reference:R15",
+      "@type": "EvidenceSource",
+      "name": "NIST Framework and Roadmap for Smart Grid Interoperability Standards, Release 4.0",
+      "description": "Grid domains, interoperability, testing and certification.",
+      "url": "https://doi.org/10.6028/NIST.SP.1108r4",
+      "organization": "NIST",
+      "year": "2021"
+    },
+    {
+      "@id": "reference:R16",
+      "@type": "EvidenceSource",
+      "name": "Digital Twin + AI: Control Room of the Future",
+      "description": "Power-network digital twin and scenario simulation precedent.",
+      "url": "https://docs.nrel.gov/docs/fy24osti/87050.pdf",
+      "organization": "NREL",
+      "year": "2024"
+    },
+    {
+      "@id": "reference:R17",
+      "@type": "EvidenceSource",
+      "name": "IEEE 1547-2018 Based Interoperable PV Inverter with Advanced Grid-Support Functions",
+      "description": "Interoperable inverter control baseline.",
+      "url": "https://www.nrel.gov/docs/fy19osti/73131.pdf",
+      "organization": "NREL",
+      "year": "2019"
+    },
+    {
+      "@id": "reference:R18",
+      "@type": "EvidenceSource",
+      "name": "Best Practices in Photovoltaic System Operations and Maintenance",
+      "description": "PV monitoring, energy balance and O&M baseline.",
+      "url": "https://www.nrel.gov/docs/fy17osti/68281.pdf",
+      "organization": "NREL",
+      "year": "2017"
+    },
+    {
+      "@id": "reference:R19",
+      "@type": "EvidenceSource",
+      "name": "Leak Detection Systems Fact Sheet",
+      "description": "Computational pipeline monitoring, thresholds and limitations.",
+      "url": "https://primis.phmsa.dot.gov/stakeholder-comms/factsheets/fsleakdetectionsystems/",
+      "organization": "PHMSA",
+      "year": "2011"
+    },
+    {
+      "@id": "reference:R20",
+      "@type": "EvidenceSource",
+      "name": "Pipeline Safety: Requirement of Valve Installation and Minimum Rupture Detection Standards",
+      "description": "Rupture identification, mitigation valves and response timing.",
+      "url": "https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/2022-03/PHMSA%202137-AF06%20Valve%20Final%20Rule%20-%20March%202022.pdf",
+      "organization": "PHMSA",
+      "year": "2022"
+    },
+    {
+      "@id": "reference:R21",
+      "@type": "EvidenceSource",
+      "name": "NIST Smart Cities and Communities Framework Series",
+      "description": "Replicable, scalable, standards-based municipal systems.",
+      "url": "https://www.nist.gov/ctl/smart-connected-systems-division/iot-devices-and-infrastructures-group/smart-americaglobal/nist",
+      "organization": "NIST",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R22",
+      "@type": "EvidenceSource",
+      "name": "Smart Cities and Communities: A Key Performance Indicators Framework",
+      "description": "Technology, service and community-benefit KPI layers.",
+      "url": "https://doi.org/10.6028/NIST.SP.1900-206",
+      "organization": "NIST",
+      "year": "2022"
+    },
+    {
+      "@id": "reference:R23",
+      "@type": "EvidenceSource",
+      "name": "GeoReport v2",
+      "description": "Location-based municipal service requests.",
+      "url": "https://wiki.open311.org/GeoReport_v2/",
+      "organization": "Open311",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R24",
+      "@type": "EvidenceSource",
+      "name": "OGC SensorThings API Standard",
+      "description": "Interoperable sensor observations, metadata and tasking.",
+      "url": "https://www.ogc.org/standards/sensorthings/",
+      "organization": "Open Geospatial Consortium",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R25",
+      "@type": "EvidenceSource",
+      "name": "ISO 37120: Sustainable cities and communities - Indicators for city services and quality of life",
+      "description": "Comparable city-service and quality-of-life indicators.",
+      "url": "https://www.iso.org/standard/68498.html",
+      "organization": "ISO",
+      "year": "2018"
+    },
+    {
+      "@id": "reference:R26",
+      "@type": "EvidenceSource",
+      "name": "EPCIS and Core Business Vocabulary",
+      "description": "Event visibility and traceability across supply chains.",
+      "url": "https://www.gs1.org/standards/epcis",
+      "organization": "GS1",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R27",
+      "@type": "EvidenceSource",
+      "name": "GS1 Global Traceability Standard",
+      "description": "Critical tracking events and key data elements.",
+      "url": "https://www.gs1.org/standards/traceability",
+      "organization": "GS1",
+      "year": "current"
+    },
+    {
+      "@id": "reference:R28",
+      "@type": "EvidenceSource",
+      "name": "PROV-O: The PROV Ontology",
+      "description": "Domain-independent provenance representation.",
+      "url": "https://www.w3.org/TR/prov-o/",
+      "organization": "W3C",
+      "year": "2013"
+    },
+    {
+      "@id": "reference:R29",
+      "@type": "EvidenceSource",
+      "name": "The FAIR Guiding Principles for scientific data management and stewardship",
+      "description": "Findable, accessible, interoperable and reusable research assets.",
+      "url": "https://doi.org/10.1038/sdata.2016.18",
+      "organization": "Wilkinson et al.",
+      "year": "2016"
+    },
+    {
+      "@id": "reference:R30",
+      "@type": "EvidenceSource",
+      "name": "A 128x128 120 dB 15 us latency asynchronous temporal contrast vision sensor",
+      "description": "Event-based sensing as an alternative to uniform image frames.",
+      "url": "https://doi.org/10.1109/JSSC.2007.914337",
+      "organization": "Lichtsteiner, Posch and Delbruck",
+      "year": "2008"
+    },
+    {
+      "@id": "reference:R31",
+      "@type": "EvidenceSource",
+      "name": "A 10.4-ENOB 0.92-5.38 uW Event-Driven Level-Crossing ADC",
+      "description": "Amplitude-threshold conversion for sparse signals.",
+      "url": "https://lirias.kuleuven.be/retrieve/16f6ab16-2034-48a3-aab2-386c85bbaf9d",
+      "organization": "Van Assche et al.",
+      "year": "2022"
+    },
+    {
+      "@id": "reference:R32",
+      "@type": "EvidenceSource",
+      "name": "Deep learning with coherent nanophotonic circuits",
+      "description": "Programmable interferometric photonic computation precedent.",
+      "url": "https://doi.org/10.1038/nphoton.2017.93",
+      "organization": "Shen et al.",
+      "year": "2017"
+    },
+    {
+      "@id": "reference:R33",
+      "@type": "EvidenceSource",
+      "name": "Time of Impact Dataset for Continuous Collision Detection and a Scalable Conservative Algorithm",
+      "description": "Correctness and scalability benchmark for continuous time-of-impact queries.",
+      "url": "https://arxiv.org/abs/2112.06300",
+      "organization": "Belgrod et al.",
+      "year": "2023"
+    },
+    {
+      "@id": "reference:R34",
+      "@type": "EvidenceSource",
+      "name": "A Generalized Continuous Collision Detection Framework of Polynomial Trajectory for Mobile Robots",
+      "description": "Polynomial trajectory and exact/guaranteed collision-time queries.",
+      "url": "https://arxiv.org/abs/2206.13175",
+      "organization": "Zhang et al.",
+      "year": "2022"
+    },
+    {
+      "@id": "reference:R35",
+      "@type": "EvidenceSource",
+      "name": "A Risk Management Approach to Smart City Cybersecurity and Privacy",
+      "description": "Cybersecurity and privacy guardrails for municipal deployments.",
+      "url": "https://pages.nist.gov/GCTC/uploads/blueprints/2019_GCTC-SC3_Cybersecurity_and_Privacy_Advisory_Committee_Guidebook_July_2019.pdf",
+      "organization": "NIST GCTC",
+      "year": "2019"
+    },
+    {
+      "@id": "application:BIO-01",
+      "@type": "ApplicationHypothesis",
+      "name": "MRI adaptive acquisition and sequence orchestration",
+      "domain": "Biomedical & healthcare",
+      "description": "Use local anatomical/physiological support, motion and safety compatibility, and quantitative guard conditions to adapt which measurements are acquired next.",
+      "boundary": "Addition to MRI acquisition and control; not a magnet replacement.",
+      "maturity": "Near-term research pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R1",
+        "reference:R2",
+        "reference:R3",
+        "reference:R5"
+      ]
+    },
+    {
+      "@id": "application:BIO-02",
+      "@type": "ApplicationHypothesis",
+      "name": "MRI physics-constrained direct parameter query",
+      "domain": "Biomedical & healthcare",
+      "description": "Represent Bloch-model-compatible signal families as relations and query selected parameters or change events directly, optionally using images as a view.",
+      "boundary": "Partial replacement of selected reconstruction stages for bounded tasks.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R3",
+        "reference:R4"
+      ]
+    },
+    {
+      "@id": "application:BIO-03",
+      "@type": "ApplicationHypothesis",
+      "name": "MRI narrow diagnostic instrument as an alternative to full imaging",
+      "domain": "Biomedical & healthcare",
+      "description": "Design a task-specific MR instrument that answers a bounded question such as relaxation change, flow threshold or lesion-presence probability without requiring a full diagnostic image.",
+      "boundary": "Alternative narrow instrument; full MRI replacement unsupported.",
+      "maturity": "Frontier concept",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R1",
+        "reference:R4",
+        "reference:R5"
+      ]
+    },
+    {
+      "@id": "application:BIO-04",
+      "@type": "ApplicationHypothesis",
+      "name": "MRI motion, respiratory and cardiac event gating",
+      "domain": "Biomedical & healthcare",
+      "description": "Treat motion/physiology as continuous state and solve for compatible acquisition windows or correction events rather than replaying uniform frames.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R1",
+        "reference:R3"
+      ]
+    },
+    {
+      "@id": "application:BIO-05",
+      "@type": "ApplicationHypothesis",
+      "name": "MRI safety and implant compatibility engine",
+      "domain": "Biomedical & healthcare",
+      "description": "Model implant identity, field strength, sequence limits and patient state as a compatibility predicate with provenance and explicit reason codes.",
+      "boundary": "Addition to safety workflow.",
+      "maturity": "Implementable integration",
+      "usesOperator": [
+        "operator:compatibility-gate",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R5",
+        "reference:R6"
+      ]
+    },
+    {
+      "@id": "application:BIO-06",
+      "@type": "ApplicationHypothesis",
+      "name": "Ultrasound echo-event acquisition and beam control",
+      "domain": "Biomedical & healthcare",
+      "description": "Use level-crossing or feature-triggered acquisition, local beam support and direct arrival-time/flow events to reduce irrelevant conversion and processing.",
+      "boundary": "Addition or partial replacement of acquisition/reconstruction for narrow tasks.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:guard-event-surface",
+        "operator:analog-photonic-front-end",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R31"
+      ]
+    },
+    {
+      "@id": "application:BIO-07",
+      "@type": "ApplicationHypothesis",
+      "name": "CT/PET task-specific sparse acquisition",
+      "domain": "Biomedical & healthcare",
+      "description": "Select measurement supports adaptively and solve for bounded findings or quantitative changes with explicit uncertainty, retaining full reconstruction as fallback.",
+      "boundary": "Addition/partial replacement in bounded tasks.",
+      "maturity": "Research concept",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:BIO-08",
+      "@type": "ApplicationHypothesis",
+      "name": "Microscopy and cell-culture event microscope",
+      "domain": "Biomedical & healthcare",
+      "description": "Use local optical supports, event sensors or analog prefilters to emit only lineage-aware cell events such as division, migration, morphology change or fluorescence threshold crossing.",
+      "boundary": "Addition and, for narrow assays, partial replacement of continuous imaging.",
+      "maturity": "Near-term research pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:analog-photonic-front-end"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R30"
+      ]
+    },
+    {
+      "@id": "application:BIO-09",
+      "@type": "ApplicationHypothesis",
+      "name": "ICU and ward event-native patient monitoring",
+      "domain": "Biomedical & healthcare",
+      "description": "Maintain a continuous patient state, local physiological supports, compatibility with interventions and an auditable event record for threshold crossings and trends.",
+      "boundary": "Addition to monitoring and clinical decision support.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R7",
+        "reference:R8",
+        "reference:R10"
+      ]
+    },
+    {
+      "@id": "application:BIO-10",
+      "@type": "ApplicationHypothesis",
+      "name": "Surgical navigation and tool-tissue time-of-contact",
+      "domain": "Biomedical & healthcare",
+      "description": "Represent tool and anatomy trajectories continuously; solve certified time-of-contact events within local support and surgical permissions.",
+      "boundary": "Addition.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R33",
+        "reference:R34"
+      ]
+    },
+    {
+      "@id": "application:BIO-11",
+      "@type": "ApplicationHypothesis",
+      "name": "Medication, infusion and closed-loop therapy guard engine",
+      "domain": "Biomedical & healthcare",
+      "description": "Join medication identity, dose lineage, patient state, timing and device status through compatibility and event guards; keep clinicians in the loop.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:next-event-solve"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R7",
+        "reference:R8"
+      ]
+    },
+    {
+      "@id": "application:BIO-12",
+      "@type": "ApplicationHypothesis",
+      "name": "Cradle-to-life longitudinal patient journey substrate",
+      "domain": "Biomedical & healthcare",
+      "description": "Use a stable person lineage with prenatal, birth, neonatal, childhood, adult and elder branches; represent encounters and documents as views over a consent- and provenance-aware event graph.",
+      "boundary": "Addition beneath EHRs; not an autonomous medical authority.",
+      "maturity": "Implementable architecture pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R7",
+        "reference:R8",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:BIO-13",
+      "@type": "ApplicationHypothesis",
+      "name": "Maternal, fetal, birth and neonatal journey coordination",
+      "domain": "Biomedical & healthcare",
+      "description": "Model mother, fetus/newborn, samples, devices and care teams as related but distinct lineages, with consent and event transitions at birth.",
+      "boundary": "Addition.",
+      "maturity": "Near-term information-system pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R8"
+      ]
+    },
+    {
+      "@id": "application:BIO-14",
+      "@type": "ApplicationHypothesis",
+      "name": "Hospital flow, beds, theatres and discharge event twin",
+      "domain": "Biomedical & healthcare",
+      "description": "Represent patient flow, rooms, staff, equipment and constraints as a compatibility-gated event system with next-event and counterfactual queries.",
+      "boundary": "Addition/partial replacement of dashboard-centric coordination.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R7",
+        "reference:R10"
+      ]
+    },
+    {
+      "@id": "application:BIO-15",
+      "@type": "ApplicationHypothesis",
+      "name": "Mental-health longitudinal care and research substrate",
+      "domain": "Biomedical & healthcare",
+      "description": "Maintain patient-authored goals, consent, context, development, environment, observations and interventions as lineage-aware events and dimensional trajectories.",
+      "boundary": "Addition to records and research; not automated diagnosis or therapy.",
+      "maturity": "Research and governance pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R8",
+        "reference:R9",
+        "reference:R10",
+        "reference:R11"
+      ]
+    },
+    {
+      "@id": "application:BIO-16",
+      "@type": "ApplicationHypothesis",
+      "name": "Clinical trial and observational study event graph",
+      "domain": "Biomedical & healthcare",
+      "description": "Create a versioned event and provenance graph connecting protocol, consent, intervention, measurement, deviation, analysis and publication.",
+      "boundary": "Addition/partial replacement of document-centric trial operations.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:BIO-17",
+      "@type": "ApplicationHypothesis",
+      "name": "Biomedical sample and biobank lineage",
+      "domain": "Biomedical & healthcare",
+      "description": "Use lineage addresses and split/merge rules for specimen, aliquot, derivative, assay and storage events.",
+      "boundary": "Addition.",
+      "maturity": "Implementable integration",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R27",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:BIO-18",
+      "@type": "ApplicationHypothesis",
+      "name": "Protein dynamics and molecular-event simulation",
+      "domain": "Biomedical & healthcare",
+      "description": "For selected relation families, solve binding, contact, conformational and threshold events directly, while retaining conventional simulation for unresolved regions.",
+      "boundary": "Hybrid addition; broad replacement unsupported.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:BIO-19",
+      "@type": "ApplicationHypothesis",
+      "name": "CRISPR and gene-editing in-silico candidate pruning",
+      "domain": "Biomedical & healthcare",
+      "description": "Use local genomic/epigenetic support, compatibility predicates and lineage to rank candidate interventions and downstream event risks before laboratory testing.",
+      "boundary": "Addition to design; not physical gene control.",
+      "maturity": "Research concept",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R8",
+        "reference:R9"
+      ]
+    },
+    {
+      "@id": "application:BIO-20",
+      "@type": "ApplicationHypothesis",
+      "name": "Public-health event and service-absence observatory",
+      "domain": "Biomedical & healthcare",
+      "description": "Use event notifications, local geographic supports, lineage and explicit expected-report contracts to distinguish true absence, delayed data and sensor failure.",
+      "boundary": "Addition.",
+      "maturity": "Near-term data pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:lineage-provenance",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R7",
+        "reference:R8",
+        "reference:R24"
+      ]
+    },
+    {
+      "@id": "application:PHY-01",
+      "@type": "ApplicationHypothesis",
+      "name": "ASML/EUV event-native exposure and scanner control",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Add a query-first state/event layer for wafer-stage trajectories, dose, focus, overlay, contamination and subsystem readiness.",
+      "boundary": "Addition to scanner control; physical exposure system remains.",
+      "maturity": "Research/industry pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R12",
+        "reference:R13",
+        "reference:R14"
+      ]
+    },
+    {
+      "@id": "application:PHY-02",
+      "@type": "ApplicationHypothesis",
+      "name": "Computational lithography hotspot query engine",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Represent pattern constraints and process windows as local supports and guards; query hotspot events and compatible corrections instead of materializing every candidate globally.",
+      "boundary": "Addition/partial replacement of selected optimization passes.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R12"
+      ]
+    },
+    {
+      "@id": "application:PHY-03",
+      "@type": "ApplicationHypothesis",
+      "name": "Reduced-order Maxwell/rigorous simulation query service",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Compile bounded parameter families into reduced or surrogate relation models with certified validity regions and fall back to full solvers outside support.",
+      "boundary": "Addition.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R12",
+        "reference:R13"
+      ]
+    },
+    {
+      "@id": "application:PHY-04",
+      "@type": "ApplicationHypothesis",
+      "name": "Reticle, wafer and process lineage graph",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Use immutable lineage, split/merge and event records across design, mask, exposure, etch, metrology and yield.",
+      "boundary": "Addition beneath MES/yield systems.",
+      "maturity": "Implementable integration",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R27",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:PHY-05",
+      "@type": "ApplicationHypothesis",
+      "name": "Wafer-stage and robot continuous motion scheduling",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Use continuous trajectories, local supports and exact/conservative time-of-impact events rather than only fixed-rate checking.",
+      "boundary": "Addition.",
+      "maturity": "Near-term research pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R33",
+        "reference:R34"
+      ]
+    },
+    {
+      "@id": "application:PHY-06",
+      "@type": "ApplicationHypothesis",
+      "name": "Fab chamber next-fault digital twin",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Represent pressure, temperature, flow, plasma, chemistry and equipment states continuously; solve next-fault and regime-change events with calibrated uncertainty.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:PHY-07",
+      "@type": "ApplicationHypothesis",
+      "name": "Metrology optical prefilter and B.C.E. detector",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Use calibrated waveguide/optofluidic transfer functions and compatibility gates to detect narrow optical events before full digitization.",
+      "boundary": "Addition; narrow analog front end.",
+      "maturity": "Frontier lab prototype",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:analog-photonic-front-end",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:PHY-08",
+      "@type": "ApplicationHypothesis",
+      "name": "PCB routing, revision and signal-integrity event graph",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Treat traces, vias, components and constraints as lineage-aware relations; use local support for clearance and compatibility for electrical/net semantics.",
+      "boundary": "Addition/partial replacement of selected checks.",
+      "maturity": "Near-term software pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:PHY-09",
+      "@type": "ApplicationHypothesis",
+      "name": "Pick-and-place event-native cell",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Combine continuous motion, local supports, compatibility and lineage for part/nozzle/feeder events.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R33",
+        "reference:R34"
+      ]
+    },
+    {
+      "@id": "application:PHY-10",
+      "@type": "ApplicationHypothesis",
+      "name": "Additive manufacturing melt-pool event control",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Model melt-pool geometry, thermal state, feedstock and scan trajectory continuously; trigger corrective transitions at guard crossings.",
+      "boundary": "Addition.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:PHY-11",
+      "@type": "ApplicationHypothesis",
+      "name": "CNC and tool-wear next-event control",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Represent tool state, workpiece lineage and continuous load/vibration relations; predict wear threshold and collision events.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:PHY-12",
+      "@type": "ApplicationHypothesis",
+      "name": "Industrial optical spectroscopy classifier",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Use tunable optical supports, mode compatibility and threshold events to detect selected chemical/physical signatures before or alongside full spectra.",
+      "boundary": "Addition/alternative narrow instrument.",
+      "maturity": "Frontier lab pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:analog-photonic-front-end",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:PHY-13",
+      "@type": "ApplicationHypothesis",
+      "name": "Quality inspection as direct relation query",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Use local support and event-based or analog prefilters for specific geometry, surface or assembly relations; retain images only for exceptions.",
+      "boundary": "Addition/partial replacement for narrow inspections.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:analog-photonic-front-end",
+        "operator:materialized-view",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R30"
+      ]
+    },
+    {
+      "@id": "application:PHY-14",
+      "@type": "ApplicationHypothesis",
+      "name": "Photonic relation kernel for fixed industrial queries",
+      "domain": "Semiconductor & physical manufacturing",
+      "description": "Map stable linear transforms to calibrated interferometric hardware, while nonlinear logic, uncertainty, lineage and policy remain digital.",
+      "boundary": "Addition; domain-specific accelerator.",
+      "maturity": "Frontier prototype",
+      "usesOperator": [
+        "operator:analog-photonic-front-end",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R32"
+      ]
+    },
+    {
+      "@id": "application:ENG-01",
+      "@type": "ApplicationHypothesis",
+      "name": "Grid state and contingency query substrate",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Maintain a versioned grid state and solve local support, compatibility and next-limit events; use conventional power-flow solvers as typed physical services.",
+      "boundary": "Addition beneath EMS/DERMS.",
+      "maturity": "Research/utility pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:counterfactual-branch",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R15",
+        "reference:R16"
+      ]
+    },
+    {
+      "@id": "application:ENG-02",
+      "@type": "ApplicationHypothesis",
+      "name": "Distributed energy and microgrid compatibility router",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use compatibility predicates for device capability, grid state, market/policy and ownership; route only admitted events.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R15",
+        "reference:R17"
+      ]
+    },
+    {
+      "@id": "application:ENG-03",
+      "@type": "ApplicationHypothesis",
+      "name": "Protection and disturbance event engine",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Represent disturbance supports, device compatibility, guard crossings and event lineage explicitly; keep certified relays authoritative.",
+      "boundary": "Addition to analysis and coordination, not unvalidated relay replacement.",
+      "maturity": "Near-term research pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R15"
+      ]
+    },
+    {
+      "@id": "application:ENG-04",
+      "@type": "ApplicationHypothesis",
+      "name": "Solar PV string and module event twin",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use local array/string support, expected-yield relations, inverter compatibility and lineage to detect shading, soiling, mismatch, connector and degradation events.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R17",
+        "reference:R18"
+      ]
+    },
+    {
+      "@id": "application:ENG-05",
+      "@type": "ApplicationHypothesis",
+      "name": "Solar inverter and MPPT event-native control",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Add local event rules for mode changes, mismatch, voltage support and thermal limits; investigate level-crossing conversion for sparse supervisory signals.",
+      "boundary": "Addition; low-level control remains conventional unless certified.",
+      "maturity": "Research pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence",
+        "operator:analog-photonic-front-end"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R17",
+        "reference:R31"
+      ]
+    },
+    {
+      "@id": "application:ENG-06",
+      "@type": "ApplicationHypothesis",
+      "name": "Battery state-of-health and thermal-runaway guard engine",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use continuous state relations, lineage of cells/modules and next-event guards for degradation, imbalance, venting and thermal risk.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:ENG-07",
+      "@type": "ApplicationHypothesis",
+      "name": "EV charging and fleet energy routing",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use vehicle/charger/grid compatibility, local feeder support and next-departure/constraint events with lineage-aware energy accounting.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R15"
+      ]
+    },
+    {
+      "@id": "application:ENG-08",
+      "@type": "ApplicationHypothesis",
+      "name": "Gas, oil, hydrogen and CO2 pipeline leak/rupture event twin",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Express leak/rupture, negative-pressure-wave and valve-response events with support, compatibility, uncertainty and auditable negative events.",
+      "boundary": "Addition/upgrade to CPM and response coordination.",
+      "maturity": "Near-term research pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R19",
+        "reference:R20"
+      ]
+    },
+    {
+      "@id": "application:ENG-09",
+      "@type": "ApplicationHypothesis",
+      "name": "Water distribution leak and service-loss event system",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Combine hydraulic relations, local geographic support, meter/sensor compatibility and 311 reports; explicitly model service absence.",
+      "boundary": "Addition.",
+      "maturity": "Near-term municipal pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R23",
+        "reference:R24"
+      ]
+    },
+    {
+      "@id": "application:ENG-10",
+      "@type": "ApplicationHypothesis",
+      "name": "Industrial combustion, boilers and process heat next-event optimization",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Layer a query-first event twin over validated thermodynamic/control models to predict limit crossings, fouling and efficiency transitions.",
+      "boundary": "Addition.",
+      "maturity": "Research pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:ENG-11",
+      "@type": "ApplicationHypothesis",
+      "name": "Fossil-fuel reduction through event-native operations",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Apply event-native sensing, direct queries, provenance and compatibility to reduce avoidable compute, leaks, curtailment, idling and overproduction.",
+      "boundary": "Cross-sector addition; not a substitute for clean-energy policy or physical transition.",
+      "maturity": "Portfolio hypothesis",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R15",
+        "reference:R18",
+        "reference:R19"
+      ]
+    },
+    {
+      "@id": "application:ENG-12",
+      "@type": "ApplicationHypothesis",
+      "name": "Data-center and AI energy workload router",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use local workload support, compatibility, event thresholds and hardware-specific energy models to choose electronic, analog or photonic paths.",
+      "boundary": "Addition.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:analog-photonic-front-end",
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R32"
+      ]
+    },
+    {
+      "@id": "application:ENG-13",
+      "@type": "ApplicationHypothesis",
+      "name": "Building HVAC and indoor-environment event twin",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use local zone supports, occupancy/privacy compatibility and next-comfort/air-quality/fault events; store exceptions and novelty rather than every derived view.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R21",
+        "reference:R24"
+      ]
+    },
+    {
+      "@id": "application:ENG-14",
+      "@type": "ApplicationHypothesis",
+      "name": "Wind turbine and rotating-equipment next-fault engine",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Represent phase, rotational state, load and component lineage; solve bearing, imbalance and fatigue guard events.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:ENG-15",
+      "@type": "ApplicationHypothesis",
+      "name": "District heating, cooling and thermal-network routing",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use continuous transport relations, local branch support and compatibility to predict demand/temperature events and route heat.",
+      "boundary": "Addition.",
+      "maturity": "Research pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:ENG-16",
+      "@type": "ApplicationHypothesis",
+      "name": "Carbon and energy provenance ledger",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use lineage, versioned factors, compatibility and explicit missingness to make every claim reconstructable and branch-aware.",
+      "boundary": "Addition.",
+      "maturity": "Implementable information-system pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:ENG-17",
+      "@type": "ApplicationHypothesis",
+      "name": "Renewable curtailment and storage counterfactual planner",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use isolated branches over a shared state to ask which intervention prevents the next constraint while preserving provenance.",
+      "boundary": "Addition.",
+      "maturity": "Near-term planning pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:counterfactual-branch",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R15",
+        "reference:R16"
+      ]
+    },
+    {
+      "@id": "application:ENG-18",
+      "@type": "ApplicationHypothesis",
+      "name": "Environmental sensing with event/absence semantics",
+      "domain": "Energy, climate & infrastructure",
+      "description": "Use local support, sensor provenance, coverage contracts and threshold events; distinguish non-detection from sensor silence.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R24"
+      ]
+    },
+    {
+      "@id": "application:DIG-01",
+      "@type": "ApplicationHypothesis",
+      "name": "Equation-world simulation kernel",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Implement direct state_at, next_event, support, coupling, routing and lineage queries for a bounded relation family; render only on demand.",
+      "boundary": "Partial replacement of the authoritative simulation layer in bounded domains.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:DIG-02",
+      "@type": "ApplicationHypothesis",
+      "name": "Raymarching/rasterization bypass for state and collision",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Move authority to relations/events and use ray/raster methods only as materialized views; collision and causality use direct queries.",
+      "boundary": "Partial replacement of state/collision pipeline; rendering remains optional.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R33"
+      ]
+    },
+    {
+      "@id": "application:DIG-03",
+      "@type": "ApplicationHypothesis",
+      "name": "Dense linear-algebra avoidance planner",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Use support pruning, typed relations, sparse/structured solvers and task routing; use dense linear algebra only where it is the correct local kernel.",
+      "boundary": "Addition/partial workload replacement, not elimination of linear algebra.",
+      "maturity": "Research architecture",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:direct-state-query",
+        "operator:counterfactual-branch",
+        "operator:analog-photonic-front-end"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R32"
+      ]
+    },
+    {
+      "@id": "application:DIG-04",
+      "@type": "ApplicationHypothesis",
+      "name": "Event-driven analog-to-digital conversion layer",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Use level-crossing, change-triggered or feature-triggered conversion for sparse signals, with conventional sampling as fallback and calibration reference.",
+      "boundary": "Addition/partial replacement in sparse sensing.",
+      "maturity": "Near-term hardware research",
+      "usesOperator": [
+        "operator:guard-event-surface",
+        "operator:auditable-absence",
+        "operator:analog-photonic-front-end",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R31"
+      ]
+    },
+    {
+      "@id": "application:DIG-05",
+      "@type": "ApplicationHypothesis",
+      "name": "Event-camera perception substrate",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Use asynchronous change events as input support, then compatibility and lineage to form object/interaction events; images remain optional.",
+      "boundary": "Addition/partial replacement for motion-centric tasks.",
+      "maturity": "Implementable research pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R30"
+      ]
+    },
+    {
+      "@id": "application:DIG-06",
+      "@type": "ApplicationHypothesis",
+      "name": "Photonic/mixed-signal query accelerator",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Route stable, high-reuse linear transforms to photonic or analog kernels and keep compatibility, uncertainty, nonlinear decisions and lineage digital.",
+      "boundary": "Addition.",
+      "maturity": "Frontier prototype",
+      "usesOperator": [
+        "operator:analog-photonic-front-end",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R32"
+      ]
+    },
+    {
+      "@id": "application:DIG-07",
+      "@type": "ApplicationHypothesis",
+      "name": "Novelty-proportional state storage",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Store seed/grammar, exogenous events, lineage, branch policy and checkpoints; materialize views on demand.",
+      "boundary": "Partial replacement of snapshot-heavy history for closed dynamics.",
+      "maturity": "Near-term software pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch",
+        "operator:materialized-view",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:DIG-08",
+      "@type": "ApplicationHypothesis",
+      "name": "Auditable absence and negative-event ledger",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Add ExpectedEvent and AbsenceEvent objects requiring obligation, observation support, deadline, coverage and reason codes.",
+      "boundary": "Addition to any event system.",
+      "maturity": "Implementable design pattern",
+      "usesOperator": [
+        "operator:auditable-absence",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R7",
+        "reference:R24",
+        "reference:R26"
+      ]
+    },
+    {
+      "@id": "application:DIG-09",
+      "@type": "ApplicationHypothesis",
+      "name": "Data-pipeline state and lineage engine",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Represent datasets, transformations, models, approvals and deployments as typed events with compatibility and provenance.",
+      "boundary": "Addition/partial replacement of dashboard-centric orchestration.",
+      "maturity": "Implementable integration",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:DIG-10",
+      "@type": "ApplicationHypothesis",
+      "name": "Cybersecurity trust-zone and policy event system",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Use sheet/sector separation, versioned compatibility predicates, provenance and event guards; co-location never implies access.",
+      "boundary": "Addition.",
+      "maturity": "Near-term architecture pilot",
+      "usesOperator": [
+        "operator:compatibility-gate",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R35"
+      ]
+    },
+    {
+      "@id": "application:DIG-11",
+      "@type": "ApplicationHypothesis",
+      "name": "Distributed-system reconstruction and branch debugging",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Use explicit event lineage, branch context, compatibility and invariant reports to reconstruct what happened and why.",
+      "boundary": "Addition.",
+      "maturity": "Near-term software pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:direct-state-query"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:DIG-12",
+      "@type": "ApplicationHypothesis",
+      "name": "AI memory and retrieval with provenance and support",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Use local semantic support, compatibility, provenance and event-based updates; render summaries only from admitted evidence.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:DIG-13",
+      "@type": "ApplicationHypothesis",
+      "name": "Model monitoring and deployment event graph",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Track data, model, evaluation, approval, deployment and drift as a provenance graph with compatibility and rollback branches.",
+      "boundary": "Addition.",
+      "maturity": "Implementable integration",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:DIG-14",
+      "@type": "ApplicationHypothesis",
+      "name": "Network and telecom event-native monitoring",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Use local flow supports, compatibility and threshold events; retain raw data around exceptions and provenance.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:DIG-15",
+      "@type": "ApplicationHypothesis",
+      "name": "AR/VR and simulation foveated query substrate",
+      "domain": "Digital, compute & data pipelines",
+      "description": "Use gaze/agent-local spherical support for relevance and direct state/event queries; render only admitted views and preserve nonvisual state independently.",
+      "boundary": "Addition/partial state-pipeline replacement.",
+      "maturity": "Research prototype",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:materialized-view",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:LOG-01",
+      "@type": "ApplicationHypothesis",
+      "name": "Warehouse event twin and inventory truth",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Use EPCIS-like visibility events, lineage and auditable absence to reconstruct item, tote, pallet, location and task state.",
+      "boundary": "Addition beneath WMS/WES.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:compatibility-gate",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R27"
+      ]
+    },
+    {
+      "@id": "application:LOG-02",
+      "@type": "ApplicationHypothesis",
+      "name": "AMR and forklift continuous routing",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Use continuous trajectories, local supports, compatibility and next-conflict events across vehicles, humans and temporary zones.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R33",
+        "reference:R34"
+      ]
+    },
+    {
+      "@id": "application:LOG-03",
+      "@type": "ApplicationHypothesis",
+      "name": "Pick-path and wave planning as event scheduling",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Schedule next admissible pick/pack/ship events using local resource support, due-time guards and branch isolation.",
+      "boundary": "Addition.",
+      "maturity": "Near-term software pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:counterfactual-branch",
+        "operator:lineage-provenance"
+      ],
+      "supportedBy": [
+        "reference:C0"
+      ]
+    },
+    {
+      "@id": "application:LOG-04",
+      "@type": "ApplicationHypothesis",
+      "name": "Cold-chain and condition lineage",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Bind sensor observations, packaging, custody and product lineage; trigger excursion and missing-coverage events.",
+      "boundary": "Addition.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R24",
+        "reference:R26",
+        "reference:R27"
+      ]
+    },
+    {
+      "@id": "application:LOG-05",
+      "@type": "ApplicationHypothesis",
+      "name": "Last-mile delivery event and promise engine",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Use continuous vehicle/package state, local traffic support, compatibility and delivery-promise guards with explicit non-delivery reasons.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R27"
+      ]
+    },
+    {
+      "@id": "application:LOG-06",
+      "@type": "ApplicationHypothesis",
+      "name": "Port, terminal and yard coordination",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Create compatibility-gated events and lineage across berth, yard, crane, customs and onward transport.",
+      "boundary": "Addition.",
+      "maturity": "Research/operations pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R27"
+      ]
+    },
+    {
+      "@id": "application:LOG-07",
+      "@type": "ApplicationHypothesis",
+      "name": "Food provenance and recall event graph",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Use critical tracking events, split/merge lineage, condition data and compatibility to localize affected product.",
+      "boundary": "Addition.",
+      "maturity": "Implementable integration",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R27"
+      ]
+    },
+    {
+      "@id": "application:LOG-08",
+      "@type": "ApplicationHypothesis",
+      "name": "Medical-device and medicine supply chain",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Combine GS1 traceability with hospital compatibility and patient/procedure context.",
+      "boundary": "Addition.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R6",
+        "reference:R26",
+        "reference:R27"
+      ]
+    },
+    {
+      "@id": "application:LOG-09",
+      "@type": "ApplicationHypothesis",
+      "name": "Returns, repair and circular-economy lineage",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Preserve component lineage, condition events, repair branches and material provenance to route reuse, refurbishment or recycling.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:LOG-10",
+      "@type": "ApplicationHypothesis",
+      "name": "Supply-chain risk and counterfactual branch planner",
+      "domain": "Warehousing, logistics & supply chains",
+      "description": "Use isolated branches sharing a base lineage to ask next disruption, substitute compatibility and downstream impact.",
+      "boundary": "Addition.",
+      "maturity": "Research pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:counterfactual-branch",
+        "operator:compatibility-gate",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R26",
+        "reference:R27"
+      ]
+    },
+    {
+      "@id": "application:CIV-01",
+      "@type": "ApplicationHypothesis",
+      "name": "Municipal service obligation and 311 event graph",
+      "domain": "Smart cities & municipal governance",
+      "description": "Link requests, assets, departments, contractors, SLAs, inspections and resident communications through events and auditable absences.",
+      "boundary": "Addition beneath CRM/asset systems.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R21",
+        "reference:R23",
+        "reference:R25"
+      ]
+    },
+    {
+      "@id": "application:CIV-02",
+      "@type": "ApplicationHypothesis",
+      "name": "Transit arrival and missed-service ledger",
+      "domain": "Smart cities & municipal governance",
+      "description": "Represent scheduled/expected service, vehicle lineage, stop support and observed arrivals; emit absence only with coverage.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:auditable-absence",
+        "operator:lineage-provenance",
+        "operator:guard-event-surface",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R21",
+        "reference:R22",
+        "reference:R24"
+      ]
+    },
+    {
+      "@id": "application:CIV-03",
+      "@type": "ApplicationHypothesis",
+      "name": "Traffic, curb and intersection event control",
+      "domain": "Smart cities & municipal governance",
+      "description": "Use local spatial supports, vehicle/pedestrian compatibility and next-conflict events; preserve policy versions and human override.",
+      "boundary": "Addition.",
+      "maturity": "Research pilot",
+      "usesOperator": [
+        "operator:next-event-solve",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R21",
+        "reference:R24",
+        "reference:R33"
+      ]
+    },
+    {
+      "@id": "application:CIV-04",
+      "@type": "ApplicationHypothesis",
+      "name": "Water, sewer, waste and street-asset lifecycle",
+      "domain": "Smart cities & municipal governance",
+      "description": "Give each asset lineage, condition events, local support and maintenance guards; connect physical and budget records.",
+      "boundary": "Addition.",
+      "maturity": "Near-term integration",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:local-support",
+        "operator:guard-event-surface",
+        "operator:auditable-absence",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R21",
+        "reference:R22",
+        "reference:R24",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:CIV-05",
+      "@type": "ApplicationHypothesis",
+      "name": "Emergency response common event substrate",
+      "domain": "Smart cities & municipal governance",
+      "description": "Use a common incident lineage, local support, compatibility and event guards while preserving agency-specific sectors and permissions.",
+      "boundary": "Addition.",
+      "maturity": "Research/operations pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:guard-event-surface",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R21",
+        "reference:R24",
+        "reference:R35"
+      ]
+    },
+    {
+      "@id": "application:CIV-06",
+      "@type": "ApplicationHypothesis",
+      "name": "Permitting, licensing and inspection event pipeline",
+      "domain": "Smart cities & municipal governance",
+      "description": "Model application, evidence, review, inspection, decision, appeal and policy version as events with explicit compatibility and reason codes.",
+      "boundary": "Addition/partial replacement of opaque workflow tracking.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:compatibility-gate",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:CIV-07",
+      "@type": "ApplicationHypothesis",
+      "name": "Budget, procurement and contract lineage",
+      "domain": "Smart cities & municipal governance",
+      "description": "Create lineage from policy goal to appropriation, tender, bid, award, change order, invoice, delivery and outcome.",
+      "boundary": "Addition.",
+      "maturity": "Implementable information-system pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:CIV-08",
+      "@type": "ApplicationHypothesis",
+      "name": "Policy simulation with isolated counterfactual branches",
+      "domain": "Smart cities & municipal governance",
+      "description": "Use branch-isolated policy worlds sharing base data; compare next events, service KPIs and distributional impacts without overwriting live state.",
+      "boundary": "Addition.",
+      "maturity": "Near-term planning pilot",
+      "usesOperator": [
+        "operator:counterfactual-branch",
+        "operator:direct-state-query",
+        "operator:next-event-solve",
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R22",
+        "reference:R25"
+      ]
+    },
+    {
+      "@id": "application:CIV-09",
+      "@type": "ApplicationHypothesis",
+      "name": "Rights-preserving municipal data spaces",
+      "domain": "Smart cities & municipal governance",
+      "description": "Use relational exclusion, purpose/time/role compatibility, provenance and public reason codes; co-location in a platform never implies join permission.",
+      "boundary": "Addition and governance foundation.",
+      "maturity": "Implementable architecture pilot",
+      "usesOperator": [
+        "operator:compatibility-gate",
+        "operator:lineage-provenance",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R21",
+        "reference:R35"
+      ]
+    },
+    {
+      "@id": "application:CIV-10",
+      "@type": "ApplicationHypothesis",
+      "name": "Community well-being and service-outcome atlas",
+      "domain": "Smart cities & municipal governance",
+      "description": "Map technology events through infrastructure services to community benefits, with lineage and neighborhood support rather than one global score.",
+      "boundary": "Addition.",
+      "maturity": "Near-term analytics pilot",
+      "usesOperator": [
+        "operator:local-support",
+        "operator:lineage-provenance",
+        "operator:materialized-view",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R22",
+        "reference:R25"
+      ]
+    },
+    {
+      "@id": "application:RES-01",
+      "@type": "ApplicationHypothesis",
+      "name": "Claim-evidence-provenance graph",
+      "domain": "Research & documentation management",
+      "description": "Represent claims, evidence, analyses, authorship, review and revision as a provenance graph; documents become materialized views.",
+      "boundary": "Addition beneath document systems.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:RES-02",
+      "@type": "ApplicationHypothesis",
+      "name": "Negative-result and non-observation registry",
+      "domain": "Research & documentation management",
+      "description": "Use ExpectedEvent/AbsenceEvent with protocol, detection support, power, deadline and reason to record meaningful non-observation.",
+      "boundary": "Addition.",
+      "maturity": "Implementable design pattern",
+      "usesOperator": [
+        "operator:auditable-absence",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:lineage-provenance",
+        "operator:guard-event-surface"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:RES-03",
+      "@type": "ApplicationHypothesis",
+      "name": "Electronic lab notebook as event-sourced experiment",
+      "domain": "Research & documentation management",
+      "description": "Record protocol, material, instrument, operator, environment, observation and transformation events with lineage.",
+      "boundary": "Addition/partial replacement of page-centric ELN history.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:RES-04",
+      "@type": "ApplicationHypothesis",
+      "name": "Living systematic review and evidence map",
+      "domain": "Research & documentation management",
+      "description": "Maintain study, population, intervention, outcome, bias and claim events; materialize current reviews by query.",
+      "boundary": "Addition.",
+      "maturity": "Near-term software pilot",
+      "usesOperator": [
+        "operator:direct-state-query",
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:RES-05",
+      "@type": "ApplicationHypothesis",
+      "name": "Regulatory and quality-management evidence bundle",
+      "domain": "Research & documentation management",
+      "description": "Use event lineage and compatibility to generate auditable, version-specific evidence bundles.",
+      "boundary": "Addition.",
+      "maturity": "Implementable integration",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:counterfactual-branch",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28"
+      ]
+    },
+    {
+      "@id": "application:RES-06",
+      "@type": "ApplicationHypothesis",
+      "name": "Software and computational-environment lineage",
+      "domain": "Research & documentation management",
+      "description": "Treat environment and execution as lineage events; reconstruct exact branch and artifacts for each result.",
+      "boundary": "Addition.",
+      "maturity": "Implementable pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:counterfactual-branch",
+        "operator:compatibility-gate",
+        "operator:auditable-absence"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:RES-07",
+      "@type": "ApplicationHypothesis",
+      "name": "Research portfolio and funding lineage",
+      "domain": "Research & documentation management",
+      "description": "Build lineage from question and funding to experiments, assets, outputs, reuse and societal outcomes without collapsing evaluation into one score.",
+      "boundary": "Addition.",
+      "maturity": "Near-term information-system pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:local-support",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:materialized-view"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28",
+        "reference:R29"
+      ]
+    },
+    {
+      "@id": "application:RES-08",
+      "@type": "ApplicationHypothesis",
+      "name": "Knowledge transfer and institutional memory substrate",
+      "domain": "Research & documentation management",
+      "description": "Store decisions, assumptions, predicates, evidence and outcomes as lineage-aware events; documents and dashboards are generated views.",
+      "boundary": "Addition.",
+      "maturity": "Near-term pilot",
+      "usesOperator": [
+        "operator:lineage-provenance",
+        "operator:compatibility-gate",
+        "operator:auditable-absence",
+        "operator:materialized-view",
+        "operator:direct-state-query"
+      ],
+      "supportedBy": [
+        "reference:C0",
+        "reference:R28"
+      ]
+    }
+  ]
+}

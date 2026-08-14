@@ -1,0 +1,362 @@
+[
+  {
+    "id": "C0",
+    "domain": "Corpus",
+    "title": "Topological Cross-Domain Synthesis of the Spherical Substrate Corpus",
+    "org": "User-supplied corpus reconstruction",
+    "year": "2026",
+    "url": "source/Topological_Cross_Domain_Corpus_Report_source.pdf",
+    "type": "Corpus source",
+    "use": "Query-first state/event calculus, support, compatibility, lineage, projection boundary, benchmarks and failure criteria."
+  },
+  {
+    "id": "R1",
+    "domain": "Biomedical imaging",
+    "title": "Magnetic Resonance Imaging (MRI)",
+    "org": "U.S. FDA",
+    "year": "2018",
+    "url": "https://www.fda.gov/radiation-emitting-products/medical-imaging/mri-magnetic-resonance-imaging",
+    "type": "Official overview",
+    "use": "MRI hardware and signal acquisition baseline."
+  },
+  {
+    "id": "R2",
+    "domain": "Biomedical imaging",
+    "title": "Magnetic resonance imaging (MRI) scans",
+    "org": "NIBIB/NIH",
+    "year": "current",
+    "url": "https://www.nibib.nih.gov/science-education/science-topics/magnetic-resonance-imaging-mri",
+    "type": "Official overview",
+    "use": "Clinical role and soft-tissue imaging baseline."
+  },
+  {
+    "id": "R3",
+    "domain": "Biomedical imaging",
+    "title": "Sparse MRI: The application of compressed sensing for rapid MR imaging",
+    "org": "Lustig, Donoho and Pauly",
+    "year": "2007",
+    "url": "https://doi.org/10.1002/mrm.21391",
+    "type": "Primary research",
+    "use": "Undersampled MRI and structured reconstruction precedent."
+  },
+  {
+    "id": "R4",
+    "domain": "Biomedical imaging",
+    "title": "Magnetic resonance fingerprinting",
+    "org": "Ma et al.",
+    "year": "2013",
+    "url": "https://doi.org/10.1038/nature11971",
+    "type": "Primary research",
+    "use": "Direct quantitative tissue-parameter estimation precedent."
+  },
+  {
+    "id": "R5",
+    "domain": "Biomedical safety",
+    "title": "Testing and Labeling Medical Devices for Safety in the Magnetic Resonance Environment",
+    "org": "U.S. FDA",
+    "year": "2023",
+    "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/testing-and-labeling-medical-devices-safety-magnetic-resonance-mr-environment",
+    "type": "Official guidance",
+    "use": "Safety boundary for MRI additions and replacements."
+  },
+  {
+    "id": "R6",
+    "domain": "Health information",
+    "title": "FHIR R5 Specification",
+    "org": "HL7",
+    "year": "2023",
+    "url": "https://hl7.org/fhir/",
+    "type": "Open standard",
+    "use": "Patient, Encounter, EpisodeOfCare, Observation, Consent, Provenance, AuditEvent and subscriptions."
+  },
+  {
+    "id": "R7",
+    "domain": "Health information",
+    "title": "FHIR Subscription",
+    "org": "HL7",
+    "year": "2023",
+    "url": "https://fhir.hl7.org/fhir/subscription.html",
+    "type": "Open standard",
+    "use": "Proactive event notifications in health systems."
+  },
+  {
+    "id": "R8",
+    "domain": "Health ethics",
+    "title": "Ethics and governance of artificial intelligence for health",
+    "org": "World Health Organization",
+    "year": "2021",
+    "url": "https://www.who.int/publications/i/item/9789240029200",
+    "type": "Official guidance",
+    "use": "Rights, accountability, transparency and human oversight."
+  },
+  {
+    "id": "R9",
+    "domain": "Health ethics",
+    "title": "Ethics and governance of artificial intelligence for health: guidance on large multi-modal models",
+    "org": "World Health Organization",
+    "year": "2025",
+    "url": "https://www.who.int/publications/i/item/9789240084759",
+    "type": "Official guidance",
+    "use": "Governance of multimodal health AI."
+  },
+  {
+    "id": "R10",
+    "domain": "Digital health",
+    "title": "WHO guideline: recommendations on digital interventions for health system strengthening",
+    "org": "World Health Organization",
+    "year": "2019",
+    "url": "https://www.who.int/publications/i/item/9789241550505",
+    "type": "Official guideline",
+    "use": "Digital interventions are not substitutes for functioning health systems."
+  },
+  {
+    "id": "R11",
+    "domain": "Mental health research",
+    "title": "Research Domain Criteria (RDoC) Initiative",
+    "org": "NIMH",
+    "year": "current",
+    "url": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc",
+    "type": "Official research framework",
+    "use": "Dimensional, longitudinal and multi-unit mental-health research framing."
+  },
+  {
+    "id": "R12",
+    "domain": "Semiconductor manufacturing",
+    "title": "Computational lithography",
+    "org": "ASML",
+    "year": "current",
+    "url": "https://www.asml.com/products/computational-lithography",
+    "type": "Official technology description",
+    "use": "Scanner, mask and process co-optimization baseline."
+  },
+  {
+    "id": "R13",
+    "domain": "Semiconductor manufacturing",
+    "title": "EUV lithography systems",
+    "org": "ASML",
+    "year": "current",
+    "url": "https://www.asml.com/products/euv-lithography-systems",
+    "type": "Official technology description",
+    "use": "EUV/High-NA physical projection system baseline."
+  },
+  {
+    "id": "R14",
+    "domain": "Semiconductor manufacturing",
+    "title": "ASML and imec open joint High NA EUV Lithography Lab",
+    "org": "ASML and imec",
+    "year": "2024",
+    "url": "https://www.asml.com/news/press-releases/2024/asml-imec-opening-high-na-euv-lithography-lab",
+    "type": "Official industry source",
+    "use": "Current High-NA ecosystem and process-development context."
+  },
+  {
+    "id": "R15",
+    "domain": "Energy grid",
+    "title": "NIST Framework and Roadmap for Smart Grid Interoperability Standards, Release 4.0",
+    "org": "NIST",
+    "year": "2021",
+    "url": "https://doi.org/10.6028/NIST.SP.1108r4",
+    "type": "Official framework",
+    "use": "Grid domains, interoperability, testing and certification."
+  },
+  {
+    "id": "R16",
+    "domain": "Energy grid",
+    "title": "Digital Twin + AI: Control Room of the Future",
+    "org": "NREL",
+    "year": "2024",
+    "url": "https://docs.nrel.gov/docs/fy24osti/87050.pdf",
+    "type": "National laboratory report",
+    "use": "Power-network digital twin and scenario simulation precedent."
+  },
+  {
+    "id": "R17",
+    "domain": "Solar and DER",
+    "title": "IEEE 1547-2018 Based Interoperable PV Inverter with Advanced Grid-Support Functions",
+    "org": "NREL",
+    "year": "2019",
+    "url": "https://www.nrel.gov/docs/fy19osti/73131.pdf",
+    "type": "National laboratory paper",
+    "use": "Interoperable inverter control baseline."
+  },
+  {
+    "id": "R18",
+    "domain": "Solar O&M",
+    "title": "Best Practices in Photovoltaic System Operations and Maintenance",
+    "org": "NREL",
+    "year": "2017",
+    "url": "https://www.nrel.gov/docs/fy17osti/68281.pdf",
+    "type": "National laboratory guide",
+    "use": "PV monitoring, energy balance and O&M baseline."
+  },
+  {
+    "id": "R19",
+    "domain": "Pipelines",
+    "title": "Leak Detection Systems Fact Sheet",
+    "org": "PHMSA",
+    "year": "2011",
+    "url": "https://primis.phmsa.dot.gov/stakeholder-comms/factsheets/fsleakdetectionsystems/",
+    "type": "Official technical overview",
+    "use": "Computational pipeline monitoring, thresholds and limitations."
+  },
+  {
+    "id": "R20",
+    "domain": "Pipelines",
+    "title": "Pipeline Safety: Requirement of Valve Installation and Minimum Rupture Detection Standards",
+    "org": "PHMSA",
+    "year": "2022",
+    "url": "https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/2022-03/PHMSA%202137-AF06%20Valve%20Final%20Rule%20-%20March%202022.pdf",
+    "type": "Official rule",
+    "use": "Rupture identification, mitigation valves and response timing."
+  },
+  {
+    "id": "R21",
+    "domain": "Smart cities",
+    "title": "NIST Smart Cities and Communities Framework Series",
+    "org": "NIST",
+    "year": "current",
+    "url": "https://www.nist.gov/ctl/smart-connected-systems-division/iot-devices-and-infrastructures-group/smart-americaglobal/nist",
+    "type": "Official framework",
+    "use": "Replicable, scalable, standards-based municipal systems."
+  },
+  {
+    "id": "R22",
+    "domain": "Smart cities",
+    "title": "Smart Cities and Communities: A Key Performance Indicators Framework",
+    "org": "NIST",
+    "year": "2022",
+    "url": "https://doi.org/10.6028/NIST.SP.1900-206",
+    "type": "Official framework",
+    "use": "Technology, service and community-benefit KPI layers."
+  },
+  {
+    "id": "R23",
+    "domain": "Municipal services",
+    "title": "GeoReport v2",
+    "org": "Open311",
+    "year": "current",
+    "url": "https://wiki.open311.org/GeoReport_v2/",
+    "type": "Open standard",
+    "use": "Location-based municipal service requests."
+  },
+  {
+    "id": "R24",
+    "domain": "IoT and sensing",
+    "title": "OGC SensorThings API Standard",
+    "org": "Open Geospatial Consortium",
+    "year": "current",
+    "url": "https://www.ogc.org/standards/sensorthings/",
+    "type": "Open standard",
+    "use": "Interoperable sensor observations, metadata and tasking."
+  },
+  {
+    "id": "R25",
+    "domain": "Cities",
+    "title": "ISO 37120: Sustainable cities and communities - Indicators for city services and quality of life",
+    "org": "ISO",
+    "year": "2018",
+    "url": "https://www.iso.org/standard/68498.html",
+    "type": "International standard",
+    "use": "Comparable city-service and quality-of-life indicators."
+  },
+  {
+    "id": "R26",
+    "domain": "Supply chain",
+    "title": "EPCIS and Core Business Vocabulary",
+    "org": "GS1",
+    "year": "current",
+    "url": "https://www.gs1.org/standards/epcis",
+    "type": "Open industry standard",
+    "use": "Event visibility and traceability across supply chains."
+  },
+  {
+    "id": "R27",
+    "domain": "Supply chain",
+    "title": "GS1 Global Traceability Standard",
+    "org": "GS1",
+    "year": "current",
+    "url": "https://www.gs1.org/standards/traceability",
+    "type": "Open industry standard",
+    "use": "Critical tracking events and key data elements."
+  },
+  {
+    "id": "R28",
+    "domain": "Provenance",
+    "title": "PROV-O: The PROV Ontology",
+    "org": "W3C",
+    "year": "2013",
+    "url": "https://www.w3.org/TR/prov-o/",
+    "type": "W3C Recommendation",
+    "use": "Domain-independent provenance representation."
+  },
+  {
+    "id": "R29",
+    "domain": "Research data",
+    "title": "The FAIR Guiding Principles for scientific data management and stewardship",
+    "org": "Wilkinson et al.",
+    "year": "2016",
+    "url": "https://doi.org/10.1038/sdata.2016.18",
+    "type": "Primary paper",
+    "use": "Findable, accessible, interoperable and reusable research assets."
+  },
+  {
+    "id": "R30",
+    "domain": "Event sensing",
+    "title": "A 128x128 120 dB 15 us latency asynchronous temporal contrast vision sensor",
+    "org": "Lichtsteiner, Posch and Delbruck",
+    "year": "2008",
+    "url": "https://doi.org/10.1109/JSSC.2007.914337",
+    "type": "Primary research",
+    "use": "Event-based sensing as an alternative to uniform image frames."
+  },
+  {
+    "id": "R31",
+    "domain": "Event conversion",
+    "title": "A 10.4-ENOB 0.92-5.38 uW Event-Driven Level-Crossing ADC",
+    "org": "Van Assche et al.",
+    "year": "2022",
+    "url": "https://lirias.kuleuven.be/retrieve/16f6ab16-2034-48a3-aab2-386c85bbaf9d",
+    "type": "Primary research",
+    "use": "Amplitude-threshold conversion for sparse signals."
+  },
+  {
+    "id": "R32",
+    "domain": "Photonic computing",
+    "title": "Deep learning with coherent nanophotonic circuits",
+    "org": "Shen et al.",
+    "year": "2017",
+    "url": "https://doi.org/10.1038/nphoton.2017.93",
+    "type": "Primary research",
+    "use": "Programmable interferometric photonic computation precedent."
+  },
+  {
+    "id": "R33",
+    "domain": "Collision detection",
+    "title": "Time of Impact Dataset for Continuous Collision Detection and a Scalable Conservative Algorithm",
+    "org": "Belgrod et al.",
+    "year": "2023",
+    "url": "https://arxiv.org/abs/2112.06300",
+    "type": "Primary research and benchmark",
+    "use": "Correctness and scalability benchmark for continuous time-of-impact queries."
+  },
+  {
+    "id": "R34",
+    "domain": "Robotics",
+    "title": "A Generalized Continuous Collision Detection Framework of Polynomial Trajectory for Mobile Robots",
+    "org": "Zhang et al.",
+    "year": "2022",
+    "url": "https://arxiv.org/abs/2206.13175",
+    "type": "Primary research",
+    "use": "Polynomial trajectory and exact/guaranteed collision-time queries."
+  },
+  {
+    "id": "R35",
+    "domain": "Smart city privacy",
+    "title": "A Risk Management Approach to Smart City Cybersecurity and Privacy",
+    "org": "NIST GCTC",
+    "year": "2019",
+    "url": "https://pages.nist.gov/GCTC/uploads/blueprints/2019_GCTC-SC3_Cybersecurity_and_Privacy_Advisory_Committee_Guidebook_July_2019.pdf",
+    "type": "Official guidebook",
+    "use": "Cybersecurity and privacy guardrails for municipal deployments."
+  }
+]

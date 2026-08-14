@@ -1,0 +1,32 @@
+{
+  "event_id": "707a355c-d9ee-42ef-9d7f-ee7dd119f01c",
+  "entity_id": "inverter-3",
+  "relation_id": "overvoltage-support",
+  "transition_id": "apply-volt-var",
+  "t_star": 10.000000000000009,
+  "support_admitted": true,
+  "compatible": true,
+  "predicate_version": "1.0",
+  "guard_crossed": true,
+  "guard_value": 0.0,
+  "confidence": {
+    "value": 1.0,
+    "method": "closed-form root supplied by relation"
+  },
+  "pre_state_hash": "753909a5fb84bcc035e1ae1109ec80cea63ee796f1234f4c1c360411d475bcd6",
+  "post_state_hash": "72eba21e05d523b41469024b0a25e4a351b0e154c93cfbd7cfbfb5cd1c6a4f1d",
+  "lineage_parent": "DER/site-22/inverter-3",
+  "branch_created": null,
+  "parity_before": 0,
+  "parity_after": 1,
+  "invariant_report": {
+    "entity_id_preserved": true,
+    "lineage_present": true,
+    "branch_present": true
+  },
+  "reason_codes": [
+    "IN_DECLARED_FEEDER_SUPPORT",
+    "GRID_SUPPORT_MODE_ALLOWED"
+  ],
+  "schema_version": "1.0"
+}
