@@ -1,0 +1,6 @@
+PDF: /mnt/data/Klootwijk_Generational_Topology_Comparison/00_Report/Klootwijk_Generational_Topology_Comparative_Review.pdf
+Pages: 34
+Encrypted: False
+Openable (PyMuPDF): True
+Likely scanned: False
+XFA present: False

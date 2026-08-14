@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="580" viewBox="0 0 1200 580">
+<rect width="1200" height="580" fill="white"/>
+<text x="600" y="42" text-anchor="middle" font-family="Inter,Arial" font-size="28" font-weight="700" fill="#0B2A3D">Membrane World Zero</text>
+<g font-family="Inter,Arial" font-size="15" font-weight="700" fill="white" text-anchor="middle">
+<rect x="25" y="135" width="155" height="145" rx="16" fill="#C8665A"/><text x="102" y="175"><tspan x="102">MATERIAL</tspan><tspan x="102" dy="28">membrane + coating</tspan><tspan x="102" dy="24">chemistry lineage</tspan></text>
+<rect x="220" y="135" width="155" height="145" rx="16" fill="#D7A51F"/><text x="297" y="175"><tspan x="297">PHYSICAL CELL</tspan><tspan x="297" dy="28">flow / pressure</tspan><tspan x="297" dy="24">fouling / cleaning</tspan></text>
+<rect x="415" y="135" width="155" height="145" rx="16" fill="#148C9B"/><text x="492" y="175"><tspan x="492">SENSORS</tspan><tspan x="492" dy="28">flux / TMP / optics</tspan><tspan x="492" dy="24">conductivity / temp</tspan></text>
+<rect x="610" y="135" width="155" height="145" rx="16" fill="#695C9C"/><text x="687" y="175"><tspan x="687">STATE ESTIMATOR</tspan><tspan x="687" dy="28">continuous variables</tspan><tspan x="687" dy="24">+ uncertainty</tspan></text>
+<rect x="805" y="135" width="135" height="145" rx="16" fill="#0B2A3D"/><text x="872" y="175"><tspan x="872">B.C.E.</tspan><tspan x="872" dy="28">support + chi</tspan><tspan x="872" dy="24">+ measured guard</tspan></text>
+<rect x="980" y="135" width="135" height="145" rx="16" fill="#3B8D70"/><text x="1047" y="175"><tspan x="1047">ACTION</tspan><tspan x="1047" dy="28">log / alarm</tspan><tspan x="1047" dy="24">clean / route</tspan></text>
+</g>
+<g stroke="#0B2A3D" stroke-width="4" fill="none" marker-end="url(#a)"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0B2A3D"/></marker></defs><path d="M180 207 H215"/><path d="M375 207 H410"/><path d="M570 207 H605"/><path d="M765 207 H800"/><path d="M940 207 H975"/></g>
+<rect x="300" y="385" width="600" height="110" rx="20" fill="#EAF2F4" stroke="#148C9B" stroke-width="4"/><text x="600" y="430" text-anchor="middle" font-family="Inter,Arial" font-size="20" font-weight="700" fill="#0B2A3D">APPEND-ONLY EVENT + MATERIAL LINEAGE STORE</text><text x="600" y="463" text-anchor="middle" font-family="Inter,Arial" font-size="17" fill="#243640">replay / audit / calibration / batch / functionalization / aging</text>
+</svg>

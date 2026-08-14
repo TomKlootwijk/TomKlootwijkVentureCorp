@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Material and biointerface lineage record",
+  "type": "object",
+  "required": [
+    "material_id",
+    "batch_id",
+    "process_events",
+    "qc_results"
+  ],
+  "properties": {
+    "material_id": {
+      "type": "string"
+    },
+    "batch_id": {
+      "type": "string"
+    },
+    "raw_material_lots": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "process_events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "functionalization": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "sterilization_or_aging": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "qc_results": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "extractables_profile": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "parent_material_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

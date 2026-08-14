@@ -1,0 +1,15 @@
+Term,Definition
+BPS,"Bisphenol S, 4,4'-sulfonyldiphenol; a difunctional phenol containing a neutral diaryl-sulfone bridge."
+DGE-BPS,Diglycidyl ether of bisphenol S; a difunctional epoxide monomer.
+PHES,"Poly(hydroxyether sulfone), a later name for closely related hydroxyl-rich sulfone-containing polyethers."
+Sulfone,A covalent R-S(=O)2-R group; distinct from sulfonate ions and from sulfur dioxide gas.
+Step-growth polymerization,Polymer growth through reactions between functional groups on monomers/oligomers; high molecular weight requires high conversion and close stoichiometric balance.
+SDF = 0,"In the mature corpus, an implicit relation or event surface at which transition semantics are invoked; not necessarily a ray-marching loop."
+B.C.E.,"Bounded Compatibility Event: a transition declared only when support, compatibility, guard, and confidence conditions are satisfied."
+Double vacuum,"Operational metaphor for co-located but uncoupled sectors, modes, sheets, or channels; not a literal second physical vacuum."
+Local spherical support,"A radial-angular local chart for relevance, field of view, coupling, or uncertainty; not a mandatory global spherical world model."
+Lineage,Identity and provenance preserved through event history and invariants rather than only instantaneous coordinates.
+Persistent homology,"A topological data-analysis method that tracks connected components, loops, and voids across a filtration scale."
+Sheaf,A mathematical structure that organizes compatible local data and tests whether local observations can be consistently combined globally.
+Hybrid automaton,A formal model combining continuous state evolution with discrete guards and transitions.
+Event sourcing,"A software pattern in which state changes are stored as an append-only sequence of events, allowing reconstruction and audit."
