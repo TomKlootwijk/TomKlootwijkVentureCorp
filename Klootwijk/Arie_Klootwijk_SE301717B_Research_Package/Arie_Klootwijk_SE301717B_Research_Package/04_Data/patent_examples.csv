@@ -1,0 +1,8 @@
+example,monomers,solvent,temp_C,time,neutral_diphenol_mol,catalyst_salt_mol,diepoxide_mol,effective_diphenol_to_diepoxide,intrinsic_viscosity,pressing_C,yield_stress_kgf_cm2,yield_stress_MPa,elongation_yield_pct,impact_tensile_historical,izod_historical,HDT_C,Tg_C,water_uptake,notes
+1,DGE-BPS + BPS,acetophenone,100,60 h,0.97,0.05,1.0,1.02,0.43,230-250,770,75.51,15-20,650,30,154,,5.6 wt% after 14 d at 20 C,Crystalline; softening 155 C; crystallite melting about 230 C; yield stress 1000 kgf/cm2 after 24-100 h at 160 C
+2,DGE-BPS + BPS,acetophenone,100,20 h,0.97,0.05,1.0,1.02,0.35,230,750,73.55,15-20,110,,,,,Shorter reaction; poor impact relative to IV >=0.43 materials
+3A,DGE-BPS + BPS,acetophenone,100 then 150,sample,0.97,0.05,1.0,1.02,0.46,230,770,75.51,15-20,650,,,,,Temperature raised to redissolve crystallizing polymer; BPS added to stop sample
+3B,DGE-BPS + BPS,acetophenone,100 then 150,sample,0.97,0.05,1.0,1.02,0.50,250,775,76.0,15-20,620,,,,,Temperature raised to redissolve crystallizing polymer; BPS added to stop sample
+4,DGE-BPS + BPS,acetophenone / DMF workup,150,50 min + 15 min,0.97,0.05,1.0,1.02 before ~0.010 mol BPS stop,1.37; 1.29 after pressing,290,775,76.0,15-20,690,,,,,2.5 g BPS added as reaction stop; IV decreased about 5.8% on pressing
+5,DGE-BPS + BPS,sulfolane,105,24 h,1.0,0.002,1.0,1.002,0.42,,,,,,,,,,"Sealed tube, air excluded"
+6,DGEBA + BPS,acetophenone / DMF workup,150,as Example 4,0.97,0.05,1.0,1.02,0.82,,770,75.51,,300,33,114,about 130,1.8 wt% after 140 h at 20 C,One sulfone-bearing monomer rather than two

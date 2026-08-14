@@ -1,0 +1,120 @@
+% Visual system for the Klootwijk patent technical review.
+\usepackage[table]{xcolor}
+\definecolor{KDark}{HTML}{102C3D}
+\definecolor{KTeal}{HTML}{147D8F}
+\definecolor{KGold}{HTML}{D39B2A}
+\definecolor{KText}{HTML}{18252D}
+\definecolor{KMuted}{HTML}{61737D}
+\definecolor{KPale}{HTML}{EEF5F6}
+\definecolor{KWarm}{HTML}{F7F3EA}
+\definecolor{KRule}{HTML}{B8C8CE}
+
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage{setspace}
+\usepackage{pdflscape}
+\usepackage{ragged2e}
+\usepackage{needspace}
+\usepackage{pagecolor}
+
+\AtBeginDocument{%
+  \color{KText}%
+  \hypersetup{
+    colorlinks=true,
+    linkcolor=KTeal,
+    urlcolor=KTeal,
+    citecolor=KTeal,
+    pdfborder={0 0 0},
+    bookmarksnumbered=true,
+    bookmarksopen=true
+  }%
+}
+
+\setstretch{1.06}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.2pt plus 1.3pt minus 0.8pt}
+\setlength{\emergencystretch}{3em}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+\titleformat{\section}
+  {\needspace{7\baselineskip}\sffamily\bfseries\Large\color{KDark}}
+  {\thesection}{0.7em}{}
+  [\vspace{1.5pt}\color{KGold}\titlerule]
+\titleformat{name=\section,numberless}
+  {\needspace{7\baselineskip}\sffamily\bfseries\Large\color{KDark}}
+  {}{0pt}{}
+  [\vspace{1.5pt}\color{KGold}\titlerule]
+\titleformat{\subsection}
+  {\needspace{5\baselineskip}\sffamily\bfseries\large\color{KTeal}}
+  {\thesubsection}{0.65em}{}
+\titleformat{\subsubsection}
+  {\needspace{4\baselineskip}\sffamily\bfseries\normalsize\color{KDark}}
+  {\thesubsubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{20pt}{9pt}
+\titlespacing*{\subsection}{0pt}{15pt}{5pt}
+\titlespacing*{\subsubsection}{0pt}{11pt}{3pt}
+
+\newtcolorbox{verdictbox}{
+  enhanced,
+  breakable,
+  colback=KPale,
+  colframe=KTeal,
+  boxrule=0.9pt,
+  arc=1.5mm,
+  left=4mm,
+  right=4mm,
+  top=3mm,
+  bottom=3mm,
+  borderline west={3pt}{0pt}{KGold},
+  before skip=5mm,
+  after skip=5mm
+}
+
+\captionsetup{
+  font=small,
+  labelfont={bf,color=KDark},
+  textfont={color=KMuted},
+  skip=5pt
+}
+
+\setlist[itemize]{leftmargin=5mm,itemsep=1.5pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=1.7pt,topsep=3pt}
+\setlist[description]{style=nextline,leftmargin=0pt,labelsep=0pt,font=\sffamily\bfseries\color{KDark}}
+
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{4.5pt}
+\arrayrulecolor{KRule}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{KMuted}SE 301 717 B - Technical Review}
+\fancyhead[R]{\sffamily\footnotesize\color{KMuted}Arie Klootwijk}
+\fancyfoot[L]{\sffamily\footnotesize\color{KMuted}Prepared for Tom Klootwijk}
+\fancyfoot[R]{\sffamily\footnotesize\color{KMuted}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{KRule}\leaders\hrule height \headrulewidth\hfill}}
+\setlength{\headheight}{15pt}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\sffamily\footnotesize\color{KMuted}SE 301 717 B - Technical Review}
+  \fancyhead[R]{\sffamily\footnotesize\color{KMuted}Arie Klootwijk}
+  \fancyfoot[L]{\sffamily\footnotesize\color{KMuted}Prepared for Tom Klootwijk}
+  \fancyfoot[R]{\sffamily\footnotesize\color{KMuted}\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\urlstyle{same}
+\sloppy

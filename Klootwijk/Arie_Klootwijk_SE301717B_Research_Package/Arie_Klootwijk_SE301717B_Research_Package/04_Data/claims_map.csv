@@ -1,0 +1,12 @@
+claim,theme,technical_scope
+1,Core process,Dihydroxy + substantially equimolar diepoxy; one/both contain aryl-SO2-aryl; alkaline catalyst; substantially anhydrous polar solvent (ketone/nitrile/nitro/sulfoxide/sulfone) dielectric constant >=5; all components soluble; IV >=0.4
+2,Dihydric phenol geometry,Hydroxyls not ortho when on same ring
+3,Diepoxide class,Di(epoxyalkyl) ether of suitable dihydric phenol
+4,Preferred all-sulfone pair,"p,p'-BPS + DGE-BPS"
+5,Higher molecular weight process window,Product remains dissolved until IV >=0.8
+6,Higher-polarity solvent,Dielectric constant >=10
+7,Anhydrous catalyst,Catalyst substantially water-free
+8,Catalyst identity,Salt of participating dihydric phenol
+9,Preferred catalyst,Mono-alkali-metal salt of dihydric phenol
+10,BPS purity proxy,Diphenylol sulfone melting point >=240 C
+11,DGE-BPS purity proxy,Diglycidyl ether melting point >=162 C

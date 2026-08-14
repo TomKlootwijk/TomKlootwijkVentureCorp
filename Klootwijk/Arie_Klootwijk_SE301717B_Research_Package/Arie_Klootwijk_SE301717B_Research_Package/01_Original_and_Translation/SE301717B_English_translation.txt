@@ -1,0 +1,441 @@
+                        SWEDISH PATENT SE 301 717 B
+
+
+Method for Producing Thermoplastics from a
+   Dihydroxy Compound and a Diepoxy
+Compound, Wherein the Diepoxy Compound
+or Both Compounds Contain an SO2 Group
+                  English translation and clean typeset edition
+
+                                            INVENTORS
+                    R. W. Kreps • Arie Klootwijk • J. M. Goppel
+
+                                            APPLICANT
+              Shell Internationale Research Maatschappij N.V., The Hague
+
+                                    PRIORITY / PUBLICATION
+                                15 June 1959 • 17 June 1968
+
+
+
+        Prepared from the original Swedish publication supplied by the Klootwijk family.
+                 This is an unofficial translation and is not a certified legal text.
+                                                                                                        SE 301 717 B | ENGLISH TRANSLATION
+
+
+
+Publication Details
+ Authority                                                                     Swedish Patent and Registration Office
+
+ Publication                                                                   Laid-open specification No. 301 717
+
+ Original Swedish title                                                        Sätt att framställa termoplaster av en dihydroxiförening och en
+                                                                               diepoxiförening varvid diepoxiföreningen eller båda innehåller
+                                                                               en SO2-grupp
+
+ Classification                                                                International Class C 08 g 29/04; Swedish Class 39 c 30
+
+ Application                                                                   No. 5843/60; filed 15 June 1960
+
+ Effective date                                                                15 June 1960
+
+ Public availability                                                           Application made publicly available 17 June 1968
+
+ Publication date                                                              Application laid open and specification published 17 June 1968
+
+ Priority                                                                      Netherlands No. 240 201, dated 15 June 1959
+
+ Applicant                                                                     Shell Internationale Research Maatschappij N.V., The Hague,
+                                                                               Netherlands
+
+ Inventors                                                                     R. W. Kreps; Arie Klootwijk; J. M. Goppel
+
+ Representative                                                                E. Lindquist
+
+
+
+About This Edition
+This edition translates the complete Swedish description, six working examples, reconstructed results tables, all eleven
+patent claims, and the cited publication. The original order and technical level have been preserved, while spelling,
+punctuation, paragraphing, chemical notation, and table layout have been regularized for readability.
+
+  EDITORIAL AND TRANSLATION NOTES
+  The title above follows the Swedish title as printed. In the body and in Claim 1, the text states more broadly that either the
+  dihydroxy compound, the diepoxy compound, or both may contain the SO2 group.
+  On original page 3, the first endpoint of the molar-ratio range appears in the scan as “1.4”. The corresponding patent-family text
+  gives “1.04”, which is consistent with the preferred range immediately following it. This edition therefore uses 1.04 and records
+  the correction here rather than silently altering the source.
+  Decimal commas have been converted to decimal points. Obvious typographical inconsistencies in repeated chemical names have
+  been normalized, including omissions of “ol” in “diphenylol sulfone”. Historical compound names and the published units have
+  otherwise been retained.
+  To resolve scan ambiguities, the Swedish text was cross-checked against corresponding family publications GB 915,767 A and
+  DE 1,190,672 B. The Swedish publication remains the basis of this translation.
+
+
+
+
+Unofficial translation - source: Swedish laid-open specification No. 301 717                                                               Page 2
+                                                                                         SE 301 717 B | ENGLISH TRANSLATION
+
+
+ORIGINAL SWEDISH PAGES 1-5
+
+
+Description
+Field of the Invention
+    The invention relates to a method of producing thermoplastics suitable for the manufacture of threads, fibres and the
+like. These thermoplastics have a high molecular weight and an almost exclusively linear structure. They are obtained by
+reacting one or more optionally substituted dihydroxy compounds with one or more optionally substituted diepoxy
+compounds, wherein either the dihydroxy compound, the diepoxy compound, or both contain an SO2 group joining two
+aromatic nuclei, preferably a -C6H4-SO2-C6H4- group.
+
+Background
+    A method falling within the scope described above is already known from British Patent No. 652,024, particularly
+from page 7, line 125, to page 8, line 51. A two-stage process is disclosed there. In the second stage, a dihydroxy
+compound whose hydroxyl groups are attached to aromatic nuclei is reacted with an equimolar amount of a diglycidyl
+ether of such a dihydroxy compound in the presence of a small amount of an alkaline substance as catalyst. Diphenylol
+sulfone is mentioned elsewhere in that patent specification as a dihydroxy compound.
+    The relevant portion of that patent specification also permits a solvent to be added together with the diglycidyl ether.
+Only ethanol and dioxane are mentioned for this purpose. When diphenylol sulfone and/or the diglycidyl ether derived
+from it are used as starting materials, however, less satisfactory products are obtained in this way. It has now been found
+that this less satisfactory result is caused by premature interruption of the reaction through crystallization of the product,
+or by the solvent present acting as a chain-terminating agent.
+   It has been found that products having higher molecular weights and substantially improved properties are obtained
+when this premature interruption of the reaction is prevented.
+
+The Invention
+    According to the invention, thermoplastics are produced by reacting one or more optionally substituted dihydroxy
+compounds with a substantially equimolar amount of one or more optionally substituted diepoxy compounds. Either the
+dihydroxy compound, the diepoxy compound, or both contain an SO2 group joining two aromatic nuclei. The reaction is
+carried out in the presence of a solvent and an alkaline compound as catalyst. The process is characterized in that the
+reaction takes place in a solvent in which the dihydroxy compound, the diepoxy compound and the reaction product
+dissolve, and which scarcely reacts with the dihydroxy compound or the diepoxy compound.
+
+Suitable Solvents
+   Solvents suitable for use according to the invention generally have a dielectric constant of at least 5 at the reaction
+temperature. Solvents having a dielectric constant of at least 10 at the reaction temperature usually give the best results.
+    Examples of suitable solvents are ketones such as methyl isobutyl ketone and cyclohexanone, particularly aromatic
+ketones such as acetophenone and benzophenone; aldehydes such as furfural; nitriles such as acetonitrile,
+phenylacetonitrile, propanedinitrile and benzonitrile; nitro compounds such as nitrobenzene, 1-chloro-2-nitrobenzene and
+1-chloro-3-nitrobenzene; organic sulfoxides such as dimethyl sulfoxide; and sulfones such as cyclotetramethylene
+sulfone (sulfolane), 3-methylcyclotetramethylene sulfone and 3,4-dimethylcyclotetramethylene sulfone.
+    Especially important sulfoxy compounds and nitriles are principally those in which a divalent sulfoxy group (SO or
+SO2), or a cyano group, is directly attached to at least one carbon atom which is itself directly attached to one or more
+hydrogen atoms. If desired, the solvent may be a mixture of different components, for example a mixture of di-n-propyl
+sulfoxide and diphenyl sulfoxide. Solvents that catalyse side reactions, for example reactions of the epoxy groups, are
+undesirable.
+
+Reactant Ratio and Mode of Addition
+    The expression “substantially equimolar amounts” means quantities in which the molar ratio of dihydroxy compound
+to diepoxy compound is from about 1.04 to about 0.98, preferably from about 1.02 to about 0.99. Any amount of
+dihydroxy compound present as a salt, for example an alkali-metal salt of a dihydric phenol, is included in this ratio as
+dihydroxy compound.
+    The diepoxy compound may be added gradually to the dihydroxy compound, as indicated in the British patent. It has
+been found, however, that this precaution is unnecessary in the process according to the present invention. There is no
+objection to mixing, in a single operation, the entire quantities of the diepoxy and dihydroxy compounds intended for
+reaction, provided that those quantities are measured with the required degree of accuracy.
+
+Unofficial translation - source: Swedish laid-open specification No. 301 717                                             Page 3
+                                                                                       SE 301 717 B | ENGLISH TRANSLATION
+
+
+
+    Alternatively, the diepoxy compound may first be reacted with a slight excess of the dihydroxy compound, for
+example an excess of a few percent, and the ratio between the compounds may be corrected to an equimolar ratio at a
+later stage of the reaction.
+
+Preferred Compounds
+   The preferred dihydroxy compound is a dihydric phenol in which the hydroxyl groups, when attached to the same
+aromatic nucleus, are not in ortho positions relative to one another.
+    Preferred diepoxy compounds are the di(epoxyalkyl) ethers of the dihydric phenols mentioned above, and especially
+the diglycidyl ethers.
+    Very good products are obtained by reacting diphenylol sulfone with its diglycidyl ether. Products obtained
+according to the invention by reacting diphenylol sulfone with the diglycidyl ethers of other dihydric phenols, or by
+reacting those other dihydric phenols as such with the diglycidyl ether of diphenylol sulfone, are likewise very suitable.
+    Examples of these other dihydric phenols are, in the first instance, 2,2-diphenylolpropane, and also
+diphenylolmethane, hydroquinone, resorcinol, 3,3'- and 4,4'-dihydroxydiphenyl, various dihydroxydiphenoxyethanes,
+and various dihydroxynaphthalenes. Other suitable starting materials are mixtures containing diphenylol sulfone and its
+diglycidyl ether together with one or more of these other dihydric phenols and/or their glycidyl ethers.
+
+Molecular Weight and Product Properties
+     The beneficial effect of the solvent used according to the invention is due to the product remaining in solution until
+its molecular weight has risen to relatively high values. A suitable choice of solvent, solvent quantity and temperature
+makes it possible to avoid separation of a solid macromolecular product, in either crystalline or amorphous form, until
+the product has reached an intrinsic viscosity of at least about 0.4, preferably at least about 0.8, at reasonable product
+concentrations in the reaction mixture, for example at least 5 wt% and preferably at least 10 wt%. In this way, much
+higher intrinsic viscosities, for example 1.4, can even be obtained. This is shown more clearly in the examples below. All
+intrinsic-viscosity values stated were determined in dimethylformamide.
+    The increase in molecular weight is accompanied by improved mechanical properties. Very good values are obtained
+for yield stress and impact strength. The products also have the advantages of a high softening point and a high heat-
+distortion temperature, together with strong chemical resistance to acids and bases.
+    The British patent referred to above describes how products of the intended kind may be drawn or spun into threads.
+The disclosure of that patent applies, mutatis mutandis, when the products are made according to the present invention.
+The products of this invention are also suitable for making articles other than threads by operations such as casting,
+extrusion through a die, injection moulding, rolling and the like.
+
+Water Content and Catalysts
+    Among the conditions under which the reaction is allowed to proceed, the advantages of excluding water and using
+pure starting materials should also be mentioned.
+    Preference for an anhydrous or substantially anhydrous medium means that the catalyst is preferably also introduced
+in an anhydrous state and that the added catalyst is a substance which does not cause water to be formed in the reaction
+mixture. Although alkali-metal hydroxides of the kind used in the British patent are also suitable for the present
+invention, they have the disadvantage that they form water when they react with phenols.
+   It is therefore preferred to add separately prepared salts of strong bases and dihydric phenols to the reaction mixture.
+Examples of such strong bases are bases of the alkali metals and alkaline-earth metals, and quaternary ammonium bases.
+These salts are naturally prepared, preferably, from the dihydric phenol taking part in the reaction. Monosalts of dihydric
+phenols give very good results.
+    A suitable method of preparing such salts in an anhydrous state is to react the dihydric phenol with an alkali-metal
+alkoxide and distil off the alcohol liberated.
+    The permissible limits for water content depend on the requirements to be met by the product and on the nature of the
+medium. It is advisable to keep the water content below 2 wt%, preferably below 1 wt%, and especially below 0.3 wt%,
+calculated on the original dihydric phenol.
+    Salts of strong bases and dihydric phenols are generally used in amounts from 0.01 to 10 mol%, especially from 0.1
+to 5 mol%, calculated on the dihydric phenol originally present.
+    Salts of acids other than phenols, for example the stearates of magnesium, aluminium and trivalent iron, may likewise
+be added as catalysts when they are sufficiently soluble in the reaction mixture.
+
+
+
+Unofficial translation - source: Swedish laid-open specification No. 301 717                                          Page 4
+                                                                                        SE 301 717 B | ENGLISH TRANSLATION
+
+
+
+Purification of Starting Materials
+    Commercial diphenylol sulfone generally contains so many impurities that it must be purified before use. The
+impurities are partly soluble in water and partly soluble in aromatic solvents such as benzene and toluene, in which
+diphenylol sulfone itself has only slight solubility. Suitable purification methods are therefore extraction with water and
+aromatic solvents, preferably at elevated temperature.
+   Diphenylol sulfone may be crystallized by dissolving it in a ketone, such as acetone or methyl isobutyl ketone, and
+adding an aromatic compound such as benzene to the solution. This method is particularly suitable when water-soluble
+impurities are absent, or after they have otherwise been removed.
+    A new purification method consists in recrystallizing diphenylol sulfone from water at temperatures above 100°C.
+The solubility curve, which is very low and flat below 100°C, shows a marked rise above that temperature, especially
+between 100 and 125°C. To remove impurities soluble in aromatic compounds at the same time, this recrystallization is
+carried out from water to which a small amount of an aromatic compound has been added.
+    Recrystallization also reduces the amount of o,p'-diphenylol sulfone present alongside the p,p'-diphenylol sulfone and
+consequently gives a macromolecular end product of better quality. For the reaction between diphenylol sulfone and its
+diglycidyl ether, a diphenylol sulfone having a melting point of at least 240°C is preferred as starting material.
+    The diglycidyl ether of diphenylol sulfone generally has a sufficient degree of purity when its melting point reaches
+162°C. It is also advisable to ensure that this ether contains little or no chloride, for example not more than 0.5 wt%. If
+necessary, the purity of the diglycidyl ether of diphenylol sulfone may be increased by recrystallization, for example
+from a ketone such as methyl isobutyl ketone.
+
+Reaction Conditions
+    The temperature at which a dihydroxy compound is reacted with a diepoxy compound according to the invention
+generally lies between 80 and 200°C, although it may be lower or higher in particular cases. If necessary, pressure is used
+to keep the solvent in the liquid state during the reaction. It is advisable to conduct the reaction in the absence of oxygen.
+ORIGINAL SWEDISH PAGES 5-8
+
+
+Working Examples
+The following examples illustrate the invention. Intrinsic viscosity was measured in dimethylformamide unless otherwise
+stated.
+
+Example 1
+     A mixture of 1.00 mol of the diglycidyl ether of p,p'-diphenylol sulfone (melting point 166.6-176.4°C) and 0.97 mol
+of p,p'-diphenylol sulfone (melting point 248.5-249.5°C) was dissolved in 850 g of acetophenone in a round-bottom flask
+fitted with a thermometer, stirrer, reflux condenser and gas-inlet tube. Thereafter, 0.05 mol of the monosodium salt of
+p,p'-diphenylol sulfone was added.
+    Oxygen was removed from the flask atmosphere by passing in nitrogen. The mixture was then heated to 100°C and
+maintained at that temperature for 60 hours with stirring. It was then cooled to room temperature. Crystalline material
+had already begun to separate during the reaction, and crystallization of the product was complete a few hours after the
+reaction ended. The crystalline material was removed by suction filtration, washed with methanol and dried at 100°C in a
+vacuum desiccator.
+    The product had an intrinsic viscosity of 0.43 and a softening point of 155°C. Birefringence and a sharp X-ray
+diffraction pattern were also observed. The birefringence disappeared on heating to about 230°C, the melting point of the
+crystallites.
+    Small plates were pressed from the crystalline powder at temperatures in the range 230-250°C. Pressing caused no
+difficulty because the product showed excellent flow after softening. Properties were measured at room temperature.
+Yield stress was also measured after heating for selected periods at 160°C in order to assess thermal stability.
+Performance under load was evaluated by determining the heat-distortion temperature according to the ASTM standard.
+The effects of water and 5% aqueous solutions of sodium hydroxide and sulfuric acid were studied by prolonged
+immersion of the plates. The liquids were absorbed, but no chemical change occurred. The very satisfactory results are
+summarized below.
+
+
+
+
+Unofficial translation - source: Swedish laid-open specification No. 301 717                                            Page 5
+                                                                                                 SE 301 717 B | ENGLISH TRANSLATION
+
+
+
+ Property                                                                                           Result
+
+ Yield stress                                                                                     770 kg/cm²
+
+ Elongation at yield stress                                                                         15-20%
+
+ Impact tensile strength                                                                         650 kg·cm/cm²
+
+ Izod impact strength (British Standard)                                                         30 kg·cm/cm²
+
+ Heat-distortion temperature, ASTM D 648, at 18.9 kg/cm²
+                                                                                                    154°C
+ load
+
+
+
+Yield Stress after Heating at 160°C
+
+ Heating time                                                                                    Yield stress
+
+ 0 hours                                                                                          770 kg/cm²
+
+ 24 hours                                                                                        1,000 kg/cm²
+
+ 72 hours                                                                                        1,000 kg/cm²
+
+ 100 hours                                                                                       1,000 kg/cm²
+
+
+
+Weight Gain at 20°C
+ Immersion medium                                       1 day                          7 days                       14 days
+
+ Distilled water                                       3.4 wt%                         5.3 wt%                      5.6 wt%
+
+ 5 wt% NaOH solution                                   3.2 wt%                         4.8 wt%                      5.1 wt%
+
+ 5 wt% H2SO4 solution                                  3.3 wt%                         5.1 wt%                      5.4 wt%
+
+
+
+Example 2
+    The reaction was carried out in the same manner as in Example 1, except that the mixture was maintained at 100°C
+for only 20 hours. The intrinsic viscosity of the crystalline product was 0.35.
+    Small plates were pressed from the crystalline powder at 230°C. This treatment did not affect the intrinsic viscosity.
+The pressed material had a yield stress of 750 kg/cm², an elongation at yield stress of 15-20%, and an impact tensile
+strength of 110 kg·cm/cm².
+
+Example 3
+     The reaction was carried out in the same manner as in Example 1, except that during the experiment the temperature
+was raised to 150°C in order to redissolve the crystallizing product. Two samples taken during the experiment showed
+intrinsic viscosities of 0.45 and 0.50, respectively. Further polymerization in these samples was prevented by adding
+small amounts of p,p'-diphenylol sulfone.
+    After plates had been pressed from the two samples, at 230°C and 250°C respectively, the following results were
+obtained:
+
+ Property                                                                Sample 1                              Sample 2
+
+ Intrinsic viscosity                                                           0.46                              0.50
+
+ Yield stress                                                            770 kg/cm²                          775 kg/cm²
+
+ Elongation at yield stress                                                15-20%                               15-20%
+
+ Impact tensile strength                                               650 kg·cm/cm²                        620 kg·cm/cm²
+
+
+     Comparison of these values with the results of Example 2 showed that the mechanical properties depended on the
+molecular weight of the product, as represented by its intrinsic viscosity. Good impact strength was obtained only at
+intrinsic viscosities exceeding 0.35.
+
+
+Unofficial translation - source: Swedish laid-open specification No. 301 717                                                  Page 6
+                                                                                        SE 301 717 B | ENGLISH TRANSLATION
+
+
+
+Example 4
+    The reaction was carried out as described in Example 1, except that the reaction temperature was 150°C and the
+reaction time was 50 minutes. After that period, a solution of 2.5 g of p,p'-diphenylol sulfone in 25 g of acetophenone
+was added to stop the reaction. The mixture was maintained at 150°C for a further 15 minutes, then cooled to 100°C and
+diluted with dimethylformamide to give a 10% solution of the polymer.
+     Methanol was added to this solution at room temperature with stirring until the polymer had completely precipitated.
+The precipitate was washed with methanol and redissolved in dimethylformamide, this time at a concentration of 2%.
+Methanol was added to the new solution until slight cloudiness appeared, after which the solution was poured into
+distilled water with vigorous stirring. The polymer flocculated as small particles. These were removed by suction
+filtration and washed with water. The resulting powder was dried at 100°C in a vacuum desiccator. The product had an
+intrinsic viscosity of 1.37.
+    Small plates were pressed from the crystalline powder at 290°C. This treatment reduced the intrinsic viscosity to
+1.29. The material pressed into plates had a yield stress of 775 kg/cm², an elongation at yield stress of 15-20%, and an
+impact tensile strength of 690 kg·cm/cm².
+
+Example 5
+    A mixture of 1.00 mol of the diglycidyl ether of p,p'-diphenylol sulfone and 1.00 mol of p,p'-diphenylol sulfone was
+combined with 125 g of sulfolane (tetramethylene sulfone), in which 0.002 mol of the monosodium salt of p,p'-
+diphenylol sulfone had been dissolved. The mixture was melted and maintained in a sealed tube, with air excluded, at
+105°C for 24 hours. The resulting polymer had an intrinsic viscosity of 0.42.
+
+Example 6
+    A quantity of 1.00 mol of the diglycidyl ether of p,p'-diphenylolpropane (melting point 42°C) was reacted with 0.97
+mol of p,p'-diphenylol sulfone in the presence of 0.05 mol of the monosodium salt of p,p'-diphenylol sulfone, in exactly
+the same manner as in Example 4. The product was also isolated in the manner described in Example 4. Its intrinsic
+viscosity was 0.82.
+
+ Property                                                                                  Result
+
+ Yield stress                                                                            770 kg/cm²
+
+ Izod impact strength (British Standard)                                                33 kg·cm/cm²
+
+ Impact tensile strength                                                               300 kg·cm/cm²
+
+ Heat-distortion temperature, ASTM D 648, at 18.9 kg/cm²
+                                                                                           114°C
+ load
+
+ Water absorption after 140 hours at 20°C                                                 1.8 wt%
+
+ Glass-transition point from modulus-temperature
+                                                                                        about 130°C
+ relationship
+
+ORIGINAL SWEDISH PAGES 9-10
+
+
+Patent Claims
+The following claims are translated in their original sequence. Patent-style dependency language has been retained.
+1. A method of producing thermoplastics by reacting one or more dihydroxy compounds with a substantially equimolar
+    amount of one or more diepoxy compounds, wherein either the dihydroxy compound, the diepoxy compound, or
+    both contain an SO2 group joining two aromatic nuclei, in the presence of a solvent and an alkaline compound as
+    catalyst, characterized in that the reaction is carried out in a substantially anhydrous ketone, nitrile, nitro compound,
+    sulfoxide or sulfone having a dielectric constant of at least 5 as solvent, in which the dihydroxy compound, the
+    diepoxy compound and the reaction product are soluble and which does not react with the dihydroxy compound or
+    the diepoxy compound, and in that the reaction is allowed to continue until the polymeric reaction product has
+    reached an intrinsic viscosity of at least 0.4.
+2. A method according to Claim 1, characterized in that the dihydroxy compound is a dihydric phenol in which the
+    hydroxyl groups, when attached to the same aromatic nucleus, are not in ortho positions relative to one another.
+
+
+
+
+Unofficial translation - source: Swedish laid-open specification No. 301 717                                            Page 7
+                                                                                            SE 301 717 B | ENGLISH TRANSLATION
+
+
+
+3. A method according to Claim 1 or 2, characterized in that the diepoxy compound used is a di(epoxyalkyl) ether of a
+    dihydric phenol in which the ether oxygen atoms are not in ortho positions relative to one another in the same
+    aromatic nucleus.
+4. A method according to any preceding claim, characterized in that the dihydric phenol is p,p'-diphenylol sulfone and the
+    diepoxy compound is the diglycidyl ether of p,p'-diphenylol sulfone.
+5. A method according to Claim 1, characterized in that the nature and quantity of the solvent and the temperature are
+    such that the reaction product remains dissolved in the reaction mixture until an intrinsic viscosity of at least 0.8 has
+    been reached.
+6. A method according to any preceding claim, characterized in that the solvent used is a substance having a dielectric
+    constant of at least 10.
+7. A method according to any preceding claim, characterized in that the reaction mixture contains a substantially
+    anhydrous catalyst.
+8. A method according to any preceding claim, characterized in that the catalyst used is a salt of the dihydric phenol
+    which takes part in the reaction.
+9. A method according to Claim 8, characterized in that the catalyst used is a mono-alkali-metal salt of a dihydric phenol.
+10. A method according to any preceding claim, characterized in that the starting material used is a diphenylol sulfone
+    having a melting point of at least 240°C.
+11. A method according to any preceding claim, characterized in that the starting material used is a diglycidyl ether of a
+    diphenylol sulfone, which ether has a melting point of at least 162°C.
+
+Cited Publication
+United States Patent No. 2,767,157 (class 260.47).
+
+  END OF TRANSLATION
+  This clean English edition corresponds to the complete ten-page Swedish publication SE 301 717 B. The original facsimile should
+  be consulted for any legal or historical use requiring the exact Swedish wording.
+
+
+
+
+Unofficial translation - source: Swedish laid-open specification No. 301 717                                                 Page 8
+

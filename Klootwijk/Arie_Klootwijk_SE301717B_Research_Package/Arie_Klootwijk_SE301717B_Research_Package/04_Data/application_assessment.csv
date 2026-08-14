@@ -1,0 +1,14 @@
+application,evidence_basis,confidence,main_gap
+PCB buildup dielectric / adhesive film,Later BPS high-MW epoxy patent,High,"Electrical loss, ionic residue, moisture"
+"Coating, primer and hot-melt adhesive",Phenoxy class + pendant OH,High,Cure/process window and extractables
+Epoxy/composite toughener,Mechanism + later Shell crosslinking patent,High,Phase behavior and cure kinetics
+Molded/extruded high-temperature part,Original patent,High,Creep and long-term oxidative aging
+Fiber / filament,Original patent,High,Spinning and hydrothermal stability
+Corrosion-resistant coating,Related phenoxy uses + original immersion,Medium-high,Property retention after exposure
+Barrier or tie-layer film,Related phenoxy film art,Medium,Humidity and migration
+PES membrane blend modifier,Related membrane patent,Medium,"Pore morphology, fouling, leachables"
+Reactive additive-manufacturing feedstock,Modern platform inference,Medium-low,Melt stability at 230-290 C
+Biosensor / microfluidic surface,OH functionalization inference,Medium-low,"Sterilization, adsorption, extractables"
+Ion-exchange / proton-exchange membrane,Requires post-sulfonation,Low,Neutral backbone
+Implant / scaffold,No direct support,Low,Biocompatibility and residual BPS
+SO2 release or storage,Chemically inconsistent with claims,Unsupported,Covalent diaryl sulfone is not SO2 gas

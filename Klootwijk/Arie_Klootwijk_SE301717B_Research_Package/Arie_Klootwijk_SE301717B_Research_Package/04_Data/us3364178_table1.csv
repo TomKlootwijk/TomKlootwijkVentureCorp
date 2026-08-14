@@ -1,0 +1,6 @@
+polymer,epoxide,dihydric_phenol,sulfone_bearing_feed_components,intrinsic_viscosity,yield_stress_kgf_cm2,yield_stress_MPa,tensile_impact_historical,vicat_C
+1,DGEBA,BPA,0,0.57,600,58.84,265,103
+2,DGEBA,BPS,1,0.67,750,73.55,500,135
+3,DGE-BPS,BPS,2,0.7,820,80.41,770,175
+4,"DGE of 4,4'-diphenylphenylol propane",BPS,1+,0.55,690,67.66,360,147
+5,"DGE of 3,3',5,5'-tetramethyl-4,4'-diphenylol sulfone",BPS,2,0.47,880,86.3,160,167
