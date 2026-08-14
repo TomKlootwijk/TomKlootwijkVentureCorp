@@ -1,0 +1,19 @@
+source_motif,normalized_operator,disposition,source_pages
+sphere / spherical,"local radial-angular support, shelling, orientation, radial reach",retain and narrow,"S1 pp.1,5-7"
+cone / lighthouse,analytic support or relevance operator over state/query domain,retain and normalize,"S1 pp.5-7,10; S2 pp.18-19"
+SDF=0 / B=0,explicit event or transition guard surface,retain as core,S1 p.7; S2 pp.16-19
+double vacuum,same coordinate but incompatible sector; absence of coupling,retain as core,S1 p.6; S5 pp.32-33
+one bit,"parity, route, validity, or admission bit with declared schema",retain narrowly,S1 pp.5-6; S6 p.7
+quad hourglass,four-sector routing partition with central event locus,retain as visualization,S1 p.6; S2 pp.23-25
+Klein bottle,quotient/gluing/orientation map; explicit ports and transfer required,demote literal hardware,"S1 p.6; S6 pp.2,5,10"
+Mobius strip,optional local orientation/inversion motif,metaphorical/optional,S3 pp.5-10
+phi,"split into angular coordinate, phase law, or heuristic schedule",disambiguate,S2 pp.14-19; S5 pp.1-3
+golden ratio,optional schedule or aesthetic motif only,reject as requirement,S2 pp.14-19; S4 pp.10-12
+sieve,"sensor transfer, filter, candidate reduction, or materialized index",retain with caution,S3 pp.11-15; S5 pp.13-16
+jitter / wiggle,controlled sampling/dither/micro-shift operator,retain layer-specifically,S3 pp.13-15; S7 pp.4-10
+Feynman vectors,phase-amplitude edge accumulator (source term is not formally derived),rename for clarity,S7 pp.1-3
+matrix-in-glass,calibrated passive or tunable optical transfer matrix,bounded translation,"S6 pp.2,4-5"
+liquid substrate,"packaged liquid lens/overclad/core tuning focus, n_eff, phase, coupling",bounded translation,"S6 pp.3-5,8-9"
+zero latency / heat / memory,not accepted; include end-to-end costs and stored novelty,reject,"S6 pp.2,10"
+universal O(1),only horizon-independent evaluation for fixed closed expressions may be tested,reject totalizing form,S1 p.8
+chemical/biological literalization,cross-domain analogy or unsupported application unless a separate model is specified,exclude from core,S1 pp.11-12; S6 p.10

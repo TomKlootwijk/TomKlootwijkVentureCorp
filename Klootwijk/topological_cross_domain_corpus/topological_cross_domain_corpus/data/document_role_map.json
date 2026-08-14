@@ -1,0 +1,44 @@
+[
+  {
+    "source_id": "S1",
+    "role": "Interpretive authority",
+    "contribution": "Normalizes the corpus into a spherical-support event calculus; defines feasibility and experiment program",
+    "authority": "Highest"
+  },
+  {
+    "source_id": "S2",
+    "role": "Generative operator source",
+    "contribution": "Introduces analytic sweeping cones, log-polar masks, SDF zero, phase, parity, hourglass, eigenspace and UUID motifs",
+    "authority": "Medium; heavily speculative"
+  },
+  {
+    "source_id": "S3",
+    "role": "Optical/perceptual motif source",
+    "contribution": "Aperture, camera obscura, polar harmonics, sensory sieves, jitter, reflection and device-mediated scale",
+    "authority": "Medium for motifs; low for totalizing claims"
+  },
+  {
+    "source_id": "S4",
+    "role": "Geometric notation source",
+    "contribution": "Zero-index, hinge/torque, folded phi/D overlap, shared-domain/weld interpretations",
+    "authority": "Low to medium; brainstorming"
+  },
+  {
+    "source_id": "S5",
+    "role": "Cross-domain consolidation",
+    "contribution": "Information architecture, identity, memory, compatibility, industry and hardware prompts",
+    "authority": "Medium; mixed with literalized metaphors"
+  },
+  {
+    "source_id": "S6",
+    "role": "Bounded engineering authority",
+    "contribution": "B.C.E., type safety, metrics, Hollowlens-0, failure modes, explicit rejected claims",
+    "authority": "High for hardware boundary"
+  },
+  {
+    "source_id": "S7",
+    "role": "Projection adapter source",
+    "contribution": "Log-polar SDF output, 1-bit modulation, dithering and prepress",
+    "authority": "Medium as downstream graphics proposal"
+  }
+]

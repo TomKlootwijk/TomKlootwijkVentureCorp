@@ -1,0 +1,19 @@
+{
+  "file_count_before_integrity_files": 100,
+  "total_bytes_before_integrity_files": 20277064,
+  "extensions": {
+    ".csv": 10,
+    ".graphml": 1,
+    ".html": 1,
+    ".jpg": 1,
+    ".json": 12,
+    ".jsonld": 1,
+    ".md": 17,
+    ".pdf": 8,
+    ".png": 23,
+    ".py": 3,
+    ".svg": 12,
+    ".txt": 10,
+    ".yaml": 1
+  }
+}

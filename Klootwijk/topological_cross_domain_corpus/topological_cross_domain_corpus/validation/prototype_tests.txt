@@ -1,0 +1,9 @@
+test_circle_roots_are_analytic (test_equation_world_zero.EquationWorldZeroTests.test_circle_roots_are_analytic) ... ok
+test_double_vacuum_rejects_co_location (test_equation_world_zero.EquationWorldZeroTests.test_double_vacuum_rejects_co_location) ... ok
+test_line_event_routes_and_toggles (test_equation_world_zero.EquationWorldZeroTests.test_line_event_routes_and_toggles) ... ok
+test_state_at_is_closed_form (test_equation_world_zero.EquationWorldZeroTests.test_state_at_is_closed_form) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK

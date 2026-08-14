@@ -1,0 +1,37 @@
+{
+  "package_name": "topological_cross_domain_corpus",
+  "report_title": "Topological Cross-Domain Synthesis of the Spherical Substrate Corpus",
+  "report_version": "2.0",
+  "report_date": "2026-08-14",
+  "report_pdf": "Topological_Cross_Domain_Corpus_Report.pdf",
+  "report_pages": 63,
+  "source_count": 7,
+  "source_pages_total": 222,
+  "source_ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7"
+  ],
+  "evidence_boundary": "Source-grounded synthesis; no external performance validation.",
+  "file_count_before_integrity_files": 99,
+  "total_bytes_before_integrity_files": 20276222,
+  "extensions": {
+    ".csv": 10,
+    ".graphml": 1,
+    ".html": 1,
+    ".jpg": 1,
+    ".json": 11,
+    ".jsonld": 1,
+    ".md": 17,
+    ".pdf": 8,
+    ".png": 23,
+    ".py": 3,
+    ".svg": 12,
+    ".txt": 10,
+    ".yaml": 1
+  }
+}

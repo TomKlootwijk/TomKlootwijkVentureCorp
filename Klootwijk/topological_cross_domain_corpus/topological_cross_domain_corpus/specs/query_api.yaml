@@ -1,0 +1,65 @@
+version: "0.1"
+name: "Equation World Zero Query API"
+source_basis:
+  - "S1 pp. 6-12"
+  - "S6 pp. 3, 6-9"
+queries:
+  state_at:
+    inputs:
+      entity_id: string
+      time: number
+    returns:
+      state: State
+      uncertainty: Interval
+      expression_cost: number
+  next_event:
+    inputs:
+      entity_id: string
+      start_time: number
+      relation_family: string
+      support_id: string
+      compatibility_context: object
+    returns:
+      event: Event | null
+      root_certificate: object
+  events_in_support:
+    inputs:
+      support: Support
+      start_time: number
+      end_time: number
+    returns:
+      events: Event[]
+  can_couple:
+    inputs:
+      left_entity_id: string
+      right_entity_id: string
+      context: object
+    returns:
+      compatible: boolean
+      reason_codes: string[]
+      predicate_version: string
+  apply_transition:
+    inputs:
+      event: Event
+      transition_id: string
+    returns:
+      post_state: State
+      invariant_report: object
+      lineage_event_id: string
+  reconstruct_identity:
+    inputs:
+      seed: string
+      grammar_path: string[]
+      branch_id: string
+      log_until: number | null
+    returns:
+      lineage: object
+      current_address: string
+  project_view:
+    inputs:
+      query_result: object
+      adapter: string
+      policy: object
+    returns:
+      artifact_reference: string
+      authoritative_state_hash: string

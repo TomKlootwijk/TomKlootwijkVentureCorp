@@ -1,0 +1,330 @@
+source_id,source_name,term,count,pages
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,query,12,1;8;9;10;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,relation,25,1;3;4;5;6;7;8;10;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,event,48,1;3;4;5;6;7;8;9;10;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,phase,23,1;4;5;6;7;8;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,sheet,10,5;6;7;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,double vacuum,6,1;2;5;6;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,hourglass,9,1;4;5;6;7;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,one-bit,4,1;2;5;9
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,1-bit,3,3;5;9
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,sdf,10,1;3;6;7;10
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,cone,31,1;2;3;5;6;7;8;9;10;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,spherical,25,1;2;3;4;5;6;7;9;10;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,polar,12,1;3;6
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,klein,1,2
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,mobius,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,lineage,14,1;4;5;6;7;8;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,grammar,14,1;4;5;6;7;8;9;10;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,raster,13,1;5;6;7;8;9;10
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,raymarch,7,1;9;10
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,ray march,1,1
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,voxel,1,1
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,lut,3,7;8
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,feynman,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,vector,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,compatibility,21,1;2;5;6;7;8;9;10;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,invariant,12,1;3;5;6;8;10;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,address,7,5;6;7;8;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,branch,6,5;6;8;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,throughput,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,waveguide,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,liquid,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,ccd,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,collision,5,3;4;10;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,log-polar,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,log encoded,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,phi,7,1;5;6;7;11
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,parity,3,1;3;5
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,topolog,2,2;6
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,information,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,identity,13,4;5;6;7;8;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,projection,6,1;5;9;10
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,state,45,1;2;4;5;6;7;8;9;10;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,memory,9,1;4;10;11;12
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,jitter,0,
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,sieve,1,4
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,exogenous log,2,6;7
+S1,Chronological Synthesis of the Spherical Substrate Line(3).pdf,novelty-proportional,0,
+S2,hollowland-double-vacuum(7).pdf,query,3,17;30;35
+S2,hollowland-double-vacuum(7).pdf,relation,2,3;19
+S2,hollowland-double-vacuum(7).pdf,event,11,12;14;15;17;18;19;25;27;30
+S2,hollowland-double-vacuum(7).pdf,phase,38,12;13;14;15;16;17;18;19;22;25;27;28;29;30;31;32;33;35
+S2,hollowland-double-vacuum(7).pdf,sheet,4,24;25;32;35
+S2,hollowland-double-vacuum(7).pdf,double vacuum,20,1;2;6;7;9;14;15;18;22;23;24
+S2,hollowland-double-vacuum(7).pdf,hourglass,46,21;23;24;25;26;27;28;29;31;32;33;34;35
+S2,hollowland-double-vacuum(7).pdf,one-bit,0,
+S2,hollowland-double-vacuum(7).pdf,1-bit,40,12;13;14;15;16;17;18;19;22;24;25;26;27;29;30;31;33;34;35
+S2,hollowland-double-vacuum(7).pdf,sdf,51,13;16;17;18;19;22;23;24;25;26;27;29;30;31;33;35
+S2,hollowland-double-vacuum(7).pdf,cone,43,12;13;14;15;16;17;18;24;25;27;29;30;35
+S2,hollowland-double-vacuum(7).pdf,spherical,7,12;13;14;17;23
+S2,hollowland-double-vacuum(7).pdf,polar,40,12;13;14;15;16;17;18;19;21;22;23;24;26;27;28;29;31;33;34
+S2,hollowland-double-vacuum(7).pdf,klein,50,7;8;9;10;11;12;13;14;15;16;17;18;22;23;24;26;28;33;35
+S2,hollowland-double-vacuum(7).pdf,mobius,0,
+S2,hollowland-double-vacuum(7).pdf,lineage,0,
+S2,hollowland-double-vacuum(7).pdf,grammar,16,26;27;28;30;32;33;36
+S2,hollowland-double-vacuum(7).pdf,raster,8,14;16;23;32
+S2,hollowland-double-vacuum(7).pdf,raymarch,0,
+S2,hollowland-double-vacuum(7).pdf,ray march,6,12;14;16;23;32
+S2,hollowland-double-vacuum(7).pdf,voxel,8,12;14;15;17;26;32
+S2,hollowland-double-vacuum(7).pdf,lut,25,3;4;7;10;12;13;14;16;17;18;21;22;26;28;29;30;31;35
+S2,hollowland-double-vacuum(7).pdf,feynman,3,16;24
+S2,hollowland-double-vacuum(7).pdf,vector,61,14;16;17;18;19;20;21;22;23;24;25;26;27;28;29;33;34;35
+S2,hollowland-double-vacuum(7).pdf,compatibility,0,
+S2,hollowland-double-vacuum(7).pdf,invariant,7,10;22;23;24;25
+S2,hollowland-double-vacuum(7).pdf,address,0,
+S2,hollowland-double-vacuum(7).pdf,branch,1,27
+S2,hollowland-double-vacuum(7).pdf,throughput,0,
+S2,hollowland-double-vacuum(7).pdf,waveguide,0,
+S2,hollowland-double-vacuum(7).pdf,liquid,1,8
+S2,hollowland-double-vacuum(7).pdf,ccd,8,28;30;32;33
+S2,hollowland-double-vacuum(7).pdf,collision,12,13;16;17;28;29;31;35
+S2,hollowland-double-vacuum(7).pdf,log-polar,28,13;14;15;16;17;18;19;22;23;24;26;27;28;29;31;33;34
+S2,hollowland-double-vacuum(7).pdf,log encoded,1,12
+S2,hollowland-double-vacuum(7).pdf,phi,8,2;7;12;14;16;28
+S2,hollowland-double-vacuum(7).pdf,parity,2,11;16
+S2,hollowland-double-vacuum(7).pdf,topolog,26,8;10;11;12;13;14;15;16;18;22;24;25;26;30;34;35
+S2,hollowland-double-vacuum(7).pdf,information,2,6;35
+S2,hollowland-double-vacuum(7).pdf,identity,6,16;19;20;24;29
+S2,hollowland-double-vacuum(7).pdf,projection,0,
+S2,hollowland-double-vacuum(7).pdf,state,55,6;7;10;14;15;16;17;18;19;20;22;23;24;25;26;27;29;30;31;32;33;34
+S2,hollowland-double-vacuum(7).pdf,memory,23,12;15;17;26;27;28;29;30;31;32;33;35
+S2,hollowland-double-vacuum(7).pdf,jitter,0,
+S2,hollowland-double-vacuum(7).pdf,sieve,15,30;31;32;35
+S2,hollowland-double-vacuum(7).pdf,exogenous log,0,
+S2,hollowland-double-vacuum(7).pdf,novelty-proportional,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,query,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,relation,2,65
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,event,5,3;37;45;48;66
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,phase,21,2;3;17;31;32;33;34;35;40;41;42;47;52;57
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,sheet,8,43;45;47;49;53;55;59;61
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,double vacuum,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,hourglass,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,one-bit,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,1-bit,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,sdf,20,15;16;17;18;19;20;24;30;31;41;59
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,cone,45,4;5;6;7;8;10;11;12;13;14;15;16;19;23;24;28;34;35;43;48;49;58;59
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,spherical,63,3;9;15;16;17;18;19;20;21;22;24;25;26;27;28;29;30;35;39;40;41;43;47;51;52;54;55;66
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,polar,50,2;3;9;10;11;12;15;16;20;21;26;27;30;47;48;49;50;51;55
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,klein,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,mobius,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,lineage,4,9;14;45;53
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,grammar,11,15;17;19;21;22;42;65
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,raster,44,18;19;29;31;32;33;35;39;40;41;42;43;44;45;46;47;49;51;54;55;56;57;59;60;67
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,raymarch,8,17;18;19;20;31;32
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,ray march,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,voxel,2,18;19
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,lut,118,1;2;3;4;6;8;9;10;11;12;13;14;15;16;17;19;20;21;22;23;24;26;28;30;31;32;33;34;35;36;37;38;39;40;41;42;43;45;46;47;48;49;50;51;55;57;58;60;61;62;66
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,feynman,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,vector,12,6;17;21;22;23;26;27;30;34;35;66
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,compatibility,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,invariant,5,4;22;24;38;49
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,address,2,20;31
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,branch,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,throughput,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,waveguide,3,35;52
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,liquid,4,15;26;62
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,ccd,18,15;16;17;19;20;22;28;30;31;32;34;46;48
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,collision,2,38;55
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,log-polar,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,log encoded,2,2;47
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,phi,36,1;2;3;4;6;7;9;12;13;15;17;18;19;29;36;39;40;42;43;52;53
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,parity,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,topolog,8,4;5;6;10;32;38;50
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,information,9,28;30;34;40;49;57;62;65
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,identity,12,4;5;8;10;20;21;22;38;47;63
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,projection,8,5;6;10;23;42;43
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,state,31,21;23;24;34;35;36;43;45;49;50;54;55;56;57;59;60;62;63;65;66;67
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,memory,8,61;62;63
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,jitter,49,13;14;15;17;19;21;23;24;25;27;28;29;30;33;35;37;41;42;44;49;51;55;57;59;66
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,sieve,82,13;14;15;17;18;19;20;22;23;24;25;27;28;29;30;32;34;35;36;39;40;41;42;45;46;47;48;49;51;52;53;54;55;56;57;58;59;61;63;66;67
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,exogenous log,0,
+S3,dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf,novelty-proportional,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,query,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,relation,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,event,4,3;8;13;14
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,phase,9,11;12;13;14;16;18
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,sheet,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,double vacuum,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,hourglass,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,one-bit,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,1-bit,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,sdf,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,cone,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,spherical,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,polar,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,klein,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,mobius,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,lineage,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,grammar,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,raster,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,raymarch,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,ray march,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,voxel,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,lut,6,3;6;7;13;17
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,feynman,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,vector,17,6;11;12;13;14;15;16;18;19
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,compatibility,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,invariant,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,address,2,2;3
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,branch,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,throughput,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,waveguide,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,liquid,1,6
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,ccd,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,collision,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,log-polar,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,log encoded,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,phi,35,10;11;14;15;16;17;18
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,parity,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,topolog,1,18
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,information,3,18
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,identity,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,projection,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,state,3,1;18
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,memory,3,1;2;4
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,jitter,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,sieve,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,exogenous log,0,
+S4,21BenBurgersStrikesBackTelNetNiet.pdf,novelty-proportional,0,
+S5,ADDominUS(1).pdf,query,18,1;2;10;20;21;22;24;36;37;40;41;45;52;53
+S5,ADDominUS(1).pdf,relation,41,1;2;6;9;13;14;15;17;18;21;22;24;25;27;28;30;32;33;35;38;40;41;42;44;46;51;52;54;55
+S5,ADDominUS(1).pdf,event,54,1;2;5;6;8;10;11;12;14;16;17;19;20;21;22;26;30;31;33;35;37;38;39;40;41;42;44;45;48;50;52;53;54;55;64
+S5,ADDominUS(1).pdf,phase,78,2;4;5;9;12;13;14;15;19;20;22;24;25;26;27;28;30;31;32;33;35;37;38;39;40;41;42;43;44;47;48;51;52;55;56;57;58;62
+S5,ADDominUS(1).pdf,sheet,23,9;13;14;15;25;27;28;30;32;35;40;41;42;44;51;55;57
+S5,ADDominUS(1).pdf,double vacuum,29,2;6;13;14;18;21;24;27;28;30;32;35;40;41;42;44;46;51;55;57;64
+S5,ADDominUS(1).pdf,hourglass,29,18;32;33;35;36;38;39;40;44;46;49;50;53;54;57;59;61;63
+S5,ADDominUS(1).pdf,one-bit,0,
+S5,ADDominUS(1).pdf,1-bit,22,33;44;45;46;47;49;54;58;59;60;62;64;65
+S5,ADDominUS(1).pdf,sdf,15,10;12;47;50;56;58;60;62;64
+S5,ADDominUS(1).pdf,cone,8,2;49;53;56;57;59;61;63
+S5,ADDominUS(1).pdf,spherical,19,1;3;4;39;50;53;57;58;59;60;61;62;64
+S5,ADDominUS(1).pdf,polar,8,3;17;48;50;51
+S5,ADDominUS(1).pdf,klein,21,12;14;18;28;35;46;47;50;55;56;58;60;62;64
+S5,ADDominUS(1).pdf,mobius,0,
+S5,ADDominUS(1).pdf,lineage,28,6;7;8;11;15;16;22;25;30;34;38;42;43;45;52;54
+S5,ADDominUS(1).pdf,grammar,17,6;8;10;11;16;25;34;41;52;53;54
+S5,ADDominUS(1).pdf,raster,49,4;5;6;7;8;9;10;13;14;15;16;17;21;23;24;28;30;31;34;35;36;37;38;39;43;44;48;53;54;55;59;61
+S5,ADDominUS(1).pdf,raymarch,1,9
+S5,ADDominUS(1).pdf,ray march,0,
+S5,ADDominUS(1).pdf,voxel,2,10;39
+S5,ADDominUS(1).pdf,lut,40,9;11;14;15;16;23;27;28;29;30;31;32;33;38;42;44;47;49;50;51;55;57;59;61;63
+S5,ADDominUS(1).pdf,feynman,1,53
+S5,ADDominUS(1).pdf,vector,50,2;4;13;14;15;17;18;26;27;28;29;30;31;32;33;35;36;38;39;40;42;49;51;54;55;60;61;64
+S5,ADDominUS(1).pdf,compatibility,23,9;10;13;14;15;18;22;25;27;29;31;33;35;38;39;40;41;42;43;52;55
+S5,ADDominUS(1).pdf,invariant,52,4;6;7;8;9;10;11;13;15;16;17;18;22;25;26;28;29;30;31;33;34;35;42;45;51;53;54;55;59;61;64
+S5,ADDominUS(1).pdf,address,10,7;15;22;30;38;42;43;45;52;53
+S5,ADDominUS(1).pdf,branch,11,8;10;11;31;38;42;54
+S5,ADDominUS(1).pdf,throughput,1,1
+S5,ADDominUS(1).pdf,waveguide,39,19;24;47;48;50;56;58;62;63;64
+S5,ADDominUS(1).pdf,liquid,12,28;31;35;50;58;60;62;64;65
+S5,ADDominUS(1).pdf,ccd,10,21;39;40;42;45;58;60;62;63
+S5,ADDominUS(1).pdf,collision,13,5;10;12;21;23;25;36;39;40;42;58
+S5,ADDominUS(1).pdf,log-polar,7,3;17;48;50;51
+S5,ADDominUS(1).pdf,log encoded,0,
+S5,ADDominUS(1).pdf,phi,21,1;2;3;5;7;9;13;17;20;35;48;56;63
+S5,ADDominUS(1).pdf,parity,17,33;44;45;46;47;54;64;65
+S5,ADDominUS(1).pdf,topolog,45,1;2;12;14;15;17;22;28;33;34;39;40;41;42;45;46;48;51;53;57;58;60;62;63;64
+S5,ADDominUS(1).pdf,information,6,6;11;16;47
+S5,ADDominUS(1).pdf,identity,43,2;6;7;8;9;11;14;15;16;25;27;30;32;34;35;42;45;53;54;55;56
+S5,ADDominUS(1).pdf,projection,8,1;7;8;9;54;56;57
+S5,ADDominUS(1).pdf,state,102,1;2;3;4;5;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;29;31;32;33;34;35;36;37;38;39;40;41;42;43;44;45;46;47;48;50;51;52;54;55;57;58;59;61;62;64
+S5,ADDominUS(1).pdf,memory,42,6;10;11;18;20;22;23;24;25;30;41;47;50;51;52;54;56;58;60;61;62;63;64
+S5,ADDominUS(1).pdf,jitter,6,26;49;58;60;61;62
+S5,ADDominUS(1).pdf,sieve,16,14;16;21;29;33;34;46;51;55;57;58;62
+S5,ADDominUS(1).pdf,exogenous log,13,11;25;26;28;29;31;34;41;55
+S5,ADDominUS(1).pdf,novelty-proportional,6,10;25;41;52
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,query,5,7;9;11
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,relation,2,3;9
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,event,42,1;2;3;4;5;6;7;8;9;10;11;12
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,phase,15,3;4;5;7;9;10;11;12
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,sheet,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,double vacuum,4,2;4;10;11
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,hourglass,1,11
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,one-bit,2,2;7
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,1-bit,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,sdf,2,2;11
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,cone,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,spherical,28,1;2;3;4;5;6;9;11;12
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,polar,5,3;7;8;9;10
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,klein,3,2;5;10
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,mobius,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,lineage,7,4;7;11
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,grammar,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,raster,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,raymarch,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,ray march,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,voxel,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,lut,1,5
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,feynman,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,vector,1,6
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,compatibility,14,3;5;6;7;8;9;11
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,invariant,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,address,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,branch,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,throughput,14,1;2;3;6;11;12
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,waveguide,35,1;2;3;4;5;6;7;8;9;10;11;12
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,liquid,69,1;2;3;4;5;6;7;8;9;10;11;12
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,ccd,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,collision,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,log-polar,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,log encoded,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,phi,4,3;7;9
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,parity,6,2;4;7;11
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,topolog,4,5;8;10;12
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,information,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,identity,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,projection,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,state,7,2;5;6;7;9
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,memory,2,2;10
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,jitter,1,8
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,sieve,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,exogenous log,0,
+S6,Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf,novelty-proportional,0,
+S7,KC Vector Graphical Art System.pdf,query,0,
+S7,KC Vector Graphical Art System.pdf,relation,0,
+S7,KC Vector Graphical Art System.pdf,event,2,5;8
+S7,KC Vector Graphical Art System.pdf,phase,16,2;3;4;5;7;10
+S7,KC Vector Graphical Art System.pdf,sheet,0,
+S7,KC Vector Graphical Art System.pdf,double vacuum,0,
+S7,KC Vector Graphical Art System.pdf,hourglass,0,
+S7,KC Vector Graphical Art System.pdf,one-bit,0,
+S7,KC Vector Graphical Art System.pdf,1-bit,22,1;2;3;4;5;6;8;9;10
+S7,KC Vector Graphical Art System.pdf,sdf,18,1;2;3;4;7;9;10
+S7,KC Vector Graphical Art System.pdf,cone,0,
+S7,KC Vector Graphical Art System.pdf,spherical,0,
+S7,KC Vector Graphical Art System.pdf,polar,32,1;2;3;4;5;6;7;8;9;10
+S7,KC Vector Graphical Art System.pdf,klein,0,
+S7,KC Vector Graphical Art System.pdf,mobius,0,
+S7,KC Vector Graphical Art System.pdf,lineage,0,
+S7,KC Vector Graphical Art System.pdf,grammar,0,
+S7,KC Vector Graphical Art System.pdf,raster,3,2;5;9
+S7,KC Vector Graphical Art System.pdf,raymarch,0,
+S7,KC Vector Graphical Art System.pdf,ray march,0,
+S7,KC Vector Graphical Art System.pdf,voxel,0,
+S7,KC Vector Graphical Art System.pdf,lut,15,1;2;4;6;7;8
+S7,KC Vector Graphical Art System.pdf,feynman,25,1;2;3;4;5;7;8;9;10
+S7,KC Vector Graphical Art System.pdf,vector,46,1;2;3;4;5;6;7;8;9;10
+S7,KC Vector Graphical Art System.pdf,compatibility,0,
+S7,KC Vector Graphical Art System.pdf,invariant,0,
+S7,KC Vector Graphical Art System.pdf,address,2,1;7
+S7,KC Vector Graphical Art System.pdf,branch,0,
+S7,KC Vector Graphical Art System.pdf,throughput,0,
+S7,KC Vector Graphical Art System.pdf,waveguide,0,
+S7,KC Vector Graphical Art System.pdf,liquid,0,
+S7,KC Vector Graphical Art System.pdf,ccd,0,
+S7,KC Vector Graphical Art System.pdf,collision,0,
+S7,KC Vector Graphical Art System.pdf,log-polar,23,1;2;3;4;5;6;7;8;9;10
+S7,KC Vector Graphical Art System.pdf,log encoded,0,
+S7,KC Vector Graphical Art System.pdf,phi,3,3;4
+S7,KC Vector Graphical Art System.pdf,parity,1,5
+S7,KC Vector Graphical Art System.pdf,topolog,0,
+S7,KC Vector Graphical Art System.pdf,information,0,
+S7,KC Vector Graphical Art System.pdf,identity,0,
+S7,KC Vector Graphical Art System.pdf,projection,0,
+S7,KC Vector Graphical Art System.pdf,state,3,2;9
+S7,KC Vector Graphical Art System.pdf,memory,0,
+S7,KC Vector Graphical Art System.pdf,jitter,9,8;9;10
+S7,KC Vector Graphical Art System.pdf,sieve,0,
+S7,KC Vector Graphical Art System.pdf,exogenous log,0,
+S7,KC Vector Graphical Art System.pdf,novelty-proportional,0,

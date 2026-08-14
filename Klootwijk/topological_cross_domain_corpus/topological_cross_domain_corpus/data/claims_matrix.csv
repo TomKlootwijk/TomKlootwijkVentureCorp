@@ -1,0 +1,41 @@
+id,claim,source_pages,evidence_status,disposition,notes
+C01,The authoritative object is a directly queryable relation/state/event substrate rather than an image or frame buffer.,"S1 pp.1,5-10; S5 pp.1,9",canonical,retain,Core interpretive rule.
+C02,"Local spherical or radial-angular supports organize relevance, coupling, sensing, and measurement.","S1 pp.1,5-7; S6 pp.3,6",canonical,retain,Local chart only; not global remeshing.
+C03,"A finite grammar plus relations, transitions, invariants, and an exogenous log can define a restricted equation world.","S1 pp.5-8,11-12; S5 pp.10-11",canonical architecture,retain,Prototype in bounded relation families.
+C04,"SDF=0 or B=0 is best read as an event/transition surface, not a place to keep marching through.",S1 p.7; S2 pp.16-19; S5 p.54,canonical correction,retain,Prevents hidden rasterization from returning.
+C05,"Events require relation satisfaction, support admission, and compatibility.","S1 pp.6-8; S6 pp.3,5,7",canonical,retain,Geometry alone is insufficient.
+C06,Double vacuum means co-location without coupling across incompatible phase/sheet/address sectors.,"S1 p.6; S5 pp.32-33; S6 pp.2,4",canonical,retain,"Absence of coupling, not literal emptiness."
+C07,"One bit is a routing/parity/validity flag, not the complete state.","S1 pp.5-7; S6 pp.2,7",canonical correction,retain,Schema is mandatory.
+C08,Identity should persist by lineage and invariants rather than current coordinate alone.,"S1 pp.1,5-8,11; S5 pp.6-8",canonical,retain,Split/merge rules still required.
+C09,"Closed dynamics can be regenerated from seed and grammar, while irreducible novelty is logged.","S1 pp.8,11-12; S5 pp.10-11",architecture hypothesis,prototype,Measure memory and recomputation cost.
+C10,"For a fixed closed expression, state_at(t) cost may be independent of skipped timesteps.",S1 p.8,bounded complexity claim,test,Not universal O(1).
+C11,next_event can replace frame replay when compatible event roots are tractable.,"S1 pp.7-8,11-12",bounded complexity claim,test,"Can fail from event density, degeneracy, branches."
+C12,Compatibility plus event solving must cost less than the materialization avoided.,S1 p.8; S6 p.6,canonical success criterion,retain,Primary falsification rule.
+C13,"Rasterization, raymarching, and ray tracing may remain downstream projections.",S1 pp.9-10; S5 p.9,canonical,retain,Do not mistake projector for state space.
+C14,The KC Vector system can be interpreted as a downstream projection adapter over log-polar addresses and implicit boundaries.,S7 pp.1-10,projection proposal,retain with caveat,Not the core substrate.
+C15,KC Feynman vectors are a fully specified quantum path-integral method.,S7 pp.1-3,unsupported terminology,rename/demote,Source supplies no derivation; normalize to phase-amplitude accumulator.
+C16,A log-polar chart turns radial scaling into additive translation in log radius.,S7 p.7; S3 pp.2-3,source-defined mathematical observation,retain,Chart has singularity/conditioning issues.
+C17,"Sieve and jitter motifs describe sensor sampling, dithering, and candidate reduction.","S3 pp.13-15,24-33; S7 pp.8-10",cross-domain analogy,retain as layer-specific,Not proof that all sampling can vanish.
+C18,"All spatial sieves, BVHs, octrees, and broad phases are eliminated universally.",S2 pp.30-32; S5 pp.14-16,inflated claim,demote/test,Only possible for restricted analytic supports with effective compatibility.
+C19,Klein bottle topology is a useful routing/gluing abstraction.,"S1 p.6; S6 pp.2,5",bounded abstraction,retain,"Must specify ports, orientation map, transfer matrix."
+C20,A literal Klein-bottle device automatically prevents tunneling or physical interaction.,"S2 pp.16-25; S5 pp.35,64",unsupported physical claim,reject,Topology is not a substitute for dynamics or fabrication.
+C21,The quad hourglass is a four-sector routing visualization around a rank-changing event locus.,"S1 p.6; S2 pp.23-25; S5 pp.33,54",normalized interpretation,retain,Not a topology proof.
+C22,lambda=0 may mark rank loss/null-space entry at an event.,"S2 pp.22-25; S5 pp.33,54",normalized mathematical motif,retain with tolerance,Numerical thresholds and operator definition required.
+C23,The golden ratio is required for correctness or loop avoidance.,S2 pp.12-19; S4 pp.10-11,speculative motif,reject as requirement,May be an optional schedule; no proof supplied.
+C24,Phi is used consistently across the corpus.,S2; S4; S5,false due to symbol overload,correct,"Separate angle, phase, golden ratio, and torque."
+C25,"The Ben Burgers overlap can be read as shared domain, interference, or tolerance.",S4 pp.16-19,geometric brainstorming,retain as analogy,No unique mathematical ratio established.
+C26,Zero-based indexing changes 21+7+7 from 35 to 36.,S4 pp.1-3,incorrect if read as arithmetic,correct,35 is an index naming the 36th position.
+C27,Hollowlens-0 is a bounded optofluidic demonstrator with a digital sidecar.,"S6 pp.4,7-10",canonical prototype,retain,"Must preregister support, modes, thresholds, error and energy boundary."
+C28,Matrix-in-glass is a calibrated optical transfer function.,"S6 pp.2,5",bounded hardware translation,retain,Not a zero-cost computer.
+C29,Double vacuum in hardware can be implemented as uncoupled or isolated modes/channels.,"S6 pp.2,4",bounded hardware translation,retain,Measure crosstalk and false events.
+C30,"Spherical throughput is verified events per second with support, compatibility, guard and confidence.","S6 pp.3,6,11",canonical metric,retain,"Report loss, energy, miss/false rates and calibration."
+C31,The integrated optical system has proven an advantage over matched electronics.,S6 pp.9-12,not established,test,Component feasibility is not system validation.
+C32,"The architecture has zero latency, zero heat, zero power, or zero memory.","S2 pp.15,26-35; S5 multiple; S6 pp.2,10",explicitly rejected totalizing claim,reject,All physical and computational layers carry cost.
+C33,The architecture universally solves chaos or all PDEs exactly.,S2; S5; S6 p.10,explicitly rejected totalizing claim,reject,Restricted relation families only.
+C34,"The architecture directly controls biology, gene expression, CRISPR, protein folding, or medical outcomes.",S5 pp.3-6; S6 p.10,unsupported application claim,exclude,At most a simulation/design prompt; not a mechanism.
+C35,"Political, psychological, and personal narratives in later source pages are technical proof.",S3 later pages; S5 pp.13-35,metaphorical narrative,exclude from core,"Preserve as provenance, not system mechanism."
+C36,A person or identity can become physically untouchable through phase sheets or UUIDs.,"S5 pp.14-18,32-35",unsupported literal claim,reject,Reinterpret only as access-control/provenance metaphor.
+C37,The headless query-first prototype is the truest first experiment.,"S1 pp.9,11-12; S6 p.9",canonical recommendation,retain,Avoid renderer-first benchmarking.
+C38,A hybrid engine remains a practical bridge.,S1 p.9,supported engineering bridge,retain,Stable core plus optional rendering/volumetric stages.
+C39,"Numerical conditioning is part of the ontology, not an implementation afterthought.",S1 pp.8-9,canonical risk,retain,"Log coordinates, tangencies, coincident surfaces, rank changes."
+C40,"The first useful benchmark is six queries: state, next event, events in cone, phase coupling, transition routing, identity rebuild.",S1 pp.11-12,canonical experiment plan,retain,Forms the Equation World Zero exit criteria.

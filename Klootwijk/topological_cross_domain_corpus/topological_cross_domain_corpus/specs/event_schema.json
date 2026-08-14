@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:equation-world-zero:event",
+  "title": "Bounded Compatibility Event",
+  "type": "object",
+  "required": ["event_id", "entity_id", "relation_id", "time", "support_admitted", "compatible", "guard_crossed", "confidence", "pre_state_hash", "post_state_hash", "lineage_parent"],
+  "properties": {
+    "event_id": {"type": "string"},
+    "entity_id": {"type": "string"},
+    "relation_id": {"type": "string"},
+    "time": {"type": "number"},
+    "time_interval": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"type": "number"}
+    },
+    "support_admitted": {"type": "boolean"},
+    "compatible": {"type": "boolean"},
+    "compatibility_reasons": {"type": "array", "items": {"type": "string"}},
+    "predicate_version": {"type": "string"},
+    "guard_crossed": {"type": "boolean"},
+    "root_multiplicity": {"type": "integer", "minimum": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "pre_state_hash": {"type": "string"},
+    "post_state_hash": {"type": "string"},
+    "lineage_parent": {"type": "string"},
+    "branch_created": {"type": ["string", "null"]},
+    "parity_before": {"type": "integer", "enum": [0, 1]},
+    "parity_after": {"type": "integer", "enum": [0, 1]},
+    "invariant_report": {"type": "object"},
+    "external_novelty": {"type": "object"}
+  },
+  "additionalProperties": false
+}

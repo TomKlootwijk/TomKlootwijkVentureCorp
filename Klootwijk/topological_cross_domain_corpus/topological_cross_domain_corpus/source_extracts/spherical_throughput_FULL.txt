@@ -1,0 +1,592 @@
+
+===== PAGE 1 =====
+SPHERICAL THROUGHPUT
+PRACTICAL WAVEGUIDE
+LIQUID-SUBSTRATE LENSING
+A bounded optofluidic implementation of the spherical-support event calculus
+ADDominUS ADDED TO CORPUS
+B.C.E. GATING
+MEASURED, NOT MAGICAL
+CANONICAL ADDITION
+A practical waveguide liquid-substrate lens admits a bounded spherical input
+field, uses a tunable liquid interface to couple it into compatible guided modes,
+declares transitions only at measured guard crossings, and reports verified
+events with end-to-end error, energy, loss, and calibration included.
+Corpus integration report | source S8: ADDominUS.pdf | July 2026
+
+===== PAGE 2 =====
+CORPUS UPDATE
+ADDominUS enters the source basis
+Exploratory hardware and manufacturing extension
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+2
+NEW SOURCE RECORD
+S8 - ADDominUS
+65-page exploratory dialogue and source
+bundle. The decisive waveguide material
+appears on pp. 47-48, 50, 58, and 60-64.
+SOURCE / NOT VALIDATION
+WHAT IT CONTRIBUTES
+A hardware-facing extension
+Etched-glass and silicon-photonic waveguides as an optional physical
+endpoint.
+A tunable liquid-lensing region between a spherical input field and a
+guided-mode network.
+"Matrix-in-glass" as a calibrated optical transfer function rather than a stored
+picture.
+A pinch point as a measurable threshold, dark port, cutoff, or critical-coupling
+event.
+One-bit parity as a route or validity flag, not as the complete state.
+Manufacturing contexts: spectroscopy, vibration isolation, microfluidics, and
+photonic packaging.
+CORPUS TRANSLATION RULE
+Keep the implementable operator; demote the totalizing claim
+ADDominUS motif
+Practical translation
+Status
+Matrix-in-glass
+Calibrated passive or tunable transfer matrix in a waveguide mesh.
+RETAIN
+Liquid spherical field
+Microfluidic lens, overclad, or liquid-core region that changes focus and effective index.
+TRANSLATE
+Double vacuum
+Orthogonal, uncoupled, or deliberately isolated modes/channels.
+RETAIN
+Klein SDF waveguide
+Explicit routing/gluing map in the model; literal non-orientable hardware remains frontier.
+DEMOTE
+Zero tunneling
+Bound the missed-event probability with continuous models and measured timing.
+REWRITE
+Zero latency / heat / memory
+Include laser, detector, actuator, control, calibration, and storage costs.
+REJECT
+TYPE SAFETY
+Maxwell governs the optical field. Fluid mechanics governs the liquid interface. Coupled-mode theory
+governs guided amplitudes. Event logic governs when a result is declared.
+Source basis: ADDominUS pp. 47-48, 50, 58, 60-64; Spherical Throughput pp. 2-4; The Spherical Line, decisive-line and translation sections.
+
+===== PAGE 3 =====
+CANONICAL DEFINITION
+What the practical system is
+Local support -> liquid coupling -> compatible mode -> B.C.E.
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+3
+WORKING DEFINITION
+Practical technical waveguide liquid-substrate lensing is an optofluidic photonic front end in
+which a local radial-angular field is focused or phase-shaped by a controllable liquid region,
+coupled into selected guided modes, filtered by wavelength/polarization/mode/phase
+compatibility, and converted into a verified event only when a measured guard condition is
+crossed.
+SIGNAL PATH
+SPHERICAL SUPPORT
+r, theta, phi
+LIQUID LENS
+curvature / n
+MODE COUPLER
+overlap eta
+WAVEGUIDE
+phase / interference
+B.C.E. GUARD
+g=0 and chi=1
+VERIFIED OUTPUT
+event + uncertainty
+WHAT "SPHERICAL" MEANS
+A local chart around the coupler:
+angular support, radial reach,
+orientation, uncertainty, or field of view.
+It does not require a global spherical
+world model.
+WHAT "LIQUID-SUBSTRATE" MEANS
+A liquid region is bonded to, embedded
+in, or optically coupled to a solid
+photonic substrate. It tunes curvature,
+effective index, phase, or coupling.
+WHAT "THROUGHPUT" MEANS
+Verified events or answered queries
+per second at a declared error budget.
+It is not merely photon flux, baud rate,
+or propagation velocity.
+PRIMARY DEFINITION OF SPHERICAL THROUGHPUT
+Count only outputs that were inside the declared spherical support, compatible with the selected channel, crossed the specified guard, and met the
+confidence or certification threshold.
+Corpus anchor: Spherical Throughput defines throughput after local radial-angular supports and compatibility gates remove irrelevant relations; ADDominUS extends this toward
+waveguide and liquid-lens hardware.
+
+===== PAGE 4 =====
+PHYSICAL ARCHITECTURE
+Three practical embodiments
+Start with a liquid overclad on a solid waveguide
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+4
+CROSS-SECTION
+SOLID PHOTONIC SUBSTRATE (glass / SiN / polymer)
+TUNABLE LIQUID MENISCUS / OVERCLAD
+local spherical support
+liquid changes focus / n_eff / phase
+guided mode network
+balanced detectors
+EMBODIMENT CHOICES
+A - LIQUID OVERCLAD
+Solid waveguide; microfluidic liquid
+above or beside the mode. Tunes
+effective index and coupling. Best first
+prototype.
+B - LIQUID CORE
+The guided mode propagates in a
+liquid-filled channel or capillary. Strong
+interaction, but packaging and loss
+control are harder.
+C - INPUT LIQUID LENS
+A deformable droplet or membrane
+focuses the free-space spherical field
+into a conventional solid waveguide
+circuit.
+RECOMMENDED HOLLOWLENS-0 STACK
+Fused-silica or SiN waveguide with a 2x2 interferometer.
+Microfluidic chamber over one arm with a stable, characterized liquid.
+Pressure, electrowetting, or thermal actuation; balanced photodiodes at the outputs.
+FPGA or MCU sidecar for calibration, thresholding, parity, and event lineage.
+Practical translation of ADDominUS pp. 47-48, 50, 58, 60-64. The liquid region is a real optical element; "double vacuum" is implemented as uncoupled modes or isolated
+channels.
+
+===== PAGE 5 =====
+GOVERNING PHYSICS
+The equations that replace metaphor
+Optics, fluid interface, guided modes, and event semantics
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+5
+1. OPTICAL FIELD
+Solve the electromagnetic field in the actual dielectric geometry.
+The actuator state u changes the permittivity through the liquid
+shape or index.
+2. GUIDED-MODE EVOLUTION
+Coupled-mode theory tracks attenuation, propagation constants,
+and tunable coupling between modes. This is the practical
+"matrix-in-glass".
+3. LIQUID INTERFACE + PHASE
+Young-Laplace links pressure to meniscus curvature. The
+effective-index change creates the programmable optical phase.
+4. TRANSIENT ACTUATION
+Use Navier-Stokes only when the lens shape is moving quickly
+enough that quasi-static curvature is insufficient. Light itself
+remains governed by Maxwell.
+5. SPHERICAL-TO-MODE COUPLING
+The overlap integral measures how much of the admitted
+radial-angular field couples into the chosen guided mode.
+6. BOUNDED COMPATIBILITY EVENT
+A transition exists only when the input lies in support, the channel
+is compatible, and the measured guard reaches zero.
+TOPOLOGY DISCIPLINE
+A "Klein bottle" can be retained as a routing or gluing abstraction only after its ports, orientation map, and
+transfer matrix are specified. It is not a substitute for Maxwell, coupled-mode theory, or fluid mechanics.
+Equations are the bounded engineering formalization of the corpus. They are not extracted verbatim from ADDominUS, whose displayed formulas are incomplete in the source
+export.
+
+===== PAGE 6 =====
+SPHERICAL THROUGHPUT
+How to measure the claimed advantage
+Verified event rate, not propagation rhetoric
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+6
+PRIMARY METRIC
+Units: verified events per second. The support, compatibility, guard, and confidence terms are mandatory; removing any one of them turns the measure
+into raw detector traffic rather than spherical throughput.
+BENCHMARK VECTOR
+Metric
+Definition
+Why it matters
+Theta_sph
+verified events / second
+Primary throughput at declared error.
+eta_route
+verified / admitted
+Fraction of admitted inputs routed correctly.
+Theta_E
+verified events / joule
+Includes source, actuator, detector, and control energy.
+R_support
+input candidates / supported candidates
+Measures angular-radial pruning.
+R_compat
+supported / solver-entering candidates
+Measures mode and policy selectivity.
+L50 / L99
+median / tail event latency
+Includes liquid settling and electronics.
+P_miss / P_false
+missed / false B.C.E. probability
+Defines the certification boundary.
+Drift
+transfer error vs. time / temperature
+Determines calibration burden.
+ILLUSTRATIVE COUNTING EXAMPLE - NOT A PERFORMANCE CLAIM
+INPUT
+10,000
+IN SUPPORT
+1,000
+COMPATIBLE
+100
+VERIFIED B.C.E.
+80
+ARITHMETIC ONLY
+If 80 events are verified in a 1 ms window, Theta_sph = 80,000 events/s. This number is meaningful only with the measured
+miss rate, false-event rate, insertion loss, energy, and calibration interval reported beside it.
+The corpus already states the real test: support plus compatibility and event-solving must cost less than the materialization they avoid. This page turns that criterion into a lab
+benchmark.
+
+===== PAGE 7 =====
+B.C.E. CONTROL
+Bounded Compatibility Event logic
+The event layer that makes the optical path queryable
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+7
+COMPATIBILITY PREDICATE
+Compatibility can be partly physical (wavelength, polarization, mode, phase) and partly digital (time window, permission, provenance).
+Co-location at the coupler is not enough.
+EVENT STATE MACHINE
+IDLE
+ADMIT SUPPORT
+TUNE LIQUID
+MATCH MODE
+CROSS GUARD
+LATCH B.C.E.
+LOG / RESET
+ONE-BIT PARITY - NARROW ROLE
+p = 0
+Not admitted, route A, stale, unavailable, or incompatible -
+according to the declared convention.
+p = 1
+Admitted, route B, fresh, available, or compatible. The bit
+must never be interpreted without its schema.
+A B.C.E. may toggle p, but the optical amplitudes,
+thresholds, uncertainty, and lineage remain separate
+state.
+REFERENCE CONTROL LOOP
+support = admit(theta, phi, r)
+lens_u  = tune(target_mode)
+y       = detector_read()
+chi     = mode_ok AND phase_ok
+          AND time_ok AND policy_ok
+if support AND chi AND guard(y):
+    parity = NOT parity
+    emit(event, confidence, lineage)
+else:
+    reject_or_hold()
+WHY A DIGITAL SIDECAR REMAINS
+Stores calibration coefficients and liquid actuator state.
+Applies thresholds, uncertainty, lineage, and policy tags.
+Detects drift, bubbles, temperature shifts, and detector saturation.
+Provides a conventional reference path and safe fallback.
+B.C.E. retains the earlier Bounded Compatibility Event mnemonic while grounding it in measured optical and control variables.
+
+===== PAGE 8 =====
+FABRICATION
+How to build the literal device
+A conventional optofluidic process, not a topological miracle
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+8
+PROCESS FLOW
+1
+SELECT
+substrate +
+wavelength
+2
+FORM
+waveguides /
+couplers
+3
+OPEN
+microfluidic cavity
+4
+ADD
+liquid + actuator
+5
+BOND
+seal + ports
+6
+COUPLE
+fiber / free space
+7
+DETECT
+photodiodes + ADC
+8
+CALIBRATE
+transfer + drift
+DESIGN VARIABLES
+Variable
+Practical choices
+Measure before claiming
+Solid platform
+Fused silica, borosilicate, SiN-on-oxide, polymer.
+Propagation loss, bend loss, surface roughness, thermal drift.
+Liquid region
+Water/glycerol mixtures, optical oils, liquid crystal, other
+characterized fluids.
+Absorption, refractive index, viscosity, volatility, contamination.
+Actuation
+Pressure, electrowetting, piezo, thermal, electro-optic or
+liquid-crystal control.
+Tuning range, settling time, hysteresis, cycle life, power.
+Coupling
+Grating, edge, prism, microlens, tapered or capillary
+coupling.
+Mode overlap, angular acceptance, polarization sensitivity.
+Packaging
+Bonded glass, polymer lid, microfluidic ports, hermetic or
+serviceable seal.
+Bubble rate, leakage, swelling, outgassing, alignment retention.
+Detection
+Single-ended or balanced photodiodes with ADC/FPGA
+sidecar.
+Noise floor, saturation, timing jitter, dark current, calibration.
+MANUFACTURING GUARDRAILS
+Prevent trapped bubbles and liquid evaporation before optimizing algorithms.
+Characterize wavelength-dependent absorption and material compatibility.
+Include laser, pressure/electrical actuation, detector, and control safety.
+Treat the "liquid substrate" as a packaged optical component with tolerances, not as an unbounded fluid metaphor.
+ADDominUS provides the manufacturing prompt; this page translates it into a conventional photonic-microfluidic process sequence.
+
+===== PAGE 9 =====
+PROTOTYPE
+Hollowlens-0
+A minimum demonstrator that can fail usefully
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+9
+MINIMUM BUILD
+One angularly scanned input beam, one tunable liquid coupler, one 2x2 interferometric waveguide, two
+balanced detectors, and one digital sidecar. The query is: did an input from the declared spherical sector
+couple into the compatible mode and cross the output threshold inside the requested time window?
+BENCH LAYOUT
+ROTATING SOURCE
+theta / phi
+LIQUID COUPLER
+u(t)
+2x2 MZI
+phase matrix
+BALANCED PD
+y1, y2
+FPGA / MCU
+B.C.E. + log
+EXPERIMENT MATRIX
+Test
+Controlled change
+Readout
+Success criterion
+Support
+Move input across theta/phi sectors.
+Coupling map and candidate count.
+Declared sector is admitted; outside sectors
+are suppressed.
+Liquid tuning
+Sweep pressure/voltage/temperature.
+Phase, focus, eta_c, settling time.
+Repeatable transfer with bounded hysteresis.
+Compatibility
+Change wavelength, polarization, mode, or
+phase tag.
+Accepted vs rejected events.
+False accept and false reject meet preset
+limits.
+Event timing
+Drive output through threshold at known times.
+B.C.E. timestamp and confidence.
+No missed crossings within declared
+bandwidth.
+Energy
+Measure laser, actuator, detector, and
+controller.
+Joules per verified event.
+Beats the electronic reference at equal
+accuracy.
+Drift
+Cycle temperature and run duration.
+Transfer error and recalibration
+interval.
+Calibration burden does not erase the
+advantage.
+PRE-REGISTER BEFORE POWERING THE LASER
+Wavelength, optical power, spherical support, compatible modes, thresholds, allowed uncertainty, error targets,
+energy accounting boundary, calibration interval, and the electronic baseline must be fixed before results are
+inspected.
+The first proof is headless and query-based: a stable, bounded relation family that answers state/event questions without a frame loop.
+
+===== PAGE 10 =====
+RESEARCH DISCIPLINE
+Failure modes and kill criteria
+Mitigations + ordinary engineering
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+10
+RISK REGISTER
+Risk
+Failure symptom
+Mitigation
+Kill criterion
+Optical loss
+Signal vanishes through couplers, fluid,
+bends, or interfaces.
+Short path, better coupling, lower-loss materials,
+balanced detection.
+No energy or accuracy advantage at
+required power.
+Liquid instability
+Bubbles, evaporation, wetting drift,
+contamination, or hysteresis.
+Degas, seal, select compatible fluids, monitor
+pressure and temperature.
+Transfer cannot be reproduced or
+calibrated.
+Slow actuation
+Lens settling is slower than the event
+stream.
+Use quasi-static use case, faster actuator, smaller
+chamber, predictive control.
+Required event rate exceeds physical
+tuning bandwidth.
+Mode crosstalk
+Incompatible channels leak into each
+other.
+Mode filters, polarization control, phase trim, guard
+bands.
+False-event rate exceeds declared
+tolerance.
+Calibration drift
+Temperature or aging changes the
+transfer matrix.
+Reference channels, periodic calibration, digital
+compensation.
+Calibration energy/time erases the
+benefit.
+Event ambiguity
+Threshold tangency, ringing, or detector
+noise creates unstable events.
+Hysteresis, interval estimates, confidence,
+debounce, fallback sampling.
+Missed or unordered events at
+application tolerance.
+Packaging failure
+Leaks, delamination, swelling, or
+alignment loss.
+Reliability cycling, compatible bonding, mechanical
+relief, serviceable design.
+Cannot pass intended environment or
+cycle count.
+No system advantage
+The digital sidecar does nearly all useful
+work.
+Measure full system; simplify optical kernel.
+Conventional electronic reference is
+cheaper, faster, or more accurate.
+CLAIMS THIS INTEGRATION DOES NOT MAKE
+No zero latency: propagation is fast, but coupling, liquid actuation, detection, conversion, and control take time.
+No zero heat or zero power: lasers, modulators, actuators, detectors, and electronics dissipate energy.
+No universal O(1), zero-memory universe, exact chaos, or topological immunity from missed events.
+No literal double vacuum or physical Klein-bottle proof unless a fabricable geometry and transfer map are specified.
+No general AI compression, medical effect, biological mechanism, or replacement for all renderers and PDE solvers.
+This bounded interpretation follows the corpus rule: retain useful operators, require a digital reference, and treat hardware claims as frontier until measured.
+
+===== PAGE 11 =====
+SOURCE CORPUS
+Integration record and canonical addition
+ADDominUS is now source S8
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+11
+UPDATED SOURCE BASIS
+Ref
+Document / pages
+Role in this synthesis
+S1
+The Spherical Line / architecture magnification, decisive line and operator
+sections
+Defines query authority, local spherical support, event surfaces, compatibility, lineage,
+and a falsifiable prototype.
+S2
+Spherical Throughput - High-Impact Applications, pp. 2-5, 12, 15-16
+Defines spherical throughput, metrics, readiness, the hardware frontier, and failure
+criteria.
+S3
+Inuit bone glasses, pp. 7-9
+Aperture, tilt-shift, local angular support, and the slit-as-filter origin motif.
+S4
+Hollowland double vacuum, pp. 12-35
+Generative vocabulary: phase separation, hourglass, SDF zero, parity, and speculative
+wave routing.
+S5
+AI-Knowledge-Transfer-to-Geometric-Manifold, pp. 20-33
+Compile-to-manifold and photonic prompts, retained as task-specific and frontier
+hypotheses.
+S6
+Spherical Substrate Waveguide Principle Addendum + B.C.E. synthesis
+Condenses the channel: support -> compatibility -> event -> transition -> lineage.
+S7
+Chronological Synthesis of the Attached Archive, pp. 1-4, 7-9
+Supplies feasibility discipline, hybrid-engine framing, and benchmark-first constraints.
+S8
+ADDominUS, pp. 47-48, 50, 58, 60-64
+Adds etched-glass/PIC waveguides, liquid-lensing manufacturing language, and the
+Hollowlens hardware prompt.
+NEW CANONICAL CORPUS ADDITION
+The spherical throughput of practical technical waveguide liquid-substrate lensing is the
+verified event or query rate produced when a bounded spherical input support is coupled
+through a tunable liquid optical interface into compatible guided modes, with transitions
+declared only at measured guard crossings and with optical loss, error, energy, actuator
+latency, calibration, uncertainty, and lineage included in the result.
+Canonical shorthand: local support -> liquid-controlled coupling -> compatible mode -> B.C.E. -> verified output.
+DECISION
+Add ADDominUS to the source corpus as an exploratory hardware/manufacturing source. Build Hollowlens-0 only after
+the digital transfer model, compatibility predicate, event guard, and full energy/error boundary are specified.
+Method note: user-supplied sources are treated as design records. No external performance validation was performed for this report.
+
+===== PAGE 12 =====
+TECHNICAL ANCHORS
+Established component classes behind Hollowlens-0
+Component feasibility is not system validation
+Practical waveguide liquid-substrate lensing | ADDominUS corpus integration | July 2026
+12
+EVIDENCE BOUNDARY
+Liquid lenses, optofluidic interferometers, reconfigurable liquid-core or liquid-cladding guides, and
+femtosecond-written glass waveguides are established component classes. Their existence supports a practical
+prototype path; it does not validate the corpus's system-level throughput, energy, latency, or topology claims.
+PRIMARY LITERATURE MAP
+Component class
+Primary technical anchor
+What it supports
+Variable-focus liquid lens
+Kuiper & Hendriks, Applied Physics Letters 85 (2004). DOI 10.1063/1.1779954
+Electrically controlled liquid-interface focal power.
+Electrowetting lens
+Berge & Peseux, European Physical Journal E 3 (2000). DOI
+10.1007/s101890070029
+Voltage-controlled wetting as a compact liquid-lens
+actuator.
+Liquid core / cladding lens
+Tang et al., Lab on a Chip 8 (2008). DOI 10.1039/B717037H
+Dynamically reconfigurable optofluidic lensing with
+flowing liquids.
+Optofluidic MZI
+Crespi et al., Lab on a Chip 10 (2010). DOI 10.1039/B920062B
+Interferometric phase readout in an integrated
+optofluidic circuit.
+Reconfigurable liquid waveguide
+Fan et al., Lab on a Chip 16 (2016). DOI 10.1039/C5LC01233C
+Liquid-core/liquid-cladding guidance and tunable
+routing.
+Femtosecond-written glass guide
+Allsop et al., Applied Optics 49 (2010). DOI 10.1364/AO.49.001938
+Directly written waveguides in borosilicate glass.
+Waveguides beside
+microchannels
+Ho et al., Applied Physics A 106 (2012). DOI 10.1007/s00339-011-6675-7
+Integration of laser-written optical paths with glass
+microfluidic channels.
+Liquid-cladding silica guide
+Maia et al., Optics and Lasers in Engineering 158 (2022). DOI
+10.1016/j.optlaseng.2022.107016
+Suspended silica-core waveguides whose cladding
+is a liquid environment.
+SYSTEM-LEVEL CLAIM STILL TO BE PROVEN
+Hollowlens-0 must demonstrate that the combined optical source, liquid actuator, waveguide, detector, calibration
+loop, and B.C.E. sidecar produce more verified events per second and per joule than a matched electronic baseline
+at the same error and uncertainty boundary.
+Primary references establish component precedent only. The integrated spherical-throughput definition and benchmark remain the present corpus synthesis.

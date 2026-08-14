@@ -1,0 +1,64 @@
+{
+  "before": {
+    "entity_id": "e-alpha",
+    "time": 0.0,
+    "position": [
+      -2.0,
+      0.25
+    ],
+    "phase": 0.0,
+    "sheet": 0,
+    "address": "0c34c34eab1a93ccece2456125c824a2",
+    "branch": "root",
+    "parity": 0,
+    "invariant_tags": [
+      "mass-class-A"
+    ],
+    "state_variables": {}
+  },
+  "event": {
+    "event_id": "8b1aa2790d0369fe7b3d4152",
+    "entity_id": "e-alpha",
+    "relation_id": "B0",
+    "transition_id": "route-A-to-B",
+    "time": 2.0,
+    "support_admitted": true,
+    "compatible": true,
+    "compatibility_reasons": [],
+    "predicate_version": "chi-v0.1",
+    "guard_crossed": true,
+    "root_multiplicity": 1,
+    "confidence": 1.0,
+    "pre_state_hash": "ad16fb2aabcdca402c1436b1d78887b84032175f1a00431a52efd6d6d693fb97",
+    "post_state_hash": "0bcb26d426ef00ebde0440b812b8a8a17a6fae8214c1887a588402a9acfaabb0",
+    "lineage_parent": "0c34c34eab1a93ccece2456125c824a2",
+    "branch_created": "root/route-A-to-B@2",
+    "parity_before": 0,
+    "parity_after": 1,
+    "invariant_report": {
+      "passed": true,
+      "checked": [
+        "mass-class-A"
+      ]
+    }
+  },
+  "after": {
+    "entity_id": "e-alpha",
+    "time": 2.0,
+    "position": [
+      0.0,
+      0.25
+    ],
+    "phase": 0.0,
+    "sheet": 1,
+    "address": "b29237d737a4dbc18a5e4b1b895c0a52",
+    "branch": "root/route-A-to-B@2",
+    "parity": 1,
+    "invariant_tags": [
+      "mass-class-A"
+    ],
+    "state_variables": {
+      "route": "B"
+    }
+  }
+}

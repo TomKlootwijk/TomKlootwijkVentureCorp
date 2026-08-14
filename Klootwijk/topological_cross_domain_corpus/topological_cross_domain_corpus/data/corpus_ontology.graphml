@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<key id="label" for="node" attr.name="label" attr.type="string"/>
+<key id="type" for="node" attr.name="type" attr.type="string"/>
+<key id="status" for="node" attr.name="status" attr.type="string"/>
+<key id="category" for="node" attr.name="category" attr.type="string"/>
+<key id="description" for="node" attr.name="description" attr.type="string"/>
+<key id="relation" for="edge" attr.name="relation" attr.type="string"/>
+<graph id="G" edgedefault="directed">
+<node id="S1"><data key="label">Chronological Synthesis of the Spherical Substrate Line(3).pdf</data><data key="type">source</data><data key="status">canonical interpretive authority</data><data key="category"></data><data key="description">Mature interpretive synthesis and feasibility discipline</data></node>
+<node id="S2"><data key="label">hollowland-double-vacuum(7).pdf</data><data key="type">source</data><data key="status">exploratory and metaphor-heavy</data><data key="category"></data><data key="description">Generative topology and CS vocabulary: double vacuum, SDF zero, phase, parity, hourglass, eigenspace</data></node>
+<node id="S3"><data key="label">dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf</data><data key="type">source</data><data key="status">exploratory cross-domain narrative</data><data key="category"></data><data key="description">Optical/perceptual origin motifs: aperture, inversion, polar LUTs, sensory sieves, jitter, reflection</data></node>
+<node id="S4"><data key="label">21BenBurgersStrikesBackTelNetNiet.pdf</data><data key="type">source</data><data key="status">geometric/typographic brainstorming</data><data key="category"></data><data key="description">Zero-index, hinge, phi/D-fold, overlap and shared-domain motifs</data></node>
+<node id="S5"><data key="label">ADDominUS(1).pdf</data><data key="type">source</data><data key="status">mixed synthesis with speculative claims</data><data key="category"></data><data key="description">Cross-domain consolidation: relation algebra, identity, memory, compatibility, hardware prompts</data></node>
+<node id="S6"><data key="label">Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf</data><data key="type">source</data><data key="status">bounded implementation guide</data><data key="category"></data><data key="description">Bounded engineering translation, B.C.E. metrics, Hollowlens-0, failure criteria</data></node>
+<node id="S7"><data key="label">KC Vector Graphical Art System.pdf</data><data key="type">source</data><data key="status">projection-layer proposal</data><data key="category"></data><data key="description">Downstream computer-graphics projection adapter: log-polar SDF, 1-bit modulation, jitter and prepress</data></node>
+<node id="OP001"><data key="label">State manifold</data><data key="type">operator</data><data key="status">canonical</data><data key="category">core ontology</data><data key="description">The product space that carries position, time, phase, sheet, lineage address, and branch. It is the authoritative state space, not an image buffer.</data></node>
+<node id="OP002"><data key="label">Finite grammar</data><data key="type">operator</data><data key="status">canonical</data><data key="category">core ontology</data><data key="description">A bounded generative rule set that produces closed dynamics and relation expressions instead of storing a complete object inventory.</data></node>
+<node id="OP003"><data key="label">Relation algebra</data><data key="type">operator</data><data key="status">canonical</data><data key="category">core ontology</data><data key="description">Declarative equations or predicates that define possible states and transition surfaces.</data></node>
+<node id="OP004"><data key="label">Event</data><data key="type">operator</data><data key="status">canonical</data><data key="category">core ontology</data><data key="description">A guard crossing that is admitted by support and compatibility. An event is not merely a geometric hit.</data></node>
+<node id="OP005"><data key="label">Transition</data><data key="type">operator</data><data key="status">canonical</data><data key="category">core ontology</data><data key="description">The state update applied at an admitted event while preserving declared invariants and lineage.</data></node>
+<node id="OP006"><data key="label">Invariant</data><data key="type">operator</data><data key="status">canonical</data><data key="category">core ontology</data><data key="description">A property that must persist across transitions, coordinate changes, or reconstruction.</data></node>
+<node id="OP007"><data key="label">Exogenous log</data><data key="type">operator</data><data key="status">canonical</data><data key="category">information science</data><data key="description">A record of irreducible external novelty that cannot be regenerated from seed and grammar.</data></node>
+<node id="OP008"><data key="label">Novelty-proportional memory</data><data key="type">operator</data><data key="status">bounded hypothesis</data><data key="category">information science</data><data key="description">Memory discipline in which closed dynamics are regenerated and storage grows with external novelty and necessary branch history rather than geometric extent alone.</data></node>
+<node id="OP009"><data key="label">Lineage</data><data key="type">operator</data><data key="status">canonical</data><data key="category">information science</data><data key="description">Persistent provenance through splits, merges, transitions, and coordinate changes.</data></node>
+<node id="OP010"><data key="label">Ontological address</data><data key="type">operator</data><data key="status">normalized operator</data><data key="category">information science</data><data key="description">A generative identity derived from seed, grammar path, and invariant history; normalized here as a provenance key rather than a literal magic UUID.</data></node>
+<node id="OP011"><data key="label">Branch</data><data key="type">operator</data><data key="status">canonical</data><data key="category">information science</data><data key="description">A version, fork, or counterfactual path in the state evolution. Branch history is a real cost and can explode.</data></node>
+<node id="OP012"><data key="label">State-at-time query</data><data key="type">operator</data><data key="status">canonical bounded claim</data><data key="category">query API</data><data key="description">Direct evaluation of a closed state expression at time t without replaying every intermediate frame. Horizon independence is only plausible for fixed bounded expressions.</data></node>
+<node id="OP013"><data key="label">Next-event query</data><data key="type">operator</data><data key="status">canonical</data><data key="category">query API</data><data key="description">Find the earliest compatible relation crossing after t0. Cost is compatibility plus root/event solving plus branch resolution.</data></node>
+<node id="OP014"><data key="label">Events-in-support query</data><data key="type">operator</data><data key="status">canonical</data><data key="category">query API</data><data key="description">Enumerate admitted events inside a local radial-angular or causal support.</data></node>
+<node id="OP015"><data key="label">Compatibility predicate</data><data key="type">operator</data><data key="status">canonical</data><data key="category">core ontology</data><data key="description">A Boolean or typed predicate controlling whether co-located states, channels, or relations may couple.</data></node>
+<node id="OP016"><data key="label">Local spherical support</data><data key="type">operator</data><data key="status">canonical</data><data key="category">topology/query</data><data key="description">A local chart for radial reach, angular support, orientation, field of view, uncertainty, or domain of dependence. It is not a global spherical remeshing.</data></node>
+<node id="OP017"><data key="label">Cone</data><data key="type">operator</data><data key="status">canonical normalized operator</data><data key="category">topology/query</data><data key="description">An analytic relevance, causal, sensing, collision, memory, or grammar support. It is not intrinsically a ray bundle.</data></node>
+<node id="OP018"><data key="label">Shell</data><data key="type">operator</data><data key="status">normalized operator</data><data key="category">topology/query</data><data key="description">A radial support boundary or nested relevance band around a local origin.</data></node>
+<node id="OP019"><data key="label">SDF zero / B=0</data><data key="type">operator</data><data key="status">canonical</data><data key="category">topology/event</data><data key="description">The explicit transition or guard surface where event semantics are invoked. It should not be confused with continuing to sample through an SDF.</data></node>
+<node id="OP020"><data key="label">Signed distance field</data><data key="type">operator</data><data key="status">canonical with projection variant</data><data key="category">geometry</data><data key="description">An implicit scalar field that may define geometry or guards. In the mature reading it is evaluated as a relation; raymarching is optional downstream behavior.</data></node>
+<node id="OP021"><data key="label">Double vacuum</data><data key="type">operator</data><data key="status">canonical</data><data key="category">topology/information</data><data key="description">Phase-separated co-location: two states may share spatial coordinates yet fail to interact because phase, sheet, orientation, address, or policy are incompatible. The second vacuum is absence of coupling.</data></node>
+<node id="OP022"><data key="label">Phase sheet</data><data key="type">operator</data><data key="status">canonical</data><data key="category">topology/information</data><data key="description">A sector or namespace that labels co-located states and participates in compatibility.</data></node>
+<node id="OP023"><data key="label">One-bit parity</data><data key="type">operator</data><data key="status">canonical narrow role</data><data key="category">routing</data><data key="description">A narrow route, orientation, validity, freshness, or availability flag. It is not the full world state.</data></node>
+<node id="OP024"><data key="label">Pinch point</data><data key="type">operator</data><data key="status">normalized operator</data><data key="category">routing/topology</data><data key="description">A rank-changing event locus at the center of the hourglass routing visualization. It becomes meaningful only with an explicit guard and transition map.</data></node>
+<node id="OP025"><data key="label">Quad hourglass</data><data key="type">operator</data><data key="status">normalized operator</data><data key="category">routing/topology</data><data key="description">A four-chamber routing partition with a central event locus and sheet/orientation transitions. It is a disciplined visualization, not a topology proof.</data></node>
+<node id="OP026"><data key="label">Klein bottle</data><data key="type">operator</data><data key="status">demoted from literal physics</data><data key="category">topology</data><data key="description">An orientation-reversing gluing or routing abstraction. A usable implementation must specify ports, transition functions, orientation map, and transfer matrix.</data></node>
+<node id="OP027"><data key="label">Mobius strip</data><data key="type">operator</data><data key="status">metaphorical / optional</data><data key="category">topology/metaphor</data><data key="description">A one-sided continuity and inversion motif used in the optical/art narrative. It can motivate orientation reversal but is not required by the formal core.</data></node>
+<node id="OP028"><data key="label">Phi: angular coordinate</data><data key="type">operator</data><data key="status">ambiguous source symbol</data><data key="category">notation</data><data key="description">The local angular coordinate or lighthouse incidence angle. Distinguish from phase schedule and golden ratio.</data></node>
+<node id="OP029"><data key="label">Phi: phase law</data><data key="type">operator</data><data key="status">canonical concept, heuristic schedule</data><data key="category">notation</data><data key="description">A phase coordinate or schedule used in compatibility and coupling. Irrational schedules are presented as heuristics, not proven requirements.</data></node>
+<node id="OP030"><data key="label">Golden ratio</data><data key="type">operator</data><data key="status">speculative motif</data><data key="category">notation/metaphor</data><data key="description">An optional scaling or phase motif in exploratory sources. The mature architecture does not require the golden ratio.</data></node>
+<node id="OP031"><data key="label">Torque vector</data><data key="type">operator</data><data key="status">geometric brainstorming</data><data key="category">geometry</data><data key="description">The corrected interpretation in the Ben Burgers document for twisting or folding an oval/phi-like cross-section. Use tau, not phi, to avoid symbol collision.</data></node>
+<node id="OP032"><data key="label">Eigenvector</data><data key="type">operator</data><data key="status">normalized operator</data><data key="category">linear algebra</data><data key="description">An invariant direction under a transformation, used as an anchor or stable mode.</data></node>
+<node id="OP033"><data key="label">Eigenvalue zero</data><data key="type">operator</data><data key="status">normalized with numerical guard</data><data key="category">linear algebra/event</data><data key="description">A rank-loss or null-space event used metaphorically as an off-state. In an implementation it must be tied to a defined operator and numerical tolerance.</data></node>
+<node id="OP034"><data key="label">Null space</data><data key="type">operator</data><data key="status">normalized operator</data><data key="category">linear algebra</data><data key="description">The inactive or rejected subspace produced by a compatibility/kernel operation. It should mean algebraic exclusion, not physical disappearance.</data></node>
+<node id="OP035"><data key="label">Overlap / weld zone</data><data key="type">operator</data><data key="status">metaphorical geometric operator</data><data key="category">topology/information</data><data key="description">The slight overlap of folded D/phi shapes is read as intersection, tolerance buffer, constructive interference, or shared domain A intersect B.</data></node>
+<node id="OP036"><data key="label">Zero-based timeline</data><data key="type">operator</data><data key="status">corrected computing motif</data><data key="category">information science</data><data key="description">A reference-frame or indexing shift: an offset from index 0 identifies positions differently from 1-based counting. It does not change arithmetic.</data></node>
+<node id="OP037"><data key="label">Rasterization</data><data key="type">operator</data><data key="status">downstream projection</data><data key="category">computer graphics</data><data key="description">A downstream projection that maps stored or computed geometry into pixels. The corpus rejects using the raster as the authoritative world model.</data></node>
+<node id="OP038"><data key="label">Raymarching</data><data key="type">operator</data><data key="status">downstream / not core</data><data key="category">computer graphics</data><data key="description">Repeated field sampling along projected directions. It may visualize an SDF but is explicitly not the mature core.</data></node>
+<node id="OP039"><data key="label">Ray tracing</data><data key="type">operator</data><data key="status">downstream projection</data><data key="category">computer graphics</data><data key="description">Transport or visibility path computation. It can consume the substrate but does not define the substrate.</data></node>
+<node id="OP040"><data key="label">Hybrid engine path</data><data key="type">operator</data><data key="status">supported bridge</data><data key="category">computer graphics</data><data key="description">A bridge architecture with stable geometric/graph world state plus optional cone integration, volumetrics, raymarching, or display stages.</data></node>
+<node id="OP041"><data key="label">Headless query-first path</data><data key="type">operator</data><data key="status">canonical prototype path</data><data key="category">computer science</data><data key="description">The preferred experiment: algebra, compatibility, events, transitions, lineage, and logs before images. Success is not visual fidelity.</data></node>
+<node id="OP042"><data key="label">Log-polar chart</data><data key="type">operator</data><data key="status">projection/local chart</data><data key="category">geometry/graphics</data><data key="description">A local coordinate transform rho=log r, theta=atan2(y,x). It supports radial multiscale addressing but introduces singularity and conditioning risks.</data></node>
+<node id="OP043"><data key="label">1-bit log-polar LUT</data><data key="type">operator</data><data key="status">role-overloaded proposal</data><data key="category">graphics/indexing</data><data key="description">In exploratory sources this alternates between active-sector mask, parity field, and output quantizer. The report separates these roles rather than treating one bit as the whole state.</data></node>
+<node id="OP044"><data key="label">Spherical LUT</data><data key="type">operator</data><data key="status">metaphorical/local support</data><data key="category">sensing/graphics</data><data key="description">A radial-angular lookup or local sensory organization. It should be read as a local chart/index, not proof that atoms or the whole world are spherical records.</data></node>
+<node id="OP045"><data key="label">Sieve</data><data key="type">operator</data><data key="status">normalized caution</data><data key="category">information/graphics</data><data key="description">A filter or candidate-reduction stage: aperture, receptor mosaic, BVH, octree, mask, or compatibility filter. The corpus aims to replace broad materialization with analytic support and compatibility, not prove all indexing unnecessary.</data></node>
+<node id="OP046"><data key="label">Jitter / micro-saccade</data><data key="type">operator</data><data key="status">projection/sensing operator</data><data key="category">sensing/graphics</data><data key="description">Controlled perturbation used to fill sampling gaps, dither quantization, or estimate sub-cell structure. It belongs to sensors and projections, not the invariant core.</data></node>
+<node id="OP047"><data key="label">Feynman vector</data><data key="type">operator</data><data key="status">speculative / renamed for clarity</data><data key="category">graphics terminology</data><data key="description">The KC document uses this name for phase-amplitude vectors integrated near SDF boundaries. No formal path-integral derivation is supplied, so this report renames it a phase-amplitude edge accumulator.</data></node>
+<node id="OP048"><data key="label">Phase-amplitude edge accumulator</data><data key="type">operator</data><data key="status">decoder inference</data><data key="category">graphics projection</data><data key="description">A source-faithful normalization of the KC Feynman-vector idea: accumulate weighted phase samples near an implicit boundary, then quantize for output.</data></node>
+<node id="OP049"><data key="label">Pulse-density modulation</data><data key="type">operator</data><data key="status">projection-layer proposal</data><data key="category">display hardware</data><data key="description">A temporal 1-bit stream whose pulse density represents intensity. It is a possible output adapter for a physical display, not the state substrate.</data></node>
+<node id="OP050"><data key="label">Anisotropic dithering</data><data key="type">operator</data><data key="status">projection-layer proposal</data><data key="category">graphics/output</data><data key="description">Log-radius- and angle-aware stochastic quantization used for screen or print output.</data></node>
+<node id="OP051"><data key="label">Prepress adapter</data><data key="type">operator</data><data key="status">projection-layer proposal</data><data key="category">graphics/output</data><data key="description">A static 1-bit halftone path: CMYK mapping, log-polar blue noise, SDF edge lock, and dot-gain compensation.</data></node>
+<node id="OP052"><data key="label">Materialized view</data><data key="type">operator</data><data key="status">decoder inference</data><data key="category">information science</data><data key="description">A rendered image, mesh, cache, or sampled field derived from the authoritative relation/event state. This term is the report's information-science translation.</data></node>
+<node id="OP053"><data key="label">B.C.E.</data><data key="type">operator</data><data key="status">canonical bounded operator</data><data key="category">event/hardware</data><data key="description">Bounded Compatibility Event: support admitted, channel compatible, guard crossed, and confidence threshold met.</data></node>
+<node id="OP054"><data key="label">Spherical throughput</data><data key="type">operator</data><data key="status">canonical metric</data><data key="category">metrics</data><data key="description">Verified compatible events or answered queries per second at a declared error budget, not raw photon flux or propagation speed.</data></node>
+<node id="OP055"><data key="label">Matrix-in-glass</data><data key="type">operator</data><data key="status">bounded hardware translation</data><data key="category">hardware</data><data key="description">A calibrated passive or tunable optical transfer matrix in a waveguide mesh. It is not a stored picture or zero-energy computer.</data></node>
+<node id="OP056"><data key="label">Liquid substrate</data><data key="type">operator</data><data key="status">bounded hardware translation</data><data key="category">hardware</data><data key="description">A liquid lens, overclad, or core coupled to a solid photonic substrate to tune focus, effective index, phase, or mode coupling.</data></node>
+<node id="OP057"><data key="label">Hollowlens-0</data><data key="type">operator</data><data key="status">canonical prototype</data><data key="category">prototype</data><data key="description">A minimum optofluidic demonstrator: scanned input, tunable liquid coupler, 2x2 interferometer, balanced detectors, digital sidecar, and pre-registered event tests.</data></node>
+<node id="OP058"><data key="label">Digital sidecar</data><data key="type">operator</data><data key="status">canonical control element</data><data key="category">hardware/control</data><data key="description">Conventional electronics for calibration, thresholds, uncertainty, lineage, policy, drift detection, and fallback. Its necessity prevents magical zero-latency claims.</data></node>
+<node id="OP059"><data key="label">Type safety</data><data key="type">operator</data><data key="status">canonical engineering discipline</data><data key="category">method</data><data key="description">Keep electromagnetics, fluid mechanics, coupled-mode theory, event logic, topology, and information semantics in their own domains with explicit interfaces.</data></node>
+<node id="OP060"><data key="label">Equation World Zero</data><data key="type">operator</data><data key="status">canonical prototype</data><data key="category">prototype</data><data key="description">Restricted headless prototype with low-dimensional homogeneous coordinates, continuous time, two sheets, one orientation bit, bounded relation families, finite grammar depth, lineage, and symbolic outputs.</data></node>
+<node id="OP061"><data key="label">Universal O(1)</data><data key="type">operator</data><data key="status">rejected totalizing claim</data><data key="category">claim boundary</data><data key="description">The mature sources reject a universal constant-cost universe. Only fixed closed expressions may have horizon-independent state evaluation.</data></node>
+<node id="OP062"><data key="label">Zero memory / heat / latency</data><data key="type">operator</data><data key="status">rejected totalizing claim</data><data key="category">claim boundary</data><data key="description">Rejected as system claims. Storage, branch history, optical sources, actuation, detection, calibration, and control all carry costs.</data></node>
+<node id="OP063"><data key="label">Biological or medical control</data><data key="type">operator</data><data key="status">excluded from technical core</data><data key="category">claim boundary</data><data key="description">The corpus contains analogies and application prompts, but the bounded engineering report explicitly makes no general biological or medical mechanism claim.</data></node>
+<edge id="e1" source="S1" target="OP001"><data key="relation">contributes</data></edge>
+<edge id="e2" source="S5" target="OP001"><data key="relation">contributes</data></edge>
+<edge id="e3" source="S1" target="OP002"><data key="relation">contributes</data></edge>
+<edge id="e4" source="S5" target="OP002"><data key="relation">contributes</data></edge>
+<edge id="e5" source="S1" target="OP003"><data key="relation">contributes</data></edge>
+<edge id="e6" source="S5" target="OP003"><data key="relation">contributes</data></edge>
+<edge id="e7" source="S1" target="OP004"><data key="relation">contributes</data></edge>
+<edge id="e8" source="S6" target="OP004"><data key="relation">contributes</data></edge>
+<edge id="e9" source="S1" target="OP005"><data key="relation">contributes</data></edge>
+<edge id="e10" source="S1" target="OP006"><data key="relation">contributes</data></edge>
+<edge id="e11" source="S5" target="OP006"><data key="relation">contributes</data></edge>
+<edge id="e12" source="S1" target="OP007"><data key="relation">contributes</data></edge>
+<edge id="e13" source="S5" target="OP007"><data key="relation">contributes</data></edge>
+<edge id="e14" source="S1" target="OP008"><data key="relation">contributes</data></edge>
+<edge id="e15" source="S5" target="OP008"><data key="relation">contributes</data></edge>
+<edge id="e16" source="S1" target="OP009"><data key="relation">contributes</data></edge>
+<edge id="e17" source="S5" target="OP009"><data key="relation">contributes</data></edge>
+<edge id="e18" source="S1" target="OP010"><data key="relation">contributes</data></edge>
+<edge id="e19" source="S5" target="OP010"><data key="relation">contributes</data></edge>
+<edge id="e20" source="S1" target="OP011"><data key="relation">contributes</data></edge>
+<edge id="e21" source="S1" target="OP012"><data key="relation">contributes</data></edge>
+<edge id="e22" source="S1" target="OP013"><data key="relation">contributes</data></edge>
+<edge id="e23" source="S1" target="OP014"><data key="relation">contributes</data></edge>
+<edge id="e24" source="S1" target="OP015"><data key="relation">contributes</data></edge>
+<edge id="e25" source="S5" target="OP015"><data key="relation">contributes</data></edge>
+<edge id="e26" source="S6" target="OP015"><data key="relation">contributes</data></edge>
+<edge id="e27" source="S1" target="OP016"><data key="relation">contributes</data></edge>
+<edge id="e28" source="S6" target="OP016"><data key="relation">contributes</data></edge>
+<edge id="e29" source="S1" target="OP017"><data key="relation">contributes</data></edge>
+<edge id="e30" source="S2" target="OP017"><data key="relation">contributes</data></edge>
+<edge id="e31" source="S1" target="OP018"><data key="relation">contributes</data></edge>
+<edge id="e32" source="S1" target="OP019"><data key="relation">contributes</data></edge>
+<edge id="e33" source="S2" target="OP019"><data key="relation">contributes</data></edge>
+<edge id="e34" source="S5" target="OP019"><data key="relation">contributes</data></edge>
+<edge id="e35" source="S6" target="OP019"><data key="relation">contributes</data></edge>
+<edge id="e36" source="S1" target="OP020"><data key="relation">contributes</data></edge>
+<edge id="e37" source="S7" target="OP020"><data key="relation">contributes</data></edge>
+<edge id="e38" source="S1" target="OP021"><data key="relation">contributes</data></edge>
+<edge id="e39" source="S2" target="OP021"><data key="relation">contributes</data></edge>
+<edge id="e40" source="S5" target="OP021"><data key="relation">contributes</data></edge>
+<edge id="e41" source="S6" target="OP021"><data key="relation">contributes</data></edge>
+<edge id="e42" source="S1" target="OP022"><data key="relation">contributes</data></edge>
+<edge id="e43" source="S5" target="OP022"><data key="relation">contributes</data></edge>
+<edge id="e44" source="S1" target="OP023"><data key="relation">contributes</data></edge>
+<edge id="e45" source="S5" target="OP023"><data key="relation">contributes</data></edge>
+<edge id="e46" source="S6" target="OP023"><data key="relation">contributes</data></edge>
+<edge id="e47" source="S1" target="OP024"><data key="relation">contributes</data></edge>
+<edge id="e48" source="S2" target="OP024"><data key="relation">contributes</data></edge>
+<edge id="e49" source="S5" target="OP024"><data key="relation">contributes</data></edge>
+<edge id="e50" source="S1" target="OP025"><data key="relation">contributes</data></edge>
+<edge id="e51" source="S2" target="OP025"><data key="relation">contributes</data></edge>
+<edge id="e52" source="S5" target="OP025"><data key="relation">contributes</data></edge>
+<edge id="e53" source="S1" target="OP026"><data key="relation">contributes</data></edge>
+<edge id="e54" source="S2" target="OP026"><data key="relation">contributes</data></edge>
+<edge id="e55" source="S6" target="OP026"><data key="relation">contributes</data></edge>
+<edge id="e56" source="S3" target="OP027"><data key="relation">contributes</data></edge>
+<edge id="e57" source="S2" target="OP028"><data key="relation">contributes</data></edge>
+<edge id="e58" source="S5" target="OP028"><data key="relation">contributes</data></edge>
+<edge id="e59" source="S1" target="OP029"><data key="relation">contributes</data></edge>
+<edge id="e60" source="S2" target="OP029"><data key="relation">contributes</data></edge>
+<edge id="e61" source="S5" target="OP029"><data key="relation">contributes</data></edge>
+<edge id="e62" source="S2" target="OP030"><data key="relation">contributes</data></edge>
+<edge id="e63" source="S4" target="OP030"><data key="relation">contributes</data></edge>
+<edge id="e64" source="S4" target="OP031"><data key="relation">contributes</data></edge>
+<edge id="e65" source="S2" target="OP032"><data key="relation">contributes</data></edge>
+<edge id="e66" source="S5" target="OP032"><data key="relation">contributes</data></edge>
+<edge id="e67" source="S2" target="OP033"><data key="relation">contributes</data></edge>
+<edge id="e68" source="S5" target="OP033"><data key="relation">contributes</data></edge>
+<edge id="e69" source="S2" target="OP034"><data key="relation">contributes</data></edge>
+<edge id="e70" source="S5" target="OP034"><data key="relation">contributes</data></edge>
+<edge id="e71" source="S4" target="OP035"><data key="relation">contributes</data></edge>
+<edge id="e72" source="S4" target="OP036"><data key="relation">contributes</data></edge>
+<edge id="e73" source="S1" target="OP037"><data key="relation">contributes</data></edge>
+<edge id="e74" source="S5" target="OP037"><data key="relation">contributes</data></edge>
+<edge id="e75" source="S7" target="OP037"><data key="relation">contributes</data></edge>
+<edge id="e76" source="S1" target="OP038"><data key="relation">contributes</data></edge>
+<edge id="e77" source="S2" target="OP038"><data key="relation">contributes</data></edge>
+<edge id="e78" source="S1" target="OP039"><data key="relation">contributes</data></edge>
+<edge id="e79" source="S1" target="OP040"><data key="relation">contributes</data></edge>
+<edge id="e80" source="S1" target="OP041"><data key="relation">contributes</data></edge>
+<edge id="e81" source="S6" target="OP041"><data key="relation">contributes</data></edge>
+<edge id="e82" source="S2" target="OP042"><data key="relation">contributes</data></edge>
+<edge id="e83" source="S3" target="OP042"><data key="relation">contributes</data></edge>
+<edge id="e84" source="S7" target="OP042"><data key="relation">contributes</data></edge>
+<edge id="e85" source="S2" target="OP043"><data key="relation">contributes</data></edge>
+<edge id="e86" source="S7" target="OP043"><data key="relation">contributes</data></edge>
+<edge id="e87" source="S3" target="OP044"><data key="relation">contributes</data></edge>
+<edge id="e88" source="S2" target="OP045"><data key="relation">contributes</data></edge>
+<edge id="e89" source="S3" target="OP045"><data key="relation">contributes</data></edge>
+<edge id="e90" source="S5" target="OP045"><data key="relation">contributes</data></edge>
+<edge id="e91" source="S3" target="OP046"><data key="relation">contributes</data></edge>
+<edge id="e92" source="S7" target="OP046"><data key="relation">contributes</data></edge>
+<edge id="e93" source="S7" target="OP047"><data key="relation">contributes</data></edge>
+<edge id="e94" source="S7" target="OP048"><data key="relation">contributes</data></edge>
+<edge id="e95" source="S7" target="OP049"><data key="relation">contributes</data></edge>
+<edge id="e96" source="S7" target="OP050"><data key="relation">contributes</data></edge>
+<edge id="e97" source="S7" target="OP051"><data key="relation">contributes</data></edge>
+<edge id="e98" source="S1" target="OP052"><data key="relation">contributes</data></edge>
+<edge id="e99" source="S5" target="OP052"><data key="relation">contributes</data></edge>
+<edge id="e100" source="S6" target="OP053"><data key="relation">contributes</data></edge>
+<edge id="e101" source="S6" target="OP054"><data key="relation">contributes</data></edge>
+<edge id="e102" source="S5" target="OP055"><data key="relation">contributes</data></edge>
+<edge id="e103" source="S6" target="OP055"><data key="relation">contributes</data></edge>
+<edge id="e104" source="S5" target="OP056"><data key="relation">contributes</data></edge>
+<edge id="e105" source="S6" target="OP056"><data key="relation">contributes</data></edge>
+<edge id="e106" source="S6" target="OP057"><data key="relation">contributes</data></edge>
+<edge id="e107" source="S6" target="OP058"><data key="relation">contributes</data></edge>
+<edge id="e108" source="S6" target="OP059"><data key="relation">contributes</data></edge>
+<edge id="e109" source="S1" target="OP060"><data key="relation">contributes</data></edge>
+<edge id="e110" source="S1" target="OP061"><data key="relation">contributes</data></edge>
+<edge id="e111" source="S6" target="OP061"><data key="relation">contributes</data></edge>
+<edge id="e112" source="S1" target="OP062"><data key="relation">contributes</data></edge>
+<edge id="e113" source="S6" target="OP062"><data key="relation">contributes</data></edge>
+<edge id="e114" source="S5" target="OP063"><data key="relation">contributes</data></edge>
+<edge id="e115" source="S6" target="OP063"><data key="relation">contributes</data></edge>
+<edge id="e116" source="OP002" target="OP001"><data key="relation">generates</data></edge>
+<edge id="e117" source="OP007" target="OP001"><data key="relation">perturbs</data></edge>
+<edge id="e118" source="OP001" target="OP003"><data key="relation">evaluated_by</data></edge>
+<edge id="e119" source="OP016" target="OP004"><data key="relation">admits</data></edge>
+<edge id="e120" source="OP015" target="OP004"><data key="relation">gates</data></edge>
+<edge id="e121" source="OP019" target="OP004"><data key="relation">triggers</data></edge>
+<edge id="e122" source="OP004" target="OP005"><data key="relation">invokes</data></edge>
+<edge id="e123" source="OP005" target="OP009"><data key="relation">updates</data></edge>
+<edge id="e124" source="OP005" target="OP023"><data key="relation">may_toggle</data></edge>
+<edge id="e125" source="OP021" target="OP015"><data key="relation">implemented_by</data></edge>
+<edge id="e126" source="OP022" target="OP021"><data key="relation">partitions</data></edge>
+<edge id="e127" source="OP026" target="OP022"><data key="relation">may_define_gluing</data></edge>
+<edge id="e128" source="OP025" target="OP005"><data key="relation">visualizes_routing</data></edge>
+<edge id="e129" source="OP024" target="OP019"><data key="relation">coincides_with</data></edge>
+<edge id="e130" source="OP012" target="OP001"><data key="relation">queries</data></edge>
+<edge id="e131" source="OP013" target="OP004"><data key="relation">queries</data></edge>
+<edge id="e132" source="OP014" target="OP016"><data key="relation">queries</data></edge>
+<edge id="e133" source="OP037" target="OP052"><data key="relation">produces</data></edge>
+<edge id="e134" source="OP038" target="OP052"><data key="relation">produces</data></edge>
+<edge id="e135" source="OP039" target="OP052"><data key="relation">produces</data></edge>
+<edge id="e136" source="OP048" target="OP051"><data key="relation">feeds</data></edge>
+<edge id="e137" source="OP043" target="OP048"><data key="relation">addresses</data></edge>
+<edge id="e138" source="OP060" target="OP012"><data key="relation">tests</data></edge>
+<edge id="e139" source="OP060" target="OP013"><data key="relation">tests</data></edge>
+<edge id="e140" source="OP057" target="OP053"><data key="relation">implements</data></edge>
+<edge id="e141" source="OP055" target="OP057"><data key="relation">component_of</data></edge>
+<edge id="e142" source="OP056" target="OP057"><data key="relation">component_of</data></edge>
+<edge id="e143" source="OP054" target="OP057"><data key="relation">benchmarks</data></edge>
+</graph>
+</graphml>

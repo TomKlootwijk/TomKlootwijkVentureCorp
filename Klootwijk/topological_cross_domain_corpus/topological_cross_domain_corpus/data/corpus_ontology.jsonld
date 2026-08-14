@@ -1,0 +1,1691 @@
+{
+  "@context": {
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "description": "http://purl.org/dc/terms/description",
+    "status": "https://example.org/status",
+    "category": "https://example.org/category",
+    "relation": "https://example.org/relation"
+  },
+  "@graph": [
+    {
+      "@id": "urn:spherical-corpus:S1",
+      "@type": "source",
+      "label": "Chronological Synthesis of the Spherical Substrate Line(3).pdf",
+      "status": "canonical interpretive authority",
+      "description": "Mature interpretive synthesis and feasibility discipline"
+    },
+    {
+      "@id": "urn:spherical-corpus:S2",
+      "@type": "source",
+      "label": "hollowland-double-vacuum(7).pdf",
+      "status": "exploratory and metaphor-heavy",
+      "description": "Generative topology and CS vocabulary: double vacuum, SDF zero, phase, parity, hourglass, eigenspace"
+    },
+    {
+      "@id": "urn:spherical-corpus:S3",
+      "@type": "source",
+      "label": "dmt-spirit-molecule-(leeuwenhoek-animalcules-peter-the-great-netherlands-signify-phillips-netherlands) (1).pdf",
+      "status": "exploratory cross-domain narrative",
+      "description": "Optical/perceptual origin motifs: aperture, inversion, polar LUTs, sensory sieves, jitter, reflection"
+    },
+    {
+      "@id": "urn:spherical-corpus:S4",
+      "@type": "source",
+      "label": "21BenBurgersStrikesBackTelNetNiet.pdf",
+      "status": "geometric/typographic brainstorming",
+      "description": "Zero-index, hinge, phi/D-fold, overlap and shared-domain motifs"
+    },
+    {
+      "@id": "urn:spherical-corpus:S5",
+      "@type": "source",
+      "label": "ADDominUS(1).pdf",
+      "status": "mixed synthesis with speculative claims",
+      "description": "Cross-domain consolidation: relation algebra, identity, memory, compatibility, hardware prompts"
+    },
+    {
+      "@id": "urn:spherical-corpus:S6",
+      "@type": "source",
+      "label": "Spherical_Throughput_Practical_Waveguide_Liquid_Substrate_Lensing(sqwit (super quick wit).pdf",
+      "status": "bounded implementation guide",
+      "description": "Bounded engineering translation, B.C.E. metrics, Hollowlens-0, failure criteria"
+    },
+    {
+      "@id": "urn:spherical-corpus:S7",
+      "@type": "source",
+      "label": "KC Vector Graphical Art System.pdf",
+      "status": "projection-layer proposal",
+      "description": "Downstream computer-graphics projection adapter: log-polar SDF, 1-bit modulation, jitter and prepress"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP001",
+      "@type": "operator",
+      "label": "State manifold",
+      "status": "canonical",
+      "category": "core ontology",
+      "description": "The product space that carries position, time, phase, sheet, lineage address, and branch. It is the authoritative state space, not an image buffer.",
+      "formal_role": "Q = P^n x R_time x S^1_phase x Z2_sheet x A_address x B_branch",
+      "source_pages": "S1 pp.5-6; S5 pp.1,9-11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP002",
+      "@type": "operator",
+      "label": "Finite grammar",
+      "status": "canonical",
+      "category": "core ontology",
+      "description": "A bounded generative rule set that produces closed dynamics and relation expressions instead of storing a complete object inventory.",
+      "formal_role": "G",
+      "source_pages": "S1 pp.5-7,11-12; S5 pp.10-11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP003",
+      "@type": "operator",
+      "label": "Relation algebra",
+      "status": "canonical",
+      "category": "core ontology",
+      "description": "Declarative equations or predicates that define possible states and transition surfaces.",
+      "formal_role": "R_j(q;theta_j)=0",
+      "source_pages": "S1 pp.1,5-7; S5 pp.1,9"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP004",
+      "@type": "operator",
+      "label": "Event",
+      "status": "canonical",
+      "category": "core ontology",
+      "description": "A guard crossing that is admitted by support and compatibility. An event is not merely a geometric hit.",
+      "formal_role": "t* = min{t >= t0 : R_j(q(t))=0 and C<=0 and chi=1}",
+      "source_pages": "S1 pp.6-8; S6 pp.3,5,7"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP005",
+      "@type": "operator",
+      "label": "Transition",
+      "status": "canonical",
+      "category": "core ontology",
+      "description": "The state update applied at an admitted event while preserving declared invariants and lineage.",
+      "formal_role": "q(t*+) = T_j(q(t*-), context)",
+      "source_pages": "S1 pp.6-7"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP006",
+      "@type": "operator",
+      "label": "Invariant",
+      "status": "canonical",
+      "category": "core ontology",
+      "description": "A property that must persist across transitions, coordinate changes, or reconstruction.",
+      "formal_role": "I",
+      "source_pages": "S1 pp.1,5-7,11; S5 pp.7-11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP007",
+      "@type": "operator",
+      "label": "Exogenous log",
+      "status": "canonical",
+      "category": "information science",
+      "description": "A record of irreducible external novelty that cannot be regenerated from seed and grammar.",
+      "formal_role": "L",
+      "source_pages": "S1 pp.6,8,11-12; S5 pp.10-11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP008",
+      "@type": "operator",
+      "label": "Novelty-proportional memory",
+      "status": "bounded hypothesis",
+      "category": "information science",
+      "description": "Memory discipline in which closed dynamics are regenerated and storage grows with external novelty and necessary branch history rather than geometric extent alone.",
+      "formal_role": "M ~ seed + grammar + log + branch history",
+      "source_pages": "S1 pp.8,11-12; S5 pp.10-11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP009",
+      "@type": "operator",
+      "label": "Lineage",
+      "status": "canonical",
+      "category": "information science",
+      "description": "Persistent provenance through splits, merges, transitions, and coordinate changes.",
+      "formal_role": "lineage(e)",
+      "source_pages": "S1 pp.1,5-8,11; S5 pp.6-8,11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP010",
+      "@type": "operator",
+      "label": "Ontological address",
+      "status": "normalized operator",
+      "category": "information science",
+      "description": "A generative identity derived from seed, grammar path, and invariant history; normalized here as a provenance key rather than a literal magic UUID.",
+      "formal_role": "a_e = H(seed,path,lineage)",
+      "source_pages": "S1 pp.5-6; S5 pp.6-8"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP011",
+      "@type": "operator",
+      "label": "Branch",
+      "status": "canonical",
+      "category": "information science",
+      "description": "A version, fork, or counterfactual path in the state evolution. Branch history is a real cost and can explode.",
+      "formal_role": "b_e",
+      "source_pages": "S1 pp.5-8,11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP012",
+      "@type": "operator",
+      "label": "State-at-time query",
+      "status": "canonical bounded claim",
+      "category": "query API",
+      "description": "Direct evaluation of a closed state expression at time t without replaying every intermediate frame. Horizon independence is only plausible for fixed bounded expressions.",
+      "formal_role": "state_at(e,t)",
+      "source_pages": "S1 pp.7-8,10-12"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP013",
+      "@type": "operator",
+      "label": "Next-event query",
+      "status": "canonical",
+      "category": "query API",
+      "description": "Find the earliest compatible relation crossing after t0. Cost is compatibility plus root/event solving plus branch resolution.",
+      "formal_role": "next_event(e,t0)",
+      "source_pages": "S1 pp.7-8,10-12"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP014",
+      "@type": "operator",
+      "label": "Events-in-support query",
+      "status": "canonical",
+      "category": "query API",
+      "description": "Enumerate admitted events inside a local radial-angular or causal support.",
+      "formal_role": "events_in_support(C_alpha,t0,t1)",
+      "source_pages": "S1 pp.6-7,11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP015",
+      "@type": "operator",
+      "label": "Compatibility predicate",
+      "status": "canonical",
+      "category": "core ontology",
+      "description": "A Boolean or typed predicate controlling whether co-located states, channels, or relations may couple.",
+      "formal_role": "chi(e,j,t) in {0,1}",
+      "source_pages": "S1 pp.6-8; S5 pp.13-16,32-33; S6 pp.3,5,7"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP016",
+      "@type": "operator",
+      "label": "Local spherical support",
+      "status": "canonical",
+      "category": "topology/query",
+      "description": "A local chart for radial reach, angular support, orientation, field of view, uncertainty, or domain of dependence. It is not a global spherical remeshing.",
+      "formal_role": "C_alpha(q,t)<=0",
+      "source_pages": "S1 pp.1,5-7,9-10; S6 pp.3,6"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP017",
+      "@type": "operator",
+      "label": "Cone",
+      "status": "canonical normalized operator",
+      "category": "topology/query",
+      "description": "An analytic relevance, causal, sensing, collision, memory, or grammar support. It is not intrinsically a ray bundle.",
+      "formal_role": "C_alpha",
+      "source_pages": "S1 pp.1,5-7,10; S2 pp.14-19"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP018",
+      "@type": "operator",
+      "label": "Shell",
+      "status": "normalized operator",
+      "category": "topology/query",
+      "description": "A radial support boundary or nested relevance band around a local origin.",
+      "formal_role": "r in [r0,r1]",
+      "source_pages": "S1 pp.1,5-6"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP019",
+      "@type": "operator",
+      "label": "SDF zero / B=0",
+      "status": "canonical",
+      "category": "topology/event",
+      "description": "The explicit transition or guard surface where event semantics are invoked. It should not be confused with continuing to sample through an SDF.",
+      "formal_role": "B(q)=0 or f(q)=0",
+      "source_pages": "S1 pp.5-7; S2 pp.16-19; S5 p.54; S6 pp.3,5,7"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP020",
+      "@type": "operator",
+      "label": "Signed distance field",
+      "status": "canonical with projection variant",
+      "category": "geometry",
+      "description": "An implicit scalar field that may define geometry or guards. In the mature reading it is evaluated as a relation; raymarching is optional downstream behavior.",
+      "formal_role": "f(q)",
+      "source_pages": "S1 pp.7,9-10; S7 pp.1-2"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP021",
+      "@type": "operator",
+      "label": "Double vacuum",
+      "status": "canonical",
+      "category": "topology/information",
+      "description": "Phase-separated co-location: two states may share spatial coordinates yet fail to interact because phase, sheet, orientation, address, or policy are incompatible. The second vacuum is absence of coupling.",
+      "formal_role": "same x; chi=0",
+      "source_pages": "S1 p.6; S2 pp.14-19; S5 pp.32-33; S6 pp.2,4"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP022",
+      "@type": "operator",
+      "label": "Phase sheet",
+      "status": "canonical",
+      "category": "topology/information",
+      "description": "A sector or namespace that labels co-located states and participates in compatibility.",
+      "formal_role": "sigma in Z2 or finite sheet set",
+      "source_pages": "S1 pp.5-6; S5 pp.13-15,32-33"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP023",
+      "@type": "operator",
+      "label": "One-bit parity",
+      "status": "canonical narrow role",
+      "category": "routing",
+      "description": "A narrow route, orientation, validity, freshness, or availability flag. It is not the full world state.",
+      "formal_role": "p <- NOT p",
+      "source_pages": "S1 pp.5-7; S5 pp.33,44-47,54; S6 pp.2,7"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP024",
+      "@type": "operator",
+      "label": "Pinch point",
+      "status": "normalized operator",
+      "category": "routing/topology",
+      "description": "A rank-changing event locus at the center of the hourglass routing visualization. It becomes meaningful only with an explicit guard and transition map.",
+      "formal_role": "B=0",
+      "source_pages": "S1 p.6; S2 pp.24-25; S5 pp.33,54"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP025",
+      "@type": "operator",
+      "label": "Quad hourglass",
+      "status": "normalized operator",
+      "category": "routing/topology",
+      "description": "A four-chamber routing partition with a central event locus and sheet/orientation transitions. It is a disciplined visualization, not a topology proof.",
+      "formal_role": "four chambers + pinch",
+      "source_pages": "S1 p.6; S2 pp.23-25; S5 pp.32-33,54"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP026",
+      "@type": "operator",
+      "label": "Klein bottle",
+      "status": "demoted from literal physics",
+      "category": "topology",
+      "description": "An orientation-reversing gluing or routing abstraction. A usable implementation must specify ports, transition functions, orientation map, and transfer matrix.",
+      "formal_role": "quotient/gluing map",
+      "source_pages": "S1 pp.2,6; S2 pp.7-10,16-19; S6 pp.2,5,10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP027",
+      "@type": "operator",
+      "label": "Mobius strip",
+      "status": "metaphorical / optional",
+      "category": "topology/metaphor",
+      "description": "A one-sided continuity and inversion motif used in the optical/art narrative. It can motivate orientation reversal but is not required by the formal core.",
+      "formal_role": "local orientation flip",
+      "source_pages": "S3 pp.5-10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP028",
+      "@type": "operator",
+      "label": "Phi: angular coordinate",
+      "status": "ambiguous source symbol",
+      "category": "notation",
+      "description": "The local angular coordinate or lighthouse incidence angle. Distinguish from phase schedule and golden ratio.",
+      "formal_role": "phi_angle",
+      "source_pages": "S2 pp.12-19; S5 pp.2-3"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP029",
+      "@type": "operator",
+      "label": "Phi: phase law",
+      "status": "canonical concept, heuristic schedule",
+      "category": "notation",
+      "description": "A phase coordinate or schedule used in compatibility and coupling. Irrational schedules are presented as heuristics, not proven requirements.",
+      "formal_role": "phi_phase(t)",
+      "source_pages": "S1 pp.5-6; S2 pp.14-19; S5 pp.2-3"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP030",
+      "@type": "operator",
+      "label": "Golden ratio",
+      "status": "speculative motif",
+      "category": "notation/metaphor",
+      "description": "An optional scaling or phase motif in exploratory sources. The mature architecture does not require the golden ratio.",
+      "formal_role": "phi_g=(1+sqrt(5))/2",
+      "source_pages": "S2 pp.12-19; S4 pp.10-11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP031",
+      "@type": "operator",
+      "label": "Torque vector",
+      "status": "geometric brainstorming",
+      "category": "geometry",
+      "description": "The corrected interpretation in the Ben Burgers document for twisting or folding an oval/phi-like cross-section. Use tau, not phi, to avoid symbol collision.",
+      "formal_role": "tau",
+      "source_pages": "S4 pp.11-14"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP032",
+      "@type": "operator",
+      "label": "Eigenvector",
+      "status": "normalized operator",
+      "category": "linear algebra",
+      "description": "An invariant direction under a transformation, used as an anchor or stable mode.",
+      "formal_role": "A v = lambda v",
+      "source_pages": "S2 pp.20-25; S5 pp.2,17,51"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP033",
+      "@type": "operator",
+      "label": "Eigenvalue zero",
+      "status": "normalized with numerical guard",
+      "category": "linear algebra/event",
+      "description": "A rank-loss or null-space event used metaphorically as an off-state. In an implementation it must be tied to a defined operator and numerical tolerance.",
+      "formal_role": "lambda approx 0",
+      "source_pages": "S2 pp.22-25; S5 pp.33,54"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP034",
+      "@type": "operator",
+      "label": "Null space",
+      "status": "normalized operator",
+      "category": "linear algebra",
+      "description": "The inactive or rejected subspace produced by a compatibility/kernel operation. It should mean algebraic exclusion, not physical disappearance.",
+      "formal_role": "ker A",
+      "source_pages": "S2 pp.22-25; S5 pp.15,33"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP035",
+      "@type": "operator",
+      "label": "Overlap / weld zone",
+      "status": "metaphorical geometric operator",
+      "category": "topology/information",
+      "description": "The slight overlap of folded D/phi shapes is read as intersection, tolerance buffer, constructive interference, or shared domain A intersect B.",
+      "formal_role": "A intersect B",
+      "source_pages": "S4 pp.16-19"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP036",
+      "@type": "operator",
+      "label": "Zero-based timeline",
+      "status": "corrected computing motif",
+      "category": "information science",
+      "description": "A reference-frame or indexing shift: an offset from index 0 identifies positions differently from 1-based counting. It does not change arithmetic.",
+      "formal_role": "index 0",
+      "source_pages": "S4 pp.1-6"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP037",
+      "@type": "operator",
+      "label": "Rasterization",
+      "status": "downstream projection",
+      "category": "computer graphics",
+      "description": "A downstream projection that maps stored or computed geometry into pixels. The corpus rejects using the raster as the authoritative world model.",
+      "formal_role": "materialized image view",
+      "source_pages": "S1 pp.1,9-10; S5 pp.1,9; S7"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP038",
+      "@type": "operator",
+      "label": "Raymarching",
+      "status": "downstream / not core",
+      "category": "computer graphics",
+      "description": "Repeated field sampling along projected directions. It may visualize an SDF but is explicitly not the mature core.",
+      "formal_role": "sample f along ray",
+      "source_pages": "S1 pp.1,7,9-10; S2 pp.12-17"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP039",
+      "@type": "operator",
+      "label": "Ray tracing",
+      "status": "downstream projection",
+      "category": "computer graphics",
+      "description": "Transport or visibility path computation. It can consume the substrate but does not define the substrate.",
+      "formal_role": "path/visibility solver",
+      "source_pages": "S1 pp.9-10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP040",
+      "@type": "operator",
+      "label": "Hybrid engine path",
+      "status": "supported bridge",
+      "category": "computer graphics",
+      "description": "A bridge architecture with stable geometric/graph world state plus optional cone integration, volumetrics, raymarching, or display stages.",
+      "formal_role": "core + projection stage",
+      "source_pages": "S1 p.9"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP041",
+      "@type": "operator",
+      "label": "Headless query-first path",
+      "status": "canonical prototype path",
+      "category": "computer science",
+      "description": "The preferred experiment: algebra, compatibility, events, transitions, lineage, and logs before images. Success is not visual fidelity.",
+      "formal_role": "query core",
+      "source_pages": "S1 pp.9,11-12; S6 p.9"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP042",
+      "@type": "operator",
+      "label": "Log-polar chart",
+      "status": "projection/local chart",
+      "category": "geometry/graphics",
+      "description": "A local coordinate transform rho=log r, theta=atan2(y,x). It supports radial multiscale addressing but introduces singularity and conditioning risks.",
+      "formal_role": "rho=ln r; theta=atan2(y,x)",
+      "source_pages": "S2 pp.12-19; S3 pp.2-3; S7 pp.1,7"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP043",
+      "@type": "operator",
+      "label": "1-bit log-polar LUT",
+      "status": "role-overloaded proposal",
+      "category": "graphics/indexing",
+      "description": "In exploratory sources this alternates between active-sector mask, parity field, and output quantizer. The report separates these roles rather than treating one bit as the whole state.",
+      "formal_role": "mask(rho,theta)",
+      "source_pages": "S2 pp.12-19; S7 pp.1-5"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP044",
+      "@type": "operator",
+      "label": "Spherical LUT",
+      "status": "metaphorical/local support",
+      "category": "sensing/graphics",
+      "description": "A radial-angular lookup or local sensory organization. It should be read as a local chart/index, not proof that atoms or the whole world are spherical records.",
+      "formal_role": "LUT(r,theta,phi)",
+      "source_pages": "S3 pp.14-20,24-33"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP045",
+      "@type": "operator",
+      "label": "Sieve",
+      "status": "normalized caution",
+      "category": "information/graphics",
+      "description": "A filter or candidate-reduction stage: aperture, receptor mosaic, BVH, octree, mask, or compatibility filter. The corpus aims to replace broad materialization with analytic support and compatibility, not prove all indexing unnecessary.",
+      "formal_role": "filter/index",
+      "source_pages": "S3 pp.13-15,24-33; S5 pp.14-16; S2 pp.30-32"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP046",
+      "@type": "operator",
+      "label": "Jitter / micro-saccade",
+      "status": "projection/sensing operator",
+      "category": "sensing/graphics",
+      "description": "Controlled perturbation used to fill sampling gaps, dither quantization, or estimate sub-cell structure. It belongs to sensors and projections, not the invariant core.",
+      "formal_role": "epsilon(t)",
+      "source_pages": "S3 pp.13-15,24-33; S7 pp.8-10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP047",
+      "@type": "operator",
+      "label": "Feynman vector",
+      "status": "speculative / renamed for clarity",
+      "category": "graphics terminology",
+      "description": "The KC document uses this name for phase-amplitude vectors integrated near SDF boundaries. No formal path-integral derivation is supplied, so this report renames it a phase-amplitude edge accumulator.",
+      "formal_role": "A(p)=sum_k a_k exp(i phi_k)",
+      "source_pages": "S7 pp.1-3"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP048",
+      "@type": "operator",
+      "label": "Phase-amplitude edge accumulator",
+      "status": "decoder inference",
+      "category": "graphics projection",
+      "description": "A source-faithful normalization of the KC Feynman-vector idea: accumulate weighted phase samples near an implicit boundary, then quantize for output.",
+      "formal_role": "A(p)",
+      "source_pages": "S7 pp.1-3"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP049",
+      "@type": "operator",
+      "label": "Pulse-density modulation",
+      "status": "projection-layer proposal",
+      "category": "display hardware",
+      "description": "A temporal 1-bit stream whose pulse density represents intensity. It is a possible output adapter for a physical display, not the state substrate.",
+      "formal_role": "PDM",
+      "source_pages": "S7 pp.4-6"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP050",
+      "@type": "operator",
+      "label": "Anisotropic dithering",
+      "status": "projection-layer proposal",
+      "category": "graphics/output",
+      "description": "Log-radius- and angle-aware stochastic quantization used for screen or print output.",
+      "formal_role": "blue-noise threshold",
+      "source_pages": "S7 pp.5,8-10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP051",
+      "@type": "operator",
+      "label": "Prepress adapter",
+      "status": "projection-layer proposal",
+      "category": "graphics/output",
+      "description": "A static 1-bit halftone path: CMYK mapping, log-polar blue noise, SDF edge lock, and dot-gain compensation.",
+      "formal_role": "1-bit TIFF/PDF",
+      "source_pages": "S7 pp.8-10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP052",
+      "@type": "operator",
+      "label": "Materialized view",
+      "status": "decoder inference",
+      "category": "information science",
+      "description": "A rendered image, mesh, cache, or sampled field derived from the authoritative relation/event state. This term is the report's information-science translation.",
+      "formal_role": "view(Q,query)",
+      "source_pages": "S1 pp.1,9-10; S5 p.9"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP053",
+      "@type": "operator",
+      "label": "B.C.E.",
+      "status": "canonical bounded operator",
+      "category": "event/hardware",
+      "description": "Bounded Compatibility Event: support admitted, channel compatible, guard crossed, and confidence threshold met.",
+      "formal_role": "support and chi and g=0",
+      "source_pages": "S6 pp.1,3,5,7"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP054",
+      "@type": "operator",
+      "label": "Spherical throughput",
+      "status": "canonical metric",
+      "category": "metrics",
+      "description": "Verified compatible events or answered queries per second at a declared error budget, not raw photon flux or propagation speed.",
+      "formal_role": "Theta_sph=N_verified/Delta t",
+      "source_pages": "S6 pp.3,6,11"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP055",
+      "@type": "operator",
+      "label": "Matrix-in-glass",
+      "status": "bounded hardware translation",
+      "category": "hardware",
+      "description": "A calibrated passive or tunable optical transfer matrix in a waveguide mesh. It is not a stored picture or zero-energy computer.",
+      "formal_role": "optical transfer matrix",
+      "source_pages": "S5 pp.47-50; S6 pp.2,5"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP056",
+      "@type": "operator",
+      "label": "Liquid substrate",
+      "status": "bounded hardware translation",
+      "category": "hardware",
+      "description": "A liquid lens, overclad, or core coupled to a solid photonic substrate to tune focus, effective index, phase, or mode coupling.",
+      "formal_role": "n_eff(u)",
+      "source_pages": "S5 pp.58-64; S6 pp.2-5,8"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP057",
+      "@type": "operator",
+      "label": "Hollowlens-0",
+      "status": "canonical prototype",
+      "category": "prototype",
+      "description": "A minimum optofluidic demonstrator: scanned input, tunable liquid coupler, 2x2 interferometer, balanced detectors, digital sidecar, and pre-registered event tests.",
+      "formal_role": "prototype stack",
+      "source_pages": "S6 pp.4,7-10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP058",
+      "@type": "operator",
+      "label": "Digital sidecar",
+      "status": "canonical control element",
+      "category": "hardware/control",
+      "description": "Conventional electronics for calibration, thresholds, uncertainty, lineage, policy, drift detection, and fallback. Its necessity prevents magical zero-latency claims.",
+      "formal_role": "FPGA/MCU",
+      "source_pages": "S6 pp.4,7-10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP059",
+      "@type": "operator",
+      "label": "Type safety",
+      "status": "canonical engineering discipline",
+      "category": "method",
+      "description": "Keep electromagnetics, fluid mechanics, coupled-mode theory, event logic, topology, and information semantics in their own domains with explicit interfaces.",
+      "formal_role": "domain separation",
+      "source_pages": "S6 pp.2,5"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP060",
+      "@type": "operator",
+      "label": "Equation World Zero",
+      "status": "canonical prototype",
+      "category": "prototype",
+      "description": "Restricted headless prototype with low-dimensional homogeneous coordinates, continuous time, two sheets, one orientation bit, bounded relation families, finite grammar depth, lineage, and symbolic outputs.",
+      "formal_role": "EW0",
+      "source_pages": "S1 pp.7,11-12"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP061",
+      "@type": "operator",
+      "label": "Universal O(1)",
+      "status": "rejected totalizing claim",
+      "category": "claim boundary",
+      "description": "The mature sources reject a universal constant-cost universe. Only fixed closed expressions may have horizon-independent state evaluation.",
+      "formal_role": "not accepted",
+      "source_pages": "S1 pp.1,8; S6 p.10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP062",
+      "@type": "operator",
+      "label": "Zero memory / heat / latency",
+      "status": "rejected totalizing claim",
+      "category": "claim boundary",
+      "description": "Rejected as system claims. Storage, branch history, optical sources, actuation, detection, calibration, and control all carry costs.",
+      "formal_role": "not accepted",
+      "source_pages": "S1 pp.1,8; S6 pp.2,10"
+    },
+    {
+      "@id": "urn:spherical-corpus:OP063",
+      "@type": "operator",
+      "label": "Biological or medical control",
+      "status": "excluded from technical core",
+      "category": "claim boundary",
+      "description": "The corpus contains analogies and application prompts, but the bounded engineering report explicitly makes no general biological or medical mechanism claim.",
+      "formal_role": "not established",
+      "source_pages": "S5 pp.3-6; S6 p.10"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:1",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP001",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:2",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP001",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:3",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP002",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:4",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP002",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:5",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP003",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:6",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP003",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:7",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP004",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:8",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP004",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:9",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP005",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:10",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP006",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:11",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP006",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:12",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP007",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:13",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP007",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:14",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP008",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:15",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP008",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:16",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP009",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:17",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP009",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:18",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP010",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:19",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP010",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:20",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP011",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:21",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP012",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:22",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP013",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:23",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP014",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:24",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP015",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:25",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP015",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:26",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP015",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:27",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP016",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:28",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP016",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:29",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP017",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:30",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP017",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:31",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP018",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:32",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP019",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:33",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP019",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:34",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP019",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:35",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP019",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:36",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP020",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:37",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP020",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:38",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP021",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:39",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP021",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:40",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP021",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:41",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP021",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:42",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP022",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:43",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP022",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:44",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP023",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:45",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP023",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:46",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP023",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:47",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP024",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:48",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP024",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:49",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP024",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:50",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP025",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:51",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP025",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:52",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP025",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:53",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP026",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:54",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP026",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:55",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP026",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:56",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S3",
+      "target": "urn:spherical-corpus:OP027",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:57",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP028",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:58",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP028",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:59",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP029",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:60",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP029",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:61",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP029",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:62",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP030",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:63",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S4",
+      "target": "urn:spherical-corpus:OP030",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:64",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S4",
+      "target": "urn:spherical-corpus:OP031",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:65",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP032",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:66",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP032",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:67",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP033",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:68",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP033",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:69",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP034",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:70",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP034",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:71",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S4",
+      "target": "urn:spherical-corpus:OP035",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:72",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S4",
+      "target": "urn:spherical-corpus:OP036",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:73",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP037",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:74",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP037",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:75",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP037",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:76",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP038",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:77",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP038",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:78",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP039",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:79",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP040",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:80",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP041",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:81",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP041",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:82",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP042",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:83",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S3",
+      "target": "urn:spherical-corpus:OP042",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:84",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP042",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:85",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP043",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:86",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP043",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:87",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S3",
+      "target": "urn:spherical-corpus:OP044",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:88",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S2",
+      "target": "urn:spherical-corpus:OP045",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:89",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S3",
+      "target": "urn:spherical-corpus:OP045",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:90",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP045",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:91",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S3",
+      "target": "urn:spherical-corpus:OP046",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:92",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP046",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:93",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP047",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:94",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP048",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:95",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP049",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:96",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP050",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:97",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S7",
+      "target": "urn:spherical-corpus:OP051",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:98",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP052",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:99",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP052",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:100",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP053",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:101",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP054",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:102",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP055",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:103",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP055",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:104",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP056",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:105",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP056",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:106",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP057",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:107",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP058",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:108",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP059",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:109",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP060",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:110",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP061",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:111",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP061",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:112",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S1",
+      "target": "urn:spherical-corpus:OP062",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:113",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP062",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:114",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S5",
+      "target": "urn:spherical-corpus:OP063",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:115",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:S6",
+      "target": "urn:spherical-corpus:OP063",
+      "relation": "contributes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:116",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP002",
+      "target": "urn:spherical-corpus:OP001",
+      "relation": "generates"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:117",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP007",
+      "target": "urn:spherical-corpus:OP001",
+      "relation": "perturbs"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:118",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP001",
+      "target": "urn:spherical-corpus:OP003",
+      "relation": "evaluated_by"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:119",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP016",
+      "target": "urn:spherical-corpus:OP004",
+      "relation": "admits"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:120",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP015",
+      "target": "urn:spherical-corpus:OP004",
+      "relation": "gates"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:121",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP019",
+      "target": "urn:spherical-corpus:OP004",
+      "relation": "triggers"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:122",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP004",
+      "target": "urn:spherical-corpus:OP005",
+      "relation": "invokes"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:123",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP005",
+      "target": "urn:spherical-corpus:OP009",
+      "relation": "updates"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:124",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP005",
+      "target": "urn:spherical-corpus:OP023",
+      "relation": "may_toggle"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:125",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP021",
+      "target": "urn:spherical-corpus:OP015",
+      "relation": "implemented_by"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:126",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP022",
+      "target": "urn:spherical-corpus:OP021",
+      "relation": "partitions"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:127",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP026",
+      "target": "urn:spherical-corpus:OP022",
+      "relation": "may_define_gluing"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:128",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP025",
+      "target": "urn:spherical-corpus:OP005",
+      "relation": "visualizes_routing"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:129",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP024",
+      "target": "urn:spherical-corpus:OP019",
+      "relation": "coincides_with"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:130",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP012",
+      "target": "urn:spherical-corpus:OP001",
+      "relation": "queries"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:131",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP013",
+      "target": "urn:spherical-corpus:OP004",
+      "relation": "queries"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:132",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP014",
+      "target": "urn:spherical-corpus:OP016",
+      "relation": "queries"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:133",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP037",
+      "target": "urn:spherical-corpus:OP052",
+      "relation": "produces"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:134",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP038",
+      "target": "urn:spherical-corpus:OP052",
+      "relation": "produces"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:135",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP039",
+      "target": "urn:spherical-corpus:OP052",
+      "relation": "produces"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:136",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP048",
+      "target": "urn:spherical-corpus:OP051",
+      "relation": "feeds"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:137",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP043",
+      "target": "urn:spherical-corpus:OP048",
+      "relation": "addresses"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:138",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP060",
+      "target": "urn:spherical-corpus:OP012",
+      "relation": "tests"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:139",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP060",
+      "target": "urn:spherical-corpus:OP013",
+      "relation": "tests"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:140",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP057",
+      "target": "urn:spherical-corpus:OP053",
+      "relation": "implements"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:141",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP055",
+      "target": "urn:spherical-corpus:OP057",
+      "relation": "component_of"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:142",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP056",
+      "target": "urn:spherical-corpus:OP057",
+      "relation": "component_of"
+    },
+    {
+      "@id": "urn:spherical-corpus:edge:143",
+      "@type": "relation",
+      "source": "urn:spherical-corpus:OP054",
+      "target": "urn:spherical-corpus:OP057",
+      "relation": "benchmarks"
+    }
+  ]
+}

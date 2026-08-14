@@ -1,0 +1,6 @@
+PDF: /mnt/data/topological_cross_domain_corpus/Topological_Cross_Domain_Corpus_Report.pdf
+Pages: 63
+Encrypted: False
+Openable (PyMuPDF): True
+Likely scanned: False
+XFA present: False

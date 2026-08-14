@@ -1,0 +1,506 @@
+[
+  {
+    "term": "State manifold",
+    "category": "core ontology",
+    "normalized_meaning": "The product space that carries position, time, phase, sheet, lineage address, and branch. It is the authoritative state space, not an image buffer.",
+    "formal_role": "Q = P^n x R_time x S^1_phase x Z2_sheet x A_address x B_branch",
+    "source_pages": "S1 pp.5-6; S5 pp.1,9-11",
+    "status": "canonical"
+  },
+  {
+    "term": "Finite grammar",
+    "category": "core ontology",
+    "normalized_meaning": "A bounded generative rule set that produces closed dynamics and relation expressions instead of storing a complete object inventory.",
+    "formal_role": "G",
+    "source_pages": "S1 pp.5-7,11-12; S5 pp.10-11",
+    "status": "canonical"
+  },
+  {
+    "term": "Relation algebra",
+    "category": "core ontology",
+    "normalized_meaning": "Declarative equations or predicates that define possible states and transition surfaces.",
+    "formal_role": "R_j(q;theta_j)=0",
+    "source_pages": "S1 pp.1,5-7; S5 pp.1,9",
+    "status": "canonical"
+  },
+  {
+    "term": "Event",
+    "category": "core ontology",
+    "normalized_meaning": "A guard crossing that is admitted by support and compatibility. An event is not merely a geometric hit.",
+    "formal_role": "t* = min{t >= t0 : R_j(q(t))=0 and C<=0 and chi=1}",
+    "source_pages": "S1 pp.6-8; S6 pp.3,5,7",
+    "status": "canonical"
+  },
+  {
+    "term": "Transition",
+    "category": "core ontology",
+    "normalized_meaning": "The state update applied at an admitted event while preserving declared invariants and lineage.",
+    "formal_role": "q(t*+) = T_j(q(t*-), context)",
+    "source_pages": "S1 pp.6-7",
+    "status": "canonical"
+  },
+  {
+    "term": "Invariant",
+    "category": "core ontology",
+    "normalized_meaning": "A property that must persist across transitions, coordinate changes, or reconstruction.",
+    "formal_role": "I",
+    "source_pages": "S1 pp.1,5-7,11; S5 pp.7-11",
+    "status": "canonical"
+  },
+  {
+    "term": "Exogenous log",
+    "category": "information science",
+    "normalized_meaning": "A record of irreducible external novelty that cannot be regenerated from seed and grammar.",
+    "formal_role": "L",
+    "source_pages": "S1 pp.6,8,11-12; S5 pp.10-11",
+    "status": "canonical"
+  },
+  {
+    "term": "Novelty-proportional memory",
+    "category": "information science",
+    "normalized_meaning": "Memory discipline in which closed dynamics are regenerated and storage grows with external novelty and necessary branch history rather than geometric extent alone.",
+    "formal_role": "M ~ seed + grammar + log + branch history",
+    "source_pages": "S1 pp.8,11-12; S5 pp.10-11",
+    "status": "bounded hypothesis"
+  },
+  {
+    "term": "Lineage",
+    "category": "information science",
+    "normalized_meaning": "Persistent provenance through splits, merges, transitions, and coordinate changes.",
+    "formal_role": "lineage(e)",
+    "source_pages": "S1 pp.1,5-8,11; S5 pp.6-8,11",
+    "status": "canonical"
+  },
+  {
+    "term": "Ontological address",
+    "category": "information science",
+    "normalized_meaning": "A generative identity derived from seed, grammar path, and invariant history; normalized here as a provenance key rather than a literal magic UUID.",
+    "formal_role": "a_e = H(seed,path,lineage)",
+    "source_pages": "S1 pp.5-6; S5 pp.6-8",
+    "status": "normalized operator"
+  },
+  {
+    "term": "Branch",
+    "category": "information science",
+    "normalized_meaning": "A version, fork, or counterfactual path in the state evolution. Branch history is a real cost and can explode.",
+    "formal_role": "b_e",
+    "source_pages": "S1 pp.5-8,11",
+    "status": "canonical"
+  },
+  {
+    "term": "State-at-time query",
+    "category": "query API",
+    "normalized_meaning": "Direct evaluation of a closed state expression at time t without replaying every intermediate frame. Horizon independence is only plausible for fixed bounded expressions.",
+    "formal_role": "state_at(e,t)",
+    "source_pages": "S1 pp.7-8,10-12",
+    "status": "canonical bounded claim"
+  },
+  {
+    "term": "Next-event query",
+    "category": "query API",
+    "normalized_meaning": "Find the earliest compatible relation crossing after t0. Cost is compatibility plus root/event solving plus branch resolution.",
+    "formal_role": "next_event(e,t0)",
+    "source_pages": "S1 pp.7-8,10-12",
+    "status": "canonical"
+  },
+  {
+    "term": "Events-in-support query",
+    "category": "query API",
+    "normalized_meaning": "Enumerate admitted events inside a local radial-angular or causal support.",
+    "formal_role": "events_in_support(C_alpha,t0,t1)",
+    "source_pages": "S1 pp.6-7,11",
+    "status": "canonical"
+  },
+  {
+    "term": "Compatibility predicate",
+    "category": "core ontology",
+    "normalized_meaning": "A Boolean or typed predicate controlling whether co-located states, channels, or relations may couple.",
+    "formal_role": "chi(e,j,t) in {0,1}",
+    "source_pages": "S1 pp.6-8; S5 pp.13-16,32-33; S6 pp.3,5,7",
+    "status": "canonical"
+  },
+  {
+    "term": "Local spherical support",
+    "category": "topology/query",
+    "normalized_meaning": "A local chart for radial reach, angular support, orientation, field of view, uncertainty, or domain of dependence. It is not a global spherical remeshing.",
+    "formal_role": "C_alpha(q,t)<=0",
+    "source_pages": "S1 pp.1,5-7,9-10; S6 pp.3,6",
+    "status": "canonical"
+  },
+  {
+    "term": "Cone",
+    "category": "topology/query",
+    "normalized_meaning": "An analytic relevance, causal, sensing, collision, memory, or grammar support. It is not intrinsically a ray bundle.",
+    "formal_role": "C_alpha",
+    "source_pages": "S1 pp.1,5-7,10; S2 pp.14-19",
+    "status": "canonical normalized operator"
+  },
+  {
+    "term": "Shell",
+    "category": "topology/query",
+    "normalized_meaning": "A radial support boundary or nested relevance band around a local origin.",
+    "formal_role": "r in [r0,r1]",
+    "source_pages": "S1 pp.1,5-6",
+    "status": "normalized operator"
+  },
+  {
+    "term": "SDF zero / B=0",
+    "category": "topology/event",
+    "normalized_meaning": "The explicit transition or guard surface where event semantics are invoked. It should not be confused with continuing to sample through an SDF.",
+    "formal_role": "B(q)=0 or f(q)=0",
+    "source_pages": "S1 pp.5-7; S2 pp.16-19; S5 p.54; S6 pp.3,5,7",
+    "status": "canonical"
+  },
+  {
+    "term": "Signed distance field",
+    "category": "geometry",
+    "normalized_meaning": "An implicit scalar field that may define geometry or guards. In the mature reading it is evaluated as a relation; raymarching is optional downstream behavior.",
+    "formal_role": "f(q)",
+    "source_pages": "S1 pp.7,9-10; S7 pp.1-2",
+    "status": "canonical with projection variant"
+  },
+  {
+    "term": "Double vacuum",
+    "category": "topology/information",
+    "normalized_meaning": "Phase-separated co-location: two states may share spatial coordinates yet fail to interact because phase, sheet, orientation, address, or policy are incompatible. The second vacuum is absence of coupling.",
+    "formal_role": "same x; chi=0",
+    "source_pages": "S1 p.6; S2 pp.14-19; S5 pp.32-33; S6 pp.2,4",
+    "status": "canonical"
+  },
+  {
+    "term": "Phase sheet",
+    "category": "topology/information",
+    "normalized_meaning": "A sector or namespace that labels co-located states and participates in compatibility.",
+    "formal_role": "sigma in Z2 or finite sheet set",
+    "source_pages": "S1 pp.5-6; S5 pp.13-15,32-33",
+    "status": "canonical"
+  },
+  {
+    "term": "One-bit parity",
+    "category": "routing",
+    "normalized_meaning": "A narrow route, orientation, validity, freshness, or availability flag. It is not the full world state.",
+    "formal_role": "p <- NOT p",
+    "source_pages": "S1 pp.5-7; S5 pp.33,44-47,54; S6 pp.2,7",
+    "status": "canonical narrow role"
+  },
+  {
+    "term": "Pinch point",
+    "category": "routing/topology",
+    "normalized_meaning": "A rank-changing event locus at the center of the hourglass routing visualization. It becomes meaningful only with an explicit guard and transition map.",
+    "formal_role": "B=0",
+    "source_pages": "S1 p.6; S2 pp.24-25; S5 pp.33,54",
+    "status": "normalized operator"
+  },
+  {
+    "term": "Quad hourglass",
+    "category": "routing/topology",
+    "normalized_meaning": "A four-chamber routing partition with a central event locus and sheet/orientation transitions. It is a disciplined visualization, not a topology proof.",
+    "formal_role": "four chambers + pinch",
+    "source_pages": "S1 p.6; S2 pp.23-25; S5 pp.32-33,54",
+    "status": "normalized operator"
+  },
+  {
+    "term": "Klein bottle",
+    "category": "topology",
+    "normalized_meaning": "An orientation-reversing gluing or routing abstraction. A usable implementation must specify ports, transition functions, orientation map, and transfer matrix.",
+    "formal_role": "quotient/gluing map",
+    "source_pages": "S1 pp.2,6; S2 pp.7-10,16-19; S6 pp.2,5,10",
+    "status": "demoted from literal physics"
+  },
+  {
+    "term": "Mobius strip",
+    "category": "topology/metaphor",
+    "normalized_meaning": "A one-sided continuity and inversion motif used in the optical/art narrative. It can motivate orientation reversal but is not required by the formal core.",
+    "formal_role": "local orientation flip",
+    "source_pages": "S3 pp.5-10",
+    "status": "metaphorical / optional"
+  },
+  {
+    "term": "Phi: angular coordinate",
+    "category": "notation",
+    "normalized_meaning": "The local angular coordinate or lighthouse incidence angle. Distinguish from phase schedule and golden ratio.",
+    "formal_role": "phi_angle",
+    "source_pages": "S2 pp.12-19; S5 pp.2-3",
+    "status": "ambiguous source symbol"
+  },
+  {
+    "term": "Phi: phase law",
+    "category": "notation",
+    "normalized_meaning": "A phase coordinate or schedule used in compatibility and coupling. Irrational schedules are presented as heuristics, not proven requirements.",
+    "formal_role": "phi_phase(t)",
+    "source_pages": "S1 pp.5-6; S2 pp.14-19; S5 pp.2-3",
+    "status": "canonical concept, heuristic schedule"
+  },
+  {
+    "term": "Golden ratio",
+    "category": "notation/metaphor",
+    "normalized_meaning": "An optional scaling or phase motif in exploratory sources. The mature architecture does not require the golden ratio.",
+    "formal_role": "phi_g=(1+sqrt(5))/2",
+    "source_pages": "S2 pp.12-19; S4 pp.10-11",
+    "status": "speculative motif"
+  },
+  {
+    "term": "Torque vector",
+    "category": "geometry",
+    "normalized_meaning": "The corrected interpretation in the Ben Burgers document for twisting or folding an oval/phi-like cross-section. Use tau, not phi, to avoid symbol collision.",
+    "formal_role": "tau",
+    "source_pages": "S4 pp.11-14",
+    "status": "geometric brainstorming"
+  },
+  {
+    "term": "Eigenvector",
+    "category": "linear algebra",
+    "normalized_meaning": "An invariant direction under a transformation, used as an anchor or stable mode.",
+    "formal_role": "A v = lambda v",
+    "source_pages": "S2 pp.20-25; S5 pp.2,17,51",
+    "status": "normalized operator"
+  },
+  {
+    "term": "Eigenvalue zero",
+    "category": "linear algebra/event",
+    "normalized_meaning": "A rank-loss or null-space event used metaphorically as an off-state. In an implementation it must be tied to a defined operator and numerical tolerance.",
+    "formal_role": "lambda approx 0",
+    "source_pages": "S2 pp.22-25; S5 pp.33,54",
+    "status": "normalized with numerical guard"
+  },
+  {
+    "term": "Null space",
+    "category": "linear algebra",
+    "normalized_meaning": "The inactive or rejected subspace produced by a compatibility/kernel operation. It should mean algebraic exclusion, not physical disappearance.",
+    "formal_role": "ker A",
+    "source_pages": "S2 pp.22-25; S5 pp.15,33",
+    "status": "normalized operator"
+  },
+  {
+    "term": "Overlap / weld zone",
+    "category": "topology/information",
+    "normalized_meaning": "The slight overlap of folded D/phi shapes is read as intersection, tolerance buffer, constructive interference, or shared domain A intersect B.",
+    "formal_role": "A intersect B",
+    "source_pages": "S4 pp.16-19",
+    "status": "metaphorical geometric operator"
+  },
+  {
+    "term": "Zero-based timeline",
+    "category": "information science",
+    "normalized_meaning": "A reference-frame or indexing shift: an offset from index 0 identifies positions differently from 1-based counting. It does not change arithmetic.",
+    "formal_role": "index 0",
+    "source_pages": "S4 pp.1-6",
+    "status": "corrected computing motif"
+  },
+  {
+    "term": "Rasterization",
+    "category": "computer graphics",
+    "normalized_meaning": "A downstream projection that maps stored or computed geometry into pixels. The corpus rejects using the raster as the authoritative world model.",
+    "formal_role": "materialized image view",
+    "source_pages": "S1 pp.1,9-10; S5 pp.1,9; S7",
+    "status": "downstream projection"
+  },
+  {
+    "term": "Raymarching",
+    "category": "computer graphics",
+    "normalized_meaning": "Repeated field sampling along projected directions. It may visualize an SDF but is explicitly not the mature core.",
+    "formal_role": "sample f along ray",
+    "source_pages": "S1 pp.1,7,9-10; S2 pp.12-17",
+    "status": "downstream / not core"
+  },
+  {
+    "term": "Ray tracing",
+    "category": "computer graphics",
+    "normalized_meaning": "Transport or visibility path computation. It can consume the substrate but does not define the substrate.",
+    "formal_role": "path/visibility solver",
+    "source_pages": "S1 pp.9-10",
+    "status": "downstream projection"
+  },
+  {
+    "term": "Hybrid engine path",
+    "category": "computer graphics",
+    "normalized_meaning": "A bridge architecture with stable geometric/graph world state plus optional cone integration, volumetrics, raymarching, or display stages.",
+    "formal_role": "core + projection stage",
+    "source_pages": "S1 p.9",
+    "status": "supported bridge"
+  },
+  {
+    "term": "Headless query-first path",
+    "category": "computer science",
+    "normalized_meaning": "The preferred experiment: algebra, compatibility, events, transitions, lineage, and logs before images. Success is not visual fidelity.",
+    "formal_role": "query core",
+    "source_pages": "S1 pp.9,11-12; S6 p.9",
+    "status": "canonical prototype path"
+  },
+  {
+    "term": "Log-polar chart",
+    "category": "geometry/graphics",
+    "normalized_meaning": "A local coordinate transform rho=log r, theta=atan2(y,x). It supports radial multiscale addressing but introduces singularity and conditioning risks.",
+    "formal_role": "rho=ln r; theta=atan2(y,x)",
+    "source_pages": "S2 pp.12-19; S3 pp.2-3; S7 pp.1,7",
+    "status": "projection/local chart"
+  },
+  {
+    "term": "1-bit log-polar LUT",
+    "category": "graphics/indexing",
+    "normalized_meaning": "In exploratory sources this alternates between active-sector mask, parity field, and output quantizer. The report separates these roles rather than treating one bit as the whole state.",
+    "formal_role": "mask(rho,theta)",
+    "source_pages": "S2 pp.12-19; S7 pp.1-5",
+    "status": "role-overloaded proposal"
+  },
+  {
+    "term": "Spherical LUT",
+    "category": "sensing/graphics",
+    "normalized_meaning": "A radial-angular lookup or local sensory organization. It should be read as a local chart/index, not proof that atoms or the whole world are spherical records.",
+    "formal_role": "LUT(r,theta,phi)",
+    "source_pages": "S3 pp.14-20,24-33",
+    "status": "metaphorical/local support"
+  },
+  {
+    "term": "Sieve",
+    "category": "information/graphics",
+    "normalized_meaning": "A filter or candidate-reduction stage: aperture, receptor mosaic, BVH, octree, mask, or compatibility filter. The corpus aims to replace broad materialization with analytic support and compatibility, not prove all indexing unnecessary.",
+    "formal_role": "filter/index",
+    "source_pages": "S3 pp.13-15,24-33; S5 pp.14-16; S2 pp.30-32",
+    "status": "normalized caution"
+  },
+  {
+    "term": "Jitter / micro-saccade",
+    "category": "sensing/graphics",
+    "normalized_meaning": "Controlled perturbation used to fill sampling gaps, dither quantization, or estimate sub-cell structure. It belongs to sensors and projections, not the invariant core.",
+    "formal_role": "epsilon(t)",
+    "source_pages": "S3 pp.13-15,24-33; S7 pp.8-10",
+    "status": "projection/sensing operator"
+  },
+  {
+    "term": "Feynman vector",
+    "category": "graphics terminology",
+    "normalized_meaning": "The KC document uses this name for phase-amplitude vectors integrated near SDF boundaries. No formal path-integral derivation is supplied, so this report renames it a phase-amplitude edge accumulator.",
+    "formal_role": "A(p)=sum_k a_k exp(i phi_k)",
+    "source_pages": "S7 pp.1-3",
+    "status": "speculative / renamed for clarity"
+  },
+  {
+    "term": "Phase-amplitude edge accumulator",
+    "category": "graphics projection",
+    "normalized_meaning": "A source-faithful normalization of the KC Feynman-vector idea: accumulate weighted phase samples near an implicit boundary, then quantize for output.",
+    "formal_role": "A(p)",
+    "source_pages": "S7 pp.1-3",
+    "status": "decoder inference"
+  },
+  {
+    "term": "Pulse-density modulation",
+    "category": "display hardware",
+    "normalized_meaning": "A temporal 1-bit stream whose pulse density represents intensity. It is a possible output adapter for a physical display, not the state substrate.",
+    "formal_role": "PDM",
+    "source_pages": "S7 pp.4-6",
+    "status": "projection-layer proposal"
+  },
+  {
+    "term": "Anisotropic dithering",
+    "category": "graphics/output",
+    "normalized_meaning": "Log-radius- and angle-aware stochastic quantization used for screen or print output.",
+    "formal_role": "blue-noise threshold",
+    "source_pages": "S7 pp.5,8-10",
+    "status": "projection-layer proposal"
+  },
+  {
+    "term": "Prepress adapter",
+    "category": "graphics/output",
+    "normalized_meaning": "A static 1-bit halftone path: CMYK mapping, log-polar blue noise, SDF edge lock, and dot-gain compensation.",
+    "formal_role": "1-bit TIFF/PDF",
+    "source_pages": "S7 pp.8-10",
+    "status": "projection-layer proposal"
+  },
+  {
+    "term": "Materialized view",
+    "category": "information science",
+    "normalized_meaning": "A rendered image, mesh, cache, or sampled field derived from the authoritative relation/event state. This term is the report's information-science translation.",
+    "formal_role": "view(Q,query)",
+    "source_pages": "S1 pp.1,9-10; S5 p.9",
+    "status": "decoder inference"
+  },
+  {
+    "term": "B.C.E.",
+    "category": "event/hardware",
+    "normalized_meaning": "Bounded Compatibility Event: support admitted, channel compatible, guard crossed, and confidence threshold met.",
+    "formal_role": "support and chi and g=0",
+    "source_pages": "S6 pp.1,3,5,7",
+    "status": "canonical bounded operator"
+  },
+  {
+    "term": "Spherical throughput",
+    "category": "metrics",
+    "normalized_meaning": "Verified compatible events or answered queries per second at a declared error budget, not raw photon flux or propagation speed.",
+    "formal_role": "Theta_sph=N_verified/Delta t",
+    "source_pages": "S6 pp.3,6,11",
+    "status": "canonical metric"
+  },
+  {
+    "term": "Matrix-in-glass",
+    "category": "hardware",
+    "normalized_meaning": "A calibrated passive or tunable optical transfer matrix in a waveguide mesh. It is not a stored picture or zero-energy computer.",
+    "formal_role": "optical transfer matrix",
+    "source_pages": "S5 pp.47-50; S6 pp.2,5",
+    "status": "bounded hardware translation"
+  },
+  {
+    "term": "Liquid substrate",
+    "category": "hardware",
+    "normalized_meaning": "A liquid lens, overclad, or core coupled to a solid photonic substrate to tune focus, effective index, phase, or mode coupling.",
+    "formal_role": "n_eff(u)",
+    "source_pages": "S5 pp.58-64; S6 pp.2-5,8",
+    "status": "bounded hardware translation"
+  },
+  {
+    "term": "Hollowlens-0",
+    "category": "prototype",
+    "normalized_meaning": "A minimum optofluidic demonstrator: scanned input, tunable liquid coupler, 2x2 interferometer, balanced detectors, digital sidecar, and pre-registered event tests.",
+    "formal_role": "prototype stack",
+    "source_pages": "S6 pp.4,7-10",
+    "status": "canonical prototype"
+  },
+  {
+    "term": "Digital sidecar",
+    "category": "hardware/control",
+    "normalized_meaning": "Conventional electronics for calibration, thresholds, uncertainty, lineage, policy, drift detection, and fallback. Its necessity prevents magical zero-latency claims.",
+    "formal_role": "FPGA/MCU",
+    "source_pages": "S6 pp.4,7-10",
+    "status": "canonical control element"
+  },
+  {
+    "term": "Type safety",
+    "category": "method",
+    "normalized_meaning": "Keep electromagnetics, fluid mechanics, coupled-mode theory, event logic, topology, and information semantics in their own domains with explicit interfaces.",
+    "formal_role": "domain separation",
+    "source_pages": "S6 pp.2,5",
+    "status": "canonical engineering discipline"
+  },
+  {
+    "term": "Equation World Zero",
+    "category": "prototype",
+    "normalized_meaning": "Restricted headless prototype with low-dimensional homogeneous coordinates, continuous time, two sheets, one orientation bit, bounded relation families, finite grammar depth, lineage, and symbolic outputs.",
+    "formal_role": "EW0",
+    "source_pages": "S1 pp.7,11-12",
+    "status": "canonical prototype"
+  },
+  {
+    "term": "Universal O(1)",
+    "category": "claim boundary",
+    "normalized_meaning": "The mature sources reject a universal constant-cost universe. Only fixed closed expressions may have horizon-independent state evaluation.",
+    "formal_role": "not accepted",
+    "source_pages": "S1 pp.1,8; S6 p.10",
+    "status": "rejected totalizing claim"
+  },
+  {
+    "term": "Zero memory / heat / latency",
+    "category": "claim boundary",
+    "normalized_meaning": "Rejected as system claims. Storage, branch history, optical sources, actuation, detection, calibration, and control all carry costs.",
+    "formal_role": "not accepted",
+    "source_pages": "S1 pp.1,8; S6 pp.2,10",
+    "status": "rejected totalizing claim"
+  },
+  {
+    "term": "Biological or medical control",
+    "category": "claim boundary",
+    "normalized_meaning": "The corpus contains analogies and application prompts, but the bounded engineering report explicitly makes no general biological or medical mechanism claim.",
+    "formal_role": "not established",
+    "source_pages": "S5 pp.3-6; S6 p.10",
+    "status": "excluded from technical core"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "query": "state_at",
+    "inputs": "entity, time",
+    "dominant_operation": "Closed trajectory/grammar expression",
+    "output": "State tuple q_e(t)",
+    "failure_modes": "Expression size; branch history; conditioning",
+    "source_pages": "S1 pp.7-8,10-12"
+  },
+  {
+    "query": "next_event",
+    "inputs": "entity, t0, relation family",
+    "dominant_operation": "Compatibility filter plus certified root solver",
+    "output": "Earliest admitted event",
+    "failure_modes": "Event density; multiple roots; tangency; degeneracy",
+    "source_pages": "S1 pp.7-8,11-12"
+  },
+  {
+    "query": "events_in_support",
+    "inputs": "support, interval, policy",
+    "dominant_operation": "Analytic support pruning then relation evaluation",
+    "output": "Ordered event set",
+    "failure_modes": "Poor support/compatibility turns into broad scan",
+    "source_pages": "S1 pp.6-8,11"
+  },
+  {
+    "query": "can_couple",
+    "inputs": "entity A, entity B, context",
+    "dominant_operation": "Sheet/phase/address/mode/policy predicate",
+    "output": "Boolean plus reason code",
+    "failure_modes": "Predicate design; semantic grounding",
+    "source_pages": "S1 p.6; S5 pp.32-33; S6 p.7"
+  },
+  {
+    "query": "transition",
+    "inputs": "event, pre-state, context",
+    "dominant_operation": "Typed transition rule",
+    "output": "Post-state, parity route, invariant check",
+    "failure_modes": "Ambiguous or non-confluent rules",
+    "source_pages": "S1 pp.6-7; S6 p.7"
+  },
+  {
+    "query": "reconstruct_identity",
+    "inputs": "seed, grammar path, log, branch",
+    "dominant_operation": "Lineage replay/reduction",
+    "output": "Identity/provenance record",
+    "failure_modes": "Split/merge collision; log incompleteness",
+    "source_pages": "S1 pp.8,11-12; S5 pp.7-11"
+  },
+  {
+    "query": "project_view",
+    "inputs": "query result, camera/display policy",
+    "dominant_operation": "Downstream renderer or vector adapter",
+    "output": "Image/vector/print output",
+    "failure_modes": "Projection errors do not alter authoritative state",
+    "source_pages": "S1 pp.9-10; S7 pp.1-10"
+  },
+  {
+    "query": "measure_throughput",
+    "inputs": "event log, time window, error boundary",
+    "dominant_operation": "Count verified B.C.E. events only",
+    "output": "Theta_sph and benchmark vector",
+    "failure_modes": "Miss/false events; energy boundary; calibration",
+    "source_pages": "S6 p.6"
+  }
+]

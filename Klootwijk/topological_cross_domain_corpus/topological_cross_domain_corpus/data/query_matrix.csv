@@ -1,0 +1,9 @@
+query,inputs,dominant_operation,output,failure_modes,source_pages
+state_at,"entity, time",Closed trajectory/grammar expression,State tuple q_e(t),Expression size; branch history; conditioning,"S1 pp.7-8,10-12"
+next_event,"entity, t0, relation family",Compatibility filter plus certified root solver,Earliest admitted event,Event density; multiple roots; tangency; degeneracy,"S1 pp.7-8,11-12"
+events_in_support,"support, interval, policy",Analytic support pruning then relation evaluation,Ordered event set,Poor support/compatibility turns into broad scan,"S1 pp.6-8,11"
+can_couple,"entity A, entity B, context",Sheet/phase/address/mode/policy predicate,Boolean plus reason code,Predicate design; semantic grounding,S1 p.6; S5 pp.32-33; S6 p.7
+transition,"event, pre-state, context",Typed transition rule,"Post-state, parity route, invariant check",Ambiguous or non-confluent rules,S1 pp.6-7; S6 p.7
+reconstruct_identity,"seed, grammar path, log, branch",Lineage replay/reduction,Identity/provenance record,Split/merge collision; log incompleteness,"S1 pp.8,11-12; S5 pp.7-11"
+project_view,"query result, camera/display policy",Downstream renderer or vector adapter,Image/vector/print output,Projection errors do not alter authoritative state,S1 pp.9-10; S7 pp.1-10
+measure_throughput,"event log, time window, error boundary",Count verified B.C.E. events only,Theta_sph and benchmark vector,Miss/false events; energy boundary; calibration,S6 p.6

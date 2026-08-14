@@ -1,0 +1,223 @@
+source_id,page,matched_terms,text_chars
+S1,1,query;relation;event;phase;double vacuum;hourglass;one-bit;sdf;cone;spherical;polar;lineage;grammar;raster;raymarch;ray march;voxel;compatibility;invariant;phi;parity;projection;state;memory,3554
+S1,2,double vacuum;one-bit;cone;spherical;klein;compatibility;topolog;state,1903
+S1,3,relation;event;1-bit;sdf;cone;spherical;polar;invariant;collision;parity,1737
+S1,4,relation;event;phase;hourglass;spherical;lineage;grammar;collision;identity;state;memory;sieve,1111
+S1,5,relation;event;phase;sheet;double vacuum;hourglass;one-bit;1-bit;cone;spherical;lineage;grammar;raster;compatibility;invariant;address;branch;phi;parity;identity;projection;state,2478
+S1,6,relation;event;phase;sheet;double vacuum;hourglass;sdf;cone;spherical;polar;lineage;grammar;raster;compatibility;invariant;address;branch;phi;topolog;identity;state;exogenous log,3498
+S1,7,relation;event;phase;sheet;hourglass;sdf;cone;spherical;lineage;grammar;raster;lut;compatibility;address;phi;identity;state;exogenous log,2703
+S1,8,query;relation;event;phase;cone;lineage;grammar;raster;lut;compatibility;invariant;address;branch;identity;state,2795
+S1,9,query;event;one-bit;1-bit;cone;spherical;grammar;raster;raymarch;compatibility;projection;state,3215
+S1,10,query;relation;event;sdf;cone;spherical;grammar;raster;raymarch;compatibility;invariant;collision;projection;state;memory,3259
+S1,11,query;relation;event;phase;sheet;double vacuum;hourglass;cone;lineage;grammar;compatibility;invariant;address;branch;collision;phi;identity;state;memory,2847
+S1,12,query;relation;event;spherical;lineage;grammar;compatibility;invariant;identity;state;memory,1651
+S2,1,double vacuum,1499
+S2,2,double vacuum;phi,1576
+S2,3,relation;lut,1416
+S2,4,lut,755
+S2,5,,433
+S2,6,double vacuum;information;state,1815
+S2,7,double vacuum;klein;lut;phi;state,1935
+S2,8,klein;liquid;topolog,1708
+S2,9,double vacuum;klein,191
+S2,10,klein;lut;invariant;topolog;state,1774
+S2,11,klein;parity;topolog,2215
+S2,12,event;phase;1-bit;cone;spherical;polar;klein;ray march;voxel;lut;log encoded;phi;topolog;memory,2393
+S2,13,phase;1-bit;sdf;cone;spherical;polar;klein;lut;collision;log-polar;topolog,1906
+S2,14,event;phase;double vacuum;1-bit;cone;spherical;polar;klein;raster;ray march;voxel;lut;vector;log-polar;phi;topolog;state,2266
+S2,15,event;phase;double vacuum;1-bit;cone;polar;klein;voxel;log-polar;topolog;state;memory,2339
+S2,16,phase;1-bit;sdf;cone;polar;klein;raster;ray march;lut;feynman;vector;collision;log-polar;phi;parity;topolog;identity;state,2235
+S2,17,query;event;phase;1-bit;sdf;cone;spherical;polar;klein;voxel;lut;vector;collision;log-polar;state;memory,1901
+S2,18,event;phase;double vacuum;1-bit;sdf;cone;polar;klein;lut;vector;log-polar;topolog;state,2286
+S2,19,relation;event;phase;1-bit;sdf;polar;vector;log-polar;identity;state,2101
+S2,20,vector;identity;state,2617
+S2,21,hourglass;polar;lut;vector,2342
+S2,22,phase;double vacuum;1-bit;sdf;polar;klein;lut;vector;invariant;log-polar;topolog;state,2688
+S2,23,double vacuum;hourglass;sdf;spherical;polar;klein;raster;ray march;vector;invariant;log-polar;state,2010
+S2,24,sheet;double vacuum;hourglass;1-bit;sdf;cone;polar;klein;feynman;vector;invariant;log-polar;topolog;identity;state,2926
+S2,25,event;phase;sheet;hourglass;1-bit;sdf;cone;vector;invariant;topolog;state,2000
+S2,26,hourglass;1-bit;sdf;polar;klein;grammar;voxel;lut;vector;log-polar;topolog;state;memory,2095
+S2,27,event;phase;hourglass;1-bit;sdf;cone;polar;grammar;vector;branch;log-polar;state;memory,2665
+S2,28,phase;hourglass;polar;klein;grammar;lut;vector;ccd;collision;log-polar;phi;memory,1899
+S2,29,phase;hourglass;1-bit;sdf;cone;polar;lut;vector;collision;log-polar;identity;state;memory,2457
+S2,30,query;event;phase;1-bit;sdf;cone;grammar;lut;ccd;topolog;state;memory;sieve,2128
+S2,31,phase;hourglass;1-bit;sdf;polar;lut;collision;log-polar;state;memory;sieve,2636
+S2,32,phase;sheet;hourglass;grammar;raster;ray march;voxel;ccd;state;memory;sieve,1803
+S2,33,phase;hourglass;1-bit;sdf;polar;klein;grammar;vector;ccd;log-polar;state;memory,2294
+S2,34,hourglass;1-bit;polar;vector;log-polar;topolog;state,1790
+S2,35,query;phase;sheet;hourglass;1-bit;sdf;cone;klein;lut;vector;collision;topolog;information;memory;sieve,2724
+S2,36,grammar,413
+S3,1,lut;phi,1988
+S3,2,phase;polar;lut;log encoded;phi,1949
+S3,3,event;phase;spherical;polar;lut;phi,2219
+S3,4,cone;lut;invariant;phi;topolog;identity,1942
+S3,5,cone;topolog;identity;projection,2665
+S3,6,cone;lut;vector;phi;topolog;projection,1775
+S3,7,cone;phi,2914
+S3,8,cone;lut;identity,1973
+S3,9,spherical;polar;lineage;lut;phi,1987
+S3,10,cone;polar;lut;topolog;identity;projection,2650
+S3,11,cone;polar;lut,1816
+S3,12,cone;polar;lut;phi,2696
+S3,13,cone;lut;phi;jitter;sieve,1966
+S3,14,cone;lineage;lut;jitter;sieve,2740
+S3,15,sdf;cone;spherical;polar;grammar;lut;liquid;ccd;phi;jitter;sieve,2308
+S3,16,sdf;cone;spherical;polar;lut;ccd,2329
+S3,17,phase;sdf;spherical;grammar;raymarch;lut;vector;ccd;phi;jitter;sieve,2775
+S3,18,sdf;spherical;raster;raymarch;voxel;phi;sieve,1957
+S3,19,sdf;cone;spherical;grammar;raster;raymarch;voxel;lut;ccd;phi;jitter;sieve,2569
+S3,20,sdf;spherical;polar;raymarch;lut;address;ccd;identity;sieve,1887
+S3,21,spherical;polar;grammar;lut;vector;identity;state;jitter,2539
+S3,22,spherical;grammar;lut;vector;invariant;ccd;identity;sieve,2237
+S3,23,cone;lut;vector;projection;state;jitter;sieve,2319
+S3,24,sdf;cone;spherical;lut;invariant;state;jitter;sieve,2579
+S3,25,spherical;jitter;sieve,1581
+S3,26,spherical;polar;lut;vector;liquid,2350
+S3,27,spherical;polar;vector;jitter;sieve,2297
+S3,28,cone;spherical;lut;ccd;information;jitter;sieve,2213
+S3,29,spherical;raster;phi;jitter;sieve,2686
+S3,30,sdf;spherical;polar;lut;vector;ccd;information;jitter;sieve,2130
+S3,31,phase;sdf;raster;raymarch;lut;address;ccd,1916
+S3,32,phase;raster;raymarch;lut;ccd;topolog;sieve,2679
+S3,33,phase;raster;lut;jitter,2011
+S3,34,phase;cone;lut;vector;ccd;information;state;sieve,2518
+S3,35,phase;cone;spherical;raster;lut;vector;waveguide;state;jitter;sieve,2725
+S3,36,lut;phi;state;sieve,2455
+S3,37,event;lut;jitter,2861
+S3,38,lut;invariant;collision;topolog;identity,1655
+S3,39,spherical;raster;lut;phi;sieve,2698
+S3,40,phase;spherical;raster;lut;phi;information;sieve,1924
+S3,41,phase;sdf;spherical;raster;lut;jitter;sieve,2609
+S3,42,phase;grammar;raster;lut;phi;projection;jitter;sieve,2065
+S3,43,sheet;cone;spherical;raster;lut;phi;projection;state,2954
+S3,44,raster;jitter,2157
+S3,45,event;sheet;lineage;raster;lut;state;sieve,2420
+S3,46,raster;lut;ccd;sieve,1975
+S3,47,phase;sheet;spherical;polar;raster;lut;log encoded;identity;sieve,2475
+S3,48,event;cone;polar;lut;ccd;sieve,2106
+S3,49,sheet;cone;polar;raster;lut;invariant;information;state;jitter;sieve,2904
+S3,50,polar;lut;topolog;state,1800
+S3,51,spherical;polar;raster;lut;jitter;sieve,2492
+S3,52,phase;spherical;waveguide;phi;sieve,1522
+S3,53,sheet;lineage;phi;sieve,1139
+S3,54,spherical;raster;state;sieve,2113
+S3,55,sheet;spherical;polar;raster;lut;collision;state;jitter;sieve,2855
+S3,56,raster;state;sieve,1968
+S3,57,phase;raster;lut;information;state;jitter;sieve,2719
+S3,58,cone;lut;sieve,1954
+S3,59,sheet;sdf;cone;raster;state;jitter;sieve,2943
+S3,60,raster;lut;state,2051
+S3,61,sheet;lut;memory;sieve,2564
+S3,62,lut;liquid;information;state;memory,1749
+S3,63,identity;state;memory;sieve,2689
+S3,64,,2298
+S3,65,relation;grammar;information;state,2566
+S3,66,event;spherical;lut;vector;state;jitter;sieve,2366
+S3,67,raster;state;sieve,2748
+S3,68,,39
+S4,1,state;memory,1742
+S4,2,address;memory,571
+S4,3,event;lut;address,1300
+S4,4,memory,1692
+S4,5,,892
+S4,6,lut;vector;liquid,2306
+S4,7,lut,895
+S4,8,event,1797
+S4,9,,971
+S4,10,phi,1905
+S4,11,phase;vector;phi,1329
+S4,12,phase;vector,2011
+S4,13,event;phase;lut;vector,1332
+S4,14,event;phase;vector;phi,2076
+S4,15,vector;phi,1004
+S4,16,phase;vector;phi,2207
+S4,17,lut;phi,823
+S4,18,phase;vector;phi;topolog;information;state,2230
+S4,19,vector,362
+S5,1,query;relation;event;spherical;throughput;phi;topolog;projection;state,1437
+S5,2,query;relation;event;phase;double vacuum;cone;vector;phi;topolog;identity;state,1926
+S5,3,spherical;polar;log-polar;phi;state,2213
+S5,4,phase;spherical;raster;vector;invariant;state,2200
+S5,5,event;phase;raster;collision;phi;state,2199
+S5,6,relation;event;double vacuum;lineage;grammar;raster;invariant;information;identity;memory,2382
+S5,7,lineage;raster;invariant;address;phi;identity;projection;state,2253
+S5,8,event;lineage;grammar;raster;invariant;branch;identity;projection;state,2035
+S5,9,relation;phase;sheet;raster;raymarch;lut;compatibility;invariant;phi;identity;projection;state,2293
+S5,10,query;event;sdf;grammar;raster;voxel;compatibility;invariant;branch;collision;state;memory;novelty-proportional,2302
+S5,11,event;lineage;grammar;lut;invariant;branch;information;identity;state;memory;exogenous log,2074
+S5,12,event;phase;sdf;klein;collision;topolog;state,2068
+S5,13,relation;phase;sheet;double vacuum;raster;vector;compatibility;invariant;phi;state,1979
+S5,14,relation;event;phase;sheet;double vacuum;klein;raster;lut;vector;compatibility;topolog;identity;state;sieve,2095
+S5,15,relation;phase;sheet;lineage;raster;lut;vector;compatibility;invariant;address;topolog;identity;state,2167
+S5,16,event;lineage;grammar;raster;lut;invariant;information;identity;state;sieve,2117
+S5,17,relation;event;polar;raster;vector;invariant;log-polar;phi;topolog;state,2469
+S5,18,relation;double vacuum;hourglass;klein;vector;compatibility;invariant;state;memory,2412
+S5,19,event;phase;waveguide;state,1981
+S5,20,query;event;phase;phi;state;memory,2160
+S5,21,query;relation;event;double vacuum;raster;ccd;collision;state;sieve,2331
+S5,22,query;relation;event;phase;lineage;compatibility;invariant;address;topolog;state;memory,2272
+S5,23,raster;lut;collision;state;memory,2253
+S5,24,query;relation;phase;double vacuum;raster;waveguide;state;memory,2039
+S5,25,relation;phase;sheet;lineage;grammar;compatibility;invariant;collision;identity;state;memory;exogenous log;novelty-proportional,2303
+S5,26,event;phase;vector;invariant;state;jitter;exogenous log,2127
+S5,27,relation;phase;sheet;double vacuum;lut;vector;compatibility;identity;state,2166
+S5,28,relation;phase;sheet;double vacuum;klein;raster;lut;vector;invariant;liquid;topolog;exogenous log,2071
+S5,29,lut;vector;compatibility;invariant;state;sieve;exogenous log,2218
+S5,30,relation;event;phase;sheet;double vacuum;lineage;raster;lut;vector;invariant;address;identity;memory,2217
+S5,31,event;phase;raster;lut;vector;compatibility;invariant;branch;liquid;state;exogenous log,2191
+S5,32,relation;phase;sheet;double vacuum;hourglass;lut;vector;identity;state,2257
+S5,33,relation;event;phase;hourglass;1-bit;lut;vector;compatibility;invariant;parity;topolog;state;sieve,2100
+S5,34,lineage;grammar;raster;invariant;topolog;identity;state;sieve;exogenous log,2221
+S5,35,relation;event;phase;sheet;double vacuum;hourglass;klein;raster;vector;compatibility;invariant;liquid;phi;identity;state,2089
+S5,36,query;hourglass;raster;vector;collision;state,2308
+S5,37,query;event;phase;raster;state,2337
+S5,38,relation;event;phase;hourglass;lineage;raster;lut;vector;compatibility;address;branch;state,2248
+S5,39,event;phase;hourglass;spherical;raster;voxel;vector;compatibility;ccd;collision;topolog;state,2130
+S5,40,query;relation;event;phase;sheet;double vacuum;hourglass;vector;compatibility;ccd;collision;topolog;state,2087
+S5,41,query;relation;event;phase;sheet;double vacuum;grammar;compatibility;topolog;state;memory;exogenous log;novelty-proportional,2115
+S5,42,relation;event;phase;sheet;double vacuum;lineage;lut;vector;compatibility;invariant;address;branch;ccd;collision;topolog;identity;state,2317
+S5,43,phase;lineage;raster;compatibility;address;state,2368
+S5,44,relation;event;phase;sheet;double vacuum;hourglass;1-bit;raster;lut;parity;state,2041
+S5,45,query;event;1-bit;lineage;invariant;address;ccd;parity;topolog;identity;state,2220
+S5,46,relation;double vacuum;hourglass;1-bit;klein;parity;topolog;state;sieve,1675
+S5,47,phase;1-bit;sdf;klein;lut;waveguide;parity;information;state;memory,2179
+S5,48,event;phase;polar;raster;waveguide;log-polar;phi;topolog;state,2244
+S5,49,hourglass;1-bit;cone;lut;vector;jitter,2013
+S5,50,event;hourglass;sdf;spherical;polar;klein;lut;waveguide;liquid;log-polar;state;memory,2364
+S5,51,relation;phase;sheet;double vacuum;polar;lut;vector;invariant;log-polar;topolog;state;memory;sieve,2475
+S5,52,query;relation;event;phase;lineage;grammar;compatibility;address;state;memory;novelty-proportional,2189
+S5,53,query;event;hourglass;cone;spherical;grammar;raster;feynman;invariant;address;topolog;identity,2121
+S5,54,relation;event;hourglass;1-bit;lineage;grammar;raster;vector;invariant;branch;parity;identity;projection;state;memory,2352
+S5,55,relation;event;phase;sheet;double vacuum;klein;raster;lut;vector;compatibility;invariant;identity;state;sieve;exogenous log,2109
+S5,56,phase;sdf;cone;klein;waveguide;phi;identity;projection;memory,2248
+S5,57,phase;sheet;double vacuum;hourglass;cone;spherical;lut;topolog;projection;state;sieve,2327
+S5,58,phase;1-bit;sdf;spherical;klein;waveguide;liquid;ccd;collision;topolog;state;memory;jitter;sieve,2077
+S5,59,hourglass;1-bit;cone;spherical;raster;lut;invariant;state,2071
+S5,60,1-bit;sdf;spherical;klein;vector;liquid;ccd;topolog;memory;jitter,2240
+S5,61,hourglass;cone;spherical;raster;lut;vector;invariant;state;memory;jitter,2047
+S5,62,phase;1-bit;sdf;spherical;klein;waveguide;liquid;ccd;topolog;state;memory;jitter;sieve,2060
+S5,63,hourglass;cone;lut;waveguide;ccd;phi;topolog;memory,2128
+S5,64,event;double vacuum;1-bit;sdf;spherical;klein;vector;invariant;waveguide;liquid;parity;topolog;state;memory,1853
+S5,65,1-bit;liquid;parity,211
+S6,1,event;spherical;throughput;waveguide;liquid,594
+S6,2,event;double vacuum;one-bit;sdf;spherical;klein;throughput;waveguide;liquid;parity;state;memory,2019
+S6,3,relation;event;phase;spherical;polar;compatibility;throughput;waveguide;liquid;phi,1753
+S6,4,event;phase;double vacuum;spherical;lineage;waveguide;liquid;parity,1334
+S6,5,event;phase;spherical;klein;lut;compatibility;waveguide;liquid;topolog;state,1569
+S6,6,event;spherical;vector;compatibility;throughput;waveguide;liquid;state,1664
+S6,7,query;event;phase;one-bit;polar;lineage;compatibility;waveguide;liquid;phi;parity;state,1547
+S6,8,event;polar;compatibility;waveguide;liquid;topolog;jitter,1856
+S6,9,query;relation;event;phase;spherical;polar;compatibility;waveguide;liquid;phi;state,1905
+S6,10,event;phase;double vacuum;polar;klein;waveguide;liquid;topolog;memory,2527
+S6,11,query;event;phase;double vacuum;hourglass;sdf;spherical;lineage;compatibility;throughput;waveguide;liquid;parity,2410
+S6,12,event;phase;spherical;throughput;waveguide;liquid;topolog,2385
+S7,1,1-bit;sdf;polar;lut;feynman;vector;address;log-polar,2316
+S7,2,phase;1-bit;sdf;polar;raster;lut;feynman;vector;log-polar;state,1750
+S7,3,phase;1-bit;sdf;polar;feynman;vector;log-polar;phi,1178
+S7,4,phase;1-bit;sdf;polar;lut;feynman;vector;log-polar;phi,2076
+S7,5,event;phase;1-bit;polar;raster;feynman;vector;log-polar;parity,2009
+S7,6,1-bit;polar;lut;vector;log-polar,858
+S7,7,phase;sdf;polar;lut;feynman;vector;address;log-polar,2194
+S7,8,event;1-bit;polar;lut;feynman;vector;log-polar;jitter,1796
+S7,9,1-bit;sdf;polar;raster;feynman;vector;log-polar;state;jitter,2427
+S7,10,phase;1-bit;sdf;polar;feynman;vector;log-polar;jitter,1295

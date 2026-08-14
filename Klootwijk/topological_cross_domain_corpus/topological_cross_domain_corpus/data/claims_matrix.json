@@ -1,0 +1,322 @@
+[
+  {
+    "id": "C01",
+    "claim": "The authoritative object is a directly queryable relation/state/event substrate rather than an image or frame buffer.",
+    "source_pages": "S1 pp.1,5-10; S5 pp.1,9",
+    "evidence_status": "canonical",
+    "disposition": "retain",
+    "notes": "Core interpretive rule."
+  },
+  {
+    "id": "C02",
+    "claim": "Local spherical or radial-angular supports organize relevance, coupling, sensing, and measurement.",
+    "source_pages": "S1 pp.1,5-7; S6 pp.3,6",
+    "evidence_status": "canonical",
+    "disposition": "retain",
+    "notes": "Local chart only; not global remeshing."
+  },
+  {
+    "id": "C03",
+    "claim": "A finite grammar plus relations, transitions, invariants, and an exogenous log can define a restricted equation world.",
+    "source_pages": "S1 pp.5-8,11-12; S5 pp.10-11",
+    "evidence_status": "canonical architecture",
+    "disposition": "retain",
+    "notes": "Prototype in bounded relation families."
+  },
+  {
+    "id": "C04",
+    "claim": "SDF=0 or B=0 is best read as an event/transition surface, not a place to keep marching through.",
+    "source_pages": "S1 p.7; S2 pp.16-19; S5 p.54",
+    "evidence_status": "canonical correction",
+    "disposition": "retain",
+    "notes": "Prevents hidden rasterization from returning."
+  },
+  {
+    "id": "C05",
+    "claim": "Events require relation satisfaction, support admission, and compatibility.",
+    "source_pages": "S1 pp.6-8; S6 pp.3,5,7",
+    "evidence_status": "canonical",
+    "disposition": "retain",
+    "notes": "Geometry alone is insufficient."
+  },
+  {
+    "id": "C06",
+    "claim": "Double vacuum means co-location without coupling across incompatible phase/sheet/address sectors.",
+    "source_pages": "S1 p.6; S5 pp.32-33; S6 pp.2,4",
+    "evidence_status": "canonical",
+    "disposition": "retain",
+    "notes": "Absence of coupling, not literal emptiness."
+  },
+  {
+    "id": "C07",
+    "claim": "One bit is a routing/parity/validity flag, not the complete state.",
+    "source_pages": "S1 pp.5-7; S6 pp.2,7",
+    "evidence_status": "canonical correction",
+    "disposition": "retain",
+    "notes": "Schema is mandatory."
+  },
+  {
+    "id": "C08",
+    "claim": "Identity should persist by lineage and invariants rather than current coordinate alone.",
+    "source_pages": "S1 pp.1,5-8,11; S5 pp.6-8",
+    "evidence_status": "canonical",
+    "disposition": "retain",
+    "notes": "Split/merge rules still required."
+  },
+  {
+    "id": "C09",
+    "claim": "Closed dynamics can be regenerated from seed and grammar, while irreducible novelty is logged.",
+    "source_pages": "S1 pp.8,11-12; S5 pp.10-11",
+    "evidence_status": "architecture hypothesis",
+    "disposition": "prototype",
+    "notes": "Measure memory and recomputation cost."
+  },
+  {
+    "id": "C10",
+    "claim": "For a fixed closed expression, state_at(t) cost may be independent of skipped timesteps.",
+    "source_pages": "S1 p.8",
+    "evidence_status": "bounded complexity claim",
+    "disposition": "test",
+    "notes": "Not universal O(1)."
+  },
+  {
+    "id": "C11",
+    "claim": "next_event can replace frame replay when compatible event roots are tractable.",
+    "source_pages": "S1 pp.7-8,11-12",
+    "evidence_status": "bounded complexity claim",
+    "disposition": "test",
+    "notes": "Can fail from event density, degeneracy, branches."
+  },
+  {
+    "id": "C12",
+    "claim": "Compatibility plus event solving must cost less than the materialization avoided.",
+    "source_pages": "S1 p.8; S6 p.6",
+    "evidence_status": "canonical success criterion",
+    "disposition": "retain",
+    "notes": "Primary falsification rule."
+  },
+  {
+    "id": "C13",
+    "claim": "Rasterization, raymarching, and ray tracing may remain downstream projections.",
+    "source_pages": "S1 pp.9-10; S5 p.9",
+    "evidence_status": "canonical",
+    "disposition": "retain",
+    "notes": "Do not mistake projector for state space."
+  },
+  {
+    "id": "C14",
+    "claim": "The KC Vector system can be interpreted as a downstream projection adapter over log-polar addresses and implicit boundaries.",
+    "source_pages": "S7 pp.1-10",
+    "evidence_status": "projection proposal",
+    "disposition": "retain with caveat",
+    "notes": "Not the core substrate."
+  },
+  {
+    "id": "C15",
+    "claim": "KC Feynman vectors are a fully specified quantum path-integral method.",
+    "source_pages": "S7 pp.1-3",
+    "evidence_status": "unsupported terminology",
+    "disposition": "rename/demote",
+    "notes": "Source supplies no derivation; normalize to phase-amplitude accumulator."
+  },
+  {
+    "id": "C16",
+    "claim": "A log-polar chart turns radial scaling into additive translation in log radius.",
+    "source_pages": "S7 p.7; S3 pp.2-3",
+    "evidence_status": "source-defined mathematical observation",
+    "disposition": "retain",
+    "notes": "Chart has singularity/conditioning issues."
+  },
+  {
+    "id": "C17",
+    "claim": "Sieve and jitter motifs describe sensor sampling, dithering, and candidate reduction.",
+    "source_pages": "S3 pp.13-15,24-33; S7 pp.8-10",
+    "evidence_status": "cross-domain analogy",
+    "disposition": "retain as layer-specific",
+    "notes": "Not proof that all sampling can vanish."
+  },
+  {
+    "id": "C18",
+    "claim": "All spatial sieves, BVHs, octrees, and broad phases are eliminated universally.",
+    "source_pages": "S2 pp.30-32; S5 pp.14-16",
+    "evidence_status": "inflated claim",
+    "disposition": "demote/test",
+    "notes": "Only possible for restricted analytic supports with effective compatibility."
+  },
+  {
+    "id": "C19",
+    "claim": "Klein bottle topology is a useful routing/gluing abstraction.",
+    "source_pages": "S1 p.6; S6 pp.2,5",
+    "evidence_status": "bounded abstraction",
+    "disposition": "retain",
+    "notes": "Must specify ports, orientation map, transfer matrix."
+  },
+  {
+    "id": "C20",
+    "claim": "A literal Klein-bottle device automatically prevents tunneling or physical interaction.",
+    "source_pages": "S2 pp.16-25; S5 pp.35,64",
+    "evidence_status": "unsupported physical claim",
+    "disposition": "reject",
+    "notes": "Topology is not a substitute for dynamics or fabrication."
+  },
+  {
+    "id": "C21",
+    "claim": "The quad hourglass is a four-sector routing visualization around a rank-changing event locus.",
+    "source_pages": "S1 p.6; S2 pp.23-25; S5 pp.33,54",
+    "evidence_status": "normalized interpretation",
+    "disposition": "retain",
+    "notes": "Not a topology proof."
+  },
+  {
+    "id": "C22",
+    "claim": "lambda=0 may mark rank loss/null-space entry at an event.",
+    "source_pages": "S2 pp.22-25; S5 pp.33,54",
+    "evidence_status": "normalized mathematical motif",
+    "disposition": "retain with tolerance",
+    "notes": "Numerical thresholds and operator definition required."
+  },
+  {
+    "id": "C23",
+    "claim": "The golden ratio is required for correctness or loop avoidance.",
+    "source_pages": "S2 pp.12-19; S4 pp.10-11",
+    "evidence_status": "speculative motif",
+    "disposition": "reject as requirement",
+    "notes": "May be an optional schedule; no proof supplied."
+  },
+  {
+    "id": "C24",
+    "claim": "Phi is used consistently across the corpus.",
+    "source_pages": "S2; S4; S5",
+    "evidence_status": "false due to symbol overload",
+    "disposition": "correct",
+    "notes": "Separate angle, phase, golden ratio, and torque."
+  },
+  {
+    "id": "C25",
+    "claim": "The Ben Burgers overlap can be read as shared domain, interference, or tolerance.",
+    "source_pages": "S4 pp.16-19",
+    "evidence_status": "geometric brainstorming",
+    "disposition": "retain as analogy",
+    "notes": "No unique mathematical ratio established."
+  },
+  {
+    "id": "C26",
+    "claim": "Zero-based indexing changes 21+7+7 from 35 to 36.",
+    "source_pages": "S4 pp.1-3",
+    "evidence_status": "incorrect if read as arithmetic",
+    "disposition": "correct",
+    "notes": "35 is an index naming the 36th position."
+  },
+  {
+    "id": "C27",
+    "claim": "Hollowlens-0 is a bounded optofluidic demonstrator with a digital sidecar.",
+    "source_pages": "S6 pp.4,7-10",
+    "evidence_status": "canonical prototype",
+    "disposition": "retain",
+    "notes": "Must preregister support, modes, thresholds, error and energy boundary."
+  },
+  {
+    "id": "C28",
+    "claim": "Matrix-in-glass is a calibrated optical transfer function.",
+    "source_pages": "S6 pp.2,5",
+    "evidence_status": "bounded hardware translation",
+    "disposition": "retain",
+    "notes": "Not a zero-cost computer."
+  },
+  {
+    "id": "C29",
+    "claim": "Double vacuum in hardware can be implemented as uncoupled or isolated modes/channels.",
+    "source_pages": "S6 pp.2,4",
+    "evidence_status": "bounded hardware translation",
+    "disposition": "retain",
+    "notes": "Measure crosstalk and false events."
+  },
+  {
+    "id": "C30",
+    "claim": "Spherical throughput is verified events per second with support, compatibility, guard and confidence.",
+    "source_pages": "S6 pp.3,6,11",
+    "evidence_status": "canonical metric",
+    "disposition": "retain",
+    "notes": "Report loss, energy, miss/false rates and calibration."
+  },
+  {
+    "id": "C31",
+    "claim": "The integrated optical system has proven an advantage over matched electronics.",
+    "source_pages": "S6 pp.9-12",
+    "evidence_status": "not established",
+    "disposition": "test",
+    "notes": "Component feasibility is not system validation."
+  },
+  {
+    "id": "C32",
+    "claim": "The architecture has zero latency, zero heat, zero power, or zero memory.",
+    "source_pages": "S2 pp.15,26-35; S5 multiple; S6 pp.2,10",
+    "evidence_status": "explicitly rejected totalizing claim",
+    "disposition": "reject",
+    "notes": "All physical and computational layers carry cost."
+  },
+  {
+    "id": "C33",
+    "claim": "The architecture universally solves chaos or all PDEs exactly.",
+    "source_pages": "S2; S5; S6 p.10",
+    "evidence_status": "explicitly rejected totalizing claim",
+    "disposition": "reject",
+    "notes": "Restricted relation families only."
+  },
+  {
+    "id": "C34",
+    "claim": "The architecture directly controls biology, gene expression, CRISPR, protein folding, or medical outcomes.",
+    "source_pages": "S5 pp.3-6; S6 p.10",
+    "evidence_status": "unsupported application claim",
+    "disposition": "exclude",
+    "notes": "At most a simulation/design prompt; not a mechanism."
+  },
+  {
+    "id": "C35",
+    "claim": "Political, psychological, and personal narratives in later source pages are technical proof.",
+    "source_pages": "S3 later pages; S5 pp.13-35",
+    "evidence_status": "metaphorical narrative",
+    "disposition": "exclude from core",
+    "notes": "Preserve as provenance, not system mechanism."
+  },
+  {
+    "id": "C36",
+    "claim": "A person or identity can become physically untouchable through phase sheets or UUIDs.",
+    "source_pages": "S5 pp.14-18,32-35",
+    "evidence_status": "unsupported literal claim",
+    "disposition": "reject",
+    "notes": "Reinterpret only as access-control/provenance metaphor."
+  },
+  {
+    "id": "C37",
+    "claim": "The headless query-first prototype is the truest first experiment.",
+    "source_pages": "S1 pp.9,11-12; S6 p.9",
+    "evidence_status": "canonical recommendation",
+    "disposition": "retain",
+    "notes": "Avoid renderer-first benchmarking."
+  },
+  {
+    "id": "C38",
+    "claim": "A hybrid engine remains a practical bridge.",
+    "source_pages": "S1 p.9",
+    "evidence_status": "supported engineering bridge",
+    "disposition": "retain",
+    "notes": "Stable core plus optional rendering/volumetric stages."
+  },
+  {
+    "id": "C39",
+    "claim": "Numerical conditioning is part of the ontology, not an implementation afterthought.",
+    "source_pages": "S1 pp.8-9",
+    "evidence_status": "canonical risk",
+    "disposition": "retain",
+    "notes": "Log coordinates, tangencies, coincident surfaces, rank changes."
+  },
+  {
+    "id": "C40",
+    "claim": "The first useful benchmark is six queries: state, next event, events in cone, phase coupling, transition routing, identity rebuild.",
+    "source_pages": "S1 pp.11-12",
+    "evidence_status": "canonical experiment plan",
+    "disposition": "retain",
+    "notes": "Forms the Equation World Zero exit criteria."
+  }
+]
