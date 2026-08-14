@@ -1,0 +1,15 @@
+{
+  "name": "Water",
+  "smiles": "O",
+  "source_relation": "Water is explicitly listed as a liquid-region candidate.",
+  "notes": "Bent polar molecule; hydrogen-bond donor and acceptor.",
+  "canonical_smiles": "O",
+  "formula": "H2O",
+  "molecular_weight_g_mol": 18.015,
+  "atom_counts_heavy": {
+    "O": 1
+  },
+  "bond_counts_heavy_atom_graph": {},
+  "formal_charge": 0,
+  "stereochemistry_note": "No stereocenter is encoded in this graph."
+}

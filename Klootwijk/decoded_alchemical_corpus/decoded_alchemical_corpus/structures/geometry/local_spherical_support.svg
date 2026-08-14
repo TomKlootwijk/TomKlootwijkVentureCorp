@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img">
+<title>Local spherical support</title>
+<defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#0b2a3c"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#1f9aaa"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity=".16"/>
+    </filter>
+    <style>
+      text { font-family: "DejaVu Sans", Arial, sans-serif; fill: #0b2a3c; }
+      .title { font-size: 34px; font-weight: 700; }
+      .subtitle { font-size: 19px; fill: #5c6770; }
+      .label { font-size: 20px; font-weight: 700; }
+      .body { font-size: 17px; }
+      .small { font-size: 14px; fill: #5c6770; }
+      .mono { font-family: "DejaVu Sans Mono", monospace; font-size: 17px; }
+      .box { stroke: #0b2a3c; stroke-width: 2.2; rx: 18; ry: 18; }
+    </style>
+    </defs>
+<text x="55" y="55" class="title" text-anchor="start">Local spherical support</text>
+<text x="55" y="88" class="subtitle" text-anchor="start">A local chart for angular relevance, radial reach, orientation and uncertainty - not a globally spherical universe.</text>
+<circle cx="430" cy="380" r="220" fill="#dff3f4" stroke="#0b2a3c" stroke-width="3"/>
+<circle cx="430" cy="380" r="70" fill="none" stroke="#1f9aaa" stroke-width="1.6" opacity=".55"/>
+<circle cx="430" cy="380" r="140" fill="none" stroke="#1f9aaa" stroke-width="1.6" opacity=".55"/>
+<circle cx="430" cy="380" r="210" fill="none" stroke="#1f9aaa" stroke-width="1.6" opacity=".55"/>
+<line x1="180" y1="380" x2="680" y2="380" stroke="#5c6770" stroke-width="1.5" stroke-dasharray="7,7" opacity="1"/>
+<line x1="430" y1="130" x2="430" y2="630" stroke="#5c6770" stroke-width="1.5" stroke-dasharray="7,7" opacity="1"/>
+<path d="M 430,380 L 610.2,253.8 A 220,220 0 0,1 629.4,473.0 Z" fill="#fbf3d5" stroke="#d7a72e" stroke-width="3" opacity=".85"/>
+<line x1="430" y1="380" x2="595" y2="308" stroke="#d86b5b" stroke-width="5" marker-end="url(#arrow)" opacity="1"/>
+<text x="530" y="290" class="body" text-anchor="start">orientation</text>
+<text x="545" y="415" class="label" text-anchor="start">angular support</text>
+<text x="450" y="210" class="body" text-anchor="start">radial reach r</text>
+<rect x="735" y="160" width="400" height="400" rx="18" fill="#ffffff" stroke="#0b2a3c" stroke-width="2.2" />
+<text x="775" y="205" class="mono" text-anchor="start">r</text>
+<text x="870" y="205" class="body" text-anchor="start">distance / shell index</text>
+<text x="775" y="272" class="mono" text-anchor="start">θ, φ</text>
+<text x="870" y="272" class="body" text-anchor="start">local angular coordinates</text>
+<text x="775" y="339" class="mono" text-anchor="start">support C(q,t) ≤ 0</text>
+<text x="870" y="339" class="body" text-anchor="start">admit or reject a relation</text>
+<text x="775" y="406" class="mono" text-anchor="start">orientation</text>
+<text x="870" y="406" class="body" text-anchor="start">egocentric direction / mode basis</text>
+<text x="775" y="473" class="mono" text-anchor="start">uncertainty</text>
+<text x="870" y="473" class="body" text-anchor="start">width of support, not pixel blur</text>
+<text x="735" y="620" class="small" text-anchor="start">Decoder status: SOURCE-DEFINED OPERATOR</text>
+</svg>

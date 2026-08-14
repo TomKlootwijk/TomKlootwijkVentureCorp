@@ -1,0 +1,983 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d5" for="edge" attr.name="relation" attr.type="string"/>
+<key id="d4" for="node" attr.name="translation" attr.type="string"/>
+<key id="d3" for="node" attr.name="status" attr.type="string"/>
+<key id="d2" for="node" attr.name="category" attr.type="string"/>
+<key id="d1" for="node" attr.name="node_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="category:AI">
+  <data key="d0">AI</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:astrophysics">
+  <data key="d0">astrophysics</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:biochemistry">
+  <data key="d0">biochemistry</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:biology">
+  <data key="d0">biology</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:biology / fiction">
+  <data key="d0">biology / fiction</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:biology / fluid mechanics">
+  <data key="d0">biology / fluid mechanics</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:biology / vision">
+  <data key="d0">biology / vision</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:chemistry">
+  <data key="d0">chemistry</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:chemistry / materials">
+  <data key="d0">chemistry / materials</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:complexity">
+  <data key="d0">complexity</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:computer science">
+  <data key="d0">computer science</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:computer science / imaging">
+  <data key="d0">computer science / imaging</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:computer science / optics">
+  <data key="d0">computer science / optics</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:event logic">
+  <data key="d0">event logic</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:geometry">
+  <data key="d0">geometry</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:hardware">
+  <data key="d0">hardware</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:imaging">
+  <data key="d0">imaging</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:linear algebra">
+  <data key="d0">linear algebra</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:mathematics">
+  <data key="d0">mathematics</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:mathematics / fluid waves">
+  <data key="d0">mathematics / fluid waves</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:mathematics / graphics">
+  <data key="d0">mathematics / graphics</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:measurement">
+  <data key="d0">measurement</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:medical / safety">
+  <data key="d0">medical / safety</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:optics">
+  <data key="d0">optics</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:optofluidics">
+  <data key="d0">optofluidics</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:photonics">
+  <data key="d0">photonics</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:state model">
+  <data key="d0">state model</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:topology">
+  <data key="d0">topology</data>
+  <data key="d1">category</data>
+</node>
+<node id="category:virology">
+  <data key="d0">virology</data>
+  <data key="d1">category</data>
+</node>
+<node id="term:sphere / spherical">
+  <data key="d0">sphere / spherical</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Use as a local radial-angular support or chart for reach, shelling, orientation and uncertainty.</data>
+</node>
+<node id="term:local spherical support">
+  <data key="d0">local spherical support</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">BOUNDED ENGINEERING PROPOSAL</data>
+  <data key="d4">A bounded set S_q or constraint C(q,t)≤0 in radius and angles.</data>
+</node>
+<node id="term:cone">
+  <data key="d0">cone</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Analytic domain of relevance/influence; a query filter rather than necessarily a rendered ray bundle.</data>
+</node>
+<node id="term:sweeping lighthouse">
+  <data key="d0">sweeping lighthouse</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">DECODER INFERENCE</data>
+  <data key="d4">Time-parameterized angular support or scanning aperture.</data>
+</node>
+<node id="term:hourglass / double cone">
+  <data key="d0">hourglass / double cone</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Routing partition with a rank-changing event locus and invariant axis.</data>
+</node>
+<node id="term:quad hourglass">
+  <data key="d0">quad hourglass</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">DECODER INFERENCE</data>
+  <data key="d4">Finite-state transition diagram over sheet and route bits.</data>
+</node>
+<node id="term:pinch point">
+  <data key="d0">pinch point</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">BOUNDED ENGINEERING PROPOSAL</data>
+  <data key="d4">Guard/event surface where a transition is declared; in photonics it may be a cutoff, dark port or critical-coupling threshold.</data>
+</node>
+<node id="term:signed distance field (SDF)">
+  <data key="d0">signed distance field (SDF)</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">Scalar field d(x) whose zero level set describes a boundary; sign labels sides when orientability permits.</data>
+</node>
+<node id="term:SDF = 0 / B = 0">
+  <data key="d0">SDF = 0 / B = 0</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Explicit event/guard/transition relation rather than a point to march past.</data>
+</node>
+<node id="term:positive / negative SDF">
+  <data key="d0">positive / negative SDF</data>
+  <data key="d1">concept</data>
+  <data key="d2">geometry</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">Two sides of an oriented implicit surface.</data>
+</node>
+<node id="term:Klein bottle">
+  <data key="d0">Klein bottle</data>
+  <data key="d1">concept</data>
+  <data key="d2">topology</data>
+  <data key="d3">ESTABLISHED SCIENCE + SOURCE ABSTRACTION</data>
+  <data key="d4">A closed non-orientable surface; useful as a routing/gluing abstraction with explicit port and orientation maps.</data>
+</node>
+<node id="term:Möbius strip">
+  <data key="d0">Möbius strip</data>
+  <data key="d1">concept</data>
+  <data key="d2">topology</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">A non-orientable band with one boundary component; a simple orientation-reversing gluing example.</data>
+</node>
+<node id="term:sphere eversion">
+  <data key="d0">sphere eversion</data>
+  <data key="d1">concept</data>
+  <data key="d2">topology</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">A regular homotopy of an immersed sphere in 3D allowing self-intersections.</data>
+</node>
+<node id="term:double vacuum">
+  <data key="d0">double vacuum</data>
+  <data key="d1">concept</data>
+  <data key="d2">state model</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Absence of coupling: co-located states remain isolated because phase, sheet, orientation, address or mode tags are incompatible.</data>
+</node>
+<node id="term:phase sheet">
+  <data key="d0">phase sheet</data>
+  <data key="d1">concept</data>
+  <data key="d2">state model</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Discrete state label σ, often Z2, that partitions compatibility sectors.</data>
+</node>
+<node id="term:one-bit / parity">
+  <data key="d0">one-bit / parity</data>
+  <data key="d1">concept</data>
+  <data key="d2">state model</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Route, sheet, freshness, admission or validity flag under a declared schema.</data>
+</node>
+<node id="term:φ (phi)">
+  <data key="d0">φ (phi)</data>
+  <data key="d1">concept</data>
+  <data key="d2">mathematics</data>
+  <data key="d3">DECODER DISAMBIGUATION</data>
+  <data key="d4">Separate meanings: local angle/phase variable φ; phase law ϕ(t); golden ratio Φ only when explicitly designed.</data>
+</node>
+<node id="term:λ (lambda)">
+  <data key="d0">λ (lambda)</data>
+  <data key="d1">concept</data>
+  <data key="d2">linear algebra</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">Eigenvalue in Av=λv, wavelength in optics, or rate parameter depending on context.</data>
+</node>
+<node id="term:eigenvector">
+  <data key="d0">eigenvector</data>
+  <data key="d1">concept</data>
+  <data key="d2">linear algebra</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">Nonzero vector whose direction is preserved by a linear transformation.</data>
+</node>
+<node id="term:eigenvalue collapse">
+  <data key="d0">eigenvalue collapse</data>
+  <data key="d1">concept</data>
+  <data key="d2">linear algebra</data>
+  <data key="d3">ESTABLISHED MATH + SOURCE METAPHOR</data>
+  <data key="d4">A matrix/operator loses rank when a singular value or eigenvalue reaches zero.</data>
+</node>
+<node id="term:invariant">
+  <data key="d0">invariant</data>
+  <data key="d1">concept</data>
+  <data key="d2">state model</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">Quantity or relation preserved by specified transformations.</data>
+</node>
+<node id="term:lineage / ontological address">
+  <data key="d0">lineage / ontological address</data>
+  <data key="d1">concept</data>
+  <data key="d2">state model</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Generative identifier plus parent/transition history.</data>
+</node>
+<node id="term:branch">
+  <data key="d0">branch</data>
+  <data key="d1">concept</data>
+  <data key="d2">state model</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">Discrete path in a hybrid dynamical system or event tree.</data>
+</node>
+<node id="term:finite grammar">
+  <data key="d0">finite grammar</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Finite rules that generate relations, trajectories or structures.</data>
+</node>
+<node id="term:exogenous log">
+  <data key="d0">exogenous log</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Append-only event log of external interventions/shocks used with seed and grammar for reconstruction.</data>
+</node>
+<node id="term:novelty-proportional memory">
+  <data key="d0">novelty-proportional memory</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science</data>
+  <data key="d3">ENGINEERING HYPOTHESIS</data>
+  <data key="d4">Regenerate deterministic closed dynamics; log irreducible external events and lineage.</data>
+</node>
+<node id="term:state_at(t)">
+  <data key="d0">state_at(t)</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science</data>
+  <data key="d3">BOUNDED ENGINEERING PROPOSAL</data>
+  <data key="d4">Evaluate a closed or bounded state expression at requested time without replaying all intermediate frames.</data>
+</node>
+<node id="term:next_event">
+  <data key="d0">next_event</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science</data>
+  <data key="d3">BOUNDED ENGINEERING PROPOSAL</data>
+  <data key="d4">Find the earliest compatible root/guard crossing after t0.</data>
+</node>
+<node id="term:0-based indexing">
+  <data key="d0">0-based indexing</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science</data>
+  <data key="d3">ESTABLISHED COMPUTER SCIENCE</data>
+  <data key="d4">Array position 35 is the 36th item when indexing begins at zero.</data>
+</node>
+<node id="term:BVH / octree / sieve">
+  <data key="d0">BVH / octree / sieve</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science</data>
+  <data key="d3">ESTABLISHED COMPUTER SCIENCE</data>
+  <data key="d4">Acceleration structures for pruning spatial intersection candidates.</data>
+</node>
+<node id="term:CCD">
+  <data key="d0">CCD</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science / imaging</data>
+  <data key="d3">DECODER DISAMBIGUATION</data>
+  <data key="d4">Ambiguous acronym: charge-coupled device in imaging; continuous collision detection in simulation.</data>
+</node>
+<node id="term:raster trap">
+  <data key="d0">raster trap</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science</data>
+  <data key="d3">SOURCE-DEFINED CRITIQUE</data>
+  <data key="d4">Critique of frame-by-frame materialization when direct relation/event queries suffice.</data>
+</node>
+<node id="term:Feynman vectors">
+  <data key="d0">Feynman vectors</data>
+  <data key="d1">concept</data>
+  <data key="d2">mathematics / graphics</data>
+  <data key="d3">UNSUPPORTED TERMINOLOGY</data>
+  <data key="d4">Closest established analogs are complex phasors, wave amplitudes or path-integral language.</data>
+</node>
+<node id="term:log-polar LUT">
+  <data key="d0">log-polar LUT</data>
+  <data key="d1">concept</data>
+  <data key="d2">computer science / optics</data>
+  <data key="d3">ESTABLISHED TRANSFORM + SOURCE DESIGN</data>
+  <data key="d4">Table addressed by ρ=ln r and θ; useful for scale-to-translation mapping and foveated/local processing.</data>
+</node>
+<node id="term:camera obscura / pinhole">
+  <data key="d0">camera obscura / pinhole</data>
+  <data key="d1">concept</data>
+  <data key="d2">optics</data>
+  <data key="d3">ESTABLISHED OPTICS</data>
+  <data key="d4">Geometric-optics projection through a small aperture producing an inverted image.</data>
+</node>
+<node id="term:spectral power distribution S(λ)">
+  <data key="d0">spectral power distribution S(λ)</data>
+  <data key="d1">concept</data>
+  <data key="d2">optics</data>
+  <data key="d3">ESTABLISHED OPTICS</data>
+  <data key="d4">Optical power per wavelength interval.</data>
+</node>
+<node id="term:spatial harmonics">
+  <data key="d0">spatial harmonics</data>
+  <data key="d1">concept</data>
+  <data key="d2">optics</data>
+  <data key="d3">ESTABLISHED OPTICS</data>
+  <data key="d4">Fourier components of an optical field or image.</data>
+</node>
+<node id="term:chromatic aberration">
+  <data key="d0">chromatic aberration</data>
+  <data key="d1">concept</data>
+  <data key="d2">optics</data>
+  <data key="d3">ESTABLISHED OPTICS</data>
+  <data key="d4">Wavelength-dependent refraction/focus or magnification.</data>
+</node>
+<node id="term:dither / micro-jitter">
+  <data key="d0">dither / micro-jitter</data>
+  <data key="d1">concept</data>
+  <data key="d2">imaging</data>
+  <data key="d3">ESTABLISHED ENGINEERING</data>
+  <data key="d4">Spatial/temporal sampling offsets, dithering or super-resolution pixel shift.</data>
+</node>
+<node id="term:microsaccades">
+  <data key="d0">microsaccades</data>
+  <data key="d1">concept</data>
+  <data key="d2">biology / vision</data>
+  <data key="d3">ESTABLISHED BIOLOGY + MISAPPLIED ANALOGY</data>
+  <data key="d4">Small fixational eye movements contributing to fixation and visual transients.</data>
+</node>
+<node id="term:waveguide">
+  <data key="d0">waveguide</data>
+  <data key="d1">concept</data>
+  <data key="d2">photonics</data>
+  <data key="d3">ESTABLISHED PHOTONICS</data>
+  <data key="d4">Dielectric structure that confines and routes optical modes.</data>
+</node>
+<node id="term:liquid lens / liquid overclad">
+  <data key="d0">liquid lens / liquid overclad</data>
+  <data key="d1">concept</data>
+  <data key="d2">optofluidics</data>
+  <data key="d3">ESTABLISHED COMPONENT CLASS</data>
+  <data key="d4">Microfluidic or electrowetting element controlling curvature, effective index, focus, phase or coupling.</data>
+</node>
+<node id="term:matrix-in-glass">
+  <data key="d0">matrix-in-glass</data>
+  <data key="d1">concept</data>
+  <data key="d2">photonics</data>
+  <data key="d3">BOUNDED ENGINEERING PROPOSAL</data>
+  <data key="d4">Calibrated passive or tunable transfer matrix in an interferometric waveguide network.</data>
+</node>
+<node id="term:Maxwell field equation">
+  <data key="d0">Maxwell field equation</data>
+  <data key="d1">concept</data>
+  <data key="d2">photonics</data>
+  <data key="d3">ESTABLISHED PHYSICS</data>
+  <data key="d4">Electromagnetic boundary-value problem in the actual dielectric geometry.</data>
+</node>
+<node id="term:Young-Laplace equation">
+  <data key="d0">Young-Laplace equation</data>
+  <data key="d1">concept</data>
+  <data key="d2">optofluidics</data>
+  <data key="d3">ESTABLISHED PHYSICS</data>
+  <data key="d4">Δp=γ(1/R1+1/R2).</data>
+</node>
+<node id="term:coupled-mode theory">
+  <data key="d0">coupled-mode theory</data>
+  <data key="d1">concept</data>
+  <data key="d2">photonics</data>
+  <data key="d3">ESTABLISHED PHOTONICS</data>
+  <data key="d4">ODEs for modal amplitudes, propagation constants, attenuation and coupling.</data>
+</node>
+<node id="term:Mach-Zehnder interferometer (MZI)">
+  <data key="d0">Mach-Zehnder interferometer (MZI)</data>
+  <data key="d1">concept</data>
+  <data key="d2">photonics</data>
+  <data key="d3">ESTABLISHED PHOTONICS</data>
+  <data key="d4">Interferometer converting phase/coupling changes into output intensity differences.</data>
+</node>
+<node id="term:mode-overlap integral">
+  <data key="d0">mode-overlap integral</data>
+  <data key="d1">concept</data>
+  <data key="d2">photonics</data>
+  <data key="d3">ESTABLISHED PHOTONICS</data>
+  <data key="d4">Normalized field overlap ηc between input field and mode.</data>
+</node>
+<node id="term:B.C.E.">
+  <data key="d0">B.C.E.</data>
+  <data key="d1">concept</data>
+  <data key="d2">event logic</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Emit an event only when support, compatibility and measured guard conditions pass, with confidence and lineage.</data>
+</node>
+<node id="term:spherical throughput">
+  <data key="d0">spherical throughput</data>
+  <data key="d1">concept</data>
+  <data key="d2">measurement</data>
+  <data key="d3">SOURCE-DEFINED METRIC</data>
+  <data key="d4">Verified events or answered queries per second after support, compatibility, guard and confidence filters.</data>
+</node>
+<node id="term:DMT">
+  <data key="d0">DMT</data>
+  <data key="d1">concept</data>
+  <data key="d2">chemistry</data>
+  <data key="d3">ESTABLISHED CHEMISTRY ADDED BY DECODER</data>
+  <data key="d4">N,N-dimethyltryptamine, C12H16N2: an indole tryptamine with a two-carbon chain ending in a tertiary dimethylamine.</data>
+</node>
+<node id="term:indole ring">
+  <data key="d0">indole ring</data>
+  <data key="d1">concept</data>
+  <data key="d2">chemistry</data>
+  <data key="d3">ESTABLISHED CHEMISTRY ADDED BY DECODER</data>
+  <data key="d4">Fused benzene-pyrrole aromatic heterocycle in DMT.</data>
+</node>
+<node id="term:tertiary dimethylamine">
+  <data key="d0">tertiary dimethylamine</data>
+  <data key="d1">concept</data>
+  <data key="d2">chemistry</data>
+  <data key="d3">ESTABLISHED CHEMISTRY ADDED BY DECODER</data>
+  <data key="d4">DMT side-chain nitrogen bonded to two methyl groups and an ethyl-indole chain.</data>
+</node>
+<node id="term:water / glycerol mixture">
+  <data key="d0">water / glycerol mixture</data>
+  <data key="d1">concept</data>
+  <data key="d2">chemistry / materials</data>
+  <data key="d3">ESTABLISHED MATERIAL OPTION</data>
+  <data key="d4">Characterizable polar liquid mixture for refractive-index and viscosity tuning.</data>
+</node>
+<node id="term:hydrogen bonding">
+  <data key="d0">hydrogen bonding</data>
+  <data key="d1">concept</data>
+  <data key="d2">chemistry</data>
+  <data key="d3">ESTABLISHED CHEMISTRY ADDED BY DECODER</data>
+  <data key="d4">Intermolecular O-H···O interactions affecting viscosity, wetting and refractive properties.</data>
+</node>
+<node id="term:CRISPR-Cas9">
+  <data key="d0">CRISPR-Cas9</data>
+  <data key="d1">concept</data>
+  <data key="d2">biochemistry</data>
+  <data key="d3">ESTABLISHED BIOCHEMISTRY + SOURCE RHETORIC</data>
+  <data key="d4">RNA-guided DNA endonuclease system; editing outcome depends on target, PAM, delivery and cellular repair.</data>
+</node>
+<node id="term:protein folding">
+  <data key="d0">protein folding</data>
+  <data key="d1">concept</data>
+  <data key="d2">biochemistry</data>
+  <data key="d3">ESTABLISHED BIOCHEMISTRY + SOURCE ANALOGY</data>
+  <data key="d4">Sequence-dependent conformational ensemble on a free-energy landscape.</data>
+</node>
+<node id="term:gene expression">
+  <data key="d0">gene expression</data>
+  <data key="d1">concept</data>
+  <data key="d2">biochemistry</data>
+  <data key="d3">ESTABLISHED BIOLOGY + UNSUPPORTED CONTROL CLAIM</data>
+  <data key="d4">DNA transcription, RNA processing/turnover, translation and protein regulation.</data>
+</node>
+<node id="term:blood plasma">
+  <data key="d0">blood plasma</data>
+  <data key="d1">concept</data>
+  <data key="d2">biology / fluid mechanics</data>
+  <data key="d3">DECODER TRANSLATION</data>
+  <data key="d4">A multicomponent biological fluid that can be modeled by flow, transport and boundary conditions.</data>
+</node>
+<node id="term:viral spike puncturing a cell wall">
+  <data key="d0">viral spike puncturing a cell wall</data>
+  <data key="d1">concept</data>
+  <data key="d2">virology</data>
+  <data key="d3">INCORRECT/MISAPPLIED</data>
+  <data key="d4">For enveloped human viruses such as SARS-CoV-2, entry involves receptor binding, protease priming and membrane fusion/endocytosis.</data>
+</node>
+<node id="term:T-virus / Hive">
+  <data key="d0">T-virus / Hive</data>
+  <data key="d1">concept</data>
+  <data key="d2">biology / fiction</data>
+  <data key="d3">FICTION/METAPHOR</data>
+  <data key="d4">Narrative analogy only.</data>
+</node>
+<node id="term:opossum venom resistance">
+  <data key="d0">opossum venom resistance</data>
+  <data key="d1">concept</data>
+  <data key="d2">biology</data>
+  <data key="d3">ESTABLISHED LIMITED FACT + UNSUPPORTED GENERALIZATION</data>
+  <data key="d4">Opossum serum has inspired venom-neutralizing peptide research.</data>
+</node>
+<node id="term:fluid atoms are spherical">
+  <data key="d0">fluid atoms are spherical</data>
+  <data key="d1">concept</data>
+  <data key="d2">chemistry</data>
+  <data key="d3">MODEL APPROXIMATION</data>
+  <data key="d4">Particle methods sometimes approximate atoms/molecules as spheres or kernels.</data>
+</node>
+<node id="term:BBMB equation">
+  <data key="d0">BBMB equation</data>
+  <data key="d1">concept</data>
+  <data key="d2">mathematics / fluid waves</data>
+  <data key="d3">ESTABLISHED EXTERNAL GROUNDING</data>
+  <data key="d4">U_t+U_x+U U_x-mU_xx-U_xxt=0, a nonlinear dispersive-dissipative wave PDE.</data>
+</node>
+<node id="term:1:1 double-arch accretion-disk balance">
+  <data key="d0">1:1 double-arch accretion-disk balance</data>
+  <data key="d1">concept</data>
+  <data key="d2">astrophysics</data>
+  <data key="d3">UNSUPPORTED CLAIM</data>
+  <data key="d4">No unique universal ratio follows from warped-disk dynamics.</data>
+</node>
+<node id="term:universal O(1)">
+  <data key="d0">universal O(1)</data>
+  <data key="d1">concept</data>
+  <data key="d2">complexity</data>
+  <data key="d3">OVERCLAIM CORRECTED BY CORPUS</data>
+  <data key="d4">At most: horizon-independent evaluation for a fixed closed expression.</data>
+</node>
+<node id="term:zero memory">
+  <data key="d0">zero memory</data>
+  <data key="d1">concept</data>
+  <data key="d2">complexity</data>
+  <data key="d3">OVERCLAIM CORRECTED BY CORPUS</data>
+  <data key="d4">Potential reduction by regeneration from seed/grammar and logging novelty.</data>
+</node>
+<node id="term:zero heat / zero power / zero latency">
+  <data key="d0">zero heat / zero power / zero latency</data>
+  <data key="d1">concept</data>
+  <data key="d2">hardware</data>
+  <data key="d3">OVERCLAIM REJECTED</data>
+  <data key="d4">Optical propagation can be fast and passive elements can reduce some energy costs.</data>
+</node>
+<node id="term:general AI / world-agent identity">
+  <data key="d0">general AI / world-agent identity</data>
+  <data key="d1">concept</data>
+  <data key="d2">AI</data>
+  <data key="d3">SPECULATIVE / UNVALIDATED</data>
+  <data key="d4">Research hypothesis about shared representation for perception, state and action.</data>
+</node>
+<node id="term:BCI / telepresence bodily control">
+  <data key="d0">BCI / telepresence bodily control</data>
+  <data key="d1">concept</data>
+  <data key="d2">medical / safety</data>
+  <data key="d3">UNSUPPORTED NARRATIVE</data>
+  <data key="d4">No valid engineering or medical mechanism is supplied.</data>
+</node>
+<node id="term:compatibility predicate">
+  <data key="d0">compatibility predicate</data>
+  <data key="d1">concept</data>
+  <data key="d2">event logic</data>
+  <data key="d3">SOURCE-DEFINED OPERATOR</data>
+  <data key="d4">Boolean or graded interaction gate.</data>
+</node>
+<node id="term:viral_entry_correction">
+  <data key="d0">receptor-mediated viral entry</data>
+  <data key="d1">concept</data>
+  <data key="d2">virology</data>
+  <data key="d3">ESTABLISHED SCIENCE</data>
+  <data key="d4">Virus-specific receptor binding, protease priming and membrane entry.</data>
+</node>
+<node id="term:reaction-diffusion">
+  <data key="d0">reaction-diffusion</data>
+  <data key="d1">concept</data>
+</node>
+<edge source="term:sphere / spherical" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:sphere / spherical" target="term:local spherical support">
+  <data key="d5">refined_as</data>
+</edge>
+<edge source="term:local spherical support" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:local spherical support" target="term:cone">
+  <data key="d5">implemented_by</data>
+</edge>
+<edge source="term:cone" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:cone" target="term:sweeping lighthouse">
+  <data key="d5">time_parameterized_as</data>
+</edge>
+<edge source="term:sweeping lighthouse" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:hourglass / double cone" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:hourglass / double cone" target="term:quad hourglass">
+  <data key="d5">refined_as</data>
+</edge>
+<edge source="term:quad hourglass" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:quad hourglass" target="term:pinch point">
+  <data key="d5">contains</data>
+</edge>
+<edge source="term:pinch point" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:pinch point" target="term:SDF = 0 / B = 0">
+  <data key="d5">event_locus</data>
+</edge>
+<edge source="term:signed distance field (SDF)" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:signed distance field (SDF)" target="term:SDF = 0 / B = 0">
+  <data key="d5">has_zero_level</data>
+</edge>
+<edge source="term:signed distance field (SDF)" target="term:positive / negative SDF">
+  <data key="d5">has_sign_regions</data>
+</edge>
+<edge source="term:SDF = 0 / B = 0" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:positive / negative SDF" target="category:geometry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:Klein bottle" target="category:topology">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:Klein bottle" target="term:phase sheet">
+  <data key="d5">motivates_orientation_routing</data>
+</edge>
+<edge source="term:Möbius strip" target="category:topology">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:sphere eversion" target="category:topology">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:double vacuum" target="category:state model">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:double vacuum" target="term:phase sheet">
+  <data key="d5">partitioned_by</data>
+</edge>
+<edge source="term:double vacuum" target="term:one-bit / parity">
+  <data key="d5">may_route_with</data>
+</edge>
+<edge source="term:phase sheet" target="category:state model">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:phase sheet" target="term:compatibility predicate">
+  <data key="d5">gated_by</data>
+</edge>
+<edge source="term:one-bit / parity" target="category:state model">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:φ (phi)" target="category:mathematics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:φ (phi)" target="term:phase sheet">
+  <data key="d5">parameterizes</data>
+</edge>
+<edge source="term:λ (lambda)" target="category:linear algebra">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:λ (lambda)" target="term:eigenvector">
+  <data key="d5">scales</data>
+</edge>
+<edge source="term:eigenvector" target="category:linear algebra">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:eigenvector" target="term:invariant">
+  <data key="d5">can_define</data>
+</edge>
+<edge source="term:eigenvalue collapse" target="category:linear algebra">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:invariant" target="category:state model">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:lineage / ontological address" target="category:state model">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:lineage / ontological address" target="term:invariant">
+  <data key="d5">preserves_identity_with</data>
+</edge>
+<edge source="term:branch" target="category:state model">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:finite grammar" target="category:computer science">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:finite grammar" target="term:state_at(t)">
+  <data key="d5">supports</data>
+</edge>
+<edge source="term:finite grammar" target="term:next_event">
+  <data key="d5">supports</data>
+</edge>
+<edge source="term:exogenous log" target="category:computer science">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:exogenous log" target="term:novelty-proportional memory">
+  <data key="d5">enables</data>
+</edge>
+<edge source="term:novelty-proportional memory" target="category:computer science">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:state_at(t)" target="category:computer science">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:state_at(t)" target="term:universal O(1)">
+  <data key="d5">does_not_imply</data>
+</edge>
+<edge source="term:next_event" target="category:computer science">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:next_event" target="term:B.C.E.">
+  <data key="d5">related_query</data>
+</edge>
+<edge source="term:0-based indexing" target="category:computer science">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:BVH / octree / sieve" target="category:computer science">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:CCD" target="category:computer science / imaging">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:raster trap" target="category:computer science">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:Feynman vectors" target="category:mathematics / graphics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:Feynman vectors" target="term:log-polar LUT">
+  <data key="d5">source_combines_with</data>
+</edge>
+<edge source="term:log-polar LUT" target="category:computer science / optics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:log-polar LUT" target="term:local spherical support">
+  <data key="d5">indexes</data>
+</edge>
+<edge source="term:camera obscura / pinhole" target="category:optics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:camera obscura / pinhole" target="term:sweeping lighthouse">
+  <data key="d5">optical_analogy</data>
+</edge>
+<edge source="term:spectral power distribution S(λ)" target="category:optics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:spectral power distribution S(λ)" target="term:waveguide">
+  <data key="d5">input_to</data>
+</edge>
+<edge source="term:spatial harmonics" target="category:optics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:chromatic aberration" target="category:optics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:chromatic aberration" target="term:dither / micro-jitter">
+  <data key="d5">may_be_mitigated_by</data>
+</edge>
+<edge source="term:dither / micro-jitter" target="category:imaging">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:microsaccades" target="category:biology / vision">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:microsaccades" target="term:dither / micro-jitter">
+  <data key="d5">biological_analogy</data>
+</edge>
+<edge source="term:waveguide" target="category:photonics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:liquid lens / liquid overclad" target="category:optofluidics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:liquid lens / liquid overclad" target="term:waveguide">
+  <data key="d5">couples_into</data>
+</edge>
+<edge source="term:matrix-in-glass" target="category:photonics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:matrix-in-glass" target="term:coupled-mode theory">
+  <data key="d5">modeled_by</data>
+</edge>
+<edge source="term:Maxwell field equation" target="category:photonics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:Maxwell field equation" target="term:waveguide">
+  <data key="d5">governs</data>
+</edge>
+<edge source="term:Young-Laplace equation" target="category:optofluidics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:Young-Laplace equation" target="term:liquid lens / liquid overclad">
+  <data key="d5">governs_shape</data>
+</edge>
+<edge source="term:coupled-mode theory" target="category:photonics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:Mach-Zehnder interferometer (MZI)" target="category:photonics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:Mach-Zehnder interferometer (MZI)" target="term:matrix-in-glass">
+  <data key="d5">example_of</data>
+</edge>
+<edge source="term:mode-overlap integral" target="category:photonics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:mode-overlap integral" target="term:waveguide">
+  <data key="d5">measures_coupling</data>
+</edge>
+<edge source="term:B.C.E." target="category:event logic">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:B.C.E." target="term:spherical throughput">
+  <data key="d5">counted_by</data>
+</edge>
+<edge source="term:spherical throughput" target="category:measurement">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:DMT" target="category:chemistry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:DMT" target="term:indole ring">
+  <data key="d5">contains</data>
+</edge>
+<edge source="term:DMT" target="term:tertiary dimethylamine">
+  <data key="d5">contains</data>
+</edge>
+<edge source="term:indole ring" target="category:chemistry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:tertiary dimethylamine" target="category:chemistry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:water / glycerol mixture" target="category:chemistry / materials">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:water / glycerol mixture" target="term:liquid lens / liquid overclad">
+  <data key="d5">candidate_material</data>
+</edge>
+<edge source="term:hydrogen bonding" target="category:chemistry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:CRISPR-Cas9" target="category:biochemistry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:CRISPR-Cas9" target="term:gene expression">
+  <data key="d5">can_modify_upstream</data>
+</edge>
+<edge source="term:protein folding" target="category:biochemistry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:protein folding" target="term:gene expression">
+  <data key="d5">downstream_of</data>
+</edge>
+<edge source="term:gene expression" target="category:biochemistry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:blood plasma" target="category:biology / fluid mechanics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:blood plasma" target="term:reaction-diffusion">
+  <data key="d5">may_include_transport_reactions</data>
+</edge>
+<edge source="term:viral spike puncturing a cell wall" target="category:virology">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:viral spike puncturing a cell wall" target="term:viral_entry_correction">
+  <data key="d5">corrected_by</data>
+</edge>
+<edge source="term:T-virus / Hive" target="category:biology / fiction">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:T-virus / Hive" target="term:viral spike puncturing a cell wall">
+  <data key="d5">fictionalizes</data>
+</edge>
+<edge source="term:opossum venom resistance" target="category:biology">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:fluid atoms are spherical" target="category:chemistry">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:fluid atoms are spherical" target="term:water / glycerol mixture">
+  <data key="d5">oversimplifies</data>
+</edge>
+<edge source="term:BBMB equation" target="category:mathematics / fluid waves">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:BBMB equation" target="term:reaction-diffusion">
+  <data key="d5">distinct_PDE_family</data>
+</edge>
+<edge source="term:1:1 double-arch accretion-disk balance" target="category:astrophysics">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:universal O(1)" target="category:complexity">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:zero memory" target="category:complexity">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:zero heat / zero power / zero latency" target="category:hardware">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:zero heat / zero power / zero latency" target="term:waveguide">
+  <data key="d5">overclaim_about</data>
+</edge>
+<edge source="term:general AI / world-agent identity" target="category:AI">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:general AI / world-agent identity" target="term:finite grammar">
+  <data key="d5">speculative_extension_of</data>
+</edge>
+<edge source="term:BCI / telepresence bodily control" target="category:medical / safety">
+  <data key="d5">has_category</data>
+</edge>
+<edge source="term:BCI / telepresence bodily control" target="term:double vacuum">
+  <data key="d5">misapplies</data>
+</edge>
+</graph></graphml>

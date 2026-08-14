@@ -1,0 +1,2 @@
+molecule,atom_index,element,atomic_number,formal_charge,aromatic,hybridization,implicit_hydrogens,degree
+water,0,O,8,0,False,SP3,2,0

@@ -1,0 +1,924 @@
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 1 OF 12 =====
+
+Chronological Synthesis of the Spherical
+Substrate Line
+Executive Summary
+The newest PDF does not merely update the archive; it changes the interpretive rule for the whole
+corpus. Its core instruction is to stop judging the archive as if it were fundamentally a proposal about
+rasterization, ray marching, voxel storage, or a conventional frame loop. Instead, it argues that those
+are downstream projection tools, while the actual proposal is an ontology of directly queryable
+relations, events, phases, and identities. In that reading, the archive’s “cone,” “SDF = 0,” “one-bit,”
+“double vacuum,” and “hourglass” motifs are not primarily graphics primitives. They are operators in a
+shared state space. That is the decisive shift in the corpus. ﬁleciteturn0ﬁle0L20-L33
+Read chronologically, the archive moves through a consistent arc. It begins with reaction-diﬀusion
+balance, collapse, gradients, and distributed state; then introduces cone and polar language; then
+develops a layered shared ontology for geometry, sensing, uncertainty, and semantics; then returns
+obsessively to boundary, parity, persistence, and continuity-through-zero; and ﬁnally, in the 19 July
+documents, recasts the whole project as a non-raster equation-world built from compatibility, event
+solving, transition rules, lineage, and an irreducible event log. The latest PDF itself summarizes that
+progression explicitly and treats its own contribution as a constructive correction: formalize the concept
+on its own terms before comparing it to established engines or renderers. ﬁleciteturn0ﬁle0L54-
+L76 ﬁleciteturn0ﬁle0L593-L604
+The strongest uniﬁed concept is therefore not “replace all world structure with spheres” and not
+“render the world by spherical raymarching.” It is a more speciﬁc claim: a ﬁnite grammar can generate a
+continuous, phase-layered, event-driven state manifold in which local spherical or radial-angular
+supports organize relevance, coupling, and measurement, while identities are preserved by lineage and
+invariants rather than by instantaneous coordinates. In that concept, “spherical” is best understood as
+the local substrate of support, shelling, orientation, and radial reach, not as a universal replacement for
+every representation in the system. This interpretation matches the archive’s own mid-July corrections,
+which repeatedly reject both “rasterized-everything” and “polar-everything” in favor of a layered or
+query-driven ontology. ﬁleciteturn0ﬁle0L95-L118 ﬁleciteturn0ﬁle0L258-L301 (Polar
+Coordinates as the Missing Local Chart for the Aerosol Cone Architecture.pdf, pp. 1–3) (Uniﬁed
+Architecture for Aerosol Cone Sensing, SDFs, Nested Shells, and Spherical Kinematics.pdf, pp. 1–2)
+(Hybrid Ontology for Unity 6.3.pdf, pp. 1–2)
+On feasibility, the corpus is internally strongest when narrowed. The latest PDF is explicit that the most
+defensible form is a restricted substrate that can answer state-at-time and next-event queries without
+universal frame stepping, but only for controlled relation families. It also explicitly demotes the grander
+claims—universal O(1), zero memory, world-equals-general-AI—from doctrine to research hypotheses.
+That is the right reading of the corpus. Under that narrowed interpretation, the “spherical substrate
+line” is feasible as a prototype-worthy computational medium. As a universal replacement for graphics,
+simulation, memory, cognition, and semantics all at once, it remains unproven.
+ﬁleciteturn0ﬁle0L40-L49 ﬁleciteturn0ﬁle0L366-L375 ﬁleciteturn0ﬁle0L579-
+L592
+1
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 2 OF 12 =====
+
+A necessary assumption in the analysis below is that ambiguous corpus language should be interpreted
+constructively: “sphere,” “cone,” “double vacuum,” “Klein bottle,” and “one-bit” are read as
+computational variables, local charts, compatibility sectors, gluing rules, and routing bits unless the
+documents explicitly insist on literal physics. That constructive translation is not imposed from outside;
+it is exactly the move the latest PDF tells the reader to make. ﬁleciteturn0ﬁle0L30-L33
+ﬁleciteturn0ﬁle0L123-L182
+Chronological Corpus
+The timeline below follows the chronology stated in the latest PDF’s “Chronological development” and
+“Source basis” pages, then tightens it with the archive’s own ﬁlenames and page references. The archive
+order matters because the core idea does not appear fully formed; it stabilizes through repeated
+corrections. ﬁleciteturn0ﬁle0L54-L76 ﬁleciteturn0ﬁle0L593-L604
+Date or
+cohort
+Core documents in the archive
+What the
+document
+family is doing
+Advance in
+the
+spherical
+substrate
+line
+Where it
+diverges or
+slides back
+Early July
+Reaction-Diﬀusion-Collapse-Explained.pdf
+(pp. 1–11)
+Establishes
+balance,
+collapse,
+hysteresis,
+gradients,
+topological
+moats, and
+distributed
+state before
+object
+inventories
+Introduces
+the idea
+that law-of-
+change
+precedes
+object
+storage;
+world as
+evolving
+ﬁeld rather
+than mesh
+inventory
+Still framed
+through
+explanatory
+analogies and
+simulation
+language, not
+yet a formal
+substrate
+Early July
+posterize-shader-black-and-white-
+dots...aerosol-spray-in-a-
+cone...lighthouse.pdf (pp. 1–5, 25–33)
+Starts from a
+shader-and-
+display
+framing, then
+partially
+migrates
+toward
+compute-ﬁeld
+language
+Brings in
+the cone as
+directional
+support and
+the idea
+that the
+same ﬁeld
+can serve
+both display
+and
+machine
+access
+Repeatedly falls
+back into
+rendering
+vocabulary,
+especially
+posterization,
+dither, and
+screen-space
+discussion
+2
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 3 OF 12 =====
+
+Date or
+cohort
+Core documents in the archive
+What the
+document
+family is doing
+Advance in
+the
+spherical
+substrate
+line
+Where it
+diverges or
+slides back
+Early July
+ﬁreﬂy-trapped-in-a-
+sphere...cartesian...polar...relationship.pdf
+(pp. 1–5, 9–11)
+Establishes
+radial/angular
+organization,
+manifold
+language,
+tangent
+spaces, and
+polar/spherical
+transformation
+imagery
+Makes
+“sphere”
+and “polar”
+native for
+constrained
+local motion
+and support
+Risks
+overextending
+coordinate
+transforms into
+metaphysical
+universals
+Mid July
+shared
+ontology
+cohort
+Polar Coordinates as the Missing Local
+Chart... (pp. 1–3), Uniﬁed Architecture for
+Aerosol Cone Sensing...Spherical
+Kinematics.pdf (pp. 1–2), Hybrid
+Ontology for Unity 6.3.pdf (pp. 1–2), 
+Feasibility Assessment of the Brainstem
+Concept.pdf (pp. 1–2)
+Consolidates
+the layered
+stack: graph/
+RD, SDF
+geometry,
+local cone
+sensing,
+localization,
+fuzzy or
+semantic lift
+Critical
+correction:
+keep world
+structure
+hybrid or
+geometric,
+but make
+local
+sensing
+radial-
+angular;
+“spherical”
+becomes a
+local chart,
+not the
+whole world
+Still partly
+anchored to
+Unity, TSDF/
+ESDF, shaders,
+and
+implementation
+splits
+Mid July
+invariants
+and
+embodiment
+cohort
+Particle-Collisions-Explained-Bunches,-
+Not-Single-Particles.pdf (pp. 1–5), 
+GlagStone-1-Bit-City-Builder-Explained
+(1).pdf (pp. 3–8), StepsWithout0.pdf (pp.
+22, 27, 43–45), Cobalt_ The Immutable
+Anchor...pdf (p. 1)
+Develops one-
+bit routing,
+event crossing,
+dt=0 rhetoric,
+continuity-
+through-zero,
+and stable
+anchors
+Pushes the
+archive
+toward
+threshold
+semantics,
+parity ﬂips,
+zero-
+crossings,
+and
+persistent
+invariants
+This cohort is
+the most
+metaphor-
+heavy and least
+disciplined; it
+often confuses
+visual style,
+psychology,
+and formal
+mechanism
+3
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 4 OF 12 =====
+
+Date or
+cohort
+Core documents in the archive
+What the
+document
+family is doing
+Advance in
+the
+spherical
+substrate
+line
+Where it
+diverges or
+slides back
+Late July
+hollowland-double-vacuum.pdf (pp. 29–
+35, with pivot setup on pp. 6–8)
+Explodes the
+concept into
+its grandest
+form:
+ontological
+UUIDs, non-
+sieved
+algebraic
+space,
+hourglasses,
+phase masks,
+under-32 MB
+worlds, AI/
+world identity
+Introduces
+the full
+vocabulary
+later
+normalized
+by the
+newest PDF:
+phase, one-
+bit, double
+vacuum,
+hourglass,
+lineage, and
+algebraic
+event
+persistence
+Also makes the
+archive’s least
+controlled
+claims,
+especially
+around O(1),
+memory, and
+universal
+world/AI fusion
+Late July
+constructive
+audit
+Feasibility and Constructive Potential
+Assessment of the Source Document.pdf
+(pp. 1–7)
+Separates
+metaphor
+from
+implementable
+mechanism
+and
+recommends a
+much
+narrower
+prototype path
+Converts
+the archive
+from
+rhetoric into
+falsiﬁable
+program
+fragments:
+implicit
+relations,
+exact or
+conservative
+time-of-
+impact,
+grammar
+layer, low-bit
+state tags
+Still interprets
+much through
+continuous
+collision
+detection and
+engine
+baselines
+4
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 5 OF 12 =====
+
+Date or
+cohort
+Core documents in the archive
+What the
+document
+family is doing
+Advance in
+the
+spherical
+substrate
+line
+Where it
+diverges or
+slides back
+Latest
+attached
+PDF
+Beyond the Raster Trap Chronological
+Synthesis (pp. 2–17)
+Performs the
+cleanest
+internal
+synthesis:
+relation
+algebra, phase
+sheets,
+compatibility,
+event solving,
+lineage,
+irreducible
+event log, and
+Equation
+World Zero
+Finalizes the
+through line
+as a
+declarative
+state-and-
+event
+calculus
+with local
+spherical
+support and
+non-raster
+semantics
+Deliberately
+brackets
+external
+validation, so it
+establishes
+internal
+coherence
+better than
+external proof
+What matters most in that sequence is the direction of correction. The archive ﬁrst tends to imagine
+cones, spheres, and 1-bit transitions as graphics-adjacent or sensor-adjacent metaphors. The mid-July
+analyses then insist that local radial-angular organization belongs mainly to sensing and support. The
+19 July synthesis completes the move by treating the core as an event calculus in which rendering, if
+used at all, is secondary. ﬁleciteturn0ﬁle0L24-L29 ﬁleciteturn0ﬁle0L97-L118
+Uniﬁed Spherical Concept
+The uniﬁed concept can be stated compactly:
+A ﬁnite grammar generates a continuous state manifold whose locally spherical or
+radial-angular supports deﬁne relevance, coupling, and measurement; events occur
+when relations cross explicit transition surfaces under compatibility constraints;
+identity persists by lineage and invariants rather than by coordinates; and
+projection into images is optional, not constitutive. ﬁleciteturn0ﬁle0L34-L49
+ﬁleciteturn0ﬁle0L564-L592
+That statement is tighter than most individual source documents, but it is faithful to the corpus once
+the late reframing is applied. The newest PDF deﬁnes the world as a ﬁnite grammar plus continuous
+relations, phase sheets, invariants, and an irreducible event log. It also translates the archive’s recurring
+vocabulary into operational terms: B = 0 becomes an event surface or transition relation, cones/
+hourglasses become domains of inﬂuence or admissible relevance, phi becomes a phase law, one-bit
+becomes routing or parity, double vacuum becomes phase-separated co-location, and ontological
+address becomes lineage-based identity. ﬁleciteturn0ﬁle0L123-L182
+ﬁleciteturn0ﬁle0L564-L583
+The formal core proposed in the latest PDF is the clearest mathematical condensation in the corpus:
+Q = P
+×
+n
+R
+×
+time
+S
+×
+phase
+1
+Z
+×
+2sheet
+A
+×
+address
+Bbranch
+5
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 6 OF 12 =====
+
+In plain language, a world state is not only “where in space,” but also “when,” “in what phase,” “on which
+sheet,” “at which lineage-address,” and “on which branch.” Events are not pure geometry intersections;
+they happen only when a relation is satisﬁed, the state lies inside the relevant support cone, and the co-
+located sectors are compatible. ﬁleciteturn0ﬁle0L202-L230
+The architecture diagram on page 6 makes the ontology especially clear: grammar and exogenous log
+feed a projective-phase manifold; relations and compatibility operate inside that manifold; cone/
+hourglass queries select relevance; and transitions update state while preserving invariants. The same
+state description can then answer state-at-time, next-event, reachable-relation, identity, and agent-
+action queries. That is why the through line is deeper than graphics. It proposes a common substrate
+for physics-like transitions, sensing, persistence, and agency. ﬁleciteturn0ﬁle0L187-L197
+The speciﬁcally spherical part of the line needs to be stated carefully. The archive’s strongest correction,
+visible already in the mid-July analyses, is that spherical or polar structure belongs primarily to local
+support, egocentric sensing, shell organization, radial reach, and phase coupling—not to a global
+remeshing of all world state. Polar Coordinates as the Missing Local Chart for the Aerosol Cone Architecture
+and Uniﬁed Architecture for Aerosol Cone Sensing, SDFs, Nested Shells, and Spherical Kinematics both insist
+on that distinction: “keep the world model hybrid,” “make the sensor model polar,” and treat spherical
+coordinates as native to the local manifold of cones, shells, and bilateral kernels rather than as a total
+world replacement (Polar Coordinates..., pp. 1–3; Uniﬁed Architecture..., pp. 1–2). Hybrid Ontology for
+Unity 6.3 makes the same point more bluntly: neither raster-everything nor polar-everything is the right
+reading; persistent world state, local sensing, and display should remain distinct layers (Hybrid
+Ontology..., pp. 1–2).
+The archive’s best-developed singular notion is double vacuum. In the latest PDF it is given its cleanest
+formulation: two states can share the same coordinate  yet still fail to interact because their phase,
+sheet, orientation, or address are incompatible. The “second vacuum” is therefore not a stronger
+emptiness; it is the absence of coupling. This is one of the core places where the corpus stops being
+about visual metaphors and becomes a computational ontology. Same position does not imply same
+sector. Interaction becomes explicitly gated. ﬁleciteturn0ﬁle0L235-L252
+That page 8 diagram is useful because it shows how several recurrent archive motifs collapse into one
+structure: the four chambers become a routing partition, the central pinch becomes a rank-changing
+event locus, the vertical line becomes an invariant mode or eigen-axis, and the swept arc becomes
+phase-controlled coupling. The image is not literal topology proof, but it is a disciplined visualization of
+the actual computational claim. ﬁleciteturn0ﬁle0L238-L243 ﬁleciteturn0ﬁle0L245-L252
+q (t) =
+e
+(x (t), t, ϕ (t), σ (t), a , b )
+e
+e
+e
+e
+e
+W = (G, R, T, I)
+R (q; θ ) =
+j
+j
+0,
+C (q, t) ≤
+α
+0,
+χ(e, j, t) ∈{0, 1}
+t =
+∗
+min{t ≥t :
+0
+R (q (t)) =
+j
+e
+0, C ≤
+α
+0, χ = 1}
+q (t
+) =
+e
+∗+
+T (q (t
+), context)
+j
+e
+∗−
+Architecture of the equation world from the latest PDF, page 6
+x
+Operational reading of double vacuum and the quad hourglass from the latest
+PDF, page 8
+6
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 7 OF 12 =====
+
+One more correction is crucial. In StepsWithout0, the archive brieﬂy pushes toward the idea that an SDF
+can “go past zero” into a spherical ﬂuid LUT and thereby bypass the frontend. But that same document
+later admits that without a hard zero or natural cancellation surface, the system falls back into hidden
+rasterization, because sampled approximation returns through the back door (StepsWithout0.pdf, pp.
+22, 27, 43–45). The newest PDF solves that problem more cleanly: B = 0 is not “keep marching through a
+rendered SDF”; it is the explicit transition relation where event semantics are invoked. That is a major
+maturation of the corpus. ﬁleciteturn0ﬁle0L127-L137 ﬁleciteturn0ﬁle0L213-L214
+The architecture can be summarized as follows:
+flowchart LR
+    G[Finite grammar G] --> Q[Projective-phase state manifold Q]
+    L[Exogenous log L] --> Q
+    Q --> R[Relations R_j(q)=0]
+    Q --> C[Cone or hourglass support C(q,t)<=0]
+    Q --> X[Compatibility χ phase/sheet/address]
+    R --> E[Event time t*]
+    C --> E
+    X --> E
+    E --> T[Transition T_j]
+    T --> O[Outputs: state-at-time, next-event, identity, reachable relation, 
+agent action]
+This is why the corpus’s mature through line is best called a spherical-support event calculus rather
+than a graphics alternative. The sphere, shell, cone, and hourglass motifs are not there to win a
+renderer war. They are there to deﬁne local supports, sectors, and transitions in a shared state space.
+ﬁleciteturn0ﬁle0L258-L301
+Feasibility
+What is realistically feasible
+Under the latest PDF’s intended interpretation, the concept is strongest at the lower rungs of its own
+feasibility ladder: relational representation, phase-layered state, and direct state/event queries over
+restricted relation families. The report’s overall verdict is explicit: the architecture is conceptually
+coherent and prototype-feasible as a restricted equation-world substrate, while its scale and generality
+remain open research questions. That distinction should be treated as the authoritative internal
+feasibility judgment of the corpus. ﬁleciteturn0ﬁle0L366-L375
+The most defensible restricted prototype is already speciﬁed as Equation World Zero. It uses 2D
+homogeneous coordinates plus continuous time, two sheets and one orientation bit, four-chamber
+routing at 
+, a tightly bounded relation family, simple trajectory classes, ﬁnite grammar depth,
+lineage-based identity, and symbolic state/event outputs rather than image-ﬁrst ambitions. That is a
+healthy prototype design because it puts the burden where the concept actually lives: state evaluation,
+compatibility, event solving, routing, and persistence. ﬁleciteturn0ﬁle0L477-L503
+B = 0
+7
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 8 OF 12 =====
+
+Computational complexity
+The latest PDF oﬀers a narrow and useful reinterpretation of the archive’s O(1) rhetoric. It does not
+claim universal constant cost. It claims only that, for a ﬁxed closed expression, the cost of asking for
+state at time  can be independent of the number of skipped time steps. Similarly, next-event cost is
+dominated by compatibility checks, event solving, and branch resolution, not by frame replay. That is a
+strong claim, but it is much weaker than “constant-cost universe,” and much more plausible.
+ﬁleciteturn0ﬁle0L224-L230 ﬁleciteturn0ﬁle0L445-L449
+A practical cost picture, using the corpus’s own terms, looks like this:
+Query or
+operation
+Dominant cost under
+the intended model
+Why it can beat frame
+stepping
+Why it can still fail
+state_at(t)
+Evaluate closed state
+expression 
+Cost can be horizon-
+independent for ﬁxed
+expressions
+Expression size can grow
+with grammar depth or
+branch history
+next_event
+Compatibility + root/
+event solve + branch
+resolution
+Avoids replaying all
+intermediate states
+Event density, multiple
+roots, and degeneracies
+can explode
+Cone query
+Support pruning +
+relation evaluation
+inside support
+Relevance is localized
+analytically, not by
+rendering an image
+Poor compatibility ﬁlters
+turn cone queries into
+broad scans
+Persistence
+rebuild
+Seed + grammar +
+external event log
+Closed dynamics can be
+recomputed instead of
+stored frame-by-frame
+Exogenous novelty still
+accumulates and must
+be logged
+Identity
+reconstruction
+Generative address +
+invariant history
+Avoids relying on current
+coordinate as unique
+identity
+Splits, merges, and
+reconciliations need
+explicit lineage rules
+This table is not imported from outside. It is a direct synthesis of the formal core, the “precise meaning
+of O(1),” the claim-by-claim assessment, and the evaluation program in the latest PDF.
+ﬁleciteturn0ﬁle0L202-L230 ﬁleciteturn0ﬁle0L380-L450 ﬁleciteturn0ﬁle0L507-
+L559
+The key feasibility criterion on page 14 is especially important: the architecture only succeeds if the cost
+of compatibility plus event solving grows more slowly than the amount of world structure the system
+avoids explicitly materializing. That is the real computational test. Not whether it “sounds unlike
+rasterization,” but whether its pruning and solvability dominate its combinatorics.
+ﬁleciteturn0ﬁle0L455-L470
+Numerical stability
+The newest PDF is unusually candid about numerical fragility. It ﬂags long time horizons, log
+coordinates, irrational phase schedules, near-singular operators, tangencies, coincident surfaces, and
+rank changes as actual engineering risks. That list is not incidental; it tells us exactly where the
+prototype can fail while still being internally faithful to the concept. If the substrate relies on phase,
+t
+q (t)
+e
+8
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 9 OF 12 =====
+
+singular centers, and event surfaces, then conditioning is not a side issue. It is part of the ontology.
+ﬁleciteturn0ﬁle0L463-L466
+This is where the corpus’s mature form is notably better than its earlier rhetoric. Earlier material often
+implied that spherical organization or 1-bit transitions would automatically bypass computational
+hardness. The latest PDF rejects that magical reading. It explicitly allows interval or set-valued answers,
+certiﬁed numerical root processes, and pragmatic uncertainty semantics. That is the right stance for a
+real prototype. ﬁleciteturn0ﬁle0L221-L230 ﬁleciteturn0ﬁle0L289-L297
+Hardware implications
+The corpus now supports two implementation pathways, and they should not be confused.
+The ﬁrst is the query-ﬁrst headless path favored by the latest PDF. Start from algebra, compatibility,
+events, transitions, identities, and logs. Do not begin by rebuilding a conventional scene or image
+pipeline and then claiming victory if it looks clever. The latest PDF is direct that “success is not a picture,”
+and that visual ﬁdelity cannot deﬁne the prototype. ﬁleciteturn0ﬁle0L492-L500
+ﬁleciteturn0ﬁle0L507-L559 ﬁleciteturn0ﬁle0L588-L592
+The second is the hybrid engine path developed in the mid-July archive analyses. Those documents
+consistently recommend a split in which authoritative world geometry and belief remain in a stable
+geometric or graph-backed core, while cone integration, display-focused volumetrics, or optional
+raymarching live in a secondary compute stage. This is a feasible engineering bridge, but it is already a
+concession to conventional engine structure. It is useful as a bootstrap path, not as the purest
+statement of the idea (Hybrid Ontology for Unity 6.3.pdf, pp. 1–2; Aerosol Cone Vision in the Uniﬁed
+Engine.pdf, pp. 1–2; Aerosol Volumetrics Inside a Uniﬁed Engine Architecture.pdf, pp. 1–2).
+The hardware lesson is therefore simple: if the goal is to test the core principles, use the headless
+algebraic path ﬁrst. If the goal is to productize a stepping stone inside a game engine, the hybrid path is
+the safer bridge. The corpus supports both, but it clearly treats the ﬁrst as the truer experiment.
+ﬁleciteturn0ﬁle0L477-L503 ﬁleciteturn0ﬁle0L544-L559
+Comparison to Rasterization, Raymarching, and Tracing
+The latest PDF identiﬁes the trap precisely: a proposal about representation gets translated too quickly
+into a proposal about drawing. Then the cone becomes rays, the one-bit state becomes pixels, 
+becomes a sampled volume, and grammar becomes mesh generation. The report argues that this
+translation can be useful yet still erase the intended inversion. That paragraph is the cleanest internal
+statement of how the proposed substrate diﬀers from the familiar pipelines. ﬁleciteturn0ﬁle0L24-
+L29
+The comparison becomes clearer when framed as “what question is the system trying to answer?”
+System
+Basic question it
+answers
+Why it overlaps with the
+corpus
+Why it is not the corpus’s core
+idea
+Rasterization
+How do stored
+surfaces project into
+pixels this frame?
+The corpus can still emit
+images as downstream
+projections
+The latest PDF explicitly
+rejects taking the projection
+as the world itself
+B = 0
+9
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 10 OF 12 =====
+
+System
+Basic question it
+answers
+Why it overlaps with the
+corpus
+Why it is not the corpus’s core
+idea
+Raymarching
+What does repeated
+ﬁeld sampling along
+projected directions
+reveal?
+The corpus often uses
+SDF language and cone
+imagery that tempt this
+reading
+The mature concept replaces
+repeated sampling with
+compatibility, event solving,
+and transition semantics
+Ray tracing
+Which transport or
+visibility paths
+connect a point,
+source, or eye
+through space?
+Cones, visibility, and
+support domains can
+later be rendered or
+traced
+The latest PDF redeﬁnes
+cones as causal, semantic,
+collision, memory, and
+grammar supports, not just
+light transport
+Proposed
+substrate
+What state holds at
+time , what event
+happens next, and
+which sectors can
+couple?
+Uses implicit geometry,
+supports, invariants,
+and local charts that can
+be projected if desired
+Treats representation as a
+directly queryable relation
+algebra and event calculus
+The underlying inversion appears in the latest PDF’s “Default pipeline question / Equation-world
+question” table. Traditional questions ask what geometry must be stored, what updates every frame,
+and how sensors obtain images. The equation-world version asks what ﬁnite relations generate
+possible states, what the state is at time , what the next event is after 
+, and what events fall inside an
+analytic domain of dependence. That is not a minor implementation tweak. It is a shift in ontology.
+ﬁleciteturn0ﬁle0L101-L118
+This also explains the overlap. The corpus does not require hostility to rasterization, raymarching, or
+tracing as techniques. It only refuses to let them deﬁne the substrate. The latest PDF explicitly says
+those can remain downstream projection tools. In that sense, the relationship is not “mutual exclusion.”
+It is “do not mistake the projector for the state space.” ﬁleciteturn0ﬁle0L20-L23
+The archive itself illustrates both the confusion and the correction. The posterize/aerosol/lighthouse
+material starts close to a shader or volumetric eﬀect framing, and parts of StepsWithout0 still imagine
+the breakthrough as “getting past zero” without sampling. But the mid-July architectural reports already
+push back, saying the cone should be treated as a sensing or support operator over a shared manifold,
+not as a rendering trick; and the newest PDF completes that correction by naming cones “analytic
+relevance operators” that unify causality, collision, memory retrieval, and procedural unfolding without
+turning them into visual rays. ﬁleciteturn0ﬁle0L260-L300 (posterize-shader...aerosol-spray-in-a-
+cone...lighthouse.pdf, pp. 1–5, 29–33) (StepsWithout0.pdf, pp. 22, 43–45) (Aerosol Cones, SDFs, and
+Matryoshka Nesting in the Uniﬁed Engine.pdf, pp. 1–2, 5)
+So, on the user’s central concern: yes, the corpus’s through line is fundamentally diﬀerent from
+rasterization and raymarching when read at the level the latest PDF demands. The diﬀerence lies less
+in sphere-vs-grid geometry and more in query-vs-projection semantics. Rasterization and
+raymarching ask how to sample or draw. The spherical substrate line asks how to organize support,
+compatibility, and transitions so that state and event can be queried directly. ﬁleciteturn0ﬁle0L95-
+L118 ﬁleciteturn0ﬁle0L194-L197
+t
+t
+t0
+10
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 11 OF 12 =====
+
+Risks and Experiments
+The latest PDF’s bottleneck list is the most valuable research agenda in the corpus because it names the
+places where the idea could fail without falling back into a graphics benchmark. The real hazards are
+algebraic closure, event explosion, branch explosion, degeneracies, conditioning, exogenous entropy,
+identity under split/merge, self-reference, semantic grounding, and query governance. Those are
+exactly the right risks for this kind of architecture. ﬁleciteturn0ﬁle0L455-L470
+From those bottlenecks, the most important open questions become clear.
+First, can grammar composition stay inside a closed or normalized relation family, or does the
+expression size grow until direct query loses any advantage? That is the core algebra question. Second,
+can compatibility predicates remove enough candidate events to keep solving sparse? That is the
+scaling question. Third, can lineage survive splits, merges, and reconciliations without devolving into ad
+hoc bookkeeping? That is the identity question. Fourth, can the shared world/agent ontology carry
+actual semantics rather than just colocated tensors and phase tags? That is the cognitive question. And
+ﬁfth, can all of that remain numerically stable in the presence of singularities and long horizons? That is
+the implementation question. ﬁleciteturn0ﬁle0L368-L375 ﬁleciteturn0ﬁle0L382-L450
+ﬁleciteturn0ﬁle0L455-L470
+The archive already contains a strong prototype program. The ﬁrst phase should revolve around six
+required queries: state at time, next event, events in cone, phase coupling of co-located sheets,
+transition routing through the hourglass or gluing rule, and persistence/identity reconstruction from
+seed plus external log. Those six queries are the right minimal experiment because together they test
+directness, support semantics, compatibility, routing, lineage, and memory discipline.
+ﬁleciteturn0ﬁle0L492-L503
+A disciplined ﬁrst-wave experiment set would look like this:
+Prototype
+experiment
+What it tests
+Evidence of success
+Horizon
+skipping
+Whether state_at(t)  cost scales
+with skipped time or only with
+expression complexity
+Query cost stays tied to expression
+size, not elapsed steps
+Co-located
+phase sheets
+Whether double vacuum is a real
+compatibility sector and not just
+duplicated coordinates
+Same-  states remain uncoupled until
+explicit compatibility is met
+Event routing
+at 
+Whether transitions preserve
+invariants while routing across sheets
+or chambers
+Correct event ordering and stable
+invariant tags
+Grammar
+depth stress
+Whether direct-query advantages
+survive rule composition
+Growth stays bounded or
+normalizable within the allowed
+relation family
+Identity split/
+merge
+Whether generative address can
+survive nontrivial persistence
+operations
+Lineage collisions are detectable and
+reconstructable
+x
+B = 0
+11
+
+
+===== Chronological Synthesis of the Spherical Substrate Line(3).pdf — PAGE 12 OF 12 =====
+
+Prototype
+experiment
+What it tests
+Evidence of success
+Minimal agent
+integration
+Whether action, memory, and
+perception can reuse the same
+relation substrate
+Agent queries and action selection
+operate in the same transition
+language as embodiment
+Those experiments are not speculative additions by me; they directly condense the latest PDF’s own
+evaluation program and exit criteria. ﬁleciteturn0ﬁle0L512-L559
+A clean prototype ﬂow looks like this:
+The most important recommendation for a proof of concept is therefore to refuse two temptations.
+The ﬁrst temptation is to turn the experiment immediately into a renderer benchmark. The second
+temptation is to preserve the archive’s most inﬂated claims as requirements. The proper goal is
+narrower: show that one nontrivial relation family can answer state-at-time and next-event queries
+without stepping every frame, under explicit compatibility, with stable lineage, bounded expression
+growth, and memory proportional to novelty rather than to geometric extent. If that works, the
+prototype has validated the core of the spherical substrate line. If it fails, the failure will be informative
+in exactly the right place. ﬁleciteturn0ﬁle0L544-L559
+The corpus’s own ﬁnal decision is the correct closing judgment: GO for formalization and Equation
+World Zero, but do not begin by recreating a conventional scene or image pipeline. Begin with the
+algebra of state, compatibility, event, transition, identity, and memory.
+ﬁleciteturn0ﬁle0L588-L592
+Finite grammar
+State evaluator
+Compatibility filter
+Event solver
+Transition router
+Lineage and invariant
+update
+Query outputs and
+external log
+12

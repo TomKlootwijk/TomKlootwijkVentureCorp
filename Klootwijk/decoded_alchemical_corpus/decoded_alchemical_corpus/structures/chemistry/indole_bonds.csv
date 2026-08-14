@@ -1,0 +1,11 @@
+molecule,bond_index,atom_i,atom_j,bond_type,bond_order,aromatic,conjugated,in_ring
+indole,0,0,1,AROMATIC,1.5,True,True,True
+indole,1,1,2,AROMATIC,1.5,True,True,True
+indole,2,2,3,AROMATIC,1.5,True,True,True
+indole,3,3,4,AROMATIC,1.5,True,True,True
+indole,4,4,5,AROMATIC,1.5,True,True,True
+indole,5,5,6,AROMATIC,1.5,True,True,True
+indole,6,6,7,AROMATIC,1.5,True,True,True
+indole,7,7,8,AROMATIC,1.5,True,True,True
+indole,8,8,0,AROMATIC,1.5,True,True,True
+indole,9,7,3,AROMATIC,1.5,True,True,True

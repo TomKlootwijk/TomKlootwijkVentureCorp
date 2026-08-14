@@ -1,0 +1,1324 @@
+{
+  "@context": {
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "category": "https://example.org/category",
+    "status": "https://example.org/status",
+    "translation": "https://example.org/translation",
+    "relation": "https://example.org/relation"
+  },
+  "nodes": [
+    {
+      "id": "category:AI",
+      "label": "AI",
+      "node_type": "category"
+    },
+    {
+      "id": "category:astrophysics",
+      "label": "astrophysics",
+      "node_type": "category"
+    },
+    {
+      "id": "category:biochemistry",
+      "label": "biochemistry",
+      "node_type": "category"
+    },
+    {
+      "id": "category:biology",
+      "label": "biology",
+      "node_type": "category"
+    },
+    {
+      "id": "category:biology / fiction",
+      "label": "biology / fiction",
+      "node_type": "category"
+    },
+    {
+      "id": "category:biology / fluid mechanics",
+      "label": "biology / fluid mechanics",
+      "node_type": "category"
+    },
+    {
+      "id": "category:biology / vision",
+      "label": "biology / vision",
+      "node_type": "category"
+    },
+    {
+      "id": "category:chemistry",
+      "label": "chemistry",
+      "node_type": "category"
+    },
+    {
+      "id": "category:chemistry / materials",
+      "label": "chemistry / materials",
+      "node_type": "category"
+    },
+    {
+      "id": "category:complexity",
+      "label": "complexity",
+      "node_type": "category"
+    },
+    {
+      "id": "category:computer science",
+      "label": "computer science",
+      "node_type": "category"
+    },
+    {
+      "id": "category:computer science / imaging",
+      "label": "computer science / imaging",
+      "node_type": "category"
+    },
+    {
+      "id": "category:computer science / optics",
+      "label": "computer science / optics",
+      "node_type": "category"
+    },
+    {
+      "id": "category:event logic",
+      "label": "event logic",
+      "node_type": "category"
+    },
+    {
+      "id": "category:geometry",
+      "label": "geometry",
+      "node_type": "category"
+    },
+    {
+      "id": "category:hardware",
+      "label": "hardware",
+      "node_type": "category"
+    },
+    {
+      "id": "category:imaging",
+      "label": "imaging",
+      "node_type": "category"
+    },
+    {
+      "id": "category:linear algebra",
+      "label": "linear algebra",
+      "node_type": "category"
+    },
+    {
+      "id": "category:mathematics",
+      "label": "mathematics",
+      "node_type": "category"
+    },
+    {
+      "id": "category:mathematics / fluid waves",
+      "label": "mathematics / fluid waves",
+      "node_type": "category"
+    },
+    {
+      "id": "category:mathematics / graphics",
+      "label": "mathematics / graphics",
+      "node_type": "category"
+    },
+    {
+      "id": "category:measurement",
+      "label": "measurement",
+      "node_type": "category"
+    },
+    {
+      "id": "category:medical / safety",
+      "label": "medical / safety",
+      "node_type": "category"
+    },
+    {
+      "id": "category:optics",
+      "label": "optics",
+      "node_type": "category"
+    },
+    {
+      "id": "category:optofluidics",
+      "label": "optofluidics",
+      "node_type": "category"
+    },
+    {
+      "id": "category:photonics",
+      "label": "photonics",
+      "node_type": "category"
+    },
+    {
+      "id": "category:state model",
+      "label": "state model",
+      "node_type": "category"
+    },
+    {
+      "id": "category:topology",
+      "label": "topology",
+      "node_type": "category"
+    },
+    {
+      "id": "category:virology",
+      "label": "virology",
+      "node_type": "category"
+    },
+    {
+      "id": "term:sphere / spherical",
+      "label": "sphere / spherical",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Use as a local radial-angular support or chart for reach, shelling, orientation and uncertainty."
+    },
+    {
+      "id": "term:local spherical support",
+      "label": "local spherical support",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "BOUNDED ENGINEERING PROPOSAL",
+      "translation": "A bounded set S_q or constraint C(q,t)\u22640 in radius and angles."
+    },
+    {
+      "id": "term:cone",
+      "label": "cone",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Analytic domain of relevance/influence; a query filter rather than necessarily a rendered ray bundle."
+    },
+    {
+      "id": "term:sweeping lighthouse",
+      "label": "sweeping lighthouse",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "DECODER INFERENCE",
+      "translation": "Time-parameterized angular support or scanning aperture."
+    },
+    {
+      "id": "term:hourglass / double cone",
+      "label": "hourglass / double cone",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Routing partition with a rank-changing event locus and invariant axis."
+    },
+    {
+      "id": "term:quad hourglass",
+      "label": "quad hourglass",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "DECODER INFERENCE",
+      "translation": "Finite-state transition diagram over sheet and route bits."
+    },
+    {
+      "id": "term:pinch point",
+      "label": "pinch point",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "BOUNDED ENGINEERING PROPOSAL",
+      "translation": "Guard/event surface where a transition is declared; in photonics it may be a cutoff, dark port or critical-coupling threshold."
+    },
+    {
+      "id": "term:signed distance field (SDF)",
+      "label": "signed distance field (SDF)",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "Scalar field d(x) whose zero level set describes a boundary; sign labels sides when orientability permits."
+    },
+    {
+      "id": "term:SDF = 0 / B = 0",
+      "label": "SDF = 0 / B = 0",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Explicit event/guard/transition relation rather than a point to march past."
+    },
+    {
+      "id": "term:positive / negative SDF",
+      "label": "positive / negative SDF",
+      "node_type": "concept",
+      "category": "geometry",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "Two sides of an oriented implicit surface."
+    },
+    {
+      "id": "term:Klein bottle",
+      "label": "Klein bottle",
+      "node_type": "concept",
+      "category": "topology",
+      "status": "ESTABLISHED SCIENCE + SOURCE ABSTRACTION",
+      "translation": "A closed non-orientable surface; useful as a routing/gluing abstraction with explicit port and orientation maps."
+    },
+    {
+      "id": "term:M\u00f6bius strip",
+      "label": "M\u00f6bius strip",
+      "node_type": "concept",
+      "category": "topology",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "A non-orientable band with one boundary component; a simple orientation-reversing gluing example."
+    },
+    {
+      "id": "term:sphere eversion",
+      "label": "sphere eversion",
+      "node_type": "concept",
+      "category": "topology",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "A regular homotopy of an immersed sphere in 3D allowing self-intersections."
+    },
+    {
+      "id": "term:double vacuum",
+      "label": "double vacuum",
+      "node_type": "concept",
+      "category": "state model",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Absence of coupling: co-located states remain isolated because phase, sheet, orientation, address or mode tags are incompatible."
+    },
+    {
+      "id": "term:phase sheet",
+      "label": "phase sheet",
+      "node_type": "concept",
+      "category": "state model",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Discrete state label \u03c3, often Z2, that partitions compatibility sectors."
+    },
+    {
+      "id": "term:one-bit / parity",
+      "label": "one-bit / parity",
+      "node_type": "concept",
+      "category": "state model",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Route, sheet, freshness, admission or validity flag under a declared schema."
+    },
+    {
+      "id": "term:\u03c6 (phi)",
+      "label": "\u03c6 (phi)",
+      "node_type": "concept",
+      "category": "mathematics",
+      "status": "DECODER DISAMBIGUATION",
+      "translation": "Separate meanings: local angle/phase variable \u03c6; phase law \u03d5(t); golden ratio \u03a6 only when explicitly designed."
+    },
+    {
+      "id": "term:\u03bb (lambda)",
+      "label": "\u03bb (lambda)",
+      "node_type": "concept",
+      "category": "linear algebra",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "Eigenvalue in Av=\u03bbv, wavelength in optics, or rate parameter depending on context."
+    },
+    {
+      "id": "term:eigenvector",
+      "label": "eigenvector",
+      "node_type": "concept",
+      "category": "linear algebra",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "Nonzero vector whose direction is preserved by a linear transformation."
+    },
+    {
+      "id": "term:eigenvalue collapse",
+      "label": "eigenvalue collapse",
+      "node_type": "concept",
+      "category": "linear algebra",
+      "status": "ESTABLISHED MATH + SOURCE METAPHOR",
+      "translation": "A matrix/operator loses rank when a singular value or eigenvalue reaches zero."
+    },
+    {
+      "id": "term:invariant",
+      "label": "invariant",
+      "node_type": "concept",
+      "category": "state model",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "Quantity or relation preserved by specified transformations."
+    },
+    {
+      "id": "term:lineage / ontological address",
+      "label": "lineage / ontological address",
+      "node_type": "concept",
+      "category": "state model",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Generative identifier plus parent/transition history."
+    },
+    {
+      "id": "term:branch",
+      "label": "branch",
+      "node_type": "concept",
+      "category": "state model",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "Discrete path in a hybrid dynamical system or event tree."
+    },
+    {
+      "id": "term:finite grammar",
+      "label": "finite grammar",
+      "node_type": "concept",
+      "category": "computer science",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Finite rules that generate relations, trajectories or structures."
+    },
+    {
+      "id": "term:exogenous log",
+      "label": "exogenous log",
+      "node_type": "concept",
+      "category": "computer science",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Append-only event log of external interventions/shocks used with seed and grammar for reconstruction."
+    },
+    {
+      "id": "term:novelty-proportional memory",
+      "label": "novelty-proportional memory",
+      "node_type": "concept",
+      "category": "computer science",
+      "status": "ENGINEERING HYPOTHESIS",
+      "translation": "Regenerate deterministic closed dynamics; log irreducible external events and lineage."
+    },
+    {
+      "id": "term:state_at(t)",
+      "label": "state_at(t)",
+      "node_type": "concept",
+      "category": "computer science",
+      "status": "BOUNDED ENGINEERING PROPOSAL",
+      "translation": "Evaluate a closed or bounded state expression at requested time without replaying all intermediate frames."
+    },
+    {
+      "id": "term:next_event",
+      "label": "next_event",
+      "node_type": "concept",
+      "category": "computer science",
+      "status": "BOUNDED ENGINEERING PROPOSAL",
+      "translation": "Find the earliest compatible root/guard crossing after t0."
+    },
+    {
+      "id": "term:0-based indexing",
+      "label": "0-based indexing",
+      "node_type": "concept",
+      "category": "computer science",
+      "status": "ESTABLISHED COMPUTER SCIENCE",
+      "translation": "Array position 35 is the 36th item when indexing begins at zero."
+    },
+    {
+      "id": "term:BVH / octree / sieve",
+      "label": "BVH / octree / sieve",
+      "node_type": "concept",
+      "category": "computer science",
+      "status": "ESTABLISHED COMPUTER SCIENCE",
+      "translation": "Acceleration structures for pruning spatial intersection candidates."
+    },
+    {
+      "id": "term:CCD",
+      "label": "CCD",
+      "node_type": "concept",
+      "category": "computer science / imaging",
+      "status": "DECODER DISAMBIGUATION",
+      "translation": "Ambiguous acronym: charge-coupled device in imaging; continuous collision detection in simulation."
+    },
+    {
+      "id": "term:raster trap",
+      "label": "raster trap",
+      "node_type": "concept",
+      "category": "computer science",
+      "status": "SOURCE-DEFINED CRITIQUE",
+      "translation": "Critique of frame-by-frame materialization when direct relation/event queries suffice."
+    },
+    {
+      "id": "term:Feynman vectors",
+      "label": "Feynman vectors",
+      "node_type": "concept",
+      "category": "mathematics / graphics",
+      "status": "UNSUPPORTED TERMINOLOGY",
+      "translation": "Closest established analogs are complex phasors, wave amplitudes or path-integral language."
+    },
+    {
+      "id": "term:log-polar LUT",
+      "label": "log-polar LUT",
+      "node_type": "concept",
+      "category": "computer science / optics",
+      "status": "ESTABLISHED TRANSFORM + SOURCE DESIGN",
+      "translation": "Table addressed by \u03c1=ln r and \u03b8; useful for scale-to-translation mapping and foveated/local processing."
+    },
+    {
+      "id": "term:camera obscura / pinhole",
+      "label": "camera obscura / pinhole",
+      "node_type": "concept",
+      "category": "optics",
+      "status": "ESTABLISHED OPTICS",
+      "translation": "Geometric-optics projection through a small aperture producing an inverted image."
+    },
+    {
+      "id": "term:spectral power distribution S(\u03bb)",
+      "label": "spectral power distribution S(\u03bb)",
+      "node_type": "concept",
+      "category": "optics",
+      "status": "ESTABLISHED OPTICS",
+      "translation": "Optical power per wavelength interval."
+    },
+    {
+      "id": "term:spatial harmonics",
+      "label": "spatial harmonics",
+      "node_type": "concept",
+      "category": "optics",
+      "status": "ESTABLISHED OPTICS",
+      "translation": "Fourier components of an optical field or image."
+    },
+    {
+      "id": "term:chromatic aberration",
+      "label": "chromatic aberration",
+      "node_type": "concept",
+      "category": "optics",
+      "status": "ESTABLISHED OPTICS",
+      "translation": "Wavelength-dependent refraction/focus or magnification."
+    },
+    {
+      "id": "term:dither / micro-jitter",
+      "label": "dither / micro-jitter",
+      "node_type": "concept",
+      "category": "imaging",
+      "status": "ESTABLISHED ENGINEERING",
+      "translation": "Spatial/temporal sampling offsets, dithering or super-resolution pixel shift."
+    },
+    {
+      "id": "term:microsaccades",
+      "label": "microsaccades",
+      "node_type": "concept",
+      "category": "biology / vision",
+      "status": "ESTABLISHED BIOLOGY + MISAPPLIED ANALOGY",
+      "translation": "Small fixational eye movements contributing to fixation and visual transients."
+    },
+    {
+      "id": "term:waveguide",
+      "label": "waveguide",
+      "node_type": "concept",
+      "category": "photonics",
+      "status": "ESTABLISHED PHOTONICS",
+      "translation": "Dielectric structure that confines and routes optical modes."
+    },
+    {
+      "id": "term:liquid lens / liquid overclad",
+      "label": "liquid lens / liquid overclad",
+      "node_type": "concept",
+      "category": "optofluidics",
+      "status": "ESTABLISHED COMPONENT CLASS",
+      "translation": "Microfluidic or electrowetting element controlling curvature, effective index, focus, phase or coupling."
+    },
+    {
+      "id": "term:matrix-in-glass",
+      "label": "matrix-in-glass",
+      "node_type": "concept",
+      "category": "photonics",
+      "status": "BOUNDED ENGINEERING PROPOSAL",
+      "translation": "Calibrated passive or tunable transfer matrix in an interferometric waveguide network."
+    },
+    {
+      "id": "term:Maxwell field equation",
+      "label": "Maxwell field equation",
+      "node_type": "concept",
+      "category": "photonics",
+      "status": "ESTABLISHED PHYSICS",
+      "translation": "Electromagnetic boundary-value problem in the actual dielectric geometry."
+    },
+    {
+      "id": "term:Young-Laplace equation",
+      "label": "Young-Laplace equation",
+      "node_type": "concept",
+      "category": "optofluidics",
+      "status": "ESTABLISHED PHYSICS",
+      "translation": "\u0394p=\u03b3(1/R1+1/R2)."
+    },
+    {
+      "id": "term:coupled-mode theory",
+      "label": "coupled-mode theory",
+      "node_type": "concept",
+      "category": "photonics",
+      "status": "ESTABLISHED PHOTONICS",
+      "translation": "ODEs for modal amplitudes, propagation constants, attenuation and coupling."
+    },
+    {
+      "id": "term:Mach-Zehnder interferometer (MZI)",
+      "label": "Mach-Zehnder interferometer (MZI)",
+      "node_type": "concept",
+      "category": "photonics",
+      "status": "ESTABLISHED PHOTONICS",
+      "translation": "Interferometer converting phase/coupling changes into output intensity differences."
+    },
+    {
+      "id": "term:mode-overlap integral",
+      "label": "mode-overlap integral",
+      "node_type": "concept",
+      "category": "photonics",
+      "status": "ESTABLISHED PHOTONICS",
+      "translation": "Normalized field overlap \u03b7c between input field and mode."
+    },
+    {
+      "id": "term:B.C.E.",
+      "label": "B.C.E.",
+      "node_type": "concept",
+      "category": "event logic",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Emit an event only when support, compatibility and measured guard conditions pass, with confidence and lineage."
+    },
+    {
+      "id": "term:spherical throughput",
+      "label": "spherical throughput",
+      "node_type": "concept",
+      "category": "measurement",
+      "status": "SOURCE-DEFINED METRIC",
+      "translation": "Verified events or answered queries per second after support, compatibility, guard and confidence filters."
+    },
+    {
+      "id": "term:DMT",
+      "label": "DMT",
+      "node_type": "concept",
+      "category": "chemistry",
+      "status": "ESTABLISHED CHEMISTRY ADDED BY DECODER",
+      "translation": "N,N-dimethyltryptamine, C12H16N2: an indole tryptamine with a two-carbon chain ending in a tertiary dimethylamine."
+    },
+    {
+      "id": "term:indole ring",
+      "label": "indole ring",
+      "node_type": "concept",
+      "category": "chemistry",
+      "status": "ESTABLISHED CHEMISTRY ADDED BY DECODER",
+      "translation": "Fused benzene-pyrrole aromatic heterocycle in DMT."
+    },
+    {
+      "id": "term:tertiary dimethylamine",
+      "label": "tertiary dimethylamine",
+      "node_type": "concept",
+      "category": "chemistry",
+      "status": "ESTABLISHED CHEMISTRY ADDED BY DECODER",
+      "translation": "DMT side-chain nitrogen bonded to two methyl groups and an ethyl-indole chain."
+    },
+    {
+      "id": "term:water / glycerol mixture",
+      "label": "water / glycerol mixture",
+      "node_type": "concept",
+      "category": "chemistry / materials",
+      "status": "ESTABLISHED MATERIAL OPTION",
+      "translation": "Characterizable polar liquid mixture for refractive-index and viscosity tuning."
+    },
+    {
+      "id": "term:hydrogen bonding",
+      "label": "hydrogen bonding",
+      "node_type": "concept",
+      "category": "chemistry",
+      "status": "ESTABLISHED CHEMISTRY ADDED BY DECODER",
+      "translation": "Intermolecular O-H\u00b7\u00b7\u00b7O interactions affecting viscosity, wetting and refractive properties."
+    },
+    {
+      "id": "term:CRISPR-Cas9",
+      "label": "CRISPR-Cas9",
+      "node_type": "concept",
+      "category": "biochemistry",
+      "status": "ESTABLISHED BIOCHEMISTRY + SOURCE RHETORIC",
+      "translation": "RNA-guided DNA endonuclease system; editing outcome depends on target, PAM, delivery and cellular repair."
+    },
+    {
+      "id": "term:protein folding",
+      "label": "protein folding",
+      "node_type": "concept",
+      "category": "biochemistry",
+      "status": "ESTABLISHED BIOCHEMISTRY + SOURCE ANALOGY",
+      "translation": "Sequence-dependent conformational ensemble on a free-energy landscape."
+    },
+    {
+      "id": "term:gene expression",
+      "label": "gene expression",
+      "node_type": "concept",
+      "category": "biochemistry",
+      "status": "ESTABLISHED BIOLOGY + UNSUPPORTED CONTROL CLAIM",
+      "translation": "DNA transcription, RNA processing/turnover, translation and protein regulation."
+    },
+    {
+      "id": "term:blood plasma",
+      "label": "blood plasma",
+      "node_type": "concept",
+      "category": "biology / fluid mechanics",
+      "status": "DECODER TRANSLATION",
+      "translation": "A multicomponent biological fluid that can be modeled by flow, transport and boundary conditions."
+    },
+    {
+      "id": "term:viral spike puncturing a cell wall",
+      "label": "viral spike puncturing a cell wall",
+      "node_type": "concept",
+      "category": "virology",
+      "status": "INCORRECT/MISAPPLIED",
+      "translation": "For enveloped human viruses such as SARS-CoV-2, entry involves receptor binding, protease priming and membrane fusion/endocytosis."
+    },
+    {
+      "id": "term:T-virus / Hive",
+      "label": "T-virus / Hive",
+      "node_type": "concept",
+      "category": "biology / fiction",
+      "status": "FICTION/METAPHOR",
+      "translation": "Narrative analogy only."
+    },
+    {
+      "id": "term:opossum venom resistance",
+      "label": "opossum venom resistance",
+      "node_type": "concept",
+      "category": "biology",
+      "status": "ESTABLISHED LIMITED FACT + UNSUPPORTED GENERALIZATION",
+      "translation": "Opossum serum has inspired venom-neutralizing peptide research."
+    },
+    {
+      "id": "term:fluid atoms are spherical",
+      "label": "fluid atoms are spherical",
+      "node_type": "concept",
+      "category": "chemistry",
+      "status": "MODEL APPROXIMATION",
+      "translation": "Particle methods sometimes approximate atoms/molecules as spheres or kernels."
+    },
+    {
+      "id": "term:BBMB equation",
+      "label": "BBMB equation",
+      "node_type": "concept",
+      "category": "mathematics / fluid waves",
+      "status": "ESTABLISHED EXTERNAL GROUNDING",
+      "translation": "U_t+U_x+U U_x-mU_xx-U_xxt=0, a nonlinear dispersive-dissipative wave PDE."
+    },
+    {
+      "id": "term:1:1 double-arch accretion-disk balance",
+      "label": "1:1 double-arch accretion-disk balance",
+      "node_type": "concept",
+      "category": "astrophysics",
+      "status": "UNSUPPORTED CLAIM",
+      "translation": "No unique universal ratio follows from warped-disk dynamics."
+    },
+    {
+      "id": "term:universal O(1)",
+      "label": "universal O(1)",
+      "node_type": "concept",
+      "category": "complexity",
+      "status": "OVERCLAIM CORRECTED BY CORPUS",
+      "translation": "At most: horizon-independent evaluation for a fixed closed expression."
+    },
+    {
+      "id": "term:zero memory",
+      "label": "zero memory",
+      "node_type": "concept",
+      "category": "complexity",
+      "status": "OVERCLAIM CORRECTED BY CORPUS",
+      "translation": "Potential reduction by regeneration from seed/grammar and logging novelty."
+    },
+    {
+      "id": "term:zero heat / zero power / zero latency",
+      "label": "zero heat / zero power / zero latency",
+      "node_type": "concept",
+      "category": "hardware",
+      "status": "OVERCLAIM REJECTED",
+      "translation": "Optical propagation can be fast and passive elements can reduce some energy costs."
+    },
+    {
+      "id": "term:general AI / world-agent identity",
+      "label": "general AI / world-agent identity",
+      "node_type": "concept",
+      "category": "AI",
+      "status": "SPECULATIVE / UNVALIDATED",
+      "translation": "Research hypothesis about shared representation for perception, state and action."
+    },
+    {
+      "id": "term:BCI / telepresence bodily control",
+      "label": "BCI / telepresence bodily control",
+      "node_type": "concept",
+      "category": "medical / safety",
+      "status": "UNSUPPORTED NARRATIVE",
+      "translation": "No valid engineering or medical mechanism is supplied."
+    },
+    {
+      "id": "term:compatibility predicate",
+      "label": "compatibility predicate",
+      "node_type": "concept",
+      "category": "event logic",
+      "status": "SOURCE-DEFINED OPERATOR",
+      "translation": "Boolean or graded interaction gate."
+    },
+    {
+      "id": "term:viral_entry_correction",
+      "label": "receptor-mediated viral entry",
+      "node_type": "concept",
+      "category": "virology",
+      "status": "ESTABLISHED SCIENCE",
+      "translation": "Virus-specific receptor binding, protease priming and membrane entry."
+    },
+    {
+      "id": "term:reaction-diffusion",
+      "label": "reaction-diffusion",
+      "node_type": "concept"
+    }
+  ],
+  "edges": [
+    {
+      "source": "term:sphere / spherical",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:sphere / spherical",
+      "target": "term:local spherical support",
+      "relation": "refined_as"
+    },
+    {
+      "source": "term:local spherical support",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:local spherical support",
+      "target": "term:cone",
+      "relation": "implemented_by"
+    },
+    {
+      "source": "term:cone",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:cone",
+      "target": "term:sweeping lighthouse",
+      "relation": "time_parameterized_as"
+    },
+    {
+      "source": "term:sweeping lighthouse",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:hourglass / double cone",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:hourglass / double cone",
+      "target": "term:quad hourglass",
+      "relation": "refined_as"
+    },
+    {
+      "source": "term:quad hourglass",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:quad hourglass",
+      "target": "term:pinch point",
+      "relation": "contains"
+    },
+    {
+      "source": "term:pinch point",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:pinch point",
+      "target": "term:SDF = 0 / B = 0",
+      "relation": "event_locus"
+    },
+    {
+      "source": "term:signed distance field (SDF)",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:signed distance field (SDF)",
+      "target": "term:SDF = 0 / B = 0",
+      "relation": "has_zero_level"
+    },
+    {
+      "source": "term:signed distance field (SDF)",
+      "target": "term:positive / negative SDF",
+      "relation": "has_sign_regions"
+    },
+    {
+      "source": "term:SDF = 0 / B = 0",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:positive / negative SDF",
+      "target": "category:geometry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:Klein bottle",
+      "target": "category:topology",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:Klein bottle",
+      "target": "term:phase sheet",
+      "relation": "motivates_orientation_routing"
+    },
+    {
+      "source": "term:M\u00f6bius strip",
+      "target": "category:topology",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:sphere eversion",
+      "target": "category:topology",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:double vacuum",
+      "target": "category:state model",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:double vacuum",
+      "target": "term:phase sheet",
+      "relation": "partitioned_by"
+    },
+    {
+      "source": "term:double vacuum",
+      "target": "term:one-bit / parity",
+      "relation": "may_route_with"
+    },
+    {
+      "source": "term:phase sheet",
+      "target": "category:state model",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:phase sheet",
+      "target": "term:compatibility predicate",
+      "relation": "gated_by"
+    },
+    {
+      "source": "term:one-bit / parity",
+      "target": "category:state model",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:\u03c6 (phi)",
+      "target": "category:mathematics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:\u03c6 (phi)",
+      "target": "term:phase sheet",
+      "relation": "parameterizes"
+    },
+    {
+      "source": "term:\u03bb (lambda)",
+      "target": "category:linear algebra",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:\u03bb (lambda)",
+      "target": "term:eigenvector",
+      "relation": "scales"
+    },
+    {
+      "source": "term:eigenvector",
+      "target": "category:linear algebra",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:eigenvector",
+      "target": "term:invariant",
+      "relation": "can_define"
+    },
+    {
+      "source": "term:eigenvalue collapse",
+      "target": "category:linear algebra",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:invariant",
+      "target": "category:state model",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:lineage / ontological address",
+      "target": "category:state model",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:lineage / ontological address",
+      "target": "term:invariant",
+      "relation": "preserves_identity_with"
+    },
+    {
+      "source": "term:branch",
+      "target": "category:state model",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:finite grammar",
+      "target": "category:computer science",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:finite grammar",
+      "target": "term:state_at(t)",
+      "relation": "supports"
+    },
+    {
+      "source": "term:finite grammar",
+      "target": "term:next_event",
+      "relation": "supports"
+    },
+    {
+      "source": "term:exogenous log",
+      "target": "category:computer science",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:exogenous log",
+      "target": "term:novelty-proportional memory",
+      "relation": "enables"
+    },
+    {
+      "source": "term:novelty-proportional memory",
+      "target": "category:computer science",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:state_at(t)",
+      "target": "category:computer science",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:state_at(t)",
+      "target": "term:universal O(1)",
+      "relation": "does_not_imply"
+    },
+    {
+      "source": "term:next_event",
+      "target": "category:computer science",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:next_event",
+      "target": "term:B.C.E.",
+      "relation": "related_query"
+    },
+    {
+      "source": "term:0-based indexing",
+      "target": "category:computer science",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:BVH / octree / sieve",
+      "target": "category:computer science",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:CCD",
+      "target": "category:computer science / imaging",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:raster trap",
+      "target": "category:computer science",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:Feynman vectors",
+      "target": "category:mathematics / graphics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:Feynman vectors",
+      "target": "term:log-polar LUT",
+      "relation": "source_combines_with"
+    },
+    {
+      "source": "term:log-polar LUT",
+      "target": "category:computer science / optics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:log-polar LUT",
+      "target": "term:local spherical support",
+      "relation": "indexes"
+    },
+    {
+      "source": "term:camera obscura / pinhole",
+      "target": "category:optics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:camera obscura / pinhole",
+      "target": "term:sweeping lighthouse",
+      "relation": "optical_analogy"
+    },
+    {
+      "source": "term:spectral power distribution S(\u03bb)",
+      "target": "category:optics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:spectral power distribution S(\u03bb)",
+      "target": "term:waveguide",
+      "relation": "input_to"
+    },
+    {
+      "source": "term:spatial harmonics",
+      "target": "category:optics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:chromatic aberration",
+      "target": "category:optics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:chromatic aberration",
+      "target": "term:dither / micro-jitter",
+      "relation": "may_be_mitigated_by"
+    },
+    {
+      "source": "term:dither / micro-jitter",
+      "target": "category:imaging",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:microsaccades",
+      "target": "category:biology / vision",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:microsaccades",
+      "target": "term:dither / micro-jitter",
+      "relation": "biological_analogy"
+    },
+    {
+      "source": "term:waveguide",
+      "target": "category:photonics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:liquid lens / liquid overclad",
+      "target": "category:optofluidics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:liquid lens / liquid overclad",
+      "target": "term:waveguide",
+      "relation": "couples_into"
+    },
+    {
+      "source": "term:matrix-in-glass",
+      "target": "category:photonics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:matrix-in-glass",
+      "target": "term:coupled-mode theory",
+      "relation": "modeled_by"
+    },
+    {
+      "source": "term:Maxwell field equation",
+      "target": "category:photonics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:Maxwell field equation",
+      "target": "term:waveguide",
+      "relation": "governs"
+    },
+    {
+      "source": "term:Young-Laplace equation",
+      "target": "category:optofluidics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:Young-Laplace equation",
+      "target": "term:liquid lens / liquid overclad",
+      "relation": "governs_shape"
+    },
+    {
+      "source": "term:coupled-mode theory",
+      "target": "category:photonics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:Mach-Zehnder interferometer (MZI)",
+      "target": "category:photonics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:Mach-Zehnder interferometer (MZI)",
+      "target": "term:matrix-in-glass",
+      "relation": "example_of"
+    },
+    {
+      "source": "term:mode-overlap integral",
+      "target": "category:photonics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:mode-overlap integral",
+      "target": "term:waveguide",
+      "relation": "measures_coupling"
+    },
+    {
+      "source": "term:B.C.E.",
+      "target": "category:event logic",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:B.C.E.",
+      "target": "term:spherical throughput",
+      "relation": "counted_by"
+    },
+    {
+      "source": "term:spherical throughput",
+      "target": "category:measurement",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:DMT",
+      "target": "category:chemistry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:DMT",
+      "target": "term:indole ring",
+      "relation": "contains"
+    },
+    {
+      "source": "term:DMT",
+      "target": "term:tertiary dimethylamine",
+      "relation": "contains"
+    },
+    {
+      "source": "term:indole ring",
+      "target": "category:chemistry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:tertiary dimethylamine",
+      "target": "category:chemistry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:water / glycerol mixture",
+      "target": "category:chemistry / materials",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:water / glycerol mixture",
+      "target": "term:liquid lens / liquid overclad",
+      "relation": "candidate_material"
+    },
+    {
+      "source": "term:hydrogen bonding",
+      "target": "category:chemistry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:CRISPR-Cas9",
+      "target": "category:biochemistry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:CRISPR-Cas9",
+      "target": "term:gene expression",
+      "relation": "can_modify_upstream"
+    },
+    {
+      "source": "term:protein folding",
+      "target": "category:biochemistry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:protein folding",
+      "target": "term:gene expression",
+      "relation": "downstream_of"
+    },
+    {
+      "source": "term:gene expression",
+      "target": "category:biochemistry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:blood plasma",
+      "target": "category:biology / fluid mechanics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:blood plasma",
+      "target": "term:reaction-diffusion",
+      "relation": "may_include_transport_reactions"
+    },
+    {
+      "source": "term:viral spike puncturing a cell wall",
+      "target": "category:virology",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:viral spike puncturing a cell wall",
+      "target": "term:viral_entry_correction",
+      "relation": "corrected_by"
+    },
+    {
+      "source": "term:T-virus / Hive",
+      "target": "category:biology / fiction",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:T-virus / Hive",
+      "target": "term:viral spike puncturing a cell wall",
+      "relation": "fictionalizes"
+    },
+    {
+      "source": "term:opossum venom resistance",
+      "target": "category:biology",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:fluid atoms are spherical",
+      "target": "category:chemistry",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:fluid atoms are spherical",
+      "target": "term:water / glycerol mixture",
+      "relation": "oversimplifies"
+    },
+    {
+      "source": "term:BBMB equation",
+      "target": "category:mathematics / fluid waves",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:BBMB equation",
+      "target": "term:reaction-diffusion",
+      "relation": "distinct_PDE_family"
+    },
+    {
+      "source": "term:1:1 double-arch accretion-disk balance",
+      "target": "category:astrophysics",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:universal O(1)",
+      "target": "category:complexity",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:zero memory",
+      "target": "category:complexity",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:zero heat / zero power / zero latency",
+      "target": "category:hardware",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:zero heat / zero power / zero latency",
+      "target": "term:waveguide",
+      "relation": "overclaim_about"
+    },
+    {
+      "source": "term:general AI / world-agent identity",
+      "target": "category:AI",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:general AI / world-agent identity",
+      "target": "term:finite grammar",
+      "relation": "speculative_extension_of"
+    },
+    {
+      "source": "term:BCI / telepresence bodily control",
+      "target": "category:medical / safety",
+      "relation": "has_category"
+    },
+    {
+      "source": "term:BCI / telepresence bodily control",
+      "target": "term:double vacuum",
+      "relation": "misapplies"
+    }
+  ]
+}

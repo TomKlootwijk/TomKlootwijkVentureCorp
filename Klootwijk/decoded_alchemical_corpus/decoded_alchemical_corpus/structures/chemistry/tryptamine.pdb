@@ -1,0 +1,37 @@
+COMPND    Tryptamine
+HETATM    1  N1  UNL     1      -2.923  -0.705   0.894  1.00  0.00           N  
+HETATM    2  C1  UNL     1      -2.617   0.191  -0.218  1.00  0.00           C  
+HETATM    3  C2  UNL     1      -1.623  -0.460  -1.184  1.00  0.00           C  
+HETATM    4  C3  UNL     1      -0.304  -0.720  -0.518  1.00  0.00           C  
+HETATM    5  C4  UNL     1       0.110  -1.913   0.067  1.00  0.00           C  
+HETATM    6  N2  UNL     1       1.331  -1.764   0.630  1.00  0.00           N  
+HETATM    7  C5  UNL     1       1.686  -0.486   0.414  1.00  0.00           C  
+HETATM    8  C6  UNL     1       2.860   0.146   0.825  1.00  0.00           C  
+HETATM    9  C7  UNL     1       3.020   1.506   0.505  1.00  0.00           C  
+HETATM   10  C8  UNL     1       2.015   2.198  -0.207  1.00  0.00           C  
+HETATM   11  C9  UNL     1       0.840   1.535  -0.606  1.00  0.00           C  
+HETATM   12  C10 UNL     1       0.712   0.185  -0.279  1.00  0.00           C  
+HETATM   13  H1  UNL     1      -3.475  -1.512   0.522  1.00  0.00           H  
+HETATM   14  H2  UNL     1      -3.553  -0.192   1.552  1.00  0.00           H  
+HETATM   15  H3  UNL     1      -2.188   1.139   0.176  1.00  0.00           H  
+HETATM   16  H4  UNL     1      -3.552   0.440  -0.767  1.00  0.00           H  
+HETATM   17  H5  UNL     1      -1.467   0.213  -2.054  1.00  0.00           H  
+HETATM   18  H6  UNL     1      -2.044  -1.414  -1.570  1.00  0.00           H  
+HETATM   19  H7  UNL     1      -0.457  -2.835   0.089  1.00  0.00           H  
+HETATM   20  H8  UNL     1       1.877  -2.494   1.139  1.00  0.00           H  
+HETATM   21  H9  UNL     1       3.622  -0.391   1.374  1.00  0.00           H  
+HETATM   22  H10 UNL     1       3.919   2.027   0.808  1.00  0.00           H  
+HETATM   23  H11 UNL     1       2.148   3.245  -0.445  1.00  0.00           H  
+HETATM   24  H12 UNL     1       0.064   2.060  -1.149  1.00  0.00           H  
+CONECT    1    2   13   14
+CONECT    2    3   15   16
+CONECT    3    4   17   18
+CONECT    4    5    5   12
+CONECT    5    6   19
+CONECT    6    7   20
+CONECT    7    8    8   12
+CONECT    8    9   21
+CONECT    9   10   10   22
+CONECT   10   11   23
+CONECT   11   12   12   24
+END

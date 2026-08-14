@@ -1,0 +1,215 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\begin{document}
+\section*{Decoded Corpus Equations}
+\subsection*{EQW-01 -- Projective-phase state manifold}
+\begin{verbatim}
+Q = P^n × R_time × S_phase × Z2_sheet × A_address × B_branch
+\end{verbatim}
+State includes position, time, phase, sheet, lineage address and branch.\\
+\textit{Source:} Chronological pp.5-6.
+\subsection*{EQW-02 -- Entity state}
+\begin{verbatim}
+q_e(t) = (x_e(t), t, φ_e(t), σ_e(t), a_e, b_e)
+\end{verbatim}
+Entity trajectory augmented with phase, sheet, address and branch.\\
+\textit{Source:} Chronological p.6.
+\subsection*{EQW-03 -- World tuple}
+\begin{verbatim}
+W = (G, R, T, I)
+\end{verbatim}
+Finite grammar, relations, transitions and invariants.\\
+\textit{Source:} Chronological p.6.
+\subsection*{EQW-04 -- Relation surface}
+\begin{verbatim}
+R_j(q; θ_j) = 0
+\end{verbatim}
+Implicit relation/guard surface.\\
+\textit{Source:} Chronological p.6.
+\subsection*{EQW-05 -- Support constraint}
+\begin{verbatim}
+C_α(q,t) ≤ 0
+\end{verbatim}
+Local cone/hourglass support admits a candidate.\\
+\textit{Source:} Chronological pp.6-7.
+\subsection*{EQW-06 -- Compatibility predicate}
+\begin{verbatim}
+χ(e,j,t) ∈ {0,1}
+\end{verbatim}
+Gates interaction by mode, phase, sheet, address or policy.\\
+\textit{Source:} Chronological p.6.
+\subsection*{EQW-07 -- Next compatible event}
+\begin{verbatim}
+t* = min{t ≥ t0 : R_j(q_e(t))=0, C_α≤0, χ=1}
+\end{verbatim}
+Earliest root that is supported and compatible.\\
+\textit{Source:} Chronological p.6.
+\subsection*{EQW-08 -- Transition update}
+\begin{verbatim}
+q_e(t*+) = T_j(q_e(t*−), context)
+\end{verbatim}
+Apply discrete transition at a continuous event.\\
+\textit{Source:} Chronological p.6.
+\subsection*{OPT-01 -- Frequency-domain Maxwell equation}
+\begin{verbatim}
+∇×μ_r^−1∇×E − k0² ε_r(r,u)E = 0
+\end{verbatim}
+Solve the optical field in the actuated dielectric geometry.\\
+\textit{Source:} Spherical Throughput p.5.
+\subsection*{OPT-02 -- Coupled-mode evolution}
+\begin{verbatim}
+da_m/dz = −(α_m/2 + jβ_m)a_m − j Σ_(n≠m) κ_mn(u,λ)a_n
+\end{verbatim}
+Tracks attenuation, propagation and coupling of guided modes.\\
+\textit{Source:} Spherical Throughput p.5.
+\subsection*{FLD-01 -- Young-Laplace pressure-curvature law}
+\begin{verbatim}
+Δp = γ(1/R1 + 1/R2)
+\end{verbatim}
+Pressure difference controls liquid meniscus curvature.\\
+\textit{Source:} Spherical Throughput p.5.
+\subsection*{OPT-03 -- Actuated optical phase}
+\begin{verbatim}
+Δφ(u,λ) = (2π/λ) L Δn_eff(u)
+\end{verbatim}
+Effective-index change creates phase shift.\\
+\textit{Source:} Spherical Throughput p.5.
+\subsection*{FLD-02 -- Incompressible Navier-Stokes}
+\begin{verbatim}
+ρ(∂_t v + v·∇v) = −∇p + μ∇²v + f_act;  ∇·v = 0
+\end{verbatim}
+Dynamic liquid-actuator model when quasi-static curvature is inadequate.\\
+\textit{Source:} Spherical Throughput p.5.
+\subsection*{OPT-04 -- Mode overlap efficiency}
+\begin{verbatim}
+η_c = |∫_A E_in·E_m* dA|² / [(∫_A|E_in|²dA)(∫_A|E_m|²dA)]
+\end{verbatim}
+Fractional coupling from admitted input field to a chosen mode.\\
+\textit{Source:} Spherical Throughput p.5.
+\subsection*{BCE-01 -- Bounded Compatibility Event}
+\begin{verbatim}
+t* = inf{t>t0 : S_q=1, χ_q=1, g_q(y,t)=0}
+\end{verbatim}
+Declare transition only for supported, compatible guard crossing.\\
+\textit{Source:} Spherical Throughput p.5.
+\subsection*{MET-01 -- Spherical throughput}
+\begin{verbatim}
+Θ_sph = N_verified / Δt
+\end{verbatim}
+Verified events per second.\\
+\textit{Source:} Spherical Throughput p.6.
+\subsection*{MET-02 -- Verified event count}
+\begin{verbatim}
+N_verified = Σ_q 1[S_q]1[χ_q]1[g_q crossed]1[c_q≥c_min]
+\end{verbatim}
+Count only events passing support, compatibility, guard and confidence.\\
+\textit{Source:} Spherical Throughput p.6.
+\subsection*{GEO-01 -- Log-polar transform}
+\begin{verbatim}
+r = √(x²+y²);  ρ = ln(r/r0);  θ = atan2(y,x)
+\end{verbatim}
+Scale-like radial changes become translations in ρ.\\
+\textit{Source:} DMT pp.2-3; KC Vector Art p.1.
+\subsection*{GEO-02 -- SDF surface}
+\begin{verbatim}
+d(x)=0
+\end{verbatim}
+Zero level set defines a boundary.\\
+\textit{Source:} Hollowland pp.16-18; KC Vector Art pp.1-2.
+\subsection*{GEO-03 -- SDF CSG union}
+\begin{verbatim}
+d_union(x) = min(d1(x), d2(x))
+\end{verbatim}
+Implicit union.\\
+\textit{Source:} KC Vector Art p.2.
+\subsection*{GEO-04 -- SDF CSG intersection}
+\begin{verbatim}
+d_intersection(x) = max(d1(x), d2(x))
+\end{verbatim}
+Implicit intersection.\\
+\textit{Source:} KC Vector Art p.2.
+\subsection*{GEO-05 -- SDF CSG subtraction}
+\begin{verbatim}
+d_subtract(x) = max(d1(x), −d2(x))
+\end{verbatim}
+Implicit difference.\\
+\textit{Source:} KC Vector Art p.2.
+\subsection*{LA-01 -- Eigenpair relation}
+\begin{verbatim}
+A v = λ v
+\end{verbatim}
+Direction v is preserved by A and scaled by λ.\\
+\textit{Source:} Hollowland pp.20-23.
+\subsection*{LA-02 -- Orthogonality test}
+\begin{verbatim}
+v·w = 0
+\end{verbatim}
+Zero inner product under the chosen metric.\\
+\textit{Source:} ADDominUS pp.7-18,32-35.
+\subsection*{RD-01 -- Two-field reaction-diffusion}
+\begin{verbatim}
+∂u/∂t = D_u∇²u + f(u,v);  ∂v/∂t = D_v∇²v + g(u,v)
+\end{verbatim}
+Local kinetics plus spatial diffusion produce patterns/fronts.\\
+\textit{Source:} DMT pp.25-27; external standard model.
+\subsection*{BIO-01 -- Advection-diffusion-reaction transport}
+\begin{verbatim}
+∂c_i/∂t + v·∇c_i = ∇·(D_i∇c_i) + R_i(c)
+\end{verbatim}
+A realistic bridge from blood/fluid metaphors to solute transport.\\
+\textit{Source:} Decoder grounding for ADDominUS blood-plasma prose.
+\subsection*{BBMB-01 -- Benjamin-Bona-Mahony-Burgers equation}
+\begin{verbatim}
+U_t + U_x + U U_x − m U_xx − U_xxt = 0
+\end{verbatim}
+One-dimensional nonlinear dispersive-dissipative wave model.\\
+\textit{Source:} Scientific Reports 14, 13520 (2024), Eq.1.
+\subsection*{CS-01 -- Zero-based position}
+\begin{verbatim}
+offset 35 from index 0 = 36th element
+\end{verbatim}
+Index value and ordinal position differ by one.\\
+\textit{Source:} Ben Burgers pp.1-6.
+\subsection*{CS-02 -- Bit shift}
+\begin{verbatim}
+35<<1 = 70; 35>>1 = 17 (integer shift)
+\end{verbatim}
+Binary shift multiplies/divides by powers of two.\\
+\textit{Source:} Ben Burgers p.1.
+\subsection*{CHEM-01 -- DMT molecular formula}
+\begin{verbatim}
+C12H16N2
+\end{verbatim}
+Neutral N,N-dimethyltryptamine composition.\\
+\textit{Source:} PubChem CID 6089.
+\subsection*{CHEM-02 -- DMT connectivity}
+\begin{verbatim}
+SMILES: CN(C)CCc1c[nH]c2ccccc12
+\end{verbatim}
+Indole-ethyl-tertiary-amine molecular graph.\\
+\textit{Source:} PubChem CID 6089.
+\subsection*{OPT-05 -- Log encoding}
+\begin{verbatim}
+Y_log = A·log(I) + B
+\end{verbatim}
+Compresses intensity dynamic range.\\
+\textit{Source:} DMT pp.3,9.
+\subsection*{PDE-01 -- Laplacian}
+\begin{verbatim}
+∇²f = Σ_i ∂²f/∂x_i²
+\end{verbatim}
+Measures local curvature and appears in diffusion, optics and mechanics.\\
+\textit{Source:} DMT pp.4-10.
+\subsection*{SIG-01 -- Pulse-density estimate}
+\begin{verbatim}
+amplitude ≈ pulse count / time window
+\end{verbatim}
+Represent average level using density of one-bit pulses.\\
+\textit{Source:} KC Vector Art pp.4-6.
+\subsection*{SIG-02 -- Scale as log-radius shift}
+\begin{verbatim}
+r→a r  ⇒  ρ→ρ+ln a
+\end{verbatim}
+Multiplicative scaling becomes additive translation in log radius.\\
+\textit{Source:} KC Vector Art pp.7-8.
+\end{document}

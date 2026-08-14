@@ -1,0 +1,15 @@
+molecule,atom_index,element,atomic_number,formal_charge,aromatic,hybridization,implicit_hydrogens,degree
+dmt,0,C,6,0,False,SP3,3,1
+dmt,1,N,7,0,False,SP3,0,3
+dmt,2,C,6,0,False,SP3,3,1
+dmt,3,C,6,0,False,SP3,2,2
+dmt,4,C,6,0,False,SP3,2,2
+dmt,5,C,6,0,True,SP2,0,3
+dmt,6,C,6,0,True,SP2,1,2
+dmt,7,N,7,0,True,SP2,1,2
+dmt,8,C,6,0,True,SP2,0,3
+dmt,9,C,6,0,True,SP2,1,2
+dmt,10,C,6,0,True,SP2,1,2
+dmt,11,C,6,0,True,SP2,1,2
+dmt,12,C,6,0,True,SP2,1,2
+dmt,13,C,6,0,True,SP2,0,3

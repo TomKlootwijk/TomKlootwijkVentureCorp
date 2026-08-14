@@ -1,0 +1,6 @@
+molecule,bond_index,atom_i,atom_j,bond_type,bond_order,aromatic,conjugated,in_ring
+glycerol,0,0,1,SINGLE,1.0,False,False,False
+glycerol,1,1,2,SINGLE,1.0,False,False,False
+glycerol,2,2,3,SINGLE,1.0,False,False,False
+glycerol,3,2,4,SINGLE,1.0,False,False,False
+glycerol,4,4,5,SINGLE,1.0,False,False,False

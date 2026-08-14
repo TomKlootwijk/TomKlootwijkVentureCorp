@@ -1,0 +1,18 @@
+{
+  "name": "Dimethylamine",
+  "smiles": "CN(C)",
+  "source_relation": "Decoder-added fragment for explaining DMT's tertiary amine after attachment to the ethyl chain.",
+  "notes": "Amine fragment; in DMT the nitrogen is tertiary and has no N-H.",
+  "canonical_smiles": "CNC",
+  "formula": "C2H7N",
+  "molecular_weight_g_mol": 45.085,
+  "atom_counts_heavy": {
+    "C": 2,
+    "N": 1
+  },
+  "bond_counts_heavy_atom_graph": {
+    "SINGLE": 2
+  },
+  "formal_charge": 0,
+  "stereochemistry_note": "No stereocenter is encoded in this graph."
+}

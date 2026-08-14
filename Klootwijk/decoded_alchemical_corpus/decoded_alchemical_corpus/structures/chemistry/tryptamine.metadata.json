@@ -1,0 +1,19 @@
+{
+  "name": "Tryptamine",
+  "smiles": "NCCc1c[nH]c2ccccc12",
+  "source_relation": "Decoder-added scaffold for explaining the DMT structure.",
+  "notes": "Indole-3-ethylamine scaffold.",
+  "canonical_smiles": "NCCc1c[nH]c2ccccc12",
+  "formula": "C10H12N2",
+  "molecular_weight_g_mol": 160.22,
+  "atom_counts_heavy": {
+    "N": 2,
+    "C": 10
+  },
+  "bond_counts_heavy_atom_graph": {
+    "SINGLE": 3,
+    "AROMATIC": 10
+  },
+  "formal_charge": 0,
+  "stereochemistry_note": "No stereocenter is encoded in this graph."
+}

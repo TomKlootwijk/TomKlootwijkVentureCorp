@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img">
+<title>Camera obscura</title>
+<defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#0b2a3c"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#1f9aaa"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity=".16"/>
+    </filter>
+    <style>
+      text { font-family: "DejaVu Sans", Arial, sans-serif; fill: #0b2a3c; }
+      .title { font-size: 34px; font-weight: 700; }
+      .subtitle { font-size: 19px; fill: #5c6770; }
+      .label { font-size: 20px; font-weight: 700; }
+      .body { font-size: 17px; }
+      .small { font-size: 14px; fill: #5c6770; }
+      .mono { font-family: "DejaVu Sans Mono", monospace; font-size: 17px; }
+      .box { stroke: #0b2a3c; stroke-width: 2.2; rx: 18; ry: 18; }
+    </style>
+    </defs>
+<text x="55" y="55" class="title" text-anchor="start">Camera obscura / pinhole inversion</text>
+<text x="55" y="88" class="subtitle" text-anchor="start">A real optical inversion through a small aperture. The corpus uses it as a metaphor for inward/outward projection.</text>
+<line x1="360" y1="150" x2="360" y2="600" stroke="#0b2a3c" stroke-width="6" opacity="1"/>
+<circle cx="600" cy="375" r="18" fill="#111820"/>
+<line x1="840" y1="150" x2="840" y2="600" stroke="#0b2a3c" stroke-width="6" opacity="1"/>
+<line x1="180" y1="520" x2="180" y2="250" stroke="#1f9aaa" stroke-width="10" marker-end="url(#arrow)" opacity="1"/>
+<text x="180" y="555" class="label" text-anchor="middle">object</text>
+<line x1="180" y1="250" x2="600" y2="375" stroke="#d7a72e" stroke-width="4" opacity="1"/>
+<line x1="180" y1="520" x2="600" y2="375" stroke="#d86b5b" stroke-width="4" opacity="1"/>
+<line x1="600" y1="375" x2="840" y2="500" stroke="#d7a72e" stroke-width="4" opacity="1"/>
+<line x1="600" y1="375" x2="840" y2="280" stroke="#d86b5b" stroke-width="4" opacity="1"/>
+<line x1="920" y1="275" x2="920" y2="505" stroke="#7667a8" stroke-width="10" marker-end="url(#arrow)" opacity="1"/>
+<text x="920" y="555" class="label" text-anchor="middle">inverted image</text>
+<text x="600" y="335" class="body" text-anchor="middle">aperture</text>
+<text x="600" y="415" class="small" text-anchor="middle">finite aperture trades sharpness against brightness</text>
+</svg>

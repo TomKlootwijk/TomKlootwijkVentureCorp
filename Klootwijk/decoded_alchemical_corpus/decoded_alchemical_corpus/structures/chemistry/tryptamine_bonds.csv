@@ -1,0 +1,14 @@
+molecule,bond_index,atom_i,atom_j,bond_type,bond_order,aromatic,conjugated,in_ring
+tryptamine,0,0,1,SINGLE,1.0,False,False,False
+tryptamine,1,1,2,SINGLE,1.0,False,False,False
+tryptamine,2,2,3,SINGLE,1.0,False,False,False
+tryptamine,3,3,4,AROMATIC,1.5,True,True,True
+tryptamine,4,4,5,AROMATIC,1.5,True,True,True
+tryptamine,5,5,6,AROMATIC,1.5,True,True,True
+tryptamine,6,6,7,AROMATIC,1.5,True,True,True
+tryptamine,7,7,8,AROMATIC,1.5,True,True,True
+tryptamine,8,8,9,AROMATIC,1.5,True,True,True
+tryptamine,9,9,10,AROMATIC,1.5,True,True,True
+tryptamine,10,10,11,AROMATIC,1.5,True,True,True
+tryptamine,11,11,3,AROMATIC,1.5,True,True,True
+tryptamine,12,11,6,AROMATIC,1.5,True,True,True

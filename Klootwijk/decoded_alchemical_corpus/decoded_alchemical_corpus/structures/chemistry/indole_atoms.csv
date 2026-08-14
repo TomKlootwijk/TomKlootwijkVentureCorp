@@ -1,0 +1,10 @@
+molecule,atom_index,element,atomic_number,formal_charge,aromatic,hybridization,implicit_hydrogens,degree
+indole,0,C,6,0,True,SP2,1,2
+indole,1,C,6,0,True,SP2,1,2
+indole,2,C,6,0,True,SP2,1,2
+indole,3,C,6,0,True,SP2,0,3
+indole,4,N,7,0,True,SP2,1,2
+indole,5,C,6,0,True,SP2,1,2
+indole,6,C,6,0,True,SP2,1,2
+indole,7,C,6,0,True,SP2,0,3
+indole,8,C,6,0,True,SP2,1,2

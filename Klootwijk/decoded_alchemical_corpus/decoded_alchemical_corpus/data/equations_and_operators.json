@@ -1,0 +1,352 @@
+[
+  {
+    "id": "EQW-01",
+    "name": "Projective-phase state manifold",
+    "equation": "Q = P^n \u00d7 R_time \u00d7 S_phase \u00d7 Z2_sheet \u00d7 A_address \u00d7 B_branch",
+    "domain": "state model",
+    "origin": "source",
+    "meaning": "State includes position, time, phase, sheet, lineage address and branch.",
+    "requirements": "Define each factor and admissible states.",
+    "source": "Chronological pp.5-6"
+  },
+  {
+    "id": "EQW-02",
+    "name": "Entity state",
+    "equation": "q_e(t) = (x_e(t), t, \u03c6_e(t), \u03c3_e(t), a_e, b_e)",
+    "domain": "state model",
+    "origin": "source",
+    "meaning": "Entity trajectory augmented with phase, sheet, address and branch.",
+    "requirements": "Units, topology and update rules.",
+    "source": "Chronological p.6"
+  },
+  {
+    "id": "EQW-03",
+    "name": "World tuple",
+    "equation": "W = (G, R, T, I)",
+    "domain": "state model",
+    "origin": "source",
+    "meaning": "Finite grammar, relations, transitions and invariants.",
+    "requirements": "Operational definitions.",
+    "source": "Chronological p.6"
+  },
+  {
+    "id": "EQW-04",
+    "name": "Relation surface",
+    "equation": "R_j(q; \u03b8_j) = 0",
+    "domain": "event logic",
+    "origin": "source",
+    "meaning": "Implicit relation/guard surface.",
+    "requirements": "Regularity, parameters, root method.",
+    "source": "Chronological p.6"
+  },
+  {
+    "id": "EQW-05",
+    "name": "Support constraint",
+    "equation": "C_\u03b1(q,t) \u2264 0",
+    "domain": "event logic",
+    "origin": "source",
+    "meaning": "Local cone/hourglass support admits a candidate.",
+    "requirements": "Bounded geometry and tolerance.",
+    "source": "Chronological pp.6-7"
+  },
+  {
+    "id": "EQW-06",
+    "name": "Compatibility predicate",
+    "equation": "\u03c7(e,j,t) \u2208 {0,1}",
+    "domain": "event logic",
+    "origin": "source",
+    "meaning": "Gates interaction by mode, phase, sheet, address or policy.",
+    "requirements": "Schema and false accept/reject criteria.",
+    "source": "Chronological p.6"
+  },
+  {
+    "id": "EQW-07",
+    "name": "Next compatible event",
+    "equation": "t* = min{t \u2265 t0 : R_j(q_e(t))=0, C_\u03b1\u22640, \u03c7=1}",
+    "domain": "event logic",
+    "origin": "source",
+    "meaning": "Earliest root that is supported and compatible.",
+    "requirements": "Root existence, ordering, tangency handling.",
+    "source": "Chronological p.6"
+  },
+  {
+    "id": "EQW-08",
+    "name": "Transition update",
+    "equation": "q_e(t*+) = T_j(q_e(t*\u2212), context)",
+    "domain": "hybrid dynamics",
+    "origin": "source",
+    "meaning": "Apply discrete transition at a continuous event.",
+    "requirements": "Invariant preservation and branch rules.",
+    "source": "Chronological p.6"
+  },
+  {
+    "id": "OPT-01",
+    "name": "Frequency-domain Maxwell equation",
+    "equation": "\u2207\u00d7\u03bc_r^\u22121\u2207\u00d7E \u2212 k0\u00b2 \u03b5_r(r,u)E = 0",
+    "domain": "electromagnetics",
+    "origin": "source formalization",
+    "meaning": "Solve the optical field in the actuated dielectric geometry.",
+    "requirements": "Boundary conditions, dispersion and loss.",
+    "source": "Spherical Throughput p.5"
+  },
+  {
+    "id": "OPT-02",
+    "name": "Coupled-mode evolution",
+    "equation": "da_m/dz = \u2212(\u03b1_m/2 + j\u03b2_m)a_m \u2212 j \u03a3_(n\u2260m) \u03ba_mn(u,\u03bb)a_n",
+    "domain": "photonics",
+    "origin": "source formalization",
+    "meaning": "Tracks attenuation, propagation and coupling of guided modes.",
+    "requirements": "Mode basis and validity of coupled-mode approximation.",
+    "source": "Spherical Throughput p.5"
+  },
+  {
+    "id": "FLD-01",
+    "name": "Young-Laplace pressure-curvature law",
+    "equation": "\u0394p = \u03b3(1/R1 + 1/R2)",
+    "domain": "capillarity",
+    "origin": "source formalization",
+    "meaning": "Pressure difference controls liquid meniscus curvature.",
+    "requirements": "Surface tension, radii, contact-angle conditions.",
+    "source": "Spherical Throughput p.5"
+  },
+  {
+    "id": "OPT-03",
+    "name": "Actuated optical phase",
+    "equation": "\u0394\u03c6(u,\u03bb) = (2\u03c0/\u03bb) L \u0394n_eff(u)",
+    "domain": "photonics",
+    "origin": "source formalization",
+    "meaning": "Effective-index change creates phase shift.",
+    "requirements": "Interaction length, wavelength, calibrated n_eff.",
+    "source": "Spherical Throughput p.5"
+  },
+  {
+    "id": "FLD-02",
+    "name": "Incompressible Navier-Stokes",
+    "equation": "\u03c1(\u2202_t v + v\u00b7\u2207v) = \u2212\u2207p + \u03bc\u2207\u00b2v + f_act;  \u2207\u00b7v = 0",
+    "domain": "fluid mechanics",
+    "origin": "source formalization",
+    "meaning": "Dynamic liquid-actuator model when quasi-static curvature is inadequate.",
+    "requirements": "Boundary/initial conditions and constitutive parameters.",
+    "source": "Spherical Throughput p.5"
+  },
+  {
+    "id": "OPT-04",
+    "name": "Mode overlap efficiency",
+    "equation": "\u03b7_c = |\u222b_A E_in\u00b7E_m* dA|\u00b2 / [(\u222b_A|E_in|\u00b2dA)(\u222b_A|E_m|\u00b2dA)]",
+    "domain": "photonics",
+    "origin": "source formalization",
+    "meaning": "Fractional coupling from admitted input field to a chosen mode.",
+    "requirements": "Field normalization and polarization convention.",
+    "source": "Spherical Throughput p.5"
+  },
+  {
+    "id": "BCE-01",
+    "name": "Bounded Compatibility Event",
+    "equation": "t* = inf{t>t0 : S_q=1, \u03c7_q=1, g_q(y,t)=0}",
+    "domain": "event logic",
+    "origin": "source formalization",
+    "meaning": "Declare transition only for supported, compatible guard crossing.",
+    "requirements": "Measured guard, timestamp uncertainty and confidence.",
+    "source": "Spherical Throughput p.5"
+  },
+  {
+    "id": "MET-01",
+    "name": "Spherical throughput",
+    "equation": "\u0398_sph = N_verified / \u0394t",
+    "domain": "measurement",
+    "origin": "source",
+    "meaning": "Verified events per second.",
+    "requirements": "Report full error/energy/calibration boundary.",
+    "source": "Spherical Throughput p.6"
+  },
+  {
+    "id": "MET-02",
+    "name": "Verified event count",
+    "equation": "N_verified = \u03a3_q 1[S_q]1[\u03c7_q]1[g_q crossed]1[c_q\u2265c_min]",
+    "domain": "measurement",
+    "origin": "source",
+    "meaning": "Count only events passing support, compatibility, guard and confidence.",
+    "requirements": "Declare all indicators and confidence rule.",
+    "source": "Spherical Throughput p.6"
+  },
+  {
+    "id": "GEO-01",
+    "name": "Log-polar transform",
+    "equation": "r = \u221a(x\u00b2+y\u00b2);  \u03c1 = ln(r/r0);  \u03b8 = atan2(y,x)",
+    "domain": "geometry / imaging",
+    "origin": "source + standard",
+    "meaning": "Scale-like radial changes become translations in \u03c1.",
+    "requirements": "Origin handling, sampling and inverse transform.",
+    "source": "DMT pp.2-3; KC Vector Art p.1"
+  },
+  {
+    "id": "GEO-02",
+    "name": "SDF surface",
+    "equation": "d(x)=0",
+    "domain": "implicit geometry",
+    "origin": "source + standard",
+    "meaning": "Zero level set defines a boundary.",
+    "requirements": "Sign/orientation convention and numerical tolerance.",
+    "source": "Hollowland pp.16-18; KC Vector Art pp.1-2"
+  },
+  {
+    "id": "GEO-03",
+    "name": "SDF CSG union",
+    "equation": "d_union(x) = min(d1(x), d2(x))",
+    "domain": "implicit geometry",
+    "origin": "source + standard",
+    "meaning": "Implicit union.",
+    "requirements": "Result may not retain exact distance everywhere.",
+    "source": "KC Vector Art p.2"
+  },
+  {
+    "id": "GEO-04",
+    "name": "SDF CSG intersection",
+    "equation": "d_intersection(x) = max(d1(x), d2(x))",
+    "domain": "implicit geometry",
+    "origin": "source + standard",
+    "meaning": "Implicit intersection.",
+    "requirements": "Result may not retain exact distance everywhere.",
+    "source": "KC Vector Art p.2"
+  },
+  {
+    "id": "GEO-05",
+    "name": "SDF CSG subtraction",
+    "equation": "d_subtract(x) = max(d1(x), \u2212d2(x))",
+    "domain": "implicit geometry",
+    "origin": "source + standard",
+    "meaning": "Implicit difference.",
+    "requirements": "Sign convention required.",
+    "source": "KC Vector Art p.2"
+  },
+  {
+    "id": "LA-01",
+    "name": "Eigenpair relation",
+    "equation": "A v = \u03bb v",
+    "domain": "linear algebra",
+    "origin": "source + standard",
+    "meaning": "Direction v is preserved by A and scaled by \u03bb.",
+    "requirements": "v\u22600; matrix/operator domain.",
+    "source": "Hollowland pp.20-23"
+  },
+  {
+    "id": "LA-02",
+    "name": "Orthogonality test",
+    "equation": "v\u00b7w = 0",
+    "domain": "linear algebra",
+    "origin": "source analogy",
+    "meaning": "Zero inner product under the chosen metric.",
+    "requirements": "Does not imply physical invisibility or no interaction unless model defines coupling this way.",
+    "source": "ADDominUS pp.7-18,32-35"
+  },
+  {
+    "id": "RD-01",
+    "name": "Two-field reaction-diffusion",
+    "equation": "\u2202u/\u2202t = D_u\u2207\u00b2u + f(u,v);  \u2202v/\u2202t = D_v\u2207\u00b2v + g(u,v)",
+    "domain": "chemical / biological patterning",
+    "origin": "standard science added by decoder",
+    "meaning": "Local kinetics plus spatial diffusion produce patterns/fronts.",
+    "requirements": "Specify species, kinetics, diffusion and boundary conditions.",
+    "source": "DMT pp.25-27; external standard model"
+  },
+  {
+    "id": "BIO-01",
+    "name": "Advection-diffusion-reaction transport",
+    "equation": "\u2202c_i/\u2202t + v\u00b7\u2207c_i = \u2207\u00b7(D_i\u2207c_i) + R_i(c)",
+    "domain": "biochemical transport",
+    "origin": "standard science added by decoder",
+    "meaning": "A realistic bridge from blood/fluid metaphors to solute transport.",
+    "requirements": "Species, reactions, flow field and boundary fluxes.",
+    "source": "Decoder grounding for ADDominUS blood-plasma prose"
+  },
+  {
+    "id": "BBMB-01",
+    "name": "Benjamin-Bona-Mahony-Burgers equation",
+    "equation": "U_t + U_x + U U_x \u2212 m U_xx \u2212 U_xxt = 0",
+    "domain": "nonlinear waves",
+    "origin": "external standard grounding",
+    "meaning": "One-dimensional nonlinear dispersive-dissipative wave model.",
+    "requirements": "Initial/boundary conditions and parameter m.",
+    "source": "Scientific Reports 14, 13520 (2024), Eq.1"
+  },
+  {
+    "id": "CS-01",
+    "name": "Zero-based position",
+    "equation": "offset 35 from index 0 = 36th element",
+    "domain": "computer science",
+    "origin": "source + standard",
+    "meaning": "Index value and ordinal position differ by one.",
+    "requirements": "Arithmetic remains 21+7+7=35.",
+    "source": "Ben Burgers pp.1-6"
+  },
+  {
+    "id": "CS-02",
+    "name": "Bit shift",
+    "equation": "35<<1 = 70; 35>>1 = 17 (integer shift)",
+    "domain": "computer science",
+    "origin": "source + standard",
+    "meaning": "Binary shift multiplies/divides by powers of two.",
+    "requirements": "Language-specific signed/rounding behavior.",
+    "source": "Ben Burgers p.1"
+  },
+  {
+    "id": "CHEM-01",
+    "name": "DMT molecular formula",
+    "equation": "C12H16N2",
+    "domain": "chemistry",
+    "origin": "external standard grounding",
+    "meaning": "Neutral N,N-dimethyltryptamine composition.",
+    "requirements": "Salt/protonation form changes formula.",
+    "source": "PubChem CID 6089"
+  },
+  {
+    "id": "CHEM-02",
+    "name": "DMT connectivity",
+    "equation": "SMILES: CN(C)CCc1c[nH]c2ccccc12",
+    "domain": "chemistry",
+    "origin": "external standard grounding",
+    "meaning": "Indole-ethyl-tertiary-amine molecular graph.",
+    "requirements": "2D connectivity, not a unique 3D conformation.",
+    "source": "PubChem CID 6089"
+  },
+  {
+    "id": "OPT-05",
+    "name": "Log encoding",
+    "equation": "Y_log = A\u00b7log(I) + B",
+    "domain": "imaging",
+    "origin": "source design",
+    "meaning": "Compresses intensity dynamic range.",
+    "requirements": "Black level, sign, zero handling and inverse transform.",
+    "source": "DMT pp.3,9"
+  },
+  {
+    "id": "PDE-01",
+    "name": "Laplacian",
+    "equation": "\u2207\u00b2f = \u03a3_i \u2202\u00b2f/\u2202x_i\u00b2",
+    "domain": "mathematics / diffusion",
+    "origin": "source + standard",
+    "meaning": "Measures local curvature and appears in diffusion, optics and mechanics.",
+    "requirements": "The source's psychological 'equilibrium' reading is metaphor.",
+    "source": "DMT pp.4-10"
+  },
+  {
+    "id": "SIG-01",
+    "name": "Pulse-density estimate",
+    "equation": "amplitude \u2248 pulse count / time window",
+    "domain": "signal processing",
+    "origin": "source design + standard",
+    "meaning": "Represent average level using density of one-bit pulses.",
+    "requirements": "Bandwidth, quantization noise and filtering.",
+    "source": "KC Vector Art pp.4-6"
+  },
+  {
+    "id": "SIG-02",
+    "name": "Scale as log-radius shift",
+    "equation": "r\u2192a r  \u21d2  \u03c1\u2192\u03c1+ln a",
+    "domain": "geometry / imaging",
+    "origin": "standard consequence",
+    "meaning": "Multiplicative scaling becomes additive translation in log radius.",
+    "requirements": "Only applies to pure radial scaling under chosen origin.",
+    "source": "KC Vector Art pp.7-8"
+  }
+]

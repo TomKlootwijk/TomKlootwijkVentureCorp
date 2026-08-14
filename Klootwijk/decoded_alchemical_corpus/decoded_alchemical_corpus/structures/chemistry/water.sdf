@@ -1,0 +1,13 @@
+Water
+     RDKit          2D
+
+  1  0  0  0  0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+M  END
+>  <SourceRelation>  (1) 
+Water is explicitly listed as a liquid-region candidate.
+
+>  <Notes>  (1) 
+Bent polar molecule; hydrogen-bond donor and acceptor.
+
+$$$$

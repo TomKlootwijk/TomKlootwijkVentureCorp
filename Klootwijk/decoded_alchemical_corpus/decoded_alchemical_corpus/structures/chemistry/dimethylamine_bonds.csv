@@ -1,0 +1,3 @@
+molecule,bond_index,atom_i,atom_j,bond_type,bond_order,aromatic,conjugated,in_ring
+dimethylamine,0,0,1,SINGLE,1.0,False,False,False
+dimethylamine,1,1,2,SINGLE,1.0,False,False,False

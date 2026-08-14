@@ -1,0 +1,4 @@
+molecule,atom_index,element,atomic_number,formal_charge,aromatic,hybridization,implicit_hydrogens,degree
+dimethylamine,0,C,6,0,False,SP3,3,1
+dimethylamine,1,N,7,0,False,SP3,1,2
+dimethylamine,2,C,6,0,False,SP3,3,1

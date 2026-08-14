@@ -1,0 +1,15 @@
+COMPND    Dimethylamine
+HETATM    1  C1  UNL     1      -1.156   0.277  -0.215  1.00  0.00           C  
+HETATM    2  N1  UNL     1      -0.087  -0.021   0.739  1.00  0.00           N  
+HETATM    3  C2  UNL     1       1.117  -0.457   0.031  1.00  0.00           C  
+HETATM    4  H1  UNL     1      -2.058   0.613   0.337  1.00  0.00           H  
+HETATM    5  H2  UNL     1      -0.850   1.085  -0.915  1.00  0.00           H  
+HETATM    6  H3  UNL     1      -1.425  -0.635  -0.791  1.00  0.00           H  
+HETATM    7  H4  UNL     1       0.144   0.866   1.245  1.00  0.00           H  
+HETATM    8  H5  UNL     1       0.915  -1.391  -0.537  1.00  0.00           H  
+HETATM    9  H6  UNL     1       1.479   0.334  -0.663  1.00  0.00           H  
+HETATM   10  H7  UNL     1       1.919  -0.671   0.769  1.00  0.00           H  
+CONECT    1    2    4    5    6
+CONECT    2    3    7
+CONECT    3    8    9   10
+END

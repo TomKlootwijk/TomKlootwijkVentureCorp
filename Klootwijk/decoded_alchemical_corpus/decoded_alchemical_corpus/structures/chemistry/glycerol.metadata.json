@@ -1,0 +1,18 @@
+{
+  "name": "Glycerol",
+  "smiles": "OCC(O)CO",
+  "source_relation": "Water/glycerol mixtures are explicitly listed as candidate liquid regions for the optofluidic prototype.",
+  "notes": "Triol; hydrogen-bonding liquid component.",
+  "canonical_smiles": "OCC(O)CO",
+  "formula": "C3H8O3",
+  "molecular_weight_g_mol": 92.094,
+  "atom_counts_heavy": {
+    "O": 3,
+    "C": 3
+  },
+  "bond_counts_heavy_atom_graph": {
+    "SINGLE": 5
+  },
+  "formal_charge": 0,
+  "stereochemistry_note": "No stereocenter is encoded in this graph."
+}

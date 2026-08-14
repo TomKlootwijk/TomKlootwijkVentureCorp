@@ -1,0 +1,7 @@
+molecule,atom_index,element,atomic_number,formal_charge,aromatic,hybridization,implicit_hydrogens,degree
+glycerol,0,O,8,0,False,SP3,1,1
+glycerol,1,C,6,0,False,SP3,2,2
+glycerol,2,C,6,0,False,SP3,1,3
+glycerol,3,O,8,0,False,SP3,1,1
+glycerol,4,C,6,0,False,SP3,2,2
+glycerol,5,O,8,0,False,SP3,1,1

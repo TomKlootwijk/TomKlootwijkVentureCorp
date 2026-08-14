@@ -1,0 +1,410 @@
+[
+  {
+    "claim": "The corpus is fundamentally a non-raster state/event ontology.",
+    "source_location": "Chronological pp.1,5-7",
+    "classification": "SUPPORTED BY CORPUS",
+    "evidence": "Latest synthesis explicitly recasts cones, SDF zero, parity, double vacuum and hourglass as operators in a shared state space.",
+    "scientific_verdict": "Coherent as a software architecture concept.",
+    "required_test": "Implement a restricted relation family with state_at and next_event queries."
+  },
+  {
+    "claim": "All world structure should be represented globally in spherical coordinates.",
+    "source_location": "Earlier corpus motifs; corrected in Chronological pp.1,6",
+    "classification": "REJECTED BY CORPUS",
+    "evidence": "Mature documents state spherical/polar structure is local support and sensing, not total world replacement.",
+    "scientific_verdict": "No general advantage; coordinate singularities and topology matter.",
+    "required_test": "Compare hybrid local charts against global coordinate models."
+  },
+  {
+    "claim": "A fixed closed expression can be evaluated at a distant time without replaying every frame.",
+    "source_location": "Chronological p.8",
+    "classification": "BOUNDED PLAUSIBLE CLAIM",
+    "evidence": "Horizon independence is defined narrowly for fixed expressions.",
+    "scientific_verdict": "Possible for analytically solvable or compiled dynamics.",
+    "required_test": "Measure query cost versus skipped horizon and expression depth."
+  },
+  {
+    "claim": "The architecture has universal O(1) complexity.",
+    "source_location": "Hollowland pp.15,26-33; corrected in Chronological p.8",
+    "classification": "OVERCLAIM",
+    "evidence": "Later source explicitly rejects universal constant cost.",
+    "scientific_verdict": "False in general due root solving, branching, event density and expression growth.",
+    "required_test": "Complexity analysis and adversarial event-density benchmarks."
+  },
+  {
+    "claim": "The architecture uses zero memory.",
+    "source_location": "Hollowland pp.15,26-33; corrected in Chronological pp.1,8",
+    "classification": "OVERCLAIM",
+    "evidence": "Later source acknowledges seed, grammar, exogenous log and lineage storage.",
+    "scientific_verdict": "False literally.",
+    "required_test": "Measure total memory including coefficients, logs, branches, calibration and solver workspace."
+  },
+  {
+    "claim": "Double vacuum is a second physical vacuum.",
+    "source_location": "Hollowland pp.1-10; corrected in Chronological p.6",
+    "classification": "MISREADING",
+    "evidence": "Mature definition is absence of coupling between co-located sectors.",
+    "scientific_verdict": "Useful state-partition abstraction, not a new vacuum state.",
+    "required_test": "Demonstrate gated co-location in a formal model or isolated optical modes."
+  },
+  {
+    "claim": "A Klein bottle supplies a global signed distance field with automatic sign flipping.",
+    "source_location": "Hollowland pp.16-17",
+    "classification": "PARTLY MISAPPLIED",
+    "evidence": "Non-orientability makes a global inside/outside sign nontrivial.",
+    "scientific_verdict": "Requires local charts, orientation double cover or explicit gluing; no automatic bitwise NOT law.",
+    "required_test": "Specify manifold atlas, transition functions and local SDF convention."
+  },
+  {
+    "claim": "Passing B=0 should invoke transition semantics.",
+    "source_location": "Chronological pp.5-7",
+    "classification": "SUPPORTED DESIGN RULE",
+    "evidence": "Latest synthesis explicitly converts zero from a marching target to event surface.",
+    "scientific_verdict": "Standard hybrid-system pattern.",
+    "required_test": "Robust root detection with tangency/uncertainty handling."
+  },
+  {
+    "claim": "A one-bit state is sufficient to encode the whole system.",
+    "source_location": "Earlier corpus; corrected in Spherical Throughput pp.2,7",
+    "classification": "REJECTED",
+    "evidence": "Later source limits bit to route/validity/parity; amplitudes, thresholds, uncertainty and lineage are separate.",
+    "scientific_verdict": "False for nontrivial physical/biological systems.",
+    "required_test": "Define bit schema and full surrounding state."
+  },
+  {
+    "claim": "Golden-ratio phase prevents loops and stabilizes the system.",
+    "source_location": "Hollowland pp.12-19; ADDominUS pp.2-4",
+    "classification": "UNSUPPORTED",
+    "evidence": "The sources conflate \u03c6 phase with \u03a6 golden ratio.",
+    "scientific_verdict": "Irrational rotations can reduce exact periodic recurrence in ideal arithmetic, but do not prevent numerical loops or instability generally.",
+    "required_test": "Prove recurrence/conditioning properties for specified dynamics and finite precision."
+  },
+  {
+    "claim": "Log-polar coordinates eliminate geometric distortion.",
+    "source_location": "Hollowland pp.17-19; ADDominUS pp.2-4",
+    "classification": "OVERCLAIM",
+    "evidence": "Log-polar mapping redistributes scale and angle but is not globally isometric.",
+    "scientific_verdict": "It introduces metric distortion and an origin singularity.",
+    "required_test": "Quantify inverse error, sampling density and condition number."
+  },
+  {
+    "claim": "The cone-SDF intersection is always solvable in one operation.",
+    "source_location": "Hollowland pp.14-18",
+    "classification": "UNSUPPORTED GENERALIZATION",
+    "evidence": "Only simple relation families have closed-form roots.",
+    "scientific_verdict": "General nonlinear systems require numerical or certified root-finding and may have multiple roots.",
+    "required_test": "Specify relation family and solver guarantees."
+  },
+  {
+    "claim": "The practical optical architecture is Maxwell + fluid interface + coupled modes + event logic.",
+    "source_location": "Spherical Throughput p.5",
+    "classification": "SUPPORTED BOUNDED FORMALIZATION",
+    "evidence": "The later integration explicitly separates governing physics by type.",
+    "scientific_verdict": "Technically coherent modeling stack.",
+    "required_test": "Calibrated multiphysics model and matched electronic baseline."
+  },
+  {
+    "claim": "Liquid overclad on a solid waveguide is the best first prototype.",
+    "source_location": "Spherical Throughput p.4",
+    "classification": "REASONABLE ENGINEERING RECOMMENDATION",
+    "evidence": "Source compares liquid overclad, liquid core and input liquid lens.",
+    "scientific_verdict": "Plausible due packaging/control simplicity relative to liquid core.",
+    "required_test": "Fabricate and measure loss, phase range, settling and hysteresis."
+  },
+  {
+    "claim": "Hollowlens-0 already outperforms electronics.",
+    "source_location": "Spherical Throughput pp.9-12",
+    "classification": "NOT ESTABLISHED",
+    "evidence": "Source labels component feasibility as not system validation.",
+    "scientific_verdict": "Unknown.",
+    "required_test": "Verified events/s and events/J at equal error/uncertainty, including all support hardware."
+  },
+  {
+    "claim": "Optical propagation means zero latency.",
+    "source_location": "ADDominUS pp.18-24; rejected in Spherical Throughput p.10",
+    "classification": "FALSE LITERALLY",
+    "evidence": "Later source includes coupling, actuation, detection, conversion and control.",
+    "scientific_verdict": "End-to-end latency is nonzero.",
+    "required_test": "Measure median and tail latency including liquid settling and electronics."
+  },
+  {
+    "claim": "Photonics means zero heat or zero power.",
+    "source_location": "ADDominUS pp.18-24; rejected in Spherical Throughput p.10",
+    "classification": "FALSE LITERALLY",
+    "evidence": "Lasers, modulators, actuators, detectors and control consume energy.",
+    "scientific_verdict": "Passive photonics may reduce some operations, not total power to zero.",
+    "required_test": "Wall-plug energy per verified event."
+  },
+  {
+    "claim": "The physical component classes behind Hollowlens-0 exist.",
+    "source_location": "Spherical Throughput p.12",
+    "classification": "SUPPORTED COMPONENT PRECEDENT",
+    "evidence": "Source lists liquid lenses, optofluidic MZIs, liquid guides and femtosecond-written glass guides with literature anchors.",
+    "scientific_verdict": "Yes at component level.",
+    "required_test": "Integrated system demonstration."
+  },
+  {
+    "claim": "Spherical throughput equals raw photon flux.",
+    "source_location": "Spherical Throughput pp.3,6",
+    "classification": "REJECTED",
+    "evidence": "Metric counts only supported, compatible, guard-crossing, confident outputs.",
+    "scientific_verdict": "Correct to distinguish verified event rate from detector traffic.",
+    "required_test": "Pre-register gates and error budget."
+  },
+  {
+    "claim": "DMT's molecular structure is encoded in the alchemical prose.",
+    "source_location": "DMT p.1 and throughout",
+    "classification": "NOT SUPPORTED",
+    "evidence": "DMT functions as a metaphor; no bond graph or atom list is encoded.",
+    "scientific_verdict": "No uniquely recoverable hidden structure.",
+    "required_test": "None; use standard chemical databases for the molecular graph."
+  },
+  {
+    "claim": "DMT is C12H16N2 with an indole core and tertiary dimethylamine side chain.",
+    "source_location": "Decoder external grounding",
+    "classification": "ESTABLISHED CHEMISTRY",
+    "evidence": "Standard chemical identity.",
+    "scientific_verdict": "Correct for neutral free base.",
+    "required_test": "Not applicable; distinguish salts/protonation."
+  },
+  {
+    "claim": "Water/glycerol mixtures can act as tunable liquid optical media.",
+    "source_location": "Spherical Throughput p.8",
+    "classification": "PLAUSIBLE MATERIAL OPTION",
+    "evidence": "Explicit candidate in source; established optofluidic materials concept.",
+    "scientific_verdict": "Yes, subject to absorption, index, viscosity and packaging.",
+    "required_test": "Spectral/material characterization."
+  },
+  {
+    "claim": "All fluid atoms are spherical and should be stored in a spherical LUT.",
+    "source_location": "DMT pp.15-18",
+    "classification": "MODEL METAPHOR",
+    "evidence": "Source treats individual fluid components as spherical.",
+    "scientific_verdict": "Hard-sphere/kernels are approximations; real molecules are anisotropic and quantum mechanical.",
+    "required_test": "Compare approximation error against molecular model."
+  },
+  {
+    "claim": "Reaction-diffusion can generate fronts and patterns.",
+    "source_location": "DMT pp.25-27",
+    "classification": "ESTABLISHED SCIENCE",
+    "evidence": "Source invokes concentration waves and straight fronts.",
+    "scientific_verdict": "Correct in appropriate chemical/biological systems.",
+    "required_test": "Specify reaction kinetics and diffusion coefficients."
+  },
+  {
+    "claim": "Reaction-diffusion explains every straight crystal facet or whisker.",
+    "source_location": "DMT pp.25-27",
+    "classification": "OVERGENERALIZED",
+    "evidence": "Source maps straight features to stabilized wave fronts.",
+    "scientific_verdict": "Crystal facets arise from anisotropic free energies/kinetics; whiskers involve growth and mechanics; reaction-diffusion may contribute but is not universal.",
+    "required_test": "Material-specific growth model and measurements."
+  },
+  {
+    "claim": "Microsaccades implement a binary search over a slit.",
+    "source_location": "DMT pp.28-30; ADDominUS pp.49-62",
+    "classification": "UNSUPPORTED ANALOGY",
+    "evidence": "Source calls eye jitter a one-bit search.",
+    "scientific_verdict": "Microsaccades are fixational eye movements, not a literal binary-search algorithm.",
+    "required_test": "Oculomotor experiment and computational model."
+  },
+  {
+    "claim": "Bee vision is simply 300 FPS versus human 60 FPS.",
+    "source_location": "DMT pp.13-15",
+    "classification": "MISLEADING SIMPLIFICATION",
+    "evidence": "Source uses display-frame terminology for flicker perception.",
+    "scientific_verdict": "Temporal resolution varies by species, illumination, receptor and neural processing; 'FPS' is not a universal eye property.",
+    "required_test": "Species- and condition-specific flicker-fusion measurements."
+  },
+  {
+    "claim": "White light is a packet of discrete color strings.",
+    "source_location": "DMT pp.13-15",
+    "classification": "INCORRECT PHRASING",
+    "evidence": "Source treats color separation as discrete strings.",
+    "scientific_verdict": "Light has a spectral distribution; photons have quantized energy, but color is not a set of literal strings.",
+    "required_test": "Use spectral radiometry and quantum optics terminology."
+  },
+  {
+    "claim": "A log-radius channel offset corrects all chromatic aberration at zero cost.",
+    "source_location": "KC Vector Art pp.7-8",
+    "classification": "OVERCLAIM",
+    "evidence": "Source proposes constant \u03c1 offsets.",
+    "scientific_verdict": "Can approximate scale-like lateral aberration; cannot correct all wavelength-dependent field aberrations and still costs computation/calibration.",
+    "required_test": "Lens-specific distortion calibration and image-quality comparison."
+  },
+  {
+    "claim": "Feynman vectors are a defined Kees Klootwijk rendering primitive.",
+    "source_location": "KC Vector Art pp.1-8",
+    "classification": "UNDEFINED / UNVALIDATED",
+    "evidence": "No formal definition, derivation or implementation is supplied.",
+    "scientific_verdict": "Closest established structures are complex phasors, wave amplitudes and path integrals.",
+    "required_test": "Formal semantics, algorithm and reproducible implementation."
+  },
+  {
+    "claim": "1-bit PDM/delta-sigma can represent continuous tone temporally.",
+    "source_location": "KC Vector Art pp.4-6",
+    "classification": "ESTABLISHED SIGNAL-PROCESSING IDEA",
+    "evidence": "Source maps amplitude to pulse density.",
+    "scientific_verdict": "Correct in a bandwidth-limited system with filtering/integration.",
+    "required_test": "Quantization-noise, flicker and panel-bandwidth measurements."
+  },
+  {
+    "claim": "Log-polar blue-noise screening is useful for radial art/prepress.",
+    "source_location": "KC Vector Art pp.8-10",
+    "classification": "PLAUSIBLE DESIGN IDEA",
+    "evidence": "Source proposes radius-dependent stochastic screening.",
+    "scientific_verdict": "Potentially useful, but not a standard validated prepress method.",
+    "required_test": "Moir\u00e9, dot gain and perceptual print tests against conventional screens."
+  },
+  {
+    "claim": "CRISPR work is merely a 20-character search followed by blind injection.",
+    "source_location": "ADDominUS pp.4-6",
+    "classification": "RHETORICAL OVERSIMPLIFICATION",
+    "evidence": "Source accurately names guide RNA/Cas9 but dismisses broader laboratory design.",
+    "scientific_verdict": "Genome editing includes target design, biochemical validation, delivery, repair outcomes and off-target analysis.",
+    "required_test": "Compare against actual experimental workflow."
+  },
+  {
+    "claim": "A phase/eigenvalue controller can eliminate gene-expression mistakes or cancer.",
+    "source_location": "ADDominUS pp.2-5",
+    "classification": "UNSUPPORTED MEDICAL CLAIM",
+    "evidence": "No molecular target, intervention, model or evidence.",
+    "scientific_verdict": "Not established.",
+    "required_test": "Mechanistic preclinical evidence, safety and clinical validation."
+  },
+  {
+    "claim": "Protein folding can be solved exactly and instantly as a procedural grammar.",
+    "source_location": "ADDominUS pp.4-6",
+    "classification": "UNSUPPORTED GENERALIZATION",
+    "evidence": "Source offers no sequence-dependent energy model or solver.",
+    "scientific_verdict": "Protein ensembles are complex and context-dependent; some predictions are tractable, exact dynamics are not generally closed-form.",
+    "required_test": "Benchmark against experimental structures/dynamics across diverse proteins."
+  },
+  {
+    "claim": "Blood plasma can be therapeutically tethered to an eigenvector axis.",
+    "source_location": "ADDominUS pp.42-44",
+    "classification": "UNSUPPORTED MEDICAL METAPHOR",
+    "evidence": "No physical actuator or clinical mechanism.",
+    "scientific_verdict": "Flow can be modeled; 'eigenvector tethering' is not a treatment.",
+    "required_test": "Specify device, forces, biological endpoints and safety."
+  },
+  {
+    "claim": "The spike protein punctures a human cell wall like a mechanical key.",
+    "source_location": "DMT pp.43-44",
+    "classification": "INCORRECT",
+    "evidence": "Human cells lack cell walls; entry mechanisms involve receptors, proteases and membranes.",
+    "scientific_verdict": "Wrong as stated.",
+    "required_test": "Use virus-specific cell-entry literature."
+  },
+  {
+    "claim": "Opossum venom resistance implies universal viral immunity or metabolic absolute zero.",
+    "source_location": "DMT pp.33-40",
+    "classification": "FALSE GENERALIZATION",
+    "evidence": "Venom-neutralizing factors are toxin-specific biological chemistry, not universal antiviral state.",
+    "scientific_verdict": "Not supported.",
+    "required_test": "Virus-specific immunology and challenge studies."
+  },
+  {
+    "claim": "The Resident Evil T-virus can be decoded into real biochemistry.",
+    "source_location": "DMT pp.33-35",
+    "classification": "FICTION",
+    "evidence": "Narrative franchise element.",
+    "scientific_verdict": "No real molecular structure exists in the source.",
+    "required_test": "None."
+  },
+  {
+    "claim": "BBMB dynamics justify the document's two-D/\u03c6 overlap geometry.",
+    "source_location": "Ben Burgers pp.16-19",
+    "classification": "NOT DERIVED",
+    "evidence": "Search result mentions BBMB, but the prose does not connect its PDE to the overlap by derivation.",
+    "scientific_verdict": "No established link.",
+    "required_test": "Derive geometry from a PDE solution and boundary conditions."
+  },
+  {
+    "claim": "Two overlapping arches must be 1:1 to prevent an accretion disk tearing.",
+    "source_location": "Ben Burgers pp.13-15",
+    "classification": "UNSUPPORTED",
+    "evidence": "No warped-disk equations or parameters are supplied.",
+    "scientific_verdict": "No universal ratio.",
+    "required_test": "Use established warped-disk dynamics with torque, viscosity and boundary conditions."
+  },
+  {
+    "claim": "The slight \u03c6/D overlap can be interpreted as A\u2229B.",
+    "source_location": "Ben Burgers pp.18-19",
+    "classification": "VALID ABSTRACT INTERPRETATION",
+    "evidence": "Source explicitly identifies shared domain/mutual information.",
+    "scientific_verdict": "Correct as set geometry; other physical meanings require a model.",
+    "required_test": "Define sets and measure overlap."
+  },
+  {
+    "claim": "Replacing BVHs and octrees with compatibility bits is always faster.",
+    "source_location": "Hollowland pp.31-33; ADDominUS pp.21-25",
+    "classification": "UNSUPPORTED GENERALIZATION",
+    "evidence": "No workload or asymptotic comparison.",
+    "scientific_verdict": "Performance depends on sparsity, support selectivity, relation cost and hardware.",
+    "required_test": "Matched benchmarks across spatial distributions."
+  },
+  {
+    "claim": "1,000,000 entities fit under 32 MB universally.",
+    "source_location": "Hollowland pp.33; ADDominUS p.11",
+    "classification": "UNSUPPORTED SPECIFIC NUMBER",
+    "evidence": "No state layout or accounting is shown.",
+    "scientific_verdict": "Possible for very compact records, not a universal world-state claim.",
+    "required_test": "Publish byte-level schema and total allocator/solver memory."
+  },
+  {
+    "claim": "A 64-bit ontological UUID is collision-free identity.",
+    "source_location": "ADDominUS pp.7-11,25",
+    "classification": "UNSUPPORTED ABSOLUTE CLAIM",
+    "evidence": "64-bit spaces have finite collision probability and lineage data may exceed 64 bits.",
+    "scientific_verdict": "Useful compact ID, not guaranteed uniqueness without policy.",
+    "required_test": "Collision analysis, namespace, merge/split and provenance design."
+  },
+  {
+    "claim": "An equation-world can replace all PDE solvers and renderers.",
+    "source_location": "Earlier grand claims; rejected in Spherical Throughput p.10",
+    "classification": "REJECTED BY LATER SOURCE",
+    "evidence": "Later report explicitly excludes replacement of all renderers/PDE solvers.",
+    "scientific_verdict": "No universal replacement.",
+    "required_test": "Domain-specific benchmark only."
+  },
+  {
+    "claim": "A BCI can retroactively erase or nullify bodily intrusion by phase separation.",
+    "source_location": "ADDominUS pp.26-36",
+    "classification": "UNSUPPORTED / SAFETY-SENSITIVE NARRATIVE",
+    "evidence": "No credible hardware, neurophysiology or causal mechanism.",
+    "scientific_verdict": "Not a medical or engineering capability.",
+    "required_test": "Do not treat as factual; any BCI work requires ethical, clinical and regulatory validation."
+  },
+  {
+    "claim": "The document can make a person physically untouchable or invisible.",
+    "source_location": "ADDominUS pp.28-36",
+    "classification": "NONLITERAL / UNSUPPORTED",
+    "evidence": "Uses vector orthogonality and topology as sovereignty metaphors.",
+    "scientific_verdict": "No physical mechanism.",
+    "required_test": "None; interpret as narrative boundary language only."
+  },
+  {
+    "claim": "A country or social system can be physically domain-warped by a global matrix.",
+    "source_location": "ADDominUS pp.12-18",
+    "classification": "METAPHOR / MODELING ANALOGY",
+    "evidence": "Social/political language is mapped onto geometry.",
+    "scientific_verdict": "One may model networks/state transitions, but not literally warp a country.",
+    "required_test": "Define measurable social variables and model validation."
+  },
+  {
+    "claim": "The prototype should be headless/query-first rather than a renderer demo.",
+    "source_location": "Chronological pp.9,12; Spherical Throughput p.9",
+    "classification": "SUPPORTED RESEARCH RECOMMENDATION",
+    "evidence": "Both mature documents prioritize state/event outputs and pre-registered metrics.",
+    "scientific_verdict": "Methodologically sound for testing the core claim.",
+    "required_test": "Build digital transfer model before optical hardware."
+  },
+  {
+    "claim": "Success requires compatibility + event-solving cost to grow more slowly than avoided materialization.",
+    "source_location": "Chronological p.8; Spherical Throughput p.6",
+    "classification": "SUPPORTED FALSIFIABILITY CRITERION",
+    "evidence": "Explicit core benchmark criterion.",
+    "scientific_verdict": "Appropriate engineering test.",
+    "required_test": "Measure both sides under controlled workloads."
+  }
+]

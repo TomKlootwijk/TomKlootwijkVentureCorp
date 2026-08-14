@@ -1,0 +1,19 @@
+{
+  "name": "N,N-Dimethyltryptamine",
+  "smiles": "CN(C)CCc1c[nH]c2ccccc12",
+  "source_relation": "The source names 'DMT spirit molecule' metaphorically; the molecular graph here is standard chemistry added by the decoder.",
+  "notes": "Indole core + two-carbon side chain + tertiary dimethylamine.",
+  "canonical_smiles": "CN(C)CCc1c[nH]c2ccccc12",
+  "formula": "C12H16N2",
+  "molecular_weight_g_mol": 188.274,
+  "atom_counts_heavy": {
+    "C": 12,
+    "N": 2
+  },
+  "bond_counts_heavy_atom_graph": {
+    "SINGLE": 5,
+    "AROMATIC": 10
+  },
+  "formal_charge": 0,
+  "stereochemistry_note": "No stereocenter is encoded in this graph."
+}

@@ -1,0 +1,27 @@
+asset,type,evidence_status,description
+structures/geometry/equation_world_pipeline.svg,SVG diagram,source reconstruction,Finite grammar -> state -> support/compatibility -> event -> transition -> lineage/log.
+structures/geometry/local_spherical_support.svg,SVG diagram,source reconstruction,Bounded radial-angular local chart.
+structures/geometry/phase_sheet_double_vacuum.svg,SVG diagram,source reconstruction,Co-location without coupling across phase sheets.
+structures/geometry/sdf_event_surface.svg,SVG diagram,standard science + source semantics,SDF sign regions and zero guard crossing.
+structures/geometry/quad_hourglass.svg,SVG diagram,decoder reconstruction,Four-chamber routing partition and pinch point.
+structures/geometry/log_polar_grid.svg,SVG diagram,standard science,Log-polar coordinates and scale-to-translation relation.
+structures/geometry/camera_obscura.svg,SVG diagram,standard science,Pinhole inversion.
+structures/geometry/phi_overlap_lens.svg,SVG diagram,decoder reconstruction,Slight overlap as set intersection A∩B.
+structures/geometry/local_sphere.obj,OBJ mesh,conceptual geometry,Unit sphere representing local support.
+structures/geometry/double_cone_hourglass.obj,OBJ mesh,conceptual geometry,Pinched double cone.
+structures/geometry/mobius_strip.obj,OBJ mesh,standard topology,Möbius strip mesh.
+structures/geometry/klein_bottle_immersion.obj,OBJ mesh,standard topology visualization,Self-intersecting 3D immersion.
+structures/photonics/hollowlens0_architecture.svg,SVG diagram,source reconstruction,"Angular source, liquid coupler, MZI, balanced detection and digital sidecar."
+structures/photonics/spherical_throughput_funnel.svg,SVG diagram,source reconstruction,Verified-event counting after support and compatibility.
+structures/biology/gene_expression_flow.svg,SVG diagram,standard science annotation,DNA -> RNA -> protein -> phenotype with regulation.
+structures/biology/crispr_cas9_schematic.svg,SVG diagram,standard science annotation,RNA-guided Cas9 DNA cleavage.
+structures/biology/protein_folding_landscape.svg,SVG diagram,illustrative standard model,Conformational free-energy landscape.
+structures/biology/reaction_diffusion.svg,SVG diagram,standard science annotation,Two-field reaction-diffusion system.
+structures/biology/viral_entry_correction.svg,SVG diagram,standard science correction,Receptor/protease/membrane entry.
+structures/biology/blood_plasma_flow_model.svg,SVG diagram,illustrative modeling schematic,Flow/transport and guard surface.
+structures/chemistry/dmt.sdf,chemical connection table,standard chemistry annotation,"N,N-Dimethyltryptamine: C12H16N2; CN(C)CCc1c[nH]c2ccccc12"
+structures/chemistry/tryptamine.sdf,chemical connection table,decoder-added explanatory scaffold,Tryptamine: C10H12N2; NCCc1c[nH]c2ccccc12
+structures/chemistry/indole.sdf,chemical connection table,decoder-added explanatory scaffold,Indole: C8H7N; c1ccc2[nH]ccc2c1
+structures/chemistry/glycerol.sdf,chemical connection table,standard chemistry annotation,Glycerol: C3H8O3; OCC(O)CO
+structures/chemistry/water.sdf,chemical connection table,standard chemistry annotation,Water: H2O; O
+structures/chemistry/dimethylamine.sdf,chemical connection table,decoder-added explanatory scaffold,Dimethylamine: C2H7N; CNC

@@ -1,0 +1,13 @@
+molecule,atom_index,element,atomic_number,formal_charge,aromatic,hybridization,implicit_hydrogens,degree
+tryptamine,0,N,7,0,False,SP3,2,1
+tryptamine,1,C,6,0,False,SP3,2,2
+tryptamine,2,C,6,0,False,SP3,2,2
+tryptamine,3,C,6,0,True,SP2,0,3
+tryptamine,4,C,6,0,True,SP2,1,2
+tryptamine,5,N,7,0,True,SP2,1,2
+tryptamine,6,C,6,0,True,SP2,0,3
+tryptamine,7,C,6,0,True,SP2,1,2
+tryptamine,8,C,6,0,True,SP2,1,2
+tryptamine,9,C,6,0,True,SP2,1,2
+tryptamine,10,C,6,0,True,SP2,1,2
+tryptamine,11,C,6,0,True,SP2,0,3

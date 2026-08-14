@@ -1,0 +1,346 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Decoded Alchemical Corpus</title><style>
+@page {
+  size: A4;
+  margin: 18mm 17mm 18mm 17mm;
+  @bottom-left { content: "Decoded Alchemical Corpus"; font-family: "DejaVu Sans"; font-size: 8.5pt; color: #5c6770; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font-family: "DejaVu Sans"; font-size: 8.5pt; color: #5c6770; }
+}
+@page:first { @bottom-left { content: none; } @bottom-right { content: none; } }
+html { font-family: "DejaVu Sans", Arial, sans-serif; color: #14232e; font-size: 10.2pt; line-height: 1.46; }
+body { margin: 0; }
+h1, h2, h3, h4 { color: #0b2a3c; break-after: avoid; }
+h1 { font-size: 25pt; line-height: 1.12; margin: 0 0 9mm; border-bottom: 2.5pt solid #1f9aaa; padding-bottom: 3mm; }
+h2 { font-size: 17pt; margin: 8mm 0 4mm; color: #0b2a3c; }
+h3 { font-size: 12.5pt; margin: 6mm 0 2.2mm; color: #1f6575; }
+h4 { font-size: 10.5pt; margin: 4mm 0 1.5mm; }
+p { margin: 0 0 3.2mm; }
+ul, ol { margin: 1mm 0 4mm 6mm; padding-left: 5mm; }
+li { margin-bottom: 1.3mm; }
+code, .mono { font-family: "DejaVu Sans Mono", monospace; background: #eef2f4; border-radius: 3px; padding: 0.4mm 1mm; }
+pre { font-family: "DejaVu Sans Mono", monospace; font-size: 8.6pt; background: #eef2f4; border-left: 4px solid #1f9aaa; padding: 4mm; white-space: pre-wrap; break-inside: avoid; }
+.title-page { page-break-after: always; min-height: 245mm; display: flex; flex-direction: column; justify-content: space-between; }
+.title-block { margin-top: 18mm; }
+.kicker { color: #1f9aaa; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 10pt; }
+.report-title { font-size: 34pt; font-weight: 800; line-height: 1.08; color: #0b2a3c; margin: 5mm 0 5mm; }
+.report-subtitle { font-size: 15pt; color: #5c6770; max-width: 150mm; }
+.title-card { background: #0b2a3c; color: white; border-radius: 7mm; padding: 9mm; margin-top: 18mm; }
+.title-card strong { color: #f2ca57; }
+.meta { font-size: 9pt; color: #667781; }
+.section { page-break-before: always; }
+.no-break { break-inside: avoid; }
+.figure { margin: 4mm auto 6mm; break-inside: avoid; text-align: center; }
+.figure img { max-width: 100%; max-height: 178mm; }
+.figure.small img { max-height: 125mm; }
+.figure.two-third img { max-height: 145mm; }
+figcaption { font-size: 8.4pt; color: #5c6770; margin-top: 2mm; text-align: left; }
+.callout { border-left: 5px solid #1f9aaa; background: #e7f5f6; padding: 4mm 5mm; margin: 4mm 0; break-inside: avoid; }
+.callout.warn { border-color: #d86b5b; background: #faece9; }
+.callout.gold { border-color: #d7a72e; background: #fbf6e3; }
+.callout.dark { border-color: #d7a72e; background: #0b2a3c; color: white; }
+.callout.dark strong { color: #f2ca57; }
+.status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 4mm 0; }
+.status-card { padding: 4mm; border: 1px solid #c8d5db; border-radius: 4mm; break-inside: avoid; }
+.status-card h4 { margin-top: 0; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 7.5pt; margin: 3mm 0 6mm; }
+.data-table thead { display: table-header-group; }
+.data-table th { background: #0b2a3c; color: white; text-align: left; padding: 2.2mm; vertical-align: top; }
+.data-table td { border: 0.4pt solid #cbd6dc; padding: 2mm; vertical-align: top; }
+.data-table tbody tr:nth-child(even) { background: #f3f7f8; }
+.compact { font-size: 7.1pt; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+.asset-list { columns: 2; column-gap: 8mm; font-size: 9pt; }
+.toc a { color: #0b2a3c; text-decoration: none; }
+.toc li { margin-bottom: 2mm; }
+hr { border: 0; border-top: 1px solid #cbd6dc; margin: 6mm 0; }
+.page-break { page-break-before: always; }
+.smallprint { font-size: 8pt; color: #5c6770; }
+</style></head><body>
+<section class="title-page">
+  <div class="title-block">
+    <div class="kicker">Technical extraction and evidence audit</div>
+    <div class="report-title">Decoded Alchemical Corpus</div>
+    <div class="report-subtitle">Geometries, topology, equations, chemical bonds, molecular structures, biological mechanisms, optics, photonics and computational architecture extracted from seven source PDFs.</div>
+    <div class="title-card">
+      <p><strong>Central finding:</strong> the corpus contains a coherent spherical-support event calculus and a bounded optofluidic prototype path. It does not contain a uniquely recoverable universal chemistry hidden in metaphor.</p>
+      <p><strong>Evidence policy:</strong> source operators, standard science, decoder inference and unsupported claims are kept separate.</p>
+    </div>
+  </div>
+  <div>
+    <p class="meta">Prepared from the user-supplied corpus. External scientific references are used only to ground named concepts that the sources do not specify atomically or mechanistically.</p>
+  </div>
+</section>
+
+<h1>Contents</h1>
+<ol class="toc">
+<li><a href="#executive">Executive findings</a></li>
+<li><a href="#method">Method and evidence boundary</a></li>
+<li><a href="#architecture">Unified computational architecture</a></li>
+<li><a href="#geometry">Geometry and topology</a></li>
+<li><a href="#chemistry">Chemistry and molecular structures</a></li>
+<li><a href="#biology">Biology and biochemistry</a></li>
+<li><a href="#optics">Optics, photonics and optofluidics</a></li>
+<li><a href="#computing">Computer science, mathematics and signal processing</a></li>
+<li><a href="#claims">Claims, corrections and validation matrix</a></li>
+<li><a href="#documents">Source-by-source decoding</a></li>
+<li><a href="#assets">Package contents and file map</a></li>
+<li><a href="#references">External grounding references</a></li>
+</ol>
+<div class="callout gold"><strong>How to read the report.</strong> A diagram may be a source reconstruction, a standard-science annotation or an illustrative schematic. Captions identify which. OBJ and chemical files are inspectable assets, not proof of a physical implementation.</div>
+
+<section id="executive" class="section">
+<h1>1. Executive findings</h1>
+<div class="callout dark">
+<p><strong>What is actually there:</strong> a finite grammar over a phase-layered state manifold, local spherical support, compatibility gating, event surfaces, transition routing, lineage and a novelty log.</p>
+<p><strong>What is actually buildable:</strong> a small query-first software prototype and a bounded optofluidic waveguide demonstrator.</p>
+<p><strong>What is not recovered:</strong> a universal hidden chemistry, secret protein fold, new vacuum state, physical topological shield, exact solver for all dynamics, zero-power AI or BCI bodily-control mechanism.</p>
+</div>
+<figure class="figure"><img src="structures/geometry/equation_world_pipeline.svg"/><figcaption>Figure 1. Source reconstruction: the mature equation-world pipeline.</figcaption></figure>
+<h2>The decisive interpretive shift</h2>
+<p>The most mature source tells the reader to stop treating the archive as a proposal about pixels, ray marching or voxel storage. Those are optional projection tools. The actual proposal is a queryable state-and-event system. The recurring alchemical nouns become operators:</p>
+<table class="data-table compact"><thead><tr><th>Term</th><th>Technical Translation</th><th>Status</th><th>Caveat</th></tr></thead><tbody><tr><td>sphere / spherical</td><td>Use as a local radial-angular support or chart for reach, shelling, orientation and uncertainty.</td><td>SOURCE-DEFINED OPERATOR</td><td>The mature corpus rejects a globally spherical replacement for every representation.</td></tr><tr><td>cone</td><td>Analytic domain of relevance/influence; a query filter rather than necessarily a rendered ray bundle.</td><td>SOURCE-DEFINED OPERATOR</td><td>A cone alone does not solve visibility, dynamics or chemistry.</td></tr><tr><td>SDF = 0 / B = 0</td><td>Explicit event/guard/transition relation rather than a point to march past.</td><td>SOURCE-DEFINED OPERATOR</td><td>Zero does not itself prove exact root solving or eliminate sampling.</td></tr><tr><td>double vacuum</td><td>Absence of coupling: co-located states remain isolated because phase, sheet, orientation, address or mode tags are incompatible.</td><td>SOURCE-DEFINED OPERATOR</td><td>Not a second physical vacuum or guaranteed physical barrier.</td></tr><tr><td>Klein bottle</td><td>A closed non-orientable surface; useful as a routing/gluing abstraction with explicit port and orientation maps.</td><td>ESTABLISHED SCIENCE + SOURCE ABSTRACTION</td><td>A familiar 3D model self-intersects; literal non-orientable hardware is not validated.</td></tr><tr><td>one-bit / parity</td><td>Route, sheet, freshness, admission or validity flag under a declared schema.</td><td>SOURCE-DEFINED OPERATOR</td><td>The bit is not the full optical, geometric, biological or semantic state.</td></tr><tr><td>φ (phi)</td><td>Separate meanings: local angle/phase variable φ; phase law ϕ(t); golden ratio Φ only when explicitly designed.</td><td>DECODER DISAMBIGUATION</td><td>The corpus often conflates these. The golden ratio has no automatic stabilizing power.</td></tr><tr><td>lineage / ontological address</td><td>Generative identifier plus parent/transition history.</td><td>SOURCE-DEFINED OPERATOR</td><td>A proposed data-model concept; 64-bit uniqueness and reconstruction claims require collision and branch rules.</td></tr><tr><td>finite grammar</td><td>Finite rules that generate relations, trajectories or structures.</td><td>SOURCE-DEFINED OPERATOR</td><td>Expression size and algebraic closure can grow rapidly.</td></tr><tr><td>state_at(t)</td><td>Evaluate a closed or bounded state expression at requested time without replaying all intermediate frames.</td><td>BOUNDED ENGINEERING PROPOSAL</td><td>Cost depends on expression size, conditioning and branch history.</td></tr><tr><td>next_event</td><td>Find the earliest compatible root/guard crossing after t0.</td><td>BOUNDED ENGINEERING PROPOSAL</td><td>Multiple roots, tangencies, dense events and degeneracies can be hard.</td></tr><tr><td>log-polar LUT</td><td>Table addressed by ρ=ln r and θ; useful for scale-to-translation mapping and foveated/local processing.</td><td>ESTABLISHED TRANSFORM + SOURCE DESIGN</td><td>Quantization, singular origin, interpolation and information loss must be measured.</td></tr><tr><td>waveguide</td><td>Dielectric structure that confines and routes optical modes.</td><td>ESTABLISHED PHOTONICS</td><td>It does not compute arbitrary equations without a specified transfer function and input/output encoding.</td></tr><tr><td>liquid lens / liquid overclad</td><td>Microfluidic or electrowetting element controlling curvature, effective index, focus, phase or coupling.</td><td>ESTABLISHED COMPONENT CLASS</td><td>Settling time, hysteresis, evaporation, bubbles, absorption and packaging matter.</td></tr><tr><td>B.C.E.</td><td>Emit an event only when support, compatibility and measured guard conditions pass, with confidence and lineage.</td><td>SOURCE-DEFINED OPERATOR</td><td>Requires a digital sidecar and declared thresholds; not mystical gating.</td></tr><tr><td>spherical throughput</td><td>Verified events or answered queries per second after support, compatibility, guard and confidence filters.</td><td>SOURCE-DEFINED METRIC</td><td>Must report energy, insertion loss, latency, error and calibration.</td></tr><tr><td>DMT</td><td>N,N-dimethyltryptamine, C12H16N2: an indole tryptamine with a two-carbon chain ending in a tertiary dimethylamine.</td><td>ESTABLISHED CHEMISTRY ADDED BY DECODER</td><td>The prose does not encode a hidden molecular graph; the structure is supplied from standard chemistry.</td></tr><tr><td>CRISPR-Cas9</td><td>RNA-guided DNA endonuclease system; editing outcome depends on target, PAM, delivery and cellular repair.</td><td>ESTABLISHED BIOCHEMISTRY + SOURCE RHETORIC</td><td>The source supplies no sequence, kinetic model or validated replacement method.</td></tr><tr><td>protein folding</td><td>Sequence-dependent conformational ensemble on a free-energy landscape.</td><td>ESTABLISHED BIOCHEMISTRY + SOURCE ANALOGY</td><td>No protein sequence or atomic coordinates are present, so no specific fold can be reconstructed.</td></tr><tr><td>viral spike puncturing a cell wall</td><td>For enveloped human viruses such as SARS-CoV-2, entry involves receptor binding, protease priming and membrane fusion/endocytosis.</td><td>INCORRECT/MISAPPLIED</td><td>Human cells have plasma membranes, not cell walls; virus-specific mechanisms vary.</td></tr><tr><td>universal O(1)</td><td>At most: horizon-independent evaluation for a fixed closed expression.</td><td>OVERCLAIM CORRECTED BY CORPUS</td><td>Event solving, compatibility, expression growth and branching are not universally constant.</td></tr><tr><td>BCI / telepresence bodily control</td><td>No valid engineering or medical mechanism is supplied.</td><td>UNSUPPORTED NARRATIVE</td><td>Should not be interpreted as evidence of remote bodily occupation or as a treatment design.</td></tr></tbody></table>
+<h2>Practical result</h2>
+<p>The bounded hardware report supplies a technically disciplined interpretation: a radial-angular input field is shaped by a liquid optical interface, coupled into selected guided modes, filtered by compatibility and converted into a verified event only at a measured guard crossing. End-to-end loss, energy, latency, error, uncertainty and calibration are part of the result.</p>
+<div class="callout warn"><strong>Scientific caution.</strong> Many earlier pages assert universal O(1), zero memory, zero heat, exact biological control and physical protection through topology. The later corpus rejects or demotes these claims. This report follows the later correction.</div>
+</section>
+
+<section id="method" class="section">
+<h1>2. Method and evidence boundary</h1>
+<p>The task is not ordinary summarization. It is a controlled translation from metaphor-rich prose into explicit scientific objects. The conversion uses five evidence layers.</p>
+<div class="status-grid">
+<div class="status-card"><h4>Source-defined operator</h4><p>Explicitly stabilized by the mature corpus: support, compatibility, event, transition, parity, lineage.</p></div>
+<div class="status-card"><h4>Established science</h4><p>Standard geometry, chemistry, biology or physics added to clarify a named term: DMT, Klein bottle, Maxwell, CRISPR.</p></div>
+<div class="status-card"><h4>Bounded engineering proposal</h4><p>Coherent but unvalidated design, especially Equation World Zero and Hollowlens-0.</p></div>
+<div class="status-card"><h4>Decoder inference</h4><p>Constructive mapping that is plausible but not uniquely forced by the source.</p></div>
+<div class="status-card"><h4>Unsupported / incorrect</h4><p>Overclaim, category error, factual mistake or claim without mechanism and evidence.</p></div>
+<div class="status-card"><h4>Fiction / narrative</h4><p>Resident Evil, soul, geopolitical and physical-sovereignty motifs retained only as context.</p></div>
+</div>
+<h2>No invented atomistic precision</h2>
+<p>A molecule is generated only when a chemical identity is unambiguous. DMT, water and glycerol qualify. "Protein," "virus," "blood plasma," "gene," "optical oil" and "liquid crystal" do not identify a unique molecular graph. Those receive schematics or requirements rather than fabricated coordinates.</p>
+<h2>Source hierarchy</h2>
+<ol>
+<li><em>Chronological Synthesis</em> supplies the corpus-wide interpretive rule and feasibility boundary.</li>
+<li><em>Spherical Throughput</em> supplies the most grounded hardware translation, equations, metrics and kill criteria.</li>
+<li><em>Hollowland</em>, <em>DMT</em>, <em>ADDominUS</em>, <em>Ben Burgers</em> and <em>KC Vector Art</em> supply the generative vocabulary, examples and speculative extensions.</li>
+</ol>
+<h2>Traceability</h2>
+<p>The ZIP includes page-separated full text, a 222-page source map, a 70-term lexicon, 35 equations/operators and a 51-row claims matrix. Every generated structure records whether it is source-derived or decoder-added standard science.</p>
+</section>
+
+<section id="architecture" class="section">
+<h1>3. Unified computational architecture</h1>
+<h2>State manifold</h2>
+<p>The source's compact state model can be read as:</p>
+<pre>Q = P^n x R_time x S_phase x Z2_sheet x A_address x B_branch
+q_e(t) = (x_e(t), t, phi_e(t), sigma_e(t), a_e, b_e)
+W = (G, R, T, I)</pre>
+<p>Position is only one coordinate. State also carries time, phase, discrete sheet, lineage address and branch. The world tuple collects grammar, relations, transitions and invariants.</p>
+<h2>Event calculus</h2>
+<pre>R_j(q; theta_j) = 0
+C_alpha(q,t) &lt;= 0
+chi(e,j,t) in {0,1}
+
+t* = min { t &gt;= t0 : R_j(q_e(t)) = 0, C_alpha &lt;= 0, chi = 1 }
+q_e(t*+) = T_j(q_e(t*-), context)</pre>
+<p>An event is not merely a geometric crossing. It is the earliest relation root that lies inside the relevant local support and passes compatibility. The transition then updates state while preserving declared invariants.</p>
+<figure class="figure"><img src="structures/geometry/local_spherical_support.svg"/><figcaption>Figure 2. Source reconstruction: local spherical support as a bounded chart, not a globally spherical world.</figcaption></figure>
+<h2>Direct queries</h2>
+<div class="two-col">
+<div class="callout"><strong>state_at(t)</strong><br/>Evaluate a closed or compiled state expression at the requested time without necessarily replaying intermediate frames.</div>
+<div class="callout"><strong>next_event(t0)</strong><br/>Find the earliest supported, compatible guard crossing after a starting time.</div>
+</div>
+<p>Other proposed queries include events inside a cone, phase coupling, route selection, identity reconstruction and agent action. The computational advantage is conditional: compatibility plus event solving must be cheaper than the materialization it avoids.</p>
+<h2>Complexity boundary</h2>
+<p>Horizon skipping is not universal constant time. Cost can grow with grammar depth, expression size, branch history, root multiplicity, event density, conditioning and uncertainty certification. Memory can be reduced by regeneration, but seed, coefficients, logs, branches and calibration remain.</p>
+</section>
+
+<section id="geometry" class="section">
+<h1>4. Geometry and topology</h1>
+<h2>Signed distance and event surfaces</h2>
+<p>A signed distance field is defined on both sides of a boundary. Zero is the surface. The mature corpus's strongest correction is to treat zero as the place where transition semantics are invoked, not as a magical point that automatically eliminates sampling.</p>
+<figure class="figure"><img src="structures/geometry/sdf_event_surface.svg"/><figcaption>Figure 3. Standard geometry plus source event semantics: zero level set, support and compatibility.</figcaption></figure>
+<h2>Double vacuum</h2>
+<p>The phrase is not a new physical vacuum. It means co-location without coupling. Two states can share spatial coordinates and remain invisible to each other because their sheet, phase, orientation, mode or lineage tags are incompatible.</p>
+<figure class="figure"><img src="structures/geometry/phase_sheet_double_vacuum.svg"/><figcaption>Figure 4. Source reconstruction: double vacuum as phase-separated co-location.</figcaption></figure>
+<h2>Hourglass routing</h2>
+<p>The four-chamber hourglass is best interpreted as a finite transition partition. A central event locus routes between sheet/route combinations. The invariant axis is a stable reference, not a literal supernatural spine.</p>
+<figure class="figure"><img src="structures/geometry/quad_hourglass.svg"/><figcaption>Figure 5. Decoder reconstruction of the quad hourglass.</figcaption></figure>
+<h2>Klein bottle and Mobius strip</h2>
+<div class="two-col">
+<figure class="figure small"><img src="structures/geometry/mobius_strip_preview.png"/><figcaption>Figure 6a. Generated conceptual mesh: Mobius strip.</figcaption></figure><figure class="figure small"><img src="structures/geometry/klein_bottle_immersion_preview.png"/><figcaption>Figure 6b. Generated conceptual mesh: self-intersecting 3D Klein-bottle immersion.</figcaption></figure>
+</div>
+<p>Both surfaces are non-orientable. The Mobius strip has one boundary component; the Klein bottle is closed. Their legitimate architectural use is an orientation-reversing gluing rule. A common 3D Klein bottle crosses itself; it is not a leak-proof physical container and does not automatically support a globally signed SDF.</p>
+<h2>Log-polar grid</h2>
+<figure class="figure"><img src="structures/geometry/log_polar_grid.svg"/><figcaption>Figure 7. Standard transform used throughout the source: radial scale becomes translation in log radius.</figcaption></figure>
+<h2>Overlap geometry</h2>
+<p>The Ben Burgers document's two-D/phi overlap becomes a lens-shaped set intersection. It can represent shared domain or interference only after the participating sets/fields are defined.</p>
+<figure class="figure"><img src="structures/geometry/phi_overlap_lens.svg"/><figcaption>Figure 8. Decoder reconstruction: slight overlap as A intersect B.</figcaption></figure></section>
+<section id="chemistry" class="section">
+<h1>5. Chemistry and molecular structures</h1>
+<h2>What the prose does and does not encode</h2>
+<p>The corpus names DMT, water and glycerol, but most chemical language is metaphorical. It does not encode a universal atomistic substrate or a hidden bond graph for every motif. The package therefore introduces standard chemical structures only for unambiguously identified compounds.</p>
+<h2>N,N-dimethyltryptamine</h2>
+<div class="two-col">
+<figure class="figure small"><img src="structures/chemistry/dmt.svg"/><figcaption>Figure 9. Standard chemistry annotation: DMT 2D molecular graph.</figcaption></figure>
+<div>
+<p><strong>Formula:</strong> C<sub>12</sub>H<sub>16</sub>N<sub>2</sub></p>
+<p><strong>Canonical SMILES:</strong> <code>CN(C)CCc1c[nH]c2ccccc12</code></p>
+<p><strong>Structure:</strong> fused indole aromatic system, two-carbon linker and tertiary dimethylamine.</p>
+<p><strong>Bonding:</strong> covalent C-C, C-N and C-H sigma bonds plus an aromatic pi system. The indole nitrogen is pyrrolic; the side-chain nitrogen is a basic tertiary amine whose protonation depends on environment.</p>
+<div class="callout gold"><strong>Evidence note.</strong> This molecular graph is not decoded from wordplay. It is standard chemistry supplied because the document names DMT.</div>
+</div>
+</div>
+<h2>Structural decomposition</h2>
+<div class="three-col">
+<figure class="figure small"><img src="structures/chemistry/indole.svg"/><figcaption>Indole core.</figcaption></figure><figure class="figure small"><img src="structures/chemistry/tryptamine.svg"/><figcaption>Tryptamine scaffold.</figcaption></figure><figure class="figure small"><img src="structures/chemistry/dimethylamine.svg"/><figcaption>Dimethylamine fragment; in DMT the nitrogen is tertiary.</figcaption></figure>
+</div>
+<h2>Optofluidic materials</h2>
+<div class="two-col">
+<figure class="figure small"><img src="structures/chemistry/water.svg"/><figcaption>Water, an explicitly named liquid-region candidate.</figcaption></figure><figure class="figure small"><img src="structures/chemistry/glycerol.svg"/><figcaption>Glycerol, explicitly named in water/glycerol mixtures.</figcaption></figure>
+</div>
+<p>Water/glycerol mixtures are relevant because composition changes refractive index, viscosity, wetting, volatility and actuator response. Hydrogen bonding is an intermolecular interaction that contributes to these properties; it is not a permanent rigid lattice.</p>
+<h2>What was deliberately not generated</h2>
+<ul>
+<li>No unique protein molecule without an amino-acid sequence and state.</li>
+<li>No unique liquid crystal without a specified compound.</li>
+<li>No atomistic blood-plasma file: plasma is a multicomponent fluid.</li>
+<li>No T-virus structure: it is fictional.</li>
+<li>No molecular coordinates for double vacuum, soul, phase sheet or ontological UUID.</li>
+</ul>
+</section>
+
+<section id="biology" class="section">
+<h1>6. Biology and biochemistry</h1>
+<h2>Gene expression</h2>
+<p>The source's grammar metaphor has a real biochemical counterpart, but not the proposed global phase controller. Gene expression involves chromatin and DNA regulation, transcription, RNA processing/turnover, translation, folding, modification and degradation.</p>
+<figure class="figure"><img src="structures/biology/gene_expression_flow.svg"/><figcaption>Figure 10. Standard biology annotation: high-level gene-expression flow.</figcaption></figure>
+<h2>CRISPR-Cas9</h2>
+<p>ADDominUS correctly names guide RNA and Cas9-mediated DNA cutting at a headline level. It omits the sequence/PAM, delivery, repair and validation details and does not supply an algebraic replacement mechanism.</p>
+<figure class="figure"><img src="structures/biology/crispr_cas9_schematic.svg"/><figcaption>Figure 11. Standard biology annotation: RNA-guided Cas9 cleavage schematic.</figcaption></figure>
+<h2>Protein folding</h2>
+<p>Proteins are dynamic conformational ensembles. The source is right to resist treating every protein as a single frozen snapshot. But no protein sequence, solvent model, energy function or kinetics are given, so a specific fold cannot be reconstructed.</p>
+<figure class="figure"><img src="structures/biology/protein_folding_landscape.svg"/><figcaption>Figure 12. Standard conceptual model: a protein free-energy landscape, not a recovered structure.</figcaption></figure>
+<h2>Reaction-diffusion and transport</h2>
+<p>The corpus's earliest field language is closest to established reaction-diffusion and advection-diffusion-reaction models. These require named species, rates, diffusion constants, flow and boundary conditions.</p>
+<figure class="figure"><img src="structures/biology/reaction_diffusion.svg"/><figcaption>Figure 13. Standard two-field reaction-diffusion model.</figcaption></figure>
+<h2>Viral-entry correction</h2>
+<p>The DMT document states that spike proteins puncture an O or cell wall. Human cells have plasma membranes, not cell walls. A high-level SARS-CoV-2 example uses receptor binding, protease priming and membrane entry.</p>
+<figure class="figure"><img src="structures/biology/viral_entry_correction.svg"/><figcaption>Figure 14. Standard virology correction: receptor/protease-dependent entry, not mechanical cell-wall puncture.</figcaption></figure>
+<h2>Blood plasma</h2>
+<p>Tethering can be converted only into a model specification: velocity, pressure, transported concentrations, vessel boundaries, sources/sinks, guards and uncertainty. It is not a therapeutic eigenvector lock.</p>
+<figure class="figure"><img src="structures/biology/blood_plasma_flow_model.svg"/><figcaption>Figure 15. Illustrative modeling schematic: blood-plasma flow and a measurement guard.</figcaption></figure>
+<div class="callout warn"><strong>Medical boundary.</strong> The documents provide no validated treatment, gene-control, blood-control or BCI mechanism. Safety-sensitive passages are classified as unsupported narrative.</div>
+</section>
+
+<section id="optics" class="section">
+<h1>7. Optics, photonics and optofluidics</h1>
+<h2>Camera obscura</h2>
+<p>The source's inward/outward pinhole motif has a real optical kernel: light rays cross at an aperture and form an inverted image. The psychological interpretation is metaphor; diffraction, aperture, distance and detector response are the physical variables.</p>
+<figure class="figure"><img src="structures/geometry/camera_obscura.svg"/><figcaption>Figure 16. Standard optics annotation: camera-obscura inversion.</figcaption></figure>
+<h2>Hollowlens-0</h2>
+<p>The practical system uses a solid photonic substrate with a tunable liquid region. A 2x2 interferometer converts phase/coupling changes into balanced detector outputs; a digital sidecar performs calibration, thresholds, uncertainty, parity and lineage.</p>
+<figure class="figure"><img src="structures/photonics/hollowlens0_architecture.svg"/><figcaption>Figure 17. Source reconstruction: recommended Hollowlens-0 architecture.</figcaption></figure>
+<h2>Equations that replace metaphor</h2>
+<table class="data-table compact"><thead><tr><th>Id</th><th>Name</th><th>Equation</th><th>Meaning</th><th>Requirements</th><th>Source</th></tr></thead><tbody><tr><td>EQW-01</td><td>Projective-phase state manifold</td><td>Q = P^n × R_time × S_phase × Z2_sheet × A_address × B_branch</td><td>State includes position, time, phase, sheet, lineage address and branch.</td><td>Define each factor and admissible states.</td><td>Chronological pp.5-6</td></tr><tr><td>EQW-04</td><td>Relation surface</td><td>R_j(q; θ_j) = 0</td><td>Implicit relation/guard surface.</td><td>Regularity, parameters, root method.</td><td>Chronological p.6</td></tr><tr><td>EQW-05</td><td>Support constraint</td><td>C_α(q,t) ≤ 0</td><td>Local cone/hourglass support admits a candidate.</td><td>Bounded geometry and tolerance.</td><td>Chronological pp.6-7</td></tr><tr><td>EQW-06</td><td>Compatibility predicate</td><td>χ(e,j,t) ∈ {0,1}</td><td>Gates interaction by mode, phase, sheet, address or policy.</td><td>Schema and false accept/reject criteria.</td><td>Chronological p.6</td></tr><tr><td>EQW-07</td><td>Next compatible event</td><td>t* = min{t ≥ t0 : R_j(q_e(t))=0, C_α≤0, χ=1}</td><td>Earliest root that is supported and compatible.</td><td>Root existence, ordering, tangency handling.</td><td>Chronological p.6</td></tr><tr><td>EQW-08</td><td>Transition update</td><td>q_e(t*+) = T_j(q_e(t*−), context)</td><td>Apply discrete transition at a continuous event.</td><td>Invariant preservation and branch rules.</td><td>Chronological p.6</td></tr><tr><td>OPT-01</td><td>Frequency-domain Maxwell equation</td><td>∇×μ_r^−1∇×E − k0² ε_r(r,u)E = 0</td><td>Solve the optical field in the actuated dielectric geometry.</td><td>Boundary conditions, dispersion and loss.</td><td>Spherical Throughput p.5</td></tr><tr><td>OPT-02</td><td>Coupled-mode evolution</td><td>da_m/dz = −(α_m/2 + jβ_m)a_m − j Σ_(n≠m) κ_mn(u,λ)a_n</td><td>Tracks attenuation, propagation and coupling of guided modes.</td><td>Mode basis and validity of coupled-mode approximation.</td><td>Spherical Throughput p.5</td></tr><tr><td>FLD-01</td><td>Young-Laplace pressure-curvature law</td><td>Δp = γ(1/R1 + 1/R2)</td><td>Pressure difference controls liquid meniscus curvature.</td><td>Surface tension, radii, contact-angle conditions.</td><td>Spherical Throughput p.5</td></tr><tr><td>OPT-03</td><td>Actuated optical phase</td><td>Δφ(u,λ) = (2π/λ) L Δn_eff(u)</td><td>Effective-index change creates phase shift.</td><td>Interaction length, wavelength, calibrated n_eff.</td><td>Spherical Throughput p.5</td></tr><tr><td>FLD-02</td><td>Incompressible Navier-Stokes</td><td>ρ(∂_t v + v·∇v) = −∇p + μ∇²v + f_act;  ∇·v = 0</td><td>Dynamic liquid-actuator model when quasi-static curvature is inadequate.</td><td>Boundary/initial conditions and constitutive parameters.</td><td>Spherical Throughput p.5</td></tr><tr><td>OPT-04</td><td>Mode overlap efficiency</td><td>η_c = |∫_A E_in·E_m* dA|² / [(∫_A|E_in|²dA)(∫_A|E_m|²dA)]</td><td>Fractional coupling from admitted input field to a chosen mode.</td><td>Field normalization and polarization convention.</td><td>Spherical Throughput p.5</td></tr><tr><td>BCE-01</td><td>Bounded Compatibility Event</td><td>t* = inf{t&gt;t0 : S_q=1, χ_q=1, g_q(y,t)=0}</td><td>Declare transition only for supported, compatible guard crossing.</td><td>Measured guard, timestamp uncertainty and confidence.</td><td>Spherical Throughput p.5</td></tr><tr><td>MET-01</td><td>Spherical throughput</td><td>Θ_sph = N_verified / Δt</td><td>Verified events per second.</td><td>Report full error/energy/calibration boundary.</td><td>Spherical Throughput p.6</td></tr><tr><td>GEO-01</td><td>Log-polar transform</td><td>r = √(x²+y²);  ρ = ln(r/r0);  θ = atan2(y,x)</td><td>Scale-like radial changes become translations in ρ.</td><td>Origin handling, sampling and inverse transform.</td><td>DMT pp.2-3; KC Vector Art p.1</td></tr><tr><td>GEO-02</td><td>SDF surface</td><td>d(x)=0</td><td>Zero level set defines a boundary.</td><td>Sign/orientation convention and numerical tolerance.</td><td>Hollowland pp.16-18; KC Vector Art pp.1-2</td></tr><tr><td>RD-01</td><td>Two-field reaction-diffusion</td><td>∂u/∂t = D_u∇²u + f(u,v);  ∂v/∂t = D_v∇²v + g(u,v)</td><td>Local kinetics plus spatial diffusion produce patterns/fronts.</td><td>Specify species, kinetics, diffusion and boundary conditions.</td><td>DMT pp.25-27; external standard model</td></tr><tr><td>BIO-01</td><td>Advection-diffusion-reaction transport</td><td>∂c_i/∂t + v·∇c_i = ∇·(D_i∇c_i) + R_i(c)</td><td>A realistic bridge from blood/fluid metaphors to solute transport.</td><td>Species, reactions, flow field and boundary fluxes.</td><td>Decoder grounding for ADDominUS blood-plasma prose</td></tr><tr><td>BBMB-01</td><td>Benjamin-Bona-Mahony-Burgers equation</td><td>U_t + U_x + U U_x − m U_xx − U_xxt = 0</td><td>One-dimensional nonlinear dispersive-dissipative wave model.</td><td>Initial/boundary conditions and parameter m.</td><td>Scientific Reports 14, 13520 (2024), Eq.1</td></tr><tr><td>CHEM-02</td><td>DMT connectivity</td><td>SMILES: CN(C)CCc1c[nH]c2ccccc12</td><td>Indole-ethyl-tertiary-amine molecular graph.</td><td>2D connectivity, not a unique 3D conformation.</td><td>PubChem CID 6089</td></tr></tbody></table>
+<h2>Verified throughput</h2>
+<figure class="figure"><img src="structures/photonics/spherical_throughput_funnel.svg"/><figcaption>Figure 18. Source metric reconstruction: support and compatibility prune candidates before a verified B.C.E.</figcaption></figure>
+<h2>Fabrication and kill criteria</h2>
+<p>The source gives a conventional process: choose substrate/wavelength, form guides/couplers, open a microfluidic cavity, add liquid and actuator, bond/seal, couple light, detect and calibrate. Failure modes include loss, bubbles/evaporation, hysteresis, slow actuation, crosstalk, drift, ambiguous thresholds, packaging failure and no system advantage.</p>
+<div class="callout gold"><strong>Evidence boundary.</strong> Liquid lenses, optofluidic interferometers and glass waveguides are established component classes. Their existence does not validate the combined system's event rate, energy, latency or topology claims.</div>
+</section>
+
+<section id="computing" class="section">
+<h1>8. Computer science, mathematics and signal processing</h1>
+<h2>Hybrid systems, not magic</h2>
+<p>The closest established framework is a hybrid dynamical system: continuous trajectories, discrete modes, guards, reset maps, invariants and event logs. Double vacuum is a mode/compatibility partition; hourglass is a transition graph.</p>
+<h2>Zero-based indexing</h2>
+<p>The Ben Burgers document's valid CS point is that index 35 is the 36th element under zero-based indexing. Arithmetic remains 21+7+7=35. A bit shift changes by powers of two and does not make 35 equal 36.</p>
+<h2>BBMB equation</h2>
+<pre>U_t + U_x + U U_x - m U_xx - U_xxt = 0</pre>
+<p>This nonlinear dispersive-dissipative wave equation is an external scientific grounding for the Ben Burgers name. The source does not derive its phi-overlap geometry from the PDE.</p>
+<h2>Raster, BVH and analytic support</h2>
+<p>Rasterization, BVHs and octrees are established tools, not intellectual errors. The corpus proposes alternatives when direct analytic support and event queries are cheaper. The only credible verdict comes from matched workload benchmarks.</p>
+<h2>One-bit output and dithering</h2>
+<p>Pulse-density/delta-sigma modulation can encode an average level in a one-bit stream. Blue-noise screening and dot-gain compensation are real print techniques. A log-polar stochastic screen is a plausible experiment, not a validated universal prepress system.</p>
+<h2>Feynman vectors</h2>
+<p>No formal definition is provided. The closest established concepts are complex phasors, wave amplitudes or path integrals. A valid algorithm needs units, state space, accumulation measure, threshold, error and convergence.</p>
+</section>
+
+<section id="claims" class="section">
+<h1>9. Claims, corrections and validation matrix</h1>
+<p>The table below highlights the most consequential claims. The complete 51-row matrix is included as CSV and JSON.</p>
+<table class="data-table compact"><thead><tr><th>Claim</th><th>Classification</th><th>Scientific Verdict</th><th>Required Test</th></tr></thead><tbody><tr><td>The corpus is fundamentally a non-raster state/event ontology.</td><td>SUPPORTED BY CORPUS</td><td>Coherent as a software architecture concept.</td><td>Implement a restricted relation family with state_at and next_event queries.</td></tr><tr><td>All world structure should be represented globally in spherical coordinates.</td><td>REJECTED BY CORPUS</td><td>No general advantage; coordinate singularities and topology matter.</td><td>Compare hybrid local charts against global coordinate models.</td></tr><tr><td>A fixed closed expression can be evaluated at a distant time without replaying every frame.</td><td>BOUNDED PLAUSIBLE CLAIM</td><td>Possible for analytically solvable or compiled dynamics.</td><td>Measure query cost versus skipped horizon and expression depth.</td></tr><tr><td>The architecture has universal O(1) complexity.</td><td>OVERCLAIM</td><td>False in general due root solving, branching, event density and expression growth.</td><td>Complexity analysis and adversarial event-density benchmarks.</td></tr><tr><td>The architecture uses zero memory.</td><td>OVERCLAIM</td><td>False literally.</td><td>Measure total memory including coefficients, logs, branches, calibration and solver workspace.</td></tr><tr><td>Double vacuum is a second physical vacuum.</td><td>MISREADING</td><td>Useful state-partition abstraction, not a new vacuum state.</td><td>Demonstrate gated co-location in a formal model or isolated optical modes.</td></tr><tr><td>A Klein bottle supplies a global signed distance field with automatic sign flipping.</td><td>PARTLY MISAPPLIED</td><td>Requires local charts, orientation double cover or explicit gluing; no automatic bitwise NOT law.</td><td>Specify manifold atlas, transition functions and local SDF convention.</td></tr><tr><td>The practical optical architecture is Maxwell + fluid interface + coupled modes + event logic.</td><td>SUPPORTED BOUNDED FORMALIZATION</td><td>Technically coherent modeling stack.</td><td>Calibrated multiphysics model and matched electronic baseline.</td></tr><tr><td>Liquid overclad on a solid waveguide is the best first prototype.</td><td>REASONABLE ENGINEERING RECOMMENDATION</td><td>Plausible due packaging/control simplicity relative to liquid core.</td><td>Fabricate and measure loss, phase range, settling and hysteresis.</td></tr><tr><td>Hollowlens-0 already outperforms electronics.</td><td>NOT ESTABLISHED</td><td>Unknown.</td><td>Verified events/s and events/J at equal error/uncertainty, including all support hardware.</td></tr><tr><td>Optical propagation means zero latency.</td><td>FALSE LITERALLY</td><td>End-to-end latency is nonzero.</td><td>Measure median and tail latency including liquid settling and electronics.</td></tr><tr><td>Photonics means zero heat or zero power.</td><td>FALSE LITERALLY</td><td>Passive photonics may reduce some operations, not total power to zero.</td><td>Wall-plug energy per verified event.</td></tr><tr><td>DMT&#x27;s molecular structure is encoded in the alchemical prose.</td><td>NOT SUPPORTED</td><td>No uniquely recoverable hidden structure.</td><td>None; use standard chemical databases for the molecular graph.</td></tr><tr><td>DMT is C12H16N2 with an indole core and tertiary dimethylamine side chain.</td><td>ESTABLISHED CHEMISTRY</td><td>Correct for neutral free base.</td><td>Not applicable; distinguish salts/protonation.</td></tr><tr><td>Water/glycerol mixtures can act as tunable liquid optical media.</td><td>PLAUSIBLE MATERIAL OPTION</td><td>Yes, subject to absorption, index, viscosity and packaging.</td><td>Spectral/material characterization.</td></tr><tr><td>Log-polar blue-noise screening is useful for radial art/prepress.</td><td>PLAUSIBLE DESIGN IDEA</td><td>Potentially useful, but not a standard validated prepress method.</td><td>Moiré, dot gain and perceptual print tests against conventional screens.</td></tr><tr><td>A phase/eigenvalue controller can eliminate gene-expression mistakes or cancer.</td><td>UNSUPPORTED MEDICAL CLAIM</td><td>Not established.</td><td>Mechanistic preclinical evidence, safety and clinical validation.</td></tr><tr><td>Protein folding can be solved exactly and instantly as a procedural grammar.</td><td>UNSUPPORTED GENERALIZATION</td><td>Protein ensembles are complex and context-dependent; some predictions are tractable, exact dynamics are not generally closed-form.</td><td>Benchmark against experimental structures/dynamics across diverse proteins.</td></tr><tr><td>The spike protein punctures a human cell wall like a mechanical key.</td><td>INCORRECT</td><td>Wrong as stated.</td><td>Use virus-specific cell-entry literature.</td></tr><tr><td>Opossum venom resistance implies universal viral immunity or metabolic absolute zero.</td><td>FALSE GENERALIZATION</td><td>Not supported.</td><td>Virus-specific immunology and challenge studies.</td></tr><tr><td>Two overlapping arches must be 1:1 to prevent an accretion disk tearing.</td><td>UNSUPPORTED</td><td>No universal ratio.</td><td>Use established warped-disk dynamics with torque, viscosity and boundary conditions.</td></tr><tr><td>An equation-world can replace all PDE solvers and renderers.</td><td>REJECTED BY LATER SOURCE</td><td>No universal replacement.</td><td>Domain-specific benchmark only.</td></tr><tr><td>The document can make a person physically untouchable or invisible.</td><td>NONLITERAL / UNSUPPORTED</td><td>No physical mechanism.</td><td>None; interpret as narrative boundary language only.</td></tr><tr><td>The prototype should be headless/query-first rather than a renderer demo.</td><td>SUPPORTED RESEARCH RECOMMENDATION</td><td>Methodologically sound for testing the core claim.</td><td>Build digital transfer model before optical hardware.</td></tr><tr><td>Success requires compatibility + event-solving cost to grow more slowly than avoided materialization.</td><td>SUPPORTED FALSIFIABILITY CRITERION</td><td>Appropriate engineering test.</td><td>Measure both sides under controlled workloads.</td></tr></tbody></table>
+<h2>Explicit non-claims from the mature hardware report</h2>
+<ul>
+<li>No zero latency, zero heat or zero power.</li>
+<li>No universal O(1), zero-memory universe or exact chaos.</li>
+<li>No literal double vacuum or physical Klein-bottle proof without a fabricable geometry and transfer map.</li>
+<li>No general AI compression, medical effect, biological mechanism or replacement for all renderers and PDE solvers.</li>
+</ul>
+<h2>Safety-sensitive correction</h2>
+<div class="callout warn"><strong>BCI and bodily-control passages.</strong> ADDominUS uses phase sheets, ghost shields and kernel nulling to describe unwanted telepresence or bodily occupation. No credible mechanism is given. The material is archived as narrative and must not be interpreted as evidence that remote bodily occupation is occurring.</div>
+</section>
+
+<section id="documents" class="section">
+<h1>10. Source-by-source decoding</h1>
+<h2>Chronological Synthesis</h2>
+<p><strong>Authority:</strong> corpus-wide decoder and feasibility audit. <strong>Actual contribution:</strong> event calculus, local spherical support, lineage, compatibility, direct queries and explicit caveats. <strong>Most important pages:</strong> 1-2, 5-12.</p>
+<h2>Hollowland Double Vacuum</h2>
+<p><strong>Authority:</strong> generative vocabulary. <strong>Actual contribution:</strong> Klein/Mobius/topology prompts, log-polar/SDF/eigenvector/hourglass synthesis. <strong>Main problem:</strong> repeated zero-memory, constant-time and universal-solver overclaims. <strong>Pages:</strong> 7-33.</p>
+<h2>DMT / Leeuwenhoek</h2>
+<p><strong>Authority:</strong> optics/history/metaphor source. <strong>Actual contribution:</strong> spectral density, polar/log mapping, camera obscura, jitter, reaction-diffusion prompts. <strong>Main problem:</strong> chemistry and virology errors mixed with fiction and politics. <strong>Pages:</strong> 1-32 for scientific motifs; 33-68 mostly narrative extensions.</p>
+<h2>Ben Burgers</h2>
+<p><strong>Authority:</strong> zero-index and overlap-geometry prompt. <strong>Actual contribution:</strong> index-vs-ordinal distinction and A intersection B lens. <strong>Main problem:</strong> unsupported torque/accretion-disk ratio claims. <strong>Pages:</strong> 1-19.</p>
+<h2>ADDominUS</h2>
+<p><strong>Authority:</strong> exploratory application source, not validation. <strong>Actual contribution:</strong> waveguide/liquid/manufacturing prompts and identity/logistics extensions. <strong>Main problem:</strong> medical, BCI, hardware and complexity overclaims. <strong>Pages:</strong> 47-65 are the most useful hardware prompts.</p>
+<h2>Spherical Throughput</h2>
+<p><strong>Authority:</strong> bounded hardware integration and evidence boundary. <strong>Actual contribution:</strong> equations, device architecture, metrics, fabrication, prototype and kill criteria. <strong>Pages:</strong> all 12.</p>
+<h2>KC Vector Art</h2>
+<p><strong>Authority:</strong> downstream display/print interpretation. <strong>Actual contribution:</strong> log-polar/SDF, PDM, dithering and prepress prompts. <strong>Main problem:</strong> undefined Feynman-vector formalism and zero-cost claims. <strong>Pages:</strong> 1-10.</p>
+<p>Full analyses are in <code>per_document/</code>.</p>
+</section>
+
+<section id="assets" class="section">
+<h1>11. Package contents and file map</h1>
+<h2>Human-readable documents</h2>
+<ul>
+<li><code>Corpus_Decoder_Report.pdf</code> and <code>.html</code></li>
+<li>Eight thematic Markdown reports</li>
+<li>Seven per-document analyses</li>
+<li>Primary-reference map and full README</li>
+</ul>
+<h2>Machine-readable knowledge</h2>
+<ul>
+<li>70-term alchemical-to-technical lexicon (CSV/JSON)</li>
+<li>35 equations/operators (CSV/JSON)</li>
+<li>51 claims with evidence, verdict and required test (CSV/JSON)</li>
+<li>102-node concept ontology and GraphML knowledge graph</li>
+<li>222-page source map</li>
+<li>molecular metadata and corpus manifest</li>
+</ul>
+<h2>Structure files</h2>
+<div class="two-col">
+<div><h3>Chemistry</h3><div class="asset-list">
+<div><code>structures/chemistry/dimethylamine.metadata.json</code></div><div><code>structures/chemistry/dimethylamine.mol</code></div><div><code>structures/chemistry/dimethylamine.pdb</code></div><div><code>structures/chemistry/dimethylamine.sdf</code></div><div><code>structures/chemistry/dimethylamine.smiles.txt</code></div><div><code>structures/chemistry/dimethylamine.svg</code></div><div><code>structures/chemistry/dmt.metadata.json</code></div><div><code>structures/chemistry/dmt.mol</code></div><div><code>structures/chemistry/dmt.pdb</code></div><div><code>structures/chemistry/dmt.sdf</code></div><div><code>structures/chemistry/dmt.smiles.txt</code></div><div><code>structures/chemistry/dmt.svg</code></div><div><code>structures/chemistry/glycerol.metadata.json</code></div><div><code>structures/chemistry/glycerol.mol</code></div><div><code>structures/chemistry/glycerol.pdb</code></div><div><code>structures/chemistry/glycerol.sdf</code></div><div><code>structures/chemistry/glycerol.smiles.txt</code></div><div><code>structures/chemistry/glycerol.svg</code></div><div><code>structures/chemistry/indole.metadata.json</code></div><div><code>structures/chemistry/indole.mol</code></div><div><code>structures/chemistry/indole.pdb</code></div><div><code>structures/chemistry/indole.sdf</code></div><div><code>structures/chemistry/indole.smiles.txt</code></div><div><code>structures/chemistry/indole.svg</code></div><div><code>structures/chemistry/tryptamine.metadata.json</code></div><div><code>structures/chemistry/tryptamine.mol</code></div><div><code>structures/chemistry/tryptamine.pdb</code></div><div><code>structures/chemistry/tryptamine.sdf</code></div><div><code>structures/chemistry/tryptamine.smiles.txt</code></div><div><code>structures/chemistry/tryptamine.svg</code></div><div><code>structures/chemistry/water.metadata.json</code></div><div><code>structures/chemistry/water.mol</code></div><div><code>structures/chemistry/water.pdb</code></div><div><code>structures/chemistry/water.sdf</code></div><div><code>structures/chemistry/water.smiles.txt</code></div><div><code>structures/chemistry/water.svg</code></div></div></div><div><h3>Geometry/topology</h3><div class="asset-list"><div><code>structures/geometry/camera_obscura.svg</code></div><div><code>structures/geometry/double_cone_hourglass.obj</code></div><div><code>structures/geometry/double_cone_hourglass_preview.png</code></div><div><code>structures/geometry/equation_world_pipeline.svg</code></div><div><code>structures/geometry/klein_bottle_immersion.obj</code></div><div><code>structures/geometry/klein_bottle_immersion_preview.png</code></div><div><code>structures/geometry/local_sphere.obj</code></div><div><code>structures/geometry/local_sphere_preview.png</code></div><div><code>structures/geometry/local_spherical_support.svg</code></div><div><code>structures/geometry/log_polar_grid.svg</code></div><div><code>structures/geometry/mobius_strip.obj</code></div><div><code>structures/geometry/mobius_strip_preview.png</code></div><div><code>structures/geometry/phase_sheet_double_vacuum.svg</code></div><div><code>structures/geometry/phi_overlap_lens.svg</code></div><div><code>structures/geometry/quad_hourglass.svg</code></div><div><code>structures/geometry/sdf_event_surface.svg</code></div></div></div></div><div class="two-col"><div><h3>Biology</h3><div class="asset-list"><div><code>structures/biology/blood_plasma_flow_model.svg</code></div><div><code>structures/biology/crispr_cas9_schematic.svg</code></div><div><code>structures/biology/gene_expression_flow.svg</code></div><div><code>structures/biology/protein_folding_landscape.svg</code></div><div><code>structures/biology/reaction_diffusion.svg</code></div><div><code>structures/biology/viral_entry_correction.svg</code></div></div></div><div><h3>Photonics</h3><div class="asset-list"><div><code>structures/photonics/hollowlens0_architecture.svg</code></div><div><code>structures/photonics/spherical_throughput_funnel.svg</code></div>
+</div></div></div>
+<h2>Traceability</h2>
+<p>The original PDFs are not duplicated inside the ZIP. Page-separated text extracted from all seven files is included under <code>source_text/</code>. The manifest and SHA-256 checksum file allow integrity checks.</p>
+</section>
+
+<section id="references" class="section">
+<h1>12. External grounding references</h1>
+<p>External sources are used only to specify named scientific objects that the corpus leaves underspecified. They do not validate its system-level claims.</p>
+<h2>Selected anchors</h2>
+<ul>
+<li>PubChem CID 6089: N,N-dimethyltryptamine.</li>
+<li>Jinek et al., Science (2012), DOI 10.1126/science.1225829: programmable RNA-guided Cas9 DNA cleavage.</li>
+<li>Hoffmann et al., Cell (2020), DOI 10.1016/j.cell.2020.02.052: ACE2/TMPRSS2-dependent SARS-CoV-2 entry.</li>
+<li>Rolfs, Vision Research (2009), DOI 10.1016/j.visres.2009.08.010: microsaccades review.</li>
+<li>Komives et al., Biotechnology Progress (2017), PMC5315628: opossum venom-neutralizing peptide context.</li>
+<li>Hussain et al., Scientific Reports (2024), DOI 10.1038/s41598-024-60732-0: BBMB equation.</li>
+<li>Component references for liquid lenses, optofluidic MZIs and written glass guides are listed in <code>references/primary_references.md</code>.</li>
+</ul>
+<div class="callout gold"><strong>Final research decision.</strong> GO for formalization and a restricted digital Equation World Zero. GO for Hollowlens-0 only after the digital transfer model, compatibility predicate, event guard, energy/error boundary and electronic baseline are fixed. Do not begin by claiming a universal renderer, physics engine, biology controller or AI substrate.</div>
+<p class="smallprint">End of report.</p>
+</section>
+</body></html>

@@ -1,0 +1,632 @@
+[
+  {
+    "term": "sphere / spherical",
+    "category": "geometry",
+    "source_meaning": "Recurring substrate motif.",
+    "technical_translation": "Use as a local radial-angular support or chart for reach, shelling, orientation and uncertainty.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "The mature corpus rejects a globally spherical replacement for every representation.",
+    "source_anchors": "Chronological pp.1,5-6; Spherical Throughput p.3"
+  },
+  {
+    "term": "local spherical support",
+    "category": "geometry",
+    "source_meaning": "Admissible local field around a coupler, sensor or entity.",
+    "technical_translation": "A bounded set S_q or constraint C(q,t)\u22640 in radius and angles.",
+    "status": "BOUNDED ENGINEERING PROPOSAL",
+    "caveat": "Must specify coordinates, tolerance and measurement boundary.",
+    "source_anchors": "Chronological pp.5-7; Spherical Throughput pp.3,5-6"
+  },
+  {
+    "term": "cone",
+    "category": "geometry",
+    "source_meaning": "Lighthouse beam, sensor cone, causal cone, support region.",
+    "technical_translation": "Analytic domain of relevance/influence; a query filter rather than necessarily a rendered ray bundle.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "A cone alone does not solve visibility, dynamics or chemistry.",
+    "source_anchors": "Chronological pp.5-7,10"
+  },
+  {
+    "term": "sweeping lighthouse",
+    "category": "geometry",
+    "source_meaning": "A cone rotating around an origin or boundary.",
+    "technical_translation": "Time-parameterized angular support or scanning aperture.",
+    "status": "DECODER INFERENCE",
+    "caveat": "Claims of infinite angular velocity near a log-polar origin are coordinate singularity rhetoric, not free computation.",
+    "source_anchors": "Hollowland pp.18-19; DMT pp.4-10"
+  },
+  {
+    "term": "hourglass / double cone",
+    "category": "geometry",
+    "source_meaning": "Four chambers and central pinch.",
+    "technical_translation": "Routing partition with a rank-changing event locus and invariant axis.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "Not a demonstrated physical topology.",
+    "source_anchors": "Chronological p.6; Hollowland pp.24-25"
+  },
+  {
+    "term": "quad hourglass",
+    "category": "geometry",
+    "source_meaning": "Four compatibility/routing chambers around B=0.",
+    "technical_translation": "Finite-state transition diagram over sheet and route bits.",
+    "status": "DECODER INFERENCE",
+    "caveat": "Requires explicit transition table and invariants.",
+    "source_anchors": "Chronological p.6; ADDominUS pp.44-47"
+  },
+  {
+    "term": "pinch point",
+    "category": "geometry",
+    "source_meaning": "Narrow neck or zero locus.",
+    "technical_translation": "Guard/event surface where a transition is declared; in photonics it may be a cutoff, dark port or critical-coupling threshold.",
+    "status": "BOUNDED ENGINEERING PROPOSAL",
+    "caveat": "Must be measured; it is not automatically an eigenvalue collapse.",
+    "source_anchors": "Spherical Throughput pp.2,5,7"
+  },
+  {
+    "term": "signed distance field (SDF)",
+    "category": "geometry",
+    "source_meaning": "Implicit geometry and inside/outside field.",
+    "technical_translation": "Scalar field d(x) whose zero level set describes a boundary; sign labels sides when orientability permits.",
+    "status": "ESTABLISHED SCIENCE",
+    "caveat": "Combined CSG expressions may not remain exact Euclidean distances; evaluation may still require numerical methods.",
+    "source_anchors": "Hollowland pp.16-18; KC Vector Art pp.1-3"
+  },
+  {
+    "term": "SDF = 0 / B = 0",
+    "category": "geometry",
+    "source_meaning": "The archive's 'zero' boundary.",
+    "technical_translation": "Explicit event/guard/transition relation rather than a point to march past.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "Zero does not itself prove exact root solving or eliminate sampling.",
+    "source_anchors": "Chronological pp.5-7; Spherical Throughput p.5"
+  },
+  {
+    "term": "positive / negative SDF",
+    "category": "geometry",
+    "source_meaning": "Outside / inside continuation through zero.",
+    "technical_translation": "Two sides of an oriented implicit surface.",
+    "status": "ESTABLISHED SCIENCE",
+    "caveat": "A global sign is problematic on a non-orientable surface without a covering-space or local-orientation convention.",
+    "source_anchors": "Hollowland pp.16-17"
+  },
+  {
+    "term": "Klein bottle",
+    "category": "topology",
+    "source_meaning": "No clean inside/outside, looping orientation flip.",
+    "technical_translation": "A closed non-orientable surface; useful as a routing/gluing abstraction with explicit port and orientation maps.",
+    "status": "ESTABLISHED SCIENCE + SOURCE ABSTRACTION",
+    "caveat": "A familiar 3D model self-intersects; literal non-orientable hardware is not validated.",
+    "source_anchors": "Hollowland pp.7-11; Spherical Throughput pp.2,5,10"
+  },
+  {
+    "term": "M\u00f6bius strip",
+    "category": "topology",
+    "source_meaning": "Inside and outside become one continuous side.",
+    "technical_translation": "A non-orientable band with one boundary component; a simple orientation-reversing gluing example.",
+    "status": "ESTABLISHED SCIENCE",
+    "caveat": "Psychological 'soul' interpretations are metaphor.",
+    "source_anchors": "DMT pp.4-10"
+  },
+  {
+    "term": "sphere eversion",
+    "category": "topology",
+    "source_meaning": "Turning a sphere inside out without tearing.",
+    "technical_translation": "A regular homotopy of an immersed sphere in 3D allowing self-intersections.",
+    "status": "ESTABLISHED SCIENCE",
+    "caveat": "Not a material deformation without self-intersection; does not imply a Klein bottle reversal mechanism.",
+    "source_anchors": "Hollowland pp.10-11"
+  },
+  {
+    "term": "double vacuum",
+    "category": "state model",
+    "source_meaning": "Two vacua or spaces at the same location.",
+    "technical_translation": "Absence of coupling: co-located states remain isolated because phase, sheet, orientation, address or mode tags are incompatible.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "Not a second physical vacuum or guaranteed physical barrier.",
+    "source_anchors": "Chronological p.6; Spherical Throughput pp.2,4,7"
+  },
+  {
+    "term": "phase sheet",
+    "category": "state model",
+    "source_meaning": "Parallel state layer.",
+    "technical_translation": "Discrete state label \u03c3, often Z2, that partitions compatibility sectors.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "Needs explicit semantics; merely duplicating coordinates is not a physics model.",
+    "source_anchors": "Chronological pp.5-6"
+  },
+  {
+    "term": "one-bit / parity",
+    "category": "state model",
+    "source_meaning": "Binary transition state.",
+    "technical_translation": "Route, sheet, freshness, admission or validity flag under a declared schema.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "The bit is not the full optical, geometric, biological or semantic state.",
+    "source_anchors": "Spherical Throughput pp.2,7"
+  },
+  {
+    "term": "\u03c6 (phi)",
+    "category": "mathematics",
+    "source_meaning": "Phase, azimuth, angle, torque or golden-ratio motif.",
+    "technical_translation": "Separate meanings: local angle/phase variable \u03c6; phase law \u03d5(t); golden ratio \u03a6 only when explicitly designed.",
+    "status": "DECODER DISAMBIGUATION",
+    "caveat": "The corpus often conflates these. The golden ratio has no automatic stabilizing power.",
+    "source_anchors": "Hollowland pp.12-19; Ben Burgers pp.10-16; ADDominUS pp.2-4"
+  },
+  {
+    "term": "\u03bb (lambda)",
+    "category": "linear algebra",
+    "source_meaning": "Hourglass-like symbol and collapse variable.",
+    "technical_translation": "Eigenvalue in Av=\u03bbv, wavelength in optics, or rate parameter depending on context.",
+    "status": "ESTABLISHED SCIENCE",
+    "caveat": "It is not an 'incomplete hourglass'; symbol meaning is equation-specific.",
+    "source_anchors": "Hollowland pp.20-23"
+  },
+  {
+    "term": "eigenvector",
+    "category": "linear algebra",
+    "source_meaning": "Stable on-course axis.",
+    "technical_translation": "Nonzero vector whose direction is preserved by a linear transformation.",
+    "status": "ESTABLISHED SCIENCE",
+    "caveat": "Biological health, identity or sovereignty are not automatically eigenvectors.",
+    "source_anchors": "Hollowland pp.20-23; ADDominUS pp.2-18"
+  },
+  {
+    "term": "eigenvalue collapse",
+    "category": "linear algebra",
+    "source_meaning": "Dimension falls to zero at a pinch.",
+    "technical_translation": "A matrix/operator loses rank when a singular value or eigenvalue reaches zero.",
+    "status": "ESTABLISHED MATH + SOURCE METAPHOR",
+    "caveat": "Does not physically erase actors, trauma, noise or particles.",
+    "source_anchors": "Hollowland pp.20-25; ADDominUS pp.26-35"
+  },
+  {
+    "term": "invariant",
+    "category": "state model",
+    "source_meaning": "Stable anchor through transitions.",
+    "technical_translation": "Quantity or relation preserved by specified transformations.",
+    "status": "ESTABLISHED SCIENCE",
+    "caveat": "Must be defined and proven for the chosen dynamics.",
+    "source_anchors": "Chronological pp.5-7,11-12"
+  },
+  {
+    "term": "lineage / ontological address",
+    "category": "state model",
+    "source_meaning": "Identity persists through split/merge and coordinate change.",
+    "technical_translation": "Generative identifier plus parent/transition history.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "A proposed data-model concept; 64-bit uniqueness and reconstruction claims require collision and branch rules.",
+    "source_anchors": "Chronological pp.5-8,11; ADDominUS pp.7-11"
+  },
+  {
+    "term": "branch",
+    "category": "state model",
+    "source_meaning": "Alternative transition history.",
+    "technical_translation": "Discrete path in a hybrid dynamical system or event tree.",
+    "status": "ESTABLISHED SCIENCE",
+    "caveat": "Branch explosion is a stated scaling risk.",
+    "source_anchors": "Chronological pp.8,11"
+  },
+  {
+    "term": "finite grammar",
+    "category": "computer science",
+    "source_meaning": "Compact world generator.",
+    "technical_translation": "Finite rules that generate relations, trajectories or structures.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "Expression size and algebraic closure can grow rapidly.",
+    "source_anchors": "Chronological pp.5-8,11-12"
+  },
+  {
+    "term": "exogenous log",
+    "category": "computer science",
+    "source_meaning": "Store only novelty not generated by the grammar.",
+    "technical_translation": "Append-only event log of external interventions/shocks used with seed and grammar for reconstruction.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "External novelty and branch history still accumulate.",
+    "source_anchors": "Chronological pp.6,8,12; ADDominUS pp.10-11"
+  },
+  {
+    "term": "novelty-proportional memory",
+    "category": "computer science",
+    "source_meaning": "Memory grows with novelty rather than geometric extent.",
+    "technical_translation": "Regenerate deterministic closed dynamics; log irreducible external events and lineage.",
+    "status": "ENGINEERING HYPOTHESIS",
+    "caveat": "Not zero memory; expression and log growth can dominate.",
+    "source_anchors": "Chronological p.8; ADDominUS pp.10-11,25"
+  },
+  {
+    "term": "state_at(t)",
+    "category": "computer science",
+    "source_meaning": "Direct state query.",
+    "technical_translation": "Evaluate a closed or bounded state expression at requested time without replaying all intermediate frames.",
+    "status": "BOUNDED ENGINEERING PROPOSAL",
+    "caveat": "Cost depends on expression size, conditioning and branch history.",
+    "source_anchors": "Chronological pp.7-8,11"
+  },
+  {
+    "term": "next_event",
+    "category": "computer science",
+    "source_meaning": "Direct transition query.",
+    "technical_translation": "Find the earliest compatible root/guard crossing after t0.",
+    "status": "BOUNDED ENGINEERING PROPOSAL",
+    "caveat": "Multiple roots, tangencies, dense events and degeneracies can be hard.",
+    "source_anchors": "Chronological pp.6-8,11"
+  },
+  {
+    "term": "0-based indexing",
+    "category": "computer science",
+    "source_meaning": "21+7+7=35 offset reaches the 36th element.",
+    "technical_translation": "Array position 35 is the 36th item when indexing begins at zero.",
+    "status": "ESTABLISHED COMPUTER SCIENCE",
+    "caveat": "This does not change arithmetic; 21+7+7 remains 35.",
+    "source_anchors": "Ben Burgers pp.1-6"
+  },
+  {
+    "term": "BVH / octree / sieve",
+    "category": "computer science",
+    "source_meaning": "Conventional spatial filter criticized as a trap.",
+    "technical_translation": "Acceleration structures for pruning spatial intersection candidates.",
+    "status": "ESTABLISHED COMPUTER SCIENCE",
+    "caveat": "They are not inherently obsolete; analytic supports and compatibility filters are alternative pruning methods with their own costs.",
+    "source_anchors": "Hollowland pp.31-32; ADDominUS pp.21-25"
+  },
+  {
+    "term": "CCD",
+    "category": "computer science / imaging",
+    "source_meaning": "Frontend sensor problem and collision tunneling.",
+    "technical_translation": "Ambiguous acronym: charge-coupled device in imaging; continuous collision detection in simulation.",
+    "status": "DECODER DISAMBIGUATION",
+    "caveat": "The corpus deliberately mixes the two meanings.",
+    "source_anchors": "DMT pp.15-18; Chronological pp.7-10; ADDominUS pp.21-22"
+  },
+  {
+    "term": "raster trap",
+    "category": "computer science",
+    "source_meaning": "Mistaking sampled projection for world ontology.",
+    "technical_translation": "Critique of frame-by-frame materialization when direct relation/event queries suffice.",
+    "status": "SOURCE-DEFINED CRITIQUE",
+    "caveat": "Rasterization and sampling remain valid downstream tools and often necessary numerical methods.",
+    "source_anchors": "Chronological pp.1,5,9-10"
+  },
+  {
+    "term": "Feynman vectors",
+    "category": "mathematics / graphics",
+    "source_meaning": "Phase-amplitude paths used to decide pixels.",
+    "technical_translation": "Closest established analogs are complex phasors, wave amplitudes or path-integral language.",
+    "status": "UNSUPPORTED TERMINOLOGY",
+    "caveat": "No defined 'Kees Klootwijk Feynman vector' formalism is supplied.",
+    "source_anchors": "KC Vector Art pp.1-8"
+  },
+  {
+    "term": "log-polar LUT",
+    "category": "computer science / optics",
+    "source_meaning": "Compressed radial-angular lookup field.",
+    "technical_translation": "Table addressed by \u03c1=ln r and \u03b8; useful for scale-to-translation mapping and foveated/local processing.",
+    "status": "ESTABLISHED TRANSFORM + SOURCE DESIGN",
+    "caveat": "Quantization, singular origin, interpolation and information loss must be measured.",
+    "source_anchors": "DMT pp.2-3,9-18; Hollowland pp.12-17; KC Vector Art pp.1-10"
+  },
+  {
+    "term": "camera obscura / pinhole",
+    "category": "optics",
+    "source_meaning": "Singular point that inverts inward/outward cones.",
+    "technical_translation": "Geometric-optics projection through a small aperture producing an inverted image.",
+    "status": "ESTABLISHED OPTICS",
+    "caveat": "A finite aperture has diffraction and brightness/sharpness tradeoffs; it is not a topological singularity in the strict sense.",
+    "source_anchors": "DMT pp.6-10"
+  },
+  {
+    "term": "spectral power distribution S(\u03bb)",
+    "category": "optics",
+    "source_meaning": "Incoming radiation density by wavelength.",
+    "technical_translation": "Optical power per wavelength interval.",
+    "status": "ESTABLISHED OPTICS",
+    "caveat": "A lens response also depends on spatial, angular, polarization and coherence variables.",
+    "source_anchors": "DMT pp.2-3,9"
+  },
+  {
+    "term": "spatial harmonics",
+    "category": "optics",
+    "source_meaning": "Lens-induced Fourier frequencies.",
+    "technical_translation": "Fourier components of an optical field or image.",
+    "status": "ESTABLISHED OPTICS",
+    "caveat": "Nonlinear optics is not required for ordinary diffraction harmonics.",
+    "source_anchors": "DMT pp.2-3"
+  },
+  {
+    "term": "chromatic aberration",
+    "category": "optics",
+    "source_meaning": "Infinitesimal separation between colors.",
+    "technical_translation": "Wavelength-dependent refraction/focus or magnification.",
+    "status": "ESTABLISHED OPTICS",
+    "caveat": "A constant log-radius offset can approximate scale-like lateral aberration, not all longitudinal/lateral aberrations.",
+    "source_anchors": "DMT pp.13-15; KC Vector Art pp.7-10"
+  },
+  {
+    "term": "dither / micro-jitter",
+    "category": "imaging",
+    "source_meaning": "Wiggle to fill gaps in a discrete optical sieve.",
+    "technical_translation": "Spatial/temporal sampling offsets, dithering or super-resolution pixel shift.",
+    "status": "ESTABLISHED ENGINEERING",
+    "caveat": "Does not reconstruct arbitrary missing information without assumptions and calibration.",
+    "source_anchors": "DMT pp.13-15,28-30; KC Vector Art pp.7-10"
+  },
+  {
+    "term": "microsaccades",
+    "category": "biology / vision",
+    "source_meaning": "Biological 1-bit jiggle or binary search.",
+    "technical_translation": "Small fixational eye movements contributing to fixation and visual transients.",
+    "status": "ESTABLISHED BIOLOGY + MISAPPLIED ANALOGY",
+    "caveat": "They are not literally a binary-search algorithm and their functional role is more nuanced.",
+    "source_anchors": "DMT pp.28-30; ADDominUS pp.49-62"
+  },
+  {
+    "term": "waveguide",
+    "category": "photonics",
+    "source_meaning": "Physical matrix-in-glass endpoint.",
+    "technical_translation": "Dielectric structure that confines and routes optical modes.",
+    "status": "ESTABLISHED PHOTONICS",
+    "caveat": "It does not compute arbitrary equations without a specified transfer function and input/output encoding.",
+    "source_anchors": "Spherical Throughput pp.2-12; ADDominUS pp.47-65"
+  },
+  {
+    "term": "liquid lens / liquid overclad",
+    "category": "optofluidics",
+    "source_meaning": "Tunable spherical liquid interface.",
+    "technical_translation": "Microfluidic or electrowetting element controlling curvature, effective index, focus, phase or coupling.",
+    "status": "ESTABLISHED COMPONENT CLASS",
+    "caveat": "Settling time, hysteresis, evaporation, bubbles, absorption and packaging matter.",
+    "source_anchors": "Spherical Throughput pp.2-5,8-12"
+  },
+  {
+    "term": "matrix-in-glass",
+    "category": "photonics",
+    "source_meaning": "Geometry physically stores a transformation.",
+    "technical_translation": "Calibrated passive or tunable transfer matrix in an interferometric waveguide network.",
+    "status": "BOUNDED ENGINEERING PROPOSAL",
+    "caveat": "Not a universal symbolic computer; calibration and loss must be included.",
+    "source_anchors": "Spherical Throughput pp.2,5"
+  },
+  {
+    "term": "Maxwell field equation",
+    "category": "photonics",
+    "source_meaning": "Equation replacing optical metaphor.",
+    "technical_translation": "Electromagnetic boundary-value problem in the actual dielectric geometry.",
+    "status": "ESTABLISHED PHYSICS",
+    "caveat": "Requires material dispersion, loss and boundary conditions.",
+    "source_anchors": "Spherical Throughput p.5"
+  },
+  {
+    "term": "Young-Laplace equation",
+    "category": "optofluidics",
+    "source_meaning": "Pressure controls liquid meniscus curvature.",
+    "technical_translation": "\u0394p=\u03b3(1/R1+1/R2).",
+    "status": "ESTABLISHED PHYSICS",
+    "caveat": "Contact angle, gravity, hysteresis and dynamic effects may matter.",
+    "source_anchors": "Spherical Throughput p.5"
+  },
+  {
+    "term": "coupled-mode theory",
+    "category": "photonics",
+    "source_meaning": "Guided amplitudes evolve through a matrix.",
+    "technical_translation": "ODEs for modal amplitudes, propagation constants, attenuation and coupling.",
+    "status": "ESTABLISHED PHOTONICS",
+    "caveat": "Valid under approximations that must be checked for the device.",
+    "source_anchors": "Spherical Throughput p.5"
+  },
+  {
+    "term": "Mach-Zehnder interferometer (MZI)",
+    "category": "photonics",
+    "source_meaning": "2\u00d72 phase matrix in Hollowlens-0.",
+    "technical_translation": "Interferometer converting phase/coupling changes into output intensity differences.",
+    "status": "ESTABLISHED PHOTONICS",
+    "caveat": "Needs stable path balance and calibration.",
+    "source_anchors": "Spherical Throughput pp.4,9,12"
+  },
+  {
+    "term": "mode-overlap integral",
+    "category": "photonics",
+    "source_meaning": "Spherical field couples to a chosen guided mode.",
+    "technical_translation": "Normalized field overlap \u03b7c between input field and mode.",
+    "status": "ESTABLISHED PHOTONICS",
+    "caveat": "Polarization, normalization and complex field conventions must be explicit.",
+    "source_anchors": "Spherical Throughput p.5"
+  },
+  {
+    "term": "B.C.E.",
+    "category": "event logic",
+    "source_meaning": "Bounded Compatibility Event.",
+    "technical_translation": "Emit an event only when support, compatibility and measured guard conditions pass, with confidence and lineage.",
+    "status": "SOURCE-DEFINED OPERATOR",
+    "caveat": "Requires a digital sidecar and declared thresholds; not mystical gating.",
+    "source_anchors": "Spherical Throughput pp.1,3,5-9"
+  },
+  {
+    "term": "spherical throughput",
+    "category": "measurement",
+    "source_meaning": "Performance metric for the bounded system.",
+    "technical_translation": "Verified events or answered queries per second after support, compatibility, guard and confidence filters.",
+    "status": "SOURCE-DEFINED METRIC",
+    "caveat": "Must report energy, insertion loss, latency, error and calibration.",
+    "source_anchors": "Spherical Throughput pp.3,6,11-12"
+  },
+  {
+    "term": "DMT",
+    "category": "chemistry",
+    "source_meaning": "Metaphor for a gateway to hidden dimensions.",
+    "technical_translation": "N,N-dimethyltryptamine, C12H16N2: an indole tryptamine with a two-carbon chain ending in a tertiary dimethylamine.",
+    "status": "ESTABLISHED CHEMISTRY ADDED BY DECODER",
+    "caveat": "The prose does not encode a hidden molecular graph; the structure is supplied from standard chemistry.",
+    "source_anchors": "DMT p.1"
+  },
+  {
+    "term": "indole ring",
+    "category": "chemistry",
+    "source_meaning": "Not explicitly decomposed in the source.",
+    "technical_translation": "Fused benzene-pyrrole aromatic heterocycle in DMT.",
+    "status": "ESTABLISHED CHEMISTRY ADDED BY DECODER",
+    "caveat": "Decoder annotation, not recovered alchemical code.",
+    "source_anchors": "DMT title/p.1"
+  },
+  {
+    "term": "tertiary dimethylamine",
+    "category": "chemistry",
+    "source_meaning": "Not explicitly decomposed in the source.",
+    "technical_translation": "DMT side-chain nitrogen bonded to two methyl groups and an ethyl-indole chain.",
+    "status": "ESTABLISHED CHEMISTRY ADDED BY DECODER",
+    "caveat": "Protonation state depends on pH and salt form.",
+    "source_anchors": "DMT title/p.1"
+  },
+  {
+    "term": "water / glycerol mixture",
+    "category": "chemistry / materials",
+    "source_meaning": "Candidate liquid region for the lens.",
+    "technical_translation": "Characterizable polar liquid mixture for refractive-index and viscosity tuning.",
+    "status": "ESTABLISHED MATERIAL OPTION",
+    "caveat": "Exact composition, absorption, volatility and compatibility must be selected experimentally.",
+    "source_anchors": "Spherical Throughput p.8"
+  },
+  {
+    "term": "hydrogen bonding",
+    "category": "chemistry",
+    "source_meaning": "Implicit in water/glycerol materials, not discussed.",
+    "technical_translation": "Intermolecular O-H\u00b7\u00b7\u00b7O interactions affecting viscosity, wetting and refractive properties.",
+    "status": "ESTABLISHED CHEMISTRY ADDED BY DECODER",
+    "caveat": "Not a rigid bond network; temperature and composition matter.",
+    "source_anchors": "Spherical Throughput p.8"
+  },
+  {
+    "term": "CRISPR-Cas9",
+    "category": "biochemistry",
+    "source_meaning": "Guide RNA plus Cas9 cuts DNA; criticized as trial-and-error.",
+    "technical_translation": "RNA-guided DNA endonuclease system; editing outcome depends on target, PAM, delivery and cellular repair.",
+    "status": "ESTABLISHED BIOCHEMISTRY + SOURCE RHETORIC",
+    "caveat": "The source supplies no sequence, kinetic model or validated replacement method.",
+    "source_anchors": "ADDominUS pp.4-6"
+  },
+  {
+    "term": "protein folding",
+    "category": "biochemistry",
+    "source_meaning": "Dynamic vibrating grammar rather than static snapshots.",
+    "technical_translation": "Sequence-dependent conformational ensemble on a free-energy landscape.",
+    "status": "ESTABLISHED BIOCHEMISTRY + SOURCE ANALOGY",
+    "caveat": "No protein sequence or atomic coordinates are present, so no specific fold can be reconstructed.",
+    "source_anchors": "ADDominUS pp.4-6"
+  },
+  {
+    "term": "gene expression",
+    "category": "biochemistry",
+    "source_meaning": "Proposed phase/eigenvalue control of biological mistakes.",
+    "technical_translation": "DNA transcription, RNA processing/turnover, translation and protein regulation.",
+    "status": "ESTABLISHED BIOLOGY + UNSUPPORTED CONTROL CLAIM",
+    "caveat": "No evidence that a global \u03c6 scaling law can prevent expression errors or cancer.",
+    "source_anchors": "ADDominUS pp.2-5"
+  },
+  {
+    "term": "blood plasma",
+    "category": "biology / fluid mechanics",
+    "source_meaning": "Continuous Navier-Stokes manifold to be tethered.",
+    "technical_translation": "A multicomponent biological fluid that can be modeled by flow, transport and boundary conditions.",
+    "status": "DECODER TRANSLATION",
+    "caveat": "Clinical prediction requires validated rheology, vessel geometry, biochemical reactions and measurements; algebraic phase sheets are not treatment.",
+    "source_anchors": "ADDominUS pp.42-44"
+  },
+  {
+    "term": "viral spike puncturing a cell wall",
+    "category": "virology",
+    "source_meaning": "Mechanical key punctures O/cell wall.",
+    "technical_translation": "For enveloped human viruses such as SARS-CoV-2, entry involves receptor binding, protease priming and membrane fusion/endocytosis.",
+    "status": "INCORRECT/MISAPPLIED",
+    "caveat": "Human cells have plasma membranes, not cell walls; virus-specific mechanisms vary.",
+    "source_anchors": "DMT pp.43-44"
+  },
+  {
+    "term": "T-virus / Hive",
+    "category": "biology / fiction",
+    "source_meaning": "Resident Evil infection architecture.",
+    "technical_translation": "Narrative analogy only.",
+    "status": "FICTION/METAPHOR",
+    "caveat": "No real biochemical structure or mechanism can be extracted.",
+    "source_anchors": "DMT pp.33-35"
+  },
+  {
+    "term": "opossum venom resistance",
+    "category": "biology",
+    "source_meaning": "Universal immune phase-lock/cancellation.",
+    "technical_translation": "Opossum serum has inspired venom-neutralizing peptide research.",
+    "status": "ESTABLISHED LIMITED FACT + UNSUPPORTED GENERALIZATION",
+    "caveat": "Venom neutralization does not imply universal viral immunity or an 'absolute zero' state.",
+    "source_anchors": "DMT pp.33-40"
+  },
+  {
+    "term": "fluid atoms are spherical",
+    "category": "chemistry",
+    "source_meaning": "Individual fluid components modeled as spheres in a spherical LUT.",
+    "technical_translation": "Particle methods sometimes approximate atoms/molecules as spheres or kernels.",
+    "status": "MODEL APPROXIMATION",
+    "caveat": "Real molecular geometry and interactions are anisotropic, quantum-mechanical and bond-specific.",
+    "source_anchors": "DMT pp.15-18"
+  },
+  {
+    "term": "BBMB equation",
+    "category": "mathematics / fluid waves",
+    "source_meaning": "Ben Burgers title and search-result association.",
+    "technical_translation": "U_t+U_x+U U_x-mU_xx-U_xxt=0, a nonlinear dispersive-dissipative wave PDE.",
+    "status": "ESTABLISHED EXTERNAL GROUNDING",
+    "caveat": "The document does not derive this PDE; its \u03c6-overlap and accretion-disk claims are unrelated unless a model is specified.",
+    "source_anchors": "Ben Burgers pp.16-19; external Scientific Reports 2024"
+  },
+  {
+    "term": "1:1 double-arch accretion-disk balance",
+    "category": "astrophysics",
+    "source_meaning": "Claimed mathematically correct ratio preventing tearing.",
+    "technical_translation": "No unique universal ratio follows from warped-disk dynamics.",
+    "status": "UNSUPPORTED CLAIM",
+    "caveat": "Warped disks require torque, viscosity/wave propagation and boundary-condition models.",
+    "source_anchors": "Ben Burgers pp.13-16"
+  },
+  {
+    "term": "universal O(1)",
+    "category": "complexity",
+    "source_meaning": "Constant time across infinite horizons.",
+    "technical_translation": "At most: horizon-independent evaluation for a fixed closed expression.",
+    "status": "OVERCLAIM CORRECTED BY CORPUS",
+    "caveat": "Event solving, compatibility, expression growth and branching are not universally constant.",
+    "source_anchors": "Chronological pp.1,8; Spherical Throughput p.10"
+  },
+  {
+    "term": "zero memory",
+    "category": "complexity",
+    "source_meaning": "Infinite world stored as equations only.",
+    "technical_translation": "Potential reduction by regeneration from seed/grammar and logging novelty.",
+    "status": "OVERCLAIM CORRECTED BY CORPUS",
+    "caveat": "Parameters, calibration, external logs, branches and numerical state consume memory.",
+    "source_anchors": "Chronological pp.1,8; Spherical Throughput p.10"
+  },
+  {
+    "term": "zero heat / zero power / zero latency",
+    "category": "hardware",
+    "source_meaning": "Passive photonics solves at speed of light.",
+    "technical_translation": "Optical propagation can be fast and passive elements can reduce some energy costs.",
+    "status": "OVERCLAIM REJECTED",
+    "caveat": "Sources, modulators, actuators, detectors, conversion, control and calibration consume time and energy.",
+    "source_anchors": "Spherical Throughput pp.2,10"
+  },
+  {
+    "term": "general AI / world-agent identity",
+    "category": "AI",
+    "source_meaning": "One algebraic substrate fuses physics and cognition.",
+    "technical_translation": "Research hypothesis about shared representation for perception, state and action.",
+    "status": "SPECULATIVE / UNVALIDATED",
+    "caveat": "No learning rule, semantic grounding, benchmark or model compression proof is supplied.",
+    "source_anchors": "Chronological pp.1,11; Spherical Throughput p.10"
+  },
+  {
+    "term": "BCI / telepresence bodily control",
+    "category": "medical / safety",
+    "source_meaning": "Phase separation, ghost shield and retroactive nullification of bodily intrusion.",
+    "technical_translation": "No valid engineering or medical mechanism is supplied.",
+    "status": "UNSUPPORTED NARRATIVE",
+    "caveat": "Should not be interpreted as evidence of remote bodily occupation or as a treatment design.",
+    "source_anchors": "ADDominUS pp.26-36"
+  }
+]
