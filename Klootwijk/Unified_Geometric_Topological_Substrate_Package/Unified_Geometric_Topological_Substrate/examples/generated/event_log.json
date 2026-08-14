@@ -1,0 +1,70 @@
+{
+  "events": [
+    {
+      "confidence": 1.0,
+      "crossing_direction": 1,
+      "entity_id": "traveler_A",
+      "event_id": "evt_4a57df2c87a3afff",
+      "lineage": [
+        "traveler_A",
+        "x_zero_hinge@2"
+      ],
+      "metadata": {},
+      "reason_codes": [],
+      "relation_value": 0.0,
+      "rule_id": "x_zero_hinge",
+      "solver": "analytic_quadratic",
+      "state_after": {
+        "branch": "B",
+        "entity_id": "traveler_A",
+        "lineage": [
+          "traveler_A",
+          "x_zero_hinge@2"
+        ],
+        "metadata": {},
+        "orientation": -1,
+        "phase": 1.5707963267948966,
+        "position": [
+          0.0,
+          0.25
+        ],
+        "sheet": 1,
+        "tags": [
+          "player"
+        ],
+        "time": 2.0,
+        "uncertainty": 0.0,
+        "velocity": [
+          1.0,
+          0.0
+        ]
+      },
+      "state_before": {
+        "branch": "A",
+        "entity_id": "traveler_A",
+        "lineage": [
+          "traveler_A"
+        ],
+        "metadata": {},
+        "orientation": 1,
+        "phase": 0.0,
+        "position": [
+          0.0,
+          0.25
+        ],
+        "sheet": 0,
+        "tags": [
+          "player"
+        ],
+        "time": 2.0,
+        "uncertainty": 0.0,
+        "velocity": [
+          1.0,
+          0.0
+        ]
+      },
+      "time": 2.0
+    }
+  ],
+  "schema_version": "1.0.0"
+}

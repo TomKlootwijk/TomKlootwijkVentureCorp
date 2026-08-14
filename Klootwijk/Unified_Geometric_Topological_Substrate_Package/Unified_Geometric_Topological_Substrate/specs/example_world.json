@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "description": "Minimal double-vacuum and parity-hinge demonstration."
+  },
+  "entities": [
+    {
+      "id": "traveler_A",
+      "trajectory": {
+        "type": "linear",
+        "p0": [
+          -2.0,
+          0.25
+        ],
+        "v0": [
+          1.0,
+          0.0
+        ],
+        "t0": 0.0
+      },
+      "phase": 0.0,
+      "sheet": 0,
+      "orientation": 1,
+      "branch": "A",
+      "tags": [
+        "player"
+      ]
+    },
+    {
+      "id": "co_located_B",
+      "trajectory": {
+        "type": "linear",
+        "p0": [
+          0.0,
+          0.25
+        ],
+        "v0": [
+          0.0,
+          0.0
+        ],
+        "t0": 0.0
+      },
+      "phase": 3.141592653589793,
+      "sheet": 1,
+      "orientation": -1,
+      "branch": "B",
+      "tags": [
+        "ghost"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "x_zero_hinge",
+      "surface": {
+        "type": "line",
+        "normal": [
+          1.0,
+          0.0
+        ],
+        "offset": 0.0
+      },
+      "support": {
+        "type": "radial_angular",
+        "origin": [
+          0.0,
+          0.0
+        ],
+        "r_min": 0.0,
+        "r_max": 3.0,
+        "theta_center": 0.0,
+        "theta_half_width": 3.141592653589793
+      },
+      "compatibility": {
+        "allowed_sheets": [
+          0
+        ],
+        "phase_center": 0.0,
+        "phase_tolerance": 0.2,
+        "required_tags": [
+          "player"
+        ]
+      },
+      "transition": {
+        "toggle_sheet": true,
+        "flip_orientation": true,
+        "set_branch": "B",
+        "phase_delta": 1.5707963267948966
+      }
+    }
+  ],
+  "topology": [
+    {
+      "type": "mobius_band",
+      "width": 4.0,
+      "height": 2.0
+    }
+  ]
+}

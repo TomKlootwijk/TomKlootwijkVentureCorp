@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UGTS-0 World Definition",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "entities",
+    "relations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "topology": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "vec2": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "trajectory"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "trajectory": {
+          "type": "object",
+          "required": [
+            "type",
+            "p0",
+            "v0",
+            "t0"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "linear",
+                "quadratic"
+              ]
+            },
+            "p0": {
+              "$ref": "#/$defs/vec2"
+            },
+            "v0": {
+              "$ref": "#/$defs/vec2"
+            },
+            "a": {
+              "$ref": "#/$defs/vec2"
+            },
+            "t0": {
+              "type": "number"
+            }
+          }
+        },
+        "phase": {
+          "type": "number"
+        },
+        "sheet": {
+          "type": "integer"
+        },
+        "orientation": {
+          "enum": [
+            -1,
+            1
+          ]
+        },
+        "branch": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "id",
+        "surface",
+        "transition"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "surface": {
+          "type": "object"
+        },
+        "support": {
+          "type": "object"
+        },
+        "compatibility": {
+          "type": "object"
+        },
+        "transition": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,633 @@
+\documentclass[10.5pt,a4paper,openany]{book}
+\usepackage[a4paper,margin=20mm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.84]
+\usepackage{microtype}
+\usepackage{xcolor}
+\definecolor{UGTSNavy}{HTML}{0B2638}
+\definecolor{UGTSTeal}{HTML}{168F9C}
+\definecolor{UGTSGold}{HTML}{D8A124}
+\definecolor{UGTSCoral}{HTML}{D76959}
+\definecolor{UGTSPurple}{HTML}{786AA3}
+\definecolor{UGTSGreen}{HTML}{2A8C6D}
+\definecolor{UGTSLight}{HTML}{EDF4F5}
+\definecolor{UGTSGray}{HTML}{60747C}
+\definecolor{UGTSDark}{HTML}{1A2E38}
+\usepackage{graphicx}
+\graphicspath{{../diagrams/}}
+\usepackage{booktabs,longtable,tabularx,array}
+\usepackage{ragged2e,pdflscape}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.5em}
+\usepackage[most]{tcolorbox}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{lastpage}
+\usepackage{needspace}
+\hypersetup{colorlinks=true,linkcolor=UGTSTeal,urlcolor=UGTSPurple,citecolor=UGTSCoral,pdfauthor={OpenAI synthesis of user-supplied corpus},pdftitle={Unified Geometric-Topological Substrate}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small Unified Geometric-Topological Substrate}
+\fancyhead[R]{\sffamily\small UGTS-0}
+\fancyfoot[L]{\sffamily\scriptsize Source extraction + bounded engineering normalization}
+\fancyfoot[R]{\sffamily\scriptsize \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\titleformat{\chapter}[display]{\sffamily\bfseries\color{UGTSNavy}}{\fontsize{14}{16}\selectfont PART \thechapter}{5pt}{\fontsize{26}{30}\selectfont}
+\titleformat{\section}{\sffamily\bfseries\Large\color{UGTSNavy}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\sffamily\bfseries\large\color{UGTSTeal}}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\sffamily\bfseries\color{UGTSDark}}{\thesubsubsection}{0.7em}{}
+\titlespacing*{\chapter}{0pt}{-15pt}{18pt}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+
+\newcommand{\statusretain}{\tcbox[on line,boxsep=1pt,left=3pt,right=3pt,top=1pt,bottom=1pt,arc=2pt,colback=UGTSTeal,colframe=UGTSTeal,coltext=white,fontupper=\sffamily\bfseries\scriptsize]{RETAIN}}
+\newcommand{\statustranslate}{\tcbox[on line,boxsep=1pt,left=3pt,right=3pt,top=1pt,bottom=1pt,arc=2pt,colback=UGTSGold,colframe=UGTSGold,coltext=UGTSNavy,fontupper=\sffamily\bfseries\scriptsize]{TRANSLATE}}
+\newcommand{\statusdemote}{\tcbox[on line,boxsep=1pt,left=3pt,right=3pt,top=1pt,bottom=1pt,arc=2pt,colback=UGTSPurple,colframe=UGTSPurple,coltext=white,fontupper=\sffamily\bfseries\scriptsize]{DEMOTE}}
+\newcommand{\statuscorrect}{\tcbox[on line,boxsep=1pt,left=3pt,right=3pt,top=1pt,bottom=1pt,arc=2pt,colback=UGTSPurple,colframe=UGTSPurple,coltext=white,fontupper=\sffamily\bfseries\scriptsize]{CORRECT}}
+\newcommand{\statusreject}{\tcbox[on line,boxsep=1pt,left=3pt,right=3pt,top=1pt,bottom=1pt,arc=2pt,colback=UGTSCoral,colframe=UGTSCoral,coltext=white,fontupper=\sffamily\bfseries\scriptsize]{REJECT}}
+\newcommand{\src}[1]{\textcolor{UGTSPurple}{\sffamily\bfseries Source #1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\term}[1]{\textbf{#1}}
+
+\newtcolorbox{sourcebox}[1][]{enhanced,breakable,colback=UGTSLight,colframe=UGTSTeal,title={SOURCE-DERIVED},fonttitle=\sffamily\bfseries,#1}
+\newtcolorbox{normalbox}[1][]{enhanced,breakable,colback=white,colframe=UGTSGold,title={ENGINEERING NORMALIZATION},fonttitle=\sffamily\bfseries,coltitle=UGTSNavy,#1}
+\newtcolorbox{riskbox}[1][]{enhanced,breakable,colback=red!3,colframe=UGTSCoral,title={BOUNDARY / RISK},fonttitle=\sffamily\bfseries,#1}
+\newtcolorbox{decisionbox}[1][]{enhanced,breakable,colback=UGTSNavy,colframe=UGTSNavy,coltext=white,title={DECISION},fonttitle=\sffamily\bfseries,coltitle=UGTSGold,#1}
+\newtcolorbox{examplebox}[1][]{enhanced,breakable,colback=green!3,colframe=UGTSGreen,title={WORKED EXAMPLE},fonttitle=\sffamily\bfseries,#1}
+
+\lstdefinestyle{ugts}{basicstyle=\ttfamily\small,breaklines=true,breakatwhitespace=false,columns=fullflexible,keepspaces=true,showstringspaces=false,frame=single,rulecolor=\color{UGTSGray},backgroundcolor=\color{UGTSLight},keywordstyle=\color{UGTSPurple}\bfseries,commentstyle=\color{UGTSGreen},stringstyle=\color{UGTSCoral},numbers=left,numberstyle=\tiny\color{UGTSGray},xleftmargin=1.5em,framexleftmargin=1.2em}
+\lstset{style=ugts}
+
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\pagecolor{UGTSNavy}
+\color{white}
+\vspace*{12mm}
+{\sffamily\bfseries\fontsize{31}{35}\selectfont Unified Geometric-Topological Substrate\par}
+\vspace{5mm}
+{\sffamily\fontsize{17}{21}\selectfont A clean information architecture extracted from the supplied geometry, game-technology, graphics and topology corpus\par}
+\vspace{13mm}
+\includegraphics[width=\textwidth]{architecture_overview.pdf}
+\vfill
+\begin{tcolorbox}[colback=white!10!UGTSNavy,colframe=UGTSTeal,coltext=white,arc=3mm,boxrule=1pt]
+\sffamily\large
+\textbf{Deliverable:} technical synthesis, full concept inventory, claims ledger, formal specification, reference implementation, tests, examples, graphics shader, game-engine adapters and bounded optofluidic endpoint.
+\end{tcolorbox}
+\vspace{6mm}
+{\sffamily\small Prepared from nine user-supplied PDFs. Personal identifiers were intentionally omitted from this synthesis.\par}
+{\sffamily\small Version 1.0 - August 2026\par}
+\end{titlepage}
+\nopagecolor
+\color{black}
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+The supplied documents contain a recurring technical line beneath a large amount of metaphor and speculative extrapolation. The recoverable line is not a new rasterizer and not a claim that all reality is literally spherical. It is a \emph{query-first state-and-event substrate}: a finite grammar produces typed continuous state; local radial-angular supports select relevance; compatibility predicates decide whether co-located sectors may interact; relation surfaces define events; transitions update phase, sheet, orientation, branch and lineage; and an external event log records novelty that cannot be recomputed. Images, game-engine frames and optical devices are downstream adapters.
+
+This report extracts 69 individual mechanisms, assigns each a disposition, and unifies the retained operators into \term{UGTS-0 / Equation World Zero}. The accompanying Python package implements typed state, linear/quadratic trajectories, implicit geometry, analytic and bracketed event solvers, radial-angular support, phase/sheet compatibility, Mobius and Klein quotient maps, four-chamber hourglass routing, log-polar bit lookup, finite grammars, optional 1-bit projection, and a measured Bounded Compatibility Event controller. Seventeen executable tests pass.
+
+\begin{decisionbox}
+The technically coherent core is: \textbf{finite grammar + typed state + local support + compatibility + event solving + transition + lineage + external log}. The strongest prototype is intentionally restricted. Universal O(1), zero-memory, zero-latency, physical Klein-bottle self-assembly, and one-bit-complete-state claims are rejected.
+\end{decisionbox}
+
+\tableofcontents
+\listoffigures
+\mainmatter
+
+\chapter{Executive unification}
+\section{The decisive shift}
+\begin{sourcebox}
+The mature synthesis in S6 says the archive should no longer be judged primarily as rasterization, raymarching, voxel storage or a frame-loop proposal. Cones, SDF-zero, one-bit, double vacuum and hourglass are recast as operators in a shared state space. Spherical structure is local support, shelling and radial reach, not a universal replacement for every world representation (S6, pp. 1--7).
+\end{sourcebox}
+
+\begin{normalbox}
+UGTS-0 therefore treats the authoritative object as a relation/event world. A renderer may visualize the world, but the image is not the state. A game loop may schedule queries, but the loop is not the ontology. A one-bit field may route a transition, but it is not the amplitude, uncertainty, identity or geometry.
+\end{normalbox}
+
+The unified statement is:
+\begin{quote}
+A finite grammar generates a typed continuous state manifold. Local radial-angular supports define relevance and measurement. Events occur when a relation crosses an explicit transition surface while support and compatibility hold. Identity persists by lineage and invariants rather than by instantaneous coordinates. Projection into images, engine objects or photonic outputs is optional and non-authoritative.
+\end{quote}
+
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{architecture_overview.pdf}
+\caption{UGTS-0 separates authoritative substrate, query runtime and adapters.}
+\end{figure}
+
+\section{What ``works technically'' means here}
+The package does not claim to solve every scene, PDE, physics problem or AI task. ``Works'' means the following bounded capabilities are executable and tested:
+\begin{enumerate}
+\item Evaluate closed-form entity state at an arbitrary continuous time.
+\item Find the earliest valid crossing for supported surface/trajectory families.
+\item Filter candidates by local radial-angular support and typed compatibility.
+\item Apply explicit state patches while preserving pre-state, post-state and lineage.
+\item Represent co-location without coupling by phase/sheet/orientation mismatch.
+\item Apply Mobius, Klein, portal and hourglass maps as explicit software gluing/routing.
+\item Use log-polar coordinates and a compact one-bit LUT as an optional local address mask.
+\item Project implicit fields through an ordinary graphics adapter and posterize to one bit.
+\item Run a measured B.C.E. threshold/compatibility controller with a narrow parity bit.
+\end{enumerate}
+
+\section{Retention rule}
+\begin{figure}[H]
+\centering\includegraphics[width=0.96\textwidth]{evidence_filter.pdf}
+\caption{The report preserves useful operators while correcting or rejecting unsupported claims.}
+\end{figure}
+
+Each item is marked \statusretain, \statustranslate, \statusdemote / \statuscorrect, or \statusreject. Source-derived statements and engineering normalization are kept separate throughout the inventory and code comments.
+
+\chapter{Method and source architecture}
+\section{Corpus handling}
+Nine PDFs were read as design records. Repeated dialogue bundles were deduplicated: S2, S8 and S9 share much of the D/B/phi-to-R thread, so repeated text is not counted as independent validation. S6 and S5 are given the greatest interpretive weight because they explicitly impose feasibility, type-safety, calibration and falsifiability constraints on earlier material.
+
+\input{generated_sources.tex}
+
+\section{Extraction dimensions}
+Every candidate mechanism was tested against five questions:
+\begin{enumerate}
+\item \textbf{Geometry:} Is there a definable curve, field, support, transform or invariant?
+\item \textbf{Topology:} Is there an explicit gluing, orientation, sheet or routing operation?
+\item \textbf{Information architecture:} What state, schema, query, event and provenance are required?
+\item \textbf{Game technology:} Can the mechanism be expressed as a component, system or adapter?
+\item \textbf{Evidence boundary:} Is the statement exact, heuristic, speculative or contradicted by ordinary engineering constraints?
+\end{enumerate}
+
+\section{Deduplication and personal-data discipline}
+The source corpus includes filenames and dialogue text containing personal identifiers. They are not necessary to the geometrical synthesis and are omitted. The package does not redistribute the original PDFs. Source traceability is by S1--S9, page ranges and descriptive filenames only.
+
+\chapter{Numeric and fractal seeds}
+\section{Radix carry thresholds}
+\statusretain\quad In base $b$, a new digit is required at $b^k$. This is an exact positional-number fact and provides a useful scale/level boundary:
+\[
+\operatorname{digits}_b(n)=\begin{cases}1,&n=0,\\ \lfloor\log_b n\rfloor+1,&n>0.\end{cases}
+\]
+The source begins with binary transitions $1\to10$, $11\to100$, and the decimal transition $9\to10$ (S1, pp. 1--4). UGTS-0 uses radix powers as compact hierarchy thresholds, never as proof that geometry is inherently binary.
+
+\section{Zero-based offset semantics}
+\statusretain\quad S4 correctly distinguishes an index from an ordinal: index 35 is the 36th position. The arithmetic $21+7+7=35$ is unchanged. The implementation exposes \code{zero\_based\_ordinal(35) == 36} to prevent the narrative ``shift'' from becoming an off-by-one ambiguity.
+
+\section{Active bits and the triangle seed}
+\statustranslate\quad $19=10011_2$ has active positions $\{4,1,0\}$ and Hamming weight three. The source maps those three active positions to three Dutch syllables and then to a triangle (S1, pp. 3--7). The technically valid core is popcount and a chosen simplex embedding. The syllable equality is a mnemonic; it is not a general number-language code.
+
+\section{Pascal parity and Sierpinski}
+\statusretain\quad Binomial parity is a deterministic fractal generator:
+\[
+\binom{n}{k}\equiv1\pmod2 \quad\Longleftrightarrow\quad k\ \&\ \neg n=0.
+\]
+This follows from Lucas-style bit containment. The source's visual connection is valid, with one correction: zero-based rows $2^m-1$ are all odd; generic rows $2^m$ are not. The package contains \code{pascal\_entry\_is\_odd} and a PBM generator.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{numeric_fractal.pdf}
+\caption{Exact numeric mechanisms retained from S1 and S4.}
+\end{figure}
+
+\section{Golden-angle sampling and strange loops}
+\statustranslate\quad Vogel/golden-angle points are useful as a low-regularity sample schedule. They can reduce obvious repetition but do not guarantee zero aliasing or zero cost. \statusdemote\quad Lemniscates and Escher loops are retained only as recursion motifs. In UGTS-0 recursion is finite, budgeted and cycle-detectable through \code{FiniteGrammar}; no self-creating physical substrate is asserted.
+
+\chapter{Glyph geometry and kinematic tricks}
+\section{Loop-plus-stem decomposition}
+S2, S8 and S9 repeatedly decompose a selected glyph form into a vertical stem plus one or more closed arcs. This depends on the font and therefore becomes a design convention, not a theorem about letters.
+
+\section{Cut/unroll D or B into R}
+\statusretain\quad The clearest individual geometrical trick is a boundary-graph edit:
+\begin{enumerate}
+\item Keep the vertical stem and upper loop.
+\item Cut the lower closed arc at its anchor.
+\item Release one endpoint.
+\item Continuously interpolate the released arc/control points toward a diagonal segment.
+\end{enumerate}
+This is directly implementable in vector paths, spline control meshes or implicit transition fields. The code provides \code{loop\_to\_r\_morph(alpha)}.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{glyph_morph.pdf}
+\caption{The D/B/phi-to-R motif normalized as a path/field morph.}
+\end{figure}
+
+\section{Torque axis, time and phase}
+\statustranslate\quad The source calls the stem a torque axis $T$ and uses $\Delta T$ and $\Delta\phi$ for motion. UGTS-0 separates the overloaded symbols:
+\begin{itemize}
+\item continuous time $t$ and time increment $\Delta t$,
+\item orientation/rotation parameter $\theta$,
+\item physical torque $\tau$ only when a mechanical model is supplied,
+\item phase $\phi\in S^1$ and phase rate $\dot\phi$.
+\end{itemize}
+This type separation prevents a triangle, torque, time step and transformation from silently sharing one symbol.
+
+\section{One-bit hinge and global morph}
+\statusretain\quad A bit may select closed/open, route A/B, admitted/rejected or stale/fresh according to a declared schema. \statustranslate\quad ``The hinge is everywhere'' becomes a global transition field or state patch evaluated at all queried points. A linear field blend is useful for visualization but intermediate fields need not be exact SDFs, and a topology change still requires an explicit gluing/transition rule.
+
+\section{Split oval, opposing arches and overlap lens}
+S4 contributes two usable constructions. First, a split oval under antisymmetric displacement becomes two curve branches around a fixed node. The source's 1:1 amplitude is a symmetric example, not universal warped-disk physics. Second, two overlapping semicircles create a measurable lens region:
+\[
+A_{\text{lens}}=2r^2\cos^{-1}\!\left(\frac d{2r}\right)-\frac d2\sqrt{4r^2-d^2}.
+\]
+The lens can represent geometric intersection, a tolerance buffer, a blend zone or shared information $A\cap B$; its semantics must be specified by the application.
+
+\chapter{Implicit geometry and analytic events}
+\section{Implicit fields and sign convention}
+\statusretain\quad A field $f:\mathbb R^n\to\mathbb R$ uses $f=0$ as boundary, $f<0$ as interior and $f>0$ as exterior. Exact signed-distance status is reserved for valid primitives and distance-preserving transforms. A generic implicit field is not automatically an exact SDF.
+
+\section{Constructive solid geometry}
+The KC graphics document supplies the standard operators:
+\[
+ f_{A\cup B}=\min(f_A,f_B),\qquad
+ f_{A\cap B}=\max(f_A,f_B),\qquad
+ f_{A\setminus B}=\max(f_A,-f_B).
+\]
+UGTS-0 implements these plus a documented smooth union and a non-distance-preserving morph field.
+
+\section{The zero surface becomes an event relation}
+This is the most important correction in the corpus. Earlier material tends to treat $f=0$ as a graphics boundary to sample or march through. S6 instead promotes it to an event relation $R_j(q)=0$. The system solves the crossing time and invokes transition semantics. Rendering can still sample the field, but the authoritative state change is an event.
+
+\section{Closed-form and numerical solvers}
+\statusretain\quad For a line relation $n\cdot x=c$ and a quadratic trajectory
+\[
+x(t)=p_0+v_0\Delta t+\tfrac12a\Delta t^2,
+\]
+the crossing is a quadratic root. For a circle and linear trajectory, the crossing is also quadratic. \statusreject\quad Arbitrary SDF/trajectory pairs do not have universal exact non-iterative roots. UGTS-0 falls back to sampled bracketing and bisection for a declared generic field.
+
+\begin{riskbox}
+Tangencies, coincident surfaces, multiple roots, long horizons, singular log coordinates and rank changes are part of the engineering problem. Solvers must return tolerance, confidence/status and reason codes rather than pretending every event is exact.
+\end{riskbox}
+
+\chapter{Local supports: cone, sphere, shell and hourglass}
+\section{Cone as analytic relevance}
+\statusretain\quad A cone is a local admission domain: field of view, directional influence, collision scope, memory-retrieval scope or coupler acceptance. In 2D the package uses radius, center angle, half-width and time interval. It need not be drawn.
+
+\section{Spherical means local radial-angular chart}
+S5 and S6 explicitly state that spherical does not require a global spherical world. It means a local chart around a sensor or coupler containing angular support, radial reach, orientation, uncertainty and field of view. The global substrate may remain Euclidean, graph-backed, projective or hybrid.
+
+\section{Nested shells}
+\statustranslate\quad Concentric shell intervals can organize multiresolution range or relevance. They are useful as a local index but are not required everywhere. A shell hierarchy is orthogonal to entity identity and does not replace a generic spatial index for unsupported scenes.
+
+\section{Quad hourglass and invariant axis}
+\statustranslate\quad The source's four chambers meeting at a pinch become a finite routing table. The pinch is an event locus, not a physical singularity. An invariant/eigen-axis is retained as a stable mode/direction under a transformation; eigenvalue rhetoric is not used as a magical binary switch.
+
+\chapter{Topology as explicit gluing}
+\section{Phase sheets and double vacuum}
+\statusretain\quad The strongest topological/information concept is that two states may share the same coordinate yet fail to interact. The ``second vacuum'' is absence of coupling, not deeper emptiness. The compatibility test can include sheet, phase, orientation, branch, tags, policy and lineage.
+
+\begin{examplebox}
+At $t=2$, entities A and B can both occupy $(0,0.25)$. If A is on sheet 0 with phase 0 and B is on sheet 1 with phase $\pi$, \code{can\_couple} returns false with \code{sheet\_mismatch} and \code{phase\_mismatch}. Co-location is necessary but not sufficient.
+\end{examplebox}
+
+\section{Mobius and Klein quotient maps}
+\statusretain\quad A Mobius band can be implemented as a rectangle quotient $(0,y)\sim(w,-y)$, which flips orientation after one wrap. \statustranslate\quad A Klein-bottle motif becomes an explicit two-axis quotient where one wrap flips orientation/sheet and the other closes periodically. It is a software coordinate/gluing map, not a claim that matter passes through itself physically.
+
+\section{Topological portals}
+A portal is specified by:
+\begin{itemize}
+\item entry event surface and admission support,
+\item exit coordinate transform,
+\item orientation and sheet map,
+\item phase/branch policy,
+\item lineage event and uncertainty.
+\end{itemize}
+This is sufficient for non-orientable game spaces without requiring a physically embedded Klein bottle.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{topology_maps.pdf}
+\caption{Double vacuum, quotient gluing and hourglass routing after normalization.}
+\end{figure}
+
+\section{Inside/outside is schema-bound}
+The sign of an implicit field, the parity bit and the orientation bit are separate typed values. ``Inside'' cannot be inferred from parity without a schema. This mirrors the corpus's COBOL packed-decimal lesson: raw bits are meaningless without layout metadata.
+
+\chapter{Information architecture formalism}
+\section{Typed state manifold}
+A compact reference state is
+\[
+q_e(t)=\bigl(x_e(t),\ t,\ \phi_e(t),\ s_e(t),\ o_e(t),\ a_e,\ b_e(t),\ u_e(t)\bigr),
+\]
+where $x$ is position, $\phi$ phase, $s$ sheet, $o\in\{-1,+1\}$ orientation, $a$ lineage address, $b$ branch and $u$ uncertainty. A corresponding abstract space is
+\[
+Q=P^n\times\mathbb R_{time}\times S^1_{phase}\times S_{sheet}\times O_{orientation}\times A_{address}\times B_{branch}\times U.
+\]
+
+\section{World definition}
+The world is not only geometry:
+\[
+W=(G,R,T,I,L),
+\]
+with finite grammar $G$, relation family $R$, transition family $T$, invariants $I$, and external event log $L$.
+
+\section{Support, compatibility, event and transition}
+For relation $j$ and support $\alpha$:
+\[
+R_j(q;\theta_j)=0,\qquad C_\alpha(q,t)\le0,\qquad \chi(e,j,t)\in\{0,1\}.
+\]
+The next event is
+\[
+t^*=\min\{t>t_0:R_j(q_e(t))=0,\ C_\alpha(q_e(t),t)\le0,\ \chi(e,j,t)=1\}.
+\]
+The transition produces a patch and event record:
+\[
+q_e(t^{*+})=T_j(q_e(t^{*-}),\text{context}).
+\]
+
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{state_event_formalism.pdf}
+\caption{The formal event condition requires relation, support and compatibility.}
+\end{figure}
+
+\section{Reason codes and confidence}
+A boolean is insufficient for engineering. Compatibility returns reason codes such as sheet mismatch, phase mismatch, missing tag or policy rejection. An event record contains pre/post state, solver family, crossing direction, relation residual, confidence, lineage and metadata.
+
+\chapter{Finite grammar, identity and memory}
+\section{Finite grammar}
+\statusretain\quad L-system and shape-grammar language is useful only after depth and symbol budgets are explicit. The implementation refuses expansion beyond \code{max\_depth} or \code{max\_symbols}; unknown variables are inert rather than magical.
+
+\section{Lineage address}
+Coordinates are not identity. An entity keeps a stable ID plus transition ancestry. Portals, branch changes, splits and merges must append lineage records or create explicit parent/merge references. This allows identity reconstruction even after co-location or coordinate reuse.
+
+\section{External event log}
+Closed deterministic dynamics may be recomputed from parameters, but exogenous novelty cannot. The irreducible log records inputs, branch choices, calibration changes, policy decisions and uncertain solver outcomes. Therefore the substrate can reduce frame storage in restricted cases but cannot be zero-memory.
+
+\section{Schema-bound packed data}
+S2/S8/S9 discuss COBOL COMP-3 and copybooks. The useful lesson is architectural: a byte stream without layout is not self-describing. UGTS-0 versions world schemas, event schemas, LUT dimensions, sign conventions and parity meanings.
+
+\chapter{Query-first runtime and complexity}
+\section{Minimum API}
+The six minimum queries are:
+\begin{enumerate}
+\item \code{state\_at(entity,t)}
+\item \code{next\_event(entity,t0,t1)}
+\item \code{events\_in\_support(support,t0,t1)}
+\item \code{can\_couple(a,b,t)}
+\item transition application / event processing
+\item \code{reconstruct\_identity(entity)}
+\end{enumerate}
+
+\section{Precise meaning of horizon skipping}
+For a fixed closed expression, \code{state\_at(t)} can be independent of the number of skipped simulation frames. This is not universal O(1): expression size, grammar depth, branch history and transcendental evaluation still cost resources. \code{next\_event} is dominated by candidate filtering, root solving and branch resolution.
+
+\section{Success criterion}
+The architecture wins only if
+\[
+\operatorname{cost}(\text{support}+\text{compatibility}+\text{event solve})
+<\operatorname{cost}(\text{explicit materialization avoided})
+\]
+for the target relation family and error boundary. Poor compatibility predicates turn cone queries into broad scans; dense events or grammar growth can erase any advantage.
+
+\chapter{Game-technology integration}
+\section{Hybrid engine structure}
+A practical game engine does not need to abandon conventional systems. The authoritative UGTS state can coexist with meshes, rigid bodies, audio, animation, editor tooling and rasterization.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{game_engine_stack.pdf}
+\caption{Component/system mapping for Unity, Godot or an ECS runtime.}
+\end{figure}
+
+\section{Components}
+\begin{description}[style=nextline]
+\item[Analytic motion component] Coefficients for linear or quadratic trajectory plus start time.
+\item[Phase/sheet/orientation component] Small typed state, never collapsed into one unnamed bit.
+\item[Support component] Local FOV, radial range and time window.
+\item[Relation component] Line, circle or generic implicit event surface.
+\item[Transition component] Sheet/orientation/phase/branch/tag patch with lineage label.
+\item[Event-log component] Authoritative event records for rollback and replay.
+\end{description}
+
+\section{Continuous collision and portals}
+For supported relations, time of impact is solved analytically. Unsupported cases can fall back to a conventional physics engine or numerical method. A portal is just an event surface plus explicit exit map and state patch, making Mobius/Klein/hourglass effects deterministic and inspectable.
+
+\section{Networking}
+Seed/parameter replication plus authoritative event records can reduce frame replication for stable closed dynamics. Cross-platform floating-point differences, nondeterministic branches and exogenous inputs still require synchronization, schema versions and correction snapshots.
+
+\section{Adapters supplied}
+The package includes minimal Unity C\# and Godot GDScript adapters. They demonstrate \code{state\_at} and a line-crossing query without claiming full engine integration.
+
+\chapter{Optional graphics projection}
+\section{Log-polar chart}
+\statusretain\quad The local map is
+\[
+\rho=\ln(r/r_0),\qquad\theta=\operatorname{atan2}(y,x).
+\]
+Scaling in real space becomes translation in $\rho$. The origin remains singular, so UGTS-0 uses an explicit epsilon/core flag; the logarithm does not remove the singularity.
+
+\section{One-bit log-polar LUT}
+A compact bitset marks active $(\rho,\theta)$ sectors. It is a mask for admission or projection work, not complete world state. LUT dimensions, range, origin convention and bit meaning are schema fields.
+
+\section{Phasor edge accumulation}
+\statustranslate\quad The source calls its subpixel vectors ``Feynman vectors.'' UGTS-0 normalizes this to ordinary complex phasors whose phase follows local field-gradient orientation and whose magnitude follows coverage. This can be used for oriented supersampling; no quantum path-integral claim is made.
+
+\section{One-bit jitter and temporal modulation}
+\statusretain\quad A static projection can use deterministic stochastic thresholds. \statustranslate\quad A display can use pulse-density/sigma-delta bitstreams to approximate intensity over time. These are optional output encodings and require hardware calibration.
+
+\section{Chromatic and prepress transforms}
+A real-space magnification $r\mapsto sr$ becomes $\rho\mapsto\rho+\ln s$, so channel-specific chromatic scale can be expressed as a log-radius offset. It is cheap, not free. The prepress adapter maps channels to CMYK, uses log-radius-dependent screening and must compensate dot gain and moire risk.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{graphics_adapter.pdf}
+\caption{The KC graphics material becomes a replaceable projection pipeline.}
+\end{figure}
+
+\chapter{Bounded Compatibility Event hardware endpoint}
+\section{Canonical signal path}
+S5 gives the best-defined physical translation:
+\[
+\text{local support}\rightarrow\text{liquid-controlled coupling}\rightarrow
+\text{compatible mode}\rightarrow\text{measured guard}\rightarrow\text{verified output}.
+\]
+A local radial-angular optical field is focused or phase-shaped by a liquid region, coupled into selected guided modes, filtered by wavelength/polarization/mode/phase compatibility, and declared an event only at a measured guard crossing.
+
+\section{Type safety across physics}
+Maxwell governs the optical field; Young--Laplace/fluid mechanics governs the meniscus; coupled-mode theory governs guided amplitudes; digital event logic decides when a result is declared. A Klein motif may describe routing only after ports, orientation map and transfer matrix are specified.
+
+\section{Narrow parity role}
+The parity bit can mark route, admission, freshness or latch state. Detector amplitudes, thresholds, confidence, uncertainty, calibration and lineage remain separate. The reference controller detects a rising/falling threshold crossing only after support and compatibility are true.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{bce_hardware.pdf}
+\caption{B.C.E. signal path, control loop and required metrics.}
+\end{figure}
+
+\section{Hollowlens-0}
+The source proposes one scanned input, one tunable liquid coupler, a $2\times2$ interferometric waveguide, balanced detectors and an FPGA/MCU sidecar. Success requires preregistered wavelength, power, support, compatible modes, thresholds, uncertainty, energy boundary, calibration interval and matched electronic baseline.
+
+\section{Kill criteria}
+The prototype is stopped or simplified if optical loss, liquid instability, slow actuation, mode crosstalk, calibration drift, event ambiguity, packaging failure or sidecar dominance removes the energy/accuracy advantage.
+
+\chapter{Reference implementation}
+\section{Package structure}
+\begin{lstlisting}[language={},caption={Delivered package layout}]
+README.md                  technical entry point
+specs/                     source map, 69 concepts, claims, schemas
+src/ugts/                  dependency-free Python reference runtime
+tests/test_ugts.py         executable verification
+examples/                  world, topology, graphics, fractal, B.C.E. demos
+shaders/ugts_preview.frag  optional GLSL projection
+adapters/unity/            minimal C# game adapter
+adapters/godot/            minimal GDScript game adapter
+diagrams/                  report figures
+source_notes/              per-PDF extraction notes
+\end{lstlisting}
+
+\section{Core modules}
+\begin{longtable}{@{}p{0.22\textwidth}p{0.72\textwidth}@{}}
+\toprule Module & Responsibility \\ \midrule\endhead
+\code{state.py} & Typed entity state, state patches, lineage and event records.\\
+\code{trajectory.py} & Closed-form linear and quadratic motion.\\
+\code{support.py} & Local radial-angular and time admission.\\
+\code{compatibility.py} & Sheet, orientation, phase, branch, tags and lineage gating.\\
+\code{events.py} & Analytic line/circle roots and bracketed generic-field roots.\\
+\code{transition.py} & Pure schema-bound state patches.\\
+\code{world.py} & Query API, transition processing, double-vacuum coupling and event log.\\
+\code{geometry.py} & Implicit primitives, CSG, morph, gradient and overlap lens.\\
+\code{topology.py} & Mobius/Klein quotient maps, portals and hourglass routing.\\
+\code{logpolar.py} & Explicit-core transform and compact bit LUT.\\
+\code{numeric.py} & Radix, Hamming, Pascal parity and golden-angle samples.\\
+\code{glyphs.py} & Loop/stem and loop-to-R transition fields.\\
+\code{grammar.py} & Finite budgeted grammar and small shape compiler.\\
+\code{render.py} & Optional CPU projection, posterization and PDM.\\
+\code{bce.py} & Measured compatibility/guard controller.\\
+\code{io.py} & JSON world loader and event-log serialization.\\
+\bottomrule
+\end{longtable}
+
+\section{World query example}
+\begin{lstlisting}[language=Python,caption={Minimal query-first use}]
+from ugts import load_world
+
+world = load_world("specs/example_world.json")
+state = world.state_at("traveler_A", 1.25)
+candidate = world.next_event("traveler_A", 0.0, 5.0)
+record = world.process_next_event("traveler_A", 0.0, 5.0)
+
+coupling = world.can_couple(
+    "traveler_A", "co_located_B", 2.0,
+    max_distance=1e-9,
+    phase_tolerance=0.2,
+    require_same_sheet=True,
+    require_same_orientation=True,
+)
+\end{lstlisting}
+
+\section{Event solver behavior}
+Line surfaces support linear and quadratic trajectories. Circle surfaces currently support analytic roots for linear trajectories. Generic fields use a sampled sign-change search followed by bisection. The solver excludes the current instant by an epsilon, applies support and compatibility, then sorts candidate events by time and rule ID.
+
+\section{Topological map behavior}
+\begin{lstlisting}[language=Python,caption={Explicit quotient maps}]
+from ugts import MobiusBand, KleinBottleQuotient, Vec2
+
+mobius = MobiusBand(width=4.0, height=2.0)
+print(mobius.map(Vec2(4.5, 0.25)))
+# x wraps to 0.5; y and orientation flip
+
+klein = KleinBottleQuotient(width=4.0, height=2.0)
+print(klein.map(Vec2(4.5, 0.25)))
+# orientation flips and sheet toggles
+\end{lstlisting}
+
+\chapter{Verification and test results}
+\section{Executable tests}
+The package includes seventeen tests across numeric seeds, implicit geometry, event solving, transitions, double-vacuum coupling, quotient maps, log-polar roundtrip, bit-LUT storage, rendering, grammar budgets, B.C.E. and JSON I/O.
+
+\lstinputlisting[language={},caption={Test run captured during package construction}]{test_results.txt}
+
+\section{What the tests establish}
+The tests establish internal consistency of the bounded implementation. They do not validate the corpus's external performance, physical hardware throughput or universal claims. In particular, they demonstrate that:
+\begin{itemize}
+\item the traveler crosses $x=0$ at $t=2$ and receives the expected sheet/orientation/branch patch;
+\item co-located incompatible states do not couple;
+\item Mobius and Klein quotient maps apply declared orientation/sheet changes;
+\item Pascal row 7 is all odd while row 8 is not;
+\item log-polar conversion requires an explicit core chart;
+\item the one-bit LUT uses the expected compact storage;
+\item the B.C.E. bit toggles only after a valid measured crossing.
+\end{itemize}
+
+\chapter{Prototype program and falsification}
+\begin{figure}[H]
+\centering\includegraphics[width=\textwidth]{prototype_flow.pdf}
+\caption{Equation World Zero is a bounded falsifiable experiment.}
+\end{figure}
+
+\section{Required experiments}
+\begin{description}[style=nextline]
+\item[Horizon skipping] Measure whether \code{state\_at(t)} depends on expression size rather than the number of skipped frames.
+\item[Co-located phase sheets] Verify that same-position states remain uncoupled until explicit compatibility is met.
+\item[Event routing] Verify ordering, transition invariants and reason codes at line/circle/hourglass events.
+\item[Grammar-depth stress] Measure expression growth and normalization under repeated production.
+\item[Identity split/merge] Add explicit parent/merge records and detect lineage collisions.
+\item[Minimal agent integration] Let perception and action use the same support/event language without claiming general intelligence.
+\end{description}
+
+\section{Failure modes}
+The core fails usefully if event density explodes, compatibility filtering is weak, grammar composition escapes the normalized relation family, numerical conditioning is poor, lineage cannot survive split/merge, or exogenous novelty dominates storage.
+
+\section{Implementation roadmap}
+\begin{enumerate}
+\item Freeze schema version 1.0 and the restricted relation families.
+\item Add interval-valued root/status results for tangencies and uncertain coefficients.
+\item Add explicit split/merge lineage records and deterministic serialization hashes.
+\item Benchmark against fixed-step and conventional CCD baselines at equal error.
+\item Integrate one engine adapter with editor visualization but keep authority in the query core.
+\item Only after software benchmarks, build Hollowlens-0 with a preregistered electronic baseline.
+\end{enumerate}
+
+\chapter{Claims ledger and final decision}
+\section{Claims not carried into UGTS-0}
+The following are not requirements or conclusions: universal constant-time worlds; zero memory, power, heat or latency; exact non-iterative intersections for arbitrary fields; complete state in one bit; physical Klein-bottle self-assembly; topology that eliminates all broad phase; golden-ratio zero-cost anti-aliasing; replacement of all renderers/PDE solvers; or replacement of general AI.
+
+\input{generated_claims.tex}
+
+\begin{decisionbox}
+\textbf{GO} for formalization and restricted Equation World Zero. Start with algebra of state, support, compatibility, event, transition, identity and memory. Use rasterization, raymarching, game engines and waveguides as downstream adapters or benchmarks. Do not begin by recreating a conventional scene and then mistake the projection for the substrate.
+\end{decisionbox}
+
+\appendix
+\chapter{Complete extracted concept inventory}
+The following table is the comprehensive extraction delivered with the package. The machine-readable version is \path{specs/concept_inventory.csv}.
+\input{generated_concepts.tex}
+
+\chapter{Reference world schema}
+\section{Example world}
+The included JSON defines two entities, one line event surface, a local radial-angular support, sheet/phase/tag compatibility, and a transition that toggles sheet, flips orientation, changes branch and adds phase.
+\lstinputlisting[language={},caption={UGTS-0 example world}]{../specs/example_world.json}
+
+\section{Schema design rules}
+\begin{enumerate}
+\item Every bitfield has a declared meaning and schema version.
+\item Position, time, phase, sheet, orientation, branch, lineage and uncertainty are distinct.
+\item Surface solver family is declared and logged.
+\item Projection settings are not authoritative simulation state.
+\item External novelty and calibration changes enter the event log.
+\end{enumerate}
+
+\chapter{Source notes index}
+Per-document notes are shipped under \path{source_notes/}. They identify page-level mechanisms, retained operators and excluded extrapolations. The source PDFs themselves are not copied into the ZIP.
+
+\begin{longtable}{@{}p{0.12\textwidth}p{0.36\textwidth}p{0.44\textwidth}@{}}
+\toprule Ref & Note file & Primary contribution \\ \midrule\endhead
+S1 & \path{S1_NUM19.md} & Radix thresholds, Hamming weight, triangle seed, Pascal parity, fractal and graphics/topology motif chain.\\
+S2 & \path{S2_AUTHOR_DIALOGUE.md} & Duplicate glyph/topology thread plus schema, AR and speculative extensions.\\
+S3 & \path{S3_KC_GRAPHICS.md} & Log-polar/SDF/one-bit graphics and prepress adapter.\\
+S4 & \path{S4_BEN_BURGER.md} & Zero indexing, split oval and shared overlap lens.\\
+S5 & \path{S5_WAVEGUIDE.md} & B.C.E., optofluidic signal path, metrics and kill criteria.\\
+S6 & \path{S6_CHRONO_SYNTHESIS.md} & Mature query-first event calculus and feasibility discipline.\\
+S7 & \path{S7_HOLLOWLAND.md} & Double vacuum, phase sheets, hourglass, grammar and grand claims.\\
+S8 & \path{S8_GEORGE_BUNDLE.md} & Overlapping dialogue bundle; deduplicated.\\
+S9 & \path{S9_D_TO_PH.md} & Glyph morph, parity hinge, log-polar/L-system and SDF-global morph.\\
+\bottomrule
+\end{longtable}
+
+\backmatter
+\chapter*{Closing statement}
+\addcontentsline{toc}{chapter}{Closing statement}
+The corpus's most valuable idea survives only after discipline: geometry defines relations and local supports; topology defines explicit gluing and compatibility sectors; information architecture defines typed state, lineage and event semantics; game technology supplies components and adapters; hardware supplies measurable guards and error budgets. With those boundaries, the material becomes a coherent substrate that can be implemented, tested and falsified.
+
+\end{document}

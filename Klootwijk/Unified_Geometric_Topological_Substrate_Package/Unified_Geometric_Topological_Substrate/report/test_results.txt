@@ -1,0 +1,22 @@
+test_guard_crossing_and_parity (test_ugts.BCETests.test_guard_crossing_and_parity) ... ok
+test_circle_event (test_ugts.EventWorldTests.test_circle_event) ... ok
+test_double_vacuum_same_coordinate_no_coupling (test_ugts.EventWorldTests.test_double_vacuum_same_coordinate_no_coupling) ... ok
+test_next_event_and_transition (test_ugts.EventWorldTests.test_next_event_and_transition) ... ok
+test_csg_signs (test_ugts.GeometryTests.test_csg_signs) ... ok
+test_glyph_morph_is_queryable (test_ugts.GeometryTests.test_glyph_morph_is_queryable) ... ok
+test_overlap_lens_area (test_ugts.GeometryTests.test_overlap_lens_area) ... ok
+test_finite_expansion (test_ugts.GrammarTests.test_finite_expansion) ... ok
+test_load_example_and_write_log (test_ugts.IOTests.test_load_example_and_write_log) ... ok
+test_lut_storage_and_render (test_ugts.LogPolarAndRenderTests.test_lut_storage_and_render) ... ok
+test_roundtrip_and_core (test_ugts.LogPolarAndRenderTests.test_roundtrip_and_core) ... ok
+test_sigma_delta (test_ugts.LogPolarAndRenderTests.test_sigma_delta) ... ok
+test_active_bits_and_pascal (test_ugts.NumericTests.test_active_bits_and_pascal) ... ok
+test_radix_and_indexing (test_ugts.NumericTests.test_radix_and_indexing) ... ok
+test_klein_sheet_flip (test_ugts.TopologyTests.test_klein_sheet_flip) ... ok
+test_mobius_orientation_flip (test_ugts.TopologyTests.test_mobius_orientation_flip) ... ok
+test_portal_and_hourglass (test_ugts.TopologyTests.test_portal_and_hourglass) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.008s
+
+OK

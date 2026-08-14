@@ -1,0 +1,68 @@
+{
+  "name": "UGTS-0",
+  "title": "Unified Geometric-Topological Substrate - Equation World Zero",
+  "version": "1.0.0",
+  "state_space": {
+    "position": "R^2 in reference implementation; extensible to R^n/projective charts",
+    "time": "continuous real scalar",
+    "phase": "angle on S^1",
+    "sheet": "small finite enum / Z2 in prototype",
+    "orientation": "+1 or -1",
+    "lineage_address": "stable entity id plus ancestry",
+    "branch": "finite branch/chamber id",
+    "uncertainty": "nonnegative scalar or interval metadata"
+  },
+  "world": [
+    "finite_grammar",
+    "relations",
+    "supports",
+    "compatibility_rules",
+    "transitions",
+    "invariants",
+    "external_event_log"
+  ],
+  "queries": [
+    "state_at",
+    "next_event",
+    "events_in_support",
+    "can_couple",
+    "apply_transition",
+    "reconstruct_identity"
+  ],
+  "layers": [
+    {
+      "name": "authoritative substrate",
+      "contains": [
+        "typed state",
+        "relations",
+        "topology/gluing",
+        "lineage",
+        "event log"
+      ]
+    },
+    {
+      "name": "query/runtime",
+      "contains": [
+        "support admission",
+        "compatibility",
+        "event solving",
+        "transition routing"
+      ]
+    },
+    {
+      "name": "adapters",
+      "contains": [
+        "game/ECS",
+        "graphics/SDF/log-polar",
+        "hardware/B.C.E."
+      ]
+    }
+  ],
+  "constraints": [
+    "one-bit values are schema-bound flags only",
+    "local polar/spherical charts do not replace the global world model",
+    "closed-form claims are limited to declared solver families",
+    "all events carry confidence/status/lineage",
+    "projection is optional and non-authoritative"
+  ]
+}

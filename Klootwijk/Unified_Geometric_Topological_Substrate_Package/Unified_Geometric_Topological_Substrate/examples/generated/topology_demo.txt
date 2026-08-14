@@ -1,0 +1,18 @@
+Mobius quotient:
+Vec2(x=-0.5, y=0.25) -> MappedPoint(point=Vec2(x=3.5, y=-0.25), orientation=-1, sheet=0, wraps=(-1, 0))
+Vec2(x=3.5, y=0.25) -> MappedPoint(point=Vec2(x=3.5, y=0.25), orientation=1, sheet=0, wraps=(0, 0))
+Vec2(x=4.5, y=0.25) -> MappedPoint(point=Vec2(x=0.5, y=-0.25), orientation=-1, sheet=0, wraps=(1, 0))
+Vec2(x=8.5, y=0.25) -> MappedPoint(point=Vec2(x=0.5, y=0.25), orientation=1, sheet=0, wraps=(2, 0))
+
+Klein quotient:
+Vec2(x=-0.5, y=0.25) -> MappedPoint(point=Vec2(x=3.5, y=1.75), orientation=-1, sheet=1, wraps=(-1, 0))
+Vec2(x=3.5, y=0.25) -> MappedPoint(point=Vec2(x=3.5, y=0.25), orientation=1, sheet=0, wraps=(0, 0))
+Vec2(x=4.5, y=0.25) -> MappedPoint(point=Vec2(x=0.5, y=1.75), orientation=-1, sheet=1, wraps=(1, 0))
+Vec2(x=8.5, y=0.25) -> MappedPoint(point=Vec2(x=0.5, y=0.25), orientation=1, sheet=0, wraps=(2, 0))
+
+Hourglass parity routing:
+A p=0 -> A , p=1 -> C
+B p=0 -> B , p=1 -> D
+C p=0 -> C , p=1 -> A
+D p=0 -> D , p=1 -> B
+PINCH p=0 -> A , p=1 -> C

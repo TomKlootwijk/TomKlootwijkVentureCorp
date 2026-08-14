@@ -1,0 +1,163 @@
+\begin{landscape}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{@{}L{12mm}L{38mm}L{54mm}L{89mm}L{24mm}L{32mm}@{}}
+\caption{Complete extracted concept inventory. ``Source expression'' preserves the corpus framing; ``normalized operator'' is the technical implementation used by UGTS-0.}\label{tab:concept-inventory}\\
+\toprule
+ID & Category / name & Source expression & Normalized operator and qualification & Status & Source trace \\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{\small\itshape Table \ref{tab:concept-inventory} continued}\\
+\toprule
+ID & Category / name & Source expression & Normalized operator and qualification & Status & Source trace \\
+\midrule
+\endhead
+\midrule\multicolumn{6}{r}{\small continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+N01 & \textbf{Radix carry threshold}\par{\tiny\color{UGTSGray} Numeric/fractal} & Digit-count changes at powers of the radix. & Use radix powers as scale/change boundaries and compact level indices.\par{\tiny\color{UGTSGray} Exact for positional number systems.} & \statusretain & {\tiny S1, pp. 1-4} \\
+\addlinespace[2pt]
+N02 & \textbf{Zero-based offset semantics}\par{\tiny\color{UGTSGray} Numeric/fractal} & An index of 35 denotes the 36th stored position. & Keep value, offset and ordinal position as distinct typed quantities.\par{\tiny\color{UGTSGray} Prevents off-by-one errors; not altered arithmetic.} & \statusretain & {\tiny S4, pp. 1-3} \\
+\addlinespace[2pt]
+N03 & \textbf{Active-bit/Hamming-weight filter}\par{\tiny\color{UGTSGray} Numeric/fractal} & 19 = 10011 has three active bits; zeros are treated as inactive. & Use popcount as a sparse feature count or seed descriptor.\par{\tiny\color{UGTSGray} The phonetic syllable link is a mnemonic, not a general encoding law.} & \statustranslate & {\tiny S1, pp. 3-5} \\
+\addlinespace[2pt]
+N04 & \textbf{Three-point triangle seed}\par{\tiny\color{UGTSGray} Numeric/fractal} & Three active positions are treated as triangle anchors. & Map three non-collinear active samples to a simplex/triangle primitive.\par{\tiny\color{UGTSGray} Any three non-collinear points form a triangle; the mapping is chosen.} & \statustranslate & {\tiny S1, pp. 6-7} \\
+\addlinespace[2pt]
+N05 & \textbf{Pascal parity to Sierpinski}\par{\tiny\color{UGTSGray} Numeric/fractal} & Odd/even entries in Pascal triangle form a Sierpinski pattern. & Use binomial parity as a deterministic fractal/test-pattern generator.\par{\tiny\color{UGTSGray} Technical correction: rows 2\textasciicircum{}k-1, not generally 2\textasciicircum{}k, are all odd when indexed from zero.} & \statusretain & {\tiny S1, pp. 6-9} \\
+\addlinespace[2pt]
+N06 & \textbf{Golden-angle/Fibonacci sampling}\par{\tiny\color{UGTSGray} Numeric/fractal} & Phi/Vogel spacing is proposed to avoid visible repetition. & Optional quasi-uniform angular sample schedule or dither seed.\par{\tiny\color{UGTSGray} Useful heuristic; it does not guarantee zero aliasing or zero cost.} & \statustranslate & {\tiny S1, pp. 13-15} \\
+\addlinespace[2pt]
+N07 & \textbf{Lemniscate/strange-loop recursion}\par{\tiny\color{UGTSGray} Numeric/fractal} & Infinity and Escher loops symbolize self-generation. & Represent recursion with explicit finite grammar depth and cycle detection.\par{\tiny\color{UGTSGray} Keep as a recursion motif, not a proof of self-creating physics.} & \statusdemote & {\tiny S1, pp. 18-23} \\
+\addlinespace[2pt]
+G01 & \textbf{Loop-plus-stem decomposition}\par{\tiny\color{UGTSGray} Glyph/kinematic} & Chosen phi/D/B glyphs are decomposed into loop(s) plus a stem. & Represent glyph geometry as a graph of curve segments and junctions.\par{\tiny\color{UGTSGray} Glyph form varies by font; the decomposition is a design convention.} & \statustranslate & {\tiny S9,S2,S8, pp. 1-2} \\
+\addlinespace[2pt]
+G02 & \textbf{Cut-unroll D/B to R}\par{\tiny\color{UGTSGray} Glyph/kinematic} & Break the lower loop and straighten the released arc into a diagonal leg. & Boundary-graph edit plus continuous curve morph from closed arc to open segment.\par{\tiny\color{UGTSGray} Implementable as path topology and control-point interpolation.} & \statusretain & {\tiny S9,S2,S8, pp. 1-4} \\
+\addlinespace[2pt]
+G03 & \textbf{Torque axis T}\par{\tiny\color{UGTSGray} Glyph/kinematic} & The stem is an axis; rotation shears/unreels the lower loop. & Use a rotation/warp parameter around a declared pivot axis.\par{\tiny\color{UGTSGray} Torque language is a kinematic metaphor unless a physical model is supplied.} & \statustranslate & {\tiny S9,S2,S8, pp. 1-4} \\
+\addlinespace[2pt]
+G04 & \textbf{Delta-time and phase modulation}\par{\tiny\color{UGTSGray} Glyph/kinematic} & Delta T and delta phi drive movement and phase change. & Store continuous time and phase as separate state coordinates and derivatives.\par{\tiny\color{UGTSGray} Do not overload time, torque and triangle into one untyped symbol.} & \statusretain & {\tiny S1,S7,S9, pp. 10-15;14-18;2-5} \\
+\addlinespace[2pt]
+G05 & \textbf{One-bit parity hinge}\par{\tiny\color{UGTSGray} Glyph/kinematic} & A bit toggles closed/open or route A/B. & Use a schema-bound route/parity flag that selects transition behavior.\par{\tiny\color{UGTSGray} The bit is not the complete state.} & \statusretain & {\tiny S5,S6,S7,S9, pp. 2-8;5-7;14-25;3-8} \\
+\addlinespace[2pt]
+G06 & \textbf{Global hinge field}\par{\tiny\color{UGTSGray} Glyph/kinematic} & The hinge is applied everywhere through an SDF sign/state change. & Model a global morph or transition field evaluated at every query point.\par{\tiny\color{UGTSGray} A morph parameter changes the implicit field; topology changes require explicit handling.} & \statustranslate & {\tiny S9,S2,S8, pp. 7-8} \\
+\addlinespace[2pt]
+G07 & \textbf{Chirality/orientation flip}\par{\tiny\color{UGTSGray} Glyph/kinematic} & R/S or mirrored states are associated with sign/orientation reversal. & Track an orientation bit and apply a gluing/transition map that may flip it.\par{\tiny\color{UGTSGray} Orientation is distinct from sheet and phase.} & \statusretain & {\tiny S1,S7,S9, pp. 21-29;18-25;4-8} \\
+\addlinespace[2pt]
+G08 & \textbf{Split oval to opposing arches}\par{\tiny\color{UGTSGray} Glyph/kinematic} & A zero-centered oval is split and torque opens it into positive/negative wave arches. & Use symmetric curve branches around a fixed node for waveform or deformation profiles.\par{\tiny\color{UGTSGray} The exact 1:1 amplitude condition is a chosen symmetric case, not universal warped-disk physics.} & \statustranslate & {\tiny S4, pp. 10-16} \\
+\addlinespace[2pt]
+G09 & \textbf{Overlap lens/shared domain}\par{\tiny\color{UGTSGray} Glyph/kinematic} & Slightly overlapping semicircles form an interference/tolerance/shared-information zone. & Use intersection A$\cap$B, lens area, or blend region as explicit shared domain.\par{\tiny\color{UGTSGray} Interpretation depends on geometry, mechanics or information semantics.} & \statusretain & {\tiny S4, pp. 16-19} \\
+\addlinespace[2pt]
+I01 & \textbf{Signed distance/implicit field}\par{\tiny\color{UGTSGray} Implicit geometry} & Geometry is represented by f(p), with f=0 as the boundary. & Use implicit scalar fields; reserve exact-distance claims for valid primitives/transforms.\par{\tiny\color{UGTSGray} A generic implicit field need not be an exact SDF.} & \statusretain & {\tiny S1,S3,S6,S7,S9, pp. 10-30;1-10;5-10;14-31;7-8} \\
+\addlinespace[2pt]
+I02 & \textbf{SDF CSG operators}\par{\tiny\color{UGTSGray} Implicit geometry} & Union=min, intersection=max, subtraction=max(a,-b). & Provide composable implicit-field operators with documented sign convention.\par{\tiny\color{UGTSGray} Smooth variants may be added as optional adapters.} & \statusretain & {\tiny S3, pp. 1-3} \\
+\addlinespace[2pt]
+I03 & \textbf{Zero surface as event relation}\par{\tiny\color{UGTSGray} Implicit geometry} & The SDF-zero locus becomes a transition surface, not a place to march through. & Treat R\_j(q)=0 as an event guard and solve crossing time.\par{\tiny\color{UGTSGray} This is the central correction from rendering to event semantics.} & \statusretain & {\tiny S6,S5,S7, pp. 5-7;3-7;14-31} \\
+\addlinespace[2pt]
+I04 & \textbf{Analytic kinematic sweep}\par{\tiny\color{UGTSGray} Implicit geometry} & A cone/trajectory is solved against an implicit boundary for exact event time. & Use closed-form roots for restricted trajectory/surface pairs; certified numerical roots otherwise.\par{\tiny\color{UGTSGray} No universal non-iterative solver exists.} & \statusretain & {\tiny S6,S7, pp. 7-12;14-31} \\
+\addlinespace[2pt]
+I05 & \textbf{Cone as support/domain}\par{\tiny\color{UGTSGray} Implicit geometry} & Cones are directional influence, field-of-view or admissibility domains. & Use analytic radial-angular support predicates for pruning/query scope.\par{\tiny\color{UGTSGray} Not necessarily a rendered cone.} & \statusretain & {\tiny S5,S6,S7, pp. 3-6;5-10;12-25} \\
+\addlinespace[2pt]
+I06 & \textbf{Spherical/local radial-angular support}\par{\tiny\color{UGTSGray} Implicit geometry} & Spherical means a local chart around a sensor/coupler, not a global world remesh. & Represent local support by radius, angle, orientation, uncertainty and time window.\par{\tiny\color{UGTSGray} Core type-safety rule.} & \statusretain & {\tiny S5,S6, pp. 3-6;1-10} \\
+\addlinespace[2pt]
+I07 & \textbf{Nested shells}\par{\tiny\color{UGTSGray} Implicit geometry} & Shells organize radial reach, scale and relevance. & Use concentric support bands or multiresolution radial intervals.\par{\tiny\color{UGTSGray} Useful local indexing structure, not required globally.} & \statustranslate & {\tiny S6,S7, pp. 1-7;12-25} \\
+\addlinespace[2pt]
+I08 & \textbf{Hourglass/quad routing}\par{\tiny\color{UGTSGray} Implicit geometry} & Four conical chambers meet at a pinch/event locus. & Implement a finite routing partition keyed by sign/sheet/orientation at a transition surface.\par{\tiny\color{UGTSGray} The pinch is an event/router, not a literal singularity that destroys data.} & \statustranslate & {\tiny S6,S7, pp. 5-7;23-25} \\
+\addlinespace[2pt]
+I09 & \textbf{Invariant/eigen-axis}\par{\tiny\color{UGTSGray} Implicit geometry} & A central axis or mode persists through transformations. & Declare invariants and preserved quantities for transitions.\par{\tiny\color{UGTSGray} Eigenlanguage is only literal when a linear operator is actually defined.} & \statusretain & {\tiny S1,S6,S7, pp. 15-20;5-12;18-25} \\
+\addlinespace[2pt]
+I10 & \textbf{Projective/homogeneous chart}\par{\tiny\color{UGTSGray} Implicit geometry} & Null-cone and projective language compactifies direction/scale. & Optional homogeneous coordinates for intersections and points at infinity.\par{\tiny\color{UGTSGray} Use only where it improves equations and conditioning.} & \statustranslate & {\tiny S6,S7, pp. 5-7;18-25} \\
+\addlinespace[2pt]
+C01 & \textbf{Log-polar transform}\par{\tiny\color{UGTSGray} Coordinates/sampling} & rho=ln(r), theta=atan2(y,x). & Use a local coordinate chart that turns radial scaling into translation in rho.\par{\tiny\color{UGTSGray} Handle r=0 with an epsilon/core cell.} & \statusretain & {\tiny S1,S3,S7,S9, pp. 10-15;1-10;12-31;5-8} \\
+\addlinespace[2pt]
+C02 & \textbf{One-bit log-polar LUT}\par{\tiny\color{UGTSGray} Coordinates/sampling} & A bitmask activates radial-angular sectors. & Use as a coarse admission/cache mask, never as the whole world state.\par{\tiny\color{UGTSGray} Schema and quantization parameters are mandatory.} & \statusretain & {\tiny S1,S3,S7,S9, pp. 10-15;1-10;12-31;5-8} \\
+\addlinespace[2pt]
+C03 & \textbf{Phasor/Feynman-style edge accumulation}\par{\tiny\color{UGTSGray} Coordinates/sampling} & Subpixel samples carry magnitude/phase and are accumulated. & Normalize to complex phasor or oriented coverage accumulation for antialiasing.\par{\tiny\color{UGTSGray} Not a literal Feynman path integral unless a physical path-integral model is defined.} & \statustranslate & {\tiny S3, pp. 1-8} \\
+\addlinespace[2pt]
+C04 & \textbf{One-bit stochastic jitter}\par{\tiny\color{UGTSGray} Coordinates/sampling} & Binary noise shifts samples/thresholds around an edge. & Use deterministic blue-noise/hash dithering with reproducible seeds.\par{\tiny\color{UGTSGray} Jitter trades structured error for noise; it does not remove error.} & \statusretain & {\tiny S1,S3, pp. 10-15;7-10} \\
+\addlinespace[2pt]
+C05 & \textbf{Temporal pulse-density modulation}\par{\tiny\color{UGTSGray} Coordinates/sampling} & Brightness/coverage is encoded as density of one-bit pulses. & Optional display-output adapter using PDM or delta-sigma modulation.\par{\tiny\color{UGTSGray} Panel hardware and refresh limits remain.} & \statustranslate & {\tiny S3, pp. 4-6} \\
+\addlinespace[2pt]
+C06 & \textbf{Chromatic log-radius offset}\par{\tiny\color{UGTSGray} Coordinates/sampling} & Channel scaling becomes additive rho offsets. & Apply channel-specific log-radius shifts before field evaluation, then resample correctly.\par{\tiny\color{UGTSGray} Cheap coordinate arithmetic is not zero-cost end-to-end correction.} & \statusretain & {\tiny S3, pp. 7-8} \\
+\addlinespace[2pt]
+C07 & \textbf{Log-polar prepress screening}\par{\tiny\color{UGTSGray} Coordinates/sampling} & Spatial one-bit dots scale with rho and orient with theta. & Optional print adapter with calibrated halftone, screen angles and dot-gain compensation.\par{\tiny\color{UGTSGray} Requires press/paper calibration.} & \statustranslate & {\tiny S3, pp. 8-10} \\
+\addlinespace[2pt]
+T01 & \textbf{Phase sheets}\par{\tiny\color{UGTSGray} Topology} & Multiple states occupy layered sheets over the same base coordinate. & Represent state as base position plus sheet, phase, orientation and address.\par{\tiny\color{UGTSGray} Layer identity must be explicit.} & \statusretain & {\tiny S6,S7,S9, pp. 5-10;14-25;5-8} \\
+\addlinespace[2pt]
+T02 & \textbf{Double vacuum}\par{\tiny\color{UGTSGray} Topology} & Co-located states do not interact when phase/sheet/address are incompatible. & Compatibility-gated coupling: same x does not imply same sector.\par{\tiny\color{UGTSGray} One of the strongest corpus concepts.} & \statusretain & {\tiny S5,S6,S7, pp. 2-7;5-10;14-25} \\
+\addlinespace[2pt]
+T03 & \textbf{Mobius gluing}\par{\tiny\color{UGTSGray} Topology} & A boundary identification reverses orientation after one loop. & Implement quotient-map boundary wrapping with orientation flip.\par{\tiny\color{UGTSGray} Use a chart/gluing abstraction rather than literal 4D geometry.} & \statusretain & {\tiny S7,S9, pp. 7-12;5-8} \\
+\addlinespace[2pt]
+T04 & \textbf{Klein-bottle gluing}\par{\tiny\color{UGTSGray} Topology} & A closed non-orientable quotient is used for looping routes. & Implement two rectangle-edge identifications, one orientation reversing.\par{\tiny\color{UGTSGray} Hardware realization remains frontier; 3D pictures self-intersect.} & \statustranslate & {\tiny S5,S7,S9, pp. 2,5;7-25;5-10} \\
+\addlinespace[2pt]
+T05 & \textbf{Topological portal/gluing map}\par{\tiny\color{UGTSGray} Topology} & Crossing a boundary re-enters another chart/sheet, possibly transformed. & Use explicit port, orientation map, coordinate transform and transfer metadata.\par{\tiny\color{UGTSGray} This makes topology technically testable.} & \statusretain & {\tiny S5,S6,S7, pp. 2-5;5-12;14-25} \\
+\addlinespace[2pt]
+T06 & \textbf{Inside/outside sign with schema}\par{\tiny\color{UGTSGray} Topology} & Binary sign denotes interior/exterior or route state. & Bind every bit to a declared schema/version and keep uncertainty separate.\par{\tiny\color{UGTSGray} Raw bits without layout/schema are ambiguous.} & \statusretain & {\tiny S3,S5,S7,S9, pp. 1-10;2-7;14-31;3-8} \\
+\addlinespace[2pt]
+T07 & \textbf{Strange loop/self-reference}\par{\tiny\color{UGTSGray} Topology} & Escher/Klein motifs suggest systems feeding back into themselves. & Use explicit cycles, fixed points and termination/cycle policies in the grammar/event graph.\par{\tiny\color{UGTSGray} Narrative inspiration only unless formally specified.} & \statusdemote & {\tiny S1,S7,S9, pp. 18-30;7-25;5-10} \\
+\addlinespace[2pt]
+A01 & \textbf{Finite grammar G}\par{\tiny\color{UGTSGray} Information architecture} & A finite rule set generates relations/structures. & Use bounded-depth typed productions that compile to supported relation primitives.\par{\tiny\color{UGTSGray} Enforce symbol and expression caps.} & \statusretain & {\tiny S6,S7,S9, pp. 1-12;26-31;5-8} \\
+\addlinespace[2pt]
+A02 & \textbf{State manifold Q}\par{\tiny\color{UGTSGray} Information architecture} & State includes position, time, phase, sheet, address and branch. & Use a typed immutable state record; optional orientation and uncertainty extensions.\par{\tiny\color{UGTSGray} Core data model.} & \statusretain & {\tiny S6, pp. 5-7} \\
+\addlinespace[2pt]
+A03 & \textbf{Relation family R\_j(q)=0}\par{\tiny\color{UGTSGray} Information architecture} & World geometry/constraints are equations rather than frame snapshots. & Store typed relations with parameters, domains and solver capability metadata.\par{\tiny\color{UGTSGray} Restrict to relation families with known solvers for the prototype.} & \statusretain & {\tiny S6, pp. 5-12} \\
+\addlinespace[2pt]
+A04 & \textbf{Support predicate C<=0}\par{\tiny\color{UGTSGray} Information architecture} & Only relations inside a declared local support are candidates. & Separate admission/support from geometry and from compatibility.\par{\tiny\color{UGTSGray} Supports analytic pruning.} & \statusretain & {\tiny S5,S6, pp. 3-7;5-12} \\
+\addlinespace[2pt]
+A05 & \textbf{Compatibility predicate chi}\par{\tiny\color{UGTSGray} Information architecture} & Co-location is insufficient; phase/sheet/mode/time/policy must match. & Compose physical and digital compatibility predicates.\par{\tiny\color{UGTSGray} Return reason codes, not only a bit.} & \statusretain & {\tiny S5,S6, pp. 3-7;5-12} \\
+\addlinespace[2pt]
+A06 & \textbf{Event time t*}\par{\tiny\color{UGTSGray} Information architecture} & The next event is the earliest supported compatible relation root. & Compute min valid root after t0 with tolerance and confidence.\par{\tiny\color{UGTSGray} Multiple roots and tangencies need policy.} & \statusretain & {\tiny S5,S6, pp. 3-7;5-12} \\
+\addlinespace[2pt]
+A07 & \textbf{Transition rule T\_j}\par{\tiny\color{UGTSGray} Information architecture} & Crossing an event surface updates sheet/phase/branch/invariants. & Use pure transition functions producing state patches and event records.\par{\tiny\color{UGTSGray} Preserve pre/post states and provenance.} & \statusretain & {\tiny S5,S6, pp. 5-7;5-12} \\
+\addlinespace[2pt]
+A08 & \textbf{Lineage address}\par{\tiny\color{UGTSGray} Information architecture} & Identity persists by generative address and invariant history. & Use stable entity IDs plus parent/merge ancestry and transition lineage.\par{\tiny\color{UGTSGray} Coordinates are not identity.} & \statusretain & {\tiny S5,S6,S7, pp. 3-12;1-12;26-35} \\
+\addlinespace[2pt]
+A09 & \textbf{Irreducible external event log}\par{\tiny\color{UGTSGray} Information architecture} & Novel exogenous events must be recorded even when closed dynamics are recomputable. & Event-source only novelty, transitions, confidence and calibration changes.\par{\tiny\color{UGTSGray} No zero-memory claim.} & \statusretain & {\tiny S5,S6, pp. 7-11;1-12} \\
+\addlinespace[2pt]
+A10 & \textbf{Query-first API}\par{\tiny\color{UGTSGray} Information architecture} & Ask state\_at(t), next\_event, events\_in\_support, coupling and identity. & Expose direct query methods independent of a frame loop.\par{\tiny\color{UGTSGray} Projection is downstream.} & \statusretain & {\tiny S5,S6, pp. 3-12;1-12} \\
+\addlinespace[2pt]
+A11 & \textbf{Projection adapter}\par{\tiny\color{UGTSGray} Information architecture} & Images are optional outputs, not the authoritative state. & Place raster/raymarch/SDF preview in a replaceable adapter layer.\par{\tiny\color{UGTSGray} Do not mistake the projector for the state space.} & \statusretain & {\tiny S3,S6, pp. 1-10;1-12} \\
+\addlinespace[2pt]
+A12 & \textbf{Hybrid layer separation}\par{\tiny\color{UGTSGray} Information architecture} & Persistent world state, local sensing and display remain distinct. & Use core/query/projection/hardware modules with explicit interfaces.\par{\tiny\color{UGTSGray} Avoid polar-everything and raster-everything.} & \statusretain & {\tiny S5,S6, pp. 2-12;1-12} \\
+\addlinespace[2pt]
+A13 & \textbf{Branch and chamber routing}\par{\tiny\color{UGTSGray} Information architecture} & Events route state through branches/sheets/chambers. & Use finite enums and explicit routing tables.\par{\tiny\color{UGTSGray} Avoid implicit magic routing.} & \statusretain & {\tiny S6,S7, pp. 5-12;23-31} \\
+\addlinespace[2pt]
+A14 & \textbf{Uncertainty/confidence}\par{\tiny\color{UGTSGray} Information architecture} & Verified outputs include error, confidence and calibration. & Attach numeric intervals/confidence and solver status to every event.\par{\tiny\color{UGTSGray} Essential for real systems.} & \statusretain & {\tiny S5,S6, pp. 1-12;8-12} \\
+\addlinespace[2pt]
+A15 & \textbf{Schema-bound packed data caution}\par{\tiny\color{UGTSGray} Information architecture} & Raw packed bits are meaningless without layout metadata. & Version all bitfields/LUTs and ship schema with data.\par{\tiny\color{UGTSGray} Useful contrast from the COBOL sections.} & \statusretain & {\tiny S2,S8,S9,S5, pp. 27-29;26-28;26-28;7} \\
+\addlinespace[2pt]
+A16 & \textbf{Agent on shared relation substrate}\par{\tiny\color{UGTSGray} Information architecture} & Perception/action can issue the same support/event queries. & Keep agent integration minimal: queries and transition choices, not universal AI compression.\par{\tiny\color{UGTSGray} Do not claim an LLM is replaced by the geometry.} & \statustranslate & {\tiny S6,S7, pp. 11-12;34-36} \\
+\addlinespace[2pt]
+K01 & \textbf{Analytic motion component}\par{\tiny\color{UGTSGray} Game technology} & Position/velocity/acceleration are closed-form trajectories. & Entity component stores trajectory coefficients and state patches.\par{\tiny\color{UGTSGray} Supports horizon skipping for fixed formulas.} & \statusretain & {\tiny S6,S7,S4, pp. 7-12;26-31;10-16} \\
+\addlinespace[2pt]
+K02 & \textbf{Continuous collision/event component}\par{\tiny\color{UGTSGray} Game technology} & Collisions are relation roots under support/compatibility. & Event solver returns ordered crossings with guard semantics.\par{\tiny\color{UGTSGray} Fallback numerical solver is allowed.} & \statusretain & {\tiny S6,S7, pp. 7-12;26-31} \\
+\addlinespace[2pt]
+K03 & \textbf{Sensor cone component}\par{\tiny\color{UGTSGray} Game technology} & Agent/sensor relevance uses local radial-angular supports. & FOV/range query before relation solving.\par{\tiny\color{UGTSGray} Useful in Unity/Godot/ECS adapters.} & \statusretain & {\tiny S5,S6,S7, pp. 3-9;5-12;12-25} \\
+\addlinespace[2pt]
+K04 & \textbf{Procedural grammar component}\par{\tiny\color{UGTSGray} Game technology} & L-system/shape grammar generates bounded relation sets. & Compile grammar tokens to primitives, supports and transitions.\par{\tiny\color{UGTSGray} Finite depth and normalization required.} & \statusretain & {\tiny S6,S7,S9, pp. 11-12;26-31;5-8} \\
+\addlinespace[2pt]
+K05 & \textbf{Topological portal component}\par{\tiny\color{UGTSGray} Game technology} & Mobius/Klein/hourglass routes connect spaces with orientation/sheet changes. & Portal has entry surface, exit transform, sheet map and lineage event.\par{\tiny\color{UGTSGray} Can be rendered conventionally while simulated symbolically.} & \statusretain & {\tiny S5,S6,S7,S9, pp. 2-7;5-12;18-25;5-8} \\
+\addlinespace[2pt]
+K06 & \textbf{Deterministic network/event replication}\par{\tiny\color{UGTSGray} Game technology} & Seed plus event log reconstructs closed dynamics. & Replicate authoritative events and schema versions, not every visual frame.\par{\tiny\color{UGTSGray} Only works where deterministic formulas are stable across platforms.} & \statustranslate & {\tiny S6, pp. 8-12} \\
+\addlinespace[2pt]
+K07 & \textbf{Graphics preview component}\par{\tiny\color{UGTSGray} Game technology} & SDF/log-polar/jitter projects core state to pixels. & Optional GPU or CPU preview; no authority over simulation.\par{\tiny\color{UGTSGray} Provides practical game-engine visualization.} & \statusretain & {\tiny S1,S3,S6, pp. 10-15;1-10;9-10} \\
+\addlinespace[2pt]
+H01 & \textbf{Bounded Compatibility Event (B.C.E.)}\par{\tiny\color{UGTSGray} Hardware endpoint} & A verified event is declared only after support, compatibility and a measured guard crossing. & Reuse the core event schema for a measured optofluidic front end.\par{\tiny\color{UGTSGray} The best-defined physical endpoint in the corpus.} & \statusretain & {\tiny S5, pp. 1-12} \\
+\addlinespace[2pt]
+H02 & \textbf{Local support -> liquid lens -> mode -> guard}\par{\tiny\color{UGTSGray} Hardware endpoint} & Radial-angular input is tuned, coupled, interfered and thresholded. & Separate optical, fluid, mode and digital-control models.\par{\tiny\color{UGTSGray} Maxwell, Young-Laplace/coupled-mode theory and control logic stay type-separated.} & \statusretain & {\tiny S5, pp. 3-9} \\
+\addlinespace[2pt]
+H03 & \textbf{Matrix-in-glass}\par{\tiny\color{UGTSGray} Hardware endpoint} & A waveguide mesh implements a calibrated transfer function. & Treat as a measured passive/tunable transfer matrix, not stored imagery.\par{\tiny\color{UGTSGray} Requires calibration and drift tracking.} & \statusretain & {\tiny S5, pp. 2-5} \\
+\addlinespace[2pt]
+H04 & \textbf{One-bit hardware route flag}\par{\tiny\color{UGTSGray} Hardware endpoint} & Parity denotes admission/route/freshness, not amplitude. & Store amplitudes, thresholds, uncertainty and lineage separately.\par{\tiny\color{UGTSGray} Same type-safety rule as software.} & \statusretain & {\tiny S5, pp. 2-7} \\
+\addlinespace[2pt]
+H05 & \textbf{Spherical throughput metric}\par{\tiny\color{UGTSGray} Hardware endpoint} & Count verified events/queries per second at a declared error budget. & Report support, compatibility, miss/false rates, energy, latency and drift.\par{\tiny\color{UGTSGray} Not photon flux alone.} & \statusretain & {\tiny S5, pp. 3,6,9-12} \\
+\addlinespace[2pt]
+H06 & \textbf{Hollowlens-0 demonstrator}\par{\tiny\color{UGTSGray} Hardware endpoint} & Scanned input, tunable liquid coupler, 2x2 interferometer, balanced detectors, digital sidecar. & Prototype only after guard, compatibility, calibration and baseline are preregistered.\par{\tiny\color{UGTSGray} Can fail usefully.} & \statusretain & {\tiny S5, pp. 4,8-10} \\
+\addlinespace[2pt]
+\end{longtable}
+\endgroup
+\end{landscape}

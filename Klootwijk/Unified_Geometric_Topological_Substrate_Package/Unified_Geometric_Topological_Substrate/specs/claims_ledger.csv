@@ -1,0 +1,19 @@
+id,source_claim,disposition,technical_reason
+CL01,Universal O(1) world/event solving,reject,Only fixed closed expressions and restricted fixed-degree root problems may be horizon-independent; candidate count and solver cost remain.
+CL02,Zero memory / under-32MB universal worlds,reject,"Parameters can compress some closed dynamics, but entities, branches, exogenous events, calibration and uncertainty consume memory."
+CL03,"No latency, heat or power",reject,"All computation, actuation, detection and display/hardware paths have latency and energy costs."
+CL04,One bit contains the complete state,reject,"One bit is only a schema-bound flag; numeric state, uncertainty, lineage and parameters remain separate."
+CL05,Golden ratio eliminates aliasing at zero cost,demote,"Golden-angle schedules can reduce regularity but require sampling, reconstruction and error analysis."
+CL06,Feynman vectors are a standard quantum rasterizer,translate,Use the phrase only as inspiration; the implementation is complex phasor/oriented supersampling.
+CL07,Klein bottle physically self-assembles matter,reject,Use quotient/gluing maps in software; no physical self-assembly claim is supported.
+CL08,Möbius strip is simply half a Klein bottle,correct,"Certain cuts/decompositions relate them, but the statement is not a general unique identity."
+CL09,Rows at powers of two in Pascal are all ones/odd,correct,"With zero-based row indexing, rows 2^k-1 are all odd; Pascal parity still yields the Sierpinski pattern."
+CL10,"C(5,3)=10 proves the decimal threshold relation",demote,"It is a valid combination count and an interesting coincidence, not a causal structural proof."
+CL11,Log mapping removes the origin singularity,correct,Log mapping relocates/rescales the singular behavior; an epsilon/core chart is still required.
+CL12,Analytic SDF intersections are always exact and non-iterative,reject,Only selected field/trajectory pairs have closed-form roots; generic cases need numerical/certified methods.
+CL13,All BVH/broad-phase structures become unnecessary,reject,Strong support/compatibility filters may replace or complement broad phase in restricted domains; generic scenes still need indexing.
+CL14,The topology solves the Von Neumann bottleneck,reject,"Data locality may improve, but instruction/data movement and memory hierarchy remain physical constraints."
+CL15,World geometry directly replaces general AI/LLMs,reject,"A shared query substrate can host agents, but it does not replace model weights, learning, semantics or inference complexity."
+CL16,"Biology, dreams, economies and wireless auras instantiate the same exact mechanism",reject,"These are narrative analogies in the source bundle, not part of the technical unification."
+CL17,Chromatic correction is zero-cost,correct,"Log-space offsets are cheap, but channel evaluation, filtering, resampling and calibration still cost resources."
+CL18,Rasterization and raymarching are forbidden,correct,They are optional downstream projection tools; they do not define the authoritative substrate.

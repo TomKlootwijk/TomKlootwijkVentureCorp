@@ -1,0 +1,1 @@
+wrote glyph morph previews to /mnt/data/unified_geometric_substrate/examples/generated
