@@ -1,5 +1,5 @@
 ﻿{
-    "schema":  "UGTS-WINDOWS-GPU-ENVIRONMENT-1.0",
+    "schema":  "UGTS-WINDOWS-GPU-ENVIRONMENT-1.1",
     "captured_utc":  "2026-08-15T01:55:46.7921758Z",
     "os":  {
                "caption":  "Microsoft Windows 11 Home",
@@ -37,7 +37,16 @@
                 "vulkan_vendor_id":  4318,
                 "vulkan_device_id":  12056,
                 "vulkan_timestamp_period_ns":  1,
-                "vulkan_timestamp_valid_bits":  64
+                "vulkan_timestamp_valid_bits":  64,
+                "vulkan_subgroup":  {
+                                          "size":  32,
+                                          "min_size":  32,
+                                          "max_size":  32,
+                                          "compute_stage_supported":  true,
+                                          "basic_supported":  true,
+                                          "ballot_supported":  true,
+                                          "source":  "local vulkaninfo device-properties query"
+                                      }
             },
     "execution":  {
                       "driver_model":  "WDDM",

@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+gpu/build-windows/
+benchmarks/windows_integrated_lut_run/semantic_hash_verification/
+benchmarks/compact_smoke/
+benchmarks/compact_collision_check/
+benchmarks/subgroup_smoke/
+benchmarks/smoke*/

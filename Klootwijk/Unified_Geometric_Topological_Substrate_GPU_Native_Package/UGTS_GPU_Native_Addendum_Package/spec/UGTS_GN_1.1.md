@@ -110,16 +110,27 @@ compute pipeline + vendor pipeline cache
 GPU dispatch → E32/E16 results → optional verified-event compaction
 ```
 
-The package contains four SPIR-V modules:
+The package contains twenty-two named SPIR-V execution variants generated from ten shader sources, plus twenty-two `spirv-opt -O` counterparts:
 
 - G64 evaluate;
 - G64 evaluate plus atomic commit counters;
 - G32 evaluate; and
-- G32 evaluate plus atomic commit counters.
+- G32 evaluate plus atomic commit counters;
+- G32 evaluate and commit variants with a packed uniform-texel-buffer confidence LUT;
+- G32 evaluate and commit variants with one packed endpoint pair per LUT interval, requiring one texture fetch per interpolated value;
+- G32 verified-only per-lane atomic append, with and without all rejection-stage counters;
+- G32 subgroup/workgroup compact append, with and without workgroup-reduced counters;
+- G32 pre-threshold subgroup compact append, with and without workgroup-reduced counters; and
+- fixed-query G24 subgroup compact append with a direct 6-bit log-threshold decoder, with and without workgroup-reduced counters;
+- fixed-query G24 subgroup compact append with a 128-byte packed uniform-texel-buffer log-threshold LUT, with and without workgroup-reduced counters; and
+- fixed-query G20 hot-state subgroup compact append with lineage in a separate cold storage buffer, with and without workgroup-reduced counters; and
+- packed 16-bit log-code texture-buffer probes for sequential and random access.
 
-The runtime descriptor layout reserves set 0, bindings 0-2: state, event and counters. Evaluate-only modules may optimize the unused counter binding out of the final SPIR-V interface; evaluate+commit modules expose all three bindings. The local workgroup is 256x1x1. `gpu/spirv/spirv_manifest.json` records hashes, instruction counts, entry points, local size and descriptor decorations.
+The runtime descriptor layout reserves set 0, bindings 0-2 for state, event and counters, binding 3 for the confidence LUT where used, and binding 4 for the optional cold-lineage stream. Evaluate-only modules may optimize unused bindings out of the final SPIR-V interface. The local workgroup is 256x1x1. `gpu/spirv/spirv_manifest.json` records hashes, instruction counts, entry points, local size and descriptor decorations.
 
 The direct runtime is `ugts_vulkan_bench`. ANGLE/SwiftShader appears only as a reproducible bootstrap compiler in this container; it is not the target runtime. Production targets compile the Vulkan GLSL with glslang/DXC or another conformant tool and execute the SPIR-V through the vendor Vulkan driver.
+
+The two confidence-LUT encodings deliberately expose a cache/compute trade. The 8,196-byte adjacent-sample layout packs 4,097 binary16 samples two per `R32_UINT` texel and evaluates two sample fetches per interpolation. The 16,384-byte interval-pair layout duplicates interior endpoints so one texel contains both values needed for one interpolation. Both use a uniform texel buffer and fall back to direct `exp2` outside the tabulated interval. On the named RTX 5070 Ti Laptop GPU, the one-fetch layout recovers some small/mid-size lookup overhead but does not establish a stable throughput advantage over direct `exp2`; selecting a LUT is therefore a target-specific benchmark decision, not a semantic requirement.
 
 ### 5.1 Reference query convention
 
@@ -137,13 +148,25 @@ The same event evaluation additionally increments four global counters: candidat
 
 ## 7. Event compaction
 
-The benchmark deliberately writes dense output so every invocation can be validated. A production novelty log should retain only verified events:
+The benchmark retains dense output as a diagnostic baseline and implements verified-only E16 output through both per-lane atomic append and subgroup/workgroup range reservation:
 
 ```text
 predicate → subgroup ballot → block prefix → global block offsets → compact E16/E32 append
 ```
 
-The package reports an Event Compaction Ratio derived from observed event yield. That ratio is a memory model, not a measured compaction-kernel speed.
+Every compact record is validated by scalar/topology payload and collision-bucketed lineage, and non-boundary completeness is checked against the CPU oracle. On the named RTX 5070 Ti Laptop GPU at N=4,194,304 and 4.7488% event yield, subgroup compaction reduced logical E16 writes 21.058x and measured 1.528x faster than dense evaluation across the original six forward/reverse-order processes. With all four counters reduced per workgroup it measured 1.869x faster than dense per-lane commit at the paired median.
+
+Compact descriptors may instead expose an explicit bounded capacity. The shader advances the authoritative append-demand counter for every verified event but writes only when `slot < events.length()`. With capacity set to 6.25% of candidates, the named device retained all 199,179 events at N=4,194,304, reported zero overflow, reduced the actual event allocation from 64 MiB to 4 MiB (16x), and preserved the approximately 0.219 ms subgroup time across four balanced processes. A deliberate 1% run validated exact overflow demand and safe truncation. Overflow is a validation failure by default; callers may explicitly allow it only for bounded-loss diagnostics. A two-pass count/allocate/write design remains required when lossless operation has no conservative capacity contract.
+
+An optional pre-threshold G32 profile replaces the stored confidence floor with `min(guard_epsilon, -log2(confidence_floor)/32)`. The subgroup predicate then uses a distance comparison, and `exp2` executes only for verified lanes whose confidence must be materialized in E16. The profile is algebraically valid for the declared monotonic confidence function but is a distinct ABI: producers must precompute the field and consumers must not interpret its high half as a raw confidence floor. On the named device it improved append-only paired medians by 1.0-4.5% in the smaller/mid-size cases, converged to +0.03% at N=4,194,304, and produced no consistent counted-path advantage.
+
+The fixed-query G24 profile uses six scalar `uint` words with a verified 24-byte `std430` array stride. It retains position, cone threshold, support axis, radius, guard epsilon, sheet, orientation and lineage, but omits time and phase and replaces the full compatibility mask with a producer-computed compatible bit. A 6-bit code represents `-log2(confidence_floor)/32` over `[0, 0.125]`. One variant decodes it arithmetically; the other fetches one of 64 binary16 thresholds from a 128-byte packed `R32_UINT` uniform texel buffer. This is a distinct fixed-query ABI, not a lossless G32 encoding.
+
+At N=4,194,304 with a 6.25%-capacity E16 buffer, G24 reduces state-plus-output allocation from 132 MiB to 100 MiB. Across six balanced native runs, the direct-decoder append path measured a 1.306x paired speedup over G32, and its reduced-counter path measured 1.312x. The LUT/direct ratios were 0.995x and 0.999x respectively; below L2 the LUT was slower. The record footprint, not the 128-byte LUT, is therefore the supported cause of the large-case gain. Exact L2 hit rate and DRAM traffic remain unmeasured because hardware counters were permission-blocked.
+
+A separate four-process boundary sweep sampled 32,768-candidate increments around both calculated residency crossings. G32 candidate rate fell 23.4% between 0.974x and 1.003x L2 and another 19.6% at 1.031x; G24 stayed flat at those sizes, then fell 11.1% between 0.977x and 0.998x of L2 and another 10.4% at 1.020x. The displacement of the cliff is consistent with the 32-to-24-byte state reduction and strengthens, but does not replace, the working-set-based cache attribution.
+
+The G20 cold-lineage profile splits the identical fixed-query state into five hot scalar words and one separately allocated lineage word. Non-verified lanes return before binding 4 is loaded. Total state allocation remains 24 bytes per candidate, while the declared always-hot state plus 6.25%-capacity E16 output falls from 25 to 21 bytes per candidate. At N=4,194,304, six balanced native runs measured 1.097x higher append throughput and 1.102x higher counted throughput than G24. All counts and retained payloads match. This is a locality optimization, not a 20-byte total-storage claim; cache-sector amplification remains unmeasured.
 
 ## 8. Native performance vocabulary
 
@@ -174,6 +197,8 @@ For `N` candidates and `V` verified events:
 G64/E32 dense             = N × 96 bytes
 G32/E16 dense             = N × 48 bytes
 G32 + compact E16 novelty = N × 32 + V × 16 bytes
+G24 fixed query + compact = N × 24 + V × 16 bytes
+G20 hot + cold lineage     = N × 20 + N × 4 + V × 16 bytes
 compact E16 log only      = V × 16 bytes
 ```
 

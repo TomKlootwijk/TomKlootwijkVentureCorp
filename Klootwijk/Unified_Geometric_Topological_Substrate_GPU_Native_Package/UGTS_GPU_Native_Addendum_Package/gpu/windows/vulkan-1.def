@@ -41,11 +41,14 @@ EXPORTS
     vkDestroyShaderModule
     vkDeviceWaitIdle
     vkEndCommandBuffer
+    vkEnumerateDeviceExtensionProperties
     vkEnumeratePhysicalDevices
     vkFreeMemory
     vkFreeCommandBuffers
     vkGetBufferMemoryRequirements
+    vkGetDeviceProcAddr
     vkGetDeviceQueue
+    vkGetPhysicalDeviceFeatures2
     vkGetPhysicalDeviceMemoryProperties
     vkGetPhysicalDeviceProperties
     vkGetPhysicalDeviceQueueFamilyProperties

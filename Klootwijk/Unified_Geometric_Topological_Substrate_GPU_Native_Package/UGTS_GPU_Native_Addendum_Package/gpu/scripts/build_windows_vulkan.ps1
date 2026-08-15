@@ -28,6 +28,8 @@ $includePath = Join-Path $gpuRoot 'include'
 $importLibrary = Join-Path $buildPath 'vulkan-1.lib'
 $executable = Join-Path $buildPath 'ugts_vulkan_bench.exe'
 $lutExecutable = Join-Path $buildPath 'ugts_vulkan_lut_bench.exe'
+$objectPath = Join-Path $buildPath 'ugts_vulkan_bench.obj'
+$lutObjectPath = Join-Path $buildPath 'ugts_vulkan_lut_bench.obj'
 
 $environmentLines = & $env:ComSpec /d /c "call `"$vcvars`" >nul && set"
 if ($LASTEXITCODE -ne 0) {
@@ -43,11 +45,11 @@ foreach ($line in $environmentLines) {
 if ($LASTEXITCODE -ne 0) {
     throw "Vulkan import-library generation failed with exit code $LASTEXITCODE"
 }
-& cl.exe /nologo /std:c++17 /EHsc /W4 /O2 "/I$includePath" $sourcePath "/Fe:$executable" /link /incremental:no $importLibrary | Out-Host
+& cl.exe /nologo /std:c++17 /EHsc /W4 /O2 "/I$includePath" "/Fo:$objectPath" $sourcePath "/Fe:$executable" /link /incremental:no $importLibrary | Out-Host
 if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $executable)) {
     throw "Native Vulkan benchmark build failed with exit code $LASTEXITCODE"
 }
-& cl.exe /nologo /std:c++17 /EHsc /W4 /O2 "/I$includePath" $lutSourcePath "/Fe:$lutExecutable" /link /incremental:no $importLibrary | Out-Host
+& cl.exe /nologo /std:c++17 /EHsc /W4 /O2 "/I$includePath" "/Fo:$lutObjectPath" $lutSourcePath "/Fe:$lutExecutable" /link /incremental:no $importLibrary | Out-Host
 if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $lutExecutable)) {
     throw "Native Vulkan LUT benchmark build failed with exit code $LASTEXITCODE"
 }

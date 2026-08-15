@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+"""Regenerate the package SHA-256 manifest, excluding transient build caches."""
+from __future__ import annotations
+
+import hashlib
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[2]
+MANIFEST = ROOT / "MANIFEST.sha256"
+INVENTORY = ROOT / "PACKAGE_INVENTORY.csv"
+EXCLUDED_DIRECTORIES = {
+    "build",
+    "build-windows",
+    "__pycache__",
+    "compact_smoke",
+    "compact_collision_check",
+    "subgroup_smoke",
+    "semantic_hash_verification",
+}
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def included(path: Path) -> bool:
+    relative = path.relative_to(ROOT)
+    return (
+        path != MANIFEST
+        and not any(part in EXCLUDED_DIRECTORIES for part in relative.parts)
+        and not any(part.startswith("smoke") for part in relative.parts)
+    )
+
+
+def main() -> None:
+    inventory_files = sorted(
+        (
+            path
+            for path in ROOT.rglob("*")
+            if path.is_file()
+            and path not in {MANIFEST, INVENTORY}
+            and included(path)
+        ),
+        key=lambda path: path.relative_to(ROOT).as_posix(),
+    )
+    inventory_lines = ["path,bytes,sha256"] + [
+        f"{path.relative_to(ROOT).as_posix()},{path.stat().st_size},{sha256(path)}"
+        for path in inventory_files
+    ]
+    INVENTORY.write_text("\n".join(inventory_lines) + "\n", encoding="utf-8", newline="\n")
+
+    files = sorted(
+        (path for path in ROOT.rglob("*") if path.is_file() and included(path)),
+        key=lambda path: path.relative_to(ROOT).as_posix(),
+    )
+    lines = [f"{sha256(path)}  {path.relative_to(ROOT).as_posix()}" for path in files]
+    MANIFEST.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    print(f"{INVENTORY}: {len(inventory_files)} files")
+    print(f"{MANIFEST}: {len(files)} files")
+
+
+if __name__ == "__main__":
+    main()

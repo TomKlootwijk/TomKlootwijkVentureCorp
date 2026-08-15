@@ -50,6 +50,8 @@ typedef struct VkBufferView_T* VkBufferView;
 #define VK_TRUE 1u
 #define VK_FALSE 0u
 #define VK_MAX_PHYSICAL_DEVICE_NAME_SIZE 256u
+#define VK_MAX_EXTENSION_NAME_SIZE 256u
+#define VK_MAX_DESCRIPTION_SIZE 256u
 #define VK_UUID_SIZE 16u
 #define VK_MAX_MEMORY_TYPES 32u
 #define VK_MAX_MEMORY_HEAPS 16u
@@ -106,7 +108,14 @@ typedef enum VkStructureType {
     VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO = 39,
     VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO = 40,
     VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO = 42,
-    VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER = 44
+    VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER = 44,
+    VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2 = 1000059000,
+    VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_EXECUTABLE_PROPERTIES_FEATURES_KHR = 1000269000,
+    VK_STRUCTURE_TYPE_PIPELINE_INFO_KHR = 1000269001,
+    VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_PROPERTIES_KHR = 1000269002,
+    VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INFO_KHR = 1000269003,
+    VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_STATISTIC_KHR = 1000269004,
+    VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INTERNAL_REPRESENTATION_KHR = 1000269005
 } VkStructureType;
 
 typedef enum VkPhysicalDeviceType {
@@ -227,6 +236,17 @@ enum : VkQueryResultFlags {
     VK_QUERY_RESULT_64_BIT = 0x00000001,
     VK_QUERY_RESULT_WAIT_BIT = 0x00000002
 };
+enum : VkPipelineCreateFlags {
+    VK_PIPELINE_CREATE_CAPTURE_STATISTICS_BIT_KHR = 0x00000040,
+    VK_PIPELINE_CREATE_CAPTURE_INTERNAL_REPRESENTATIONS_BIT_KHR = 0x00000080
+};
+
+typedef enum VkPipelineExecutableStatisticFormatKHR {
+    VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_BOOL32_KHR = 0,
+    VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_INT64_KHR = 1,
+    VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_UINT64_KHR = 2,
+    VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_FLOAT64_KHR = 3
+} VkPipelineExecutableStatisticFormatKHR;
 
 typedef struct VkExtent3D {
     std::uint32_t width, height, depth;
@@ -362,6 +382,27 @@ typedef struct VkPhysicalDeviceProperties {
     VkPhysicalDeviceLimitsPrefix limits;
 } VkPhysicalDeviceProperties;
 
+// Oversized opaque core feature storage keeps this minimal header ABI-safe for
+// vkGetPhysicalDeviceFeatures2 while exposing only the extension feature used
+// by the benchmark. The driver writes the standard VkPhysicalDeviceFeatures
+// prefix; the extra words remain untouched.
+typedef struct VkPhysicalDeviceFeatures2 {
+    VkStructureType sType;
+    void* pNext;
+    VkBool32 opaqueFeatures[64];
+} VkPhysicalDeviceFeatures2;
+
+typedef struct VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR {
+    VkStructureType sType;
+    void* pNext;
+    VkBool32 pipelineExecutableInfo;
+} VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR;
+
+typedef struct VkExtensionProperties {
+    char extensionName[VK_MAX_EXTENSION_NAME_SIZE];
+    std::uint32_t specVersion;
+} VkExtensionProperties;
+
 typedef struct VkQueueFamilyProperties {
     VkQueueFlags queueFlags;
     std::uint32_t queueCount;
@@ -495,6 +536,54 @@ typedef struct VkComputePipelineCreateInfo {
     std::int32_t basePipelineIndex;
 } VkComputePipelineCreateInfo;
 
+typedef struct VkPipelineInfoKHR {
+    VkStructureType sType;
+    const void* pNext;
+    VkPipeline pipeline;
+} VkPipelineInfoKHR;
+
+typedef struct VkPipelineExecutablePropertiesKHR {
+    VkStructureType sType;
+    void* pNext;
+    VkShaderStageFlags stages;
+    char name[VK_MAX_DESCRIPTION_SIZE];
+    char description[VK_MAX_DESCRIPTION_SIZE];
+    std::uint32_t subgroupSize;
+} VkPipelineExecutablePropertiesKHR;
+
+typedef struct VkPipelineExecutableInfoKHR {
+    VkStructureType sType;
+    const void* pNext;
+    VkPipeline pipeline;
+    std::uint32_t executableIndex;
+} VkPipelineExecutableInfoKHR;
+
+typedef union VkPipelineExecutableStatisticValueKHR {
+    VkBool32 b32;
+    std::int64_t i64;
+    std::uint64_t u64;
+    double f64;
+} VkPipelineExecutableStatisticValueKHR;
+
+typedef struct VkPipelineExecutableStatisticKHR {
+    VkStructureType sType;
+    void* pNext;
+    char name[VK_MAX_DESCRIPTION_SIZE];
+    char description[VK_MAX_DESCRIPTION_SIZE];
+    VkPipelineExecutableStatisticFormatKHR format;
+    VkPipelineExecutableStatisticValueKHR value;
+} VkPipelineExecutableStatisticKHR;
+
+typedef struct VkPipelineExecutableInternalRepresentationKHR {
+    VkStructureType sType;
+    void* pNext;
+    char name[VK_MAX_DESCRIPTION_SIZE];
+    char description[VK_MAX_DESCRIPTION_SIZE];
+    VkBool32 isText;
+    std::size_t dataSize;
+    void* pData;
+} VkPipelineExecutableInternalRepresentationKHR;
+
 typedef struct VkDescriptorPoolSize {
     VkDescriptorType type;
     std::uint32_t descriptorCount;
@@ -614,15 +703,22 @@ typedef struct VkQueryPoolCreateInfo {
 } VkQueryPoolCreateInfo;
 
 typedef struct VkAllocationCallbacks VkAllocationCallbacks;
+typedef void (VKAPI_PTR *PFN_vkVoidFunction)(void);
+typedef VkResult (VKAPI_PTR *PFN_vkGetPipelineExecutablePropertiesKHR)(VkDevice, const VkPipelineInfoKHR*, std::uint32_t*, VkPipelineExecutablePropertiesKHR*);
+typedef VkResult (VKAPI_PTR *PFN_vkGetPipelineExecutableStatisticsKHR)(VkDevice, const VkPipelineExecutableInfoKHR*, std::uint32_t*, VkPipelineExecutableStatisticKHR*);
+typedef VkResult (VKAPI_PTR *PFN_vkGetPipelineExecutableInternalRepresentationsKHR)(VkDevice, const VkPipelineExecutableInfoKHR*, std::uint32_t*, VkPipelineExecutableInternalRepresentationKHR*);
 
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateInstance(const VkInstanceCreateInfo*, const VkAllocationCallbacks*, VkInstance*);
 VKAPI_ATTR void VKAPI_CALL vkDestroyInstance(VkInstance, const VkAllocationCallbacks*);
 VKAPI_ATTR VkResult VKAPI_CALL vkEnumeratePhysicalDevices(VkInstance, std::uint32_t*, VkPhysicalDevice*);
+VKAPI_ATTR VkResult VKAPI_CALL vkEnumerateDeviceExtensionProperties(VkPhysicalDevice, const char*, std::uint32_t*, VkExtensionProperties*);
 VKAPI_ATTR void VKAPI_CALL vkGetPhysicalDeviceProperties(VkPhysicalDevice, VkPhysicalDeviceProperties*);
+VKAPI_ATTR void VKAPI_CALL vkGetPhysicalDeviceFeatures2(VkPhysicalDevice, VkPhysicalDeviceFeatures2*);
 VKAPI_ATTR void VKAPI_CALL vkGetPhysicalDeviceQueueFamilyProperties(VkPhysicalDevice, std::uint32_t*, VkQueueFamilyProperties*);
 VKAPI_ATTR void VKAPI_CALL vkGetPhysicalDeviceMemoryProperties(VkPhysicalDevice, VkPhysicalDeviceMemoryProperties*);
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateDevice(VkPhysicalDevice, const VkDeviceCreateInfo*, const VkAllocationCallbacks*, VkDevice*);
 VKAPI_ATTR void VKAPI_CALL vkDestroyDevice(VkDevice, const VkAllocationCallbacks*);
+VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkDevice, const char*);
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceQueue(VkDevice, std::uint32_t, std::uint32_t, VkQueue*);
 VKAPI_ATTR VkResult VKAPI_CALL vkDeviceWaitIdle(VkDevice);
 
