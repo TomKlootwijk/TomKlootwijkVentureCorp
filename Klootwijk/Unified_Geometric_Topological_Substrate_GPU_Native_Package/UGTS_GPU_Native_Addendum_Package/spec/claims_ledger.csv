@@ -1,0 +1,35 @@
+claim_id,claim,disposition,source_basis,technical_note
+C001,Standard 100% equals 1,SUPPORTED,"S01 pp.1,7–8",Ordinary arithmetic and source correction.
+C002,Custom `100%` glyph encoder yields 36,BOUNDED,S01 pp.6–9,True only under explicit custom rule producing 100100₂.
+C003,100101₂ yields 37,SUPPORTED VARIANT,S01 pp.3–4,Earlier encoder variant before terminal-bit suppression.
+C004,Zero-based index 35 is ordinal position 36,SUPPORTED,S02 pp.1–4,Address/ordinal distinction; sum remains 35.
+C005,19 has binary Hamming weight 3,SUPPORTED,S09 pp.3–5,19=10011₂.
+C006,Three active bits equal three Dutch syllables,METADATA MAP,S09 pp.4–7,"Corpus-specific correspondence, not numeric equality."
+C007,Pascal parity yields Sierpiński structure,SUPPORTED,S09 pp.6–14,Exact parity construction.
+C008,D/B can be morphed to R by cutting/unrolling a lower loop,CONSTRUCTIVE,S06/S07/S10 pp.1–4,"Valid geometric rewrite, not a unique theorem."
+C009,Parity bit can select open versus closed topology template,SUPPORTED AS COMPUTATION,S03; S06/S07/S10 pp.3–8,Bit is a route/template selector.
+C010,SDF parity alone makes a physical Klein bottle self-assemble,REJECTED,S06/S07/S10 pp.9–12,No material mechanics or conservation model.
+C011,Klein bottle is a useful routing/gluing abstraction,SUPPORTED AS ABSTRACTION,S03 pp.5–7; S05 p.5,"Requires explicit ports, orientation and transfer map."
+C012,Double vacuum means two stronger emptinesses,REJECTED,S03 p.6; S08,Normalized as non-coupling sectors.
+C013,Double vacuum means co-located incompatible sheets,SUPPORTED AS MODEL,S03 p.6,Typed state and compatibility predicate.
+C014,Universal constant-time world,REJECTED,S03 pp.7–8; S08,Only restricted fixed-expression horizon independence is plausible.
+C015,Zero-memory world,REJECTED,S03 pp.7–12; S05 p.10,"Seeds, grammar, state, caches and novelty logs consume memory."
+C016,Memory can be proportional to irreducible novelty,BOUNDED,S03 pp.7–12,Only where closed dynamics are reconstructible.
+C017,One bit encodes complete world state,REJECTED,"S05 pp.2,7",One bit has a narrow route/validity role.
+C018,Log-polar scaling turns magnification into additive radius offset,SUPPORTED,S04 pp.7–8,Coordinate identity ρ=ln r.
+C019,That correction is zero cost,REJECTED,S04 pp.7–8,"Still costs arithmetic, fetches and bandwidth."
+C020,Feynman vectors are required for rasterization,REJECTED TERMINOLOGY,S04 pp.1–3,Translated to deterministic phasor/coverage integration.
+C021,PDM/dither eliminates aliasing,REJECTED ABSOLUTE,S04 pp.4–10,It shapes/redistributes finite error.
+C022,Liquid lenses and optofluidic guides are component classes,SUPPORTED,S05 pp.4–12,"Component feasibility, not system validation."
+C023,Corpus system-level hardware advantage is already proven,REJECTED,S05 pp.10–12,Requires measured full-system baseline.
+C024,0.680 bits correspond to 202.74 J,REJECTED,S01 pp.17–24,Dimensionally invalid without physical process; source number unsupported.
+C025,Landauer bound can translate erased bits to a minimum heat at temperature T,SUPPORTED EXTERNAL ENGINEERING,Engineering correction,"A lower bound, not actual device energy."
+C026,Fractional bit shift by 1.5 is a native integer shift,REJECTED,S01 pp.11–15,Use scale multiply or log2(1.5) displacement.
+C027,Pythagorean cup creates an absolute vacuum,REJECTED,S01 pp.27–29,It is a siphon driven by pressure/gravity.
+C028,Pythagorean cup supplies a threshold/reset mechanism,SUPPORTED TRANSLATION,S01 pp.27–29,Useful hysteretic state-machine analogy and physical endpoint.
+C029,Bundled SPIR-V is GPU-native intermediate code,SUPPORTED,Package artifacts,"Modules validated for magic, entry, local size and bindings."
+C030,Bundled benchmark proves physical GPU speed,REJECTED,Package benchmark,Device is SwiftShader CPU; only API-native correctness/performance on that device.
+C031,G32/E16 halves dense record memory versus G64/E32,SUPPORTED,Package benchmark/spec,48 vs 96 bytes per candidate.
+C032,G32/E16 is necessarily faster,REJECTED,Package benchmark,Packed decode was slower on the validation device.
+C033,Evaluate+commit has no cost,REJECTED,Package benchmark,Atomic commit approximately doubles p50 on largest G64 batch.
+C034,Verified-event compaction can reduce output memory by observed yield,SUPPORTED AS DERIVED METRIC,Package derived metrics,Requires a compaction kernel/FIFO; current dense benchmark does not measure it.
