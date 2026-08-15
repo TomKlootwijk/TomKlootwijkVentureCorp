@@ -64,7 +64,16 @@ enum class Pattern : int {
   Nibble = 12,
   Sparse2048 = 13,
   Sparse512 = 14,
-  Sparse128 = 15
+  Sparse128 = 15,
+  Sparse640 = 16,
+  Sparse768 = 17,
+  Sparse896 = 18,
+  Sparse544 = 19,
+  Sparse576 = 20,
+  Sparse608 = 21,
+  Sparse672 = 22,
+  Sparse704 = 23,
+  Sparse736 = 24
 };
 enum class Path : int { Global = 0, Texture = 1 };
 enum class Compression : int { None = 0, Generic = 1 };
@@ -103,6 +112,24 @@ const char *pattern_name(Pattern pattern) {
     return "sparse1_512";
   case Pattern::Sparse128:
     return "sparse1_128";
+  case Pattern::Sparse640:
+    return "sparse1_640";
+  case Pattern::Sparse768:
+    return "sparse1_768";
+  case Pattern::Sparse896:
+    return "sparse1_896";
+  case Pattern::Sparse544:
+    return "sparse1_544";
+  case Pattern::Sparse576:
+    return "sparse1_576";
+  case Pattern::Sparse608:
+    return "sparse1_608";
+  case Pattern::Sparse672:
+    return "sparse1_672";
+  case Pattern::Sparse704:
+    return "sparse1_704";
+  case Pattern::Sparse736:
+    return "sparse1_736";
   }
   return "invalid";
 }
@@ -184,6 +211,24 @@ std::vector<Pattern> parse_patterns(const std::string &text) {
       result.push_back(Pattern::Sparse512);
     else if (part == "sparse1_128")
       result.push_back(Pattern::Sparse128);
+    else if (part == "sparse1_640")
+      result.push_back(Pattern::Sparse640);
+    else if (part == "sparse1_768")
+      result.push_back(Pattern::Sparse768);
+    else if (part == "sparse1_896")
+      result.push_back(Pattern::Sparse896);
+    else if (part == "sparse1_544")
+      result.push_back(Pattern::Sparse544);
+    else if (part == "sparse1_576")
+      result.push_back(Pattern::Sparse576);
+    else if (part == "sparse1_608")
+      result.push_back(Pattern::Sparse608);
+    else if (part == "sparse1_672")
+      result.push_back(Pattern::Sparse672);
+    else if (part == "sparse1_704")
+      result.push_back(Pattern::Sparse704);
+    else if (part == "sparse1_736")
+      result.push_back(Pattern::Sparse736);
     else if (!part.empty())
       throw std::runtime_error("unknown pattern: " + part);
   }
@@ -283,6 +328,24 @@ __host__ __device__ __forceinline__ std::uint32_t code_for(
     return (index & 255u) == 0u ? 1u : 0u;
   if (pattern == int(Pattern::Sparse128))
     return (index & 127u) == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse640))
+    return index % 640u == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse768))
+    return index % 768u == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse896))
+    return index % 896u == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse544))
+    return index % 544u == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse576))
+    return index % 576u == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse608))
+    return index % 608u == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse672))
+    return index % 672u == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse704))
+    return index % 704u == 0u ? 1u : 0u;
+  if (pattern == int(Pattern::Sparse736))
+    return index % 736u == 0u ? 1u : 0u;
   if (pattern == int(Pattern::Sparse64))
     return (index & 63u) == 0u ? 1u : 0u;
   if (pattern == int(Pattern::Sparse16))
