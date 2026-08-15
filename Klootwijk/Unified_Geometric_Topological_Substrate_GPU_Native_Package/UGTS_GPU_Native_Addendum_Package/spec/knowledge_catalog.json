@@ -1,6 +1,6 @@
 {
   "schema": "UGTS-KNOWLEDGE-CATALOG-1.1",
-  "count": 197,
+  "count": 199,
   "mechanisms": [
     {
       "mechanism_id": "M001",
@@ -1845,7 +1845,7 @@
       "gpu_native_realization": "std430 aligned/scalar-word structs and optional split SSBO.",
       "physical_hardware_realization": "Burst SRAM/DRAM.",
       "status": "RETAIN",
-      "validation_state": "G24/G20 strides disassembled; footprint-shifted L2 boundary and cold-lineage locality gain measured on named device",
+      "validation_state": "G24/G20 strides disassembled; footprint-shifted L2 boundary and isolated cold-lineage locality gain measured on named device; driver-native append resource statistics are identical; paired texture/SSBO paths share the random-access cliff",
       "dependencies": ""
     },
     {
@@ -2562,6 +2562,32 @@
       "status": "RETAIN",
       "validation_state": "Explicit boundary",
       "dependencies": ""
+    },
+    {
+      "mechanism_id": "M198",
+      "domain": "Performance/cache",
+      "name": "Native device-clock L2 boundary",
+      "source_basis": "Package physical-GPU shader-clock runs",
+      "source_motif": "512-step dependent chase across the reported 36 MiB L2",
+      "normalized_technical_definition": "A saturated random dependent-load working set is flat through 36 MiB, then rises at 38 MiB and sharply at 40 MiB.",
+      "gpu_native_realization": "VK_KHR_shader_clock control plus dependent SSBO chase.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through its Vulkan driver.",
+      "status": "RETAIN",
+      "validation_state": "Measured with implementation-defined clock-unit and scheduler-exposure bounds",
+      "dependencies": "M197"
+    },
+    {
+      "mechanism_id": "M199",
+      "domain": "Performance/cache",
+      "name": "Native CUDA L2 cycle control",
+      "source_basis": "Package physical-GPU CUDA clock64 runs",
+      "source_motif": "One-warp ld.global.cg hot and post-eviction dependent chains",
+      "normalized_technical_definition": "The immediate-hot L2/global path is about 400 exposed cycles per dependent warp step while a 256 MiB eviction raises it to about 1088 cycles on the named GPU.",
+      "gpu_native_realization": "Native sm_120 clock64 control and dependent ld.global.cg loop.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured with time-slicing and multi-sector warp-step bounds",
+      "dependencies": "M198"
     }
   ]
 }

@@ -110,6 +110,7 @@ typedef enum VkStructureType {
     VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO = 42,
     VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER = 44,
     VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2 = 1000059000,
+    VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CLOCK_FEATURES_KHR = 1000181000,
     VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_EXECUTABLE_PROPERTIES_FEATURES_KHR = 1000269000,
     VK_STRUCTURE_TYPE_PIPELINE_INFO_KHR = 1000269001,
     VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_PROPERTIES_KHR = 1000269002,
@@ -397,6 +398,13 @@ typedef struct VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR {
     void* pNext;
     VkBool32 pipelineExecutableInfo;
 } VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR;
+
+typedef struct VkPhysicalDeviceShaderClockFeaturesKHR {
+    VkStructureType sType;
+    void* pNext;
+    VkBool32 shaderSubgroupClock;
+    VkBool32 shaderDeviceClock;
+} VkPhysicalDeviceShaderClockFeaturesKHR;
 
 typedef struct VkExtensionProperties {
     char extensionName[VK_MAX_EXTENSION_NAME_SIZE];

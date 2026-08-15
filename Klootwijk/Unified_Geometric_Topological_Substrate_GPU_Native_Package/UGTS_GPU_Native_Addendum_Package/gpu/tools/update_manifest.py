@@ -17,6 +17,9 @@ EXCLUDED_DIRECTORIES = {
     "compact_collision_check",
     "subgroup_smoke",
     "semantic_hash_verification",
+    "l2_latency_smoke",
+    "l2_latency_smoke_exact",
+    "cuda_l2_clock_smoke",
 }
 
 

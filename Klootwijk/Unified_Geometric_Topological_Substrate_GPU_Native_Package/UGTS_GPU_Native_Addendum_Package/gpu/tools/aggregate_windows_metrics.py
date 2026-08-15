@@ -33,6 +33,9 @@ def main() -> None:
     parser.add_argument("--l2-boundary", type=Path, action="append", default=[])
     parser.add_argument("--cold-lineage", type=Path, action="append", default=[])
     parser.add_argument("--lut-pair", type=Path, action="append", default=[])
+    parser.add_argument("--lut-path-control", type=Path, action="append", default=[])
+    parser.add_argument("--l2-latency", type=Path)
+    parser.add_argument("--cuda-l2-clock", type=Path)
     parser.add_argument("--l2-bytes", type=int, required=True)
     parser.add_argument("--out-dir", type=Path, required=True)
     args = parser.parse_args()
@@ -51,7 +54,14 @@ def main() -> None:
     l2_boundary_docs = [load(path) for path in args.l2_boundary]
     cold_lineage_docs = [load(path) for path in args.cold_lineage]
     lut_pair_docs = [load(path) for path in args.lut_pair]
-    all_docs = core_docs + lut_docs + semantic_docs + compact_docs + bounded_compact_docs + capacity_sweep_docs + prethreshold_docs + hot_log_lut_docs + hot_log_control_docs + l2_boundary_docs + cold_lineage_docs + lut_pair_docs
+    lut_path_docs = [load(path) for path in args.lut_path_control]
+    l2_latency_doc = load(args.l2_latency) if args.l2_latency else None
+    cuda_l2_clock_doc = load(args.cuda_l2_clock) if args.cuda_l2_clock else None
+    all_docs = core_docs + lut_docs + semantic_docs + compact_docs + bounded_compact_docs + capacity_sweep_docs + prethreshold_docs + hot_log_lut_docs + hot_log_control_docs + l2_boundary_docs + cold_lineage_docs + lut_pair_docs + lut_path_docs
+    if l2_latency_doc:
+        all_docs.append(l2_latency_doc)
+    if cuda_l2_clock_doc:
+        all_docs.append(cuda_l2_clock_doc)
     device_names = {doc["device"]["name"] for doc in all_docs}
     if len(device_names) != 1:
         raise SystemExit(f"runs contain multiple devices: {sorted(device_names)}")
@@ -790,18 +800,19 @@ def main() -> None:
             }
         )
 
-    lut_groups: dict[tuple[str, int], list[dict[str, Any]]] = defaultdict(list)
+    lut_groups: dict[tuple[str, str, int], list[dict[str, Any]]] = defaultdict(list)
     for doc in lut_docs:
         for row in doc["results"]:
-            lut_groups[(row["pattern"], row["table_bytes"])].append(row)
+            lut_groups[(row.get("source", "uniform_texel_buffer"), row["pattern"], row["table_bytes"])].append(row)
 
     lut_rows: list[dict[str, Any]] = []
-    for (pattern, table_bytes), rows in sorted(lut_groups.items()):
+    for (source, pattern, table_bytes), rows in sorted(lut_groups.items()):
         p50 = [row["device_ms"]["p50"] for row in rows]
         rates = [row["lookup_mps"] for row in rows]
         bandwidths = [row["logical_gbps"] for row in rows]
         lut_rows.append(
             {
+                "source": source,
                 "pattern": pattern,
                 "table_bytes": table_bytes,
                 "l2_fraction": table_bytes / args.l2_bytes,
@@ -818,8 +829,49 @@ def main() -> None:
             }
         )
 
+    lut_path_groups: dict[tuple[str, int], list[dict[str, dict[str, Any]]]] = defaultdict(list)
+    for doc in lut_path_docs:
+        by_key = {
+            (row["source"], row["pattern"], row["logical_entries"]): row
+            for row in doc["results"]
+        }
+        for pattern, entries in sorted({(key[1], key[2]) for key in by_key}):
+            texture_key = ("uniform_texel_buffer", pattern, entries)
+            ssbo_key = ("storage_buffer", pattern, entries)
+            if texture_key in by_key and ssbo_key in by_key:
+                lut_path_groups[(pattern, entries)].append(
+                    {"texture": by_key[texture_key], "ssbo": by_key[ssbo_key]}
+                )
+
+    lut_path_rows: list[dict[str, Any]] = []
+    for (pattern, entries), groups in sorted(lut_path_groups.items()):
+        texture = groups[0]["texture"]
+        ssbo = groups[0]["ssbo"]
+        rate_ratios = [group["texture"]["lookup_mps"] / group["ssbo"]["lookup_mps"] for group in groups]
+        lut_path_rows.append(
+            {
+                "pattern": pattern,
+                "logical_entries": entries,
+                "table_bytes": texture["table_bytes"],
+                "table_l2_fraction": texture["table_bytes"] / args.l2_bytes,
+                "candidates": texture["candidates"],
+                "replicates": len(groups),
+                "texture_p50_ms_median": median([group["texture"]["device_ms"]["p50"] for group in groups]),
+                "ssbo_p50_ms_median": median([group["ssbo"]["device_ms"]["p50"] for group in groups]),
+                "texture_to_ssbo_rate_ratio_median": median(rate_ratios),
+                "texture_to_ssbo_rate_ratio_min": min(rate_ratios),
+                "texture_to_ssbo_rate_ratio_max": max(rate_ratios),
+                "all_outputs_validated": all(
+                    group[source]["validation"]
+                    and group[source]["validated_outputs"] == group[source]["candidates"]
+                    for group in groups
+                    for source in ("texture", "ssbo")
+                ),
+            }
+        )
+
     result = {
-        "schema": "UGTS-WINDOWS-PHYSICAL-GPU-AGGREGATE-1.10",
+        "schema": "UGTS-WINDOWS-PHYSICAL-GPU-AGGREGATE-1.13",
         "device": next(iter(device_names)),
         "l2_bytes": args.l2_bytes,
         "core_sources": [str(path) for path in args.core],
@@ -834,9 +886,16 @@ def main() -> None:
         "l2_boundary_sources": [str(path) for path in args.l2_boundary],
         "cold_lineage_sources": [str(path) for path in args.cold_lineage],
         "lut_pair_sources": [str(path) for path in args.lut_pair],
+        "lut_path_control_sources": [str(path) for path in args.lut_path_control],
+        "l2_latency_source": str(args.l2_latency) if args.l2_latency else None,
+        "cuda_l2_clock_source": str(args.cuda_l2_clock) if args.cuda_l2_clock else None,
         "lut_pair_order_balance": {
             "forward": sum(not doc.get("run_parameters", {}).get("lut_reverse", False) for doc in lut_pair_docs),
             "reverse": sum(doc.get("run_parameters", {}).get("lut_reverse", False) for doc in lut_pair_docs),
+        },
+        "lut_path_control_order_balance": {
+            "forward": sum(not doc.get("run_parameters", {}).get("reverse", False) for doc in lut_path_docs),
+            "reverse": sum(doc.get("run_parameters", {}).get("reverse", False) for doc in lut_path_docs),
         },
         "compact_order_balance": {
             "forward": sum(not doc.get("run_parameters", {}).get("compact_reverse", False) for doc in compact_docs),
@@ -880,6 +939,12 @@ def main() -> None:
         "cold_lineage_comparison": cold_lineage_rows,
         "pipeline_executable_capture_documents": pipeline_capture_documents,
         "pipeline_executable_statistics": pipeline_stat_rows,
+        "lut_path_comparison": lut_path_rows,
+        "l2_latency_validation": l2_latency_doc.get("validation") if l2_latency_doc else None,
+        "l2_latency_comparison": l2_latency_doc.get("results", []) if l2_latency_doc else [],
+        "cuda_l2_clock_validation": cuda_l2_clock_doc.get("validation") if cuda_l2_clock_doc else None,
+        "cuda_l2_clock_summary": cuda_l2_clock_doc.get("cross_size_summary") if cuda_l2_clock_doc else None,
+        "cuda_l2_clock_comparison": cuda_l2_clock_doc.get("results", []) if cuda_l2_clock_doc else [],
         "notes": [
             "Medians aggregate independent process runs; min/max expose dynamic-clock and WDDM variability.",
             "Logical bandwidth counts declared input plus output record bytes, not external DRAM transactions.",
@@ -899,6 +964,9 @@ def main() -> None:
             "Cold-lineage rows compare the G24 direct layout with a 20-byte hot geometry stream plus a separately allocated 4-byte lineage stream read only by retained lanes. The declared hot allocation excludes that cold buffer; total allocation is unchanged, and cache-line amplification is not directly measured.",
             "Pipeline executable statistics are driver-reported compiler metadata captured natively through VK_KHR_pipeline_executable_properties; they are not hardware performance counters.",
             "The NVIDIA driver reports Local Memory Size as 68719476736 bytes for every captured executable. This implausible per-thread value is flagged and excluded from resource or occupancy interpretation.",
+            "LUT-path rows compare byte-identical packed uint payloads and indexing through a uniform texel buffer versus a storage buffer; ratios are paired within balanced processes.",
+            "L2-latency rows are control-subtracted device-clock intervals for a saturated 512-step dependent SSBO chase. Shader-clock units are implementation-defined and the values include scheduler exposure; they are not raw cycles, nanoseconds, or cache-hit rates.",
+            "CUDA L2-clock rows use one native sm_120 warp, clock64 cycle counters, and ld.global.cg loads. Cold follows a 256 MiB eviction pass and hot immediately repeats the same path; values are warp-exposed dependent-step cycles and still include time slicing.",
             "L2 size came from the local CUDA device-properties query; direct performance counters were permission-blocked.",
         ],
     }
@@ -984,6 +1052,26 @@ def main() -> None:
             writer = csv.DictWriter(stream, fieldnames=pipeline_stat_rows[0].keys())
             writer.writeheader()
             writer.writerows(pipeline_stat_rows)
+
+    if lut_path_rows:
+        with (args.out_dir / "lut_path_comparison.csv").open("w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=lut_path_rows[0].keys())
+            writer.writeheader()
+            writer.writerows(lut_path_rows)
+
+    if l2_latency_doc and l2_latency_doc.get("results"):
+        latency_rows = l2_latency_doc["results"]
+        with (args.out_dir / "l2_latency_comparison.csv").open("w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=latency_rows[0].keys())
+            writer.writeheader()
+            writer.writerows(latency_rows)
+
+    if cuda_l2_clock_doc and cuda_l2_clock_doc.get("results"):
+        cuda_rows = cuda_l2_clock_doc["results"]
+        with (args.out_dir / "cuda_l2_clock_comparison.csv").open("w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=cuda_rows[0].keys())
+            writer.writeheader()
+            writer.writerows(cuda_rows)
 
     print(args.out_dir / "aggregate_metrics.json")
 

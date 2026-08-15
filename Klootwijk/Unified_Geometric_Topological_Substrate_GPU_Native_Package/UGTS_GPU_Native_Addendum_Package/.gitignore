@@ -1,8 +1,11 @@
 __pycache__/
 *.py[cod]
 gpu/build-windows/
+gpu/build/
 benchmarks/windows_integrated_lut_run/semantic_hash_verification/
 benchmarks/compact_smoke/
 benchmarks/compact_collision_check/
 benchmarks/subgroup_smoke/
 benchmarks/smoke*/
+benchmarks/l2_latency_smoke*/
+benchmarks/cuda_l2_clock_smoke*/

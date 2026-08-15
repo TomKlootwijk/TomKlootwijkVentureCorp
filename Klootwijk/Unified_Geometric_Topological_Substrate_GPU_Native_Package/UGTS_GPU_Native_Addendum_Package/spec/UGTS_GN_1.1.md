@@ -110,7 +110,7 @@ compute pipeline + vendor pipeline cache
 GPU dispatch → E32/E16 results → optional verified-event compaction
 ```
 
-The package contains twenty-two named SPIR-V execution variants generated from ten shader sources, plus twenty-two `spirv-opt -O` counterparts:
+The package contains twenty-six named SPIR-V execution variants generated from twelve shader sources, plus twenty-six `spirv-opt -O` counterparts:
 
 - G64 evaluate;
 - G64 evaluate plus atomic commit counters;
@@ -124,13 +124,22 @@ The package contains twenty-two named SPIR-V execution variants generated from t
 - fixed-query G24 subgroup compact append with a direct 6-bit log-threshold decoder, with and without workgroup-reduced counters;
 - fixed-query G24 subgroup compact append with a 128-byte packed uniform-texel-buffer log-threshold LUT, with and without workgroup-reduced counters; and
 - fixed-query G20 hot-state subgroup compact append with lineage in a separate cold storage buffer, with and without workgroup-reduced counters; and
-- packed 16-bit log-code texture-buffer probes for sequential and random access.
+- paired packed 16-bit log-code uniform-texel-buffer and SSBO probes for sequential and random access; and
+- a zero-step device-clock control and 512-step dependent SSBO pointer chase.
 
 The runtime descriptor layout reserves set 0, bindings 0-2 for state, event and counters, binding 3 for the confidence LUT where used, and binding 4 for the optional cold-lineage stream. Evaluate-only modules may optimize unused bindings out of the final SPIR-V interface. The local workgroup is 256x1x1. `gpu/spirv/spirv_manifest.json` records hashes, instruction counts, entry points, local size and descriptor decorations.
 
 The direct runtime is `ugts_vulkan_bench`. ANGLE/SwiftShader appears only as a reproducible bootstrap compiler in this container; it is not the target runtime. Production targets compile the Vulkan GLSL with glslang/DXC or another conformant tool and execute the SPIR-V through the vendor Vulkan driver.
 
 The two confidence-LUT encodings deliberately expose a cache/compute trade. The 8,196-byte adjacent-sample layout packs 4,097 binary16 samples two per `R32_UINT` texel and evaluates two sample fetches per interpolation. The 16,384-byte interval-pair layout duplicates interior endpoints so one texel contains both values needed for one interpolation. Both use a uniform texel buffer and fall back to direct `exp2` outside the tabulated interval. On the named RTX 5070 Ti Laptop GPU, the one-fetch layout recovers some small/mid-size lookup overhead but does not establish a stable throughput advantage over direct `exp2`; selecting a LUT is therefore a target-specific benchmark decision, not a semantic requirement.
+
+A byte-identical cache-path control reads the same packed `uint` table with the same hash/index/output operations through either a uniform texel buffer or an SSBO. Four sequentially isolated, order-balanced processes report random texture/SSBO throughput ratios of 0.989x, 1.002x, 1.000x and 1.000x at 16, 32, 64 and 128 MiB. Both paths lose about 79.36% of random throughput from 32 to 64 MiB. This rules out an extra effective texture-cache capacity for this workload on the named device; it does not claim that the two descriptor paths have identical front-end hardware.
+
+The native shader-clock control surrounds 512 strictly dependent SSBO loads with device-scope `OpReadClockKHR` operations. Four isolated, order-balanced processes find random control-subtracted chain time flat through the exact 36 MiB reported L2 size, 1.242x higher at 38 MiB, 2.134x at 40 MiB, 4.714x at 64 MiB, and 6.295x at 128 MiB relative to 36 MiB. Sequential time rises only 3.57% between 36 and 128 MiB. This is a saturated scheduler-exposed cache-boundary metric on the named device: the clock unit is implementation-defined and the result must not be renamed raw single-load latency, cycles, nanoseconds, or a measured cache-hit rate.
+
+An independent CUDA 12.8 control compiles to native `sm_120`, brackets 512 dependent steps with the per-SM `clock64()` counter, and uses `ld.global.cg.u32` to bypass L1. Four isolated ascending/descending-order processes measure a median of table-size medians of 399.569 cycles per immediate-hot dependent warp step and 1,087.789 cycles after a 256 MiB L2-eviction pass, a 2.722x ratio. Complete-kernel CUDA-event time corresponds to 153.414 ns and 401.820 ns per step. Native SASS contains `CS2R SR_CLOCKLO` and `LDG.E.STRONG.GPU`; the control has no load, and both kernels use 17 registers with zero spills. The measurement includes thread time slicing and each warp step may request up to 32 random sectors, so it is not a scalar transaction-latency constant or a direct counter-based hit/miss classification.
+
+The flat CUDA state-forced costs and the Vulkan capacity cliff are complementary. The Vulkan 128/36 MiB saturated ratio of 6.295x exceeds the CUDA post-eviction/hot ratio of 2.722x, demonstrating that the saturated value includes material queuing and scheduler exposure. Implementations must not invert these two latency constants into a cache-hit estimate without an independently validated concurrency model or hardware counters.
 
 ### 5.1 Reference query convention
 
@@ -166,7 +175,7 @@ At N=4,194,304 with a 6.25%-capacity E16 buffer, G24 reduces state-plus-output a
 
 A separate four-process boundary sweep sampled 32,768-candidate increments around both calculated residency crossings. G32 candidate rate fell 23.4% between 0.974x and 1.003x L2 and another 19.6% at 1.031x; G24 stayed flat at those sizes, then fell 11.1% between 0.977x and 0.998x of L2 and another 10.4% at 1.020x. The displacement of the cliff is consistent with the 32-to-24-byte state reduction and strengthens, but does not replace, the working-set-based cache attribution.
 
-The G20 cold-lineage profile splits the identical fixed-query state into five hot scalar words and one separately allocated lineage word. Non-verified lanes return before binding 4 is loaded. Total state allocation remains 24 bytes per candidate, while the declared always-hot state plus 6.25%-capacity E16 output falls from 25 to 21 bytes per candidate. At N=4,194,304, six balanced native runs measured 1.097x higher append throughput and 1.102x higher counted throughput than G24. All counts and retained payloads match. This is a locality optimization, not a 20-byte total-storage claim; cache-sector amplification remains unmeasured.
+The G20 cold-lineage profile splits the identical fixed-query state into five hot scalar words and one separately allocated lineage word. Non-verified lanes return before binding 4 is loaded. Total state allocation remains 24 bytes per candidate, while the declared always-hot state plus 6.25%-capacity E16 output falls from 25 to 21 bytes per candidate. At N=4,194,304, six balanced, sequentially isolated native runs measured 1.108x higher append throughput and 1.110x higher counted throughput than G24. All counts and retained payloads match. Driver-native executable metadata reports identical registers, shared memory and binary size for the G24/G20 append kernels, supporting a locality rather than compute-resource explanation. This is a locality optimization, not a 20-byte total-storage claim; cache-sector amplification remains unmeasured.
 
 ## 8. Native performance vocabulary
 
@@ -174,6 +183,8 @@ The G20 cold-lineage profile splits the identical fixed-query state into five ho
 |---|---|---|
 | CER | Candidate Evaluation Rate | candidates evaluated / device time |
 | SET | Spherical Event Throughput | verified events / device time |
+| SDT | Saturated Dependent-load Ticks | control-subtracted device-clock ticks / dependent load under the declared invocation count |
+| CDL | CUDA Dependent-step Latency | control-subtracted per-SM clock cycles / one dependent warp step under the declared cache-state protocol |
 | ESB | Effective Substrate Bandwidth | logical state+event bytes / device time; not external DRAM bandwidth |
 | SRG | Support Rejection Gain | candidates / supported |
 | CRG | Compatibility Rejection Gain | supported / compatible |

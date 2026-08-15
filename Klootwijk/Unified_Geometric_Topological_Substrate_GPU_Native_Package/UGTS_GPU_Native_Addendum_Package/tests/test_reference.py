@@ -117,9 +117,9 @@ class TestUGTSReference(unittest.TestCase):
         import csv
         with (ROOT / "spec/knowledge_catalog.csv").open(newline="", encoding="utf-8") as f:
             rows = list(csv.DictReader(f))
-        self.assertEqual(len(rows), 197)
+        self.assertEqual(len(rows), 199)
         self.assertEqual(rows[0]["mechanism_id"], "M001")
-        self.assertEqual(rows[-1]["mechanism_id"], "M197")
+        self.assertEqual(rows[-1]["mechanism_id"], "M199")
 
 
 if __name__ == "__main__":

@@ -122,5 +122,35 @@ if [[ -f "$LUT_SHADER" ]]; then
     fi
   done
 fi
+SSBO_LUT_SHADER="$ROOT/shaders/vulkan/ugts_log_ssbo_probe.comp"
+if [[ -f "$SSBO_LUT_SHADER" ]]; then
+  for random_access in 0 1; do
+    access="sequential"
+    [[ "$random_access" == 1 ]] && access="random"
+    target="$OUT/ugts_log_ssbo_${access}.spv"
+    "$GLSLANG_VALIDATOR" -V --target-env vulkan1.2 -DRANDOM_ACCESS="$random_access" "$SSBO_LUT_SHADER" -o "$target"
+    if command -v spirv-opt >/dev/null 2>&1; then
+      spirv-opt -O "$target" -o "$OUT/ugts_log_ssbo_${access}.opt.spv"
+    fi
+    if command -v spirv-val >/dev/null 2>&1; then
+      spirv-val --target-env vulkan1.2 "$target"
+    fi
+  done
+fi
+L2_LATENCY_SHADER="$ROOT/shaders/vulkan/ugts_l2_latency_probe.comp"
+if [[ -f "$L2_LATENCY_SHADER" ]]; then
+  for chase_steps in 0 512; do
+    mode="control"
+    [[ "$chase_steps" == 512 ]] && mode="chase512"
+    target="$OUT/ugts_l2_latency_${mode}.spv"
+    "$GLSLANG_VALIDATOR" -V --target-env vulkan1.2 -DCHASE_STEPS="$chase_steps" "$L2_LATENCY_SHADER" -o "$target"
+    if command -v spirv-opt >/dev/null 2>&1; then
+      spirv-opt -O "$target" -o "$OUT/ugts_l2_latency_${mode}.opt.spv"
+    fi
+    if command -v spirv-val >/dev/null 2>&1; then
+      spirv-val --target-env vulkan1.2 "$target"
+    fi
+  done
+fi
 "$ROOT/tools/inspect_spirv.py" "$OUT"/*.spv -o "$OUT/spirv_manifest.json"
 echo "SPIR-V outputs written to $OUT"

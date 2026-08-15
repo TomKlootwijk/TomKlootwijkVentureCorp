@@ -9,7 +9,11 @@ The UGTS compute path ran through the NVIDIA Vulkan driver on the local NVIDIA G
 
 This is the closest native path available in the installed Windows environment: direct Vulkan/SPIR-V with no Unity, Godot, browser, ANGLE, or SwiftShader layer. It is not strict bare metal because Windows WDDM, the NVIDIA driver, dynamic laptop clocks, and the OS scheduler remain active.
 
-The packed G32 kernel was also run end to end with confidence supplied through Vulkan uniform texel-buffer LUTs. Both an 8,196-byte adjacent-sample layout and a 16,384-byte one-fetch interval-pair layout are semantically valid. Neither provides a stable end-to-end advantage over native `exp2` for this kernel on this GPU: LUT lookup is slower while arithmetic latency is exposed and effectively tied once state/output traffic dominates.
+The selected device also exposes `VK_KHR_shader_clock` with device-scope clocks. A four-process, order-balanced 512-step dependent SSBO chase is flat through the exact 36 MiB reported L2 capacity, rises 1.242x at 38 MiB and 2.134x at 40 MiB, then reaches 4.714x at 64 MiB and 6.295x at 128 MiB relative to 36 MiB. These are implementation-defined shader-clock ticks under a saturated workload, not claimed hardware cycles or nanoseconds.
+
+An independent CUDA 12.8 `sm_120` control uses per-SM `clock64()` cycles and L1-bypassing `ld.global.cg` loads. Across 4-128 MiB tables, a one-warp immediate-hot repeat measures 399.57 cycles per dependent step at the median of sizes, while the same chain after a 256 MiB L2-eviction pass measures 1,087.79 cycles: a 2.722x post-eviction penalty. Complete-kernel CUDA-event time corresponds to 153.4 ns and 401.8 ns per step respectively. Native SASS and zero-spill compiler output verify the intended instruction path. This is exposed warp-step latency, not one scalar transaction's latency.
+
+The packed G32 kernel was also run end to end with confidence supplied through Vulkan uniform texel-buffer LUTs. Both an 8,196-byte adjacent-sample layout and a 16,384-byte one-fetch interval-pair layout are semantically valid. Neither provides a stable end-to-end advantage over native `exp2` for this kernel on this GPU: LUT lookup is slower while arithmetic latency is exposed and effectively tied once state/output traffic dominates. A byte-identical SSBO control additionally shows that large random texture-buffer and SSBO reads share the same cache-capacity cliff.
 
 Verified-only G32 event compaction is now implemented and measured. A subgroup-ballot/workgroup-reservation path writes only the 4.75% verified events and reduces all four global counters per workgroup. At 4,194,304 candidates it is 1.528x faster than dense evaluation and 1.869x faster than dense evaluation with per-lane global counters across the original balanced job-order set. A second balanced run uses a bounded 6.25%-capacity event FIFO: it retains every event with zero overflow, reduces the actual output allocation from 64 MiB to 4 MiB (16x), and measures 0.219 ms at the four-process median.
 
@@ -17,7 +21,7 @@ An optional pre-threshold profile removes the per-candidate exponential from the
 
 A fixed-query G24 hot-state profile then removes fields that the benchmark query does not consume and stores a 6-bit log-distance threshold code. With the same 6.25%-capacity output allocation, this reduces resident state-plus-output allocation from 132 MiB to 100 MiB at 4,194,304 candidates. The direct-decoder control measures 0.168 ms, 1.306x faster than G32 append, and 0.168 ms with reduced counters, 1.312x faster than G32. A separate 128-byte, one-fetch texture-LUT decoder is effectively tied with the direct decoder once bandwidth-bound and slower below L2. The measured win therefore comes from the 24-byte record footprint and shifted cache boundary, not from the LUT itself.
 
-A follow-on G20 experiment splits the 4-byte lineage seed from the five-word hot geometry record and reads it only after verification. Total state storage remains 24 bytes per candidate, but the declared always-hot state-plus-output allocation falls from 100 MiB to 84 MiB at 4,194,304 candidates. Six balanced processes measure 1.097x higher append throughput and 1.102x higher counted-path throughput than G24 at that size, with identical counts and validated retained payloads. This is a locality win rather than additional storage compression; the dedicated [yield/compression/limits report](YIELD_COMPRESSION_LIMITS_RTX_5070_TI_LAPTOP.md) gives the human-readable accounting and bounds.
+A follow-on G20 experiment splits the 4-byte lineage seed from the five-word hot geometry record and reads it only after verification. Total state storage remains 24 bytes per candidate, but the declared always-hot state-plus-output allocation falls from 100 MiB to 84 MiB at 4,194,304 candidates. Six balanced, sequentially isolated processes measure 1.108x higher append throughput and 1.110x higher counted-path throughput than G24 at that size, with identical counts and validated retained payloads. This is a locality win rather than additional storage compression; the dedicated [yield/compression/limits report](YIELD_COMPRESSION_LIMITS_RTX_5070_TI_LAPTOP.md) gives the human-readable accounting and bounds.
 
 ## Hardware and run conditions
 
@@ -33,7 +37,7 @@ A follow-on G20 experiment splits the 4-byte lineage seed from the five-word hot
 | Vulkan subgroup | 32 lanes; compute basic + ballot supported (8 subgroups per 256-thread workgroup) |
 | OS / CPU | Windows 11 build 26200 / Intel Core Ultra 7 255HX |
 
-The direct baseline aggregate covers six independent processes: the three stabilized direct-only runs and three new direct-plus-LUT runs. Cases used a 500-750 ms minimum warmup and 100-200 measured dispatches. The original paired direct/LUT comparison uses the three new processes. A second comparison of direct, adjacent-sample LUT and interval-pair LUT uses four independent processes, two in forward and two in reverse mode order. The G24 attribution control uses six independent processes, three in each job order. These paired processes used a 750 ms minimum warmup and 200 measured dispatches per case. Reported latency and rates are medians of process-level device-timestamp p50 values; ranges expose cross-process WDDM and clock variation.
+The direct baseline aggregate covers six independent processes: the three stabilized direct-only runs and three new direct-plus-LUT runs. Cases used a 500-750 ms minimum warmup and 100-200 measured dispatches. The original paired direct/LUT comparison uses the three new processes. A second comparison of direct, adjacent-sample LUT and interval-pair LUT uses four independent processes, two in forward and two in reverse mode order. The G24 attribution control uses six independent processes, three in each job order. The primary G20 comparison likewise uses six processes, but they were explicitly run one at a time; the earlier partially concurrent corpus is retained and excluded. The uniform-texel/SSBO control uses four sequentially isolated processes, two in each program order. The Vulkan shader-clock study adds four sequentially isolated processes, two forward and two reverse, with 750 ms minimum warmup and 100 timed submissions per case. The CUDA cycle study adds four isolated processes, two ascending and two descending table orders, with 50 measured cold/hot pairs after five warmup pairs per table. Reported latency and rates are medians of process-level device-timestamp, shader-clock, or CUDA cycle p50 values; ranges expose cross-process WDDM and clock variation.
 
 Each timed case repeatedly dispatches against the same resident device-local buffers. Values at or below L2 capacity are therefore intentional cache-hot steady-state measurements, not cold one-pass streaming numbers.
 
@@ -65,7 +69,7 @@ The dispatched SPIR-V performs the complete kernel natively: unpack G32 half pai
 
 The LUT variants replace `exp2(-32 * abs(sdf))` only inside `abs(sdf) < 0.125`. The adjacent-sample layout linearly interpolates 4,097 binary16 confidence samples packed two per `R32_UINT` texel. It occupies 8,196 bytes, or 0.0217% of the 36 MiB L2 cache, and evaluates two sample lookups. The interval-pair layout stores both binary16 endpoints of each of 4,096 intervals in one `R32_UINT` texel. It duplicates interior endpoints, occupies 16,384 bytes or 0.0434% of L2, and requires one lookup per interpolated value. Both use binding 3 as a Vulkan `UNIFORM_TEXEL_BUFFER`; values outside the interval use direct `exp2`, preserving the function's domain.
 
-The compiler produces twenty-two named execution variants and twenty-two `spirv-opt -O` counterparts. All 44 bundled SPIR-V artifacts pass `spirv-val --target-env vulkan1.2`; the native harness measurements use the named non-`.opt` files. Disassembly shows two dynamic calls to the adjacent-sample fetch routine in the named module (two static `OpImageFetch` instructions after optimization), one `OpImageFetch` in the interval-pair module, and one in the G24 log-threshold LUT module. The G24 direct and G20 controls have no `OpImageFetch`. Both G24 modules declare a 24-byte state-array stride; G20 declares a 20-byte stride plus storage binding 4 for lineage, and the optimized module loads lineage after the non-verified early return. Representative NVIDIA pipeline evidence comes from integrated `replicate_1`, with interval-pair rows from `lut_pair/f1`, pre-threshold rows from `prethreshold/f1`, G24 rows from `hot_log_control/f1`, and G20 rows from `cold_lineage_hot/f1`:
+The compiler produces twenty-six named execution variants and twenty-six `spirv-opt -O` counterparts. All 52 bundled SPIR-V artifacts pass `spirv-val --target-env vulkan1.2`; the native harness measurements use the named non-`.opt` files. Disassembly shows two dynamic calls to the adjacent-sample fetch routine in the named module (two static `OpImageFetch` instructions after optimization), one `OpImageFetch` in the interval-pair module, and one in the G24 log-threshold LUT module. The paired cache probe has one `OpImageFetch` on the uniform-texel path and storage-buffer `OpLoad` instructions on its byte-identical SSBO path. Both shader-clock modules contain two device-scope `OpReadClockKHR` operations; only the 512-step module retains the dependent SSBO-load loop. The CUDA compiler reports 17 registers, no stack and no spills for both the clock-only and chase kernels; `sm_120` SASS shows two `CS2R SR_CLOCKLO` reads and an `LDG.E.STRONG.GPU` in the chase, while the control has no load. The G24 direct and G20 controls have no `OpImageFetch`. Both G24 modules declare a 24-byte state-array stride; G20 declares a 20-byte stride plus storage binding 4 for lineage, and the optimized module loads lineage after the non-verified early return. Representative NVIDIA pipeline evidence comes from integrated `replicate_1`, with interval-pair rows from `lut_pair/f1`, pre-threshold rows from `prethreshold/f1`, G24 rows from `hot_log_control/f1`, and G20 rows from `cold_lineage_isolated/f1`:
 
 | Program | SPIR-V | NVIDIA pipeline cache | Cache-reloaded creation |
 |---|---:|---:|---:|
@@ -86,7 +90,18 @@ The compiler produces twenty-two named execution variants and twenty-two `spirv-
 | G20_E16 cold-lineage subgroup append | 9,028 B | 14,641 B | 0.071 ms |
 | G20_E16 cold-lineage subgroup append + counts | 10,696 B | 16,594 B | 0.086 ms |
 
-Validation volume was 112,529,408 dense semantic outputs in the original baseline aggregate, 167,510,016 in the three integrated performance runs, 25,165,824 in the large semantic-hash audit, 570,425,344 outputs in the two dedicated LUT-cache runs, 58,488,372 dense/compact records in the per-lane append sweep, 122,280,144 in the six counterbalanced subgroup runs, 213,909,504 in the four counterbalanced interval-pair LUT runs, 78,075,696 in the four bounded-capacity compaction runs, 27,430,348 retained/dense records in the capacity sweep, 78,075,696 in the four pre-threshold runs, 103,335,456 in the first four G24 log-LUT runs, 161,725,896 in the six direct-versus-LUT G24 controls, 122,192,592 in the four narrow L2-boundary runs, and 290,199,888 in the six cold-lineage runs: 2,131,344,184 checked GPU output records in the reported aggregates. Compact validation additionally proves that no non-boundary verified source is missing whenever capacity is sufficient.
+The six isolated processes also captured driver-native executable statistics. Values were identical across all six captures:
+
+| Program | Subgroup | Registers | Shared memory | Executable binary |
+|---|---:|---:|---:|---:|
+| G24 direct append | 32 | 22 | 2,052 B | 3,456 B |
+| G20 cold-lineage append | 32 | 22 | 2,052 B | 3,456 B |
+| G24 direct append + counts | 32 | 40 | 5,124 B | 4,736 B |
+| G20 cold-lineage append + counts | 32 | 39 | 5,124 B | 4,864 B |
+
+These are compiler metadata from `VK_KHR_pipeline_executable_properties`, not performance counters. In particular, the append kernels have identical reported compute-resource use, strengthening the attribution to data locality. NVIDIA reports `Local Memory Size = 68,719,476,736` bytes for every executable, an implausible per-thread value that is preserved in the machine-readable output but explicitly excluded from occupancy claims. The driver returned no internal representation or ISA blob.
+
+Validation volume was 112,529,408 dense semantic outputs in the original baseline aggregate, 167,510,016 in the three integrated performance runs, 25,165,824 in the large semantic-hash audit, 570,425,344 outputs in the two dedicated LUT-cache runs, 58,488,372 dense/compact records in the per-lane append sweep, 122,280,144 in the six counterbalanced subgroup runs, 213,909,504 in the four counterbalanced interval-pair LUT runs, 78,075,696 in the four bounded-capacity compaction runs, 27,430,348 retained/dense records in the capacity sweep, 78,075,696 in the four pre-threshold runs, 103,335,456 in the first four G24 log-LUT runs, 161,725,896 in the six direct-versus-LUT G24 controls, 122,192,592 in the four narrow L2-boundary runs, 290,199,888 in the six cold-lineage runs, and 2,281,701,376 in the four texture/SSBO cache-path controls: **4,413,045,560 checked GPU output records** in the reported aggregates. The Vulkan shader-clock study separately validates 12,582,912 invocation payloads representing 3,221,225,472 dependent SSBO loads. The CUDA cycle study validates another 153,600 payloads representing 52,428,800 dependent loads. Compact validation additionally proves that no non-boundary verified source is missing whenever capacity is sufficient.
 
 At 4,194,304 G32 candidates, direct and both LUT layouts, in evaluate and commit modes, all produced the same 64-bit discrete semantic digest, `1284104115210413112`. The digest covers SDF, guard, topology flags, verified/route state, and lineage while deliberately excluding confidence. Confidence is checked numerically instead: direct G32 maximum absolute error was 0.000262 and both LUT layouts measured 0.000479, inside the declared 0.002 G32 tolerance. Mean absolute errors were 0.000122 and 0.000147 respectively.
 
@@ -126,6 +141,62 @@ The dedicated cache probe stores two unsigned 16-bit log codes per `R32_UINT` te
 Random lookup throughput falls 82.39% (5.677x slower) from 32 MiB to 64 MiB. Sequential/coalesced access does not suffer that capacity cliff. A packed log LUT is therefore viable when its hot random-access footprint remains below roughly 32 MiB on this 36 MiB-L2 GPU, or when accesses are reordered/coalesced. A larger randomly accessed LUT should be tiled, mip-partitioned, or split into a compact hot index plus colder payload.
 
 For an integrated production kernel, a safer hot-LUT target is about 28 MiB (roughly 14.7 million packed 16-bit entries), leaving L2 space for state lines, output writes, descriptors, and other workloads. This is an engineering margin inferred from this device, not a universal cache rule.
+
+The stricter cache-path control uses identical device-local bytes, packed-code math, index hashes and output writes; only the read descriptor/instruction changes between `UNIFORM_TEXEL_BUFFER`/`OpImageFetch` and `STORAGE_BUFFER`/`OpLoad`. Four isolated processes, two in each program order, produced these random-access medians:
+
+| Packed table | L2 fraction | Texture p50 | SSBO p50 | Paired texture/SSBO rate |
+|---:|---:|---:|---:|---:|
+| 16 MiB | 0.44x | 0.436240 ms | 0.430776 ms | 0.989x |
+| 32 MiB | 0.89x | 0.414680 ms | 0.414840 ms | 1.002x |
+| 64 MiB | 1.78x | 4.019752 ms | 4.019576 ms | 0.99995x |
+| 128 MiB | 3.56x | 9.694880 ms | 9.694648 ms | 0.99998x |
+
+From 32 to 64 MiB, random texture throughput falls 79.368% (4.847x slower) and SSBO throughput falls 79.359% (4.845x slower). The matching latency and cliff show that `texelFetch` does not provide an additional effective capacity tier for this workload. The result is compatible with different front-end paths converging on the same lower cache/memory bottleneck; without counters it does not prove a specific undocumented NVIDIA cache topology. Small/coalesced cases remain clock/order-sensitive, and the texture path does not show a stable advantage there either.
+
+### Device-clock dependent-load sweep
+
+The sharper native probe surrounds 512 strictly dependent `next[index]` SSBO loads with device-scope realtime-clock reads. A zero-step module measures the clock and surrounding instruction overhead. Four sequentially isolated processes use 65,536 invocations per row, two forward and two reverse program/pattern orders:
+
+| Table | L2 fraction | Random net ticks/load | Relative to 36 MiB | Sequential net ticks/load | Random/sequential |
+|---:|---:|---:|---:|---:|---:|
+| 4 MiB | 0.111x | 1,383.469 | 0.992x | 1,256.000 | 1.101x |
+| 32 MiB | 0.889x | 1,393.234 | 0.999x | 1,311.891 | 1.062x |
+| 34 MiB | 0.944x | 1,393.656 | 0.999x | 1,305.063 | 1.068x |
+| 36 MiB | 1.000x | 1,394.531 | baseline | 1,303.328 | 1.070x |
+| 38 MiB | 1.056x | 1,732.516 | 1.242x | 1,319.859 | 1.313x |
+| 40 MiB | 1.111x | 2,976.516 | 2.134x | 1,320.781 | 2.254x |
+| 48 MiB | 1.333x | 5,230.516 | 3.751x | 1,314.406 | 3.979x |
+| 64 MiB | 1.778x | 6,574.063 | 4.714x | 1,347.547 | 4.879x |
+| 128 MiB | 3.556x | 8,777.938 | 6.295x | 1,349.828 | 6.503x |
+
+Random-chain time is statistically flat from 4 through 36 MiB, rises at 38 MiB, and becomes sharply miss-dominated by 40 MiB. Sequential-chain time rises only 3.57% between 36 and 128 MiB because adjacent cache lines retain spatial locality. This locates the effective saturated random-working-set boundary much more tightly than the earlier 32/64 MiB throughput sweep and aligns with the independent 36 MiB device-property result.
+
+The absolute unit remains deliberately unnamed: `VK_KHR_shader_clock` specifies an implementation-defined clock, and 65,536 in-flight chains expose warp scheduling as well as memory stalls. These are control-subtracted, scheduler-exposed ticks per dependent load, not raw single-load latency, GPU cycles, or nanoseconds. The retained invocation-count control shows that a single repeated warp rapidly makes its small traversed subset hot even when the allocation is larger than L2; it therefore cannot answer the capacity question by itself.
+
+### CUDA `clock64` L2/global-path control
+
+The independent CUDA kernel addresses the unit ambiguity without pretending to replace the capacity sweep. It compiles natively for `sm_120`, uses one warp, bypasses L1 with `ld.global.cg.u32`, and brackets 512 dependent steps with `clock64()`. A 256 MiB L2 eviction kernel precedes the cold chain; the hot chain immediately repeats the exact links and seed.
+
+The timer and cache-path interpretation follows NVIDIA's [CUDA `clock64()` definition](https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-support.html#clock-and-clock64) and [PTX cache-operator specification](https://docs.nvidia.com/cuda/parallel-thread-execution/#cache-operators).
+
+| Table | Post-eviction cycles/step | Immediate-hot cycles/step | Post-eviction/hot |
+|---:|---:|---:|---:|
+| 4 MiB | 1,078.912 | 399.856 | 2.698x |
+| 16 MiB | 1,087.917 | 399.741 | 2.721x |
+| 32 MiB | 1,088.028 | 399.523 | 2.723x |
+| 36 MiB | 1,086.832 | 399.575 | 2.721x |
+| 38 MiB | 1,087.941 | 399.415 | 2.724x |
+| 40 MiB | 1,087.654 | 399.560 | 2.722x |
+| 64 MiB | 1,087.661 | 399.562 | 2.722x |
+| 128 MiB | 1,089.004 | 399.577 | 2.725x |
+
+The median of table-size medians is 1,087.789 post-eviction cycles and 399.569 hot cycles per dependent step, a 2.722x ratio and approximately 688 exposed cycles of additional cost. Cross-size hot medians span only 399.415-399.856 cycles; post-eviction medians span 1,078.912-1,089.004. The immediate repeated footprint is deliberately small enough to fit in L2 at every allocation size, explaining why these values do not show the 36-40 MiB capacity cliff.
+
+CUDA-event timing for the complete one-warp kernels gives 153.414 ns per hot step and 401.820 ns per post-eviction step at the median of sizes. These human-time conversions include kernel prologue, result stores, and scheduling; the control-subtracted `clock64()` values are the in-loop cycle metric.
+
+This is a stronger latency control than the Vulkan clock because NVIDIA defines `clock64()` in cycles, but its boundary remains explicit: a warp step may generate up to 32 random sector requests, and elapsed thread time includes scheduling. It is not one scalar cache transaction's latency. The `ld.global.cg` cache operator is also a performance hint, although native SASS confirms `LDG.E.STRONG.GPU` in both the chase and 256 MiB eviction loops.
+
+The CUDA state-forced costs remain flat while the saturated Vulkan chain rises beyond 36 MiB. This is mutually consistent: table size changes the share and concurrency of lower-memory service, not the intrinsic hot/cold step costs. It also rules out a naive two-latency hit-rate inversion. The saturated Vulkan 128/36 MiB ratio is 6.295x, greater than the CUDA post-eviction/hot ratio of 2.722x, so memory queuing and warp scheduling must contribute materially to the saturated result.
 
 ## Integrated direct-versus-LUT result
 
@@ -279,17 +350,17 @@ G32 candidate rate falls 23.4% on the step from 0.9740x to 1.0026x L2 and anothe
 
 The next profile splits G24 into a 20-byte geometry/meta storage-buffer record and a separate 4-byte lineage storage buffer. The shader checks support, compatibility and verification from the hot record; non-verified lanes return before the lineage load. The 4.7488% retained lanes fetch lineage, compute the same hash and emit the same E16 contract. This preserves the complete 24-byte state allocation, so the experiment tests locality rather than claiming extra compression.
 
-Six processes, three in each job order, cover twelve sizes with 750 ms minimum warmup and 200 measured dispatches. All 432 rows have zero overflow and pass payload, count, completeness and pipeline-cache reload checks. Representative paired results are:
+Six sequentially isolated processes, three in each job order, cover twelve sizes with 750 ms minimum warmup and 200 measured dispatches. All 432 rows have zero overflow and pass payload, count, completeness and pipeline-cache reload checks. Representative paired results are:
 
 | Candidates | G24 append p50 | G20 append p50 | G20/G24 paired append rate | G24 + counts p50 | G20 + counts p50 | G20/G24 paired counted rate |
 |---:|---:|---:|---:|---:|---:|---:|
-| 1,310,720 | 0.035488 ms | 0.041256 ms | 1.042x | 0.041584 ms | 0.052328 ms | 0.986x |
-| 1,507,328 | 0.063584 ms | 0.058464 ms | 1.101x | 0.064496 ms | 0.059320 ms | 1.060x |
-| 1,769,472 | 0.074560 ms | 0.068080 ms | 1.090x | 0.075152 ms | 0.067960 ms | 1.099x |
-| 2,097,152 | 0.087192 ms | 0.079128 ms | 1.100x | 0.087440 ms | 0.079712 ms | 1.098x |
-| 4,194,304 | 0.167304 ms | 0.152488 ms | 1.097x | 0.167456 ms | 0.152608 ms | 1.102x |
+| 1,310,720 | 0.035400 ms | 0.024680 ms | 1.437x | 0.026328 ms | 0.028432 ms | 0.926x |
+| 1,507,328 | 0.030440 ms | 0.030720 ms | 0.996x | 0.032024 ms | 0.033720 ms | 0.948x |
+| 1,769,472 | 0.073600 ms | 0.067416 ms | 1.092x | 0.075248 ms | 0.067680 ms | 1.112x |
+| 2,097,152 | 0.087568 ms | 0.078784 ms | 1.111x | 0.087920 ms | 0.079712 ms | 1.103x |
+| 4,194,304 | 0.167560 ms | 0.151256 ms | 1.108x | 0.168016 ms | 0.151392 ms | 1.110x |
 
-The median per-size paired gain across all twelve sizes is 1.089x append and 1.085x append + counts. At 4,194,304 candidates, the declared always-hot state plus bounded output is 84 MiB rather than G24's 100 MiB, but the separately allocated 16 MiB lineage buffer keeps total allocation at 100 MiB. A pure 25/21 byte traffic model would permit at most 1.190x; retained-lane reads and cache-sector amplification narrow the observed gain. Exact sector traffic remains unmeasured because counters are permission-blocked.
+The median per-size paired gain across all twelve sizes is 1.118x append and 1.025x append + counts. Small counted cases can regress, so the split is not an unconditional latency win. At 4,194,304 candidates, the declared always-hot state plus bounded output is 84 MiB rather than G24's 100 MiB, but the separately allocated 16 MiB lineage buffer keeps total allocation at 100 MiB. A pure 25/21 byte traffic model would permit at most 1.190x; retained-lane reads and cache-sector amplification narrow the observed gain. Exact sector traffic remains unmeasured because counters are permission-blocked. The full isolation protocol records the retained clock-state outlier and the common executable SHA-256.
 
 The compaction audit exposed a separate identity problem. For the structured benchmark seed `lineage_seed = i * 2654435761`, the pre-mix expression `lineage_seed ^ i` has only 4,146,164 unique values over 4,194,304 candidates: 47,898 collision keys and 48,140 extra candidates. `mix32` is bijective over 32-bit words, so it cannot remove those collisions. The verifier therefore buckets equal lineage values and disambiguates with the rest of the event payload. Production logs that need unique source identity should carry a source index or a wider lineage identifier; the current 32-bit lineage is not a unique key.
 
@@ -304,7 +375,11 @@ The compaction audit exposed a separate identity problem. For the structured ben
 
 ## Profiling boundary
 
-Nsight Systems reported `ERR_NVGPUCTRPERM`: GPU performance-counter sampling requires a privilege not enabled on this machine. An attempted Vulkan trace produced a report file but no Vulkan API rows, so it is not used as evidence. No L2 hit-rate, sector count, or raw DRAM-byte claim is made. The cache conclusion is an inference from a controlled working-set sweep, the independently queried 36 MiB L2 size, and repeatable throughput behavior.
+Nsight Systems reported `ERR_NVGPUCTRPERM`: GPU performance-counter sampling requires a privilege not enabled on this machine. An attempted Vulkan trace produced a report file but no Vulkan API rows, so it is not used as evidence. A validated native Vulkan capability probe against the selected NVIDIA device reports `pipeline_executable_capture = true` and `performance_query_extension_present = false`. No L2 hit-rate, sector count, or raw DRAM-byte claim is made. The cache conclusion is an inference from a controlled working-set sweep, the independently queried 36 MiB L2 size, and repeatable throughput behavior. Native driver compiler statistics are available through `VK_KHR_pipeline_executable_properties`; they do not substitute for L2/DRAM counters.
+
+The same selected device reports `shaderDeviceClock = true` through `VK_KHR_shader_clock`, allowing the dependent-chain intervals above to be measured inside native GPU execution. This closes the host-timestamp-only observability gap but still does not expose cache hit classifications or define the clock unit.
+
+CUDA `clock64()` provides a per-SM cycle counter and the `ld.global.cg` control bypasses L1, but neither substitutes for privileged cache-sector and DRAM-transaction counters. The hot/post-eviction labels are controlled cache-state interpretations, not direct hardware hit/miss classifications.
 
 Device timestamps remove host submission latency from the metric but cannot remove dynamic-clock, power-state, or WDDM scheduling variation.
 
@@ -323,6 +398,8 @@ A separate 100 ms `nvidia-smi` telemetry run sampled 212 complete rows while the
   -Warmup 10 -WarmupMilliseconds 750 -Iterations 200
 
 # Packed log-code texture-cache sweep.
+# The current harness also runs a byte-identical SSBO control; repeat with
+# -ReverseOrder for a counterbalanced process.
 & .\gpu\scripts\run_windows_lut_benchmarks.ps1 `
   -OutputDirectory .\benchmarks\windows_lut_cache_run\new_run `
   -Warmup 10 -WarmupMilliseconds 500 -Iterations 100
@@ -372,10 +449,23 @@ A separate 100 ms `nvidia-smi` telemetry run sampled 212 complete rows while the
 # G24 versus 20-byte hot geometry plus a separate cold-lineage stream.
 # Repeat with -ReverseOrder for a counterbalanced process.
 & .\gpu\scripts\run_windows_cold_lineage_benchmarks.ps1 `
-  -OutputDirectory .\benchmarks\cold_lineage_hot\new_run `
+  -OutputDirectory .\benchmarks\cold_lineage_isolated\new_run `
   -Sizes '1310720,1441792,1474560,1507328,1540096,1572864,1638400,1703936,1769472,1835008,2097152,4194304' `
   -Warmup 10 -WarmupMilliseconds 750 -Iterations 200 `
   -CapacityRatio 0.0625
+
+# Device-clock control plus saturated 512-step dependent SSBO chase.
+# Repeat twice normally and twice with -ReverseOrder.
+& .\gpu\scripts\run_windows_l2_latency.ps1 `
+  -OutputDirectory .\benchmarks\l2_latency_isolated\new_run `
+  -Warmup 10 -WarmupMilliseconds 750 -Iterations 100
+
+# Native sm_120 one-warp cold/hot cycle control. Repeat in ascending and
+# descending table orders in separate processes.
+& .\gpu\scripts\run_windows_cuda_l2_clock.ps1 `
+  -OutputDirectory .\benchmarks\cuda_l2_clock_isolated\new_run `
+  -TableMiB '4,16,32,36,38,40,64,128' `
+  -EvictionMiB 256 -Warmup 5 -Samples 50
 ```
 
-Primary machine-readable results are in `benchmarks/windows_physical_gpu_aggregate/aggregate_metrics.json`, with paired values in `integrated_lut_comparison.csv`, `paired_lut_comparison.csv`, `prethreshold_comparison.csv`, `hot_log_lut_comparison.csv`, `hot_log_control_comparison.csv`, `l2_boundary_comparison.csv`, and `cold_lineage_comparison.csv`; compaction values in `compaction_metrics.csv`, `bounded_compaction_metrics.csv`, and `capacity_sweep_metrics.csv`; and environment metadata in `environment.json`. Raw JSON/CSV remains in `benchmarks/windows_native_run/`, `benchmarks/windows_integrated_lut_run/`, `benchmarks/hashcheck/`, `benchmarks/windows_lut_cache_run/`, `benchmarks/lut_pair/`, `benchmarks/sg_compact/`, `benchmarks/bounded_compact/`, `benchmarks/capacity_sweep/`, `benchmarks/prethreshold/`, `benchmarks/hot_log_lut/`, `benchmarks/hot_log_control/`, `benchmarks/l2_boundary_hot/`, and `benchmarks/cold_lineage_hot/`.
+Primary machine-readable results are in `benchmarks/windows_physical_gpu_aggregate/aggregate_metrics.json`, with paired values in `integrated_lut_comparison.csv`, `paired_lut_comparison.csv`, `lut_path_comparison.csv`, `l2_latency_comparison.csv`, `cuda_l2_clock_comparison.csv`, `prethreshold_comparison.csv`, `hot_log_lut_comparison.csv`, `hot_log_control_comparison.csv`, `l2_boundary_comparison.csv`, and `cold_lineage_comparison.csv`; native compiler metadata in `pipeline_executable_statistics.csv`; compaction values in `compaction_metrics.csv`, `bounded_compaction_metrics.csv`, and `capacity_sweep_metrics.csv`; and environment metadata in `environment.json`. Vulkan shader-clock raw data is in `benchmarks/l2_latency_isolated/`; CUDA cycle data and SASS protocol are in `benchmarks/cuda_l2_clock_isolated/`. Raw JSON/CSV remains in `benchmarks/windows_native_run/`, `benchmarks/windows_integrated_lut_run/`, `benchmarks/windows_lut_cache_run/`, `benchmarks/lut_path_control/`, `benchmarks/hashcheck/`, `benchmarks/lut_pair/`, `benchmarks/sg_compact/`, `benchmarks/bounded_compact/`, `benchmarks/capacity_sweep/`, `benchmarks/prethreshold/`, `benchmarks/hot_log_lut/`, `benchmarks/hot_log_control/`, `benchmarks/l2_boundary_hot/`, the primary `benchmarks/cold_lineage_isolated/`, `benchmarks/l2_latency_isolated/`, and `benchmarks/cuda_l2_clock_isolated/` corpora, and `benchmarks/native_capability_probe/`. The older `benchmarks/cold_lineage_hot/` corpus is retained but excluded because four processes overlapped.

@@ -6,7 +6,8 @@ param(
     [long]$L2Bytes = 37748736,
     [int]$Warmup = 10,
     [int]$WarmupMilliseconds = 500,
-    [int]$Iterations = 30
+    [int]$Iterations = 30,
+    [switch]$ReverseOrder
 )
 
 $ErrorActionPreference = 'Stop'
@@ -19,15 +20,21 @@ $executable = Join-Path $buildPath 'ugts_vulkan_lut_bench.exe'
 $outputPath = [System.IO.Path]::GetFullPath($OutputDirectory)
 New-Item -ItemType Directory -Force -Path $outputPath | Out-Null
 
-& $executable `
-    --spirv-dir (Join-Path $gpuRoot 'spirv') `
-    --out-dir $outputPath `
-    --entries $Entries `
-    --min-candidates $MinimumCandidates `
-    --l2-bytes $L2Bytes `
-    --warmup $Warmup `
-    --warmup-ms $WarmupMilliseconds `
-    --iterations $Iterations
+$arguments = @(
+    '--spirv-dir', (Join-Path $gpuRoot 'spirv'),
+    '--out-dir', $outputPath,
+    '--entries', $Entries,
+    '--min-candidates', $MinimumCandidates,
+    '--l2-bytes', $L2Bytes,
+    '--warmup', $Warmup,
+    '--warmup-ms', $WarmupMilliseconds,
+    '--iterations', $Iterations
+)
+if ($ReverseOrder) {
+    $arguments += '--reverse'
+}
+
+& $executable @arguments
 if ($LASTEXITCODE -ne 0) {
     throw "LUT benchmark failed with exit code $LASTEXITCODE"
 }
