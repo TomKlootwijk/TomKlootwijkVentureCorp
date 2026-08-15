@@ -17002,7 +17002,7 @@
   },
   "cuda_l2_stride_line_model": {
     "bounded_effective_residency_unit_bytes": 128,
-    "classification": "consistent with a 128-byte effective cache-line residency unit for isolated random u32 words; not a counter-derived hardware line-size claim",
+    "classification": "consistent with a 128-byte effective residency unit for isolated dependent-pointer u32 words in this workload; not a universal per-code cost or counter-derived hardware line-size claim",
     "nominal_36_mib_anchors": [
       {
         "stride_bytes": 32,
@@ -17299,7 +17299,7 @@
         "stride256_to_stride128_hot_rate_ratio_max": 0.9925007463971689
       }
     ],
-    "interpretation": "The same node sequence at 128- and 256-byte spacing has nearly the same rate despite 2x allocation. Together with the 4:2:1 hot-node capacity at 32/64/128-byte stride, this bounds the effective isolated-word residency amplification at 128 bytes on this workload."
+    "interpretation": "The same dependent node sequence at 128- and 256-byte spacing has nearly the same rate despite 2x allocation. Together with the 4:2:1 hot-node capacity at 32/64/128-byte stride, this bounds dependent-pointer residency amplification at 128 bytes on this workload; the independent packed-LUT control shows it is not universal."
   },
   "cuda_l2_stride_comparison": [
     {
@@ -23844,7 +23844,7 @@
     "CUDA L2-MLP rows scale independent one-warp blocks from one total warp to the measured 24-warps-per-SM occupancy ceiling. Requested Gload/s is logical u32 request throughput, not physical cache-sector or DRAM traffic; clock64 rows include scheduling and memory-queue exposure.",
     "CUDA texture-LUT rows compare byte-identical dependent chains through native TLD texture-object instructions and native LDG L2/global instructions with independent eviction and balanced path order. Ratios near one do not imply identical front-end caches; they bound end-to-end capacity/throughput for this workload.",
     "CUDA packed-log-LUT rows compare two 16-bit code slots per word with sixteen 6-bit codes per three words through native LDG and TLD paths. Packed rates count decoded logical codes; the expected 1.125 word requests per packed lookup and all bandwidth-like rates remain logical rather than physical transactions.",
-    "CUDA sparse-stride rows place one consumed u32 at 4-256 byte spacing with mixed filler in every gap. The 4:2:1 active-node capacity scaling at 32/64/128-byte spacing and the saturated 128/256-byte curves bound effective isolated-word residency at 128 bytes for this workload; this is not a counter-derived physical line or sector claim.",
+    "CUDA sparse-stride rows place one consumed dependent pointer u32 at 4-256 byte spacing with mixed filler in every gap. The 4:2:1 active-node capacity scaling at 32/64/128-byte spacing and saturated 128/256-byte curves bound dependent-pointer effective residency at 128 bytes for that workload; this is not a universal per-code cost or counter-derived physical line/sector claim.",
     "L2 size came from the local CUDA device-properties query; direct performance counters were permission-blocked."
   ]
 }

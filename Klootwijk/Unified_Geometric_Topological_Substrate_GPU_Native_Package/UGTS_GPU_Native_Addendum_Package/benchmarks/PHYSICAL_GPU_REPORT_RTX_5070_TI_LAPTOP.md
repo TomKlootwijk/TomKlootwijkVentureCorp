@@ -21,7 +21,15 @@ A native dense-packing control closes the remaining theoretical gap. At the same
 
 A sparse-stride CUDA control bounds one locality endpoint. Full-occupancy active-node capacity scales 4:2:1 for 32-, 64- and 128-byte spacing, and 256-byte spacing tracks the 128-byte curve despite twice the allocation. This is consistent with a 128-byte effective residency unit per isolated **dependent pointer** on this workload, but it is not a universal per-code cache charge.
 
-A new packed-LUT line-occupancy control maps the missing continuum with independently schedulable random lookups. It varies 1-170 useful packed6 codes inside aligned 128-byte regions and probes the exact 42/43, 85/86 and 128/129 code boundaries. Every layout sustains 42.537-43.017 Glookup/s at 36 MiB. At 40 MiB, texture throughput declines progressively from 42.800 Glookup/s with one useful code to 23.514 Glookup/s with 170; at 48 MiB the range is 28.104-12.628 Glookup/s. A newly entered 32-byte address region has only 1/43, 1/86 or 1/129 access probability, explaining why boundary crossings are gradual rather than cliffs. This corrects the earlier temptation to treat the dependent pointer-chase result as a universal 128-byte LUT residency cost.
+A new packed-LUT line-occupancy control maps the missing continuum with independently schedulable random lookups. It varies 1-170 useful packed6 codes inside aligned 128-byte regions and probes the exact 42/43, 85/86 and 128/129 code boundaries. Every layout sustains 42.437-43.010 Glookup/s at 36 MiB. At 40 MiB, texture throughput declines progressively from 42.800 Glookup/s with one useful code to 23.514 Glookup/s with 170; at 48 MiB the range is 28.104-12.628 Glookup/s. A newly entered 32-byte address region has only 1/43, 1/86 or 1/129 access probability, explaining why boundary crossings are gradual rather than cliffs. This corrects the earlier temptation to treat the dependent pointer-chase result as a universal 128-byte LUT residency cost.
+
+A final independent sparse-address matrix separates the competing limits. At the same 40 MiB allocation and 327,680 aligned 128-byte lines, requesting four, two or one 32-byte portions per line sustains 23.343, 38.505 and 42.802 Glookup/s. At the same 12 MiB of requested 32-byte data, spreading addresses over 98,304, 196,608 and 393,216 containing lines changes texture throughput from 43.214 through 43.207 to 28.119 Glookup/s. Doubling address span without changing data volume or line count adds a smaller, strongest-near-transition penalty. The defensible model therefore needs separate resident-data, containing-line-address and address-span terms; the timing evidence cannot identify undocumented NVIDIA sectors, tags, sets, partitions or TLB behavior.
+
+The address-span term is now independently bounded. With useful words and containing test-line count fixed, non-power-of-two strides retain full throughput at a 252 MiB span and slow between 252 and 256 MiB. Exact 4-KiB spacing falls from 42.590/41.784 Glookup/s at 128 MiB to 34.315/34.451 at 256 MiB on global/texture, then converges near 15.2 Glookup/s by 1 GiB. A separate ±32-byte control proves that exact 512- and 1,024-byte pitches also cause severe native texture-path address aliasing below that general span boundary. At a 7 MiB target, 992/1,024/1,056-byte texture strides give 42.802/28.621/43.007 Glookup/s while global remains near 42.8. The result supports practical padding/skew, not an undocumented TLB or cache-set declaration.
+
+A VMM physical-backing control makes the general span result materially stronger. Every virtual slot aliases the same 2 MiB allocation—18x smaller than reported L2—and both native paths share each mapping. Throughput stays near 42.9 Glookup/s through 240 MiB virtual reach, then global/texture fall together to 39.523/39.539 at 248 MiB, 35.663/35.687 at 252 MiB and 34.439/34.456 at 256 MiB. Fixed-alias pitch sweeps reproduce the loss without changing physical payload. Address distribution/reach is therefore causal for this kernel; page size, TLB structure and page-walk counters remain unobserved.
+
+Explicit generic-compression VMM allocations are now verified and performance-tested. The driver returns effective compression enum 1 and successful mapped readback. Periodic and entropy-dense packed6 LUTs nevertheless show essentially 1.000x generic/non-compressible throughput and the same 36-40 MiB cliff. Only an all-zero upper control expands: global throughput stays near 38.6 Glookup/s through 240 MiB, equivalent to 6.667x nominal L2 allocation capacity, before the independent 248 MiB address-reach loss. This proves content-sensitive hardware compression exists, while rejecting any automatic compression gain for an ordinary information-bearing log LUT.
 
 The packed G32 kernel was also run end to end with confidence supplied through Vulkan uniform texel-buffer LUTs. Both an 8,196-byte adjacent-sample layout and a 16,384-byte one-fetch interval-pair layout are semantically valid. Neither provides a stable end-to-end advantage over native `exp2` for this kernel on this GPU: LUT lookup is slower while arithmetic latency is exposed and effectively tied once state/output traffic dominates. A byte-identical SSBO control additionally shows that large random texture-buffer and SSBO reads share the same cache-capacity cliff.
 
@@ -79,9 +87,9 @@ The dispatched SPIR-V performs the complete kernel natively: unpack G32 half pai
 
 The LUT variants replace `exp2(-32 * abs(sdf))` only inside `abs(sdf) < 0.125`. The adjacent-sample layout linearly interpolates 4,097 binary16 confidence samples packed two per `R32_UINT` texel. It occupies 8,196 bytes, or 0.0217% of the 36 MiB L2 cache, and evaluates two sample lookups. The interval-pair layout stores both binary16 endpoints of each of 4,096 intervals in one `R32_UINT` texel. It duplicates interior endpoints, occupies 16,384 bytes or 0.0434% of L2, and requires one lookup per interpolated value. Both use binding 3 as a Vulkan `UNIFORM_TEXEL_BUFFER`; values outside the interval use direct `exp2`, preserving the function's domain.
 
-The compiler produces twenty-six named execution variants and twenty-six `spirv-opt -O` counterparts. All 52 bundled SPIR-V artifacts pass `spirv-val --target-env vulkan1.2`; the native harness measurements use the named non-`.opt` files. Disassembly shows two dynamic calls to the adjacent-sample fetch routine in the named module (two static `OpImageFetch` instructions after optimization), one `OpImageFetch` in the interval-pair module, and one in the G24 log-threshold LUT module. The paired cache probe has one `OpImageFetch` on the uniform-texel path and storage-buffer `OpLoad` instructions on its byte-identical SSBO path. Both shader-clock modules contain two device-scope `OpReadClockKHR` operations; only the 512-step module retains the dependent SSBO-load loop. The one-warp CUDA compiler control uses 17 registers; the concurrency and sparse-stride chases use 16. The CUDA packing kernels use 15/21 registers for global slot16/packed6 and 14/18 for texture slot16/packed6. The line-occupancy timed kernels use 26/22 registers for global/texture and their matched controls use 18. All report no stack and no spills. Native `sm_120` SASS shows two `CS2R SR_CLOCKLO` reads and `LDG.E.STRONG.GPU` in global chases; texture chases instead contain `TLD.LZ ..., 1D`. Packed extraction adds a second predicated native load for straddling offsets, while zero-step controls have no load. The sparse-stride timed loop has one static `LDG.E.STRONG.GPU`; its control has no load. The line-occupancy kernels have one unconditional plus one predicated `LDG.E.STRONG.GPU` or `TLD.LZ`; their timed controls contain no table load. The G24 direct and G20 controls have no `OpImageFetch`. Both G24 modules declare a 24-byte state-array stride; G20 declares a 20-byte stride plus storage binding 4 for lineage, and the optimized module loads lineage after the non-verified early return. Representative NVIDIA pipeline evidence comes from integrated `replicate_1`, with interval-pair rows from `lut_pair/f1`, pre-threshold rows from `prethreshold/f1`, G24 rows from `hot_log_control/f1`, and G20 rows from `cold_lineage_isolated/f1`:
+The compiler produces twenty-six named execution variants and twenty-six `spirv-opt -O` counterparts. All 52 bundled SPIR-V artifacts pass `spirv-val --target-env vulkan1.2`; the native harness measurements use the named non-`.opt` files. Disassembly shows two dynamic calls to the adjacent-sample fetch routine in the named module (two static `OpImageFetch` instructions after optimization), one `OpImageFetch` in the interval-pair module, and one in the G24 log-threshold LUT module. The paired cache probe has one `OpImageFetch` on the uniform-texel path and storage-buffer `OpLoad` instructions on its byte-identical SSBO path. Both shader-clock modules contain two device-scope `OpReadClockKHR` operations; only the 512-step module retains the dependent SSBO-load loop. The one-warp CUDA compiler control uses 17 registers; the concurrency and sparse-stride chases use 16. The CUDA packing kernels use 15/21 registers for global slot16/packed6 and 14/18 for texture slot16/packed6. The line-occupancy timed kernels use 26/22 registers for global/texture and their matched controls use 18. The sparse-address timed global/texture kernels both use 22 registers and their matched controls use 18. All report no stack and no spills. Native `sm_120` SASS shows two `CS2R SR_CLOCKLO` reads and `LDG.E.STRONG.GPU` in global chases; texture chases instead contain `TLD.LZ ..., 1D`. Packed extraction adds a second predicated native load for straddling offsets, while zero-step controls have no load. The sparse-stride timed loop has one static `LDG.E.STRONG.GPU`; its control has no load. The line-occupancy kernels have one unconditional plus one predicated `LDG.E.STRONG.GPU` or `TLD.LZ`; their timed controls contain no table load. The sparse-address kernels contain exactly one timed global or texture table load; their controls contain none. The G24 direct and G20 controls have no `OpImageFetch`. Both G24 modules declare a 24-byte state-array stride; G20 declares a 20-byte stride plus storage binding 4 for lineage, and the optimized module loads lineage after the non-verified early return. Representative NVIDIA pipeline evidence comes from integrated `replicate_1`, with interval-pair rows from `lut_pair/f1`, pre-threshold rows from `prethreshold/f1`, G24 rows from `hot_log_control/f1`, and G20 rows from `cold_lineage_isolated/f1`:
 
-Compute Sanitizer reports zero errors on the instrumented CUDA concurrency, texture, packing, stride, and line-occupancy controls. Sanitizer timings are excluded from performance aggregates.
+Compute Sanitizer reports zero errors on the instrumented CUDA concurrency, texture, packing, stride, line-occupancy, sparse-address, padded-stride and 4-KiB-stride controls, including the 1-GiB allocation endpoint. Sanitizer timings are excluded from performance aggregates.
 
 | Program | SPIR-V | NVIDIA pipeline cache | Cache-reloaded creation |
 |---|---:|---:|---:|
@@ -113,7 +121,7 @@ The six isolated processes also captured driver-native executable statistics. Va
 
 These are compiler metadata from `VK_KHR_pipeline_executable_properties`, not performance counters. In particular, the append kernels have identical reported compute-resource use, strengthening the attribution to data locality. NVIDIA reports `Local Memory Size = 68,719,476,736` bytes for every executable, an implausible per-thread value that is preserved in the machine-readable output but explicitly excluded from occupancy claims. The driver returned no internal representation or ISA blob.
 
-Validation volume was 112,529,408 dense semantic outputs in the original baseline aggregate, 167,510,016 in the three integrated performance runs, 25,165,824 in the large semantic-hash audit, 570,425,344 outputs in the two dedicated LUT-cache runs, 58,488,372 dense/compact records in the per-lane append sweep, 122,280,144 in the six counterbalanced subgroup runs, 213,909,504 in the four counterbalanced interval-pair LUT runs, 78,075,696 in the four bounded-capacity compaction runs, 27,430,348 retained/dense records in the capacity sweep, 78,075,696 in the four pre-threshold runs, 103,335,456 in the first four G24 log-LUT runs, 161,725,896 in the six direct-versus-LUT G24 controls, 122,192,592 in the four narrow L2-boundary runs, 290,199,888 in the six cold-lineage runs, and 2,281,701,376 in the four texture/SSBO cache-path controls: **4,413,045,560 checked GPU output records** in the reported aggregates. The Vulkan shader-clock study separately validates 12,582,912 invocation payloads representing 3,221,225,472 dependent SSBO loads. The one-warp CUDA cycle study validates another 153,600 payloads representing 52,428,800 dependent loads. The full-occupancy CUDA concurrency matrix validates 74,678,400 payloads representing 25,490,227,200 dependent loads. The matched CUDA texture/global matrix validates 98,426,880 payloads representing 33,596,375,040 dependent loads. The dense-packing matrix validates 270,673,920 payloads; its 180,449,280 timed lookup payloads represent 92,390,031,360 individually checked decoded codes. The sparse-stride matrix validates 3,336,192 CPU payloads across 1,448 raw rows; 2,224,128 timed endpoints replay 1,138,753,536 links, and the complete kernels execute 366,678,638,592 dependent loads. The line-occupancy matrix validates 2,064,384 CPU payloads across 1,792 raw rows; 1,376,256 timed endpoints replay 704,643,072 code checks, and the complete kernels execute 453,790,138,368 GPU code lookups. Compact validation additionally proves that no non-boundary verified source is missing whenever capacity is sufficient.
+Validation volume was 112,529,408 dense semantic outputs in the original baseline aggregate, 167,510,016 in the three integrated performance runs, 25,165,824 in the large semantic-hash audit, 570,425,344 outputs in the two dedicated LUT-cache runs, 58,488,372 dense/compact records in the per-lane append sweep, 122,280,144 in the six counterbalanced subgroup runs, 213,909,504 in the four counterbalanced interval-pair LUT runs, 78,075,696 in the four bounded-capacity compaction runs, 27,430,348 retained/dense records in the capacity sweep, 78,075,696 in the four pre-threshold runs, 103,335,456 in the first four G24 log-LUT runs, 161,725,896 in the six direct-versus-LUT G24 controls, 122,192,592 in the four narrow L2-boundary runs, 290,199,888 in the six cold-lineage runs, and 2,281,701,376 in the four texture/SSBO cache-path controls: **4,413,045,560 checked GPU output records** in the reported aggregates. The Vulkan shader-clock study separately validates 12,582,912 invocation payloads representing 3,221,225,472 dependent SSBO loads. The one-warp CUDA cycle study validates another 153,600 payloads representing 52,428,800 dependent loads. The full-occupancy CUDA concurrency matrix validates 74,678,400 payloads representing 25,490,227,200 dependent loads. The matched CUDA texture/global matrix validates 98,426,880 payloads representing 33,596,375,040 dependent loads. The dense-packing matrix validates 270,673,920 payloads; its 180,449,280 timed lookup payloads represent 92,390,031,360 individually checked decoded codes. The sparse-stride matrix validates 3,336,192 CPU payloads across 1,448 raw rows; 2,224,128 timed endpoints replay 1,138,753,536 links, and the complete kernels execute 366,678,638,592 dependent loads. The line-occupancy matrix validates 2,064,384 CPU payloads across 1,792 raw rows; 1,376,256 timed endpoints replay 704,643,072 code checks, and the complete kernels execute 453,790,138,368 GPU code lookups. The sparse-address matrix validates 1,622,016 CPU payloads across 1,408 raw rows; 1,081,344 endpoints replay 553,648,128 code checks, and the timed kernels execute 356,549,394,432 GPU lookups. The one-code transition refinement adds 165,888 CPU payloads, 56,623,104 CPU checks and 36,465,278,976 GPU lookups across 144 valid rows. Page-span, page-stride and non-power-of-two skew controls add 2,985,984 CPU payloads and 1,019,215,872 replayed code checks across 2,592 valid rows; their timed kernels execute **656,375,021,568 GPU lookups**. Compact validation additionally proves that no non-boundary verified source is missing whenever capacity is sufficient.
 
 At 4,194,304 G32 candidates, direct and both LUT layouts, in evaluate and commit modes, all produced the same 64-bit discrete semantic digest, `1284104115210413112`. The digest covers SDF, guard, topology flags, verified/route state, and lineage while deliberately excluding confidence. Confidence is checked numerically instead: direct G32 maximum absolute error was 0.000262 and both LUT layouts measured 0.000479, inside the declared 0.002 G32 tolerance. Mean absolute errors were 0.000122 and 0.000147 respectively.
 
@@ -290,20 +298,144 @@ Four primary and four boundary-refinement processes balance ascending/descending
 | K / 128 B | Bytes/useful code | Exact 32-byte touch probabilities | 36 MiB | 40 MiB | 48 MiB |
 |---:|---:|---|---:|---:|---:|
 | 1 | 128.000 | 100% | 43.010 G/s | 42.800 G/s | 28.104 G/s |
-| 42 | 3.0476 | 100% | 43.017 G/s | 42.600 G/s | 28.095 G/s |
-| 43 | 2.9767 | 100% + 2.33% | 42.590 G/s | 41.978 G/s | 26.490 G/s |
+| 42 | 3.0476 | 100% | 43.009 G/s | 42.599 G/s | 28.093 G/s |
+| 43 | 2.9767 | 100% + 2.33% | 42.491 G/s | 41.978 G/s | 26.491 G/s |
 | 64 | 2.0000 | 67.19% + 34.38% | 42.590 G/s | 37.848 G/s | 18.385 G/s |
-| 85 | 1.5059 | 50.59% + 50.59% | 42.795 G/s | 37.359 G/s | 17.882 G/s |
-| 86 | 1.4884 | 50.00% + 51.16% + 1.16% | 42.537 G/s | 36.067 G/s | 17.583 G/s |
+| 85 | 1.5059 | 50.59% + 50.59% | 42.677 G/s | 37.366 G/s | 17.900 G/s |
+| 86 | 1.4884 | 50.00% + 51.16% + 1.16% | 42.437 G/s | 36.139 G/s | 17.583 G/s |
 | 128 | 1.0000 | 33.59% + 34.38% + 33.59% | 42.591 G/s | 28.645 G/s | 14.399 G/s |
-| 129 | 0.9922 | 33.33% + 34.11% + 33.33% + 0.78% | 42.590 G/s | 27.876 G/s | 14.230 G/s |
+| 129 | 0.9922 | 33.33% + 34.11% + 33.33% + 0.78% | 42.588 G/s | 27.939 G/s | 14.237 G/s |
 | 170 | 0.7529 | 25.29% + 25.88% + 25.29% + 24.71% | 42.592 G/s | 23.514 G/s | 12.628 G/s |
 
-The percentages may sum slightly above 100% because slots 42 and 85 straddle a 32-byte boundary and request both neighboring regions. These are exact requested-address calculations, not measured NVIDIA cache sectors. Codes 43, 86 and 129 introduce a new address region on only 2.33%, 1.16% and 0.78% of lookups. Their 40 MiB slowdowns versus 42, 85 and 128 codes are only 1.46%, 3.46% and 2.68%; demand changes smoothly with access probability.
+The percentages may sum slightly above 100% because slots 42 and 85 straddle a 32-byte boundary and request both neighboring regions. These are exact requested-address calculations, not measured NVIDIA cache sectors. Codes 43, 86 and 129 introduce a new address region on only 2.33%, 1.16% and 0.78% of lookups. Their 40 MiB slowdowns versus 42, 85 and 128 codes are only 1.46%, 3.28% and 2.47%; demand changes smoothly with access probability.
 
-The strongest result is the correction it forces. With one useful code in each 128-byte region, the 40 MiB allocation retains 99.02% of the 28 MiB texture rate. A fixed 128-byte-per-code capacity model would predict a cliff immediately above the reported 36 MiB L2 and is therefore rejected for this independent random lookup. At 48 MiB the same layout retains only 65.02%, despite requesting just one 32-byte part per region, so a naive “requested bytes fit” sector model is rejected too. Address/tag/TLB/set effects may contribute, but counters are unavailable and the report does not assign the cause. The measured probability-weighted curves are the defensible engineering bounds.
+The strongest result is the correction it forces. With one useful code in each 128-byte region, the 40 MiB allocation retains 99.02% of the 28 MiB texture rate. A fixed 128-byte-per-code throughput model therefore fails for this independent random lookup. At 48 MiB the same layout retains only 65.02%, despite requesting just one 32-byte part per region, so requested bytes alone fail too. This observation does not erase the containing-line effect; the controlled stride decomposition below measures both effects separately.
 
 The block-aligned dense endpoint stores 170 codes in 128 bytes: 0.752941 byte/code and 99.609% bit utilization. It holds 50,135,040 useful codes in 36 MiB, 196,608 fewer than a boundary-free continuous 6-bit stream. Thus the exact theoretical encoding floor, practical block ceiling, and measured cache behavior remain separate quantities.
+
+### CUDA sparse-LUT data, line-address, and span decomposition
+
+The control places one useful packed6 code in each region's first word, fills all gaps with mixed nonzero data, independently selects regions with an LCG, and runs matched global and texture paths. Its target unit is a requested 32-byte portion rather than physical allocation. Four primary and four supplemental processes balance both table direction and path order; 1,408 raw rows and 352 aggregate cases validate.
+
+At 40 MiB physical allocation, the 32-, 64- and 128-byte strides have exactly the same 327,680 containing aligned 128-byte lines but request four, two and one 32-byte portions per line:
+
+| Stride | Requested data | Lines | Allocation | Texture rate |
+|---:|---:|---:|---:|---:|
+| 32 B | 40 MiB | 327,680 | 40 MiB | 23.343 Glookup/s |
+| 64 B | 20 MiB | 327,680 | 40 MiB | 38.505 Glookup/s |
+| 128 B | 10 MiB | 327,680 | 40 MiB | 42.802 Glookup/s |
+
+This rejects allocation or line count as a sufficient single-variable model. At a fixed 12 MiB requested data span, the converse matrix rejects requested bytes as sufficient:
+
+| Stride | Requested data | Lines | Allocation | Texture rate |
+|---:|---:|---:|---:|---:|
+| 32 B | 12 MiB | 98,304 | 12 MiB | 43.214 Glookup/s |
+| 64 B | 12 MiB | 196,608 | 24 MiB | 43.207 Glookup/s |
+| 128 B | 12 MiB | 393,216 | 48 MiB | 28.119 Glookup/s |
+| 256 B | 12 MiB | 393,216 | 96 MiB | 24.783 Glookup/s |
+
+The one-sector-per-line 128-byte-stride curve is 43.008 Glookup/s at 9 MiB requested/36 MiB allocation, 42.802 at 10/40, 38.337 at 11/44 and 28.119 at 12/48. The separate exact-`K=1` refinement tightens the containing-line-address transition: texture throughput is 41.785 Glookup/s at 43 MiB line-equivalent allocation (352,256 lines) and 38.330 at 44 MiB (360,448 lines). This is a broad transition, not an exact hard capacity.
+
+Strides 128 and 256 have equal requested data and line count but the latter doubles address span. Their paired texture-rate ratios are 0.990, 0.945, 0.804 and 0.881 at 9-12 MiB requested; the all-target median is 0.976. The strongest extra penalty occurs near the transition. Thus **resident requested data + containing-line-address pressure + address span** is the smallest model supported by all controls. It is timing evidence consistent with sub-line residency inside a wider line-address grouping, not a counter-derived statement of NVIDIA sector size, tag capacity, associativity, set mapping, memory partitioning or TLB reach.
+
+### CUDA page-spaced reach and exact-stride aliasing
+
+The same one-code kernel now accepts 32-byte-multiple strides through 4 KiB. Every gap remains allocated and filled with mixed data. For any target, all strides at or above 128 bytes retain identical useful codes, requested words and containing 128-byte test-line count; only address span changes. Four primary page-stride runs, four intermediate-span runs and four non-power-of-two skew runs are independently order balanced.
+
+At exact 4-KiB spacing:
+
+| Useful words | Allocation/address span | Global | Texture |
+|---:|---:|---:|---:|
+| 32,768 | 128 MiB | 42.590 Glookup/s | 41.784 Glookup/s |
+| 65,536 | 256 MiB | 34.315 Glookup/s | 34.451 Glookup/s |
+| 98,304 | 384 MiB | 21.470 Glookup/s | 21.506 Glookup/s |
+| 131,072 | 512 MiB | 18.424 Glookup/s | 18.462 Glookup/s |
+| 262,144 | 1,024 MiB | 15.166 Glookup/s | 15.139 Glookup/s |
+
+At 65,536 useful words the distinct requested `u32` data is only 256 KiB and the containing-line model is 8 MiB, well below their L2 transitions. A fine non-power-of-two bracket fixes 131,072 useful words and gives:
+
+| Stride | Span | Global | Texture |
+|---:|---:|---:|---:|
+| 2,016 B | 252 MiB | 42.178 Glookup/s | 42.194 Glookup/s |
+| 2,048 B | 256 MiB | 34.318 Glookup/s | 34.454 Glookup/s |
+| 2,080 B | 260 MiB | 32.546 Glookup/s | 32.778 Glookup/s |
+
+This bounds a general full-rate address-span transition between 252 and 256 MiB. Both paths agree and the padded 2,080-byte case remains slow, so this component is not solely exact-power-of-two aliasing.
+
+The second component is path-specific. At target 7 MiB, global rates remain 42.792/42.792/42.807 Glookup/s for 992/1,024/1,056-byte pitch, while texture gives 42.802/28.621/43.007. At target 8 MiB, texture gives 42.805/26.494/42.775 at 480/512/544-byte pitch. A one-region ±32-byte skew fully removes the 512-byte loss and removes the 1,024-byte loss below the general span knee. This is address-index alias evidence; counters are unavailable, so no set, bank or partition mapping is asserted.
+
+The CUDA driver reports VMM support, generic-compression capability and 2 MiB minimum/recommended pinned device-local VMM allocation granularity. The preceding page-spaced benchmarks use `cudaMalloc`, so that queried granularity is not their established page size or a TLB-entry denominator. Explicit compressible VMM allocations are isolated separately below.
+
+### CUDA VMM constant-physical-backing control
+
+The VMM control creates one 2 MiB device-local allocation, then maps that same handle into every 2 MiB virtual slot. Each lookup selects a tested alias and a random word inside the shared physical object. Global and texture paths, plus both warp loads, use the same mapping per case. All four primary processes received base `0x204C00000`.
+
+| Aliases | Virtual span | Physical bytes | Global at 1,104 warps | Texture at 1,104 warps |
+|---:|---:|---:|---:|---:|
+| 32 | 64 MiB | 2 MiB | 42.976 Glookup/s | 42.879 Glookup/s |
+| 64 | 128 MiB | 2 MiB | 42.979 Glookup/s | 42.863 Glookup/s |
+| 96 | 192 MiB | 2 MiB | 42.973 Glookup/s | 42.870 Glookup/s |
+| 120 | 240 MiB | 2 MiB | 42.975 Glookup/s | 42.838 Glookup/s |
+| 124 | 248 MiB | 2 MiB | 39.523 Glookup/s | 39.539 Glookup/s |
+| 126 | 252 MiB | 2 MiB | 35.663 Glookup/s | 35.687 Glookup/s |
+| 127 | 254 MiB | 2 MiB | 34.842 Glookup/s | 34.879 Glookup/s |
+| 128 | 256 MiB | 2 MiB | 34.439 Glookup/s | 34.456 Glookup/s |
+| 132 | 264 MiB | 2 MiB | 31.942 Glookup/s | 31.943 Glookup/s |
+| 160 | 320 MiB | 2 MiB | 24.901 Glookup/s | 24.913 Glookup/s |
+| 192 | 384 MiB | 2 MiB | 21.568 Glookup/s | 21.565 Glookup/s |
+
+From 240 to 248 MiB, global throughput loses 8.0%; by 252 and 256 MiB it loses 17.0% and 19.9%. This occurs with a physical payload one eighteenth of L2. At fixed 32 aliases, increasing pitch extends virtual span from 64 to 250 MiB and lowers global throughput from 42.976 to 33.717 Glookup/s. At fixed 64 aliases, 128 to 254 MiB lowers it from 42.979 to 34.561. The close 250-256 MiB rates across different alias/pitch combinations identify span as the leading term while leaving alias count and address-bit layout as secondary terms.
+
+The paired texture/global ratio remains within about 0.5% across the high-occupancy span sweep. Texture binding therefore neither bypasses nor adds a separate penalty to the general reach boundary. This is distinct from the exact 512/1,024-byte texture-only alias in the ordinary allocation experiment.
+
+All 368 VMM rows validate across four order-balanced processes. The CPU replays 353,280 payloads; all 227,512,320 complete GPU payloads have zero code mismatches; timed cold/hot kernels execute 77,657,538,560 lookups. SASS contains one native `LDG.E.STRONG.GPU` or `TLD.LZ` in each 18-register timed loop with no stack/local memory or spills. Compute Sanitizer reports zero errors through a 510 MiB paired mapping. The full protocol and hashes are in `benchmarks/cuda_vmm_alias_isolated/PROTOCOL.md`.
+
+### CUDA VMM generic-compression packed-LUT control
+
+The allocation probe establishes the exact driver state before timing: non-compressible request 0 returns effective 0; generic request 1 returns effective 1. Both 2 MiB handles create, map, accept a complete fill and verify their first/last words. The effective property proves that the driver granted the hint, but exposes no achieved compression ratio or compressed-byte counter.
+
+The performance control uses identical dense packed6 decoding for zero, 48-byte-periodic and entropy-dense code streams. A follow-on global-only control adds all-one words (`ones6`, every logical code 63). Both allocation modes coexist and alternate on every sample with the same random code indices. At 1,104 warps, median generic/non ratios across 4-128 MiB are:
+
+| Pattern | Global ratio | Texture ratio | Result |
+|---|---:|---:|---|
+| Periodic packed6 | 0.99999x | 1.00001x | No capacity benefit |
+| Entropy-dense packed6 | 1.00003x | 1.00005x | No capacity benefit |
+
+Both information-bearing patterns retain the same 36-40 MiB cliff. The generic property is therefore not a substitute for the exact 2.667x software packing, and a repeating log-code sequence cannot be assumed hardware-compressible without measuring its real distribution.
+
+The zero-entropy global control measures the positive bound:
+
+| Allocation | Packed-code capacity | Non-compressible | Generic compressible |
+|---:|---:|---:|---:|
+| 36 MiB | 50,331,648 | 38.498 Glookup/s | 38.645 Glookup/s |
+| 40 MiB | 55,924,048 | 20.092 Glookup/s | 38.591 Glookup/s |
+| 64 MiB | 89,478,480 | 8.691 Glookup/s | 38.525 Glookup/s |
+| 128 MiB | 178,956,960 | 7.006 Glookup/s | 38.507 Glookup/s |
+| 192 MiB | 268,435,456 | 7.125 Glookup/s | 38.593 Glookup/s |
+| 240 MiB | 335,544,320 | 7.005 Glookup/s | 38.650 Glookup/s |
+| 248 MiB | 346,729,120 | 6.990 Glookup/s | 28.823 Glookup/s |
+| 256 MiB | 357,913,936 | 6.976 Glookup/s | 28.196 Glookup/s |
+| 320 MiB | 447,392,416 | 6.887 Glookup/s | 4.748 Glookup/s |
+| 512 MiB | 715,827,872 | 6.770 Glookup/s | 1.386 Glookup/s |
+
+The all-one global control independently reproduces the constant-content boundary:
+
+| Allocation | Non-compressible | Generic compressible | Paired ratio |
+|---:|---:|---:|---:|
+| 36 MiB | 38.492 Glookup/s | 38.652 Glookup/s | 1.003x |
+| 40 MiB | 23.492 Glookup/s | 38.603 Glookup/s | 1.641x |
+| 64 MiB | 9.312 Glookup/s | 38.635 Glookup/s | 4.149x |
+| 128 MiB | 7.482 Glookup/s | 38.645 Glookup/s | 5.165x |
+| 192 MiB | 7.126 Glookup/s | 38.651 Glookup/s | 5.424x |
+| 240 MiB | 7.004 Glookup/s | 38.611 Glookup/s | 5.512x |
+| 248 MiB | 6.991 Glookup/s | 28.834 Glookup/s | 4.125x |
+| 320 MiB | 6.891 Glookup/s | 5.961 Glookup/s | 0.865x |
+
+Full rate through 240 MiB gives a **6.667x throughput-equivalent allocation-capacity lower bound** for constant content, not a 6.667x measured physical byte ratio. Zero and repeated code-63 tables both carry no useful information and represent a supported constant-pattern upper control. The 248 MiB loss is consistent with the independently measured virtual-reach transition; at 320 MiB compression becomes counterproductive. Data compression and address reach are separate limits.
+
+The all-zero texture curve is now semantically rejected. A fine 174-210 MiB sweep found an exact three-MiB rate rhythm, and trimming one 12-byte group collapsed the high regime by up to 19.2x. However, an all-one control gives zero valid timed texture payloads while all-one global and periodic/entropy texture paths validate. Explicit mismatch totals find 35,893,872 wrong codes out of 36,175,872 checks at 4 MiB and 22,609,920 out of 36,175,872 at 192 MiB. The zero checker can accept an incorrect zero return, so none of the fast zero-texture rates are capacity or throughput evidence. Periodic and entropy texture rows remain valid and show no compression gain.
+
+Native `sm_120` SASS retains one unconditional and one predicated straddle load per active packed decode through `LDG.E.STRONG.GPU` or `TLD.LZ`; the global/texture kernels use 22/19 registers, no stack/local memory/spills and 24 blocks/SM. The original primary/zero-span checker accepts **830,914,560 payloads** across **1,184 rows** and times **283,618,836,480 lookups**, but its zero-texture subset is superseded by the nonzero semantic control. The all-one global corpus adds **96 fully valid rows**, **101,744,640 validated payloads** and **34,728,837,120 timed lookups**. Compute Sanitizer reports zero errors for all-one global mappings at 40, 240 and 320 MiB; instrumented timings are excluded. Full protocols are in `benchmarks/cuda_vmm_compression_lut_isolated/`, `benchmarks/cuda_vmm_compression_ones_global_isolated/` and `benchmarks/cuda_vmm_compression_zero_texture_alignment_isolated/`.
 
 ## Integrated direct-versus-LUT result
 
@@ -612,6 +744,52 @@ A separate 100 ms `nvidia-smi` telemetry run sampled 212 complete rows while the
   -TableMiB '28,32,36,37,38,39,40,48' `
   -CodesPerLine '1,2,4,8,16,32,42,43,64,85,86,128,129,170' `
   -Warps '184,1104' -EvictionMiB 256 -Warmup 3 -Samples 12 -Order 0
+
+# Independent sparse packed-LUT decomposition. Run four repeats for the
+# primary targets and four for 19/37/38/39 MiB, balancing direction/path order.
+& .\gpu\scripts\run_windows_cuda_lut_sparse_address.ps1 `
+  -OutputDirectory .\benchmarks\cuda_lut_sparse_address_isolated\new_run `
+  -TargetMiB '4,8,9,10,11,12,13,14,15,16,18,20,24,28,32,36,40,48' `
+  -StrideBytes '32,64,128,256' -Warps '184,1104' `
+  -EvictionMiB 256 -Warmup 3 -Samples 12 -Order 0
+
+# Page-spaced address-reach matrix. Run four direction/path-balanced repeats.
+& .\gpu\scripts\run_windows_cuda_lut_sparse_address.ps1 `
+  -OutputDirectory .\benchmarks\cuda_lut_page_stride_isolated\new_run `
+  -TargetMiB '1,2,3,4,5,6,7,8' `
+  -StrideBytes '128,256,512,1024,2048,4096' -Warps '184,1104' `
+  -EvictionMiB 256 -Warmup 3 -Samples 12 -Order 0
+
+# Exact-power-of-two alias control with one-region pitch skew.
+& .\gpu\scripts\run_windows_cuda_lut_sparse_address.ps1 `
+  -OutputDirectory .\benchmarks\cuda_lut_stride_skew_isolated\new_run `
+  -TargetMiB '3,4,5,6,7,8' `
+  -StrideBytes '480,512,544,992,1024,1056,2016,2048,2080,4064,4096' `
+  -Warps '184,1104' -EvictionMiB 256 -Warmup 3 -Samples 12 -Order 0
+
+# Native driver VMM capability/allocation-granularity context.
+& .\gpu\scripts\run_windows_cuda_vmm_probe.ps1
+
+# Constant-physical-backing VMM alias control. Repeat with Order 0/1.
+& .\gpu\scripts\run_windows_cuda_vmm_alias.ps1 `
+  -OutputDirectory .\benchmarks\cuda_vmm_alias_isolated\new_run `
+  -Cases '32x2,32x4,32x6,32x8,64x2,64x4,64x6,64x8,96x2,112x2,120x2,124x2,126x2,127x2,128x2,129x2,130x2,132x2,136x2,144x2,160x2,192x2,128x4' `
+  -Warps '184,1104' -EvictionMiB 256 -Warmup 2 -Samples 10 -Order 0
+
+# Verify effective compression properties, then run paired packed6 timing.
+& .\gpu\scripts\run_windows_cuda_vmm_compression_probe.ps1
+& .\gpu\scripts\run_windows_cuda_vmm_compression_lut.ps1 `
+  -OutputDirectory .\benchmarks\cuda_vmm_compression_lut_isolated\new_run `
+  -SizeMiB '4,28,32,36,38,40,48,64,96,128' `
+  -Warps '184,1104' -Patterns 'zero6,periodic6,entropy6' `
+  -EvictionMiB 256 -Warmup 2 -Samples 10 -Order 0
+
+# Nonzero constant semantic control. Repeat four times with balanced order.
+& .\gpu\scripts\run_windows_cuda_vmm_compression_lut.ps1 -SkipBuild `
+  -OutputDirectory .\benchmarks\cuda_vmm_compression_ones_global_isolated\new_run `
+  -SizeMiB '36,38,40,48,64,128,192,240,248,256,288,320' `
+  -Warps '1104' -Patterns 'ones6' -Paths 'global_cg' `
+  -EvictionMiB 256 -Warmup 2 -Samples 10 -Order 0
 ```
 
-Primary machine-readable results are in `benchmarks/windows_physical_gpu_aggregate/aggregate_metrics.json`, with paired values in `integrated_lut_comparison.csv`, `paired_lut_comparison.csv`, `lut_path_comparison.csv`, `l2_latency_comparison.csv`, `cuda_l2_clock_comparison.csv`, `cuda_l2_mlp_comparison.csv`, `cuda_texture_lut_comparison.csv`, `cuda_l2_stride_comparison.csv`, the `cuda_packed_log_lut_*.csv` tables, `prethreshold_comparison.csv`, `hot_log_lut_comparison.csv`, `hot_log_control_comparison.csv`, `l2_boundary_comparison.csv`, and `cold_lineage_comparison.csv`; native compiler metadata in `pipeline_executable_statistics.csv`; compaction values in `compaction_metrics.csv`, `bounded_compaction_metrics.csv`, and `capacity_sweep_metrics.csv`; and environment metadata in `environment.json`. The newer line-occupancy aggregate and CSV tables are in `benchmarks/cuda_lut_line_occupancy_isolated/aggregate/`. Vulkan shader-clock raw data is in `benchmarks/l2_latency_isolated/`; CUDA cycle/concurrency/texture-path/packing/stride/line-occupancy data and protocols are in `benchmarks/cuda_l2_clock_isolated/`, `benchmarks/cuda_l2_mlp_isolated/`, `benchmarks/cuda_texture_lut_isolated/`, `benchmarks/cuda_packed_log_lut_isolated/`, `benchmarks/cuda_l2_stride_isolated/`, and `benchmarks/cuda_lut_line_occupancy_isolated/`. Raw JSON/CSV remains in `benchmarks/windows_native_run/`, `benchmarks/windows_integrated_lut_run/`, `benchmarks/windows_lut_cache_run/`, `benchmarks/lut_path_control/`, `benchmarks/hashcheck/`, `benchmarks/lut_pair/`, `benchmarks/sg_compact/`, `benchmarks/bounded_compact/`, `benchmarks/capacity_sweep/`, `benchmarks/prethreshold/`, `benchmarks/hot_log_lut/`, `benchmarks/hot_log_control/`, `benchmarks/l2_boundary_hot/`, the primary `benchmarks/cold_lineage_isolated/`, and the CUDA/Vulkan corpora named above, plus `benchmarks/native_capability_probe/`. The older `benchmarks/cold_lineage_hot/` corpus is retained but excluded because four processes overlapped.
+Primary machine-readable results are in `benchmarks/windows_physical_gpu_aggregate/aggregate_metrics.json`, with paired values in `integrated_lut_comparison.csv`, `paired_lut_comparison.csv`, `lut_path_comparison.csv`, `l2_latency_comparison.csv`, `cuda_l2_clock_comparison.csv`, `cuda_l2_mlp_comparison.csv`, `cuda_texture_lut_comparison.csv`, `cuda_l2_stride_comparison.csv`, the `cuda_packed_log_lut_*.csv` tables, `prethreshold_comparison.csv`, `hot_log_lut_comparison.csv`, `hot_log_control_comparison.csv`, `l2_boundary_comparison.csv`, and `cold_lineage_comparison.csv`; native compiler metadata in `pipeline_executable_statistics.csv`; compaction values in `compaction_metrics.csv`, `bounded_compaction_metrics.csv`, and `capacity_sweep_metrics.csv`; and environment metadata in `environment.json`. Newer sparse/cache aggregate and CSV tables are in `benchmarks/cuda_lut_line_occupancy_isolated/aggregate/`, `benchmarks/cuda_lut_line_occupancy_k1_refinement/aggregate/`, `benchmarks/cuda_lut_sparse_address_isolated/aggregate/`, `benchmarks/cuda_lut_page_span_isolated/aggregate/`, `benchmarks/cuda_lut_page_stride_isolated/aggregate/`, `benchmarks/cuda_lut_stride_skew_isolated/aggregate/`, `benchmarks/cuda_vmm_alias_isolated/aggregate/`, `benchmarks/cuda_vmm_compression_lut_isolated/aggregate/`, `benchmarks/cuda_vmm_compression_zero_span_isolated/aggregate/`, and `benchmarks/cuda_vmm_compression_ones_global_isolated/aggregate/`. Driver VMM capability/property results are in `benchmarks/cuda_vmm_granularity_probe/` and `benchmarks/cuda_vmm_compression_probe/`; the texture-zero semantic erratum and alignment controls are in `benchmarks/cuda_vmm_compression_zero_texture_alignment_isolated/`. Raw CUDA/Vulkan corpora and protocols remain under their correspondingly named benchmark directories. The older `benchmarks/cold_lineage_hot/` corpus is retained but excluded because four processes overlapped.

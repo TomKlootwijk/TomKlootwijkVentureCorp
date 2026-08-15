@@ -31,6 +31,17 @@ EXCLUDED_DIRECTORIES = {
     "cuda_l2_stride_smoke_final",
     "cuda_lut_line_occupancy_smoke",
     "cuda_lut_line_occupancy_smoke_memcheck",
+    "cuda_lut_sparse_address_smoke",
+    "cuda_lut_sparse_address_smoke_memcheck",
+    "cuda_vmm_alias_smoke",
+    "cuda_vmm_compression_lut_smoke",
+    "cuda_vmm_compression_constant_control_smoke",
+    "cuda_vmm_compression_texture_nonzero_alignment_smoke",
+}
+EXCLUDED_RELATIVE_PATHS = {
+    Path("benchmarks/cuda_vmm_compression_ones_global_isolated/artifacts/ugts_cuda_vmm_compression_lut_bench.exe"),
+    Path("benchmarks/cuda_vmm_compression_ones_global_isolated/artifacts/ugts_cuda_vmm_compression_lut_bench.exp"),
+    Path("benchmarks/cuda_vmm_compression_ones_global_isolated/artifacts/ugts_cuda_vmm_compression_lut_bench.lib"),
 }
 
 
@@ -46,6 +57,7 @@ def included(path: Path) -> bool:
     relative = path.relative_to(ROOT)
     return (
         path != MANIFEST
+        and relative not in EXCLUDED_RELATIVE_PATHS
         and not any(part in EXCLUDED_DIRECTORIES for part in relative.parts)
         and not any(part.startswith("smoke") for part in relative.parts)
     )

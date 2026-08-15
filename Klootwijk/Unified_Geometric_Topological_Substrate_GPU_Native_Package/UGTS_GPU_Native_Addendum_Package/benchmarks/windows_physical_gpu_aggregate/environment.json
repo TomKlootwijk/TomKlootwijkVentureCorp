@@ -99,7 +99,7 @@
                                              "global_instruction":  "LDG.E.STRONG.GPU",
                                              "occupancy_blocks_per_sm":  24,
                                              "bounded_effective_residency_unit_bytes":  128,
-                                             "classification":  "consistent with a 128-byte effective cache-line residency unit for isolated random u32 words; not a counter-derived hardware line-size claim",
+                                             "classification":  "consistent with a 128-byte effective residency unit for isolated dependent-pointer u32 words in this workload; not a universal per-code cost or counter-derived hardware line-size claim",
                                              "source":  "C:\\Users\\Tom\\Documents\\TomKlootwijkVentureCorp\\Klootwijk\\Unified_Geometric_Topological_Substrate_GPU_Native_Package\\UGTS_GPU_Native_Addendum_Package\\benchmarks\\cuda_l2_stride_isolated\\aggregate\\cuda_l2_stride_aggregate.json"
                                          }
             },

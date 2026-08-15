@@ -116,6 +116,60 @@ def main() -> int:
         bad = {str(key): len(rows) for key, rows in by_key.items() if len(rows) != 4}
         raise ValueError(f"every case must have four runs: {bad}")
 
+    def direction(values):
+        if values == sorted(values):
+            return "ascending"
+        if values == sorted(values, reverse=True):
+            return "descending"
+        return "mixed"
+
+    balance_groups = defaultdict(list)
+    for metadata in run_metadata:
+        occupancy_set = tuple(sorted(metadata["occupancy_order"]))
+        balance_groups[occupancy_set].append(metadata)
+    order_balance = []
+    for occupancy_set, group in sorted(balance_groups.items()):
+        balance = {
+            "codes_per_128b_region": list(occupancy_set),
+            "runs": len(group),
+            "occupancy_order_balance_applicable": len(occupancy_set) > 1,
+            "path_order_0": sum(row["path_order"] == 0 for row in group),
+            "path_order_1": sum(row["path_order"] == 1 for row in group),
+            "table_ascending": sum(
+                direction(row["table_order"]) == "ascending" for row in group
+            ),
+            "table_descending": sum(
+                direction(row["table_order"]) == "descending" for row in group
+            ),
+            "occupancy_ascending": sum(
+                direction(row["occupancy_order"]) == "ascending" for row in group
+            ),
+            "occupancy_descending": sum(
+                direction(row["occupancy_order"]) == "descending" for row in group
+            ),
+            "warps_ascending": sum(
+                direction(row["warp_order"]) == "ascending" for row in group
+            ),
+            "warps_descending": sum(
+                direction(row["warp_order"]) == "descending" for row in group
+            ),
+        }
+        required_fields = [
+            "path_order_0",
+            "path_order_1",
+            "table_ascending",
+            "table_descending",
+            "warps_ascending",
+            "warps_descending",
+        ]
+        if len(occupancy_set) > 1:
+            required_fields.extend(
+                ["occupancy_ascending", "occupancy_descending"]
+            )
+        if any(balance[field] != 2 for field in required_fields):
+            raise ValueError(f"run order is not 2/2 counterbalanced: {balance}")
+        order_balance.append(balance)
+
     fields = (
         "hot_glookups_s",
         "cold_glookups_s",
@@ -281,6 +335,7 @@ def main() -> int:
             "sha256": sha256(executable),
         },
         "runs": run_metadata,
+        "order_balance": order_balance,
         "validation": validation,
         "full_occupancy_summary": full_occupancy_summary,
         "path_comparison": path_comparison,

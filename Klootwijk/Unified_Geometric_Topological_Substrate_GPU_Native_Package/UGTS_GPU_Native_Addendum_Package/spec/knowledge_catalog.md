@@ -1,6 +1,6 @@
 # UGTS 1.1 Mechanism Catalog
 
-**202 normalized mechanisms** extracted or technically translated from the corpus. Duplicate source variants are counted once.
+**211 normalized mechanisms** extracted or technically translated from the corpus. Duplicate source variants are counted once.
 
 ## Architecture
 
@@ -256,6 +256,14 @@
 | M201 | Native CUDA texture-path capacity control | RETAIN | Package physical-GPU CUDA texture/global runs |
 | M202 | Dense 6-bit CUDA log-LUT packing | RETAIN | Package physical-GPU CUDA packed-log-LUT runs |
 | M203 | Native CUDA sparse-stride effective residency | RETAIN | Package physical-GPU CUDA sparse-stride runs |
+| M204 | Packed-LUT neighborhood occupancy curve | RETAIN | Package physical-GPU CUDA LUT line-occupancy runs |
+| M205 | Sparse-LUT residency decomposition | RETAIN | Package physical-GPU CUDA sparse-address and one-code refinement runs |
+| M206 | Sparse-LUT page-spaced address reach | RETAIN | Package physical-GPU CUDA page-span and page-stride runs |
+| M207 | Sparse-LUT exact-stride alias control | RETAIN | Package physical-GPU CUDA non-power-of-two stride-skew runs |
+| M208 | VMM-isolated virtual address reach | RETAIN | Package physical-GPU CUDA VMM-alias runs |
+| M209 | Content-sensitive CUDA VMM compression | RETAIN | Package physical-GPU CUDA VMM compression probe and packed6 runs |
+| M210 | Constant-pattern CUDA VMM compression | RETAIN | Package physical-GPU CUDA all-one VMM compression runs |
+| M211 | Zero-sentinel texture validation guard | RETAIN | Package physical-GPU texture alignment and constant mismatch controls |
 
 ## Physical hardware
 

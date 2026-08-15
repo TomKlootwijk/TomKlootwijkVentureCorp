@@ -1,6 +1,6 @@
 {
   "schema": "UGTS-KNOWLEDGE-CATALOG-1.1",
-  "count": 203,
+  "count": 211,
   "mechanisms": [
     {
       "mechanism_id": "M001",
@@ -2633,13 +2633,117 @@
       "domain": "Performance/cache",
       "name": "Native CUDA sparse-stride effective residency",
       "source_basis": "Package physical-GPU CUDA sparse-stride runs",
-      "source_motif": "One consumed random u32 at 4-256 byte spacing with mixed filler",
-      "normalized_technical_definition": "Active-node capacity scales 4:2:1 at 32/64/128-byte spacing and saturates by 128 bytes, bounding isolated-word effective residency at 128 bytes for the named workload.",
+      "source_motif": "One consumed dependent pointer u32 at 4-256 byte spacing with mixed filler",
+      "normalized_technical_definition": "Active-node capacity scales 4:2:1 at 32/64/128-byte spacing and saturates by 128 bytes, bounding dependent-pointer effective residency at 128 bytes for the named workload.",
       "gpu_native_realization": "Native sm_120 nonlinear dependent ld.global.cg chase with CPU replay and spacing controls.",
       "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
       "status": "RETAIN",
-      "validation_state": "Measured workload-level effective residency with physical-line and unavailable-counter bounds",
+      "validation_state": "Measured workload-level effective residency with dependency, physical-line and unavailable-counter bounds",
       "dependencies": "M202"
+    },
+    {
+      "mechanism_id": "M204",
+      "domain": "Performance/cache",
+      "name": "Packed-LUT neighborhood occupancy curve",
+      "source_basis": "Package physical-GPU CUDA LUT line-occupancy runs",
+      "source_motif": "One to 170 useful packed6 codes per aligned 128-byte region with mixed filler and exact 32-byte boundary probes",
+      "normalized_technical_definition": "At 36 MiB all layouts sustain 42.437-43.010 Glookup/s while post-L2 throughput changes continuously with address-region touch probability, rejecting a universal 128-byte cost for independently scheduled packed codes.",
+      "gpu_native_realization": "Native sm_120 independent packed6 lookup matrix through matched TLD.LZ and LDG.E.STRONG.GPU paths.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured logical decoded-code throughput with arithmetic address-span and unavailable-counter bounds",
+      "dependencies": "M203"
+    },
+    {
+      "mechanism_id": "M205",
+      "domain": "Performance/cache",
+      "name": "Sparse-LUT residency decomposition",
+      "source_basis": "Package physical-GPU CUDA sparse-address and one-code refinement runs",
+      "source_motif": "One packed6 code per 32-256 byte region with matched requested-data line-count and address-span controls",
+      "normalized_technical_definition": "Independent sparse packed-LUT throughput cannot be predicted by requested data bytes, allocation, or containing-line count alone; resident data portions, containing-line-address pressure, and address span are separately observable timing terms.",
+      "gpu_native_realization": "Native sm_120 independent packed6 global/texture stride matrix with exact line-equivalent refinement.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured timing model with undocumented-sector tag set TLB and unavailable-counter bounds",
+      "dependencies": "M204"
+    },
+    {
+      "mechanism_id": "M206",
+      "domain": "Performance/cache",
+      "name": "Sparse-LUT page-spaced address reach",
+      "source_basis": "Package physical-GPU CUDA page-span and page-stride runs",
+      "source_motif": "One checked packed6 word per 128-byte through 4-KiB address stride",
+      "normalized_technical_definition": "At fixed useful words and containing test-line count, full-rate independent sparse lookup persists through a 252 MiB address span and transitions between 252 and 256 MiB on the named workload.",
+      "gpu_native_realization": "Native sm_120 matched LDG/TLD page-stride matrix through a 1-GiB allocation span.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured logical throughput with page-size TLB set partition and unavailable-counter bounds",
+      "dependencies": "M205"
+    },
+    {
+      "mechanism_id": "M207",
+      "domain": "Performance/cache",
+      "name": "Sparse-LUT exact-stride alias control",
+      "source_basis": "Package physical-GPU CUDA non-power-of-two stride-skew runs",
+      "source_motif": "Power-of-two pitch bracketed by one 32-byte region",
+      "normalized_technical_definition": "Exact 512- and 1,024-byte sparse pitches create native texture-path throughput aliasing that is removed by a plus or minus 32-byte skew below the general address-span transition.",
+      "gpu_native_realization": "Native sm_120 TLD/LDG matched pitch-skew matrix with mixed filler and per-load validation.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured address-index alias evidence without physical set bank or partition claims",
+      "dependencies": "M206"
+    },
+    {
+      "mechanism_id": "M208",
+      "domain": "Performance/cache",
+      "name": "VMM-isolated virtual address reach",
+      "source_basis": "Package physical-GPU CUDA VMM-alias runs",
+      "source_motif": "One 2 MiB physical allocation repeatedly mapped across 64-510 MiB virtual spans",
+      "normalized_technical_definition": "The sparse-LUT 248-256 MiB transition persists when physical allocation and accessed physical payload remain fixed at 2 MiB; virtual address distribution and reach are therefore causal timing terms for the named workload.",
+      "gpu_native_realization": "Native sm_120 paired LDG/TLD lookup over repeated CUDA VMM aliases with fixed physical backing.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured virtual-address effect without hardware-page TLB page-walk set or partition claims",
+      "dependencies": "M207"
+    },
+    {
+      "mechanism_id": "M209",
+      "domain": "Performance/cache",
+      "name": "Content-sensitive CUDA VMM compression",
+      "source_basis": "Package physical-GPU CUDA VMM compression probe and packed6 runs",
+      "source_motif": "Explicit generic-compressible allocation tested with zero periodic and entropy-dense 6-bit streams",
+      "normalized_technical_definition": "The driver grants generic compression and can expand all-zero throughput-equivalent allocation capacity through 240 MiB, but periodic and entropy-dense packed6 LUTs gain no effective cache capacity; compression benefit is content-specific and remains bounded by virtual reach.",
+      "gpu_native_realization": "Native sm_120 paired LDG/TLD packed6 decoding over effective mode-0 and mode-1 VMM handles.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured property and logical-throughput bounds without physical compression ratio cache-byte or DRAM counters",
+      "dependencies": "M208"
+    },
+    {
+      "mechanism_id": "M210",
+      "domain": "Performance/cache",
+      "name": "Constant-pattern CUDA VMM compression",
+      "source_basis": "Package physical-GPU CUDA all-one VMM compression runs",
+      "source_motif": "Every packed6 code is 63 and every packed word is 0xFFFFFFFF",
+      "normalized_technical_definition": "An independently validated nonzero constant table reproduces the all-zero global compression boundary through 240 MiB, supporting a constant-pattern class while rejecting extrapolation to information-bearing LUTs.",
+      "gpu_native_realization": "Native sm_120 paired LDG packed6 decoding over effective mode-0 and mode-1 VMM handles.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured nonzero semantic control with logical-throughput and unavailable-counter bounds",
+      "dependencies": "M209"
+    },
+    {
+      "mechanism_id": "M211",
+      "domain": "Performance/cache",
+      "name": "Zero-sentinel texture validation guard",
+      "source_basis": "Package physical-GPU texture alignment and constant mismatch controls",
+      "source_motif": "Zero-valued expected output can mask an invalid texture return",
+      "normalized_technical_definition": "A zero-only checker is insufficient for texture or compression capacity evidence; the fast zero-texture curve is rejected because an all-one sentinel produces zero valid timed payloads while information-bearing texture controls remain valid.",
+      "gpu_native_realization": "Native sm_120 TLD versus LDG semantic controls with mismatch totals and exact table-group perturbation.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Validated negative control and explicit correction of a prior zero-sentinel false positive",
+      "dependencies": "M210"
     }
   ]
 }

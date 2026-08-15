@@ -142,7 +142,7 @@ def main() -> int:
 
     line_model = {
         "bounded_effective_residency_unit_bytes": 128,
-        "classification": "consistent with a 128-byte effective cache-line residency unit for isolated random u32 words; not a counter-derived hardware line-size claim",
+        "classification": "consistent with a 128-byte effective residency unit for isolated dependent-pointer u32 words in this workload; not a universal per-code cost or counter-derived hardware line-size claim",
         "nominal_36_mib_anchors": anchors,
         "active_node_capacity_ratio_stride32_to_64_to_128plus": "4:2:1",
         "stride128_rejects_64_byte_unit": {
@@ -153,7 +153,7 @@ def main() -> int:
             "relative_to_stride128_36mib_anchor": point(128, 18)["hot_gloads_s_median"] / point(128, 9)["hot_gloads_s_median"],
         },
         "stride256_saturation_control": stride_256_to_128,
-        "interpretation": "The same node sequence at 128- and 256-byte spacing has nearly the same rate despite 2x allocation. Together with the 4:2:1 hot-node capacity at 32/64/128-byte stride, this bounds the effective isolated-word residency amplification at 128 bytes on this workload.",
+        "interpretation": "The same dependent node sequence at 128- and 256-byte spacing has nearly the same rate despite 2x allocation. Together with the 4:2:1 hot-node capacity at 32/64/128-byte stride, this bounds dependent-pointer residency amplification at 128 bytes on this workload; the independent packed-LUT control shows it is not universal.",
     }
 
     validation = {
