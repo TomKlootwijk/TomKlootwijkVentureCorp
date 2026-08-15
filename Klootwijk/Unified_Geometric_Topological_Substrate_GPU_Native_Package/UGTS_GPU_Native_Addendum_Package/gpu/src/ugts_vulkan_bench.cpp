@@ -223,6 +223,9 @@ public:
         const bool executable_extension_present = std::any_of(extensions.begin(), extensions.end(), [&](const VkExtensionProperties& extension) {
             return std::strcmp(extension.extensionName, executable_extension) == 0;
         });
+        performance_query_extension_present_ = std::any_of(extensions.begin(), extensions.end(), [](const VkExtensionProperties& extension) {
+            return std::strcmp(extension.extensionName, "VK_KHR_performance_query") == 0;
+        });
         VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR queried_executable_features{};
         queried_executable_features.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_EXECUTABLE_PROPERTIES_FEATURES_KHR;
         VkPhysicalDeviceFeatures2 queried_features{};
@@ -291,6 +294,7 @@ public:
     std::uint32_t timestamp_bits() const { return timestamp_bits_; }
     float timestamp_period_ns() const { return props_.limits.timestampPeriod; }
     bool pipeline_executable_supported() const { return pipeline_executable_supported_; }
+    bool performance_query_extension_present() const { return performance_query_extension_present_; }
     PFN_vkGetPipelineExecutablePropertiesKHR get_pipeline_executable_properties() const { return get_pipeline_executable_properties_; }
     PFN_vkGetPipelineExecutableStatisticsKHR get_pipeline_executable_statistics() const { return get_pipeline_executable_statistics_; }
     PFN_vkGetPipelineExecutableInternalRepresentationsKHR get_pipeline_executable_internal_representations() const { return get_pipeline_executable_internal_representations_; }
@@ -306,6 +310,7 @@ private:
     std::uint32_t queue_family_ = 0;
     std::uint32_t timestamp_bits_ = 0;
     bool pipeline_executable_supported_ = false;
+    bool performance_query_extension_present_ = false;
     PFN_vkGetPipelineExecutablePropertiesKHR get_pipeline_executable_properties_ = nullptr;
     PFN_vkGetPipelineExecutableStatisticsKHR get_pipeline_executable_statistics_ = nullptr;
     PFN_vkGetPipelineExecutableInternalRepresentationsKHR get_pipeline_executable_internal_representations_ = nullptr;
@@ -850,11 +855,11 @@ struct ProgramRecord {std::string name;fs::path spv_path;PipelineProgram program
 
 void write_json(const VulkanContext& ctx,const Args& args,const std::vector<ProgramRecord>& programs,const std::vector<BenchRow>& rows,const fs::path& path) {
     std::ofstream f(path);f<<std::fixed<<std::setprecision(6);const auto&p=ctx.properties();
-    f<<"{\n  \"schema\": \"UGTS-VK-BENCH-1.7\",\n  \"runtime\": \"Vulkan compute\",\n"
+    f<<"{\n  \"schema\": \"UGTS-VK-BENCH-1.8\",\n  \"runtime\": \"Vulkan compute\",\n"
      <<"  \"physical_gpu_claim\": "<<(p.deviceType==VK_PHYSICAL_DEVICE_TYPE_CPU?"false":"true")<<",\n"
      <<"  \"memory_path\": {\"storage\": \"device-local Vulkan buffers\", \"transfer\": \"explicit host-visible coherent staging\", \"timed_scope\": \"compute dispatch only\"},\n"
      <<"  \"validation\": {\"coverage\": \"all dense records; every retained compact record; non-boundary completeness when capacity does not overflow; exact compact demand cross-checked against dense GPU output\", \"fields\": \"scalar, guard, confidence, route, lineage, state flags, append uniqueness, overflow demand, and commit counters\"},\n"
-     <<"  \"device\": {\"name\": \""<<json_escape(p.deviceName)<<"\", \"type\": "<<int(p.deviceType)<<", \"vendor_id\": "<<p.vendorID<<", \"device_id\": "<<p.deviceID<<", \"api_version\": \""<<api_major(p.apiVersion)<<'.'<<api_minor(p.apiVersion)<<'.'<<api_patch(p.apiVersion)<<"\", \"timestamp_period_ns\": "<<p.limits.timestampPeriod<<", \"timestamp_valid_bits\": "<<ctx.timestamp_bits()<<", \"pipeline_executable_capture\": "<<(ctx.pipeline_executable_supported()?"true":"false")<<"},\n"
+     <<"  \"device\": {\"name\": \""<<json_escape(p.deviceName)<<"\", \"type\": "<<int(p.deviceType)<<", \"vendor_id\": "<<p.vendorID<<", \"device_id\": "<<p.deviceID<<", \"api_version\": \""<<api_major(p.apiVersion)<<'.'<<api_minor(p.apiVersion)<<'.'<<api_patch(p.apiVersion)<<"\", \"timestamp_period_ns\": "<<p.limits.timestampPeriod<<", \"timestamp_valid_bits\": "<<ctx.timestamp_bits()<<", \"pipeline_executable_capture\": "<<(ctx.pipeline_executable_supported()?"true":"false")<<", \"performance_query_extension_present\": "<<(ctx.performance_query_extension_present()?"true":"false")<<"},\n"
      <<"  \"run_parameters\": {\"warmup\": "<<args.warmup<<", \"warmup_ms\": "<<args.warmup_ms<<", \"iterations\": "<<args.iterations<<", \"compact_only\": "<<(args.compact_only?"true":"false")<<", \"compact_reverse\": "<<(args.compact_reverse?"true":"false")<<", \"compact_capacity_ratio\": "<<args.compact_capacity_ratio<<", \"allow_compact_overflow\": "<<(args.allow_compact_overflow?"true":"false")<<", \"prethreshold_only\": "<<(args.prethreshold_only?"true":"false")<<", \"hot_log_lut_only\": "<<(args.hot_log_lut_only?"true":"false")<<", \"cold_lineage_only\": "<<(args.cold_lineage_only?"true":"false")<<", \"lut_only\": "<<(args.lut_only?"true":"false")<<", \"lut_reverse\": "<<(args.lut_reverse?"true":"false")<<"},\n  \"programs\": [\n";
     for(std::size_t i=0;i<programs.size();++i){const auto&x=programs[i];f<<"    {\"name\": \""<<x.name<<"\", \"spirv_bytes\": "<<fs::file_size(x.spv_path)<<", \"shader_module_create_ms\": "<<x.program.module_create_ms<<", \"cold_pipeline_create_ms\": "<<x.program.cold_pipeline_ms<<", \"pipeline_cache_bytes\": "<<x.program.cache_blob.size()<<", \"cached_pipeline_create_ms\": "<<x.program.cached_pipeline_ms<<", \"cache_reload_ok\": "<<(x.program.cache_reload_ok?"true":"false")<<", \"pipeline_executables\": [";
         for(std::size_t executable_index=0;executable_index<x.program.executables.size();++executable_index){const auto& executable=x.program.executables[executable_index];if(executable_index)f<<',';f<<"{\"name\":\""<<json_escape(executable.name)<<"\",\"description\":\""<<json_escape(executable.description)<<"\",\"stages\":"<<executable.stages<<",\"subgroup_size\":"<<executable.subgroup_size<<",\"statistics\":[";

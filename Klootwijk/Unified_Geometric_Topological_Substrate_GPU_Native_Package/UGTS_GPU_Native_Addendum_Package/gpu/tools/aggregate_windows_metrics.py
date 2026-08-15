@@ -51,7 +51,8 @@ def main() -> None:
     l2_boundary_docs = [load(path) for path in args.l2_boundary]
     cold_lineage_docs = [load(path) for path in args.cold_lineage]
     lut_pair_docs = [load(path) for path in args.lut_pair]
-    device_names = {doc["device"]["name"] for doc in core_docs + lut_docs + semantic_docs + compact_docs + bounded_compact_docs + capacity_sweep_docs + prethreshold_docs + hot_log_lut_docs + hot_log_control_docs + l2_boundary_docs + cold_lineage_docs + lut_pair_docs}
+    all_docs = core_docs + lut_docs + semantic_docs + compact_docs + bounded_compact_docs + capacity_sweep_docs + prethreshold_docs + hot_log_lut_docs + hot_log_control_docs + l2_boundary_docs + cold_lineage_docs + lut_pair_docs
+    device_names = {doc["device"]["name"] for doc in all_docs}
     if len(device_names) != 1:
         raise SystemExit(f"runs contain multiple devices: {sorted(device_names)}")
 
@@ -752,6 +753,43 @@ def main() -> None:
             }
         )
 
+    pipeline_stat_groups: dict[tuple[str, str, int, str, int], list[int | float]] = defaultdict(list)
+    pipeline_capture_documents = 0
+    for doc in all_docs:
+        if not doc.get("device", {}).get("pipeline_executable_capture", False):
+            continue
+        pipeline_capture_documents += 1
+        for program in doc.get("programs", []):
+            for executable in program.get("pipeline_executables", []):
+                for statistic in executable.get("statistics", []):
+                    key = (
+                        program["name"],
+                        executable["name"],
+                        executable["subgroup_size"],
+                        statistic["name"],
+                        statistic["format"],
+                    )
+                    pipeline_stat_groups[key].append(statistic["value"])
+
+    pipeline_stat_rows: list[dict[str, Any]] = []
+    for (program, executable, subgroup_size, statistic, value_format), values in sorted(pipeline_stat_groups.items()):
+        flagged_local_memory = statistic == "Local Memory Size" and min(values) >= 2**32
+        pipeline_stat_rows.append(
+            {
+                "program": program,
+                "executable": executable,
+                "subgroup_size": subgroup_size,
+                "statistic": statistic,
+                "format": value_format,
+                "replicates": len(values),
+                "value_median": median(values),
+                "value_min": min(values),
+                "value_max": max(values),
+                "all_values_equal": len(set(values)) == 1,
+                "excluded_from_resource_interpretation": flagged_local_memory,
+            }
+        )
+
     lut_groups: dict[tuple[str, int], list[dict[str, Any]]] = defaultdict(list)
     for doc in lut_docs:
         for row in doc["results"]:
@@ -781,7 +819,7 @@ def main() -> None:
         )
 
     result = {
-        "schema": "UGTS-WINDOWS-PHYSICAL-GPU-AGGREGATE-1.9",
+        "schema": "UGTS-WINDOWS-PHYSICAL-GPU-AGGREGATE-1.10",
         "device": next(iter(device_names)),
         "l2_bytes": args.l2_bytes,
         "core_sources": [str(path) for path in args.core],
@@ -840,6 +878,8 @@ def main() -> None:
         "hot_log_control_comparison": hot_log_control_rows,
         "l2_boundary_comparison": l2_boundary_rows,
         "cold_lineage_comparison": cold_lineage_rows,
+        "pipeline_executable_capture_documents": pipeline_capture_documents,
+        "pipeline_executable_statistics": pipeline_stat_rows,
         "notes": [
             "Medians aggregate independent process runs; min/max expose dynamic-clock and WDDM variability.",
             "Logical bandwidth counts declared input plus output record bytes, not external DRAM transactions.",
@@ -857,6 +897,8 @@ def main() -> None:
             "Hot-log-control rows add a same-layout 24-byte direct-arithmetic threshold decoder, isolating record-footprint effects from the one-fetch 128-byte LUT.",
             "L2-boundary rows densely sample the full-counter G32/G24 compact paths around their calculated state-plus-bounded-output residency crossings; adjacent-size rate ratios expose the observed cliff without claiming a hardware-counter hit rate.",
             "Cold-lineage rows compare the G24 direct layout with a 20-byte hot geometry stream plus a separately allocated 4-byte lineage stream read only by retained lanes. The declared hot allocation excludes that cold buffer; total allocation is unchanged, and cache-line amplification is not directly measured.",
+            "Pipeline executable statistics are driver-reported compiler metadata captured natively through VK_KHR_pipeline_executable_properties; they are not hardware performance counters.",
+            "The NVIDIA driver reports Local Memory Size as 68719476736 bytes for every captured executable. This implausible per-thread value is flagged and excluded from resource or occupancy interpretation.",
             "L2 size came from the local CUDA device-properties query; direct performance counters were permission-blocked.",
         ],
     }
@@ -936,6 +978,12 @@ def main() -> None:
             writer = csv.DictWriter(stream, fieldnames=cold_lineage_rows[0].keys())
             writer.writeheader()
             writer.writerows(cold_lineage_rows)
+
+    if pipeline_stat_rows:
+        with (args.out_dir / "pipeline_executable_statistics.csv").open("w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=pipeline_stat_rows[0].keys())
+            writer.writeheader()
+            writer.writerows(pipeline_stat_rows)
 
     print(args.out_dir / "aggregate_metrics.json")
 
