@@ -1,6 +1,6 @@
 # UGTS 1.1 Mechanism Catalog
 
-**200 normalized mechanisms** extracted or technically translated from the corpus. Duplicate source variants are counted once.
+**202 normalized mechanisms** extracted or technically translated from the corpus. Duplicate source variants are counted once.
 
 ## Architecture
 
@@ -253,6 +253,9 @@
 | M198 | Native device-clock L2 boundary | RETAIN | Package physical-GPU shader-clock runs |
 | M199 | Native CUDA L2 cycle control | RETAIN | Package physical-GPU CUDA clock64 runs |
 | M200 | Native CUDA L2 concurrency curve | RETAIN | Package physical-GPU CUDA concurrency runs |
+| M201 | Native CUDA texture-path capacity control | RETAIN | Package physical-GPU CUDA texture/global runs |
+| M202 | Dense 6-bit CUDA log-LUT packing | RETAIN | Package physical-GPU CUDA packed-log-LUT runs |
+| M203 | Native CUDA sparse-stride effective residency | RETAIN | Package physical-GPU CUDA sparse-stride runs |
 
 ## Physical hardware
 

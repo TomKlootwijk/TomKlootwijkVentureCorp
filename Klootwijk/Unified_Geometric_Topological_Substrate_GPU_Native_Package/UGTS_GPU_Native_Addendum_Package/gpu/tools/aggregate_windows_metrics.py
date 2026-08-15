@@ -37,6 +37,9 @@ def main() -> None:
     parser.add_argument("--l2-latency", type=Path)
     parser.add_argument("--cuda-l2-clock", type=Path)
     parser.add_argument("--cuda-l2-mlp", type=Path)
+    parser.add_argument("--cuda-texture-lut", type=Path)
+    parser.add_argument("--cuda-packed-log-lut", type=Path)
+    parser.add_argument("--cuda-l2-stride", type=Path)
     parser.add_argument("--l2-bytes", type=int, required=True)
     parser.add_argument("--out-dir", type=Path, required=True)
     args = parser.parse_args()
@@ -59,6 +62,9 @@ def main() -> None:
     l2_latency_doc = load(args.l2_latency) if args.l2_latency else None
     cuda_l2_clock_doc = load(args.cuda_l2_clock) if args.cuda_l2_clock else None
     cuda_l2_mlp_doc = load(args.cuda_l2_mlp) if args.cuda_l2_mlp else None
+    cuda_texture_lut_doc = load(args.cuda_texture_lut) if args.cuda_texture_lut else None
+    cuda_packed_log_lut_doc = load(args.cuda_packed_log_lut) if args.cuda_packed_log_lut else None
+    cuda_l2_stride_doc = load(args.cuda_l2_stride) if args.cuda_l2_stride else None
     all_docs = core_docs + lut_docs + semantic_docs + compact_docs + bounded_compact_docs + capacity_sweep_docs + prethreshold_docs + hot_log_lut_docs + hot_log_control_docs + l2_boundary_docs + cold_lineage_docs + lut_pair_docs + lut_path_docs
     if l2_latency_doc:
         all_docs.append(l2_latency_doc)
@@ -66,6 +72,12 @@ def main() -> None:
         all_docs.append(cuda_l2_clock_doc)
     if cuda_l2_mlp_doc:
         all_docs.append(cuda_l2_mlp_doc)
+    if cuda_texture_lut_doc:
+        all_docs.append(cuda_texture_lut_doc)
+    if cuda_packed_log_lut_doc:
+        all_docs.append(cuda_packed_log_lut_doc)
+    if cuda_l2_stride_doc:
+        all_docs.append(cuda_l2_stride_doc)
     device_names = {doc["device"]["name"] for doc in all_docs}
     if len(device_names) != 1:
         raise SystemExit(f"runs contain multiple devices: {sorted(device_names)}")
@@ -875,7 +887,7 @@ def main() -> None:
         )
 
     result = {
-        "schema": "UGTS-WINDOWS-PHYSICAL-GPU-AGGREGATE-1.14",
+        "schema": "UGTS-WINDOWS-PHYSICAL-GPU-AGGREGATE-1.17",
         "device": next(iter(device_names)),
         "l2_bytes": args.l2_bytes,
         "core_sources": [str(path) for path in args.core],
@@ -894,6 +906,9 @@ def main() -> None:
         "l2_latency_source": str(args.l2_latency) if args.l2_latency else None,
         "cuda_l2_clock_source": str(args.cuda_l2_clock) if args.cuda_l2_clock else None,
         "cuda_l2_mlp_source": str(args.cuda_l2_mlp) if args.cuda_l2_mlp else None,
+        "cuda_texture_lut_source": str(args.cuda_texture_lut) if args.cuda_texture_lut else None,
+        "cuda_packed_log_lut_source": str(args.cuda_packed_log_lut) if args.cuda_packed_log_lut else None,
+        "cuda_l2_stride_source": str(args.cuda_l2_stride) if args.cuda_l2_stride else None,
         "lut_pair_order_balance": {
             "forward": sum(not doc.get("run_parameters", {}).get("lut_reverse", False) for doc in lut_pair_docs),
             "reverse": sum(doc.get("run_parameters", {}).get("lut_reverse", False) for doc in lut_pair_docs),
@@ -953,6 +968,19 @@ def main() -> None:
         "cuda_l2_mlp_validation": cuda_l2_mlp_doc.get("validation") if cuda_l2_mlp_doc else None,
         "cuda_l2_mlp_summary": cuda_l2_mlp_doc.get("high_concurrency_summary") if cuda_l2_mlp_doc else None,
         "cuda_l2_mlp_comparison": cuda_l2_mlp_doc.get("results", []) if cuda_l2_mlp_doc else [],
+        "cuda_texture_lut_validation": cuda_texture_lut_doc.get("validation") if cuda_texture_lut_doc else None,
+        "cuda_texture_lut_concurrency_summary": cuda_texture_lut_doc.get("concurrency_summary") if cuda_texture_lut_doc else None,
+        "cuda_texture_lut_full_occupancy_summary": cuda_texture_lut_doc.get("full_occupancy_summary") if cuda_texture_lut_doc else None,
+        "cuda_texture_lut_comparison": cuda_texture_lut_doc.get("results", []) if cuda_texture_lut_doc else [],
+        "cuda_packed_log_lut_validation": cuda_packed_log_lut_doc.get("validation") if cuda_packed_log_lut_doc else None,
+        "cuda_packed_log_lut_capacity_summary": cuda_packed_log_lut_doc.get("capacity_summary") if cuda_packed_log_lut_doc else None,
+        "cuda_packed_log_lut_full_occupancy_summary": cuda_packed_log_lut_doc.get("full_occupancy_summary", []) if cuda_packed_log_lut_doc else [],
+        "cuda_packed_log_lut_packing_comparison": cuda_packed_log_lut_doc.get("packing_comparison", []) if cuda_packed_log_lut_doc else [],
+        "cuda_packed_log_lut_texture_comparison": cuda_packed_log_lut_doc.get("texture_comparison", []) if cuda_packed_log_lut_doc else [],
+        "cuda_packed_log_lut_comparison": cuda_packed_log_lut_doc.get("results", []) if cuda_packed_log_lut_doc else [],
+        "cuda_l2_stride_validation": cuda_l2_stride_doc.get("validation") if cuda_l2_stride_doc else None,
+        "cuda_l2_stride_line_model": cuda_l2_stride_doc.get("line_model") if cuda_l2_stride_doc else None,
+        "cuda_l2_stride_comparison": cuda_l2_stride_doc.get("results", []) if cuda_l2_stride_doc else [],
         "notes": [
             "Medians aggregate independent process runs; min/max expose dynamic-clock and WDDM variability.",
             "Logical bandwidth counts declared input plus output record bytes, not external DRAM transactions.",
@@ -975,7 +1003,10 @@ def main() -> None:
             "LUT-path rows compare byte-identical packed uint payloads and indexing through a uniform texel buffer versus a storage buffer; ratios are paired within balanced processes.",
             "L2-latency rows are control-subtracted device-clock intervals for a saturated 512-step dependent SSBO chase. Shader-clock units are implementation-defined and the values include scheduler exposure; they are not raw cycles, nanoseconds, or cache-hit rates.",
             "CUDA L2-clock rows use one native sm_120 warp, clock64 cycle counters, and ld.global.cg loads. Cold follows a 256 MiB eviction pass and hot immediately repeats the same path; values are warp-exposed dependent-step cycles and still include time slicing.",
-            "CUDA L2-MLP rows scale independent one-warp blocks from one total warp to 16 warps per SM. Requested Gload/s is logical u32 request throughput, not physical cache-sector or DRAM traffic; clock64 rows include scheduling and memory-queue exposure.",
+            "CUDA L2-MLP rows scale independent one-warp blocks from one total warp to the measured 24-warps-per-SM occupancy ceiling. Requested Gload/s is logical u32 request throughput, not physical cache-sector or DRAM traffic; clock64 rows include scheduling and memory-queue exposure.",
+            "CUDA texture-LUT rows compare byte-identical dependent chains through native TLD texture-object instructions and native LDG L2/global instructions with independent eviction and balanced path order. Ratios near one do not imply identical front-end caches; they bound end-to-end capacity/throughput for this workload.",
+            "CUDA packed-log-LUT rows compare two 16-bit code slots per word with sixteen 6-bit codes per three words through native LDG and TLD paths. Packed rates count decoded logical codes; the expected 1.125 word requests per packed lookup and all bandwidth-like rates remain logical rather than physical transactions.",
+            "CUDA sparse-stride rows place one consumed u32 at 4-256 byte spacing with mixed filler in every gap. The 4:2:1 active-node capacity scaling at 32/64/128-byte spacing and the saturated 128/256-byte curves bound effective isolated-word residency at 128 bytes for this workload; this is not a counter-derived physical line or sector claim.",
             "L2 size came from the local CUDA device-properties query; direct performance counters were permission-blocked.",
         ],
     }
@@ -1088,6 +1119,36 @@ def main() -> None:
             writer = csv.DictWriter(stream, fieldnames=cuda_mlp_rows[0].keys())
             writer.writeheader()
             writer.writerows(cuda_mlp_rows)
+
+    if cuda_texture_lut_doc and cuda_texture_lut_doc.get("results"):
+        cuda_texture_rows = cuda_texture_lut_doc["results"]
+        with (args.out_dir / "cuda_texture_lut_comparison.csv").open("w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=cuda_texture_rows[0].keys())
+            writer.writeheader()
+            writer.writerows(cuda_texture_rows)
+
+    if cuda_packed_log_lut_doc:
+        for name, key in (
+            ("cuda_packed_log_lut_comparison.csv", "results"),
+            ("cuda_packed_log_lut_packing_comparison.csv", "packing_comparison"),
+            ("cuda_packed_log_lut_texture_comparison.csv", "texture_comparison"),
+            ("cuda_packed_log_lut_full_occupancy.csv", "full_occupancy_summary"),
+        ):
+            cuda_packed_rows = cuda_packed_log_lut_doc.get(key, [])
+            if cuda_packed_rows:
+                with (args.out_dir / name).open("w", newline="", encoding="utf-8") as stream:
+                    writer = csv.DictWriter(stream, fieldnames=cuda_packed_rows[0].keys())
+                    writer.writeheader()
+                    writer.writerows(cuda_packed_rows)
+
+    if cuda_l2_stride_doc and cuda_l2_stride_doc.get("results"):
+        cuda_stride_rows = cuda_l2_stride_doc["results"]
+        with (args.out_dir / "cuda_l2_stride_comparison.csv").open(
+            "w", newline="", encoding="utf-8"
+        ) as stream:
+            writer = csv.DictWriter(stream, fieldnames=cuda_stride_rows[0].keys())
+            writer.writeheader()
+            writer.writerows(cuda_stride_rows)
 
     print(args.out_dir / "aggregate_metrics.json")
 

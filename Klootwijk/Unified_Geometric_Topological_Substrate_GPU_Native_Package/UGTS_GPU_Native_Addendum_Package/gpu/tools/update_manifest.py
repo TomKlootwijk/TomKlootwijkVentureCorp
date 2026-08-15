@@ -20,6 +20,15 @@ EXCLUDED_DIRECTORIES = {
     "l2_latency_smoke",
     "l2_latency_smoke_exact",
     "cuda_l2_clock_smoke",
+    "cuda_l2_mlp_smoke",
+    "cuda_l2_mlp_smoke_memcheck",
+    "cuda_texture_lut_smoke",
+    "cuda_texture_lut_smoke_memcheck",
+    "cuda_packed_log_lut_smoke",
+    "cuda_packed_log_lut_smoke_memcheck",
+    "cuda_l2_stride_smoke",
+    "cuda_l2_stride_smoke_memcheck",
+    "cuda_l2_stride_smoke_final",
 }
 
 

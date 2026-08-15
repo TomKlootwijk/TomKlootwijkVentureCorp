@@ -1,6 +1,6 @@
 {
   "schema": "UGTS-KNOWLEDGE-CATALOG-1.1",
-  "count": 199,
+  "count": 203,
   "mechanisms": [
     {
       "mechanism_id": "M001",
@@ -2594,13 +2594,52 @@
       "domain": "Performance/cache",
       "name": "Native CUDA L2 concurrency curve",
       "source_basis": "Package physical-GPU CUDA concurrency runs",
-      "source_motif": "One-warp blocks scaled through 16 warps per SM around the 36 MiB boundary",
-      "normalized_technical_definition": "At 736 warps hot requested throughput is unchanged between 4 and 36 MiB but falls 45.34% at 40 MiB and 82.49% at 128 MiB.",
+      "source_motif": "One-warp blocks scaled through the 24-warps-per-SM occupancy ceiling around the 36 MiB boundary",
+      "normalized_technical_definition": "At 1104 warps hot requested throughput is unchanged between 4 and 36 MiB but falls 45.20% at 40 MiB and 82.59% at 128 MiB.",
       "gpu_native_realization": "Native sm_120 clock64 plus CUDA-event dependent-chain matrix.",
       "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
       "status": "RETAIN",
       "validation_state": "Measured logical requested-load throughput with scheduling and transaction-granularity bounds",
       "dependencies": "M199"
+    },
+    {
+      "mechanism_id": "M201",
+      "domain": "Performance/cache",
+      "name": "Native CUDA texture-path capacity control",
+      "source_basis": "Package physical-GPU CUDA texture/global runs",
+      "source_motif": "Byte-identical dependent chains through linear texture object and L1-bypassing global loads",
+      "normalized_technical_definition": "Native TLD and LDG paths share the same 36-40 MiB throughput cliff; texture adds no effective capacity tier and is slower at low concurrency.",
+      "gpu_native_realization": "Native sm_120 TLD.LZ versus LDG.E.STRONG.GPU matched matrix.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured with logical-throughput and unavailable-counter bounds",
+      "dependencies": "M200"
+    },
+    {
+      "mechanism_id": "M202",
+      "domain": "Performance/cache",
+      "name": "Dense 6-bit CUDA log-LUT packing",
+      "source_basis": "Package physical-GPU CUDA packed-log-LUT runs",
+      "source_motif": "Sixteen 6-bit codes per three words versus two 16-bit slots per word",
+      "normalized_technical_definition": "Dense packing realizes 2.667x code capacity at the same bytes; on the named GPU the saturated texture path preserves 98.61% of slot16 throughput at the 36 MiB capacity endpoint.",
+      "gpu_native_realization": "Native sm_120 packed extraction through matched TLD.LZ and LDG.E.STRONG.GPU paths.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured logical decoded-code throughput with per-load validation and unavailable-counter bounds",
+      "dependencies": "M201"
+    },
+    {
+      "mechanism_id": "M203",
+      "domain": "Performance/cache",
+      "name": "Native CUDA sparse-stride effective residency",
+      "source_basis": "Package physical-GPU CUDA sparse-stride runs",
+      "source_motif": "One consumed random u32 at 4-256 byte spacing with mixed filler",
+      "normalized_technical_definition": "Active-node capacity scales 4:2:1 at 32/64/128-byte spacing and saturates by 128 bytes, bounding isolated-word effective residency at 128 bytes for the named workload.",
+      "gpu_native_realization": "Native sm_120 nonlinear dependent ld.global.cg chase with CPU replay and spacing controls.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured workload-level effective residency with physical-line and unavailable-counter bounds",
+      "dependencies": "M202"
     }
   ]
 }

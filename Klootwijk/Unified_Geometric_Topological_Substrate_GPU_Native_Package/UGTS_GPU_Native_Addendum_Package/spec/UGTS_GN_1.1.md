@@ -125,7 +125,9 @@ The package contains twenty-six named SPIR-V execution variants generated from t
 - fixed-query G24 subgroup compact append with a 128-byte packed uniform-texel-buffer log-threshold LUT, with and without workgroup-reduced counters; and
 - fixed-query G20 hot-state subgroup compact append with lineage in a separate cold storage buffer, with and without workgroup-reduced counters; and
 - paired packed 16-bit log-code uniform-texel-buffer and SSBO probes for sequential and random access; and
-- a zero-step device-clock control and 512-step dependent SSBO pointer chase.
+- a zero-step device-clock control and 512-step dependent SSBO pointer chase; and
+- native CUDA slot16 and densely packed 6-bit log-code lookup controls through both global and texture-object paths; and
+- a native CUDA sparse-stride dependent chase that bounds effective isolated-word L2 residency.
 
 The runtime descriptor layout reserves set 0, bindings 0-2 for state, event and counters, binding 3 for the confidence LUT where used, and binding 4 for the optional cold-lineage stream. Evaluate-only modules may optimize unused bindings out of the final SPIR-V interface. The local workgroup is 256x1x1. `gpu/spirv/spirv_manifest.json` records hashes, instruction counts, entry points, local size and descriptor decorations.
 
@@ -141,9 +143,21 @@ An independent CUDA 12.8 control compiles to native `sm_120`, brackets 512 depen
 
 The flat CUDA state-forced costs and the Vulkan capacity cliff are complementary. The Vulkan 128/36 MiB saturated ratio of 6.295x exceeds the CUDA post-eviction/hot ratio of 2.722x, demonstrating that the saturated value includes material queuing and scheduler exposure. Implementations must not invert these two latency constants into a cache-hit estimate without an independently validated concurrency model or hardware counters.
 
-A native CUDA concurrency control supplies that missing scheduler/queue curve. It launches one 32-lane warp per block, retains 512 strictly dependent `ld.global.cg.u32` steps per lane, and scales from one total warp to 736 warps (16 per SM). Four isolated forward/reverse matrices validate 42,883,200 payloads representing 14,637,465,600 dependent loads. At 736 warps, immediate-hot requested throughput is 42.863 Gload/s at the exact 36 MiB L2 size, 23.429 at 40 MiB, 9.318 at 64 MiB and 7.506 at 128 MiB. The 36-to-40 MiB loss is 45.34%. Requested Gload/s and logical GiB/s are logical scalar requests, not cache-sector traffic, DRAM bandwidth or counter-derived hit rates.
+A native CUDA concurrency control supplies that missing scheduler/queue curve. It launches one 32-lane warp per block, retains 512 strictly dependent `ld.global.cg.u32` steps per lane, and scales from one total warp to the occupancy-query ceiling of 1,104 warps (24 per SM). Four isolated forward/reverse matrices validate 74,678,400 payloads representing 25,490,227,200 dependent loads. At full measured occupancy, immediate-hot requested throughput is 43.215 Gload/s at the exact 36 MiB L2 size, 23.683 at 40 MiB, 9.357 at 64 MiB and 7.524 at 128 MiB. The 36-to-40 MiB loss is 45.20%. Requested Gload/s and logical GiB/s are logical scalar requests, not cache-sector traffic, DRAM bandwidth or counter-derived hit rates.
 
 The concurrency result makes the engineering rule concrete: the named device can sustain the 4 MiB control rate for a hot 36 MiB random table, but nominal capacity leaves no margin. A production hot LUT/state budget should reserve room for other lines and system activity; the package report uses 28 MiB as a conservative target, not a universal hardware constant. Texture-buffer placement does not add another effective capacity tier on this device.
+
+A matched native CUDA texture-path control removes the remaining descriptor/instruction ambiguity. The same `cudaMalloc` bytes and dependent pointer sequence are read through a linear texture object and through `ld.global.cg.u32`, with independent 256 MiB eviction and balanced path order. Native `sm_120` SASS contains `TLD.LZ` for the texture chase and `LDG.E.STRONG.GPU` for the global chase; both use 16 registers, zero spills and the same 24 one-warp-blocks/SM occupancy ceiling. Four matrices validate 98,426,880 payloads representing 33,596,375,040 dependent loads.
+
+At 1,104 warps, the median texture/global hot-rate ratio across eight 4-128 MiB table sizes is 0.99949x. From 36 to 40 MiB, global throughput falls 45.159% and texture throughput falls 45.246%. At one warp, texture is 13.65% slower and exposes 17.55% more cycles per step. Thus the native texture instruction does not provide another effective cache-capacity tier or a throughput advantage for this random dependent LUT. Packing remains beneficial because it keeps bytes below the shared L2 boundary.
+
+A separate native packing control implements sixteen 6-bit log codes in three `u32` words (0.75 bytes/code) and compares it with two 16-bit code slots per word (2 bytes/code). Four Latin-order-balanced matrices exercise both `TLD.LZ` and `LDG.E.STRONG.GPU`, reach the same 24 one-warp-blocks/SM occupancy ceiling, and validate 270,673,920 payloads representing 92,390,031,360 individual code checks. Packed extraction uses one word for 14/16 offsets and a second predicated word for 2/16 offsets; all four kernels have zero spills.
+
+At the exact 36 MiB physical endpoint, slot16 holds 18,874,368 codes while packed6 holds 50,331,648, exactly 2.667x as many. At full occupancy the texture rates are 43.192 and 42.594 Glookup/s, so dense packing preserves 98.61% of slot throughput. At the conservative 28 MiB endpoint, measured packed capacity is 39,146,832 codes, five below the mathematical floor because the test packs whole 16-code groups, versus 14,680,064 slot codes. Packed texture falls 45.05% from 36 to 40 MiB, confirming that packing moves logical capacity without moving the physical cache boundary. Glookup/s counts decoded logical codes, not physical cache transactions.
+
+A native sparse-stride control establishes the locality bound for applying those capacity figures. One nonlinear dependent `u32` pointer is consumed at each 4-256 byte spacing, and every gap word is filled with deterministic mixed data. At 1,104 warps, hot active-node capacity scales 4:2:1 for 32-, 64- and 128-byte spacing: 1,179,648, 589,824 and 294,912 nodes respectively at the approximately 43.0 Gload/s plateau. A 256-byte-spaced version with the same 294,912 nodes uses 72 MiB but remains at 42.985 Gload/s versus 43.004 at 128-byte spacing/36 MiB. Conversely, 589,824 nodes at 128-byte spacing reach only 14.176 Gload/s, rejecting a 64-byte effective unit.
+
+The measured conclusion is that isolated random `u32` entries have an effective residency unit consistent with 128 bytes for this workload. It is not a counter-derived physical cache-line, sector or transaction-size claim. Consequently the 36 MiB useful-capacity range is 50,331,648 dense packed6 codes versus 294,912 isolated active entries; the 28 MiB range is 39,146,837 arithmetic dense codes versus 229,376 isolated entries. Packing realizes its 2.667x representation density only when accesses reuse neighboring codes within the effective region.
 
 ### 5.1 Reference query convention
 
@@ -190,6 +204,9 @@ The G20 cold-lineage profile splits the identical fixed-query state into five ho
 | SDT | Saturated Dependent-load Ticks | control-subtracted device-clock ticks / dependent load under the declared invocation count |
 | CDL | CUDA Dependent-step Latency | control-subtracted per-SM clock cycles / one dependent warp step under the declared cache-state protocol |
 | CMLP | CUDA Memory-Level Parallelism | requested dependent loads / complete-kernel time at a declared total warp count; logical request throughput, not physical memory traffic |
+| CTP | CUDA Texture Path ratio | paired texture-object requested-load rate / L1-bypassing global requested-load rate for byte-identical chains |
+| CPL | CUDA Packed Lookup ratio | packed6 decoded-code rate / slot16 decoded-code rate at the same logical entry count, path and concurrency |
+| EIR | Effective Isolated Residency | workload-inferred cache bytes per isolated useful word from stride-dependent capacity scaling; not a physical line/sector declaration |
 | ESB | Effective Substrate Bandwidth | logical state+event bytes / device time; not external DRAM bandwidth |
 | SRG | Support Rejection Gain | candidates / supported |
 | CRG | Compatibility Rejection Gain | supported / compatible |
