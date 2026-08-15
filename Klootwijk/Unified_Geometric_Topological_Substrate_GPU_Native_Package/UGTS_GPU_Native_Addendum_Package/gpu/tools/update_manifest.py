@@ -29,6 +29,8 @@ EXCLUDED_DIRECTORIES = {
     "cuda_l2_stride_smoke",
     "cuda_l2_stride_smoke_memcheck",
     "cuda_l2_stride_smoke_final",
+    "cuda_lut_line_occupancy_smoke",
+    "cuda_lut_line_occupancy_smoke_memcheck",
 }
 
 
