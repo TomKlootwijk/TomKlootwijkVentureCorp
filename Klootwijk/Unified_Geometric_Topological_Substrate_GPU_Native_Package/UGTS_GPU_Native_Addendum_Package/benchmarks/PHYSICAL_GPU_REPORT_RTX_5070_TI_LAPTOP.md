@@ -29,7 +29,11 @@ The address-span term is now independently bounded. With useful words and contai
 
 A VMM physical-backing control makes the general span result materially stronger. Every virtual slot aliases the same 2 MiB allocation—18x smaller than reported L2—and both native paths share each mapping. Throughput stays near 42.9 Glookup/s through 240 MiB virtual reach, then global/texture fall together to 39.523/39.539 at 248 MiB, 35.663/35.687 at 252 MiB and 34.439/34.456 at 256 MiB. Fixed-alias pitch sweeps reproduce the loss without changing physical payload. Address distribution/reach is therefore causal for this kernel; page size, TLB structure and page-walk counters remain unobserved.
 
-Explicit generic-compression VMM allocations are now verified and performance-tested. The driver returns effective compression enum 1 and successful mapped readback. Periodic and entropy-dense packed6 LUTs nevertheless show essentially 1.000x generic/non-compressible throughput and the same 36-40 MiB cliff. Only an all-zero upper control expands: global throughput stays near 38.6 Glookup/s through 240 MiB, equivalent to 6.667x nominal L2 allocation capacity, before the independent 248 MiB address-reach loss. This proves content-sensitive hardware compression exists, while rejecting any automatic compression gain for an ordinary information-bearing log LUT.
+Explicit generic-compression VMM allocations are now verified and performance-tested. The driver returns effective compression enum 1 and successful mapped readback. Periodic and entropy-dense packed6 LUTs nevertheless show essentially 1.000x generic/non-compressible throughput and the same 36-40 MiB cliff. All-zero and independently checked all-one constant-word controls expand: global throughput stays near 38.6 Glookup/s through 240 MiB, equivalent to 6.667x nominal L2 allocation capacity, before the independent 248 MiB address-reach loss. This proves content-sensitive hardware compression exists, while rejecting any automatic compression gain for an ordinary information-bearing log LUT.
+
+The exact externalized threshold-code stream from the current synthetic G24 producer is also negative. Its constant floor 0.70 quantizes to code 8 and packs as three alternating words rather than uniform words. Four balanced native processes validate 256 rows and 92.610 billion timed global/texture lookups; the median generic/non-compressible ratio is 0.999993x, and both modes end at the same 36 MiB 99%-rate boundary. Semantic uniformity therefore does not imply physically compressible packed words.
+
+An exhaustive raw-global follow-on enumerates all 64 uniform codes and finds a complete physical-word classification. Only codes 0, 21, 42 and 63 pack into three identical `u32` words, and only those four extend beyond 36 MiB. Zero/all-one words remain full through 240 MiB; `0x55555555`/`0xAAAAAAAA` have a balanced 70 MiB endpoint; the other 60 codes remain at 36 MiB. Eight balanced processes validate 3,616 rows and 1.308 trillion timed lookups. This is exact for the tested domain, layout and GPU without asserting an undocumented compressor format.
 
 The packed G32 kernel was also run end to end with confidence supplied through Vulkan uniform texel-buffer LUTs. Both an 8,196-byte adjacent-sample layout and a 16,384-byte one-fetch interval-pair layout are semantically valid. Neither provides a stable end-to-end advantage over native `exp2` for this kernel on this GPU: LUT lookup is slower while arithmetic latency is exposed and effectively tied once state/output traffic dominates. A byte-identical SSBO control additionally shows that large random texture-buffer and SSBO reads share the same cache-capacity cliff.
 
@@ -435,7 +439,47 @@ Full rate through 240 MiB gives a **6.667x throughput-equivalent allocation-capa
 
 The all-zero texture curve is now semantically rejected. A fine 174-210 MiB sweep found an exact three-MiB rate rhythm, and trimming one 12-byte group collapsed the high regime by up to 19.2x. However, an all-one control gives zero valid timed texture payloads while all-one global and periodic/entropy texture paths validate. Explicit mismatch totals find 35,893,872 wrong codes out of 36,175,872 checks at 4 MiB and 22,609,920 out of 36,175,872 at 192 MiB. The zero checker can accept an incorrect zero return, so none of the fast zero-texture rates are capacity or throughput evidence. Periodic and entropy texture rows remain valid and show no compression gain.
 
-Native `sm_120` SASS retains one unconditional and one predicated straddle load per active packed decode through `LDG.E.STRONG.GPU` or `TLD.LZ`; the global/texture kernels use 22/19 registers, no stack/local memory/spills and 24 blocks/SM. The original primary/zero-span checker accepts **830,914,560 payloads** across **1,184 rows** and times **283,618,836,480 lookups**, but its zero-texture subset is superseded by the nonzero semantic control. The all-one global corpus adds **96 fully valid rows**, **101,744,640 validated payloads** and **34,728,837,120 timed lookups**. Compute Sanitizer reports zero errors for all-one global mappings at 40, 240 and 320 MiB; instrumented timings are excluded. Full protocols are in `benchmarks/cuda_vmm_compression_lut_isolated/`, `benchmarks/cuda_vmm_compression_ones_global_isolated/` and `benchmarks/cuda_vmm_compression_zero_texture_alignment_isolated/`.
+### Sparse information-bearing VMM-compression map
+
+A follow-on exact-binary study fills the gap between dense information-bearing patterns and zero-information constants. Pattern `sparse1_K` stores code 1 at every `K`th logical packed6 position and code 0 elsewhere. At 1,104 warps, the highest allocation retaining at least 99% of each pattern's best median generic-compressible global rate is:
+
+| Interval K | Nonzero-code share | Packed spacing | Last full-rate allocation |
+|---:|---:|---:|---:|
+| 64 | 1.562500% | 48 bytes | 64 MiB |
+| 128 | 0.781250% | 96 bytes | 64 MiB |
+| 256 | 0.390625% | 192 bytes | 64 MiB |
+| 512 | 0.195313% | 384 bytes | 128 MiB |
+| 544 | 0.183824% | 408 bytes | 160 MiB |
+| 576 | 0.173611% | 432 bytes | 192 MiB |
+| 608/640 | 0.164474/0.156250% | 456/480 bytes | 208 MiB |
+| 672/704 | 0.148810/0.142045% | 504/528 bytes | 224 MiB |
+| 736-4,096 | 0.135870-0.024414% | 552-3,072 bytes | 240 MiB tested ceiling |
+
+The six non-power-of-two 544-704 cases place 411,207-478,298 code-1 exceptions at the last full-rate point, median 460,208.5. This is an observed boundary for the exact packed layout, not a physical compressor capacity. Constant logical code 1 and deterministic mixed binary codes retain generic/non-compressible ratios near 1.000x and gain no capacity, demonstrating that low alphabet size alone is not sufficient.
+
+The >=736 rows become address-reach limited: all fall at 248 MiB, while the independent VMM-alias control already proves that the 240-248 MiB loss survives with only 2 MiB physical backing. Sparse compression capacity beyond 240 MiB is therefore unresolved on this device.
+
+The frozen `sm_120` executable has SHA-256 `E4F685BB73046A4B4D4F79D634CDB211698FF9E2A2C13AA74CDAEED6884AA194`. Twelve exact-binary forward/reverse processes contribute 1,872 valid rows, 1,984,020,480 validated payloads and 677,212,323,840 timed GPU lookups with zero mismatches. The protocol and frozen executable are under `benchmarks/cuda_vmm_sparse_exact/`; the machine-readable threshold table is under `benchmarks/cuda_vmm_compression_sparse_summary/`.
+
+### Current G24 externalized threshold-code control
+
+The G24 benchmark producer fixes `confidence_floor = 0.70`. Binary16 rounding yields 0.7001953125, the declared log-distance quantizer yields code 8, and sixteen externalized packed codes become `0x08208208 0x82082082 0x20820820`. This pattern contains sixteen set bits per 96-bit group, the same count as packed code 1 but a different phase. It is not equivalent to the all-one code-63 control, which produces three `0xFFFFFFFF` words.
+
+Four order-balanced processes cover sixteen 4-248 MiB sizes, 1,104 warps, both native paths and both VMM allocation properties. All 256 rows validate; 271,319,040 payloads and 92,610,232,320 timed lookups have zero decoded mismatches. The paired generic/non-compressible hot-rate median across all 32 size/path cases is 0.999993x, with a 0.994175-1.012212x range. The 99%-of-best endpoint is 36 MiB / 50,331,648 codes for both properties on both paths. From 36 to 40 MiB, global loses 38.53% without compression and 38.96% with it; texture loses 44.69% and 45.05%. Generic texture's 1.0122x effect at transitional 38 MiB does not move the full-rate endpoint and disappears at 40 MiB.
+
+Some absolute per-size rows have up to 60.28% repetition range because of laptop clock/performance-state changes. The compression result uses within-sample alternating allocation modes, and every paired median remains within 2% of unity. Frozen source/executable hashes, exact SASS/resource facts, machine-readable summary and this limitation are in `benchmarks/cuda_vmm_g24_code8_isolated/PROTOCOL.md`.
+
+### Exhaustive uniform-code physical-word map
+
+The parameterized global control enumerates every logical value 0-63. A repeated 6-bit motif advances two positions at each 32-bit boundary, so the three packed words are identical only for code 0 (`0x00000000`), 21 (`0x55555555`), 42 (`0xAAAAAAAA`) and 63 (`0xFFFFFFFF`). The other 60 codes produce three distinct words.
+
+The all-code screen measures every code at 36, 40, 64, 128, 240 and 248 MiB. Codes 0/63 retain 99% of best through 240 MiB; codes 21/42 reach 64 MiB in the screen; all other codes end at 36 MiB. A second 2 MiB-step refinement places both 21/42 balanced-median endpoints at 70 MiB, with first sub-99% results at 72 MiB. Forward/reverse behavior diverges through this transition, so 70-72 MiB is a direction-sensitive workload boundary rather than a physical compressor-capacity measurement.
+
+The codes producing identical words exactly equal the codes extending beyond nominal L2. This is a complete correlation across the 64-value domain, but word value still changes the magnitude: zero/all-one reaches the independent 240 MiB address ceiling, alternating-bit words reach 70 MiB, and three-word patterns gain nothing. Eight processes validate all 3,616 rows, 3,832,381,440 payloads and 1,308,119,531,520 timed global lookups.
+
+The parameterized uniform texture path is rejected rather than timed: codes 1, 8 and 63 produce 24 invalid rows and 424,112,712 decoded mismatches, while eight zero-code rows falsely validate. Timed constant-branch `TLD.LZ` targets `RZ` in SASS. The frozen evidence and full per-code map are under `benchmarks/cuda_vmm_uniform6_exact/`; the invalid sentinel corpus is under `benchmarks/cuda_vmm_uniform6_texture_rejection/`.
+
+Native `sm_120` SASS retains one unconditional and one predicated straddle load per active packed decode through `LDG.E.STRONG.GPU` or `TLD.LZ`; the frozen sparse binary uses 22/19 global/texture registers, the later code-8 binary uses 22/18 and the parameterized global binary uses 23. All retained kernels have no stack/local memory/spills and reach 24 blocks/SM. The original primary/zero-span checker accepts **830,914,560 payloads** across **1,184 rows** and times **283,618,836,480 lookups**, but its zero-texture subset is superseded by the nonzero semantic control. The all-one global corpus adds **96 fully valid rows**, **101,744,640 validated payloads** and **34,728,837,120 timed lookups**; the code-8 corpus adds **256 fully valid rows**, **271,319,040 validated payloads** and **92,610,232,320 timed lookups**; the uniform map adds the 3,616 rows and 1.308 trillion lookups above. Compute Sanitizer reports zero errors for all-one global mappings at 40, 240 and 320 MiB, the code-8 global/texture smoke and parameterized uniform codes 0/1/8/63 on global; instrumented timings are excluded. Full protocols are in the correspondingly named VMM benchmark directories.
 
 ## Integrated direct-versus-LUT result
 
@@ -790,6 +834,35 @@ A separate 100 ms `nvidia-smi` telemetry run sampled 212 complete rows while the
   -SizeMiB '36,38,40,48,64,128,192,240,248,256,288,320' `
   -Warps '1104' -Patterns 'ones6' -Paths 'global_cg' `
   -EvictionMiB 256 -Warmup 2 -Samples 10 -Order 0
+
+# Exact externalized threshold-code stream of the current synthetic G24 producer.
+& .\gpu\scripts\run_windows_cuda_vmm_compression_lut.ps1 -SkipBuild `
+  -OutputDirectory .\benchmarks\cuda_vmm_g24_code8_isolated\new_run `
+  -SizeMiB '4,28,32,36,38,40,48,64,96,128,160,192,208,224,240,248' `
+  -Warps '1104' -Patterns 'ugts_g24_floor70_code8' `
+  -Paths 'global_cg,texture_object' `
+  -EvictionMiB 256 -Warmup 2 -Samples 10 -Order 0
+
+# Exhaustive uniform6 global/L2 screen. Run four isolated processes with
+# -Order 0,1,0,1; refinement repeats only codes 0/21/42/63 at 66-84 MiB.
+& .\gpu\scripts\run_windows_cuda_vmm_compression_lut.ps1 -SkipBuild `
+  -OutputDirectory .\benchmarks\cuda_vmm_uniform6_code_sweep_isolated\new_run `
+  -SizeMiB '36,40,64,128,240,248' -Warps '1104' `
+  -Patterns ((0..63 | ForEach-Object { "uniform6_$_" }) -join ',') `
+  -Paths 'global_cg' `
+  -EvictionMiB 256 -Warmup 2 -Samples 10 -Order 0
+
+& .\gpu\scripts\run_windows_cuda_vmm_compression_lut.ps1 -SkipBuild `
+  -OutputDirectory .\benchmarks\cuda_vmm_uniform6_midpattern_refinement_isolated\new_run `
+  -SizeMiB '36,40,64,66,68,70,72,74,76,78,80,82,84,88,96,112,128' `
+  -Warps '1104' `
+  -Patterns 'uniform6_0,uniform6_21,uniform6_42,uniform6_63' `
+  -Paths 'global_cg' `
+  -EvictionMiB 256 -Warmup 2 -Samples 10 -Order 0
+
+# Verify frozen hashes, all eight raw processes, every code/size row, packing
+# mathematics, endpoint classification and rejection of the texture sentinel.
+python .\gpu\tools\validate_cuda_vmm_uniform6.py
 ```
 
-Primary machine-readable results are in `benchmarks/windows_physical_gpu_aggregate/aggregate_metrics.json`, with paired values in `integrated_lut_comparison.csv`, `paired_lut_comparison.csv`, `lut_path_comparison.csv`, `l2_latency_comparison.csv`, `cuda_l2_clock_comparison.csv`, `cuda_l2_mlp_comparison.csv`, `cuda_texture_lut_comparison.csv`, `cuda_l2_stride_comparison.csv`, the `cuda_packed_log_lut_*.csv` tables, `prethreshold_comparison.csv`, `hot_log_lut_comparison.csv`, `hot_log_control_comparison.csv`, `l2_boundary_comparison.csv`, and `cold_lineage_comparison.csv`; native compiler metadata in `pipeline_executable_statistics.csv`; compaction values in `compaction_metrics.csv`, `bounded_compaction_metrics.csv`, and `capacity_sweep_metrics.csv`; and environment metadata in `environment.json`. Newer sparse/cache aggregate and CSV tables are in `benchmarks/cuda_lut_line_occupancy_isolated/aggregate/`, `benchmarks/cuda_lut_line_occupancy_k1_refinement/aggregate/`, `benchmarks/cuda_lut_sparse_address_isolated/aggregate/`, `benchmarks/cuda_lut_page_span_isolated/aggregate/`, `benchmarks/cuda_lut_page_stride_isolated/aggregate/`, `benchmarks/cuda_lut_stride_skew_isolated/aggregate/`, `benchmarks/cuda_vmm_alias_isolated/aggregate/`, `benchmarks/cuda_vmm_compression_lut_isolated/aggregate/`, `benchmarks/cuda_vmm_compression_zero_span_isolated/aggregate/`, and `benchmarks/cuda_vmm_compression_ones_global_isolated/aggregate/`. Driver VMM capability/property results are in `benchmarks/cuda_vmm_granularity_probe/` and `benchmarks/cuda_vmm_compression_probe/`; the texture-zero semantic erratum and alignment controls are in `benchmarks/cuda_vmm_compression_zero_texture_alignment_isolated/`. Raw CUDA/Vulkan corpora and protocols remain under their correspondingly named benchmark directories. The older `benchmarks/cold_lineage_hot/` corpus is retained but excluded because four processes overlapped.
+Primary machine-readable results are in `benchmarks/windows_physical_gpu_aggregate/aggregate_metrics.json`, with paired values in `integrated_lut_comparison.csv`, `paired_lut_comparison.csv`, `lut_path_comparison.csv`, `l2_latency_comparison.csv`, `cuda_l2_clock_comparison.csv`, `cuda_l2_mlp_comparison.csv`, `cuda_texture_lut_comparison.csv`, `cuda_l2_stride_comparison.csv`, the `cuda_packed_log_lut_*.csv` tables, `prethreshold_comparison.csv`, `hot_log_lut_comparison.csv`, `hot_log_control_comparison.csv`, `l2_boundary_comparison.csv`, and `cold_lineage_comparison.csv`; native compiler metadata in `pipeline_executable_statistics.csv`; compaction values in `compaction_metrics.csv`, `bounded_compaction_metrics.csv`, and `capacity_sweep_metrics.csv`; and environment metadata in `environment.json`. Newer sparse/cache aggregate and CSV tables are in `benchmarks/cuda_lut_line_occupancy_isolated/aggregate/`, `benchmarks/cuda_lut_line_occupancy_k1_refinement/aggregate/`, `benchmarks/cuda_lut_sparse_address_isolated/aggregate/`, `benchmarks/cuda_lut_page_span_isolated/aggregate/`, `benchmarks/cuda_lut_page_stride_isolated/aggregate/`, `benchmarks/cuda_lut_stride_skew_isolated/aggregate/`, `benchmarks/cuda_vmm_alias_isolated/aggregate/`, `benchmarks/cuda_vmm_compression_lut_isolated/aggregate/`, `benchmarks/cuda_vmm_compression_zero_span_isolated/aggregate/`, `benchmarks/cuda_vmm_compression_ones_global_isolated/aggregate/`, `benchmarks/cuda_vmm_g24_code8_isolated/aggregate/`, `benchmarks/cuda_vmm_uniform6_code_sweep_isolated/aggregate/`, and `benchmarks/cuda_vmm_uniform6_midpattern_refinement_isolated/aggregate/`. The exhaustive per-code map, frozen executable and provenance are under `benchmarks/cuda_vmm_uniform6_exact/`; its invalid texture sentinel is preserved separately under `benchmarks/cuda_vmm_uniform6_texture_rejection/`. Driver VMM capability/property results are in `benchmarks/cuda_vmm_granularity_probe/` and `benchmarks/cuda_vmm_compression_probe/`; the earlier texture-zero semantic erratum and alignment controls are in `benchmarks/cuda_vmm_compression_zero_texture_alignment_isolated/`. Raw CUDA/Vulkan corpora and protocols remain under their correspondingly named benchmark directories. The older `benchmarks/cold_lineage_hot/` corpus is retained but excluded because four processes overlapped.

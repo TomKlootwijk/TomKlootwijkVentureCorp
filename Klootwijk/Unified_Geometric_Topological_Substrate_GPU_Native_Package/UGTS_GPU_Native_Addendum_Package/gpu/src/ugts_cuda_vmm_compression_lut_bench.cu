@@ -73,12 +73,27 @@ enum class Pattern : int {
   Sparse608 = 21,
   Sparse672 = 22,
   Sparse704 = 23,
-  Sparse736 = 24
+  Sparse736 = 24,
+  UgtsG24Floor70 = 25
 };
 enum class Path : int { Global = 0, Texture = 1 };
 enum class Compression : int { None = 0, Generic = 1 };
+constexpr int kUniformCodePatternBase = 100;
+constexpr int kUniformCodePatternLimit = kUniformCodePatternBase + 64;
+constexpr int kBlockMixZeroOnesPatternBase = 200;
+constexpr int kBlockMixZeroOnesPatternCount = 11;
+constexpr int kBlockMixZeroOnesHashedPattern = 220;
 
-const char *pattern_name(Pattern pattern) {
+std::string pattern_name(Pattern pattern) {
+  const int value = int(pattern);
+  if (value >= kUniformCodePatternBase && value < kUniformCodePatternLimit)
+    return "uniform6_" + std::to_string(value - kUniformCodePatternBase);
+  if (value >= kBlockMixZeroOnesPatternBase &&
+      value < kBlockMixZeroOnesPatternBase + kBlockMixZeroOnesPatternCount)
+    return "blockmix6_0_63_g" +
+           std::to_string(1u << (value - kBlockMixZeroOnesPatternBase));
+  if (value == kBlockMixZeroOnesHashedPattern)
+    return "blockmix6_0_63_hash";
   switch (pattern) {
   case Pattern::Zero:
     return "zero6";
@@ -130,6 +145,8 @@ const char *pattern_name(Pattern pattern) {
     return "sparse1_704";
   case Pattern::Sparse736:
     return "sparse1_736";
+  case Pattern::UgtsG24Floor70:
+    return "ugts_g24_floor70_code8";
   }
   return "invalid";
 }
@@ -229,6 +246,34 @@ std::vector<Pattern> parse_patterns(const std::string &text) {
       result.push_back(Pattern::Sparse704);
     else if (part == "sparse1_736")
       result.push_back(Pattern::Sparse736);
+    else if (part == "ugts_g24_floor70_code8")
+      result.push_back(Pattern::UgtsG24Floor70);
+    else if (part.rfind("uniform6_", 0) == 0) {
+      const std::string suffix = part.substr(9);
+      std::size_t consumed = 0;
+      const int code = suffix.empty() ? -1 : std::stoi(suffix, &consumed);
+      if (consumed != suffix.size() || code < 0 || code > 63)
+        throw std::runtime_error("uniform6 code must be in [0, 63]: " + part);
+      result.push_back(static_cast<Pattern>(kUniformCodePatternBase + code));
+    }
+    else if (part == "blockmix6_0_63_hash")
+      result.push_back(static_cast<Pattern>(kBlockMixZeroOnesHashedPattern));
+    else if (part.rfind("blockmix6_0_63_g", 0) == 0) {
+      const std::string prefix = "blockmix6_0_63_g";
+      const std::string suffix = part.substr(prefix.size());
+      std::size_t consumed = 0;
+      const int groups = suffix.empty() ? -1 : std::stoi(suffix, &consumed);
+      if (consumed != suffix.size() || groups < 1 || groups > 1024 ||
+          (groups & (groups - 1)) != 0)
+        throw std::runtime_error(
+            "blockmix6 group run must be a power of two in [1, 1024]: " +
+            part);
+      int exponent = 0;
+      for (int value = groups; value > 1; value >>= 1)
+        ++exponent;
+      result.push_back(
+          static_cast<Pattern>(kBlockMixZeroOnesPatternBase + exponent));
+    }
     else if (!part.empty())
       throw std::runtime_error("unknown pattern: " + part);
   }
@@ -308,6 +353,19 @@ __host__ __device__ std::uint32_t mix32(std::uint32_t x) {
 
 __host__ __device__ __forceinline__ std::uint32_t code_for(
     int pattern, std::uint32_t index) {
+  if (pattern >= kUniformCodePatternBase && pattern < kUniformCodePatternLimit)
+    return std::uint32_t(pattern - kUniformCodePatternBase);
+  if (pattern >= kBlockMixZeroOnesPatternBase &&
+      pattern < kBlockMixZeroOnesPatternBase + kBlockMixZeroOnesPatternCount) {
+    const std::uint32_t run_exponent =
+        std::uint32_t(pattern - kBlockMixZeroOnesPatternBase);
+    const std::uint32_t group = index >> 4u;
+    return ((group >> run_exponent) & 1u) != 0u ? 63u : 0u;
+  }
+  if (pattern == kBlockMixZeroOnesHashedPattern) {
+    const std::uint32_t group = index >> 4u;
+    return (mix32(group ^ 0x3c6ef372u) & 1u) != 0u ? 63u : 0u;
+  }
   if (pattern == int(Pattern::Zero))
     return 0u;
   if (pattern == int(Pattern::Ones))
@@ -316,6 +374,11 @@ __host__ __device__ __forceinline__ std::uint32_t code_for(
     return index & 63u;
   if (pattern == int(Pattern::ConstOne))
     return 1u;
+  // The package's current G24 producer stores confidence_floor=0.70.  After
+  // binary16 rounding and the declared 0..0.125 log-distance quantization,
+  // that value is code 8 for every generated candidate.
+  if (pattern == int(Pattern::UgtsG24Floor70))
+    return 8u;
   if (pattern == int(Pattern::Sparse4096))
     return (index & 4095u) == 0u ? 1u : 0u;
   if (pattern == int(Pattern::Sparse2048))
@@ -834,7 +897,7 @@ void write_results(const Args &args, const cudaDeviceProp &properties,
        << ", \"order\": " << args.order
        << ", \"paired_paths_share_mapping\": true"
        << ", \"compression_modes_alternate_per_sample\": true},\n"
-          "  \"semantics\": \"Dense packed6 code tables compare explicit non-compressible and driver-confirmed generic-compressible VMM allocations. zero6, periodic6, entropy6 and optional all-one ones6 controls are checked inside every timed kernel.\",\n"
+          "  \"semantics\": \"Dense packed6 code tables compare explicit non-compressible and driver-confirmed generic-compressible VMM allocations. zero6, periodic6, entropy6, optional all-one ones6, the exact uniform code-8 stream produced by the current G24 confidence_floor=0.70 generator, parameterized uniform6_0 through uniform6_63, and balanced blockmix6_0_63 group-run/hashed controls are checked inside every timed kernel.\",\n"
           "  \"scope_note\": \"Throughput and capacity curves can reveal a workload-level benefit or lack thereof, but do not expose achieved hardware compression ratio, compressed L2 bytes, DRAM traffic or compression counters.\",\n"
           "  \"results\": [\n";
   for (std::size_t index = 0; index < rows.size(); ++index) {
