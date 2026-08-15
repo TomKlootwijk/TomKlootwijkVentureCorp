@@ -93,6 +93,7 @@ typedef enum VkStructureType {
     VK_STRUCTURE_TYPE_FENCE_CREATE_INFO = 8,
     VK_STRUCTURE_TYPE_QUERY_POOL_CREATE_INFO = 11,
     VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO = 12,
+    VK_STRUCTURE_TYPE_BUFFER_VIEW_CREATE_INFO = 13,
     VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO = 16,
     VK_STRUCTURE_TYPE_PIPELINE_CACHE_CREATE_INFO = 17,
     VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO = 18,
@@ -132,6 +133,10 @@ typedef enum VkDescriptorType {
     VK_DESCRIPTOR_TYPE_STORAGE_BUFFER = 7
 } VkDescriptorType;
 
+typedef enum VkFormat {
+    VK_FORMAT_R32_UINT = 98
+} VkFormat;
+
 typedef enum VkPipelineBindPoint {
     VK_PIPELINE_BIND_POINT_GRAPHICS = 0,
     VK_PIPELINE_BIND_POINT_COMPUTE = 1
@@ -155,6 +160,7 @@ typedef VkFlags VkQueueFlags;
 typedef VkFlags VkMemoryPropertyFlags;
 typedef VkFlags VkMemoryHeapFlags;
 typedef VkFlags VkBufferCreateFlags;
+typedef VkFlags VkBufferViewCreateFlags;
 typedef VkFlags VkBufferUsageFlags;
 typedef VkFlags VkDescriptorSetLayoutCreateFlags;
 typedef VkFlags VkShaderStageFlags;
@@ -188,6 +194,7 @@ enum : VkMemoryPropertyFlags {
 enum : VkBufferUsageFlags {
     VK_BUFFER_USAGE_TRANSFER_SRC_BIT = 0x00000001,
     VK_BUFFER_USAGE_TRANSFER_DST_BIT = 0x00000002,
+    VK_BUFFER_USAGE_UNIFORM_TEXEL_BUFFER_BIT = 0x00000004,
     VK_BUFFER_USAGE_STORAGE_BUFFER_BIT = 0x00000020
 };
 enum : VkShaderStageFlags {
@@ -202,6 +209,8 @@ enum : VkCommandBufferUsageFlags {
     VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT = 0x00000004
 };
 enum : VkAccessFlags {
+    VK_ACCESS_TRANSFER_READ_BIT = 0x00000800,
+    VK_ACCESS_TRANSFER_WRITE_BIT = 0x00001000,
     VK_ACCESS_SHADER_READ_BIT = 0x00000020,
     VK_ACCESS_SHADER_WRITE_BIT = 0x00000040,
     VK_ACCESS_HOST_READ_BIT = 0x00002000,
@@ -209,6 +218,7 @@ enum : VkAccessFlags {
 };
 enum : VkPipelineStageFlags {
     VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT = 0x00000001,
+    VK_PIPELINE_STAGE_TRANSFER_BIT = 0x00001000,
     VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT = 0x00000800,
     VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT = 0x00002000,
     VK_PIPELINE_STAGE_HOST_BIT = 0x00004000
@@ -560,6 +570,22 @@ typedef struct VkBufferMemoryBarrier {
     VkDeviceSize size;
 } VkBufferMemoryBarrier;
 
+typedef struct VkBufferViewCreateInfo {
+    VkStructureType sType;
+    const void* pNext;
+    VkBufferViewCreateFlags flags;
+    VkBuffer buffer;
+    VkFormat format;
+    VkDeviceSize offset;
+    VkDeviceSize range;
+} VkBufferViewCreateInfo;
+
+typedef struct VkBufferCopy {
+    VkDeviceSize srcOffset;
+    VkDeviceSize dstOffset;
+    VkDeviceSize size;
+} VkBufferCopy;
+
 typedef struct VkSubmitInfo {
     VkStructureType sType;
     const void* pNext;
@@ -608,6 +634,8 @@ VKAPI_ATTR void VKAPI_CALL vkFreeMemory(VkDevice, VkDeviceMemory, const VkAlloca
 VKAPI_ATTR VkResult VKAPI_CALL vkBindBufferMemory(VkDevice, VkBuffer, VkDeviceMemory, VkDeviceSize);
 VKAPI_ATTR VkResult VKAPI_CALL vkMapMemory(VkDevice, VkDeviceMemory, VkDeviceSize, VkDeviceSize, VkFlags, void**);
 VKAPI_ATTR void VKAPI_CALL vkUnmapMemory(VkDevice, VkDeviceMemory);
+VKAPI_ATTR VkResult VKAPI_CALL vkCreateBufferView(VkDevice, const VkBufferViewCreateInfo*, const VkAllocationCallbacks*, VkBufferView*);
+VKAPI_ATTR void VKAPI_CALL vkDestroyBufferView(VkDevice, VkBufferView, const VkAllocationCallbacks*);
 
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorSetLayout(VkDevice, const VkDescriptorSetLayoutCreateInfo*, const VkAllocationCallbacks*, VkDescriptorSetLayout*);
 VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorSetLayout(VkDevice, VkDescriptorSetLayout, const VkAllocationCallbacks*);
@@ -629,11 +657,14 @@ VKAPI_ATTR void VKAPI_CALL vkUpdateDescriptorSets(VkDevice, std::uint32_t, const
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateCommandPool(VkDevice, const VkCommandPoolCreateInfo*, const VkAllocationCallbacks*, VkCommandPool*);
 VKAPI_ATTR void VKAPI_CALL vkDestroyCommandPool(VkDevice, VkCommandPool, const VkAllocationCallbacks*);
 VKAPI_ATTR VkResult VKAPI_CALL vkAllocateCommandBuffers(VkDevice, const VkCommandBufferAllocateInfo*, VkCommandBuffer*);
+VKAPI_ATTR void VKAPI_CALL vkFreeCommandBuffers(VkDevice, VkCommandPool, std::uint32_t, const VkCommandBuffer*);
 VKAPI_ATTR VkResult VKAPI_CALL vkBeginCommandBuffer(VkCommandBuffer, const VkCommandBufferBeginInfo*);
 VKAPI_ATTR VkResult VKAPI_CALL vkEndCommandBuffer(VkCommandBuffer);
 VKAPI_ATTR void VKAPI_CALL vkCmdBindPipeline(VkCommandBuffer, VkPipelineBindPoint, VkPipeline);
 VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorSets(VkCommandBuffer, VkPipelineBindPoint, VkPipelineLayout, std::uint32_t, std::uint32_t, const VkDescriptorSet*, std::uint32_t, const std::uint32_t*);
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatch(VkCommandBuffer, std::uint32_t, std::uint32_t, std::uint32_t);
+VKAPI_ATTR void VKAPI_CALL vkCmdCopyBuffer(VkCommandBuffer, VkBuffer, VkBuffer, std::uint32_t, const VkBufferCopy*);
+VKAPI_ATTR void VKAPI_CALL vkCmdFillBuffer(VkCommandBuffer, VkBuffer, VkDeviceSize, VkDeviceSize, std::uint32_t);
 VKAPI_ATTR void VKAPI_CALL vkCmdPipelineBarrier(VkCommandBuffer, VkPipelineStageFlags, VkPipelineStageFlags, VkDependencyFlags, std::uint32_t, const void*, std::uint32_t, const VkBufferMemoryBarrier*, std::uint32_t, const void*);
 
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateFence(VkDevice, const VkFenceCreateInfo*, const VkAllocationCallbacks*, VkFence*);

@@ -21,7 +21,16 @@ python -m unittest discover -s tests -v
 bash gpu/scripts/run_all_validation.sh
 ```
 
-The bundled native run selected SwiftShader, a CPU/software Vulkan device. The benchmark modules use the fixed reference query sheet=1, orientation=0, compatibility-mask bit=2; production modules should parameterize or version this convention. `physical_gpu_claim` is therefore false. Re-run the direct Vulkan benchmark on a named physical GPU before making physical-GPU performance claims.
+The original portable baseline in `benchmarks/vulkan_native_run/` selected SwiftShader, a CPU/software Vulkan device. A local Windows physical-GPU validation is now recorded in [`benchmarks/PHYSICAL_GPU_REPORT_RTX_5070_TI_LAPTOP.md`](benchmarks/PHYSICAL_GPU_REPORT_RTX_5070_TI_LAPTOP.md), with raw and aggregate data under `benchmarks/windows_native_run/`, `benchmarks/windows_lut_cache_run/`, and `benchmarks/windows_physical_gpu_aggregate/`.
+
+On Windows with Visual Studio Build Tools, run the device-local Vulkan path directly:
+
+```powershell
+& .\gpu\scripts\run_windows_vulkan_benchmarks.ps1
+& .\gpu\scripts\run_windows_lut_benchmarks.ps1
+```
+
+The benchmark modules use the fixed reference query sheet=1, orientation=0, compatibility-mask bit=2; production modules should parameterize or version this convention.
 
 ## Core execution path
 

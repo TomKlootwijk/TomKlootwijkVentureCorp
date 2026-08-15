@@ -1,0 +1,49 @@
+﻿{
+    "schema":  "UGTS-WINDOWS-GPU-ENVIRONMENT-1.0",
+    "captured_utc":  "2026-08-15T01:55:46.7921758Z",
+    "os":  {
+               "caption":  "Microsoft Windows 11 Home",
+               "version":  "10.0.26200",
+               "build_number":  "26200"
+           },
+    "cpu":  {
+                "name":  "Intel(R) Core(TM) Ultra 7 255HX",
+                "physical_cores":  20,
+                "logical_processors":  20
+            },
+    "gpu":  {
+                "name":  "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+                "pci_bus_id":  "00000000:01:00.0",
+                "driver_version":  "591.59",
+                "memory_total_mib":  12227,
+                "observed_pstate":  "P8",
+                "observed_graphics_clock_mhz":  180,
+                "observed_memory_clock_mhz":  405,
+                "observed_power_w":  7.17,
+                "power_limit_w":  null,
+                "observed_temperature_c":  54,
+                "cuda":  {
+                             "torch_version":  "2.7.1+cu128",
+                             "cuda_available":  true,
+                             "name":  "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+                             "compute_capability":  "12.0",
+                             "multiprocessor_count":  46,
+                             "total_memory_bytes":  12820480000,
+                             "l2_cache_bytes":  37748736,
+                             "uuid":  "072d759c-b0d7-47c0-04e9-48d3e81c9c8d"
+                         },
+                "vulkan_api":  "1.4.325",
+                "vulkan_device_type":  "discrete",
+                "vulkan_vendor_id":  4318,
+                "vulkan_device_id":  12056,
+                "vulkan_timestamp_period_ns":  1,
+                "vulkan_timestamp_valid_bits":  64
+            },
+    "execution":  {
+                      "driver_model":  "WDDM",
+                      "storage_memory":  "VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT",
+                      "transfer_memory":  "VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT",
+                      "gpu_timestamp_scope":  "compute dispatch only",
+                      "performance_counter_access":  "blocked: insufficient NVIDIA GPU performance-counter privilege"
+                  }
+}

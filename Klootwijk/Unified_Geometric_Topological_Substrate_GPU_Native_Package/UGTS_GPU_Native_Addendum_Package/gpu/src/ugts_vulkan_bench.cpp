@@ -83,6 +83,7 @@ struct Args {
     fs::path out_dir = "vulkan_benchmark_out";
     std::vector<std::size_t> sizes = {1024, 16384, 262144, 1048576};
     int warmup = 3;
+    int warmup_ms = 0;
     int iterations = 12;
 };
 
@@ -107,15 +108,16 @@ Args parse_args(int argc, char** argv) {
         else if (arg == "--out-dir") a.out_dir = value("--out-dir");
         else if (arg == "--sizes") a.sizes = parse_sizes(value("--sizes"));
         else if (arg == "--warmup") a.warmup = std::stoi(value("--warmup"));
+        else if (arg == "--warmup-ms") a.warmup_ms = std::stoi(value("--warmup-ms"));
         else if (arg == "--iterations") a.iterations = std::stoi(value("--iterations"));
         else if (arg == "--help" || arg == "-h") {
             std::cout << "UGTS native Vulkan benchmark\n"
                       << "  --spirv-dir PATH\n  --out-dir PATH\n  --sizes N,N,...\n"
-                      << "  --warmup N\n  --iterations N\n";
+                      << "  --warmup N\n  --warmup-ms N\n  --iterations N\n";
             std::exit(0);
         } else throw std::runtime_error("unknown argument: " + arg);
     }
-    if (a.warmup < 0 || a.iterations < 1) throw std::runtime_error("invalid iteration count");
+    if (a.warmup < 0 || a.warmup_ms < 0 || a.iterations < 1) throw std::runtime_error("invalid iteration count");
     return a;
 }
 
@@ -244,11 +246,13 @@ struct MappedBuffer {
     void* mapped = nullptr;
 
     MappedBuffer() = default;
-    MappedBuffer(const VulkanContext& c, VkDeviceSize bytes) : ctx(&c), size(bytes) {
+    MappedBuffer(const VulkanContext& c, VkDeviceSize bytes,
+                 VkBufferUsageFlags usage = VK_BUFFER_USAGE_TRANSFER_SRC_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT)
+        : ctx(&c), size(bytes) {
         VkBufferCreateInfo bci{};
         bci.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
         bci.size = bytes;
-        bci.usage = VK_BUFFER_USAGE_STORAGE_BUFFER_BIT;
+        bci.usage = usage;
         bci.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
         check(vkCreateBuffer(c.device(), &bci, nullptr, &buffer), "vkCreateBuffer");
         VkMemoryRequirements req{};
@@ -285,6 +289,73 @@ struct MappedBuffer {
     }
 };
 
+struct DeviceBuffer {
+    const VulkanContext* ctx = nullptr;
+    VkBuffer buffer = VK_NULL_HANDLE;
+    VkDeviceMemory memory = VK_NULL_HANDLE;
+    VkDeviceSize size = 0;
+
+    DeviceBuffer() = default;
+    DeviceBuffer(const VulkanContext& c, VkDeviceSize bytes, VkBufferUsageFlags usage)
+        : ctx(&c), size(bytes) {
+        VkBufferCreateInfo bci{};
+        bci.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
+        bci.size = bytes;
+        bci.usage = usage;
+        bci.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
+        check(vkCreateBuffer(c.device(), &bci, nullptr, &buffer), "vkCreateBuffer(device-local)");
+        VkMemoryRequirements req{};
+        vkGetBufferMemoryRequirements(c.device(), buffer, &req);
+        VkMemoryAllocateInfo mai{};
+        mai.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
+        mai.allocationSize = req.size;
+        mai.memoryTypeIndex = c.find_memory_type(req.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+        check(vkAllocateMemory(c.device(), &mai, nullptr, &memory), "vkAllocateMemory(device-local)");
+        check(vkBindBufferMemory(c.device(), buffer, memory, 0), "vkBindBufferMemory(device-local)");
+    }
+
+    DeviceBuffer(const DeviceBuffer&) = delete;
+    DeviceBuffer& operator=(const DeviceBuffer&) = delete;
+    ~DeviceBuffer() {
+        if (!ctx) return;
+        if (buffer) vkDestroyBuffer(ctx->device(), buffer, nullptr);
+        if (memory) vkFreeMemory(ctx->device(), memory, nullptr);
+    }
+};
+
+template<class Record>
+double submit_once(const VulkanContext& ctx, const char* label, Record record) {
+    VkCommandBufferAllocateInfo cai{};
+    cai.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+    cai.commandPool = ctx.command_pool();
+    cai.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+    cai.commandBufferCount = 1;
+    VkCommandBuffer cmd = VK_NULL_HANDLE;
+    check(vkAllocateCommandBuffers(ctx.device(), &cai, &cmd), "vkAllocateCommandBuffers(transfer)");
+    VkCommandBufferBeginInfo bi{};
+    bi.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+    bi.flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
+    check(vkBeginCommandBuffer(cmd, &bi), "vkBeginCommandBuffer(transfer)");
+    record(cmd);
+    check(vkEndCommandBuffer(cmd), "vkEndCommandBuffer(transfer)");
+    VkFenceCreateInfo fci{};
+    fci.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+    VkFence fence = VK_NULL_HANDLE;
+    check(vkCreateFence(ctx.device(), &fci, nullptr, &fence), "vkCreateFence(transfer)");
+    VkSubmitInfo si{};
+    si.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+    si.commandBufferCount = 1;
+    si.pCommandBuffers = &cmd;
+    const auto start = Clock::now();
+    check(vkQueueSubmit(ctx.queue(), 1, &si, fence), label);
+    check(vkWaitForFences(ctx.device(), 1, &fence, VK_TRUE, std::numeric_limits<std::uint64_t>::max()),
+          "vkWaitForFences(transfer)");
+    const auto stop = Clock::now();
+    vkDestroyFence(ctx.device(), fence, nullptr);
+    vkFreeCommandBuffers(ctx.device(), ctx.command_pool(), 1, &cmd);
+    return elapsed_ms(start, stop);
+}
+
 std::uint32_t mix32(std::uint32_t x) {
     x ^= x >> 16; x *= 0x7feb352du; x ^= x >> 15; x *= 0x846ca68bu; x ^= x >> 16; return x;
 }
@@ -319,6 +390,12 @@ float f16_to_f32(std::uint16_t h) {
     } else if (exp == 31) x = sign | 0x7f800000u | (mant << 13);
     else x = sign | ((exp + 112u) << 23) | (mant << 13);
     float f; std::memcpy(&f, &x, 4); return f;
+}
+
+float u32_to_f32(std::uint32_t x) { float f; std::memcpy(&f, &x, 4); return f; }
+bool close_float(float actual,float expected,float tolerance) {
+    return std::isfinite(actual)&&std::isfinite(expected)&&
+        std::abs(actual-expected)<=tolerance*std::max(1.0f,std::abs(expected));
 }
 
 std::uint32_t pack2(float a, float b) { return std::uint32_t(f32_to_f16(a)) | (std::uint32_t(f32_to_f16(b)) << 16); }
@@ -369,13 +446,18 @@ Fields decode32(const State32& s) {
     f.sheet=s.words[6]&255u;f.orientation=(s.words[6]>>8)&1u;f.compatibility_mask=(s.words[6]>>9)&0xffffu;f.lineage_seed=s.words[7];return f;
 }
 
-struct Eval { bool support=false,compatible=false,verified=false; std::uint32_t route=0,lineage=0; };
+struct Eval {
+    bool support=false,compatible=false,verified=false;
+    float sdf=0,cone_margin=0,guard=0,confidence=0;
+    std::uint32_t route=0,lineage=0,state_flags=0;
+};
 Eval eval(const Fields& f,std::size_t i) {
     Eval e{};const float r=std::sqrt(f.px*f.px+f.py*f.py+f.pz*f.pz);const float al=std::sqrt(f.ax*f.ax+f.ay*f.ay+f.az*f.az);
     const float c=(r>1e-8f&&al>1e-8f)?(f.px*f.ax+f.py*f.ay+f.pz*f.az)/(r*al):1.0f;
-    e.support=r<=f.radius&&c>=f.cone_cos;e.compatible=(f.compatibility_mask&4u)&&f.sheet==1u&&(f.orientation&1u)==0u;
-    const float sdf=r-f.radius,guard=std::abs(sdf)-f.guard_epsilon,confidence=std::exp2(-std::abs(sdf)*32.0f);
-    e.verified=e.support&&e.compatible&&guard<=0&&confidence>=f.confidence_floor;e.route=(f.orientation^(e.verified?1u:0u))&1u;e.lineage=mix32(f.lineage_seed^std::uint32_t(i));return e;
+    e.sdf=r-f.radius;e.cone_margin=c-f.cone_cos;e.support=e.sdf<=0&&e.cone_margin>=0;e.compatible=(f.compatibility_mask&4u)&&f.sheet==1u&&(f.orientation&1u)==0u;
+    e.guard=std::abs(e.sdf)-f.guard_epsilon;e.confidence=std::exp2(-std::abs(e.sdf)*32.0f);
+    e.verified=e.support&&e.compatible&&e.guard<=0&&e.confidence>=f.confidence_floor;e.route=(f.orientation^(e.verified?1u:0u))&1u;e.lineage=mix32(f.lineage_seed^std::uint32_t(i));
+    e.state_flags=(e.verified?1u:0u)|(e.route<<1)|(f.sheet<<2)|(e.support?(1u<<10):0u)|(e.compatible?(1u<<11):0u);return e;
 }
 
 struct Counts { std::uint64_t candidates=0,supported=0,compatible=0,verified=0; };
@@ -408,17 +490,30 @@ void destroy_program(const VulkanContext& ctx,PipelineProgram& p){if(p.pipeline)
 
 struct BenchRow {
     std::string profile,mode;std::size_t candidates=0,input_record_bytes=0,output_record_bytes=0,total_buffer_bytes=0;
-    double setup_ms=0,host_min_ms=0,host_mean_ms=0,host_p50_ms=0,host_p95_ms=0,host_p99_ms=0,host_max_ms=0;
+    double setup_ms=0,upload_ms=0,readback_ms=0,host_min_ms=0,host_mean_ms=0,host_p50_ms=0,host_p95_ms=0,host_p99_ms=0,host_max_ms=0;
     double device_min_ms=0,device_mean_ms=0,device_p50_ms=0,device_p95_ms=0,device_p99_ms=0,device_max_ms=0;
-    double candidate_rate_mps=0,verified_event_rate_mps=0,effective_bandwidth_gbps=0;Counts counts{};bool counters_ok=false,sample_ok=false;
+    double candidate_rate_mps=0,verified_event_rate_mps=0,effective_bandwidth_gbps=0;std::size_t validated_outputs=0,oracle_exact_outputs=0,boundary_divergent_outputs=0;Counts counts{},oracle_counts{};bool counters_ok=false,sample_ok=false;
 };
 
 template<class StateT,class EventT,class Make,class Decode>
-BenchRow run_one(const VulkanContext& ctx,VkDescriptorSetLayout dsl,VkPipelineLayout layout,VkPipeline pipeline,const std::string& profile,const std::string& mode,bool commit,std::size_t n,int warmup,int iterations,Make make,Decode decode) {
+BenchRow run_one(const VulkanContext& ctx,VkDescriptorSetLayout dsl,VkPipelineLayout layout,VkPipeline pipeline,const std::string& profile,const std::string& mode,bool commit,std::size_t n,int warmup,int warmup_ms,int iterations,Make make,Decode decode) {
     auto setup0=Clock::now();
     std::vector<StateT> states(n);for(std::size_t i=0;i<n;++i)states[i]=make(i);const Counts expected=counts_for(states,decode);
-    MappedBuffer input(ctx,n*sizeof(StateT)),output(ctx,n*sizeof(EventT)),counter(ctx,16);
-    std::memcpy(input.mapped,states.data(),n*sizeof(StateT));std::memset(output.mapped,0,n*sizeof(EventT));std::memset(counter.mapped,0,16);
+    const VkDeviceSize input_bytes=n*sizeof(StateT),output_bytes=n*sizeof(EventT),counter_bytes=16;
+    MappedBuffer upload(ctx,input_bytes,VK_BUFFER_USAGE_TRANSFER_SRC_BIT);
+    MappedBuffer output_readback(ctx,output_bytes,VK_BUFFER_USAGE_TRANSFER_DST_BIT);
+    MappedBuffer counter_readback(ctx,counter_bytes,VK_BUFFER_USAGE_TRANSFER_DST_BIT);
+    DeviceBuffer input(ctx,input_bytes,VK_BUFFER_USAGE_STORAGE_BUFFER_BIT|VK_BUFFER_USAGE_TRANSFER_DST_BIT);
+    DeviceBuffer output(ctx,output_bytes,VK_BUFFER_USAGE_STORAGE_BUFFER_BIT|VK_BUFFER_USAGE_TRANSFER_SRC_BIT);
+    DeviceBuffer counter(ctx,counter_bytes,VK_BUFFER_USAGE_STORAGE_BUFFER_BIT|VK_BUFFER_USAGE_TRANSFER_SRC_BIT|VK_BUFFER_USAGE_TRANSFER_DST_BIT);
+    std::memcpy(upload.mapped,states.data(),std::size_t(input_bytes));
+    const double upload_ms=submit_once(ctx,"vkQueueSubmit(upload)",[&](VkCommandBuffer transfer_cmd){
+        VkBufferMemoryBarrier host_to_transfer{};host_to_transfer.sType=VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER;host_to_transfer.srcAccessMask=VK_ACCESS_HOST_WRITE_BIT;host_to_transfer.dstAccessMask=VK_ACCESS_TRANSFER_READ_BIT;host_to_transfer.srcQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;host_to_transfer.dstQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;host_to_transfer.buffer=upload.buffer;host_to_transfer.offset=0;host_to_transfer.size=VK_WHOLE_SIZE;
+        vkCmdPipelineBarrier(transfer_cmd,VK_PIPELINE_STAGE_HOST_BIT,VK_PIPELINE_STAGE_TRANSFER_BIT,0,0,nullptr,1,&host_to_transfer,0,nullptr);
+        VkBufferCopy region{0,0,input_bytes};vkCmdCopyBuffer(transfer_cmd,upload.buffer,input.buffer,1,&region);
+        VkBufferMemoryBarrier transfer_to_compute{};transfer_to_compute.sType=VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER;transfer_to_compute.srcAccessMask=VK_ACCESS_TRANSFER_WRITE_BIT;transfer_to_compute.dstAccessMask=VK_ACCESS_SHADER_READ_BIT;transfer_to_compute.srcQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;transfer_to_compute.dstQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;transfer_to_compute.buffer=input.buffer;transfer_to_compute.offset=0;transfer_to_compute.size=VK_WHOLE_SIZE;
+        vkCmdPipelineBarrier(transfer_cmd,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,0,0,nullptr,1,&transfer_to_compute,0,nullptr);
+    });
     VkDescriptorPoolSize ps{VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,3};VkDescriptorPoolCreateInfo dp{};dp.sType=VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;dp.maxSets=1;dp.poolSizeCount=1;dp.pPoolSizes=&ps;
     VkDescriptorPool pool=VK_NULL_HANDLE;check(vkCreateDescriptorPool(ctx.device(),&dp,nullptr,&pool),"vkCreateDescriptorPool");
     VkDescriptorSetAllocateInfo dai{};dai.sType=VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;dai.descriptorPool=pool;dai.descriptorSetCount=1;dai.pSetLayouts=&dsl;VkDescriptorSet set=VK_NULL_HANDLE;check(vkAllocateDescriptorSets(ctx.device(),&dai,&set),"vkAllocateDescriptorSets");
@@ -428,34 +523,73 @@ BenchRow run_one(const VulkanContext& ctx,VkDescriptorSetLayout dsl,VkPipelineLa
     VkCommandBufferAllocateInfo cai{};cai.sType=VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;cai.commandPool=ctx.command_pool();cai.level=VK_COMMAND_BUFFER_LEVEL_PRIMARY;cai.commandBufferCount=1;VkCommandBuffer cmd=VK_NULL_HANDLE;check(vkAllocateCommandBuffers(ctx.device(),&cai,&cmd),"vkAllocateCommandBuffers");
     VkQueryPoolCreateInfo qci{};qci.sType=VK_STRUCTURE_TYPE_QUERY_POOL_CREATE_INFO;qci.queryType=VK_QUERY_TYPE_TIMESTAMP;qci.queryCount=2;VkQueryPool qp=VK_NULL_HANDLE;check(vkCreateQueryPool(ctx.device(),&qci,nullptr,&qp),"vkCreateQueryPool");
     VkCommandBufferBeginInfo bi{};bi.sType=VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;bi.flags=VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT;check(vkBeginCommandBuffer(cmd,&bi),"vkBeginCommandBuffer");
-    vkCmdResetQueryPool(cmd,qp,0,2);vkCmdWriteTimestamp(cmd,VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT,qp,0);vkCmdBindPipeline(cmd,VK_PIPELINE_BIND_POINT_COMPUTE,pipeline);vkCmdBindDescriptorSets(cmd,VK_PIPELINE_BIND_POINT_COMPUTE,layout,0,1,&set,0,nullptr);vkCmdDispatch(cmd,std::uint32_t((n+255)/256),1,1);vkCmdWriteTimestamp(cmd,VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT,qp,1);
-    VkBufferMemoryBarrier barriers[2]{};for(auto& b:barriers){b.sType=VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER;b.srcAccessMask=VK_ACCESS_SHADER_WRITE_BIT;b.dstAccessMask=VK_ACCESS_HOST_READ_BIT;b.srcQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;b.dstQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;b.offset=0;b.size=VK_WHOLE_SIZE;}barriers[0].buffer=output.buffer;barriers[1].buffer=counter.buffer;
-    vkCmdPipelineBarrier(cmd,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_PIPELINE_STAGE_HOST_BIT,0,0,nullptr,2,barriers,0,nullptr);check(vkEndCommandBuffer(cmd),"vkEndCommandBuffer");
+    vkCmdResetQueryPool(cmd,qp,0,2);vkCmdFillBuffer(cmd,counter.buffer,0,counter.size,0u);
+    VkBufferMemoryBarrier clear_to_compute{};clear_to_compute.sType=VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER;clear_to_compute.srcAccessMask=VK_ACCESS_TRANSFER_WRITE_BIT;clear_to_compute.dstAccessMask=VK_ACCESS_SHADER_READ_BIT|VK_ACCESS_SHADER_WRITE_BIT;clear_to_compute.srcQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;clear_to_compute.dstQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;clear_to_compute.buffer=counter.buffer;clear_to_compute.offset=0;clear_to_compute.size=VK_WHOLE_SIZE;
+    vkCmdPipelineBarrier(cmd,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,0,0,nullptr,1,&clear_to_compute,0,nullptr);
+    vkCmdWriteTimestamp(cmd,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,qp,0);vkCmdBindPipeline(cmd,VK_PIPELINE_BIND_POINT_COMPUTE,pipeline);vkCmdBindDescriptorSets(cmd,VK_PIPELINE_BIND_POINT_COMPUTE,layout,0,1,&set,0,nullptr);vkCmdDispatch(cmd,std::uint32_t((n+255)/256),1,1);vkCmdWriteTimestamp(cmd,VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT,qp,1);check(vkEndCommandBuffer(cmd),"vkEndCommandBuffer");
     VkFenceCreateInfo fci{};fci.sType=VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;VkFence fence=VK_NULL_HANDLE;check(vkCreateFence(ctx.device(),&fci,nullptr,&fence),"vkCreateFence");
     VkSubmitInfo si{};si.sType=VK_STRUCTURE_TYPE_SUBMIT_INFO;si.commandBufferCount=1;si.pCommandBuffers=&cmd;
     auto setup1=Clock::now();
-    auto submit=[&](double* host,double* device){std::memset(counter.mapped,0,16);check(vkResetFences(ctx.device(),1,&fence),"vkResetFences");auto a=Clock::now();check(vkQueueSubmit(ctx.queue(),1,&si,fence),"vkQueueSubmit");check(vkWaitForFences(ctx.device(),1,&fence,VK_TRUE,std::numeric_limits<std::uint64_t>::max()),"vkWaitForFences");auto b=Clock::now();if(host)*host=elapsed_ms(a,b);std::uint64_t ticks[2]={};check(vkGetQueryPoolResults(ctx.device(),qp,0,2,sizeof(ticks),ticks,sizeof(std::uint64_t),VK_QUERY_RESULT_64_BIT|VK_QUERY_RESULT_WAIT_BIT),"vkGetQueryPoolResults");std::uint64_t delta=0;if(ctx.timestamp_bits()>=64)delta=ticks[1]-ticks[0];else if(ctx.timestamp_bits()>0){const std::uint64_t mask=(std::uint64_t(1)<<ctx.timestamp_bits())-1;delta=(ticks[1]-ticks[0])&mask;}if(device)*device=double(delta)*double(ctx.timestamp_period_ns())/1.0e6;};
-    for(int i=0;i<warmup;++i)submit(nullptr,nullptr);
+    auto submit=[&](double* host,double* device){check(vkResetFences(ctx.device(),1,&fence),"vkResetFences");auto a=Clock::now();check(vkQueueSubmit(ctx.queue(),1,&si,fence),"vkQueueSubmit");check(vkWaitForFences(ctx.device(),1,&fence,VK_TRUE,std::numeric_limits<std::uint64_t>::max()),"vkWaitForFences");auto b=Clock::now();if(host)*host=elapsed_ms(a,b);std::uint64_t ticks[2]={};check(vkGetQueryPoolResults(ctx.device(),qp,0,2,sizeof(ticks),ticks,sizeof(std::uint64_t),VK_QUERY_RESULT_64_BIT|VK_QUERY_RESULT_WAIT_BIT),"vkGetQueryPoolResults");std::uint64_t delta=0;if(ctx.timestamp_bits()>=64)delta=ticks[1]-ticks[0];else if(ctx.timestamp_bits()>0){const std::uint64_t mask=(std::uint64_t(1)<<ctx.timestamp_bits())-1;delta=(ticks[1]-ticks[0])&mask;}if(device)*device=double(delta)*double(ctx.timestamp_period_ns())/1.0e6;};
+    int warmup_submissions=0;const auto warmup_start=Clock::now();while(warmup_submissions<warmup||elapsed_ms(warmup_start,Clock::now())<warmup_ms){submit(nullptr,nullptr);++warmup_submissions;}
     std::vector<double> host_times,device_times;host_times.reserve(iterations);device_times.reserve(iterations);for(int i=0;i<iterations;++i){double h=0,d=0;submit(&h,&d);host_times.push_back(h);device_times.push_back(d);}
-    const auto* actual32=static_cast<const std::uint32_t*>(counter.mapped);Counts actual=expected;bool counters_ok=!commit;if(commit){actual={actual32[0],actual32[1],actual32[2],actual32[3]};counters_ok=actual.candidates==expected.candidates&&actual.supported==expected.supported&&actual.compatible==expected.compatible&&actual.verified==expected.verified;}
-    bool sample_ok=true;const std::size_t sample=std::min<std::size_t>(n,4096);const EventT* events=static_cast<const EventT*>(output.mapped);for(std::size_t i=0;i<sample;++i){const auto e=eval(decode(states[i]),i);std::uint32_t verified,route,lineage;if constexpr(sizeof(EventT)==32){verified=events[i].topology_bits[0];route=events[i].topology_bits[1];lineage=events[i].topology_bits[2];}else{verified=events[i].words[2]&1u;route=(events[i].words[2]>>1)&1u;lineage=events[i].words[3];}if(verified!=(e.verified?1u:0u)||route!=e.route||lineage!=e.lineage){sample_ok=false;break;}}
-    BenchRow r{};r.profile=profile;r.mode=mode;r.candidates=n;r.input_record_bytes=sizeof(StateT);r.output_record_bytes=sizeof(EventT);r.total_buffer_bytes=n*(sizeof(StateT)+sizeof(EventT))+16;r.setup_ms=elapsed_ms(setup0,setup1);
+    const double readback_ms=submit_once(ctx,"vkQueueSubmit(readback)",[&](VkCommandBuffer transfer_cmd){
+        VkBufferMemoryBarrier compute_to_transfer[2]{};for(auto& b:compute_to_transfer){b.sType=VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER;b.srcAccessMask=VK_ACCESS_SHADER_WRITE_BIT;b.dstAccessMask=VK_ACCESS_TRANSFER_READ_BIT;b.srcQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;b.dstQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;b.offset=0;b.size=VK_WHOLE_SIZE;}compute_to_transfer[0].buffer=output.buffer;compute_to_transfer[1].buffer=counter.buffer;
+        vkCmdPipelineBarrier(transfer_cmd,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_PIPELINE_STAGE_TRANSFER_BIT,0,0,nullptr,2,compute_to_transfer,0,nullptr);
+        VkBufferCopy output_region{0,0,output_bytes};vkCmdCopyBuffer(transfer_cmd,output.buffer,output_readback.buffer,1,&output_region);
+        VkBufferCopy counter_region{0,0,counter_bytes};vkCmdCopyBuffer(transfer_cmd,counter.buffer,counter_readback.buffer,1,&counter_region);
+        VkBufferMemoryBarrier transfer_to_host[2]{};for(auto& b:transfer_to_host){b.sType=VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER;b.srcAccessMask=VK_ACCESS_TRANSFER_WRITE_BIT;b.dstAccessMask=VK_ACCESS_HOST_READ_BIT;b.srcQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;b.dstQueueFamilyIndex=VK_QUEUE_FAMILY_IGNORED;b.offset=0;b.size=VK_WHOLE_SIZE;}transfer_to_host[0].buffer=output_readback.buffer;transfer_to_host[1].buffer=counter_readback.buffer;
+        vkCmdPipelineBarrier(transfer_cmd,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_PIPELINE_STAGE_HOST_BIT,0,0,nullptr,2,transfer_to_host,0,nullptr);
+    });
+    const auto* committed_counts=static_cast<const std::uint32_t*>(counter_readback.mapped);
+    bool sample_ok=true;std::size_t validated_outputs=0,oracle_exact_outputs=0,boundary_divergent_outputs=0;Counts observed{};const EventT* events=static_cast<const EventT*>(output_readback.mapped);
+    for(std::size_t i=0;i<n;++i){
+        const auto f=decode(states[i]);const auto e=eval(f,i);std::uint32_t flags=0,lineage=0,verified_word=0,route_word=0;bool scalar_valid=false;
+        if constexpr(sizeof(EventT)==32){const auto& event=events[i];flags=event.topology_bits[3];lineage=event.topology_bits[2];verified_word=event.topology_bits[0];route_word=event.topology_bits[1];scalar_valid=close_float(u32_to_f32(event.scalar_bits[0]),e.sdf,5e-5f)&&close_float(u32_to_f32(event.scalar_bits[1]),e.guard,5e-5f)&&close_float(u32_to_f32(event.scalar_bits[2]),e.confidence,5e-5f)&&u32_to_f32(event.scalar_bits[3])==f.time;}
+        else{const auto& event=events[i];const auto packed=unpack2(event.words[1]);flags=event.words[2];lineage=event.words[3];verified_word=flags&1u;route_word=(flags>>1)&1u;scalar_valid=close_float(u32_to_f32(event.words[0]),e.sdf,5e-4f)&&close_float(packed[0],e.guard,2e-3f)&&close_float(packed[1],e.confidence,2e-3f);}
+        const bool actual_verified=(flags&1u)!=0,actual_support=(flags&(1u<<10))!=0,actual_compatible=(flags&(1u<<11))!=0;const std::uint32_t actual_route=(flags>>1)&1u;
+        ++observed.candidates;if(actual_support)++observed.supported;if(actual_support&&actual_compatible)++observed.compatible;if(actual_verified)++observed.verified;
+        const std::uint32_t internally_expected_flags=(actual_verified?1u:0u)|(actual_route<<1)|(f.sheet<<2)|(actual_support?(1u<<10):0u)|(actual_compatible?(1u<<11):0u);
+        const bool internally_consistent=flags==internally_expected_flags&&verified_word==(actual_verified?1u:0u)&&route_word==actual_route&&actual_route==((f.orientation^(actual_verified?1u:0u))&1u)&&lineage==e.lineage&&actual_compatible==e.compatible;
+        const bool oracle_exact=flags==e.state_flags;const bool boundary_case=std::abs(e.sdf)<=5e-5f||std::abs(e.cone_margin)<=5e-5f||std::abs(e.guard)<=5e-5f||std::abs(e.confidence-f.confidence_floor)<=5e-5f;
+        const bool valid=internally_consistent&&scalar_valid&&(oracle_exact||boundary_case);
+        if(!valid){std::cerr<<"validation mismatch "<<profile<<' '<<mode<<" i="<<i<<" flags="<<flags<<" expected_flags="<<e.state_flags<<" scalar_valid="<<(scalar_valid?1:0)<<" internal_valid="<<(internally_consistent?1:0)<<" boundary="<<(boundary_case?1:0)<<'\n';sample_ok=false;break;}
+        ++validated_outputs;if(oracle_exact)++oracle_exact_outputs;else ++boundary_divergent_outputs;
+    }
+    Counts committed{committed_counts[0],committed_counts[1],committed_counts[2],committed_counts[3]};const bool counters_ok=!commit||(committed.candidates==observed.candidates&&committed.supported==observed.supported&&committed.compatible==observed.compatible&&committed.verified==observed.verified);
+    if(!counters_ok)std::cerr<<"counter mismatch "<<profile<<' '<<mode<<" observed="<<observed.candidates<<','<<observed.supported<<','<<observed.compatible<<','<<observed.verified<<" committed="<<committed.candidates<<','<<committed.supported<<','<<committed.compatible<<','<<committed.verified<<'\n';
+    BenchRow r{};r.profile=profile;r.mode=mode;r.candidates=n;r.input_record_bytes=sizeof(StateT);r.output_record_bytes=sizeof(EventT);r.total_buffer_bytes=n*(sizeof(StateT)+sizeof(EventT))+16;r.setup_ms=elapsed_ms(setup0,setup1);r.upload_ms=upload_ms;r.readback_ms=readback_ms;
     r.host_min_ms=*std::min_element(host_times.begin(),host_times.end());r.host_max_ms=*std::max_element(host_times.begin(),host_times.end());r.host_mean_ms=std::accumulate(host_times.begin(),host_times.end(),0.0)/host_times.size();r.host_p50_ms=percentile(host_times,.5);r.host_p95_ms=percentile(host_times,.95);r.host_p99_ms=percentile(host_times,.99);
     r.device_min_ms=*std::min_element(device_times.begin(),device_times.end());r.device_max_ms=*std::max_element(device_times.begin(),device_times.end());r.device_mean_ms=std::accumulate(device_times.begin(),device_times.end(),0.0)/device_times.size();r.device_p50_ms=percentile(device_times,.5);r.device_p95_ms=percentile(device_times,.95);r.device_p99_ms=percentile(device_times,.99);
-    const double basis=r.device_p50_ms>0?r.device_p50_ms:r.host_p50_ms;r.candidate_rate_mps=double(n)/basis/1000.0;r.verified_event_rate_mps=double(actual.verified)/basis/1000.0;r.effective_bandwidth_gbps=double(n*(sizeof(StateT)+sizeof(EventT)))/(basis*1e6);r.counts=actual;r.counters_ok=counters_ok;r.sample_ok=sample_ok;
-    vkDestroyFence(ctx.device(),fence,nullptr);vkDestroyQueryPool(ctx.device(),qp,nullptr);vkDestroyDescriptorPool(ctx.device(),pool,nullptr);return r;
+    const double basis=r.device_p50_ms>0?r.device_p50_ms:r.host_p50_ms;r.candidate_rate_mps=double(n)/basis/1000.0;r.verified_event_rate_mps=double(observed.verified)/basis/1000.0;r.effective_bandwidth_gbps=double(n*(sizeof(StateT)+sizeof(EventT)))/(basis*1e6);r.validated_outputs=validated_outputs;r.oracle_exact_outputs=oracle_exact_outputs;r.boundary_divergent_outputs=boundary_divergent_outputs;r.counts=observed;r.oracle_counts=expected;r.counters_ok=counters_ok;r.sample_ok=sample_ok;
+    vkDestroyFence(ctx.device(),fence,nullptr);vkDestroyQueryPool(ctx.device(),qp,nullptr);vkFreeCommandBuffers(ctx.device(),ctx.command_pool(),1,&cmd);vkDestroyDescriptorPool(ctx.device(),pool,nullptr);return r;
 }
 
 struct ProgramRecord {std::string name;fs::path spv_path;PipelineProgram program;};
 
-void write_json(const VulkanContext& ctx,const Args& args,const std::vector<ProgramRecord>& programs,const std::vector<BenchRow>& rows,const fs::path& path){std::ofstream f(path);f<<std::fixed<<std::setprecision(6);const auto&p=ctx.properties();f<<"{\n  \"schema\": \"UGTS-VK-BENCH-1.1\",\n  \"runtime\": \"Vulkan compute\",\n  \"physical_gpu_claim\": "<<(p.deviceType==VK_PHYSICAL_DEVICE_TYPE_CPU?"false":"true")<<",\n  \"device\": {\"name\": \""<<json_escape(p.deviceName)<<"\", \"type\": "<<int(p.deviceType)<<", \"vendor_id\": "<<p.vendorID<<", \"device_id\": "<<p.deviceID<<", \"api_version\": \""<<api_major(p.apiVersion)<<'.'<<api_minor(p.apiVersion)<<'.'<<api_patch(p.apiVersion)<<"\", \"timestamp_period_ns\": "<<p.limits.timestampPeriod<<", \"timestamp_valid_bits\": "<<ctx.timestamp_bits()<<"},\n  \"run_parameters\": {\"warmup\": "<<args.warmup<<", \"iterations\": "<<args.iterations<<"},\n  \"programs\": [\n";for(std::size_t i=0;i<programs.size();++i){const auto&x=programs[i];f<<"    {\"name\": \""<<x.name<<"\", \"spirv_bytes\": "<<fs::file_size(x.spv_path)<<", \"shader_module_create_ms\": "<<x.program.module_create_ms<<", \"cold_pipeline_create_ms\": "<<x.program.cold_pipeline_ms<<", \"pipeline_cache_bytes\": "<<x.program.cache_blob.size()<<", \"cached_pipeline_create_ms\": "<<x.program.cached_pipeline_ms<<", \"cache_reload_ok\": "<<(x.program.cache_reload_ok?"true":"false")<<"}"<<(i+1==programs.size()?"\n":",\n");}f<<"  ],\n  \"benchmarks\": [\n";for(std::size_t i=0;i<rows.size();++i){const auto&r=rows[i];f<<"    {\"profile\": \""<<r.profile<<"\", \"mode\": \""<<r.mode<<"\", \"candidates\": "<<r.candidates<<", \"input_record_bytes\": "<<r.input_record_bytes<<", \"output_record_bytes\": "<<r.output_record_bytes<<", \"total_buffer_bytes\": "<<r.total_buffer_bytes<<", \"setup_ms\": "<<r.setup_ms<<", \"host_dispatch_ms\": {\"min\": "<<r.host_min_ms<<", \"mean\": "<<r.host_mean_ms<<", \"p50\": "<<r.host_p50_ms<<", \"p95\": "<<r.host_p95_ms<<", \"p99\": "<<r.host_p99_ms<<", \"max\": "<<r.host_max_ms<<"}, \"device_dispatch_ms\": {\"min\": "<<r.device_min_ms<<", \"mean\": "<<r.device_mean_ms<<", \"p50\": "<<r.device_p50_ms<<", \"p95\": "<<r.device_p95_ms<<", \"p99\": "<<r.device_p99_ms<<", \"max\": "<<r.device_max_ms<<"}, \"candidate_rate_mps\": "<<r.candidate_rate_mps<<", \"verified_event_rate_mps\": "<<r.verified_event_rate_mps<<", \"effective_bandwidth_gbps\": "<<r.effective_bandwidth_gbps<<", \"counts\": {\"candidates\": "<<r.counts.candidates<<", \"supported\": "<<r.counts.supported<<", \"compatible\": "<<r.counts.compatible<<", \"verified\": "<<r.counts.verified<<"}, \"counter_validation\": "<<(r.counters_ok?"true":"false")<<", \"sample_validation\": "<<(r.sample_ok?"true":"false")<<"}"<<(i+1==rows.size()?"\n":",\n");}f<<"  ]\n}\n";}
+void write_json(const VulkanContext& ctx,const Args& args,const std::vector<ProgramRecord>& programs,const std::vector<BenchRow>& rows,const fs::path& path) {
+    std::ofstream f(path);f<<std::fixed<<std::setprecision(6);const auto&p=ctx.properties();
+    f<<"{\n  \"schema\": \"UGTS-VK-BENCH-1.2\",\n  \"runtime\": \"Vulkan compute\",\n"
+     <<"  \"physical_gpu_claim\": "<<(p.deviceType==VK_PHYSICAL_DEVICE_TYPE_CPU?"false":"true")<<",\n"
+     <<"  \"memory_path\": {\"storage\": \"device-local Vulkan buffers\", \"transfer\": \"explicit host-visible coherent staging\", \"timed_scope\": \"compute dispatch only\"},\n"
+     <<"  \"validation\": {\"coverage\": \"all output records\", \"fields\": \"scalar, guard, confidence, route, lineage, state flags, and commit counters\"},\n"
+     <<"  \"device\": {\"name\": \""<<json_escape(p.deviceName)<<"\", \"type\": "<<int(p.deviceType)<<", \"vendor_id\": "<<p.vendorID<<", \"device_id\": "<<p.deviceID<<", \"api_version\": \""<<api_major(p.apiVersion)<<'.'<<api_minor(p.apiVersion)<<'.'<<api_patch(p.apiVersion)<<"\", \"timestamp_period_ns\": "<<p.limits.timestampPeriod<<", \"timestamp_valid_bits\": "<<ctx.timestamp_bits()<<"},\n"
+     <<"  \"run_parameters\": {\"warmup\": "<<args.warmup<<", \"warmup_ms\": "<<args.warmup_ms<<", \"iterations\": "<<args.iterations<<"},\n  \"programs\": [\n";
+    for(std::size_t i=0;i<programs.size();++i){const auto&x=programs[i];f<<"    {\"name\": \""<<x.name<<"\", \"spirv_bytes\": "<<fs::file_size(x.spv_path)<<", \"shader_module_create_ms\": "<<x.program.module_create_ms<<", \"cold_pipeline_create_ms\": "<<x.program.cold_pipeline_ms<<", \"pipeline_cache_bytes\": "<<x.program.cache_blob.size()<<", \"cached_pipeline_create_ms\": "<<x.program.cached_pipeline_ms<<", \"cache_reload_ok\": "<<(x.program.cache_reload_ok?"true":"false")<<"}"<<(i+1==programs.size()?"\n":",\n");}
+    f<<"  ],\n  \"benchmarks\": [\n";
+    for(std::size_t i=0;i<rows.size();++i){const auto&r=rows[i];f<<"    {\"profile\": \""<<r.profile<<"\", \"mode\": \""<<r.mode<<"\", \"candidates\": "<<r.candidates<<", \"input_record_bytes\": "<<r.input_record_bytes<<", \"output_record_bytes\": "<<r.output_record_bytes<<", \"total_buffer_bytes\": "<<r.total_buffer_bytes<<", \"setup_ms\": "<<r.setup_ms<<", \"upload_ms\": "<<r.upload_ms<<", \"readback_ms\": "<<r.readback_ms<<", \"host_dispatch_ms\": {\"min\": "<<r.host_min_ms<<", \"mean\": "<<r.host_mean_ms<<", \"p50\": "<<r.host_p50_ms<<", \"p95\": "<<r.host_p95_ms<<", \"p99\": "<<r.host_p99_ms<<", \"max\": "<<r.host_max_ms<<"}, \"device_dispatch_ms\": {\"min\": "<<r.device_min_ms<<", \"mean\": "<<r.device_mean_ms<<", \"p50\": "<<r.device_p50_ms<<", \"p95\": "<<r.device_p95_ms<<", \"p99\": "<<r.device_p99_ms<<", \"max\": "<<r.device_max_ms<<"}, \"candidate_rate_mps\": "<<r.candidate_rate_mps<<", \"verified_event_rate_mps\": "<<r.verified_event_rate_mps<<", \"effective_bandwidth_gbps\": "<<r.effective_bandwidth_gbps<<", \"counts\": {\"candidates\": "<<r.counts.candidates<<", \"supported\": "<<r.counts.supported<<", \"compatible\": "<<r.counts.compatible<<", \"verified\": "<<r.counts.verified<<"}, \"oracle_counts\": {\"candidates\": "<<r.oracle_counts.candidates<<", \"supported\": "<<r.oracle_counts.supported<<", \"compatible\": "<<r.oracle_counts.compatible<<", \"verified\": "<<r.oracle_counts.verified<<"}, \"validated_outputs\": "<<r.validated_outputs<<", \"oracle_exact_outputs\": "<<r.oracle_exact_outputs<<", \"boundary_divergent_outputs\": "<<r.boundary_divergent_outputs<<", \"counter_validation\": "<<(r.counters_ok?"true":"false")<<", \"sample_validation\": "<<(r.sample_ok?"true":"false")<<"}"<<(i+1==rows.size()?"\n":",\n");}
+    f<<"  ]\n}\n";
+}
 
-void write_csv(const std::vector<BenchRow>& rows,const fs::path& path){std::ofstream f(path);f<<"profile,mode,candidates,input_record_bytes,output_record_bytes,total_buffer_bytes,setup_ms,host_p50_ms,host_p95_ms,host_p99_ms,device_p50_ms,device_p95_ms,device_p99_ms,candidate_rate_mps,verified_event_rate_mps,effective_bandwidth_gbps,supported,compatible,verified,counter_validation,sample_validation\n"<<std::fixed<<std::setprecision(6);for(const auto&r:rows)f<<r.profile<<','<<r.mode<<','<<r.candidates<<','<<r.input_record_bytes<<','<<r.output_record_bytes<<','<<r.total_buffer_bytes<<','<<r.setup_ms<<','<<r.host_p50_ms<<','<<r.host_p95_ms<<','<<r.host_p99_ms<<','<<r.device_p50_ms<<','<<r.device_p95_ms<<','<<r.device_p99_ms<<','<<r.candidate_rate_mps<<','<<r.verified_event_rate_mps<<','<<r.effective_bandwidth_gbps<<','<<r.counts.supported<<','<<r.counts.compatible<<','<<r.counts.verified<<','<<(r.counters_ok?1:0)<<','<<(r.sample_ok?1:0)<<'\n';}
+void write_csv(const std::vector<BenchRow>& rows,const fs::path& path) {
+    std::ofstream f(path);f<<"profile,mode,candidates,input_record_bytes,output_record_bytes,total_buffer_bytes,setup_ms,upload_ms,readback_ms,host_p50_ms,host_p95_ms,host_p99_ms,device_p50_ms,device_p95_ms,device_p99_ms,candidate_rate_mps,verified_event_rate_mps,effective_bandwidth_gbps,supported,compatible,verified,oracle_supported,oracle_compatible,oracle_verified,validated_outputs,oracle_exact_outputs,boundary_divergent_outputs,counter_validation,sample_validation\n"<<std::fixed<<std::setprecision(6);
+    for(const auto&r:rows)f<<r.profile<<','<<r.mode<<','<<r.candidates<<','<<r.input_record_bytes<<','<<r.output_record_bytes<<','<<r.total_buffer_bytes<<','<<r.setup_ms<<','<<r.upload_ms<<','<<r.readback_ms<<','<<r.host_p50_ms<<','<<r.host_p95_ms<<','<<r.host_p99_ms<<','<<r.device_p50_ms<<','<<r.device_p95_ms<<','<<r.device_p99_ms<<','<<r.candidate_rate_mps<<','<<r.verified_event_rate_mps<<','<<r.effective_bandwidth_gbps<<','<<r.counts.supported<<','<<r.counts.compatible<<','<<r.counts.verified<<','<<r.oracle_counts.supported<<','<<r.oracle_counts.compatible<<','<<r.oracle_counts.verified<<','<<r.validated_outputs<<','<<r.oracle_exact_outputs<<','<<r.boundary_divergent_outputs<<','<<(r.counters_ok?1:0)<<','<<(r.sample_ok?1:0)<<'\n';
+}
 
 } // namespace
 
 int main(int argc,char**argv){try{const Args args=parse_args(argc,argv);fs::create_directories(args.out_dir/"pipeline_cache");VulkanContext ctx;const auto&props=ctx.properties();std::cout<<"Vulkan device: "<<props.deviceName<<" | API "<<api_major(props.apiVersion)<<'.'<<api_minor(props.apiVersion)<<'.'<<api_patch(props.apiVersion)<<" | timestamp "<<props.limits.timestampPeriod<<" ns\n";
     VkDescriptorSetLayoutBinding bindings[3]{};for(std::uint32_t i=0;i<3;++i){bindings[i].binding=i;bindings[i].descriptorType=VK_DESCRIPTOR_TYPE_STORAGE_BUFFER;bindings[i].descriptorCount=1;bindings[i].stageFlags=VK_SHADER_STAGE_COMPUTE_BIT;}VkDescriptorSetLayoutCreateInfo dci{};dci.sType=VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;dci.bindingCount=3;dci.pBindings=bindings;VkDescriptorSetLayout dsl=VK_NULL_HANDLE;check(vkCreateDescriptorSetLayout(ctx.device(),&dci,nullptr,&dsl),"vkCreateDescriptorSetLayout");VkPipelineLayoutCreateInfo plci{};plci.sType=VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;plci.setLayoutCount=1;plci.pSetLayouts=&dsl;VkPipelineLayout layout=VK_NULL_HANDLE;check(vkCreatePipelineLayout(ctx.device(),&plci,nullptr,&layout),"vkCreatePipelineLayout");
     struct Job{std::string profile,mode,file;bool commit;};std::vector<Job>jobs={{"G64_E32","evaluate","ugts_g64_evaluate.spv",false},{"G64_E32","evaluate_commit","ugts_g64_evaluate_commit.spv",true},{"G32_E16","evaluate","ugts_g32_evaluate.spv",false},{"G32_E16","evaluate_commit","ugts_g32_evaluate_commit.spv",true}};std::vector<ProgramRecord>programs;std::vector<BenchRow>rows;
-    for(const auto&j:jobs){ProgramRecord pr{};pr.name=j.profile+"_"+j.mode;pr.spv_path=args.spirv_dir/j.file;auto spv=read_spirv(pr.spv_path);std::cout<<"Creating pipeline "<<pr.name<<"...\n";pr.program=create_pipeline(ctx,layout,spv,args.out_dir/"pipeline_cache"/(pr.name+".vkcache"));for(auto n:args.sizes){BenchRow r;if(j.profile=="G64_E32")r=run_one<State64,Event32>(ctx,dsl,layout,pr.program.pipeline,j.profile,j.mode,j.commit,n,args.warmup,args.iterations,make64,[](const State64&s){Fields f{};f.px=s.position_time[0];f.py=s.position_time[1];f.pz=s.position_time[2];f.time=s.position_time[3];f.ax=s.axis_radius[0];f.ay=s.axis_radius[1];f.az=s.axis_radius[2];f.radius=s.axis_radius[3];f.cone_cos=s.phase_guard[0];f.phase=s.phase_guard[1];f.guard_epsilon=s.phase_guard[2];f.confidence_floor=s.phase_guard[3];f.sheet=s.meta[0];f.orientation=s.meta[1];f.compatibility_mask=s.meta[2];f.lineage_seed=s.meta[3];return f;});else r=run_one<State32,Event16>(ctx,dsl,layout,pr.program.pipeline,j.profile,j.mode,j.commit,n,args.warmup,args.iterations,make32,decode32);std::cout<<"  N="<<n<<" device-p50="<<std::fixed<<std::setprecision(3)<<r.device_p50_ms<<" ms host-p50="<<r.host_p50_ms<<" ms CER="<<std::setprecision(2)<<r.candidate_rate_mps<<" M/s SET="<<r.verified_event_rate_mps<<" M/s valid="<<(r.sample_ok&&r.counters_ok?"yes":"no")<<"\n";rows.push_back(r);}programs.push_back(std::move(pr));}
+    for(const auto&j:jobs){ProgramRecord pr{};pr.name=j.profile+"_"+j.mode;pr.spv_path=args.spirv_dir/j.file;auto spv=read_spirv(pr.spv_path);std::cout<<"Creating pipeline "<<pr.name<<"...\n";pr.program=create_pipeline(ctx,layout,spv,args.out_dir/"pipeline_cache"/(pr.name+".vkcache"));for(auto n:args.sizes){BenchRow r;if(j.profile=="G64_E32")r=run_one<State64,Event32>(ctx,dsl,layout,pr.program.pipeline,j.profile,j.mode,j.commit,n,args.warmup,args.warmup_ms,args.iterations,make64,[](const State64&s){Fields f{};f.px=s.position_time[0];f.py=s.position_time[1];f.pz=s.position_time[2];f.time=s.position_time[3];f.ax=s.axis_radius[0];f.ay=s.axis_radius[1];f.az=s.axis_radius[2];f.radius=s.axis_radius[3];f.cone_cos=s.phase_guard[0];f.phase=s.phase_guard[1];f.guard_epsilon=s.phase_guard[2];f.confidence_floor=s.phase_guard[3];f.sheet=s.meta[0];f.orientation=s.meta[1];f.compatibility_mask=s.meta[2];f.lineage_seed=s.meta[3];return f;});else r=run_one<State32,Event16>(ctx,dsl,layout,pr.program.pipeline,j.profile,j.mode,j.commit,n,args.warmup,args.warmup_ms,args.iterations,make32,decode32);std::cout<<"  N="<<n<<" device-p50="<<std::fixed<<std::setprecision(3)<<r.device_p50_ms<<" ms host-p50="<<r.host_p50_ms<<" ms CER="<<std::setprecision(2)<<r.candidate_rate_mps<<" M/s SET="<<r.verified_event_rate_mps<<" M/s valid="<<(r.sample_ok&&r.counters_ok?"yes":"no")<<"\n";rows.push_back(r);}programs.push_back(std::move(pr));}
     write_json(ctx,args,programs,rows,args.out_dir/"vulkan_benchmark_results.json");write_csv(rows,args.out_dir/"vulkan_benchmark_results.csv");bool valid=std::all_of(rows.begin(),rows.end(),[](const BenchRow&r){return r.sample_ok&&r.counters_ok;});for(auto&x:programs)destroy_program(ctx,x.program);vkDestroyPipelineLayout(ctx.device(),layout,nullptr);vkDestroyDescriptorSetLayout(ctx.device(),dsl,nullptr);if(!valid){std::cerr<<"validation failed\n";return 2;}std::cout<<"Wrote native Vulkan benchmark results.\n";return 0;}catch(const std::exception&e){std::cerr<<"UGTS Vulkan benchmark error: "<<e.what()<<"\n";return 1;}}

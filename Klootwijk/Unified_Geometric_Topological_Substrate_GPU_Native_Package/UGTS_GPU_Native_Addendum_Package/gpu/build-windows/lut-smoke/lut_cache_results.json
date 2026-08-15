@@ -1,0 +1,17 @@
+{
+  "schema": "UGTS-VK-LUT-CACHE-1.0",
+  "runtime": "Vulkan compute / uniform texel buffer",
+  "device": {"name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "vendor_id": 4318, "device_id": 12056, "api_version": "1.4.325", "l2_bytes_external_query": 37748736},
+  "run_parameters": {"warmup": 2, "iterations": 5, "minimum_candidates": 65536},
+  "interpretation": "Empirical texture-fetch working-set sweep; direct hardware cache counters were unavailable.",
+  "programs": [
+    {"pattern": "sequential", "spirv_bytes": 2392, "pipeline_cache_bytes": 7685, "cold_pipeline_ms": 153.330900, "cached_pipeline_ms": 0.574700},
+    {"pattern": "random", "spirv_bytes": 2456, "pipeline_cache_bytes": 7764, "cold_pipeline_ms": 8.224400, "cached_pipeline_ms": 0.032400}
+  ],
+  "results": [
+    {"pattern": "sequential", "logical_entries": 2048, "table_bytes": 4100, "l2_fraction": 0.000109, "candidates": 65536, "setup_ms": 4.818200, "upload_ms": 0.176100, "readback_ms": 0.106400, "device_ms": {"min": 0.003712, "mean": 0.004518, "p50": 0.004032, "p95": 0.005523, "p99": 0.005533, "max": 0.005536}, "lookup_mps": 16253.968254, "logical_gbps": 130.031746, "validated_outputs": 65536, "validation": true},
+    {"pattern": "sequential", "logical_entries": 1048576, "table_bytes": 2097156, "l2_fraction": 0.055556, "candidates": 1048576, "setup_ms": 11.349500, "upload_ms": 0.925700, "readback_ms": 0.428800, "device_ms": {"min": 0.009792, "mean": 0.010221, "p50": 0.010240, "p95": 0.010483, "p99": 0.010493, "max": 0.010496}, "lookup_mps": 102400.000000, "logical_gbps": 819.200000, "validated_outputs": 1048576, "validation": true},
+    {"pattern": "random", "logical_entries": 2048, "table_bytes": 4100, "l2_fraction": 0.000109, "candidates": 65536, "setup_ms": 0.626200, "upload_ms": 0.318000, "readback_ms": 0.071700, "device_ms": {"min": 0.003776, "mean": 0.005619, "p50": 0.005568, "p95": 0.007168, "p99": 0.007398, "max": 0.007456}, "lookup_mps": 11770.114943, "logical_gbps": 94.160920, "validated_outputs": 65536, "validation": true},
+    {"pattern": "random", "logical_entries": 1048576, "table_bytes": 2097156, "l2_fraction": 0.055556, "candidates": 1048576, "setup_ms": 11.761700, "upload_ms": 2.131600, "readback_ms": 0.351700, "device_ms": {"min": 0.028512, "mean": 0.028659, "p50": 0.028704, "p95": 0.028730, "p99": 0.028735, "max": 0.028736}, "lookup_mps": 36530.657748, "logical_gbps": 292.245262, "validated_outputs": 1048576, "validation": true}
+  ]
+}

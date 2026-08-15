@@ -153,7 +153,7 @@ def main() -> None:
             "unit": "x",
             "definition": "G32 evaluate p50 divided by G64 evaluate p50 on this validation device.",
             "value": ratio(g32_eval["device_dispatch_ms"]["p50"], g64_eval["device_dispatch_ms"]["p50"]),
-            "scope": f"N={largest_n}; software Vulkan device",
+            "scope": f"N={largest_n}; " + ("physical GPU" if data["physical_gpu_claim"] else "software Vulkan device"),
         },
     ]
 
@@ -294,7 +294,7 @@ def main() -> None:
             "Rates use device timestamp p50.",
             "Effective Substrate Bandwidth is logical record traffic, not measured external DRAM bandwidth.",
             "Compact-event memory assumes non-events are discarded and state is either retained separately or rebuildable.",
-            "The validation device may be software Vulkan; inspect physical_gpu_claim and device type before generalizing.",
+            "Inspect physical_gpu_claim and device type before generalizing beyond the named device.",
         ],
     }
     (out / "derived_metrics.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
@@ -315,11 +315,19 @@ def main() -> None:
     md += ["", "## Memory configurations", "", "| Configuration | Memory | Fraction of G64 dense | Retention |", "|---|---:|---:|---|"]
     for r in memory_rows:
         md.append(f"| {r['configuration']} | {human_bytes(r['bytes'])} | {100*r['relative_to_g64_dense']:.3f}% | {r['retention']} |")
+    interpretation = (
+        "These measurements establish direct Vulkan performance on the named physical GPU only. "
+        "They do not establish performance on other GPUs, ASICs, FPGAs, photonic, or optofluidic devices."
+        if data["physical_gpu_claim"]
+        else
+        "These measurements validate the Vulkan execution path on the named software/CPU device. "
+        "They do not establish physical-GPU, ASIC, FPGA, photonic, or optofluidic performance."
+    )
     md += [
         "",
         "## Interpretation boundary",
         "",
-        "These measurements validate native Vulkan shader-module creation, compute-pipeline creation, pipeline-cache reload, descriptor/buffer binding, device-timestamped dispatch, and GPU-written output validation on the device named above. They do not establish physical-GPU, ASIC, FPGA, photonic, or optofluidic performance.",
+        interpretation,
     ]
     (out / "benchmark_summary.md").write_text("\n".join(md) + "\n", encoding="utf-8")
 

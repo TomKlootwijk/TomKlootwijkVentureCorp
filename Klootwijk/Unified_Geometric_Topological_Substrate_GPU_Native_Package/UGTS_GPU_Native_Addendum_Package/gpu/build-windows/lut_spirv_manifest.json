@@ -1,0 +1,201 @@
+{
+  "schema": "UGTS-SPIRV-MANIFEST-1.1",
+  "modules": [
+    {
+      "file": "ugts_log_lut_sequential.spv",
+      "sha256": "3f6f16ea874d9993f39647e432e68bd88bd07b4cba76d5118b9bd2a3a4d55ea9",
+      "bytes": 2392,
+      "words": 598,
+      "version_word": "0x00010500",
+      "version": "1.5",
+      "generator_word": 524299,
+      "id_bound": 102,
+      "instruction_count": 148,
+      "capabilities": [
+        "Shader",
+        46
+      ],
+      "entry_points": [
+        {
+          "execution_model": "GLCompute",
+          "entry_id": 4,
+          "name": "main",
+          "interface_ids": [
+            39,
+            48,
+            61
+          ]
+        }
+      ],
+      "execution_modes": [
+        {
+          "entry_id": 4,
+          "mode": "LocalSize",
+          "literals": [
+            256,
+            1,
+            1
+          ]
+        }
+      ],
+      "descriptor_bindings": [
+        {
+          "target_id": 48,
+          "set": 0,
+          "binding": 1
+        },
+        {
+          "target_id": 61,
+          "set": 0,
+          "binding": 0
+        }
+      ],
+      "opcode_histogram": {
+        "17": 2,
+        "11": 1,
+        "14": 1,
+        "15": 1,
+        "16": 1,
+        "3": 1,
+        "5": 13,
+        "6": 1,
+        "71": 9,
+        "72": 2,
+        "19": 1,
+        "33": 2,
+        "21": 2,
+        "32": 6,
+        "43": 11,
+        "23": 2,
+        "59": 9,
+        "29": 1,
+        "30": 1,
+        "20": 1,
+        "25": 1,
+        "27": 1,
+        "44": 1,
+        "54": 2,
+        "248": 4,
+        "65": 2,
+        "61": 21,
+        "62": 12,
+        "68": 1,
+        "124": 3,
+        "174": 1,
+        "247": 1,
+        "250": 1,
+        "253": 2,
+        "100": 2,
+        "95": 2,
+        "81": 2,
+        "199": 3,
+        "194": 5,
+        "128": 1,
+        "132": 3,
+        "198": 4,
+        "57": 1,
+        "56": 2,
+        "55": 1,
+        "254": 1
+      }
+    },
+    {
+      "file": "ugts_log_lut_random.spv",
+      "sha256": "b62cefb2e31c5a86125c22422c35bcdee846a680307e868aee0e122fe42f8397",
+      "bytes": 2456,
+      "words": 614,
+      "version_word": "0x00010500",
+      "version": "1.5",
+      "generator_word": 524299,
+      "id_bound": 104,
+      "instruction_count": 152,
+      "capabilities": [
+        "Shader",
+        46
+      ],
+      "entry_points": [
+        {
+          "execution_model": "GLCompute",
+          "entry_id": 4,
+          "name": "main",
+          "interface_ids": [
+            39,
+            48,
+            61
+          ]
+        }
+      ],
+      "execution_modes": [
+        {
+          "entry_id": 4,
+          "mode": "LocalSize",
+          "literals": [
+            256,
+            1,
+            1
+          ]
+        }
+      ],
+      "descriptor_bindings": [
+        {
+          "target_id": 48,
+          "set": 0,
+          "binding": 1
+        },
+        {
+          "target_id": 61,
+          "set": 0,
+          "binding": 0
+        }
+      ],
+      "opcode_histogram": {
+        "17": 2,
+        "11": 1,
+        "14": 1,
+        "15": 1,
+        "16": 1,
+        "3": 1,
+        "5": 14,
+        "6": 1,
+        "71": 9,
+        "72": 2,
+        "19": 1,
+        "33": 2,
+        "21": 2,
+        "32": 6,
+        "43": 11,
+        "23": 2,
+        "59": 10,
+        "29": 1,
+        "30": 1,
+        "20": 1,
+        "25": 1,
+        "27": 1,
+        "44": 1,
+        "54": 2,
+        "248": 4,
+        "65": 2,
+        "61": 21,
+        "62": 13,
+        "68": 1,
+        "124": 3,
+        "174": 1,
+        "247": 1,
+        "250": 1,
+        "253": 2,
+        "100": 2,
+        "95": 2,
+        "81": 2,
+        "57": 2,
+        "199": 3,
+        "194": 5,
+        "128": 1,
+        "132": 3,
+        "198": 4,
+        "56": 2,
+        "55": 1,
+        "254": 1
+      }
+    }
+  ]
+}
