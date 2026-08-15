@@ -19,6 +19,8 @@ A native `VK_KHR_shader_clock` pointer chase now sharpens the cache boundary. Ra
 
 An independent native CUDA `sm_120` control supplies a real cycle-domain comparison. One warp using L1-bypassing `ld.global.cg` measures a cross-size median of **399.57 cycles per hot dependent step** and **1,087.79 cycles after a 256 MiB L2-eviction pass**: the post-eviction path is **2.722x** slower, or about 688 additional exposed cycles per step. CUDA event timing corresponds to approximately **153.4 ns per hot step** and **401.8 ns per post-eviction step** for the complete one-warp kernel. These are warp-exposed values, not the latency of one scalar memory transaction.
 
+A new native CUDA concurrency sweep closes the gap between that one-warp control and the saturated Vulkan result. At 736 independent warps (16 warps per SM), a hot 36 MiB random table sustains **42.863 billion requested `u32` loads/s**, indistinguishable from the 4 MiB control. Expanding the table by only 4 MiB to 40 MiB drops throughput **45.34% to 23.429 Gload/s**. The 64 and 128 MiB cases deliver only 9.318 and 7.506 Gload/s. This directly confirms that packing the hot random-access footprint at or below L2 matters under production-like concurrency; it also shows that scheduler and memory-queue pressure, not just a fixed hit/miss latency, creates the large above-L2 slowdown.
+
 ## Yield
 
 The largest deterministic G32-family dispatch produced this funnel:
@@ -89,13 +91,13 @@ These rates are cache-hot steady-state rates from repeated dispatches against re
 
 With a 6.25%-capacity E16 output, the output allocation costs exactly 1 byte per candidate. Ignoring small counters, code, descriptors, alignment, other GPU users, and cold-stream cache sectors, the nominal 36 MiB limits are:
 
-| Always-hot layout | Nominal bytes/candidate | Theoretical candidates fitting in 36 MiB L2 |
-|---|---:|---:|
-| G32 + bounded output | 33 | 1,143,901 |
-| G24 + bounded output | 25 | 1,509,949 |
-| G20 hot + bounded output | 21 | 1,797,558 |
+| Always-hot layout | Nominal bytes/candidate | Absolute 36 MiB ceiling | Conservative 28 MiB target |
+|---|---:|---:|---:|
+| G32 + bounded output | 33 | 1,143,901 | 889,700 |
+| G24 + bounded output | 25 | 1,509,949 | 1,174,405 |
+| G20 hot + bounded output | 21 | 1,797,558 | 1,398,101 |
 
-The measured G32 and G24 performance cliffs occur near these crossings, but exact NVIDIA cache-hit/DRAM counters are permission-blocked (`ERR_NVGPUCTRPERM`). These capacities are therefore nominal residency calculations supported by timing cliffs, not measured hit-rate thresholds.
+The 36 MiB values are arithmetic maxima, not safe production allocations. The 28 MiB column reserves 8 MiB (22.2% of L2) for cache-line amplification, other state, outputs, code and system activity. The measured G32/G24 cliffs occur near the absolute crossings, and the new concurrency probe sustains full hot throughput at 36 MiB but loses 45.34% at 40 MiB. Exact NVIDIA cache-hit/DRAM counters remain permission-blocked (`ERR_NVGPUCTRPERM`), so these are engineering limits supported by timing and throughput cliffs rather than counter-derived hit thresholds.
 
 For G20, the ideal traffic model adds only 4 bytes times the 4.7488% event yield, or **0.190 logical cold-lineage bytes per candidate**. The other bound is that sparse accesses pull enough cache sectors to approach the original 4 bytes per candidate. Thus the useful state/output traffic lies between approximately 21.19 and 25 bytes per candidate. The observed 1.108x large-case gain realizes about 57% of the ideal 19.05% bandwidth-ratio headroom.
 
@@ -142,6 +144,22 @@ The compiler reports 17 registers and zero spills for both the chase and clock-o
 
 Taken together, the experiments say something more useful than either alone: the controlled hot and post-eviction step costs are nearly constant across allocation sizes, while the saturated working-set time rises sharply only after 36 MiB. The capacity cliff therefore reflects a changing mix of cache service, memory queuing and warp scheduling, not a change in the intrinsic cost of an L2 hit. A two-state hit/miss formula cannot be inverted honestly here: the Vulkan 128/36 MiB ratio is 6.295x, already above the CUDA post-eviction/hot ratio of 2.722x, proving that saturated queuing/scheduling contributes materially.
 
+### Native CUDA concurrency and memory-level parallelism
+
+The concurrency control uses the same `sm_120`, `clock64()` and `ld.global.cg.u32` path, but launches one 32-lane warp per block and scales from 1 through 736 independent warps. Every lane retains a strictly dependent 512-step chain; only the number of independently schedulable chains changes. CUDA's occupancy query reports a ceiling of 24 such blocks per SM, while the measured range stops at 16 warps per SM. Four sequentially isolated processes reverse both table and concurrency order to expose order/clock sensitivity.
+
+| Table | Hot at 1 warp | Hot at 46 warps | Hot at 184 warps | Hot at 736 warps | 736-warp logical rate | Slowdown vs 4 MiB at 736 warps |
+|---:|---:|---:|---:|---:|---:|---:|
+| 4 MiB | 0.208 Gload/s | 9.582 Gload/s | 36.437 Gload/s | 42.861 Gload/s | 159.67 GiB/s | baseline |
+| 36 MiB | 0.208 Gload/s | 8.287 Gload/s | 23.599 Gload/s | 42.863 Gload/s | 159.68 GiB/s | 1.000x |
+| 40 MiB | 0.208 Gload/s | 3.943 Gload/s | 13.839 Gload/s | 23.429 Gload/s | 87.28 GiB/s | 1.829x |
+| 64 MiB | 0.208 Gload/s | 3.841 Gload/s | 8.209 Gload/s | 9.318 Gload/s | 34.71 GiB/s | 4.600x |
+| 128 MiB | 0.208 Gload/s | 3.503 Gload/s | 6.963 Gload/s | 7.506 Gload/s | 27.96 GiB/s | 5.710x |
+
+`Gload/s` counts requested scalar `u32` loads, and logical GiB/s multiplies those requests by four bytes. Random warp loads can fetch much larger sectors or cache lines, so neither column is physical cache or DRAM bandwidth. The single-warp rows remain flat because one repeated warp touches only about 64 KiB of logical link values. As concurrency grows, paths cover enough of the randomly distributed allocation for capacity to become decisive.
+
+The 736-warp in-kernel exposure is 1,474.8 cycles/step at 4 MiB and 1,473.3 at 36 MiB, then 2,703.4 at 40 MiB, 6,965.9 at 64 MiB and 8,674.1 at 128 MiB. Throughput rises while the GPU fills, then exposed cycles rise as resident warps compete. This is the missing concurrency model behind the earlier observation: the one-warp 2.722x cold/hot ratio is a controlled service-cost bound, while the 5.710x saturated 128/4 MiB slowdown includes queuing and scheduling.
+
 ### Representation floor
 
 The current G20 hot record is five native 32-bit words: four packed binary16 geometry pairs plus guard/meta. The arbitrary 32-bit lineage value is the sixth word in cold storage. Under the present field precision and arbitrary-lineage contract, **20 hot + 4 cold bytes is the practical native floor demonstrated here**.
@@ -154,14 +172,23 @@ The E16 event is likewise a practical aligned ABI rather than a mathematical low
 
 The G24 log-threshold LUT occupies 128 bytes, only 0.000339% of the 36 MiB L2. Capacity is not its problem. The balanced control shows that direct arithmetic is faster below L2 and effectively tied when bandwidth-bound, so the LUT does not improve this kernel on this GPU. A separate byte-identical packed-table control compares `texelFetch` with SSBO loads: their random-throughput ratios are 0.989x, 1.002x, 1.000x and 1.000x at 16, 32, 64 and 128 MiB, and both lose about 79.36% from 32 to 64 MiB. Putting the table on the texture-buffer path therefore does not create extra effective capacity beyond the shared cache/memory bottleneck on this GPU. The package recommends the direct decoder despite the LUT's excellent size.
 
+For a larger log LUT, the human-readable capacity ceilings are:
+
+| Encoding | Bytes/code | Codes in 36 MiB absolute ceiling | Codes in 28 MiB conservative target |
+|---|---:|---:|---:|
+| Current native two-16-bit-codes-per-word layout | 2.00 | 18,874,368 | 14,680,064 |
+| Ideal densely bit-packed 6-bit stream | 0.75 | 50,331,648 | 39,146,837 |
+
+The ideal 6-bit row is an information-capacity calculation, not a measured texture format. Native texture-buffer formats do not expose 6-bit elements directly; random extraction may straddle words and add instructions. It offers a theoretical 2.667x code-density gain over the current 16-bit slots only if decoding and access granularity do not erase the benefit. The measured recommendation is therefore to keep the hot LUT plus competing state below roughly 28 MiB, not to assume that a nominal 36 MiB table leaves useful L2 space for anything else.
+
 ## Validation strength and limits
 
-The G20/G24 comparison adds 795,082,752 candidate-dispatch records and 290,199,888 checked output records. The four texture/SSBO path-control processes add 2,281,701,376 checked outputs, bringing the main physical-GPU output corpus to **4,413,045,560 checked GPU output records**. The Vulkan shader-clock study separately adds 12,582,912 checked invocation payloads whose validated chain endpoints represent 3,221,225,472 executed dependent loads. The CUDA cycle control adds another 153,600 checked payloads whose endpoints represent 52,428,800 dependent loads.
+The G20/G24 comparison adds 795,082,752 candidate-dispatch records and 290,199,888 checked output records. The four texture/SSBO path-control processes add 2,281,701,376 checked outputs, bringing the main physical-GPU output corpus to **4,413,045,560 checked GPU output records**. The Vulkan shader-clock study separately adds 12,582,912 checked invocation payloads whose validated chain endpoints represent 3,221,225,472 executed dependent loads. The one-warp CUDA cycle control adds another 153,600 checked payloads whose endpoints represent 52,428,800 dependent loads. The CUDA concurrency matrix adds **42,883,200 checked payloads representing 14,637,465,600 dependent loads** across 220 valid raw rows.
 
-All 52 bundled SPIR-V modules pass `spirv-val --target-env vulkan1.2`. The paired cache control disassembles to `OpImageFetch` for the uniform-texel path and storage-buffer `OpLoad` for the SSBO path. The latency control and chase modules each contain two device-scope `OpReadClockKHR` instructions, while only the chase module retains the dependent-load loop. The independently compiled CUDA binary contains native `sm_120` clock-register reads and L2/global-load SASS with no spills. G20 disassembly confirms a real `ArrayStride 20`, storage binding 4 for lineage, subgroup ballot operations, four atomic counter sites in the counted variant, and no texture fetch. In the optimized module, the lineage `OpLoad` is located after the non-verified early-return branch, confirming that only retained lanes execute the logical lineage load.
+All 52 bundled SPIR-V modules pass `spirv-val --target-env vulkan1.2`. The paired cache control disassembles to `OpImageFetch` for the uniform-texel path and storage-buffer `OpLoad` for the SSBO path. The latency control and chase modules each contain two device-scope `OpReadClockKHR` instructions, while only the chase module retains the dependent-load loop. Both independently compiled CUDA probes contain native `sm_120` clock-register reads and L2/global-load SASS with no spills; Compute Sanitizer reports zero errors for the concurrency control. G20 disassembly confirms a real `ArrayStride 20`, storage binding 4 for lineage, subgroup ballot operations, four atomic counter sites in the counted variant, and no texture fetch. In the optimized module, the lineage `OpLoad` is located after the non-verified early-return branch, confirming that only retained lanes execute the logical lineage load.
 
 Native NVIDIA compiler metadata was captured through `VK_KHR_pipeline_executable_properties` in all six isolated processes. G24 and G20 append both report 22 registers, 2,052 bytes shared memory, and a 3,456-byte executable, so the append gain cannot honestly be attributed to fewer registers or a smaller kernel. The counted variants report 40 versus 39 registers, equal 5,124-byte shared memory, and 4,736 versus 4,864-byte executables. The driver also returns an implausible 64 GiB per-thread `Local Memory Size` for every executable; that value is preserved, flagged, and excluded from occupancy reasoning.
 
 The remaining limit is observability: timestamps, Vulkan shader-clock intervals, CUDA cycle intervals and exact readback validation are native and real, but exact L2 hit rate, cache-sector traffic, and DRAM bytes are not available until NVIDIA performance-counter permission is enabled. A native schema-1.8 probe additionally confirms that the selected NVIDIA Vulkan device exposes pipeline-executable metadata but not `VK_KHR_performance_query`. Consequently, this report labels logical byte models and nominal L2 residency as theory/inference rather than hardware-counter facts.
 
-Machine-readable paired results are in `windows_physical_gpu_aggregate/cold_lineage_comparison.csv`, `windows_physical_gpu_aggregate/lut_path_comparison.csv`, `windows_physical_gpu_aggregate/l2_latency_comparison.csv`, and `windows_physical_gpu_aggregate/cuda_l2_clock_comparison.csv`; compiler metadata is in `windows_physical_gpu_aggregate/pipeline_executable_statistics.csv`, and the full aggregate is `windows_physical_gpu_aggregate/aggregate_metrics.json`. Vulkan shader-clock raw data is under `l2_latency_isolated/`; CUDA cycle data is under `cuda_l2_clock_isolated/`; cache-path controls are under `lut_path_control/`; cold-lineage primary results are under `cold_lineage_isolated/`; `native_capability_probe/` records the selected-device extension evidence. The earlier overlapping-process `cold_lineage_hot/` corpus is retained but excluded from primary claims.
+Machine-readable paired results are in `windows_physical_gpu_aggregate/cold_lineage_comparison.csv`, `windows_physical_gpu_aggregate/lut_path_comparison.csv`, `windows_physical_gpu_aggregate/l2_latency_comparison.csv`, `windows_physical_gpu_aggregate/cuda_l2_clock_comparison.csv`, and `windows_physical_gpu_aggregate/cuda_l2_mlp_comparison.csv`; compiler metadata is in `windows_physical_gpu_aggregate/pipeline_executable_statistics.csv`, and the full aggregate is `windows_physical_gpu_aggregate/aggregate_metrics.json`. Vulkan shader-clock raw data is under `l2_latency_isolated/`; CUDA cycle and concurrency data are under `cuda_l2_clock_isolated/` and `cuda_l2_mlp_isolated/`; cache-path controls are under `lut_path_control/`; cold-lineage primary results are under `cold_lineage_isolated/`; `native_capability_probe/` records the selected-device extension evidence. The earlier overlapping-process `cold_lineage_hot/` corpus is retained but excluded from primary claims.

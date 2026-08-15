@@ -36,6 +36,7 @@ def main() -> None:
     parser.add_argument("--lut-path-control", type=Path, action="append", default=[])
     parser.add_argument("--l2-latency", type=Path)
     parser.add_argument("--cuda-l2-clock", type=Path)
+    parser.add_argument("--cuda-l2-mlp", type=Path)
     parser.add_argument("--l2-bytes", type=int, required=True)
     parser.add_argument("--out-dir", type=Path, required=True)
     args = parser.parse_args()
@@ -57,11 +58,14 @@ def main() -> None:
     lut_path_docs = [load(path) for path in args.lut_path_control]
     l2_latency_doc = load(args.l2_latency) if args.l2_latency else None
     cuda_l2_clock_doc = load(args.cuda_l2_clock) if args.cuda_l2_clock else None
+    cuda_l2_mlp_doc = load(args.cuda_l2_mlp) if args.cuda_l2_mlp else None
     all_docs = core_docs + lut_docs + semantic_docs + compact_docs + bounded_compact_docs + capacity_sweep_docs + prethreshold_docs + hot_log_lut_docs + hot_log_control_docs + l2_boundary_docs + cold_lineage_docs + lut_pair_docs + lut_path_docs
     if l2_latency_doc:
         all_docs.append(l2_latency_doc)
     if cuda_l2_clock_doc:
         all_docs.append(cuda_l2_clock_doc)
+    if cuda_l2_mlp_doc:
+        all_docs.append(cuda_l2_mlp_doc)
     device_names = {doc["device"]["name"] for doc in all_docs}
     if len(device_names) != 1:
         raise SystemExit(f"runs contain multiple devices: {sorted(device_names)}")
@@ -871,7 +875,7 @@ def main() -> None:
         )
 
     result = {
-        "schema": "UGTS-WINDOWS-PHYSICAL-GPU-AGGREGATE-1.13",
+        "schema": "UGTS-WINDOWS-PHYSICAL-GPU-AGGREGATE-1.14",
         "device": next(iter(device_names)),
         "l2_bytes": args.l2_bytes,
         "core_sources": [str(path) for path in args.core],
@@ -889,6 +893,7 @@ def main() -> None:
         "lut_path_control_sources": [str(path) for path in args.lut_path_control],
         "l2_latency_source": str(args.l2_latency) if args.l2_latency else None,
         "cuda_l2_clock_source": str(args.cuda_l2_clock) if args.cuda_l2_clock else None,
+        "cuda_l2_mlp_source": str(args.cuda_l2_mlp) if args.cuda_l2_mlp else None,
         "lut_pair_order_balance": {
             "forward": sum(not doc.get("run_parameters", {}).get("lut_reverse", False) for doc in lut_pair_docs),
             "reverse": sum(doc.get("run_parameters", {}).get("lut_reverse", False) for doc in lut_pair_docs),
@@ -945,6 +950,9 @@ def main() -> None:
         "cuda_l2_clock_validation": cuda_l2_clock_doc.get("validation") if cuda_l2_clock_doc else None,
         "cuda_l2_clock_summary": cuda_l2_clock_doc.get("cross_size_summary") if cuda_l2_clock_doc else None,
         "cuda_l2_clock_comparison": cuda_l2_clock_doc.get("results", []) if cuda_l2_clock_doc else [],
+        "cuda_l2_mlp_validation": cuda_l2_mlp_doc.get("validation") if cuda_l2_mlp_doc else None,
+        "cuda_l2_mlp_summary": cuda_l2_mlp_doc.get("high_concurrency_summary") if cuda_l2_mlp_doc else None,
+        "cuda_l2_mlp_comparison": cuda_l2_mlp_doc.get("results", []) if cuda_l2_mlp_doc else [],
         "notes": [
             "Medians aggregate independent process runs; min/max expose dynamic-clock and WDDM variability.",
             "Logical bandwidth counts declared input plus output record bytes, not external DRAM transactions.",
@@ -967,6 +975,7 @@ def main() -> None:
             "LUT-path rows compare byte-identical packed uint payloads and indexing through a uniform texel buffer versus a storage buffer; ratios are paired within balanced processes.",
             "L2-latency rows are control-subtracted device-clock intervals for a saturated 512-step dependent SSBO chase. Shader-clock units are implementation-defined and the values include scheduler exposure; they are not raw cycles, nanoseconds, or cache-hit rates.",
             "CUDA L2-clock rows use one native sm_120 warp, clock64 cycle counters, and ld.global.cg loads. Cold follows a 256 MiB eviction pass and hot immediately repeats the same path; values are warp-exposed dependent-step cycles and still include time slicing.",
+            "CUDA L2-MLP rows scale independent one-warp blocks from one total warp to 16 warps per SM. Requested Gload/s is logical u32 request throughput, not physical cache-sector or DRAM traffic; clock64 rows include scheduling and memory-queue exposure.",
             "L2 size came from the local CUDA device-properties query; direct performance counters were permission-blocked.",
         ],
     }
@@ -1072,6 +1081,13 @@ def main() -> None:
             writer = csv.DictWriter(stream, fieldnames=cuda_rows[0].keys())
             writer.writeheader()
             writer.writerows(cuda_rows)
+
+    if cuda_l2_mlp_doc and cuda_l2_mlp_doc.get("results"):
+        cuda_mlp_rows = cuda_l2_mlp_doc["results"]
+        with (args.out_dir / "cuda_l2_mlp_comparison.csv").open("w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=cuda_mlp_rows[0].keys())
+            writer.writeheader()
+            writer.writerows(cuda_mlp_rows)
 
     print(args.out_dir / "aggregate_metrics.json")
 

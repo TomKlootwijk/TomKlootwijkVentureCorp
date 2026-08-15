@@ -2588,6 +2588,19 @@
       "status": "RETAIN",
       "validation_state": "Measured with time-slicing and multi-sector warp-step bounds",
       "dependencies": "M198"
+    },
+    {
+      "mechanism_id": "M200",
+      "domain": "Performance/cache",
+      "name": "Native CUDA L2 concurrency curve",
+      "source_basis": "Package physical-GPU CUDA concurrency runs",
+      "source_motif": "One-warp blocks scaled through 16 warps per SM around the 36 MiB boundary",
+      "normalized_technical_definition": "At 736 warps hot requested throughput is unchanged between 4 and 36 MiB but falls 45.34% at 40 MiB and 82.49% at 128 MiB.",
+      "gpu_native_realization": "Native sm_120 clock64 plus CUDA-event dependent-chain matrix.",
+      "physical_hardware_realization": "Named RTX 5070 Ti Laptop GPU through CUDA 12.8.",
+      "status": "RETAIN",
+      "validation_state": "Measured logical requested-load throughput with scheduling and transaction-granularity bounds",
+      "dependencies": "M199"
     }
   ]
 }

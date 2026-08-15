@@ -141,6 +141,10 @@ An independent CUDA 12.8 control compiles to native `sm_120`, brackets 512 depen
 
 The flat CUDA state-forced costs and the Vulkan capacity cliff are complementary. The Vulkan 128/36 MiB saturated ratio of 6.295x exceeds the CUDA post-eviction/hot ratio of 2.722x, demonstrating that the saturated value includes material queuing and scheduler exposure. Implementations must not invert these two latency constants into a cache-hit estimate without an independently validated concurrency model or hardware counters.
 
+A native CUDA concurrency control supplies that missing scheduler/queue curve. It launches one 32-lane warp per block, retains 512 strictly dependent `ld.global.cg.u32` steps per lane, and scales from one total warp to 736 warps (16 per SM). Four isolated forward/reverse matrices validate 42,883,200 payloads representing 14,637,465,600 dependent loads. At 736 warps, immediate-hot requested throughput is 42.863 Gload/s at the exact 36 MiB L2 size, 23.429 at 40 MiB, 9.318 at 64 MiB and 7.506 at 128 MiB. The 36-to-40 MiB loss is 45.34%. Requested Gload/s and logical GiB/s are logical scalar requests, not cache-sector traffic, DRAM bandwidth or counter-derived hit rates.
+
+The concurrency result makes the engineering rule concrete: the named device can sustain the 4 MiB control rate for a hot 36 MiB random table, but nominal capacity leaves no margin. A production hot LUT/state budget should reserve room for other lines and system activity; the package report uses 28 MiB as a conservative target, not a universal hardware constant. Texture-buffer placement does not add another effective capacity tier on this device.
+
 ### 5.1 Reference query convention
 
 The bundled benchmark modules use a fixed query convention: target sheet 1, target orientation 0, and compatibility-mask bit 2. The portable JSON schema and CPU oracle support explicit query values. A production native module should expose those values through specialization constants, push constants or a query buffer, or compile a versioned fixed-query variant.
@@ -185,6 +189,7 @@ The G20 cold-lineage profile splits the identical fixed-query state into five ho
 | SET | Spherical Event Throughput | verified events / device time |
 | SDT | Saturated Dependent-load Ticks | control-subtracted device-clock ticks / dependent load under the declared invocation count |
 | CDL | CUDA Dependent-step Latency | control-subtracted per-SM clock cycles / one dependent warp step under the declared cache-state protocol |
+| CMLP | CUDA Memory-Level Parallelism | requested dependent loads / complete-kernel time at a declared total warp count; logical request throughput, not physical memory traffic |
 | ESB | Effective Substrate Bandwidth | logical state+event bytes / device time; not external DRAM bandwidth |
 | SRG | Support Rejection Gain | candidates / supported |
 | CRG | Compatibility Rejection Gain | supported / compatible |

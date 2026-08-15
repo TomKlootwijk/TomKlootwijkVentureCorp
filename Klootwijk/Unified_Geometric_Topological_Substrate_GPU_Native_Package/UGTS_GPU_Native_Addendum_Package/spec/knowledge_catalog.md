@@ -1,6 +1,6 @@
 # UGTS 1.1 Mechanism Catalog
 
-**197 normalized mechanisms** extracted or technically translated from the corpus. Duplicate source variants are counted once.
+**200 normalized mechanisms** extracted or technically translated from the corpus. Duplicate source variants are counted once.
 
 ## Architecture
 
@@ -245,6 +245,14 @@
 | M092 | External novelty log | RETAIN | S03 pp.5–8,11–12 |
 | M115 | Seed+grammar+log rebuild | RETAIN | S03 pp.7–12 |
 | M119 | Event lineage record | RETAIN | S03 pp.5–8; S05 p.7 |
+
+## Performance/cache
+
+| ID | Mechanism | Status | Source basis |
+|---|---|---|---|
+| M198 | Native device-clock L2 boundary | RETAIN | Package physical-GPU shader-clock runs |
+| M199 | Native CUDA L2 cycle control | RETAIN | Package physical-GPU CUDA clock64 runs |
+| M200 | Native CUDA L2 concurrency curve | RETAIN | Package physical-GPU CUDA concurrency runs |
 
 ## Physical hardware
 

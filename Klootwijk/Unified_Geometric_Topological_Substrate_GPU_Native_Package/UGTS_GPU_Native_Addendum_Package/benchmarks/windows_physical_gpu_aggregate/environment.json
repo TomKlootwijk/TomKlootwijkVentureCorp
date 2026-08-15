@@ -1,6 +1,6 @@
 ﻿{
-    "schema":  "UGTS-WINDOWS-GPU-ENVIRONMENT-1.4",
-    "captured_utc":  "2026-08-15T07:07:41.2481690Z",
+    "schema":  "UGTS-WINDOWS-GPU-ENVIRONMENT-1.5",
+    "captured_utc":  "2026-08-15T07:35:54.7374842Z",
     "os":  {
                "caption":  "Microsoft Windows 11 Home",
                "version":  "10.0.26200",
@@ -17,11 +17,11 @@
                 "driver_version":  "591.59",
                 "memory_total_mib":  12227,
                 "observed_pstate":  "P8",
-                "observed_graphics_clock_mhz":  202,
+                "observed_graphics_clock_mhz":  180,
                 "observed_memory_clock_mhz":  405,
-                "observed_power_w":  8.3,
+                "observed_power_w":  7.73,
                 "power_limit_w":  null,
-                "observed_temperature_c":  52,
+                "observed_temperature_c":  53,
                 "cuda":  {
                              "torch_version":  "2.7.1+cu128",
                              "cuda_available":  true,
@@ -61,7 +61,14 @@
                                             "compiler":  "CUDA 12.8.61",
                                             "load_instruction":  "LDG.E.STRONG.GPU generated from ld.global.cg.u32",
                                             "source":  "C:\\Users\\Tom\\Documents\\TomKlootwijkVentureCorp\\Klootwijk\\Unified_Geometric_Topological_Substrate_GPU_Native_Package\\UGTS_GPU_Native_Addendum_Package\\benchmarks\\cuda_l2_clock_isolated\\aggregate\\cuda_l2_clock_aggregate.json"
-                                        }
+                                        },
+                "cuda_l2_mlp_probe":  {
+                                          "enabled":  true,
+                                          "target":  "sm_120",
+                                          "one_warp_blocks_per_sm":  24,
+                                          "maximum_measured_warps_per_sm":  16,
+                                          "source":  "C:\\Users\\Tom\\Documents\\TomKlootwijkVentureCorp\\Klootwijk\\Unified_Geometric_Topological_Substrate_GPU_Native_Package\\UGTS_GPU_Native_Addendum_Package\\benchmarks\\cuda_l2_mlp_isolated\\aggregate\\cuda_l2_mlp_aggregate.json"
+                                      }
             },
     "execution":  {
                       "driver_model":  "WDDM",
@@ -71,6 +78,7 @@
                       "performance_counter_access":  "blocked: insufficient NVIDIA GPU performance-counter privilege; selected Vulkan device also does not expose VK_KHR_performance_query",
                       "pipeline_executable_metadata":  "available through VK_KHR_pipeline_executable_properties",
                       "shader_clock_scope":  "device-scope realtime clock; implementation-defined units",
-                      "cuda_clock_scope":  "per-SM clock64 cycle counter; elapsed thread time includes time slicing"
+                      "cuda_clock_scope":  "per-SM clock64 cycle counter; elapsed thread time includes time slicing",
+                      "cuda_concurrency_scope":  "one-warp blocks scaled to 16 measured warps per SM; requested throughput is logical, not physical memory traffic"
                   }
 }

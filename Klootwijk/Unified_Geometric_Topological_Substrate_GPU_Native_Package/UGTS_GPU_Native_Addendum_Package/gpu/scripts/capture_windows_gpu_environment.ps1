@@ -3,7 +3,8 @@ param(
     [string]$OutputPath = (Join-Path $PSScriptRoot '..\..\benchmarks\windows_physical_gpu_aggregate\environment.json'),
     [string]$CapabilityProbePath = (Join-Path $PSScriptRoot '..\..\benchmarks\native_capability_probe\vulkan_benchmark_results.json'),
     [string]$LatencyProbePath = (Join-Path $PSScriptRoot '..\..\benchmarks\l2_latency_isolated\aggregate\l2_latency_aggregate.json'),
-    [string]$CudaClockProbePath = (Join-Path $PSScriptRoot '..\..\benchmarks\cuda_l2_clock_isolated\aggregate\cuda_l2_clock_aggregate.json')
+    [string]$CudaClockProbePath = (Join-Path $PSScriptRoot '..\..\benchmarks\cuda_l2_clock_isolated\aggregate\cuda_l2_clock_aggregate.json'),
+    [string]$CudaMlpProbePath = (Join-Path $PSScriptRoot '..\..\benchmarks\cuda_l2_mlp_isolated\aggregate\cuda_l2_mlp_aggregate.json')
 )
 
 $ErrorActionPreference = 'Stop'
@@ -42,6 +43,10 @@ $cudaClockProbe = $null
 if (Test-Path -LiteralPath $CudaClockProbePath) {
     $cudaClockProbe = Get-Content -Raw -LiteralPath $CudaClockProbePath | ConvertFrom-Json
 }
+$cudaMlpProbe = $null
+if (Test-Path -LiteralPath $CudaMlpProbePath) {
+    $cudaMlpProbe = Get-Content -Raw -LiteralPath $CudaMlpProbePath | ConvertFrom-Json
+}
 
 $query = nvidia-smi --query-gpu=name,pci.bus_id,driver_version,memory.total,pstate,clocks.current.graphics,clocks.current.memory,power.draw,power.limit,temperature.gpu --format=csv,noheader,nounits
 $gpuFields = $query -split ',\s*'
@@ -60,7 +65,7 @@ if ($capabilityProbe -and -not $capabilityProbe.device.performance_query_extensi
 }
 
 $document = [ordered]@{
-    schema = 'UGTS-WINDOWS-GPU-ENVIRONMENT-1.4'
+    schema = 'UGTS-WINDOWS-GPU-ENVIRONMENT-1.5'
     captured_utc = [DateTime]::UtcNow.ToString('o')
     os = [ordered]@{
         caption = $os.Caption
@@ -114,6 +119,13 @@ $document = [ordered]@{
             load_instruction = 'LDG.E.STRONG.GPU generated from ld.global.cg.u32'
             source = if ($cudaClockProbe) { [System.IO.Path]::GetFullPath($CudaClockProbePath) } else { $null }
         }
+        cuda_l2_mlp_probe = [ordered]@{
+            enabled = if ($cudaMlpProbe) { [bool]$cudaMlpProbe.validation.all_rows_valid } else { $null }
+            target = 'sm_120'
+            one_warp_blocks_per_sm = if ($cudaMlpProbe) { [int]$cudaMlpProbe.device.resident_one_warp_blocks_per_sm } else { $null }
+            maximum_measured_warps_per_sm = if ($cudaMlpProbe) { [double]$cudaMlpProbe.high_concurrency_summary.warps_per_sm } else { $null }
+            source = if ($cudaMlpProbe) { [System.IO.Path]::GetFullPath($CudaMlpProbePath) } else { $null }
+        }
     }
     execution = [ordered]@{
         driver_model = 'WDDM'
@@ -124,6 +136,7 @@ $document = [ordered]@{
         pipeline_executable_metadata = if ($capabilityProbe -and $capabilityProbe.device.pipeline_executable_capture) { 'available through VK_KHR_pipeline_executable_properties' } else { 'not captured' }
         shader_clock_scope = if ($latencyProbe) { 'device-scope realtime clock; implementation-defined units' } else { 'not captured' }
         cuda_clock_scope = if ($cudaClockProbe) { 'per-SM clock64 cycle counter; elapsed thread time includes time slicing' } else { 'not captured' }
+        cuda_concurrency_scope = if ($cudaMlpProbe) { 'one-warp blocks scaled to 16 measured warps per SM; requested throughput is logical, not physical memory traffic' } else { 'not captured' }
     }
 }
 

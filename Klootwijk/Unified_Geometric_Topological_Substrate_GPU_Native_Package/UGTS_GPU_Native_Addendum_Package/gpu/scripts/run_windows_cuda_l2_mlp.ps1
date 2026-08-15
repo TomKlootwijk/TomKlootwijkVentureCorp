@@ -2,7 +2,7 @@
 param(
     [string]$OutputDirectory = (Join-Path $PSScriptRoot '..\..\benchmarks\cuda_l2_mlp_run'),
     [string]$TableMiB = '4,36,40,64,128',
-    [string]$Warps = '1,2,4,8,16,32,46,92,184,368,736',
+    [string]$Warps = '1,2,4,8,16,32,46,92,184,368,736,1104',
     [long]$EvictionMiB = 256,
     [int]$Warmup = 3,
     [int]$Samples = 15,

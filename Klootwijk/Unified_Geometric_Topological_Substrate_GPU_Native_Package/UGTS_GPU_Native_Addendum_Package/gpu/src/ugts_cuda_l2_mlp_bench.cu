@@ -31,7 +31,7 @@ struct Args {
   fs::path out_dir = "cuda_l2_mlp_out";
   std::vector<std::size_t> table_mib = {4, 36, 40, 64, 128};
   std::vector<int> warps = {1,  2,   4,   8,   16,  32,
-                            46, 92, 184, 368, 736};
+                            46, 92, 184, 368, 736, 1104};
   std::size_t eviction_mib = 256;
   int warmup = 3;
   int samples = 15;

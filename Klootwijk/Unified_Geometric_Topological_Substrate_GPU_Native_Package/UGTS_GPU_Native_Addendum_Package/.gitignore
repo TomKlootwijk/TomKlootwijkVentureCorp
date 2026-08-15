@@ -9,3 +9,4 @@ benchmarks/subgroup_smoke/
 benchmarks/smoke*/
 benchmarks/l2_latency_smoke*/
 benchmarks/cuda_l2_clock_smoke*/
+benchmarks/cuda_l2_mlp_smoke*/

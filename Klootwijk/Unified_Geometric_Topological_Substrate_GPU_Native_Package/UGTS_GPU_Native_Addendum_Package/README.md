@@ -5,8 +5,8 @@ This package is the GPU-native and physical-device revision of the unified subst
 ## What is included
 
 - `report/`: complete synthesis report and report source.
-- `spec/`: 197-mechanism knowledge catalog, typed schema, ABI/state layout, metric definitions and claims ledger.
-- `gpu/`: twelve Vulkan compute-shader sources, twenty-six named execution variants plus twenty-six optimized SPIR-V counterparts, the direct Vulkan runtime, and one native CUDA `sm_120` L2-cycle control with build/run scripts.
+- `spec/`: 200-mechanism knowledge catalog, typed schema, ABI/state layout, metric definitions and claims ledger.
+- `gpu/`: twelve Vulkan compute-shader sources, twenty-six named execution variants plus twenty-six optimized SPIR-V counterparts, the direct Vulkan runtime, and native CUDA `sm_120` L2 cycle/concurrency controls with build/run scripts.
 - `reference/`: dependency-free CPU oracle and binary packers.
 - `tests/`: executable reference tests.
 - `benchmarks/`: raw and derived benchmark data, plots and named metrics.
@@ -21,7 +21,7 @@ python -m unittest discover -s tests -v
 bash gpu/scripts/run_all_validation.sh
 ```
 
-The original portable baseline in `benchmarks/vulkan_native_run/` selected SwiftShader, a CPU/software Vulkan device. A local Windows physical-GPU validation is now recorded in [`benchmarks/PHYSICAL_GPU_REPORT_RTX_5070_TI_LAPTOP.md`](benchmarks/PHYSICAL_GPU_REPORT_RTX_5070_TI_LAPTOP.md), with a human-readable [`yield, compression and limits report`](benchmarks/YIELD_COMPRESSION_LIMITS_RTX_5070_TI_LAPTOP.md). Raw and aggregate data is under `benchmarks/windows_native_run/`, `benchmarks/windows_integrated_lut_run/`, `benchmarks/windows_lut_cache_run/`, `benchmarks/lut_path_control/`, `benchmarks/lut_pair/`, `benchmarks/sg_compact/`, `benchmarks/bounded_compact/`, `benchmarks/capacity_sweep/`, `benchmarks/prethreshold/`, `benchmarks/hot_log_lut/`, `benchmarks/hot_log_control/`, `benchmarks/l2_boundary_hot/`, `benchmarks/cold_lineage_isolated/`, `benchmarks/l2_latency_isolated/`, `benchmarks/cuda_l2_clock_isolated/`, and `benchmarks/windows_physical_gpu_aggregate/`.
+The original portable baseline in `benchmarks/vulkan_native_run/` selected SwiftShader, a CPU/software Vulkan device. A local Windows physical-GPU validation is now recorded in [`benchmarks/PHYSICAL_GPU_REPORT_RTX_5070_TI_LAPTOP.md`](benchmarks/PHYSICAL_GPU_REPORT_RTX_5070_TI_LAPTOP.md), with a human-readable [`yield, compression and limits report`](benchmarks/YIELD_COMPRESSION_LIMITS_RTX_5070_TI_LAPTOP.md). Raw and aggregate data is under `benchmarks/windows_native_run/`, `benchmarks/windows_integrated_lut_run/`, `benchmarks/windows_lut_cache_run/`, `benchmarks/lut_path_control/`, `benchmarks/lut_pair/`, `benchmarks/sg_compact/`, `benchmarks/bounded_compact/`, `benchmarks/capacity_sweep/`, `benchmarks/prethreshold/`, `benchmarks/hot_log_lut/`, `benchmarks/hot_log_control/`, `benchmarks/l2_boundary_hot/`, `benchmarks/cold_lineage_isolated/`, `benchmarks/l2_latency_isolated/`, `benchmarks/cuda_l2_clock_isolated/`, `benchmarks/cuda_l2_mlp_isolated/`, and `benchmarks/windows_physical_gpu_aggregate/`.
 
 On Windows with Visual Studio Build Tools, run the device-local Vulkan path directly:
 
@@ -48,6 +48,8 @@ The G24 fixed-query hot profile goes further: it removes unused time/phase field
 A native `VK_KHR_shader_clock` control plus 512-step dependent SSBO chase samples the L2 boundary in 2 MiB increments. Four isolated, balanced processes are flat through the exact 36 MiB reported capacity, rise 1.242x at 38 MiB and 2.134x at 40 MiB, and reach 4.714x at 64 MiB relative to 36 MiB. The raw unit is deliberately reported as implementation-defined shader-clock ticks under scheduler load, not invented GPU cycles or nanoseconds.
 
 An independent CUDA 12.8 control compiles directly to `sm_120`, bypasses L1 with `ld.global.cg`, and reads the per-SM `clock64()` cycle counter. Four isolated runs measure a cross-size median of 399.57 cycles per immediate-hot dependent warp step and 1,087.79 cycles after a 256 MiB L2-eviction pass, a 2.722x penalty. Complete-kernel CUDA-event timing corresponds to approximately 153.4 ns and 401.8 ns per step. `cuobjdump` confirms `CS2R SR_CLOCKLO` and `LDG.E.STRONG.GPU`; `ptxas` reports 17 registers and zero spills. The metric still includes warp time slicing and up to 32 random sector requests per step, so it is not labelled scalar transaction latency.
+
+A second native CUDA control scales independent one-warp blocks from one warp to 736 warps (16 per SM) while preserving each lane's 512-step dependency chain. Four balanced processes validate 42,883,200 payloads representing 14.64 billion loads. At maximum concurrency, hot requested throughput is 42.863 Gload/s for a 36 MiB table and 23.429 Gload/s at 40 MiB, a 45.34% boundary loss; 64 and 128 MiB reach only 9.318 and 7.506 Gload/s. This confirms that packed random-access state should remain below nominal L2 and quantifies the memory-queue/scheduler amplification behind the saturated cliff.
 
 The G20 cold-lineage experiment retains the same 24-byte total state storage but splits it into a 20-byte geometry/meta hot stream plus a 4-byte lineage stream loaded only by verified lanes. Across six isolated balanced processes, at 4,194,304 candidates it measures 1.108x higher append throughput and 1.110x higher counted-path throughput than G24. Native NVIDIA compiler metadata reports identical register, shared-memory, and binary-size values for the two append kernels, strengthening the locality attribution. This is a measured locality improvement, not a claim of 20-byte total storage.
 
