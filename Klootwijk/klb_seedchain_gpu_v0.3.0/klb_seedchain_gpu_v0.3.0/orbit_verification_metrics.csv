@@ -42,3 +42,16 @@ validation,full_horizon_support_difference,1,candidate
 profile,seed_count_registers,46,registers/thread
 profile,seed_compact_registers,52,registers/thread
 profile,kernel_spills,0,bytes
+profile,seed_count_achieved_occupancy,81.636171,%
+profile,seed_compact_achieved_occupancy,65.610496,%
+profile,seed_count_compute_throughput,66.187378,% of peak
+profile,seed_count_dram_throughput,0.002975,% of peak
+profile,seed_count_l2_throughput,0.095049,% of peak
+profile,seed_count_xu_pipe_utilization,20.064937,% of peak active
+profile,seed_count_idc_request_activity,63.359952,% of peak elapsed
+profile,seed_compact_compute_throughput,65.536077,% of peak
+profile,seed_compact_dram_throughput,0.007861,% of peak
+profile,seed_compact_l2_throughput,0.081524,% of peak
+profile,seed_compact_xu_pipe_utilization,18.105335,% of peak active
+profile,compact_global_atomic_requests,1243,requests
+profile,compact_l2_atomic_input_activity,0.038542,% of peak elapsed

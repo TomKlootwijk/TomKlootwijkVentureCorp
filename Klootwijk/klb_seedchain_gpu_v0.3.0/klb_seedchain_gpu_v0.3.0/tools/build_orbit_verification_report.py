@@ -488,6 +488,19 @@ def write_summary(file_modes, laptop_modes, vram_modes, telemetry):
             ("profile", "seed_count_registers", 46, "registers/thread"),
             ("profile", "seed_compact_registers", 52, "registers/thread"),
             ("profile", "kernel_spills", 0, "bytes"),
+            ("profile", "seed_count_achieved_occupancy", 81.636171, "%"),
+            ("profile", "seed_compact_achieved_occupancy", 65.610496, "%"),
+            ("profile", "seed_count_compute_throughput", 66.187378, "% of peak"),
+            ("profile", "seed_count_dram_throughput", 0.002975, "% of peak"),
+            ("profile", "seed_count_l2_throughput", 0.095049, "% of peak"),
+            ("profile", "seed_count_xu_pipe_utilization", 20.064937, "% of peak active"),
+            ("profile", "seed_count_idc_request_activity", 63.359952, "% of peak elapsed"),
+            ("profile", "seed_compact_compute_throughput", 65.536077, "% of peak"),
+            ("profile", "seed_compact_dram_throughput", 0.007861, "% of peak"),
+            ("profile", "seed_compact_l2_throughput", 0.081524, "% of peak"),
+            ("profile", "seed_compact_xu_pipe_utilization", 18.105335, "% of peak active"),
+            ("profile", "compact_global_atomic_requests", 1243, "requests"),
+            ("profile", "compact_l2_atomic_input_activity", 0.038542, "% of peak elapsed"),
         ]
     )
     with SUMMARY_CSV.open("w", newline="", encoding="utf-8") as handle:
@@ -625,7 +638,7 @@ def build_report():
         [3800, 1960, 1400, 2200],
         numeric_cols=(1, 2, 3),
     )
-    add_body(doc, "The direct seed kernels use more registers because they reconstruct orbital state and evaluate trigonometric guards. Register spills were zero. Achieved occupancy still requires hardware-counter access and was not measured.", italic=True, color=MUTED)
+    add_body(doc, "The direct seed kernels use more registers because they reconstruct orbital state and evaluate trigonometric guards. Register spills were zero. Nsight later measured 81.64% achieved occupancy for direct counting and 65.61% for direct compact output.", italic=True, color=MUTED)
 
     # Page 4.
     start_body_page(doc)
@@ -716,8 +729,8 @@ def build_report():
     add_heading(doc, "ELI5: one question versus many", 2)
     add_body(doc, "Direct seed is like reading a compact recipe and cooking one answer. Materialize-plus-query is like unpacking an entire freezer before checking one item. For a one-off question, the recipe narrowly wins and needs almost no timeline storage.")
     add_body(doc, "A resident dense table is like food already laid out. Repeated questions are then much cheaper: the dense query is roughly 4.5x faster. The practical crossover therefore depends on reuse, memory pressure, transfer cost, query count, and required accuracy - not on compression ratio alone.")
-    add_heading(doc, "Logical bandwidth, not measured DRAM", 2)
-    add_body(doc, "The benchmark's arithmetic reports about 100.6-101.1 GB/s logical materialization traffic and 728-788 GB/s logical dense-query traffic. Those figures are workload byte counts divided by time. They are not Nsight DRAM or L2 hardware counters.", italic=True, color=MUTED)
+    add_heading(doc, "Logical bandwidth versus hardware traffic", 2)
+    add_body(doc, "The benchmark's arithmetic reports about 100.6-101.1 GB/s logical materialization traffic and 728-788 GB/s logical dense-query traffic. Those are workload byte counts divided by normal-run time. The later seed-kernel Nsight profile measured only 0.0030% peak DRAM throughput and 0.095% peak L2 throughput, confirming that direct reconstruction is compute-heavy rather than external-memory-heavy.", italic=True, color=MUTED)
 
     # Page 7.
     start_body_page(doc)
@@ -748,7 +761,25 @@ def build_report():
     # Page 8.
     start_body_page(doc)
     add_heading(doc, "7. Profiling, power, and thermals", 1)
-    add_callout(doc, "NSIGHT RESULT", "Nsight Compute connected to the process on three separate attempts, but Windows denied access to NVIDIA hardware performance counters each time with ERR_NVGPUCTRPERM. No valid .ncu-rep was produced. Achieved occupancy, constant-cache behavior, SFU utilization, actual DRAM/L2 traffic, warp stalls, and atomic serialization remain unmeasured.", fill="FFF8E8", accent=GOLD)
+    add_callout(doc, "NSIGHT RESULT", "PASS after the NVIDIA counter permission change and Windows reboot. The prescribed full profile produced a valid 10,043,271-byte orbit_seed_profile.ncu-rep. A focused compact-kernel profile produced a second valid report so event-append contention could be measured instead of inferred.", fill=LIGHT_BLUE)
+    add_table(
+        doc,
+        ("Hardware counter", "Seed count", "Seed compact", "Interpretation"),
+        (
+            ("Registers / thread", "46", "52", "Compaction costs six registers"),
+            ("Achieved occupancy", "81.64%", "65.61%", "Register limit reduces resident warps"),
+            ("Compute throughput", "66.19%", "65.54%", "Compute-heavy kernel"),
+            ("DRAM throughput", "0.0030%", "0.0079%", "Not DRAM-bandwidth-bound"),
+            ("L2 throughput", "0.095%", "0.082%", "Very light L2 pressure"),
+            ("XU / special-function pipe", "20.06%", "18.11%", "Transcendental work is material"),
+            ("Global atomic requests", "0", "1,243", "Exactly one per emitted event"),
+            ("L2 atomic-input activity", "0.043%", "0.039%", "No measurable append bottleneck"),
+        ),
+        [2600, 1450, 1550, 3760],
+        numeric_cols=(1, 2),
+    )
+    add_body(doc, "Profiler replay ran near 947 MHz and inflated the benchmark-displayed profiled time; the normal sustained timing tables remain the latency source of record. For the count kernel, 41.57% of scheduler cycles had no eligible warp. The largest average stall indicators per issued instruction were branch resolving (3.05 warps), MIO throttle (2.55), and short scoreboard (2.49); long-scoreboard and global-load throttle were both zero.", italic=True, color=MUTED)
+    add_body(doc, "Nsight Compute did not expose a direct constant-cache hit-rate metric for this CC 12.0 report. It did expose 63.36% IDC request activity and 0.45% uniform-pipe utilization, while cubin inspection confirmed the 32 KiB constant allocation. Those figures are not a cache hit rate, so constant-cache efficiency remains unquantified rather than guessed.", italic=True, color=MUTED)
     telemetry_rows = []
     for name, label in (("demo", "7-day file"), ("laptop", "512 MiB"), ("vram", "2 GiB")):
         stats = telemetry[name]
@@ -765,13 +796,13 @@ def build_report():
         )
     add_table(doc, ("Run", "Active GPU", "Avg W", "Max W", "Max C", "Max MiB", "Avg SM MHz"), telemetry_rows, [1900, 1150, 1200, 1200, 1050, 1350, 1510], numeric_cols=(1, 2, 3, 4, 5, 6))
     add_body(doc, "Telemetry was sampled with nvidia-smi every 200 ms and summarizes samples at or above 50% GPU utilization. It is useful whole-device context, not per-kernel energy metering. The 2 GiB run reached 84 C; average active SM clock remained about 2.59 GHz, so no clock collapse was observed, but thermal headroom on the laptop is limited.", italic=True, color=MUTED)
-    add_heading(doc, "What static evidence still says", 2)
+    add_heading(doc, "Static evidence and measured compaction cost", 2)
     for text in (
         "The direct count kernel uses 46 registers/thread; compact direct uses 52.",
         "The resident dense count kernel uses 33 registers/thread; dense compact uses 40.",
         "All five orbit kernels report zero spill stores and loads.",
-        "The seed and node arrays are compiled into CUDA constant memory; cache hit behavior was not measurable without counters.",
-        "The compact path adds roughly 13-16% over direct counting and 64-67% over resident dense counting in these sparse-event tests.",
+        "The seed and node arrays are compiled into CUDA constant memory; this Nsight/CC 12.0 metric set did not provide a direct constant-cache hit rate.",
+        "The compact path adds roughly 13-16% over direct counting and 64-67% over resident dense counting in these sparse-event tests, but the atomic append itself is not the limiter at 0.003704% yield.",
     ):
         add_list_item(doc, text, bullet_id)
 
@@ -830,7 +861,8 @@ def build_report():
         "Fix build_windows.ps1 so every non-zero native command terminates the script and add an explicit CUDA-toolkit selector.",
         "Make the full 604,800-epoch CPU/GPU oracle exact, or define and enforce a conservative support/guard tolerance tied to the event margin.",
         "Canonicalize cross-compiler floating-point evaluation and CSV formatting if byte-identical regeneration remains a requirement.",
-        "Enable NVIDIA performance-counter access, rerun Nsight Compute, and capture achieved occupancy, constant-cache hit behavior, SFU pressure, DRAM/L2 traffic, stalls, and append serialization.",
+        "Reduce compact-kernel register pressure or test a split compaction design; its 52 registers/thread lower achieved occupancy from 81.64% to 65.61%.",
+        "If constant-cache hit rate is decision-critical, map a supported CC 12.0 counter or run a controlled constant-versus-global-memory A/B benchmark; the full Nsight set did not expose a direct hit-rate metric.",
         "Build an SGP4 CPU reference comparison for all source objects across the seven-day horizon, including event identity/order and maximum elevation-guard error.",
         "Profile a GPU SGP4 coefficient path or homogeneous near-Earth/deep-space queues, then repeat the direct-versus-dense crossover at equal accuracy.",
         "Measure multi-station and repeated-query workloads so the materialization/reuse crossover is expressed as a query-count rule, not one timing ratio.",
@@ -852,7 +884,11 @@ def build_report():
         "stress_orbit_laptop_console.txt - complete laptop-preset console output.",
         "stress_orbit_vram_console.txt - complete vram-preset console output.",
         "orbit_*_gpu_telemetry.csv - 200 ms nvidia-smi samples for all primary runs.",
-        "profile_orbit_console.txt, profile_orbit_rerun_console.txt, and profile_orbit_third_attempt_console.txt - three Nsight permission failures and seed-only fallback executions.",
+        "profile_orbit_console.txt, profile_orbit_rerun_console.txt, and profile_orbit_third_attempt_console.txt - three pre-reboot Nsight permission failures.",
+        "profile_orbit_post_reboot_console.txt and orbit_seed_profile.ncu-rep - successful prescribed full seed profile.",
+        "profile_orbit_compact_console.txt and orbit_seed_compact_profile.ncu-rep - successful focused compact-event profile.",
+        "orbit_seed_ncu_raw.csv and orbit_seed_compact_ncu_raw.csv - raw exported hardware counters.",
+        "orbit_seed_profile_details.txt and orbit_seed_compact_profile_details.txt - human-readable counter summaries.",
         "orbit_cuobjdump_resources.txt - static cubin/PTX resource report.",
         "orbit_full_horizon_oracle_console.txt - stronger oracle failure evidence.",
         "compute_sanitizer_orbit_console.txt - zero-error memory-safety run.",
@@ -869,13 +905,14 @@ def build_report():
             ("Seven-day demo", "demo_orbit_windows.ps1 -BuildDir build-cuda128-vs"),
             ("512 MiB", "stress_orbit_windows.ps1 -Preset laptop -BuildDir build-cuda128-vs"),
             ("2 GiB", "stress_orbit_windows.ps1 -Preset vram -BuildDir build-cuda128-vs"),
-            ("Profile", "profile_orbit_windows.ps1 -BuildDir build-cuda128-vs"),
+            ("Seed profile", "profile_orbit_windows.ps1 -BuildDir build-cuda128-vs"),
+            ("Compact profile", "ncu --set full --kernel-name regex:query_seed_compact_kernel --launch-count 1 ... --mode all --write-events"),
             ("Full oracle", "klb_orbit_bench ... --preset file --verify-epochs 604800"),
         ),
         [1900, 7460],
     )
     add_heading(doc, "Overall assessment", 2)
-    add_body(doc, "The v0.3 architecture turns the earlier launch-sized microbenchmark into a legitimate sustained crossover experiment. The direct seed path is real, correct under the stated acceptance gate, memory-efficient, and narrowly faster than rebuilding a dense table for a one-off query. The design is promising as a query-first substrate, but it is not ready for operational orbital use until full-horizon numerical parity, hardware profiling, and SGP4 error/event-order validation are complete.")
+    add_body(doc, "The v0.3 architecture turns the earlier launch-sized microbenchmark into a legitimate sustained crossover experiment. The direct seed path is real, correct under the stated acceptance gate, memory-efficient, narrowly faster than rebuilding a dense table for a one-off query, and demonstrably compute-bound. The design is promising as a query-first substrate, but it is not ready for operational orbital use until full-horizon numerical parity and SGP4 error/event-order validation are complete.")
 
     doc.save(OUTPUT)
     print(OUTPUT)
