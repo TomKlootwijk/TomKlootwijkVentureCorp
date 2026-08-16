@@ -275,11 +275,9 @@ def add_list_item(doc, text, num_id, *, bold_prefix=None):
     return p
 
 
-def add_heading(doc, text, level=1, *, new_page=False):
+def add_heading(doc, text, level=1):
     p = doc.add_paragraph(text, style=f"Heading {level}")
     p.paragraph_format.keep_with_next = True
-    if new_page:
-        p.paragraph_format.page_break_before = True
     return p
 
 
@@ -301,6 +299,7 @@ def add_body(doc, text, *, bold_prefix=None, italic=False, color=INK, after=6, a
 
 def add_callout(doc, label, text, *, fill=CALLOUT, accent=POSITIVE):
     table = doc.add_table(rows=1, cols=1)
+    set_repeat_table_header(table.rows[0])
     set_table_geometry(table, [CONTENT_DXA])
     set_cell_shading(table.cell(0, 0), fill)
     cell = table.cell(0, 0)
@@ -374,13 +373,6 @@ def configure_document(doc):
     h3.paragraph_format.space_after = Pt(4)
     h3.paragraph_format.keep_with_next = True
 
-    header = section.header
-    p = header.paragraphs[0]
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    p.paragraph_format.space_after = Pt(0)
-    r = p.add_run("KLB SeedChain GPU 0.2.0  |  Independent verification")
-    set_run_font(r, size=9, color=MUTED, bold=True)
-
     footer = section.footer
     fp = footer.paragraphs[0]
     fp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
@@ -405,6 +397,45 @@ def configure_document(doc):
         update = OxmlElement("w:updateFields")
         settings.append(update)
     update.set(qn("w:val"), "true")
+
+
+def start_body_section(doc):
+    """Start a linked report section on a fresh page."""
+    section = doc.add_section(WD_SECTION.NEW_PAGE)
+    section.page_width = Inches(8.5)
+    section.page_height = Inches(11)
+    section.top_margin = Inches(0.5)
+    section.right_margin = Inches(1)
+    section.bottom_margin = Inches(1)
+    section.left_margin = Inches(1)
+    section.header_distance = Inches(0.492)
+    section.footer_distance = Inches(0.492)
+    section.different_first_page_header_footer = False
+    section.header.is_linked_to_previous = True
+    section.footer.is_linked_to_previous = True
+    return section
+
+
+def add_running_header(doc):
+    """Add a stable in-flow running label at an intentional page start."""
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(0)
+    p.paragraph_format.space_after = Pt(12)
+    p.paragraph_format.keep_with_next = True
+    r = p.add_run("KLB SeedChain GPU 0.2.0  |  Independent verification")
+    set_run_font(r, size=9, color=MUTED, bold=True)
+    return p
+
+
+def add_page_guard(doc, *, after=28):
+    """Reserve top-edge space before page starts affected by Word parity layout."""
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(0)
+    p.paragraph_format.space_after = Pt(after)
+    p.paragraph_format.keep_with_next = True
+    r = p.add_run(" ")
+    set_run_font(r, size=1, color=WHITE)
+    return p
 
 
 def build_report():
@@ -456,6 +487,7 @@ def build_report():
     )
 
     metrics = doc.add_table(rows=2, cols=3)
+    set_repeat_table_header(metrics.rows[0])
     set_table_geometry(metrics, [3120, 3120, 3120])
     labels = ("DEMO STORAGE", "FULL GPU CHECK", "DIRECT QUERY")
     values = ("207.321x", "0 lineage mismatches", "0.041 ms")
@@ -472,7 +504,9 @@ def build_report():
         align=WD_ALIGN_PARAGRAPH.CENTER,
     )
 
-    add_heading(doc, "1. The answer in plain English", 1, new_page=True)
+    start_body_section(doc)
+    add_running_header(doc)
+    add_heading(doc, "1. The answer in plain English", 1)
     add_callout(
         doc,
         "VERDICT",
@@ -522,7 +556,11 @@ def build_report():
         [2200, 7160],
     )
 
-    add_heading(doc, "3. How SeedChain works (ELI5)", 1, new_page=True)
+    # The environment table naturally fills page 2; a second forced break here
+    # creates a blank page in Word. Let normal pagination start section 3.
+    add_page_guard(doc)
+    add_running_header(doc)
+    add_heading(doc, "3. How SeedChain works (ELI5)", 1)
     add_body(doc, "Imagine a flip-book containing 240 pictures of the same object:")
     steps = (
         "Store one compact master model. Each point uses a 37-bit log-spherical record.",
@@ -562,7 +600,10 @@ def build_report():
     )
     add_body(doc, "The Bunny tests preserve vertex positions only. The 240-frame Bunny chain still uses generated motion; it is not a fitted real scan sequence.", italic=True, color=MUTED)
 
-    add_heading(doc, "5. The generic fitter reality check", 1, new_page=True)
+    # Section 4 already fills page 3, so normal pagination is sufficient.
+    add_page_guard(doc)
+    add_running_header(doc)
+    add_heading(doc, "5. The generic fitter reality check", 1)
     add_body(
         doc,
         "Sixteen frames were exported from the Bunny-based generated chain and then treated as an unknown external sequence. The fitter was allowed only one global uniform scale, one Y-axis rotation, and translation per frame. This deliberately tests whether the current generic predictor can explain complex per-point motion without knowing the original grammar.",
@@ -608,7 +649,9 @@ def build_report():
         numeric_cols=(1, 2, 3, 4, 5),
     )
 
-    add_heading(doc, "Repeatability at final frame (30 fresh processes)", 2, new_page=True)
+    start_body_section(doc)
+    add_running_header(doc)
+    add_heading(doc, "Repeatability at final frame (30 fresh processes)", 2)
     add_table(
         doc,
         ("Mode", "p50", "p95", "p99", "Mean"),
@@ -642,7 +685,10 @@ def build_report():
         "A 200,000-launch seed-query stress run sustained 0.041111 ms and 1.594 billion candidate points/s. After ramp-up, the GPU reported 98-99% utilization, about 128.6-130.6 W, and 63-69 C. Coarse nvidia-smi memory utilization rounded to 0%, consistent with this sub-1 MiB chain fitting in cache, but it is not a DRAM counter.",
     )
 
-    add_heading(doc, "8. Correctness evidence", 1, new_page=True)
+    start_body_section(doc)
+    add_page_guard(doc, after=56)
+    add_running_header(doc)
+    add_heading(doc, "8. Correctness evidence", 1)
     checks = (
         "Package manifest: every listed file matched SHA-256; supplied KLSC chain hash matched the manifest.",
         "CPU oracle suite: 1 of 1 test executable passed, covering bit packing, parity, swizzle, Klein seam rules, PLY I/O, checkpoints, hashes, fitting, and error reporting.",
@@ -663,7 +709,9 @@ def build_report():
         color=MUTED,
     )
 
-    add_heading(doc, "9. Practical use cases", 1, new_page=True)
+    start_body_section(doc)
+    add_running_header(doc)
+    add_heading(doc, "9. Practical use cases", 1)
     add_callout(
         doc,
         "BEST MATCH",
@@ -680,6 +728,7 @@ def build_report():
         ("Stable-correspondence LiDAR/depth sequences", "Conditional. Useful when scans are registered and most motion is rigid or cluster-rigid. Poor fit when correspondence changes, occlusion is heavy, or points are resampled."),
         ("Network or disk streaming to memory-limited GPUs", "Promising when sending one base plus compact nodes is cheaper than streaming dense frames. Chain segments can be prefetched and queried directly."),
     )
+    add_heading(doc, "Suitable workloads", 2)
     for title_text, detail in use_cases:
         add_heading(doc, title_text, 3)
         add_body(doc, detail)
@@ -694,7 +743,10 @@ def build_report():
     ):
         add_list_item(doc, text, bullet_id)
 
-    add_heading(doc, "10. Limitations and issues found", 1, new_page=True)
+    # The use-case page is naturally full; avoid a redundant forced break.
+    add_page_guard(doc)
+    add_running_header(doc)
+    add_heading(doc, "10. Limitations and issues found", 1)
     issues = (
         ("Universal compression is unproven", "The measured 207x applies to a reconstructible generated sequence. The generic fitting challenge was 0.79x at the accurate setting."),
         ("Dense-reference comparison is decode consistency", "The GPU benchmark compares direct reconstruction with a dense frame materialized from the same compressed chain. It does not compare event membership against the original source PLY sequence."),
@@ -711,7 +763,9 @@ def build_report():
         r = p.add_run(detail)
         set_run_font(r)
 
-    add_heading(doc, "11. Recommended next engineering steps", 1, new_page=True)
+    start_body_section(doc)
+    add_running_header(doc)
+    add_heading(doc, "11. Recommended next engineering steps", 1)
     recommendations = (
         "Add a source-frame event oracle so fitted compression is accepted only when event membership/order also matches the original sequence.",
         "Replace one global Y-similarity predictor with per-cluster rigid/quaternion predictors and per-cluster quantization bounds.",
@@ -734,7 +788,10 @@ def build_report():
         accent=GOLD,
     )
 
-    add_heading(doc, "Appendix A. Evidence and commands", 1, new_page=True)
+    start_body_section(doc)
+    add_page_guard(doc, after=76)
+    add_running_header(doc)
+    add_heading(doc, "Appendix A. Evidence and commands", 1)
     add_body(doc, "Primary measured artifacts created in the project directory:")
     for text in (
         "seedchain_results.csv - prescribed 20-repeat final-frame run.",
