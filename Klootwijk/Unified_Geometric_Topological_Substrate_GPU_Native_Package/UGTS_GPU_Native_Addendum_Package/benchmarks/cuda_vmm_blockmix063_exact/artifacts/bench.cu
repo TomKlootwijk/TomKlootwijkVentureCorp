@@ -83,9 +83,6 @@ constexpr int kUniformCodePatternLimit = kUniformCodePatternBase + 64;
 constexpr int kBlockMixZeroOnesPatternBase = 200;
 constexpr int kBlockMixZeroOnesPatternCount = 11;
 constexpr int kBlockMixZeroOnesHashedPattern = 220;
-constexpr int kBlockMixCompressibleFourPatternBase = 240;
-constexpr int kBlockMixCompressibleFourPatternCount = 11;
-constexpr int kBlockMixCompressibleFourHashedPattern = 260;
 
 std::string pattern_name(Pattern pattern) {
   const int value = int(pattern);
@@ -97,13 +94,6 @@ std::string pattern_name(Pattern pattern) {
            std::to_string(1u << (value - kBlockMixZeroOnesPatternBase));
   if (value == kBlockMixZeroOnesHashedPattern)
     return "blockmix6_0_63_hash";
-  if (value >= kBlockMixCompressibleFourPatternBase &&
-      value < kBlockMixCompressibleFourPatternBase +
-                  kBlockMixCompressibleFourPatternCount)
-    return "blockmix6_0_21_42_63_g" + std::to_string(
-               1u << (value - kBlockMixCompressibleFourPatternBase));
-  if (value == kBlockMixCompressibleFourHashedPattern)
-    return "blockmix6_0_21_42_63_hash";
   switch (pattern) {
   case Pattern::Zero:
     return "zero6";
@@ -284,26 +274,6 @@ std::vector<Pattern> parse_patterns(const std::string &text) {
       result.push_back(
           static_cast<Pattern>(kBlockMixZeroOnesPatternBase + exponent));
     }
-    else if (part == "blockmix6_0_21_42_63_hash")
-      result.push_back(
-          static_cast<Pattern>(kBlockMixCompressibleFourHashedPattern));
-    else if (part.rfind("blockmix6_0_21_42_63_g", 0) == 0) {
-      const std::string prefix = "blockmix6_0_21_42_63_g";
-      const std::string suffix = part.substr(prefix.size());
-      std::size_t consumed = 0;
-      const int groups = suffix.empty() ? -1 : std::stoi(suffix, &consumed);
-      if (consumed != suffix.size() || groups < 1 || groups > 1024 ||
-          (groups & (groups - 1)) != 0)
-        throw std::runtime_error(
-            "four-symbol blockmix6 group run must be a power of two in "
-            "[1, 1024]: " +
-            part);
-      int exponent = 0;
-      for (int value = groups; value > 1; value >>= 1)
-        ++exponent;
-      result.push_back(static_cast<Pattern>(
-          kBlockMixCompressibleFourPatternBase + exponent));
-    }
     else if (!part.empty())
       throw std::runtime_error("unknown pattern: " + part);
   }
@@ -395,18 +365,6 @@ __host__ __device__ __forceinline__ std::uint32_t code_for(
   if (pattern == kBlockMixZeroOnesHashedPattern) {
     const std::uint32_t group = index >> 4u;
     return (mix32(group ^ 0x3c6ef372u) & 1u) != 0u ? 63u : 0u;
-  }
-  if (pattern >= kBlockMixCompressibleFourPatternBase &&
-      pattern < kBlockMixCompressibleFourPatternBase +
-                    kBlockMixCompressibleFourPatternCount) {
-    const std::uint32_t run_exponent =
-        std::uint32_t(pattern - kBlockMixCompressibleFourPatternBase);
-    const std::uint32_t group = index >> 4u;
-    return ((group >> run_exponent) & 3u) * 21u;
-  }
-  if (pattern == kBlockMixCompressibleFourHashedPattern) {
-    const std::uint32_t group = index >> 4u;
-    return (mix32(group ^ 0xa54ff53au) & 3u) * 21u;
   }
   if (pattern == int(Pattern::Zero))
     return 0u;
@@ -939,7 +897,7 @@ void write_results(const Args &args, const cudaDeviceProp &properties,
        << ", \"order\": " << args.order
        << ", \"paired_paths_share_mapping\": true"
        << ", \"compression_modes_alternate_per_sample\": true},\n"
-          "  \"semantics\": \"Dense packed6 code tables compare explicit non-compressible and driver-confirmed generic-compressible VMM allocations. zero6, periodic6, entropy6, optional all-one ones6, the exact uniform code-8 stream produced by the current G24 confidence_floor=0.70 generator, parameterized uniform6_0 through uniform6_63, balanced blockmix6_0_63, and four-symbol blockmix6_0_21_42_63 group-run/hashed controls are checked inside every timed kernel.\",\n"
+          "  \"semantics\": \"Dense packed6 code tables compare explicit non-compressible and driver-confirmed generic-compressible VMM allocations. zero6, periodic6, entropy6, optional all-one ones6, the exact uniform code-8 stream produced by the current G24 confidence_floor=0.70 generator, parameterized uniform6_0 through uniform6_63, and balanced blockmix6_0_63 group-run/hashed controls are checked inside every timed kernel.\",\n"
           "  \"scope_note\": \"Throughput and capacity curves can reveal a workload-level benefit or lack thereof, but do not expose achieved hardware compression ratio, compressed L2 bytes, DRAM traffic or compression counters.\",\n"
           "  \"results\": [\n";
   for (std::size_t index = 0; index < rows.size(); ++index) {
