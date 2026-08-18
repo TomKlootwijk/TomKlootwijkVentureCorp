@@ -1,0 +1,2 @@
+address,confirmed_balance_sats,confirmed_balance_btc,mempool_delta_sats,balance_including_mempool_sats,balance_including_mempool_btc,chain_tx_count,balance_status
+3EKMtPc89gGsJHaCtcbWykT4zRLH6hTg9X,,,,,,,not_retrieved_in_creation_session

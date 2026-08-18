@@ -1,0 +1,7 @@
+EVIDENCE STATUS - 2026-08-18
+
+The target Bitcoin address itself was structurally validated as a Bitcoin mainnet P2SH Base58Check address.
+
+Live target transaction JSON was NOT retrieved while this package was being created. The browser could read public API documentation but would not open a target-specific non-indexed JSON URL; the local Python/container runtime had no external network access. No transaction IDs, downstream addresses, or balances have therefore been guessed or fabricated in the interim files.
+
+Run trace_bitcoin.py on an internet-connected machine to produce the populated evidence set. The script saves the raw explorer JSON alongside the derived CSV, graph, and PDF so each assertion can be audited.

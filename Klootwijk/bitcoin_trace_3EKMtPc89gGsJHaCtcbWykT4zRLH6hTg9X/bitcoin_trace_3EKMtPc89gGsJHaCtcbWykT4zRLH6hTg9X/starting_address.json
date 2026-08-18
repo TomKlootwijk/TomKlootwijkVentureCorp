@@ -1,0 +1,12 @@
+{
+  "address": "3EKMtPc89gGsJHaCtcbWykT4zRLH6hTg9X",
+  "network": "Bitcoin mainnet",
+  "encoding": "Base58Check",
+  "version_hex": "05",
+  "address_type": "P2SH",
+  "hash160": "8a8125f0674cc2d3d0e4ac33f14bd23ecdf85b6c",
+  "checksum_hex": "a11aba9a",
+  "checksum_valid": true,
+  "current_balance_btc": null,
+  "balance_status": "not_retrieved_in_creation_session"
+}

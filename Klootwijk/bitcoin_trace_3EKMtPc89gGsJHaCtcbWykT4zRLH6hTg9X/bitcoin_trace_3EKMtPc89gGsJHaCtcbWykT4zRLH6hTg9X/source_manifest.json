@@ -1,0 +1,26 @@
+{
+  "analysis_date": "2026-08-18",
+  "network": "Bitcoin mainnet",
+  "target_address": "3EKMtPc89gGsJHaCtcbWykT4zRLH6hTg9X",
+  "live_data_status_in_creation_session": "not_retrieved",
+  "reason": "The available browser could read indexed API documentation but could not open the target-specific non-indexed JSON API URL, while the local runtime had no external network access.",
+  "primary_runtime_api": {
+    "provider": "mempool.space",
+    "base": "https://mempool.space/api",
+    "templates": [
+      "/address/:address",
+      "/address/:address/txs",
+      "/address/:address/txs/chain/:last_seen_txid",
+      "/tx/:txid",
+      "/tx/:txid/outspends"
+    ]
+  },
+  "compatible_reference_api": {
+    "provider": "Blockstream Esplora",
+    "base": "https://blockstream.info/api/"
+  },
+  "secondary_reference": {
+    "provider": "Blockchain.com Data API",
+    "single_address_template": "https://blockchain.info/rawaddr/$bitcoin_address"
+  }
+}
