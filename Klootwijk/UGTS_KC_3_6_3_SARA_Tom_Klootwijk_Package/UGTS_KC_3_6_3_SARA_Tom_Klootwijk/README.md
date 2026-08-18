@@ -13,23 +13,9 @@ entropy -> BIP39 checksum -> 11-bit word cells -> mnemonic
 
 **Requester-supplied attribution:** Tom Klootwijk, Principal Creative Technologist, 10-07-1990, NL200678942. The role and identifiers are recorded as supplied and were not independently verified.
 
-## Non-negotiable security boundary
-
-This package does **not** contain a third-party wallet brute-force engine. It does not enumerate mnemonic candidates, spray passphrases, scan private keys, search for a key matching a mainnet address, sign transactions, mutate PSBTs, broadcast transactions, query balances or move funds.
-
-The supplied public address is used only as a public format/checksum fixture. The reference decoder verifies that it is a valid mainnet Bech32 witness-v0 address containing a 20-byte witness program and maps it to its public P2WPKH scriptPubKey. That observation does not expose or recover a private key.
-
-Permitted audit scopes are:
-
-- official public BIP test vectors;
-- validation of a mnemonic or seed already owned by the operator;
-- public address and watch-only descriptor checks;
-- regtest, signet and testnet experiments;
-- checksum, derivation-consistency and search-space metrics.
-
 ## 3.6.3 additions
 
-The `sara363.*` namespace adds **45 atomic operators**, **19 content-addressed definitions** and **20 claims-ledger entries** covering:
+The `sara363.\*` namespace adds **45 atomic operators**, **19 content-addressed definitions** and **20 claims-ledger entries** covering:
 
 1. BIP39 entropy, checksum, 11-bit segmentation and a word-cell complex.
 2. Unicode NFKD normalization and the standard PBKDF2-HMAC-SHA512 seed transition.
@@ -75,9 +61,9 @@ For a uniform `b`-bit space at rate `R`, the estimator reports `2^b` candidates,
 At an intentionally unrealistic `10^15` trials/second:
 
 ```text
-12-word valid BIP39 space (128 bits): expected ~5.39e15 years
-P2WPKH 160-bit target preimage:       expected ~2.32e25 years
-secp256k1 private scalar (256 bits):  expected ~1.83e54 years
+12-word valid BIP39 space (128 bits): expected \~5.39e15 years
+P2WPKH 160-bit target preimage:       expected \~2.32e25 years
+secp256k1 private scalar (256 bits):  expected \~1.83e54 years
 ```
 
 A 20-bit toy metric is included only to make scale understandable. It is not Bitcoin-compatible and has no wallet-search implementation.
@@ -85,7 +71,7 @@ A 20-bit toy metric is included only to make scale understandable. It is not Bit
 ## Quick start
 
 ```bash
-PYTHONPATH=src python examples/demo_sara363.py
+PYTHONPATH=src python examples/demo\_sara363.py
 PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
@@ -93,21 +79,21 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 
 ```text
 report/
-  UGTS_KC_3_6_3_SARA_Tom_Klootwijk.pdf
-  UGTS_KC_3_6_3_SARA_Tom_Klootwijk.tex
+  UGTS\_KC\_3\_6\_3\_SARA\_Tom\_Klootwijk.pdf
+  UGTS\_KC\_3\_6\_3\_SARA\_Tom\_Klootwijk.tex
   figures/
 spec/
-  SARA_3_6_3_FORMAL_DEFINITION.md
-  ugts_kc_3_6_3_sara.schema.json
-  sara_3_6_3_delta_operator_catalog.csv/json
-  sara_3_6_3_claims_ledger.csv/json
+  SARA\_3\_6\_3\_FORMAL\_DEFINITION.md
+  ugts\_kc\_3\_6\_3\_sara.schema.json
+  sara\_3\_6\_3\_delta\_operator\_catalog.csv/json
+  sara\_3\_6\_3\_claims\_ledger.csv/json
 src/ugts36/
   sara363.py
-  sara_runtime.py
+  sara\_runtime.py
   retained 3.6/3.6.1/3.6.2 modules
 examples/
-  ugts_kc_3_6_3_sara_example.json
-  demo_sara363.py
+  ugts\_kc\_3\_6\_3\_sara\_example.json
+  demo\_sara363.py
   public-only certificate and trace
 data/
   official BIP39 English wordlist fixture
@@ -122,3 +108,4 @@ checksums/
 ## Validation
 
 The complete retained suite contains **195 passing tests**: 42 SARA tests and 153 tests from versions 3.6 through 3.6.2. The final package additionally checks JSON Schema validity, content-address hashes, dependency order, public-address round-trip, secret-free certificate keys, absence of network/signing APIs, the official wordlist digest and PDF preflight.
+
