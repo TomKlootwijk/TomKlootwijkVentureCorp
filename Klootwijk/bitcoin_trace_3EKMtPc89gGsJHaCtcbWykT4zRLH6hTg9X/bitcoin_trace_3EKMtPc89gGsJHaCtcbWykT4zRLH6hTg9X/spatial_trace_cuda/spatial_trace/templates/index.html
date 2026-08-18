@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bitcoin Spatial Trace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">UGTS SPARSE TEMPORAL MAP</p>
+      <h1>Where did the trail go?</h1>
+      <p class="lede">A plain-language, evidence-first view of one Bitcoin output and the proportional trail after it was mixed.</p>
+    </div>
+    <a class="report-link" href="../pdf/bitcoin_spatial_trace_report_2020-06-05_to_2026-08-18.pdf">Open ELI5 PDF</a>
+  </header>
+
+  <main>
+    <section id="cards" class="cards" aria-label="Summary"></section>
+
+    <section class="truth-grid">
+      <article class="truth exact">
+        <span>EXACT ON-CHAIN FACT</span>
+        <h2>The starting address is empty now.</h2>
+        <p>Its one 6,423,410 satoshi output was spent on 2020-06-05. Transaction links and output values are public ledger facts.</p>
+      </article>
+      <article class="truth model">
+        <span>MODEL AFTER MIXING</span>
+        <h2>The colored trail is proportional.</h2>
+        <p>After unrelated inputs join the same transaction, Bitcoin does not label which new output carries which old satoshi.</p>
+      </article>
+      <article class="truth unknown">
+        <span>NOT SHOWN OR CLAIMED</span>
+        <h2>No owners and no geography.</h2>
+        <p>An address is not a verified person, company, wallet, or place. Horizontal distance means hop depth only.</p>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <aside class="controls">
+        <h2>Map controls</h2>
+        <label for="hop">Show through hop <strong id="hop-value"></strong></label>
+        <input id="hop" type="range" min="0" step="1">
+        <label for="minimum">Minimum modeled amount (sats)</label>
+        <input id="minimum" type="number" min="0" step="1" value="0">
+        <label for="search">Find address or transaction</label>
+        <div class="search-row"><input id="search" type="search" placeholder="Paste an ID"><button id="find">Find</button></div>
+        <div class="legend">
+          <span><i class="target-dot"></i>Starting address</span>
+          <span><i class="tx-dot"></i>Transaction</span>
+          <span><i class="address-dot"></i>Address / script</span>
+        </div>
+        <button id="reset" class="secondary">Reset view</button>
+      </aside>
+      <div class="map-wrap">
+        <canvas id="map" aria-label="Interactive transaction graph"></canvas>
+        <div class="axis-note">left: starting address &nbsp; - &nbsp; right: later hop</div>
+      </div>
+      <aside id="details" class="details" aria-live="polite">
+        <p class="eyebrow">SELECT A DOT</p>
+        <h2>Node details</h2>
+        <p>Click a dot or search an ID. Amounts on later nodes are modeled attribution, not ownership.</p>
+      </aside>
+    </section>
+
+    <section class="bottom-grid">
+      <article>
+        <p class="eyebrow">THE LITTLE-KID VERSION</p>
+        <h2>A box of mixed marbles</h2>
+        <p>Imagine your red marble goes into a box with 199 marbles from other people. The box then pours marbles into two cups. We know exactly which cups were filled and how many marbles went into each cup. We do not know which cup got your exact red marble. The map colors each cup by its fair share. That color is a careful estimate.</p>
+      </article>
+      <article>
+        <p class="eyebrow">CUDA STATUS</p>
+        <h2 id="cuda-title">Loading...</h2>
+        <p id="cuda-copy"></p>
+      </article>
+      <article>
+        <p class="eyebrow">STOP RULES</p>
+        <h2 id="stops-title">Loading...</h2>
+        <p id="stops-copy"></p>
+      </article>
+    </section>
+
+    <section class="table-section">
+      <div>
+        <p class="eyebrow">LARGEST MODELED ARRIVALS</p>
+        <h2>Top visible nodes</h2>
+      </div>
+      <div class="table-scroll"><table><thead><tr><th>Node</th><th>Kind</th><th>Hop</th><th>Modeled sats in</th><th>Current whole-address sats</th></tr></thead><tbody id="top-rows"></tbody></table></div>
+    </section>
+  </main>
+  <footer>Built from saved Esplora JSON and CSV evidence. Full hashes, source limits, and citations are in the PDF and provenance.json.</footer>
+  <script src="trace_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

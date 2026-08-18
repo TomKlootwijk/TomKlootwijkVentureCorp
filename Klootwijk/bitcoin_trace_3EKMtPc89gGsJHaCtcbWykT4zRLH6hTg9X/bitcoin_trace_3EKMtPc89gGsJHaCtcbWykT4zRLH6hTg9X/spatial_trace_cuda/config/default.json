@@ -1,0 +1,11 @@
+{
+  "schema": "BITCOIN-SPATIAL-TRACE-CONFIG-1",
+  "address": "3EKMtPc89gGsJHaCtcbWykT4zRLH6hTg9X",
+  "from_date": "2020-06-05",
+  "to_date": "2026-08-18",
+  "device": "auto",
+  "cuda_pagerank_iterations": 64,
+  "layout_iterations": 140,
+  "source_method": "proportional_after_commingling",
+  "interpretation": "Topological positions are a visual graph layout, not real-world geography."
+}
