@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "address": "3EKMtPc89gGsJHaCtcbWykT4zRLH6hTg9X",
+    "confirmed_balance_sats": 0,
+    "confirmed_balance_btc": 0.0,
+    "mempool_delta_sats": 0,
+    "balance_including_mempool_sats": 0,
+    "balance_including_mempool_btc": 0.0,
+    "chain_tx_count": 2,
+    "address_type": "P2SH if the supplied address begins with 3 (validated separately in package metadata)"
+  },
+  "period": {
+    "from": "2020-01-01",
+    "to": "2020-12-31"
+  },
+  "counts": {
+    "roots": 1,
+    "transactions": 37,
+    "edges": 436,
+    "addresses": 389
+  }
+}

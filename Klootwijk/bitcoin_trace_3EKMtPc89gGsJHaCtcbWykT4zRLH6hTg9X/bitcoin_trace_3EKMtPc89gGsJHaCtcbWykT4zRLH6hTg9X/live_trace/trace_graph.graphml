@@ -1,0 +1,3026 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d2" for="edge" attr.name="method" attr.type="string" />
+  <key id="d1" for="edge" attr.name="attributed_sats" attr.type="double" />
+  <key id="d0" for="node" attr.name="kind" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="3EKMtPc89gGsJHaCtcbWykT4zRLH6hTg9X">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:fac1838dc39bc1b6e076ac1fb88c3b5024609edd0a69e9a37ad5d8c0fe28bd52">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3P1h11TDnLu31PPFvukrUAfk8WhiJqQJNu">
+      <data key="d0">address</data>
+    </node>
+    <node id="367JuH48WYTqy7LFBMMJ8LL5Mo72BQRMTu">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1YGs7wZPs3xSiEK1BxyAWMpCR9zAJkaJJ">
+      <data key="d0">address</data>
+    </node>
+    <node id="3CFjJD1x4SwM3k2wP4bmu48imK71rBPPrT">
+      <data key="d0">address</data>
+    </node>
+    <node id="37PJiMT2GzN1WRzoPF66y3ujHNhYpBcocZ">
+      <data key="d0">address</data>
+    </node>
+    <node id="161dkK1PoVUfbn6NXrpf1UPHdf7Km9dvAD">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Q3pwwKpQa6Kx6xu5ao5W6aHs6vF6ezMWa">
+      <data key="d0">address</data>
+    </node>
+    <node id="13n7KxR9ff4mMgMsv7nNb8twEkvcPqwunQ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1BG2en1rzDp9NpxFjsxfvBMSF25S6SZApq">
+      <data key="d0">address</data>
+    </node>
+    <node id="1MTiyZNJM3m9Ka2xkC2j4VpJeH9wRaxqeR">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qj0x8knaa65kv9ph7vk4fltqxs2pe0qj708h03c">
+      <data key="d0">address</data>
+    </node>
+    <node id="3KHH5MrXUL7aLsvvFF5auPck7smRt8kAwj">
+      <data key="d0">address</data>
+    </node>
+    <node id="36XtnmQFPxgFGgFfVtY1gWmznvQuRw1Wrd">
+      <data key="d0">address</data>
+    </node>
+    <node id="375qwq5voiMBQKeiF61HQnoswakmx25HFm">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:549a3ba35379eb882e58ac2c2eba8d35e7fe6b846d3c8e518770863a691fa323">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="32521SL2crCGKuzUoa5oW9Wykj6tsohai3">
+      <data key="d0">address</data>
+    </node>
+    <node id="322mARwGskYavrigEZc3eYGFKGzBviJkHh">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1BMvHxZBb17GxSnomVkkfpRUHgxFQwojuj">
+      <data key="d0">address</data>
+    </node>
+    <node id="1QEUU7DCUtzJ7rbL5mGtAu2byU3tmYu1Vv">
+      <data key="d0">address</data>
+    </node>
+    <node id="32fUAVBXZa3CiJHT3TNKuxzQDdY62ZrdJB">
+      <data key="d0">address</data>
+    </node>
+    <node id="3L3hkjSbwUW2k8X8nUcmkutYMFBfEXwT6r">
+      <data key="d0">address</data>
+    </node>
+    <node id="3PYiY1BkDMz5WpDDT9ZSstXF2RRmsvrxpN">
+      <data key="d0">address</data>
+    </node>
+    <node id="31j3Wo3r9zy3qo4sAbjDFJscsp3gchKdAr">
+      <data key="d0">address</data>
+    </node>
+    <node id="1DGjJ4n2ELfiRGfvRhsevJnLyV1VXMSLsW">
+      <data key="d0">address</data>
+    </node>
+    <node id="32Rvwo56adk84JqYtYymtsBuVP2EXsRKUt">
+      <data key="d0">address</data>
+    </node>
+    <node id="37pWXDgGFEmxY38pBsbakT4WcHn95mdXx1">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Ad6ufjqPwD8iVKpua5ZNws6wV6EdCvRrR">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1quequa35yqzd6fx56mzw726ae9dpjmrtuzzf42yq8htlwdaxr0pjqlc7q2d">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:083ccdfda085a6f369ec0318b1300dce028377028682ac2f4f0d9579f5551916">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="37V7J1mCdtbD1bDG4iqmcHnEX451YSoA57">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Qy2pxx2YCHXnscXgCP3H4dtqwE2oUkWkf">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:789f67cfb82109555ace20bd211007b3c7a097d108876149a0e7d64e75ba3d8d">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1AgRs9ZJaNi1YyJEEhoRvS5XaY3affnNxN">
+      <data key="d0">address</data>
+    </node>
+    <node id="18LxX4NzKMVTyu21sxru6Pe4JmkHswf1am">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:611ec76032d3f3216adf6fbcde343e2d6dfaa9c735dc4a19ab7c69ca15ae55af">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3PtFViZPAVzaC9VTvVBH51b6xmpHqLk6MF">
+      <data key="d0">address</data>
+    </node>
+    <node id="1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:5c901f8b430acad8f30aafc3ee033ab6d3697bc08b6b9f25c62f0b5c46f8e997">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3JRHZyGjU5U3qLSgGWscDjxQYmgbjvRD7f">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qv500kz43z4jezj4phgch7xxdvt64f3cjq2k9gv">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3QQLba8Ct5HN7jFjrnEXDrSG99cQDnijwA">
+      <data key="d0">address</data>
+    </node>
+    <node id="18UFLS4HGpiRgAPDAyn78kQLJuVF4SYina">
+      <data key="d0">address</data>
+    </node>
+    <node id="3HqY29VVHe4YBRsFb7Qez97WRUg52YV7MM">
+      <data key="d0">address</data>
+    </node>
+    <node id="3QAkr29PpNZmcWob1VCYdzSJom3xp4mSof">
+      <data key="d0">address</data>
+    </node>
+    <node id="35tTaxzEjr7Snk1aitjhQ6NTUy1FrkozAN">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qkkt0n0ns0rucn7p2hh9qucxvjpg58xrc8p6vjj">
+      <data key="d0">address</data>
+    </node>
+    <node id="1D2cEmVpTQCL9sdjmVSfjgtxuHHSF7RFm4">
+      <data key="d0">address</data>
+    </node>
+    <node id="34v2mZdy5J9JYbzYFmkDyz2UtEmNHU6BJA">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BRaRCLwspR4skAyxrzzGP6JFQZnR5AZZS">
+      <data key="d0">address</data>
+    </node>
+    <node id="34QCv3pvwUNrH77zoS4AB9bocS5Xyy9GJ3">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qad9skfqyxh7xsesssqdal2f8qw9ntzzw5sffgj">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Pc2jektovsZ4eKh6pfmHnzTXwJNw3KUdf">
+      <data key="d0">address</data>
+    </node>
+    <node id="3KjuuNQq8oTuBy88C9EbXX7VHEyoAwg28V">
+      <data key="d0">address</data>
+    </node>
+    <node id="3LMubqAK63KRHptA19nTTPd85WD9QAGvsW">
+      <data key="d0">address</data>
+    </node>
+    <node id="3GBykY1C39izH1dtPxjatmSi37yi6nSmS9">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Gep3opZu2vAaY7c4yghTR9rKfnwz7S7vU">
+      <data key="d0">address</data>
+    </node>
+    <node id="3EQNVraD47B6E3wC24cQUTjyYavz4Xukq6">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1MTFctqDvLEDfDeCjoZufKTHgQG1Gf8XPZ">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qesa276g4txphy3lj89zew3gjfu0f34dd9ef5ll">
+      <data key="d0">address</data>
+    </node>
+    <node id="16mDrXMuaP2P5BSwLe3eGu7kTG4aqvh9Ku">
+      <data key="d0">address</data>
+    </node>
+    <node id="15LnVPGemkEMnqR2thHjBZJQ2wpYnhFZ3X">
+      <data key="d0">address</data>
+    </node>
+    <node id="31rhyWa3GkzjAJyEk9kQgMXB9nJ5ykVeTm">
+      <data key="d0">address</data>
+    </node>
+    <node id="343kf3pJWuQZ7vzSshMCni2Vvm4Wgk43DD">
+      <data key="d0">address</data>
+    </node>
+    <node id="3M1kpJAovYqD3JZYQiLrUWmNCXpcZSGDn1">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qfvd3yvduqgg4r8sdxw0taktpdz0wp6p3h94zqu">
+      <data key="d0">address</data>
+    </node>
+    <node id="14wV3HT7XtuV92476EA1cfAc41A3p86Ree">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Fa6gDdmGLThLGRtJVg6CVMkoEp26gC2Dk">
+      <data key="d0">address</data>
+    </node>
+    <node id="13FNCQzJjKHs4pg92Yg6CJozgZ57L8HfqC">
+      <data key="d0">address</data>
+    </node>
+    <node id="1HHrz5AttHUbdX37aPiKEsZtPJkugmdL56">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qzxvkwjnrfuztq2p8j9gcr2k5p3pfrw0v9m6njk">
+      <data key="d0">address</data>
+    </node>
+    <node id="19mcKRZQbe4V2JMnhaUM7PMxdpEFZKNKRV">
+      <data key="d0">address</data>
+    </node>
+    <node id="1AXz5kce2yosyokXBjGjUQbhD7QQLLbARn">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Qs6AqCF7KAXMVMKaAc46z42YjYU9tuiPH">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qnrcaff2syyuhutkxjeszgwpev3w6a80k9uee8z3zh9wm94jvyxqq7q6mt5">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:cfd2687489ad230d4fc6de3cd5f322e6451877e8564bbfd0bb8f76d0835ef317">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3JF3J8y6Sn9sceyeJcRCnaawvtTCimg5xb">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Fa3PdTaxrha5rCYYCHaSCZeWszvaGJdjT">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:b441094f6a625122bc31f9ee85b30bf39366f6025d13184688f3ea574b73c89d">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="18hX5UujVhzXUzLSyuauXziAT7P2BfFRJZ">
+      <data key="d0">address</data>
+    </node>
+    <node id="12SfWVTzbH3x3snciVoiYhnzyodDBZABb5">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1KY8cG22mtudJdaiwmo3qEss8u9CUVB1MD">
+      <data key="d0">address</data>
+    </node>
+    <node id="39RHPpFBah6nP3xDUBhFAnTPAnhUwN4RNu">
+      <data key="d0">address</data>
+    </node>
+    <node id="1MYXJPJrpS73GDYbYNv13qbJGVwqPwycBh">
+      <data key="d0">address</data>
+    </node>
+    <node id="36okTc9hRmWZLPRUNo6sAXnvy1qiaiuMMM">
+      <data key="d0">address</data>
+    </node>
+    <node id="13CRu1SrBWpTnqayuDnvGsHEh9qA6SaBKr">
+      <data key="d0">address</data>
+    </node>
+    <node id="3LagriY5J57fUb3KhnkD4amUybj9twDLk8">
+      <data key="d0">address</data>
+    </node>
+    <node id="1AjxSjkNS8TdowyNDFzoWhqrTXwU6UHZyG">
+      <data key="d0">address</data>
+    </node>
+    <node id="1657x4tWot6R54UdatZWXqNQgLfpixi9CF">
+      <data key="d0">address</data>
+    </node>
+    <node id="38Ui5sodj8M6BVrXvbBmiwnLcNgN2iayiR">
+      <data key="d0">address</data>
+    </node>
+    <node id="33Y8kx6gzz5rf2469XbG6mV3X47d36xnke">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Pu1oKScY65qaZRWNyH52tyn9rNTiDXsjb">
+      <data key="d0">address</data>
+    </node>
+    <node id="34nc5JdZDuHWp275AwK86UeE8HVU47f3AG">
+      <data key="d0">address</data>
+    </node>
+    <node id="1NXxqEiYcw1W9pMomb1nX9hVZUAv5bQRZA">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BhhL5637vbeKtwK9ESmXHLUTyeXVw1LjE">
+      <data key="d0">address</data>
+    </node>
+    <node id="31osNgVB537Ge7MBeJr7ksxHedHAvEfTht">
+      <data key="d0">address</data>
+    </node>
+    <node id="12hhDc7wUdbdsYX3mH9hCtNTv6LtdkpY69">
+      <data key="d0">address</data>
+    </node>
+    <node id="3D25EpU9nndPKGhKqLcw59PtE3YNGBbmRu">
+      <data key="d0">address</data>
+    </node>
+    <node id="3MSMNmJpPrkJZJvMVg2GRiUUoYCsWPt4Bi">
+      <data key="d0">address</data>
+    </node>
+    <node id="36ccKn6tdcfDbk9E6WCJHjv3Ndn7o8bJ5A">
+      <data key="d0">address</data>
+    </node>
+    <node id="3GhjzpAd65U875w3UKEKqZSmaSqNswDcUT">
+      <data key="d0">address</data>
+    </node>
+    <node id="1AUXos7Kz3xCQTi8pfQK8JU3J9ZgbcgeNR">
+      <data key="d0">address</data>
+    </node>
+    <node id="3JQjJuohxapJUXSRNEsHb3huFLEHWpH5MA">
+      <data key="d0">address</data>
+    </node>
+    <node id="33MUMPtY2gS3JJ9Zi4muVKhdAwMYDNHTEq">
+      <data key="d0">address</data>
+    </node>
+    <node id="3CyjDieRsqx6ENbpRk9hnJrscywtg1c6uh">
+      <data key="d0">address</data>
+    </node>
+    <node id="3PAXriiKgeDy3YHCMQ6MGmTGPBQ9hVyYjX">
+      <data key="d0">address</data>
+    </node>
+    <node id="33vKJSuAHJGvTGpyuekbF2TZHjbevfPTFZ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1LuoHNNAZi1eQ7GXBjBUDwLjL7hcYDoMLk">
+      <data key="d0">address</data>
+    </node>
+    <node id="398KqutWxkzHjXZ6LLJQdKaiVf6NxLVPgN">
+      <data key="d0">address</data>
+    </node>
+    <node id="125p82eJZV4GuRaeBsoXjnaiZx2wkWTkNE">
+      <data key="d0">address</data>
+    </node>
+    <node id="12XVxnbi5dXoqVqW5HjNr1irZjsJJUSvHV">
+      <data key="d0">address</data>
+    </node>
+    <node id="15Zzm2v6SfJhtDaNHJP1gGtvSqtJrGJyZW">
+      <data key="d0">address</data>
+    </node>
+    <node id="1GxfESVi1jJoB3favurw9rqTmFqwXvFS5u">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Mec2W6Fq7GhvqK5mAtdDy4jgR7akFFDse">
+      <data key="d0">address</data>
+    </node>
+    <node id="3MeL8PXVmgSrYdbV4Weibuj9CiwYV9iEii">
+      <data key="d0">address</data>
+    </node>
+    <node id="36X8xZC4eWm33Afo4xm9XQUXE28Cf1q1g3">
+      <data key="d0">address</data>
+    </node>
+    <node id="3F4qYWTUMA8DJfHT4Fd2Cv4qAoszN3KvPZ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Puy9DDfZvN9qySRYBwYEySoDkWF7FDYSx">
+      <data key="d0">address</data>
+    </node>
+    <node id="3GE8Y81cVhdCbGepEJE4uUVTciv6EQU1vH">
+      <data key="d0">address</data>
+    </node>
+    <node id="1793WAQPSYvEKaiErznyXGwcYoidvjjUYj">
+      <data key="d0">address</data>
+    </node>
+    <node id="1GCQBqYZxM32yrcyE5rtfsGrAQers7RSRG">
+      <data key="d0">address</data>
+    </node>
+    <node id="19PYtx5aeBGoFoa2QqKaq2Wqr2FLx5mMZL">
+      <data key="d0">address</data>
+    </node>
+    <node id="17zYNuTdXhQC7oJXaAAdtMADnXc97wyqoq">
+      <data key="d0">address</data>
+    </node>
+    <node id="156jjPFur2RJ6XffytGBbcSpqPHCsmEsAj">
+      <data key="d0">address</data>
+    </node>
+    <node id="17oZ1XTdD9UBrDzV2pVjHayMrvJ5f56wuM">
+      <data key="d0">address</data>
+    </node>
+    <node id="1FQjQf8Yyomkv3KfauQsgGGZXEPDFjDrws">
+      <data key="d0">address</data>
+    </node>
+    <node id="1JwKVpaXzy3T2iSwmJWLhZAiR5acBWyCoL">
+      <data key="d0">address</data>
+    </node>
+    <node id="17xaUSWQXUMQSeonvShfSDfCtoNoEX32ra">
+      <data key="d0">address</data>
+    </node>
+    <node id="1GpbNMAJWco4RFXm9Ncvyv68RgQeeCrM17">
+      <data key="d0">address</data>
+    </node>
+    <node id="36Utv8SQXWHy1waeR3Wic6csGX7QAA9dJo">
+      <data key="d0">address</data>
+    </node>
+    <node id="1wd2j3wiNFQFYBwP3yPmUSou4PEJFQMDE">
+      <data key="d0">address</data>
+    </node>
+    <node id="37XG5uipuxokJc8fCHnL8iLzmCMpujgexK">
+      <data key="d0">address</data>
+    </node>
+    <node id="1KguoBQYcDWVPudRdEBcGwtbFSNqtghEHH">
+      <data key="d0">address</data>
+    </node>
+    <node id="3GgqC9QH1GKMHwbmnv45X5N9trBYmyht2R">
+      <data key="d0">address</data>
+    </node>
+    <node id="17YvB9sX4GdpLMs1zW2bcgjKTwSCb1N95K">
+      <data key="d0">address</data>
+    </node>
+    <node id="37pXcCybCsD4FWBGDLX8jRm2XGptaqPtpP">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Xf4jm2H8JnNLZTEGmAVQ4rEsUv4HHKjV">
+      <data key="d0">address</data>
+    </node>
+    <node id="1PfwWywsiC8okGeyohqWdbT72eshuUq58T">
+      <data key="d0">address</data>
+    </node>
+    <node id="17ZD1NXdGuVSqzomoW3WE7c679ZnebbgWE">
+      <data key="d0">address</data>
+    </node>
+    <node id="3MYajEPhnXo5DsjSS3m5jgeV4Uy3SUqMRJ">
+      <data key="d0">address</data>
+    </node>
+    <node id="34gRqRK7S6KFhTvaazxBsK1VXPphSj18s7">
+      <data key="d0">address</data>
+    </node>
+    <node id="37LSwTBszRDC491powfsXrTYNgFiuK85GC">
+      <data key="d0">address</data>
+    </node>
+    <node id="3MZ78DAsbHQAkgbEZpsq1iedbSWBkgGYDw">
+      <data key="d0">address</data>
+    </node>
+    <node id="32fkJDQfAfnPvGee76DNSnRD2bQTRtLBXC">
+      <data key="d0">address</data>
+    </node>
+    <node id="1JExJGEct2s54gtyvXcUxrKa4nkAUS55RU">
+      <data key="d0">address</data>
+    </node>
+    <node id="1MwHuteLb2zVjvCdUg6vfF4yWPyjmXJLr3">
+      <data key="d0">address</data>
+    </node>
+    <node id="31k4RXh9Mso9xCXpDbxuLy26mAafkfrcrB">
+      <data key="d0">address</data>
+    </node>
+    <node id="32WXsLM4QE7Q3747BMfBoLzCfUjM7gBPFe">
+      <data key="d0">address</data>
+    </node>
+    <node id="3HJcBJu6U1VD2r2oxXZ94dn5ZD5p8whELM">
+      <data key="d0">address</data>
+    </node>
+    <node id="17LCQBwKfoXUmstns5Syzuf4Nj4fS2yjTa">
+      <data key="d0">address</data>
+    </node>
+    <node id="36VFBzUR6UUZWNmGSnyZzUnZKTrQ1Pz6wy">
+      <data key="d0">address</data>
+    </node>
+    <node id="18m5mUzMthanyfksk5WASicuxQYiysEuru">
+      <data key="d0">address</data>
+    </node>
+    <node id="3GXYGqp9L6SasqaNtQ76xM56VWkCV7cFxt">
+      <data key="d0">address</data>
+    </node>
+    <node id="1EZmMZK9sZjCTpMu4xnMK6s7KWLbG1o1ei">
+      <data key="d0">address</data>
+    </node>
+    <node id="18HvU2z24EkHDt8RYX1CxijTcBDHJor9E7">
+      <data key="d0">address</data>
+    </node>
+    <node id="36WzFPQtdP8N7BUPFbnshJg9P8J2kCWpHj">
+      <data key="d0">address</data>
+    </node>
+    <node id="3CPPNQsPHr3LLoF2CfyVNyCtvjqkLuZ1qk">
+      <data key="d0">address</data>
+    </node>
+    <node id="3FZTdi3w2JcUVbqP8UBNLaWdFvVCGVNx96">
+      <data key="d0">address</data>
+    </node>
+    <node id="3KbQML8MNpkeXENXBnBRuodzZYXsXwqHSz">
+      <data key="d0">address</data>
+    </node>
+    <node id="132juwKv54j1h1hJMY8fJt9Cw3mYWbbhWG">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BVDvnTyBm9ZyfU5MoYBojHA6v9mMZiKCA">
+      <data key="d0">address</data>
+    </node>
+    <node id="358Vt6pW5tFjheW6yui5BQyKX57DGDd6rc">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Hn7GUnVXKnGNNNqn1xFx3GFQNtSrTzHSZ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1BopZfxhBDUWnxz3mF6YzRBjAu1iy2ju6g">
+      <data key="d0">address</data>
+    </node>
+    <node id="3FN9juLyxqZagiSkPL3fbQbPGhGD2w1BRt">
+      <data key="d0">address</data>
+    </node>
+    <node id="1PFJc78GA3cGKv63bgv6vf3uNAL6NCBfLw">
+      <data key="d0">address</data>
+    </node>
+    <node id="16aNN28CZAzbr95oLLSM6nsudvuK1E7H1M">
+      <data key="d0">address</data>
+    </node>
+    <node id="38DX9uNnFCh5DXE1A46YGMzD9zVtvJRbkA">
+      <data key="d0">address</data>
+    </node>
+    <node id="3JhukjvZgteYKQn4MyzeS2DpvoaXD1z4Q6">
+      <data key="d0">address</data>
+    </node>
+    <node id="16385XbVjYJrNiMzoccJu8BqFD7th2oKXf">
+      <data key="d0">address</data>
+    </node>
+    <node id="34oKRrXJvKoLMo8ZgAXd4JymwRoxa2TcyS">
+      <data key="d0">address</data>
+    </node>
+    <node id="1P8Gi9oEocXh3sKQ9MXEJMbgWwcxLUvxTT">
+      <data key="d0">address</data>
+    </node>
+    <node id="38fJhS4213hvqG1RFNne7fLfRTBxnvrzQx">
+      <data key="d0">address</data>
+    </node>
+    <node id="18M4CLxvncESU94jydGC53jXWhnU1gjRBM">
+      <data key="d0">address</data>
+    </node>
+    <node id="3NqSRyWFVUKqjDNdwFq5ppkvuyJKSZY135">
+      <data key="d0">address</data>
+    </node>
+    <node id="34CCC6asSfVTG2WEReneoAGkaBPKw8pvzX">
+      <data key="d0">address</data>
+    </node>
+    <node id="1AeoYSfxGCHK5qVZqQwUSkr2M4BsZPbV8s">
+      <data key="d0">address</data>
+    </node>
+    <node id="12R5nUwpeiKCszftWmGGj4pjimW7kcYVfB">
+      <data key="d0">address</data>
+    </node>
+    <node id="1FdiHw774Bzp1EnVELeHPsbRTi3CKsbeZ1">
+      <data key="d0">address</data>
+    </node>
+    <node id="1A47dmDeaZ5sexwmoQJ1KsSseA7n3pNzWQ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1E5AxP1QuQZ9fJ3kHnekEn9j2F7tyEyUmQ">
+      <data key="d0">address</data>
+    </node>
+    <node id="19dWENixX8dL4Puw2GpreLb87XVXuT8dV9">
+      <data key="d0">address</data>
+    </node>
+    <node id="1LhGt1nXpiKQze37S6E7AibQD5TjHszinJ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Pztdhh5Dv8cj3VseMwaX9CSpcCwYeSL8R">
+      <data key="d0">address</data>
+    </node>
+    <node id="3H8ZZE4kBnVPGp4DrsaW7xRgi3EeC9icWj">
+      <data key="d0">address</data>
+    </node>
+    <node id="12JaHqWSB9zpkPFdwuxfv9LBmB4aKi6JM9">
+      <data key="d0">address</data>
+    </node>
+    <node id="33MkZfpJYW6op2WKjp56qhD82sEXWQdf4L">
+      <data key="d0">address</data>
+    </node>
+    <node id="12F1by7kvEBgJXBQvh18irKCbCVcUiCKKh">
+      <data key="d0">address</data>
+    </node>
+    <node id="1HcuVaiY4Cq7aH1Pdu2bsJ8W5tndEJxmkR">
+      <data key="d0">address</data>
+    </node>
+    <node id="39ADQkffzXCqYhy7qnUrsiRdwRio3waNuk">
+      <data key="d0">address</data>
+    </node>
+    <node id="1MDBtjBKDdEZCjYKKkRnMK6kSBw6qWxSrR">
+      <data key="d0">address</data>
+    </node>
+    <node id="3QmaZ1bHvMo4A7N3qoewfozrrWG8mqz9ZK">
+      <data key="d0">address</data>
+    </node>
+    <node id="14mD2z3CqXN7Vgt5iV6TCkg8LpTngxmvUF">
+      <data key="d0">address</data>
+    </node>
+    <node id="3CbyXbtSXHfJwRovguTd5vH7H9UU1juBgR">
+      <data key="d0">address</data>
+    </node>
+    <node id="3HwSJBs4uD1P7cx77fX1VMw2P7dTyL5NZH">
+      <data key="d0">address</data>
+    </node>
+    <node id="12doTTUQsaNoPSfst9vfv8tfD8uQEsJhwh">
+      <data key="d0">address</data>
+    </node>
+    <node id="1KVXME4nzVEKiB7afc9VaYTmpiyzKkjBi7">
+      <data key="d0">address</data>
+    </node>
+    <node id="16LJtdegqwGsWd9EWVeXsZT6F8pdh82hVZ">
+      <data key="d0">address</data>
+    </node>
+    <node id="39MHWY7pnbJYt9VeKiVZqALMCLF6ZjMcxx">
+      <data key="d0">address</data>
+    </node>
+    <node id="3HobGGnqbeWeHkWQshs4UxtXZmvhvkhLpw">
+      <data key="d0">address</data>
+    </node>
+    <node id="1NhoNL621KohVcU9doFsaX6YLHkgE3dTk1">
+      <data key="d0">address</data>
+    </node>
+    <node id="3MN17ppwnJ4zLARsZohgoH7dLGt1DDfkYh">
+      <data key="d0">address</data>
+    </node>
+    <node id="19sfBqqSyZu9E673iTVCimQqUKwHVrNaHR">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Q7CEaM3CQ6ejGHgDZNbdTTAkoLcPk63nQ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1PegHGx9S8PywZPc9MNV1ea7yaDbHbkeTh">
+      <data key="d0">address</data>
+    </node>
+    <node id="1G9hLre2vrx39Fy2uhcutYRef8QxWtnBcR">
+      <data key="d0">address</data>
+    </node>
+    <node id="19gSUNjurjur142c9XL65ZsoCYQubtyGuN">
+      <data key="d0">address</data>
+    </node>
+    <node id="345hWybWUvo2ULBWFcDp7uRWt1Se7r9PtZ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Q57v5pnVxGDmYkctQVK9hGcNxG4Vbqv4Y">
+      <data key="d0">address</data>
+    </node>
+    <node id="17CzhyqsmXFKByFuDWWi728quGLK1K6iWX">
+      <data key="d0">address</data>
+    </node>
+    <node id="1CPFYtk8rCBmeX4595zWmrYNo2twzK5K29">
+      <data key="d0">address</data>
+    </node>
+    <node id="3HLZmnuERj8fSdMDjCU3K2Gt5DQaVEKEx6">
+      <data key="d0">address</data>
+    </node>
+    <node id="1NFAXhzu4dkMj7JfNWvho4YDkpWRcAPRMC">
+      <data key="d0">address</data>
+    </node>
+    <node id="1PDfjwd9rRbxCgvmWs2YkguccTFCN94LGQ">
+      <data key="d0">address</data>
+    </node>
+    <node id="3D5cDdzVdoVCUTtA4PpD5YLAW74QhCnpJB">
+      <data key="d0">address</data>
+    </node>
+    <node id="1LMNuNwXxrATm6wSe81sPxqS9uR7hv5Ab">
+      <data key="d0">address</data>
+    </node>
+    <node id="14Dqvc5x2wT7A1jhS2SgYT76gy7gxdMPyx">
+      <data key="d0">address</data>
+    </node>
+    <node id="1FRMdjeUwhthKR749rryMDNoq21Rr69UWW">
+      <data key="d0">address</data>
+    </node>
+    <node id="33zUsfMiJWNSrvF9LG78tScRdy3ykbMrnh">
+      <data key="d0">address</data>
+    </node>
+    <node id="18xHTRqn7RDoYF58NXQNZtLDTBscc9o8Ge">
+      <data key="d0">address</data>
+    </node>
+    <node id="17eauAbFaNCbptsxJ7RAHT5HQThENKEXii">
+      <data key="d0">address</data>
+    </node>
+    <node id="13tQufkQJEj88fr4zEup6xmZc2EXVBoAJh">
+      <data key="d0">address</data>
+    </node>
+    <node id="31hryhfGwcdE8EjP5ui3Gacvmd69Ym4KVX">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:de60247d236654956a2dd0366b51cfcc197d6431ae778f5e877347038132c1af">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1LXnNRSrcTRp6VTAwy5qpFAzykAJNFGjQS">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Ks1DEUGVYbAHqqAqfcvxKwnRaFFkJ2Gad">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3JY1hGk9dXn5SVFwxi6CnY26xmgsegb9Lm">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Hz3HDBW5xxig7YYkgfhoET3726QQ1zC5B">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Ppa8MsRx4GmBYbWj2fKZCBoixwUvbYbby">
+      <data key="d0">address</data>
+    </node>
+    <node id="1CRf5SY7vjvLMXEFEEscK9oefLUeAtPBwh">
+      <data key="d0">address</data>
+    </node>
+    <node id="19ZfSEMGGLbsnozL85S3ceJjaFpkmod8cu">
+      <data key="d0">address</data>
+    </node>
+    <node id="3FnHFiG9aRkvsn7GPYvfKRrWohK7Nwy2FN">
+      <data key="d0">address</data>
+    </node>
+    <node id="32h8PP8cciKWogL6SSgyVFpvGot8ZdcgxX">
+      <data key="d0">address</data>
+    </node>
+    <node id="1HyRe8DsEqXjF3ZARPQzkKT9dqVP1xCYRn">
+      <data key="d0">address</data>
+    </node>
+    <node id="3J8bWV9QigfJEHxtyrkjmYnfv183iuGfUj">
+      <data key="d0">address</data>
+    </node>
+    <node id="3NF9Y9G8VGGXaVsHGwiMjnX6kSFcT89GNH">
+      <data key="d0">address</data>
+    </node>
+    <node id="3C3TcDRr7uH8K9saRe6Zxs3BswRSVq63x2">
+      <data key="d0">address</data>
+    </node>
+    <node id="1MXsbRFUZf4tbgqXxi117uZ6GERdby4wkv">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Qn2WrUjD29SGWdyfZNh6ShWZprNYW9X2M">
+      <data key="d0">address</data>
+    </node>
+    <node id="1HHwx36VbaPaAigcK54fBvyDU3CovFMg54">
+      <data key="d0">address</data>
+    </node>
+    <node id="31nPkmNiB3P784LgoKmfvxrFCDRP95ukEp">
+      <data key="d0">address</data>
+    </node>
+    <node id="3DEsFxvnWb3gLF5SJ51DMTTHmgmfs6HKks">
+      <data key="d0">address</data>
+    </node>
+    <node id="376ajpcpK91doThznBYFhSiHdp2EtYxztS">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q2kvxkzqt85kyju35556un968e7uyfzz8jtwnat">
+      <data key="d0">address</data>
+    </node>
+    <node id="1PcM3Tn9qBgoQnd4JgFGqgAirqHGHwKih5">
+      <data key="d0">address</data>
+    </node>
+    <node id="1G4QjNUMg4rs1xYq6sgYokcKhZXFCw7Af6">
+      <data key="d0">address</data>
+    </node>
+    <node id="321d63E6Tijc5trjkqcSjWFKnwPfuGUgCY">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Pk9XUPNaJ16JufDBvT5jPtfenfadvMjLr">
+      <data key="d0">address</data>
+    </node>
+    <node id="3LX4cifJHyd16FMMGHKAYMxJ3CnxpsXh9j">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Hp1iYgcK3rdU7mAdvkN8XV7ioWA1ZdPYS">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Pdg473CSMCEy5YUPTdmZ9CxijDeAG5x1d">
+      <data key="d0">address</data>
+    </node>
+    <node id="18kxn9tkDqpUKy33xFJxCMQZwzhijcF1U3">
+      <data key="d0">address</data>
+    </node>
+    <node id="13Qakcn5dS9x98NznGQgzpM5xEvdwcrQ6y">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q4q4e7j67d6gaf8afze9yl8zqj4jphxl3ex79rs">
+      <data key="d0">address</data>
+    </node>
+    <node id="3B1gDXtTM5Vk3T72HXsutfsRFWFP6LCxdD">
+      <data key="d0">address</data>
+    </node>
+    <node id="334EQyiqLfzh6YFU8JnRx3GgqAv2ph8R2h">
+      <data key="d0">address</data>
+    </node>
+    <node id="3GQfUV2Zjzo64eKuSHnm4z76av1FqsDJtY">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Fi7GUEY3cYKd4j1yJLwiUgKeTE4vgWddi">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qe0hrxq0ww9l7gpuea9k0yuxhfmpqxy7c5ru3uu">
+      <data key="d0">address</data>
+    </node>
+    <node id="3K8a7iRJddTLgBJ1oh9LauZEWvtCfkcgwj">
+      <data key="d0">address</data>
+    </node>
+    <node id="16TzV9v9NFFweYdEf8pSm7LtAPjZggomjK">
+      <data key="d0">address</data>
+    </node>
+    <node id="1GM4qLiW5gcRZM6U7AyfnctMqJr28b66jx">
+      <data key="d0">address</data>
+    </node>
+    <node id="1AmuWt3o3gSPUmziZ6fQSh5xzNNkwkPBZF">
+      <data key="d0">address</data>
+    </node>
+    <node id="1AhRxE7wkunpWN9zb1HcGS1P5vmSXPCgPt">
+      <data key="d0">address</data>
+    </node>
+    <node id="373mJn2XsunHvqF1KdHvAUGSXhV1qAkz3Z">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qqpt7a42qltftv67duxdnu6ea88htl9df3xgreg">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q0k30gvv54q9craq3nvcwxmgq0t0gas7jzkg5kq">
+      <data key="d0">address</data>
+    </node>
+    <node id="3DmmFEpuBT8Xg8frL6uWqcjNbMYu5SgenX">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Dz5fT3VeRvdSFCyE4jYWTv7Zn3SRXV9ME">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BMEXmiRuiGjcoE7SXsbEdphNRDbre9GQ9">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qtx067qnz00lv5hj7wncnlkymq3l6vwznn488x2">
+      <data key="d0">address</data>
+    </node>
+    <node id="1BVVwKEbocTBe6633N25Qy3M7Fobq4qbwN">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q8chvxpht92hjxvl3mv9kaekhyn3ucuv6eyq4ny">
+      <data key="d0">address</data>
+    </node>
+    <node id="33NBHKXfE3gYhyYJnadgkgbsRD42w97uQM">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BGH6D4ybLvaBhLPAzCjCqcbQXRemDzB7M">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BMEX4eqLhsJHi4uduhrrmoU4wvAPGEXsH">
+      <data key="d0">address</data>
+    </node>
+    <node id="1eEpccw88JwXQ7bUk4iTvcsNvF7CCz52q">
+      <data key="d0">address</data>
+    </node>
+    <node id="1PGimFtMTagQTEcRdwmBrwLcfPSb6t98JU">
+      <data key="d0">address</data>
+    </node>
+    <node id="13oRh8zYwKFuySF6Ex2UF6eoccXPtHMRWW">
+      <data key="d0">address</data>
+    </node>
+    <node id="32i7fX5qPuiPreZSXAMM5gBAskMvFU2U9w">
+      <data key="d0">address</data>
+    </node>
+    <node id="1QFK2R7WagXGxCPhziuvSXFva9DzigJTCt">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q5h78gx69fzx3mtcm087nyhyjy0ygdcwacu5gug">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BEhgJGQ86mcDMJ2EfGTQkFVtAUhfANKWY">
+      <data key="d0">address</data>
+    </node>
+    <node id="388oSi8C5Zsr819Jts1iPtvPuDS7cqN5SA">
+      <data key="d0">address</data>
+    </node>
+    <node id="36sCwzNof4GXcUQcaST77JrbaV1yycHxZJ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1AD91iU553aXuHWFKooQHRCkHgeaPwKQbT">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BAp5nz13NKScAdiXGDK4UMMSjm9jyUsES">
+      <data key="d0">address</data>
+    </node>
+    <node id="1ADZaNzWCVLwoDg3LnvwLktU7qfJwdz66L">
+      <data key="d0">address</data>
+    </node>
+    <node id="3P1PCEjm8m2vi22aAgoYDNVKeYyvhzSTZo">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Q1L9oAbcDuURWYmJ9jY4WGz3xNFjZVGZe">
+      <data key="d0">address</data>
+    </node>
+    <node id="32VKNqeVipcAktkwgCTzP5dwbfwbjYtdRi">
+      <data key="d0">address</data>
+    </node>
+    <node id="3FAHdPxDvRhdwSqDDz2moJPU2MrGoW2aVa">
+      <data key="d0">address</data>
+    </node>
+    <node id="3MsrRqns7WabJm1r2wduMt6YQcfNXrXKea">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q2q25hldkfddanqjfr4l6fx42jjduwec99h4zem">
+      <data key="d0">address</data>
+    </node>
+    <node id="18221t59HJc46h3MDPDXT1iy85zCYLGMED">
+      <data key="d0">address</data>
+    </node>
+    <node id="3BMEXNA3A2bsmUcQXLRybbCSNhw6Yoy8ti">
+      <data key="d0">address</data>
+    </node>
+    <node id="3PEj1D35jTJ7eyGHymsLWfUo1XfARWGL1b">
+      <data key="d0">address</data>
+    </node>
+    <node id="3E5udBjuWZEEbahVEzq4wc9Ch3XZfmY1L5">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:2e08edf52c5583ffe041384139c6a8157d1039600cbfb3d2a4b01539833f60e4">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="bc1qc9he4uyccer3cp6q6ysxtgemzcs8893lw4l5ee">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q7gsmpthr7wp3mltur8mrua5ha3v6nn9urgeljs">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:17cae76053a93e92726334fe1978e379fe8f57127a3c07f6a58b67c352979024">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3JF8UKBhhfGQ5w1CpnSQhpzi4f8F3dg3H9">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:c94fd84bd662ceb1e527506530fddd2babb6eaf31e7c8880d94cb1c49269d011">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="399ovDLkWB46Uuf21TLq94wQ9bD4sBxHGr">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3FR9VrTwUnxUjw44rFLSGx1TffFmua21Vn">
+      <data key="d0">address</data>
+    </node>
+    <node id="38TkAJXefNp5d2R2TDxbbfkpFkWfoWshk6">
+      <data key="d0">address</data>
+    </node>
+    <node id="32eV1RnQ5u1ohdbqxDSTWJSfHuM9MfbDzY">
+      <data key="d0">address</data>
+    </node>
+    <node id="32xPNFwyvZofsxja7HM4NTu6ZYh2f8wiCD">
+      <data key="d0">address</data>
+    </node>
+    <node id="3DkH2AQFy1vK1bq8CeTmHzKQiaAxvqJELv">
+      <data key="d0">address</data>
+    </node>
+    <node id="3NxxeQCw1pWbYcNENhkcaKTDn8KhVfEJTv">
+      <data key="d0">address</data>
+    </node>
+    <node id="31krTsa2pg9EApT46uT6SF3NbBRTK3AmNz">
+      <data key="d0">address</data>
+    </node>
+    <node id="3JNZ4AS4wYefEsZdGcUmuDnRKWEt1fVXSs">
+      <data key="d0">address</data>
+    </node>
+    <node id="3AVK8kXXFKcmqtKfZ5u99kdBMkHL3s4ZJ4">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qz00fw9kca4j2evnw2l87a9hh2nfw8r9zdlzjyhdkq4kz3g0nx0hss4eq5k">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:ee3a697d2fec5f63e5ea35c4604bd8425b1e4074ad5a279756c5a443c8c54532">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3ChTZDZbKGeGQ8srTnytnF3XXbNZSpAaZA">
+      <data key="d0">address</data>
+    </node>
+    <node id="39kTJ4qSQSy5SHVuMqNwLGRCeZaxjDCfDu">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:9f32d65d569f7039819b7ca9a296ecd9f9708babdae9b51a5317d299d1702f80">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="tx:469434067471c78f6e49345ddbef561a6ccaf5cf58d26f0e26ea0c3a84d4576d">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="33ud4X37JzFssYsiBksp7hQrtXekrp8X4v">
+      <data key="d0">address</data>
+    </node>
+    <node id="32VTBx9bYRx1GmQEEYKf2hSo1JkrabYoo7">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:17c17380debb748f3db241465477a29a5d806e96228d5491719ecd55eece90d4">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3A5mumMMFmbnW8mamChHTC6nDoCi1LwgLH">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Q3Squ31Kyf4o1L3beg8XHMPMsYkj61JtA">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:66616e01730dab3a4cbaf2abf4b4a44dd1ee78d67b4b18c28a08b4b94e107387">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1CAdFckxw4o1HbhHD6VZdP68RAURvi8mbC">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qfupd7wfhu35f5q5g2xeuql9tthwvvtxkekyzhdcmy5nwkf5ksdmqsxflk6">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:000cfd67b92a5a240bbfa950609e98a65aaf088279b50294238635009282ab3b">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3P2tsMeWjE4MePPew1y3PzKzQL1HdpLCZJ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1MPQVkQAqhcxets8ezGBfDDEUtqHSLvr8f">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:e0fa781f5544b98a77432b36a765560c9a3d6a9b1fafe68889bc9474936d35a9">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="bc1qydldfpv3wmmnc5ta625840hnexct3xy46de27w">
+      <data key="d0">address</data>
+    </node>
+    <node id="1KXf2G3GSyt2G9DekZcpaboaAvTj6v3SjB">
+      <data key="d0">address</data>
+    </node>
+    <node id="1DoKHCH18HeaVh8jjJsHd1LxtsRNNLTicj">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q87vlx0hc6zl3xzugcalr6eaa7aczghl6q2s690">
+      <data key="d0">address</data>
+    </node>
+    <node id="17wjuqgGBATuvUoqCwneNnw6TdQzwiCeCj">
+      <data key="d0">address</data>
+    </node>
+    <node id="1NuFrR5eLExMFBCxqY7snVTokNfW3kVw5E">
+      <data key="d0">address</data>
+    </node>
+    <node id="1FqnJrGWKSWi6cBKQdzpdoCr7J8W7GoKNy">
+      <data key="d0">address</data>
+    </node>
+    <node id="1JzLdPwKy5GxKTjFTRcdToqSyZRe4kFw85">
+      <data key="d0">address</data>
+    </node>
+    <node id="3N3p43z5etCtQrX4fBW4yw9t5EeEAznWoP">
+      <data key="d0">address</data>
+    </node>
+    <node id="1AgCzbNU3BUtSjWPqKoX7Tnyf732P4HWg">
+      <data key="d0">address</data>
+    </node>
+    <node id="1MbqnAFPNuEdbnssMAAr4pCT1DeNzscHob">
+      <data key="d0">address</data>
+    </node>
+    <node id="1EMhfzdvCVeR2ZVK88L8rVimZntkh1Yfu3">
+      <data key="d0">address</data>
+    </node>
+    <node id="349H5bYdBa3gkstWSJzUTXEFDzu8w2MdN7">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:8840d37a5982d978cb7545c409d4507a1aa5595b28bb0203d10ee9194eb30728">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1NjhTx5Uu9aH6A1kjdnvRN96sUtUqAwAxE">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:560dfe4021342814b06875a4db888c06937827edf364b1a9f0fac89baf35c919">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3H7jniDRSLTo2jHTFzqmufUjcUpH1SX2qg">
+      <data key="d0">address</data>
+    </node>
+    <node id="16Tv3GFkdACqjFX4ab6FJjShUsdCKvUmy4">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:23e602ae936624c1d37c9be0b13b73213e12bc04c3ec7e579158654168baafa7">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3Pm524ZvKvjziCFwdjkeeD2GSGLexBt2as">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Ns68ePD7oKuVoDJuXPmuvhXibrcwno8PK">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:2437ae394162c52a61a0f27b1e52ebb428370b718244f00e70805cbfe07feb80">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3K4cERDgWHPMbXd9t7xTsjJvtBB1QBJVqQ">
+      <data key="d0">address</data>
+    </node>
+    <node id="184P61kAs6CY2zhjF2j2Ht5piktdxJFWF7">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:2396d0096f9937e0df04ebeebabec39cdad5d179249d991026b6b3918787e8de">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="1J51cyTMKfVBif1Qa4WGB6jr6GW7uN7wVE">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:2c49b7e5cce6d824d9d9c2f28b52a10f2b08d82f2f3698d2f3b17465f418d529">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3JxBtyXAVqDyXE7yepZy4Pn2SVe93ZZbBe">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:c6dde129c7e58eabc3897a6d9a866e8a778f91d1e182240a9370132099f6f944">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3Fxu5CoBNn1HXAZbrCuwX9cfycUNHL4S5A">
+      <data key="d0">address</data>
+    </node>
+    <node id="1NDppdmmPKSWiMViYZrhdB3di81f9hYoxg">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="18BNrc1oxbjQpvwrX5WrY9pShuUxiocmPe">
+      <data key="d0">address</data>
+    </node>
+    <node id="36ArUpWsie5WBsDxWqMHZckDJQixLWJtJn">
+      <data key="d0">address</data>
+    </node>
+    <node id="1JDTvkkPHra6G41Y7FgikWLDNhVMKLtyEG">
+      <data key="d0">address</data>
+    </node>
+    <node id="3Ac3i8EdmWwtGZsCfiW1cFsZkQ5eVcDKqj">
+      <data key="d0">address</data>
+    </node>
+    <node id="35Lr4D7NqwcRW71TQoG6uCNr9G7yFcy8Ev">
+      <data key="d0">address</data>
+    </node>
+    <node id="1LVUuLNBpUpcYkeMtXgeMcxh3LeoSpNEnF">
+      <data key="d0">address</data>
+    </node>
+    <node id="1FvpMxAMfvFSK9E6Di2LLpYhGMtk2pk5in">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qvttjz9rdwv99402mjzy59hxxl8t20u023aypdz">
+      <data key="d0">address</data>
+    </node>
+    <node id="14c4fxUfgfWCRw18miq3Gas1FemX8v1dLd">
+      <data key="d0">address</data>
+    </node>
+    <node id="3NVnUPRoWwM23WyG4Z9yC9hQBNmfNzM9Ww">
+      <data key="d0">address</data>
+    </node>
+    <node id="3PSexCYp1utVHS8KmXrjihyhk7aaWSLt9K">
+      <data key="d0">address</data>
+    </node>
+    <node id="3KkLq9SmDrxkiPNDCR8T2njfEbMWSTX4Xe">
+      <data key="d0">address</data>
+    </node>
+    <node id="1PZXQ7JjU5dgN1uFUd7MLDmCrEHBP3huHe">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qpetk3p9w2yurgt2mw7ypagcs9acgdxgg9fuahh">
+      <data key="d0">address</data>
+    </node>
+    <node id="154q4ZL7ZJB4Hkt4apTxAv48DB46azUYZw">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q73wfsgx6hhc56nd3gvg0rzk2225wj59e2kw574">
+      <data key="d0">address</data>
+    </node>
+    <node id="17FS7xL26S4NP3jKS2GD6JJ5NTtxaVLje1">
+      <data key="d0">address</data>
+    </node>
+    <node id="1Gbenbzww3PTFMZJtm5hJdZP9uw5avBVaJ">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qeqkr4rvjmnw8pr5wnwgf7ts8lnaqy3fywpqdx7">
+      <data key="d0">address</data>
+    </node>
+    <node id="1J5rKVfPihCB19u44hDzFSCUEaymJpvqsU">
+      <data key="d0">address</data>
+    </node>
+    <node id="3J6Mg3d5DVokPmBhWbx3fkg2JTUSmSgUqs">
+      <data key="d0">address</data>
+    </node>
+    <node id="1FpcX2Db5KVZEmH7dj5dxzE51HeC7i6ac8">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q6t8qg9fqx0etlsyfks0r5nggp3me9zrrt4nnvm">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qnr3c94tulga7ef0t5t95xc9pft2j8egyz2lq3p5ec0r42p7js5xsq47sat">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="bc1qqguxpmgt8h49xeqlvz70xv73c525n0zn3d3vsk">
+      <data key="d0">address</data>
+    </node>
+    <node id="36i1TT7kWpdadxHA2yeHcY7Rs6iDsFLZd6">
+      <data key="d0">address</data>
+    </node>
+    <node id="3CmbfnSt9dTfKSR3zg75vLyZcH4fW83Ni6">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q98rzx2xm2wmv42q969lsshsmg4mtytkm2x7t0a">
+      <data key="d0">address</data>
+    </node>
+    <node id="3FK35acZTzSP5MbUAMmYFaSrPCP4RAZdDR">
+      <data key="d0">address</data>
+    </node>
+    <node id="1CCfXrFYfg3Yg7WEqjhZEmcvgc8icZV7RF">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qg860m9uz5h9kjjq6pr0myfmy8elrl9zrzhr074">
+      <data key="d0">address</data>
+    </node>
+    <node id="3CR2q3xSHshMvf46F1X2wUeYh3Fm9VZd84">
+      <data key="d0">address</data>
+    </node>
+    <node id="388AFANNKigkn3fHJ47hHDPcKJQ262L7WD">
+      <data key="d0">address</data>
+    </node>
+    <node id="37bGNBCNLFCAKs54jZ3JWa1gxmjNyQ7WUm">
+      <data key="d0">address</data>
+    </node>
+    <node id="125ycExUXrps7Zh5YJGwnwWPWzHhw8dnmQ">
+      <data key="d0">address</data>
+    </node>
+    <node id="1B4UkYMkm1bvZHHSdkCBYnwYWGVLaaSNqU">
+      <data key="d0">address</data>
+    </node>
+    <node id="3KafKPGTDb7a8SA6eDYs6BM5hq756m9Qck">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qnl896ekmr43ka6teq9ge9hluune6qkxyyp3z0s">
+      <data key="d0">address</data>
+    </node>
+    <node id="1LZJDT2yMj9UoAYpgVGWGeBNCRGP1J53bw">
+      <data key="d0">address</data>
+    </node>
+    <node id="35iixXsyokV6K3fjyFJ1u292U7VZcnFKHA">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1q3cgmv4gmx8v626rgtqft3s0g9dkd27pmfwq2vx">
+      <data key="d0">address</data>
+    </node>
+    <node id="3NqjYMsYXovsvyxxzEAmtfVzWf75HiMZVz">
+      <data key="d0">address</data>
+    </node>
+    <node id="1F7rFvzvKD5w6Ygo3VrTSmyRSmeKTjjWcP">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qn927y0q82jccfxyq4j6t0c0lgdwk7tjdj2mxa7">
+      <data key="d0">address</data>
+    </node>
+    <node id="336pmqrq59DboBphkioPQyQbWuq8uTEFLo">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qnmvuzhdk6w7axjjls0gx9k9we75js35vfmp9ex">
+      <data key="d0">address</data>
+    </node>
+    <node id="36XBUdqqhH3geztXpSnsFaZfS9N7vcSS2Y">
+      <data key="d0">address</data>
+    </node>
+    <node id="18oG7WuqjMeGkTFHDFijEDtDVTZpuY9JZQ">
+      <data key="d0">address</data>
+    </node>
+    <node id="bc1qprdluj0zm4t8azmuqf3u4ejcy0fk8qtf9ly73py5wmyrvsmsl8rs94vfkt">
+      <data key="d0">address</data>
+    </node>
+    <node id="tx:79a59b029b47ee8de3d0b7de08937955a78befda96ac4d3e92130b0eabd02570">
+      <data key="d0">transaction</data>
+    </node>
+    <node id="3Gtg92Ddi91qY6MyzF7iADC5Ap7gMrVq6g">
+      <data key="d0">address</data>
+    </node>
+    <node id="3FS5qBUJbsApudGxvztuTy2RfSHoEnZaBc">
+      <data key="d0">address</data>
+    </node>
+    <edge source="3EKMtPc89gGsJHaCtcbWykT4zRLH6hTg9X" target="tx:fac1838dc39bc1b6e076ac1fb88c3b5024609edd0a69e9a37ad5d8c0fe28bd52">
+      <data key="d1">6423410.0</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:fac1838dc39bc1b6e076ac1fb88c3b5024609edd0a69e9a37ad5d8c0fe28bd52" target="3P1h11TDnLu31PPFvukrUAfk8WhiJqQJNu">
+      <data key="d1">266212.23788144</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:fac1838dc39bc1b6e076ac1fb88c3b5024609edd0a69e9a37ad5d8c0fe28bd52" target="367JuH48WYTqy7LFBMMJ8LL5Mo72BQRMTu">
+      <data key="d1">6157123.58474059</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3P1h11TDnLu31PPFvukrUAfk8WhiJqQJNu" target="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314">
+      <data key="d1">266212.23788144</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="367JuH48WYTqy7LFBMMJ8LL5Mo72BQRMTu" target="tx:549a3ba35379eb882e58ac2c2eba8d35e7fe6b846d3c8e518770863a691fa323">
+      <data key="d1">6157123.58474059</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="1YGs7wZPs3xSiEK1BxyAWMpCR9zAJkaJJ">
+      <data key="d1">90.73875266</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="3CFjJD1x4SwM3k2wP4bmu48imK71rBPPrT">
+      <data key="d1">83.9267326</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="37PJiMT2GzN1WRzoPF66y3ujHNhYpBcocZ">
+      <data key="d1">2685.95305576</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="161dkK1PoVUfbn6NXrpf1UPHdf7Km9dvAD">
+      <data key="d1">520.06135682</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="3Q3pwwKpQa6Kx6xu5ao5W6aHs6vF6ezMWa">
+      <data key="d1">1254.93282199</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="13n7KxR9ff4mMgMsv7nNb8twEkvcPqwunQ">
+      <data key="d1">2231.82940769</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="1BG2en1rzDp9NpxFjsxfvBMSF25S6SZApq">
+      <data key="d1">1096.61664783</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="1MTiyZNJM3m9Ka2xkC2j4VpJeH9wRaxqeR">
+      <data key="d1">861.88587806</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="bc1qj0x8knaa65kv9ph7vk4fltqxs2pe0qj708h03c">
+      <data key="d1">3659.97272036</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="3KHH5MrXUL7aLsvvFF5auPck7smRt8kAwj">
+      <data key="d1">838.27528425</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="36XtnmQFPxgFGgFfVtY1gWmznvQuRw1Wrd">
+      <data key="d1">92.45829171</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:74338458c2d2abadf614b138fdae93e1cf4fbecb84f23df348770bad14d44314" target="375qwq5voiMBQKeiF61HQnoswakmx25HFm">
+      <data key="d1">252779.20207244</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="37PJiMT2GzN1WRzoPF66y3ujHNhYpBcocZ" target="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a">
+      <data key="d1">2685.95305576</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3Q3pwwKpQa6Kx6xu5ao5W6aHs6vF6ezMWa" target="tx:083ccdfda085a6f369ec0318b1300dce028377028682ac2f4f0d9579f5551916">
+      <data key="d1">1254.93282199</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="13n7KxR9ff4mMgMsv7nNb8twEkvcPqwunQ" target="tx:789f67cfb82109555ace20bd211007b3c7a097d108876149a0e7d64e75ba3d8d">
+      <data key="d1">2231.82940769</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="1BG2en1rzDp9NpxFjsxfvBMSF25S6SZApq" target="tx:611ec76032d3f3216adf6fbcde343e2d6dfaa9c735dc4a19ab7c69ca15ae55af">
+      <data key="d1">1096.61664783</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="bc1qj0x8knaa65kv9ph7vk4fltqxs2pe0qj708h03c" target="tx:5c901f8b430acad8f30aafc3ee033ab6d3697bc08b6b9f25c62f0b5c46f8e997">
+      <data key="d1">3659.97272036</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="375qwq5voiMBQKeiF61HQnoswakmx25HFm" target="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76">
+      <data key="d1">252779.20207244</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:549a3ba35379eb882e58ac2c2eba8d35e7fe6b846d3c8e518770863a691fa323" target="32521SL2crCGKuzUoa5oW9Wykj6tsohai3">
+      <data key="d1">532424.47576288</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:549a3ba35379eb882e58ac2c2eba8d35e7fe6b846d3c8e518770863a691fa323" target="322mARwGskYavrigEZc3eYGFKGzBviJkHh">
+      <data key="d1">5624658.85768734</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="32521SL2crCGKuzUoa5oW9Wykj6tsohai3" target="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690">
+      <data key="d1">532424.47576288</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="322mARwGskYavrigEZc3eYGFKGzBviJkHh" target="tx:cfd2687489ad230d4fc6de3cd5f322e6451877e8564bbfd0bb8f76d0835ef317">
+      <data key="d1">5624658.85768734</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="1BMvHxZBb17GxSnomVkkfpRUHgxFQwojuj">
+      <data key="d1">0.07786118</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="1QEUU7DCUtzJ7rbL5mGtAu2byU3tmYu1Vv">
+      <data key="d1">849.10689314</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="32fUAVBXZa3CiJHT3TNKuxzQDdY62ZrdJB">
+      <data key="d1">3.31680544</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="3L3hkjSbwUW2k8X8nUcmkutYMFBfEXwT6r">
+      <data key="d1">1.37321474</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="3PYiY1BkDMz5WpDDT9ZSstXF2RRmsvrxpN">
+      <data key="d1">0.37326768</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="31j3Wo3r9zy3qo4sAbjDFJscsp3gchKdAr">
+      <data key="d1">3.1896761</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="1DGjJ4n2ELfiRGfvRhsevJnLyV1VXMSLsW">
+      <data key="d1">1361.70794785</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="32Rvwo56adk84JqYtYymtsBuVP2EXsRKUt">
+      <data key="d1">1.63733617</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="37pWXDgGFEmxY38pBsbakT4WcHn95mdXx1">
+      <data key="d1">1.4258722</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="3Ad6ufjqPwD8iVKpua5ZNws6wV6EdCvRrR">
+      <data key="d1">428.54127032</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e560f87de6d039820a997f399515cb141af6750e6365c503d264ec609170723a" target="bc1quequa35yqzd6fx56mzw726ae9dpjmrtuzzf42yq8htlwdaxr0pjqlc7q2d">
+      <data key="d1">35.0561174</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="1DGjJ4n2ELfiRGfvRhsevJnLyV1VXMSLsW" target="tx:b441094f6a625122bc31f9ee85b30bf39366f6025d13184688f3ea574b73c89d">
+      <data key="d1">1361.70794785</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:083ccdfda085a6f369ec0318b1300dce028377028682ac2f4f0d9579f5551916" target="37V7J1mCdtbD1bDG4iqmcHnEX451YSoA57">
+      <data key="d1">17.1020473</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:083ccdfda085a6f369ec0318b1300dce028377028682ac2f4f0d9579f5551916" target="3Qy2pxx2YCHXnscXgCP3H4dtqwE2oUkWkf">
+      <data key="d1">1237.74035033</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3Qy2pxx2YCHXnscXgCP3H4dtqwE2oUkWkf" target="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680">
+      <data key="d1">1237.74035033</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:789f67cfb82109555ace20bd211007b3c7a097d108876149a0e7d64e75ba3d8d" target="1AgRs9ZJaNi1YyJEEhoRvS5XaY3affnNxN">
+      <data key="d1">2.91774855</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:789f67cfb82109555ace20bd211007b3c7a097d108876149a0e7d64e75ba3d8d" target="18LxX4NzKMVTyu21sxru6Pe4JmkHswf1am">
+      <data key="d1">2228.78961344</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="18LxX4NzKMVTyu21sxru6Pe4JmkHswf1am" target="tx:de60247d236654956a2dd0366b51cfcc197d6431ae778f5e877347038132c1af">
+      <data key="d1">2228.78961344</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:611ec76032d3f3216adf6fbcde343e2d6dfaa9c735dc4a19ab7c69ca15ae55af" target="3PtFViZPAVzaC9VTvVBH51b6xmpHqLk6MF">
+      <data key="d1">0.12116203</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:611ec76032d3f3216adf6fbcde343e2d6dfaa9c735dc4a19ab7c69ca15ae55af" target="1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s">
+      <data key="d1">1096.44770808</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s" target="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1">
+      <data key="d1">1096.44770808</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:5c901f8b430acad8f30aafc3ee033ab6d3697bc08b6b9f25c62f0b5c46f8e997" target="3JRHZyGjU5U3qLSgGWscDjxQYmgbjvRD7f">
+      <data key="d1">72.6306838</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:5c901f8b430acad8f30aafc3ee033ab6d3697bc08b6b9f25c62f0b5c46f8e997" target="bc1qv500kz43z4jezj4phgch7xxdvt64f3cjq2k9gv">
+      <data key="d1">3587.22616609</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="bc1qv500kz43z4jezj4phgch7xxdvt64f3cjq2k9gv" target="tx:2e08edf52c5583ffe041384139c6a8157d1039600cbfb3d2a4b01539833f60e4">
+      <data key="d1">3587.22616609</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3QQLba8Ct5HN7jFjrnEXDrSG99cQDnijwA">
+      <data key="d1">3066.50027356</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="18UFLS4HGpiRgAPDAyn78kQLJuVF4SYina">
+      <data key="d1">86.80365369</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3HqY29VVHe4YBRsFb7Qez97WRUg52YV7MM">
+      <data key="d1">4790.70191444</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3QAkr29PpNZmcWob1VCYdzSJom3xp4mSof">
+      <data key="d1">5145.23475512</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="35tTaxzEjr7Snk1aitjhQ6NTUy1FrkozAN">
+      <data key="d1">2042.61397666</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="bc1qkkt0n0ns0rucn7p2hh9qucxvjpg58xrc8p6vjj">
+      <data key="d1">500.91495092</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="1D2cEmVpTQCL9sdjmVSfjgtxuHHSF7RFm4">
+      <data key="d1">5112.48719219</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="34v2mZdy5J9JYbzYFmkDyz2UtEmNHU6BJA">
+      <data key="d1">19839.18172734</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3BRaRCLwspR4skAyxrzzGP6JFQZnR5AZZS">
+      <data key="d1">24005.7571047</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="34QCv3pvwUNrH77zoS4AB9bocS5Xyy9GJ3">
+      <data key="d1">5129.28576594</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="bc1qad9skfqyxh7xsesssqdal2f8qw9ntzzw5sffgj">
+      <data key="d1">198.63982771</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3Pc2jektovsZ4eKh6pfmHnzTXwJNw3KUdf">
+      <data key="d1">2081.63428575</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3KjuuNQq8oTuBy88C9EbXX7VHEyoAwg28V">
+      <data key="d1">47.9486849</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3LMubqAK63KRHptA19nTTPd85WD9QAGvsW">
+      <data key="d1">4958.55537964</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3GBykY1C39izH1dtPxjatmSi37yi6nSmS9">
+      <data key="d1">3635.83303762</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3Gep3opZu2vAaY7c4yghTR9rKfnwz7S7vU">
+      <data key="d1">1997.83982538</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:54c18abca826d0f505013f3e51cbc5858083127393f35ff746a65516f1b25d76" target="3EQNVraD47B6E3wC24cQUTjyYavz4Xukq6">
+      <data key="d1">170138.67131728</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3QQLba8Ct5HN7jFjrnEXDrSG99cQDnijwA" target="tx:17cae76053a93e92726334fe1978e379fe8f57127a3c07f6a58b67c352979024">
+      <data key="d1">3066.50027356</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3HqY29VVHe4YBRsFb7Qez97WRUg52YV7MM" target="tx:c94fd84bd662ceb1e527506530fddd2babb6eaf31e7c8880d94cb1c49269d011">
+      <data key="d1">4790.70191444</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3QAkr29PpNZmcWob1VCYdzSJom3xp4mSof" target="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd">
+      <data key="d1">5145.23475512</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="35tTaxzEjr7Snk1aitjhQ6NTUy1FrkozAN" target="tx:ee3a697d2fec5f63e5ea35c4604bd8425b1e4074ad5a279756c5a443c8c54532">
+      <data key="d1">2042.61397666</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="1D2cEmVpTQCL9sdjmVSfjgtxuHHSF7RFm4" target="tx:9f32d65d569f7039819b7ca9a296ecd9f9708babdae9b51a5317d299d1702f80">
+      <data key="d1">5112.48719219</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="34v2mZdy5J9JYbzYFmkDyz2UtEmNHU6BJA" target="tx:469434067471c78f6e49345ddbef561a6ccaf5cf58d26f0e26ea0c3a84d4576d">
+      <data key="d1">19839.18172734</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3BRaRCLwspR4skAyxrzzGP6JFQZnR5AZZS" target="tx:17c17380debb748f3db241465477a29a5d806e96228d5491719ecd55eece90d4">
+      <data key="d1">24005.7571047</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="34QCv3pvwUNrH77zoS4AB9bocS5Xyy9GJ3" target="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd">
+      <data key="d1">5129.28576594</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3Pc2jektovsZ4eKh6pfmHnzTXwJNw3KUdf" target="tx:66616e01730dab3a4cbaf2abf4b4a44dd1ee78d67b4b18c28a08b4b94e107387">
+      <data key="d1">2081.63428575</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3LMubqAK63KRHptA19nTTPd85WD9QAGvsW" target="tx:9f32d65d569f7039819b7ca9a296ecd9f9708babdae9b51a5317d299d1702f80">
+      <data key="d1">4958.55537964</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3GBykY1C39izH1dtPxjatmSi37yi6nSmS9" target="tx:000cfd67b92a5a240bbfa950609e98a65aaf088279b50294238635009282ab3b">
+      <data key="d1">3635.83303762</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3Gep3opZu2vAaY7c4yghTR9rKfnwz7S7vU" target="tx:e0fa781f5544b98a77432b36a765560c9a3d6a9b1fafe68889bc9474936d35a9">
+      <data key="d1">1997.83982538</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3EQNVraD47B6E3wC24cQUTjyYavz4Xukq6" target="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09">
+      <data key="d1">170138.67131728</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="1MTFctqDvLEDfDeCjoZufKTHgQG1Gf8XPZ">
+      <data key="d1">1532.77321101</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="bc1qesa276g4txphy3lj89zew3gjfu0f34dd9ef5ll">
+      <data key="d1">2583.07074547</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="16mDrXMuaP2P5BSwLe3eGu7kTG4aqvh9Ku">
+      <data key="d1">7.14106347</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="15LnVPGemkEMnqR2thHjBZJQ2wpYnhFZ3X">
+      <data key="d1">249.73176924</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="31rhyWa3GkzjAJyEk9kQgMXB9nJ5ykVeTm">
+      <data key="d1">2171.03202645</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="343kf3pJWuQZ7vzSshMCni2Vvm4Wgk43DD">
+      <data key="d1">154.4383432</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="3M1kpJAovYqD3JZYQiLrUWmNCXpcZSGDn1">
+      <data key="d1">78.411822</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="bc1qfvd3yvduqgg4r8sdxw0taktpdz0wp6p3h94zqu">
+      <data key="d1">716.4157529</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="14wV3HT7XtuV92476EA1cfAc41A3p86Ree">
+      <data key="d1">1583.39166619</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="3Fa6gDdmGLThLGRtJVg6CVMkoEp26gC2Dk">
+      <data key="d1">10542.76598376</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="13FNCQzJjKHs4pg92Yg6CJozgZ57L8HfqC">
+      <data key="d1">6588.56981698</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="1HHrz5AttHUbdX37aPiKEsZtPJkugmdL56">
+      <data key="d1">12.51953461</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="bc1qzxvkwjnrfuztq2p8j9gcr2k5p3pfrw0v9m6njk">
+      <data key="d1">131.12565192</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="19mcKRZQbe4V2JMnhaUM7PMxdpEFZKNKRV">
+      <data key="d1">43.38348202</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="1AXz5kce2yosyokXBjGjUQbhD7QQLLbARn">
+      <data key="d1">83.683205</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="3Qs6AqCF7KAXMVMKaAc46z42YjYU9tuiPH">
+      <data key="d1">1863.02535545</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e31d95e77cb69458f8e31c94430808c099ac7269b0733b1f2ada232362f41690" target="bc1qnrcaff2syyuhutkxjeszgwpev3w6a80k9uee8z3zh9wm94jvyxqq7q6mt5">
+      <data key="d1">504065.59389019</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="1MTFctqDvLEDfDeCjoZufKTHgQG1Gf8XPZ" target="tx:8840d37a5982d978cb7545c409d4507a1aa5595b28bb0203d10ee9194eb30728">
+      <data key="d1">1532.77321101</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="bc1qesa276g4txphy3lj89zew3gjfu0f34dd9ef5ll" target="tx:560dfe4021342814b06875a4db888c06937827edf364b1a9f0fac89baf35c919">
+      <data key="d1">2583.07074547</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="31rhyWa3GkzjAJyEk9kQgMXB9nJ5ykVeTm" target="tx:23e602ae936624c1d37c9be0b13b73213e12bc04c3ec7e579158654168baafa7">
+      <data key="d1">2171.03202645</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="14wV3HT7XtuV92476EA1cfAc41A3p86Ree" target="tx:2437ae394162c52a61a0f27b1e52ebb428370b718244f00e70805cbfe07feb80">
+      <data key="d1">1583.39166619</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3Fa6gDdmGLThLGRtJVg6CVMkoEp26gC2Dk" target="tx:2396d0096f9937e0df04ebeebabec39cdad5d179249d991026b6b3918787e8de">
+      <data key="d1">10542.76598376</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="13FNCQzJjKHs4pg92Yg6CJozgZ57L8HfqC" target="tx:2c49b7e5cce6d824d9d9c2f28b52a10f2b08d82f2f3698d2f3b17465f418d529">
+      <data key="d1">6588.56981698</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3Qs6AqCF7KAXMVMKaAc46z42YjYU9tuiPH" target="tx:c6dde129c7e58eabc3897a6d9a866e8a778f91d1e182240a9370132099f6f944">
+      <data key="d1">1863.02535545</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="bc1qnrcaff2syyuhutkxjeszgwpev3w6a80k9uee8z3zh9wm94jvyxqq7q6mt5" target="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f">
+      <data key="d1">504065.59389019</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:cfd2687489ad230d4fc6de3cd5f322e6451877e8564bbfd0bb8f76d0835ef317" target="3JF3J8y6Sn9sceyeJcRCnaawvtTCimg5xb">
+      <data key="d1">28793.03646723</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:cfd2687489ad230d4fc6de3cd5f322e6451877e8564bbfd0bb8f76d0835ef317" target="3Fa3PdTaxrha5rCYYCHaSCZeWszvaGJdjT">
+      <data key="d1">5595783.52969314</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3JF3J8y6Sn9sceyeJcRCnaawvtTCimg5xb" target="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2">
+      <data key="d1">28793.03646723</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="3Fa3PdTaxrha5rCYYCHaSCZeWszvaGJdjT" target="tx:79a59b029b47ee8de3d0b7de08937955a78befda96ac4d3e92130b0eabd02570">
+      <data key="d1">5595783.52969314</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:b441094f6a625122bc31f9ee85b30bf39366f6025d13184688f3ea574b73c89d" target="18hX5UujVhzXUzLSyuauXziAT7P2BfFRJZ">
+      <data key="d1">1140.59842176</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:b441094f6a625122bc31f9ee85b30bf39366f6025d13184688f3ea574b73c89d" target="12SfWVTzbH3x3snciVoiYhnzyodDBZABb5">
+      <data key="d1">221.09064041</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1KY8cG22mtudJdaiwmo3qEss8u9CUVB1MD">
+      <data key="d1">0.00395519</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="39RHPpFBah6nP3xDUBhFAnTPAnhUwN4RNu">
+      <data key="d1">0.00599562</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1MYXJPJrpS73GDYbYNv13qbJGVwqPwycBh">
+      <data key="d1">0.00618658</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="36okTc9hRmWZLPRUNo6sAXnvy1qiaiuMMM">
+      <data key="d1">0.00970536</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="13CRu1SrBWpTnqayuDnvGsHEh9qA6SaBKr">
+      <data key="d1">0.00986508</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3LagriY5J57fUb3KhnkD4amUybj9twDLk8">
+      <data key="d1">0.00995903</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1AjxSjkNS8TdowyNDFzoWhqrTXwU6UHZyG">
+      <data key="d1">0.01244151</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1657x4tWot6R54UdatZWXqNQgLfpixi9CF">
+      <data key="d1">0.01259254</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="38Ui5sodj8M6BVrXvbBmiwnLcNgN2iayiR">
+      <data key="d1">0.01268367</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="33Y8kx6gzz5rf2469XbG6mV3X47d36xnke">
+      <data key="d1">0.01328826</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1Pu1oKScY65qaZRWNyH52tyn9rNTiDXsjb">
+      <data key="d1">0.01640468</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="34nc5JdZDuHWp275AwK86UeE8HVU47f3AG">
+      <data key="d1">0.01650615</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1NXxqEiYcw1W9pMomb1nX9hVZUAv5bQRZA">
+      <data key="d1">0.01741444</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3BhhL5637vbeKtwK9ESmXHLUTyeXVw1LjE">
+      <data key="d1">0.0174283</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="31osNgVB537Ge7MBeJr7ksxHedHAvEfTht">
+      <data key="d1">0.01879062</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="12hhDc7wUdbdsYX3mH9hCtNTv6LtdkpY69">
+      <data key="d1">0.02053157</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3D25EpU9nndPKGhKqLcw59PtE3YNGBbmRu">
+      <data key="d1">0.02460961</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3MSMNmJpPrkJZJvMVg2GRiUUoYCsWPt4Bi">
+      <data key="d1">0.02488278</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="36ccKn6tdcfDbk9E6WCJHjv3Ndn7o8bJ5A">
+      <data key="d1">0.02877338</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3GhjzpAd65U875w3UKEKqZSmaSqNswDcUT">
+      <data key="d1">0.03108063</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1AUXos7Kz3xCQTi8pfQK8JU3J9ZgbcgeNR">
+      <data key="d1">0.03116119</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3JQjJuohxapJUXSRNEsHb3huFLEHWpH5MA">
+      <data key="d1">0.03210707</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="33MUMPtY2gS3JJ9Zi4muVKhdAwMYDNHTEq">
+      <data key="d1">0.03236685</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3CyjDieRsqx6ENbpRk9hnJrscywtg1c6uh">
+      <data key="d1">0.03553706</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3PAXriiKgeDy3YHCMQ6MGmTGPBQ9hVyYjX">
+      <data key="d1">0.04078411</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="33vKJSuAHJGvTGpyuekbF2TZHjbevfPTFZ">
+      <data key="d1">0.0451285</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1LuoHNNAZi1eQ7GXBjBUDwLjL7hcYDoMLk">
+      <data key="d1">0.04976579</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="398KqutWxkzHjXZ6LLJQdKaiVf6NxLVPgN">
+      <data key="d1">0.0547493</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="125p82eJZV4GuRaeBsoXjnaiZx2wkWTkNE">
+      <data key="d1">0.05503444</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="12XVxnbi5dXoqVqW5HjNr1irZjsJJUSvHV">
+      <data key="d1">0.05743683</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="15Zzm2v6SfJhtDaNHJP1gGtvSqtJrGJyZW">
+      <data key="d1">0.05884777</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1GxfESVi1jJoB3favurw9rqTmFqwXvFS5u">
+      <data key="d1">0.06220753</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3Mec2W6Fq7GhvqK5mAtdDy4jgR7akFFDse">
+      <data key="d1">0.06576718</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3MeL8PXVmgSrYdbV4Weibuj9CiwYV9iEii">
+      <data key="d1">0.0715406</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="36X8xZC4eWm33Afo4xm9XQUXE28Cf1q1g3">
+      <data key="d1">0.07358431</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3F4qYWTUMA8DJfHT4Fd2Cv4qAoszN3KvPZ">
+      <data key="d1">0.08201003</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1Puy9DDfZvN9qySRYBwYEySoDkWF7FDYSx">
+      <data key="d1">0.08457777</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3GE8Y81cVhdCbGepEJE4uUVTciv6EQU1vH">
+      <data key="d1">0.0889494</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1793WAQPSYvEKaiErznyXGwcYoidvjjUYj">
+      <data key="d1">0.09343754</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1GCQBqYZxM32yrcyE5rtfsGrAQers7RSRG">
+      <data key="d1">0.09557592</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="19PYtx5aeBGoFoa2QqKaq2Wqr2FLx5mMZL">
+      <data key="d1">0.10202016</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="17zYNuTdXhQC7oJXaAAdtMADnXc97wyqoq">
+      <data key="d1">0.10649914</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="156jjPFur2RJ6XffytGBbcSpqPHCsmEsAj">
+      <data key="d1">0.10980606</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="17oZ1XTdD9UBrDzV2pVjHayMrvJ5f56wuM">
+      <data key="d1">0.12448787</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1FQjQf8Yyomkv3KfauQsgGGZXEPDFjDrws">
+      <data key="d1">0.1408336</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1JwKVpaXzy3T2iSwmJWLhZAiR5acBWyCoL">
+      <data key="d1">0.14502227</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="17xaUSWQXUMQSeonvShfSDfCtoNoEX32ra">
+      <data key="d1">0.14563273</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1GpbNMAJWco4RFXm9Ncvyv68RgQeeCrM17">
+      <data key="d1">0.15790136</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="36Utv8SQXWHy1waeR3Wic6csGX7QAA9dJo">
+      <data key="d1">0.16720694</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1wd2j3wiNFQFYBwP3yPmUSou4PEJFQMDE">
+      <data key="d1">0.17081146</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="37XG5uipuxokJc8fCHnL8iLzmCMpujgexK">
+      <data key="d1">0.17351989</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1KguoBQYcDWVPudRdEBcGwtbFSNqtghEHH">
+      <data key="d1">0.17418085</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3GgqC9QH1GKMHwbmnv45X5N9trBYmyht2R">
+      <data key="d1">0.18907218</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="17YvB9sX4GdpLMs1zW2bcgjKTwSCb1N95K">
+      <data key="d1">0.20174857</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="37pXcCybCsD4FWBGDLX8jRm2XGptaqPtpP">
+      <data key="d1">0.22138665</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1Xf4jm2H8JnNLZTEGmAVQ4rEsUv4HHKjV">
+      <data key="d1">0.22210516</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1PfwWywsiC8okGeyohqWdbT72eshuUq58T">
+      <data key="d1">0.22366384</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="17ZD1NXdGuVSqzomoW3WE7c679ZnebbgWE">
+      <data key="d1">0.23391859</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3MYajEPhnXo5DsjSS3m5jgeV4Uy3SUqMRJ">
+      <data key="d1">0.23638814</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="34gRqRK7S6KFhTvaazxBsK1VXPphSj18s7">
+      <data key="d1">0.24794931</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="37LSwTBszRDC491powfsXrTYNgFiuK85GC">
+      <data key="d1">0.24882965</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3MZ78DAsbHQAkgbEZpsq1iedbSWBkgGYDw">
+      <data key="d1">0.27496647</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="32fkJDQfAfnPvGee76DNSnRD2bQTRtLBXC">
+      <data key="d1">0.30902729</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1JExJGEct2s54gtyvXcUxrKa4nkAUS55RU">
+      <data key="d1">0.31540036</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1MwHuteLb2zVjvCdUg6vfF4yWPyjmXJLr3">
+      <data key="d1">0.31625862</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="31k4RXh9Mso9xCXpDbxuLy26mAafkfrcrB">
+      <data key="d1">0.32066479</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="32WXsLM4QE7Q3747BMfBoLzCfUjM7gBPFe">
+      <data key="d1">0.32341268</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3HJcBJu6U1VD2r2oxXZ94dn5ZD5p8whELM">
+      <data key="d1">0.35379571</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="17LCQBwKfoXUmstns5Syzuf4Nj4fS2yjTa">
+      <data key="d1">0.35552727</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="36VFBzUR6UUZWNmGSnyZzUnZKTrQ1Pz6wy">
+      <data key="d1">0.36496768</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="18m5mUzMthanyfksk5WASicuxQYiysEuru">
+      <data key="d1">0.38308348</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3GXYGqp9L6SasqaNtQ76xM56VWkCV7cFxt">
+      <data key="d1">0.38917963</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1EZmMZK9sZjCTpMu4xnMK6s7KWLbG1o1ei">
+      <data key="d1">0.39681308</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="18HvU2z24EkHDt8RYX1CxijTcBDHJor9E7">
+      <data key="d1">0.43300594</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="36WzFPQtdP8N7BUPFbnshJg9P8J2kCWpHj">
+      <data key="d1">0.46976556</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3CPPNQsPHr3LLoF2CfyVNyCtvjqkLuZ1qk">
+      <data key="d1">0.46976556</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3FZTdi3w2JcUVbqP8UBNLaWdFvVCGVNx96">
+      <data key="d1">0.46989404</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3KbQML8MNpkeXENXBnBRuodzZYXsXwqHSz">
+      <data key="d1">0.47340507</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="132juwKv54j1h1hJMY8fJt9Cw3mYWbbhWG">
+      <data key="d1">0.49703052</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3BVDvnTyBm9ZyfU5MoYBojHA6v9mMZiKCA">
+      <data key="d1">0.50771886</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="358Vt6pW5tFjheW6yui5BQyKX57DGDd6rc">
+      <data key="d1">0.55050769</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3Hn7GUnVXKnGNNNqn1xFx3GFQNtSrTzHSZ">
+      <data key="d1">0.56736546</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1BopZfxhBDUWnxz3mF6YzRBjAu1iy2ju6g">
+      <data key="d1">0.64459751</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3FN9juLyxqZagiSkPL3fbQbPGhGD2w1BRt">
+      <data key="d1">0.6642485</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1PFJc78GA3cGKv63bgv6vf3uNAL6NCBfLw">
+      <data key="d1">0.69584306</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="16aNN28CZAzbr95oLLSM6nsudvuK1E7H1M">
+      <data key="d1">0.72621152</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="38DX9uNnFCh5DXE1A46YGMzD9zVtvJRbkA">
+      <data key="d1">0.76852518</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3JhukjvZgteYKQn4MyzeS2DpvoaXD1z4Q6">
+      <data key="d1">0.78356191</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="16385XbVjYJrNiMzoccJu8BqFD7th2oKXf">
+      <data key="d1">0.81703576</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="34oKRrXJvKoLMo8ZgAXd4JymwRoxa2TcyS">
+      <data key="d1">0.87090378</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1P8Gi9oEocXh3sKQ9MXEJMbgWwcxLUvxTT">
+      <data key="d1">0.899194</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="38fJhS4213hvqG1RFNne7fLfRTBxnvrzQx">
+      <data key="d1">0.91093743</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="18M4CLxvncESU94jydGC53jXWhnU1gjRBM">
+      <data key="d1">0.92713918</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3NqSRyWFVUKqjDNdwFq5ppkvuyJKSZY135">
+      <data key="d1">0.94341045</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="34CCC6asSfVTG2WEReneoAGkaBPKw8pvzX">
+      <data key="d1">1.02124567</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1AeoYSfxGCHK5qVZqQwUSkr2M4BsZPbV8s">
+      <data key="d1">1.04508463</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="12R5nUwpeiKCszftWmGGj4pjimW7kcYVfB">
+      <data key="d1">1.11973366</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1FdiHw774Bzp1EnVELeHPsbRTi3CKsbeZ1">
+      <data key="d1">1.21146737</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1A47dmDeaZ5sexwmoQJ1KsSseA7n3pNzWQ">
+      <data key="d1">1.24414825</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1E5AxP1QuQZ9fJ3kHnekEn9j2F7tyEyUmQ">
+      <data key="d1">1.24414825</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="19dWENixX8dL4Puw2GpreLb87XVXuT8dV9">
+      <data key="d1">1.24487874</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1LhGt1nXpiKQze37S6E7AibQD5TjHszinJ">
+      <data key="d1">1.25258595</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1Pztdhh5Dv8cj3VseMwaX9CSpcCwYeSL8R">
+      <data key="d1">1.26836702</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3H8ZZE4kBnVPGp4DrsaW7xRgi3EeC9icWj">
+      <data key="d1">1.2754135</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="12JaHqWSB9zpkPFdwuxfv9LBmB4aKi6JM9">
+      <data key="d1">1.33675619</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="33MkZfpJYW6op2WKjp56qhD82sEXWQdf4L">
+      <data key="d1">1.36856308</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="12F1by7kvEBgJXBQvh18irKCbCVcUiCKKh">
+      <data key="d1">1.44291217</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1HcuVaiY4Cq7aH1Pdu2bsJ8W5tndEJxmkR">
+      <data key="d1">1.4601979</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="39ADQkffzXCqYhy7qnUrsiRdwRio3waNuk">
+      <data key="d1">1.54267816</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1MDBtjBKDdEZCjYKKkRnMK6kSBw6qWxSrR">
+      <data key="d1">1.54589441</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3QmaZ1bHvMo4A7N3qoewfozrrWG8mqz9ZK">
+      <data key="d1">1.59753738</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="14mD2z3CqXN7Vgt5iV6TCkg8LpTngxmvUF">
+      <data key="d1">1.68990433</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3CbyXbtSXHfJwRovguTd5vH7H9UU1juBgR">
+      <data key="d1">1.81663886</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3HwSJBs4uD1P7cx77fX1VMw2P7dTyL5NZH">
+      <data key="d1">1.86621416</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="12doTTUQsaNoPSfst9vfv8tfD8uQEsJhwh">
+      <data key="d1">1.9382776</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1KVXME4nzVEKiB7afc9VaYTmpiyzKkjBi7">
+      <data key="d1">2.21458408</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="16LJtdegqwGsWd9EWVeXsZT6F8pdh82hVZ">
+      <data key="d1">2.30491177</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="39MHWY7pnbJYt9VeKiVZqALMCLF6ZjMcxx">
+      <data key="d1">2.41364794</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3HobGGnqbeWeHkWQshs4UxtXZmvhvkhLpw">
+      <data key="d1">2.41364794</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1NhoNL621KohVcU9doFsaX6YLHkgE3dTk1">
+      <data key="d1">2.67841908</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3MN17ppwnJ4zLARsZohgoH7dLGt1DDfkYh">
+      <data key="d1">3.14089858</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="19sfBqqSyZu9E673iTVCimQqUKwHVrNaHR">
+      <data key="d1">3.28655879</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1Q7CEaM3CQ6ejGHgDZNbdTTAkoLcPk63nQ">
+      <data key="d1">3.6527704</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1PegHGx9S8PywZPc9MNV1ea7yaDbHbkeTh">
+      <data key="d1">3.69045288</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1G9hLre2vrx39Fy2uhcutYRef8QxWtnBcR">
+      <data key="d1">3.71114793</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="19gSUNjurjur142c9XL65ZsoCYQubtyGuN">
+      <data key="d1">3.85416007</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="345hWybWUvo2ULBWFcDp7uRWt1Se7r9PtZ">
+      <data key="d1">4.47893441</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1Q57v5pnVxGDmYkctQVK9hGcNxG4Vbqv4Y">
+      <data key="d1">5.25284569</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="17CzhyqsmXFKByFuDWWi728quGLK1K6iWX">
+      <data key="d1">5.54871109</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1CPFYtk8rCBmeX4595zWmrYNo2twzK5K29">
+      <data key="d1">5.94326272</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3HLZmnuERj8fSdMDjCU3K2Gt5DQaVEKEx6">
+      <data key="d1">6.35527061</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1NFAXhzu4dkMj7JfNWvho4YDkpWRcAPRMC">
+      <data key="d1">8.87019389</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1PDfjwd9rRbxCgvmWs2YkguccTFCN94LGQ">
+      <data key="d1">11.74413903</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="3D5cDdzVdoVCUTtA4PpD5YLAW74QhCnpJB">
+      <data key="d1">11.74413903</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1LMNuNwXxrATm6wSe81sPxqS9uR7hv5Ab">
+      <data key="d1">13.36215396</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="14Dqvc5x2wT7A1jhS2SgYT76gy7gxdMPyx">
+      <data key="d1">14.45686815</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="1FRMdjeUwhthKR749rryMDNoq21Rr69UWW">
+      <data key="d1">18.57269703</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="33zUsfMiJWNSrvF9LG78tScRdy3ykbMrnh">
+      <data key="d1">23.48827806</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="18xHTRqn7RDoYF58NXQNZtLDTBscc9o8Ge">
+      <data key="d1">24.91924973</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="17eauAbFaNCbptsxJ7RAHT5HQThENKEXii">
+      <data key="d1">25.95798218</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="13tQufkQJEj88fr4zEup6xmZc2EXVBoAJh">
+      <data key="d1">31.93458605</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:6a23ce11014a6e1d04c0ed823cb88696a09d6307a9b6b4a772e997451010e680" target="31hryhfGwcdE8EjP5ui3Gacvmd69Ym4KVX">
+      <data key="d1">938.70178731</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:de60247d236654956a2dd0366b51cfcc197d6431ae778f5e877347038132c1af" target="1LXnNRSrcTRp6VTAwy5qpFAzykAJNFGjQS">
+      <data key="d1">221.83887076</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:de60247d236654956a2dd0366b51cfcc197d6431ae778f5e877347038132c1af" target="1Ks1DEUGVYbAHqqAqfcvxKwnRaFFkJ2Gad">
+      <data key="d1">2006.9247267</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3JY1hGk9dXn5SVFwxi6CnY26xmgsegb9Lm">
+      <data key="d1">0.0509512</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1Hz3HDBW5xxig7YYkgfhoET3726QQ1zC5B">
+      <data key="d1">676.817075</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1Ppa8MsRx4GmBYbWj2fKZCBoixwUvbYbby">
+      <data key="d1">0.21482346</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1CRf5SY7vjvLMXEFEEscK9oefLUeAtPBwh">
+      <data key="d1">58.80031176</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="19ZfSEMGGLbsnozL85S3ceJjaFpkmod8cu">
+      <data key="d1">0.07351862</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3FnHFiG9aRkvsn7GPYvfKRrWohK7Nwy2FN">
+      <data key="d1">0.47667782</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="32h8PP8cciKWogL6SSgyVFpvGot8ZdcgxX">
+      <data key="d1">7.52685506</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1HyRe8DsEqXjF3ZARPQzkKT9dqVP1xCYRn">
+      <data key="d1">0.06903589</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3J8bWV9QigfJEHxtyrkjmYnfv183iuGfUj">
+      <data key="d1">12.83872702</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3NF9Y9G8VGGXaVsHGwiMjnX6kSFcT89GNH">
+      <data key="d1">6.45114303</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3C3TcDRr7uH8K9saRe6Zxs3BswRSVq63x2">
+      <data key="d1">0.00812187</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1MXsbRFUZf4tbgqXxi117uZ6GERdby4wkv">
+      <data key="d1">0.96840547</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3Qn2WrUjD29SGWdyfZNh6ShWZprNYW9X2M">
+      <data key="d1">16.37910425</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1HHwx36VbaPaAigcK54fBvyDU3CovFMg54">
+      <data key="d1">27.067485</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="31nPkmNiB3P784LgoKmfvxrFCDRP95ukEp">
+      <data key="d1">1.3482304</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3DEsFxvnWb3gLF5SJ51DMTTHmgmfs6HKks">
+      <data key="d1">0.46769057</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="376ajpcpK91doThznBYFhSiHdp2EtYxztS">
+      <data key="d1">2.66397332</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1q2kvxkzqt85kyju35556un968e7uyfzz8jtwnat">
+      <data key="d1">0.03248748</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1PcM3Tn9qBgoQnd4JgFGqgAirqHGHwKih5">
+      <data key="d1">6.74032817</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1G4QjNUMg4rs1xYq6sgYokcKhZXFCw7Af6">
+      <data key="d1">0.62299263</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="321d63E6Tijc5trjkqcSjWFKnwPfuGUgCY">
+      <data key="d1">3.10726037</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1Pk9XUPNaJ16JufDBvT5jPtfenfadvMjLr">
+      <data key="d1">7.5749973</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3LX4cifJHyd16FMMGHKAYMxJ3CnxpsXh9j">
+      <data key="d1">1.35378034</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3Hp1iYgcK3rdU7mAdvkN8XV7ioWA1ZdPYS">
+      <data key="d1">40.48591184</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3Pdg473CSMCEy5YUPTdmZ9CxijDeAG5x1d">
+      <data key="d1">0.62910529</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="18kxn9tkDqpUKy33xFJxCMQZwzhijcF1U3">
+      <data key="d1">0.12994992</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="13Qakcn5dS9x98NznGQgzpM5xEvdwcrQ6y">
+      <data key="d1">0.64406428</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1q4q4e7j67d6gaf8afze9yl8zqj4jphxl3ex79rs">
+      <data key="d1">4.23650269</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3B1gDXtTM5Vk3T72HXsutfsRFWFP6LCxdD">
+      <data key="d1">0.1288115</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="334EQyiqLfzh6YFU8JnRx3GgqAv2ph8R2h">
+      <data key="d1">1.48747255</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3GQfUV2Zjzo64eKuSHnm4z76av1FqsDJtY">
+      <data key="d1">7.7103618</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3Fi7GUEY3cYKd4j1yJLwiUgKeTE4vgWddi">
+      <data key="d1">0.00812187</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1qe0hrxq0ww9l7gpuea9k0yuxhfmpqxy7c5ru3uu">
+      <data key="d1">0.14213272</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3K8a7iRJddTLgBJ1oh9LauZEWvtCfkcgwj">
+      <data key="d1">11.08058856</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="16TzV9v9NFFweYdEf8pSm7LtAPjZggomjK">
+      <data key="d1">0.08075832</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1GM4qLiW5gcRZM6U7AyfnctMqJr28b66jx">
+      <data key="d1">0.96344152</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1AmuWt3o3gSPUmziZ6fQSh5xzNNkwkPBZF">
+      <data key="d1">0.01543412</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1AhRxE7wkunpWN9zb1HcGS1P5vmSXPCgPt">
+      <data key="d1">85.73310475</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="373mJn2XsunHvqF1KdHvAUGSXhV1qAkz3Z">
+      <data key="d1">1.3482304</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1qqpt7a42qltftv67duxdnu6ea88htl9df3xgreg">
+      <data key="d1">1.4292313</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1q0k30gvv54q9craq3nvcwxmgq0t0gas7jzkg5kq">
+      <data key="d1">0.05238606</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3DmmFEpuBT8Xg8frL6uWqcjNbMYu5SgenX">
+      <data key="d1">0.04867707</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3Dz5fT3VeRvdSFCyE4jYWTv7Zn3SRXV9ME">
+      <data key="d1">4.9925325</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3BMEXmiRuiGjcoE7SXsbEdphNRDbre9GQ9">
+      <data key="d1">1.3482304</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1qtx067qnz00lv5hj7wncnlkymq3l6vwznn488x2">
+      <data key="d1">0.05693431</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1BVVwKEbocTBe6633N25Qy3M7Fobq4qbwN">
+      <data key="d1">1.36176685</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1q8chvxpht92hjxvl3mv9kaekhyn3ucuv6eyq4ny">
+      <data key="d1">1.47429536</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="33NBHKXfE3gYhyYJnadgkgbsRD42w97uQM">
+      <data key="d1">4.30193085</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3BGH6D4ybLvaBhLPAzCjCqcbQXRemDzB7M">
+      <data key="d1">2.78456752</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3BMEX4eqLhsJHi4uduhrrmoU4wvAPGEXsH">
+      <data key="d1">17.56327667</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1eEpccw88JwXQ7bUk4iTvcsNvF7CCz52q">
+      <data key="d1">15.51195927</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1PGimFtMTagQTEcRdwmBrwLcfPSb6t98JU">
+      <data key="d1">1.10672836</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="13oRh8zYwKFuySF6Ex2UF6eoccXPtHMRWW">
+      <data key="d1">0.59425191</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="32i7fX5qPuiPreZSXAMM5gBAskMvFU2U9w">
+      <data key="d1">5.49177829</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1QFK2R7WagXGxCPhziuvSXFva9DzigJTCt">
+      <data key="d1">0.15640799</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1q5h78gx69fzx3mtcm087nyhyjy0ygdcwacu5gug">
+      <data key="d1">0.27492354</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3BEhgJGQ86mcDMJ2EfGTQkFVtAUhfANKWY">
+      <data key="d1">40.60393479</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="388oSi8C5Zsr819Jts1iPtvPuDS7cqN5SA">
+      <data key="d1">0.02987725</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="36sCwzNof4GXcUQcaST77JrbaV1yycHxZJ">
+      <data key="d1">1.68674939</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1AD91iU553aXuHWFKooQHRCkHgeaPwKQbT">
+      <data key="d1">0.07303686</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3BAp5nz13NKScAdiXGDK4UMMSjm9jyUsES">
+      <data key="d1">2.67886341</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1ADZaNzWCVLwoDg3LnvwLktU7qfJwdz66L">
+      <data key="d1">0.08318487</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3P1PCEjm8m2vi22aAgoYDNVKeYyvhzSTZo">
+      <data key="d1">1.58714874</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="1Q1L9oAbcDuURWYmJ9jY4WGz3xNFjZVGZe">
+      <data key="d1">0.1489869</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="32VKNqeVipcAktkwgCTzP5dwbfwbjYtdRi">
+      <data key="d1">0.28164993</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3FAHdPxDvRhdwSqDDz2moJPU2MrGoW2aVa">
+      <data key="d1">2.52395499</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3MsrRqns7WabJm1r2wduMt6YQcfNXrXKea">
+      <data key="d1">0.15214293</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="bc1q2q25hldkfddanqjfr4l6fx42jjduwec99h4zem">
+      <data key="d1">0.09728538</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="18221t59HJc46h3MDPDXT1iy85zCYLGMED">
+      <data key="d1">0.80677241</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3BMEXNA3A2bsmUcQXLRybbCSNhw6Yoy8ti">
+      <data key="d1">0.24215355</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3PEj1D35jTJ7eyGHymsLWfUo1XfARWGL1b">
+      <data key="d1">0.0157391</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:1805c25df0ecf3334cd2f95e3081799ce95bd701c141bc1c9c9c967408f890c1" target="3E5udBjuWZEEbahVEzq4wc9Ch3XZfmY1L5">
+      <data key="d1">0.36954508</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:2e08edf52c5583ffe041384139c6a8157d1039600cbfb3d2a4b01539833f60e4" target="bc1qc9he4uyccer3cp6q6ysxtgemzcs8893lw4l5ee">
+      <data key="d1">16.53402928</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:2e08edf52c5583ffe041384139c6a8157d1039600cbfb3d2a4b01539833f60e4" target="bc1q7gsmpthr7wp3mltur8mrua5ha3v6nn9urgeljs">
+      <data key="d1">3569.51412029</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:17cae76053a93e92726334fe1978e379fe8f57127a3c07f6a58b67c352979024" target="3JF8UKBhhfGQ5w1CpnSQhpzi4f8F3dg3H9">
+      <data key="d1">3066.41822562</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:c94fd84bd662ceb1e527506530fddd2babb6eaf31e7c8880d94cb1c49269d011" target="399ovDLkWB46Uuf21TLq94wQ9bD4sBxHGr">
+      <data key="d1">4790.56774022</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="3FR9VrTwUnxUjw44rFLSGx1TffFmua21Vn">
+      <data key="d1">23.8769654</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="38TkAJXefNp5d2R2TDxbbfkpFkWfoWshk6">
+      <data key="d1">2.4589976</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="32eV1RnQ5u1ohdbqxDSTWJSfHuM9MfbDzY">
+      <data key="d1">1358.05011283</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="32xPNFwyvZofsxja7HM4NTu6ZYh2f8wiCD">
+      <data key="d1">16.65139421</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="3DkH2AQFy1vK1bq8CeTmHzKQiaAxvqJELv">
+      <data key="d1">15.15340413</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="3NxxeQCw1pWbYcNENhkcaKTDn8KhVfEJTv">
+      <data key="d1">67.80147209</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="31krTsa2pg9EApT46uT6SF3NbBRTK3AmNz">
+      <data key="d1">14.21104881</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="1DGjJ4n2ELfiRGfvRhsevJnLyV1VXMSLsW">
+      <data key="d1">8349.07814364</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="3JNZ4AS4wYefEsZdGcUmuDnRKWEt1fVXSs">
+      <data key="d1">13.92320628</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="3AVK8kXXFKcmqtKfZ5u99kdBMkHL3s4ZJ4">
+      <data key="d1">11.43146042</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:521af4956a02684c0bc10346930815011408bff5cddc20b4c43134e40ff8a9fd" target="bc1qz00fw9kca4j2evnw2l87a9hh2nfw8r9zdlzjyhdkq4kz3g0nx0hss4eq5k">
+      <data key="d1">401.38209624</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee3a697d2fec5f63e5ea35c4604bd8425b1e4074ad5a279756c5a443c8c54532" target="3ChTZDZbKGeGQ8srTnytnF3XXbNZSpAaZA">
+      <data key="d1">4.44104026</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee3a697d2fec5f63e5ea35c4604bd8425b1e4074ad5a279756c5a443c8c54532" target="39kTJ4qSQSy5SHVuMqNwLGRCeZaxjDCfDu">
+      <data key="d1">2037.91781633</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:9f32d65d569f7039819b7ca9a296ecd9f9708babdae9b51a5317d299d1702f80" target="3JF8UKBhhfGQ5w1CpnSQhpzi4f8F3dg3H9">
+      <data key="d1">10070.87078241</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:469434067471c78f6e49345ddbef561a6ccaf5cf58d26f0e26ea0c3a84d4576d" target="33ud4X37JzFssYsiBksp7hQrtXekrp8X4v">
+      <data key="d1">16482.9064125</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:469434067471c78f6e49345ddbef561a6ccaf5cf58d26f0e26ea0c3a84d4576d" target="32VTBx9bYRx1GmQEEYKf2hSo1JkrabYoo7">
+      <data key="d1">3356.07119053</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:17c17380debb748f3db241465477a29a5d806e96228d5491719ecd55eece90d4" target="3A5mumMMFmbnW8mamChHTC6nDoCi1LwgLH">
+      <data key="d1">33.06805855</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:17c17380debb748f3db241465477a29a5d806e96228d5491719ecd55eece90d4" target="3Q3Squ31Kyf4o1L3beg8XHMPMsYkj61JtA">
+      <data key="d1">23972.07054118</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:66616e01730dab3a4cbaf2abf4b4a44dd1ee78d67b4b18c28a08b4b94e107387" target="1CAdFckxw4o1HbhHD6VZdP68RAURvi8mbC">
+      <data key="d1">2034.66676198</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:66616e01730dab3a4cbaf2abf4b4a44dd1ee78d67b4b18c28a08b4b94e107387" target="bc1qfupd7wfhu35f5q5g2xeuql9tthwvvtxkekyzhdcmy5nwkf5ksdmqsxflk6">
+      <data key="d1">46.77719987</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:000cfd67b92a5a240bbfa950609e98a65aaf088279b50294238635009282ab3b" target="3P2tsMeWjE4MePPew1y3PzKzQL1HdpLCZJ">
+      <data key="d1">1333.30460696</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:000cfd67b92a5a240bbfa950609e98a65aaf088279b50294238635009282ab3b" target="1MPQVkQAqhcxets8ezGBfDDEUtqHSLvr8f">
+      <data key="d1">2302.29944747</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:e0fa781f5544b98a77432b36a765560c9a3d6a9b1fafe68889bc9474936d35a9" target="3JF8UKBhhfGQ5w1CpnSQhpzi4f8F3dg3H9">
+      <data key="d1">1997.75232425</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="bc1qydldfpv3wmmnc5ta625840hnexct3xy46de27w">
+      <data key="d1">249.99452264</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="1KXf2G3GSyt2G9DekZcpaboaAvTj6v3SjB">
+      <data key="d1">3564.2076228</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="1DoKHCH18HeaVh8jjJsHd1LxtsRNNLTicj">
+      <data key="d1">799.08963487</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="bc1q87vlx0hc6zl3xzugcalr6eaa7aczghl6q2s690">
+      <data key="d1">6611.95830716</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="17wjuqgGBATuvUoqCwneNnw6TdQzwiCeCj">
+      <data key="d1">818.10376854</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="1NuFrR5eLExMFBCxqY7snVTokNfW3kVw5E">
+      <data key="d1">330.6805855</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="1FqnJrGWKSWi6cBKQdzpdoCr7J8W7GoKNy">
+      <data key="d1">97.55077272</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="1JzLdPwKy5GxKTjFTRcdToqSyZRe4kFw85">
+      <data key="d1">22477.17191201</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="3Pc2jektovsZ4eKh6pfmHnzTXwJNw3KUdf">
+      <data key="d1">2105.14567538</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="3N3p43z5etCtQrX4fBW4yw9t5EeEAznWoP">
+      <data key="d1">2059.21414205</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="1AgCzbNU3BUtSjWPqKoX7Tnyf732P4HWg">
+      <data key="d1">962.84266081</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="1MbqnAFPNuEdbnssMAAr4pCT1DeNzscHob">
+      <data key="d1">38.42508404</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="1EMhfzdvCVeR2ZVK88L8rVimZntkh1Yfu3">
+      <data key="d1">77.70993759</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:4852c455e23d7b3990ad66468debfd2c529e7b6cc0130c9bd5233605048ccf09" target="349H5bYdBa3gkstWSJzUTXEFDzu8w2MdN7">
+      <data key="d1">129946.04879267</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:8840d37a5982d978cb7545c409d4507a1aa5595b28bb0203d10ee9194eb30728" target="1NjhTx5Uu9aH6A1kjdnvRN96sUtUqAwAxE">
+      <data key="d1">1532.30732721</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:560dfe4021342814b06875a4db888c06937827edf364b1a9f0fac89baf35c919" target="3H7jniDRSLTo2jHTFzqmufUjcUpH1SX2qg">
+      <data key="d1">55.86402157</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:560dfe4021342814b06875a4db888c06937827edf364b1a9f0fac89baf35c919" target="16Tv3GFkdACqjFX4ab6FJjShUsdCKvUmy4">
+      <data key="d1">12.4373801</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:560dfe4021342814b06875a4db888c06937827edf364b1a9f0fac89baf35c919" target="bc1qesa276g4txphy3lj89zew3gjfu0f34dd9ef5ll">
+      <data key="d1">2514.60145024</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:23e602ae936624c1d37c9be0b13b73213e12bc04c3ec7e579158654168baafa7" target="3Pm524ZvKvjziCFwdjkeeD2GSGLexBt2as">
+      <data key="d1">4.79459958</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:23e602ae936624c1d37c9be0b13b73213e12bc04c3ec7e579158654168baafa7" target="3Ns68ePD7oKuVoDJuXPmuvhXibrcwno8PK">
+      <data key="d1">2166.08974908</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:2437ae394162c52a61a0f27b1e52ebb428370b718244f00e70805cbfe07feb80" target="3K4cERDgWHPMbXd9t7xTsjJvtBB1QBJVqQ">
+      <data key="d1">1573.65786558</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:2437ae394162c52a61a0f27b1e52ebb428370b718244f00e70805cbfe07feb80" target="184P61kAs6CY2zhjF2j2Ht5piktdxJFWF7">
+      <data key="d1">9.46119099</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:2396d0096f9937e0df04ebeebabec39cdad5d179249d991026b6b3918787e8de" target="1J51cyTMKfVBif1Qa4WGB6jr6GW7uN7wVE">
+      <data key="d1">33.32436543</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:2396d0096f9937e0df04ebeebabec39cdad5d179249d991026b6b3918787e8de" target="3Fa6gDdmGLThLGRtJVg6CVMkoEp26gC2Dk">
+      <data key="d1">10509.38405483</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:2c49b7e5cce6d824d9d9c2f28b52a10f2b08d82f2f3698d2f3b17465f418d529" target="1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s">
+      <data key="d1">6582.51796342</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:2c49b7e5cce6d824d9d9c2f28b52a10f2b08d82f2f3698d2f3b17465f418d529" target="3JxBtyXAVqDyXE7yepZy4Pn2SVe93ZZbBe">
+      <data key="d1">3.9307184</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:c6dde129c7e58eabc3897a6d9a866e8a778f91d1e182240a9370132099f6f944" target="3Fxu5CoBNn1HXAZbrCuwX9cfycUNHL4S5A">
+      <data key="d1">313.94583279</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:c6dde129c7e58eabc3897a6d9a866e8a778f91d1e182240a9370132099f6f944" target="1NDppdmmPKSWiMViYZrhdB3di81f9hYoxg">
+      <data key="d1">1548.94652566</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="18BNrc1oxbjQpvwrX5WrY9pShuUxiocmPe">
+      <data key="d1">5.93030587</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="36ArUpWsie5WBsDxWqMHZckDJQixLWJtJn">
+      <data key="d1">179.34562784</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="1JDTvkkPHra6G41Y7FgikWLDNhVMKLtyEG">
+      <data key="d1">2318.74959355</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="3Ac3i8EdmWwtGZsCfiW1cFsZkQ5eVcDKqj">
+      <data key="d1">5.93030587</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="35Lr4D7NqwcRW71TQoG6uCNr9G7yFcy8Ev">
+      <data key="d1">71.12413502</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="1LVUuLNBpUpcYkeMtXgeMcxh3LeoSpNEnF">
+      <data key="d1">7179.62363494</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="1FvpMxAMfvFSK9E6Di2LLpYhGMtk2pk5in">
+      <data key="d1">670.78348572</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="bc1qvttjz9rdwv99402mjzy59hxxl8t20u023aypdz">
+      <data key="d1">6.37837342</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="14c4fxUfgfWCRw18miq3Gas1FemX8v1dLd">
+      <data key="d1">1213.07701101</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="bc1qfvd3yvduqgg4r8sdxw0taktpdz0wp6p3h94zqu">
+      <data key="d1">1175.09179416</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="3NVnUPRoWwM23WyG4Z9yC9hQBNmfNzM9Ww">
+      <data key="d1">37.83535142</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="3PSexCYp1utVHS8KmXrjihyhk7aaWSLt9K">
+      <data key="d1">2428.82924888</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="3KkLq9SmDrxkiPNDCR8T2njfEbMWSTX4Xe">
+      <data key="d1">15813.49005277</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="1PZXQ7JjU5dgN1uFUd7MLDmCrEHBP3huHe">
+      <data key="d1">42.22377776</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="bc1qpetk3p9w2yurgt2mw7ypagcs9acgdxgg9fuahh">
+      <data key="d1">3976.24372615</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="154q4ZL7ZJB4Hkt4apTxAv48DB46azUYZw">
+      <data key="d1">11563.43751557</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="bc1q73wfsgx6hhc56nd3gvg0rzk2225wj59e2kw574">
+      <data key="d1">2035.38719153</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="17FS7xL26S4NP3jKS2GD6JJ5NTtxaVLje1">
+      <data key="d1">1317.33178813</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="1Gbenbzww3PTFMZJtm5hJdZP9uw5avBVaJ">
+      <data key="d1">927.49983742</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="bc1qeqkr4rvjmnw8pr5wnwgf7ts8lnaqy3fywpqdx7">
+      <data key="d1">2635.03257307</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="1J5rKVfPihCB19u44hDzFSCUEaymJpvqsU">
+      <data key="d1">2503.90692114</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="3J6Mg3d5DVokPmBhWbx3fkg2JTUSmSgUqs">
+      <data key="d1">23.57626043</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="1FpcX2Db5KVZEmH7dj5dxzE51HeC7i6ac8">
+      <data key="d1">658.92287399</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="bc1q6t8qg9fqx0etlsyfks0r5nggp3me9zrrt4nnvm">
+      <data key="d1">1304.66729049</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:dd95c76e9c36ce83252f94a8e0ce619738bf863d5b8c29160f755fe0c68ae78f" target="bc1qnr3c94tulga7ef0t5t95xc9pft2j8egyz2lq3p5ec0r42p7js5xsq47sat">
+      <data key="d1">445405.06335323</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="bc1qqguxpmgt8h49xeqlvz70xv73c525n0zn3d3vsk">
+      <data key="d1">49.14717038</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="36i1TT7kWpdadxHA2yeHcY7Rs6iDsFLZd6">
+      <data key="d1">5.51207287</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="3CmbfnSt9dTfKSR3zg75vLyZcH4fW83Ni6">
+      <data key="d1">0.34629443</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="bc1q98rzx2xm2wmv42q969lsshsmg4mtytkm2x7t0a">
+      <data key="d1">0.97331273</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="3FK35acZTzSP5MbUAMmYFaSrPCP4RAZdDR">
+      <data key="d1">27.8367442</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="1CCfXrFYfg3Yg7WEqjhZEmcvgc8icZV7RF">
+      <data key="d1">0.42006129</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="bc1qg860m9uz5h9kjjq6pr0myfmy8elrl9zrzhr074">
+      <data key="d1">0.7274232</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="3CR2q3xSHshMvf46F1X2wUeYh3Fm9VZd84">
+      <data key="d1">116.87334404</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="388AFANNKigkn3fHJ47hHDPcKJQ262L7WD">
+      <data key="d1">1846.39474745</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="37bGNBCNLFCAKs54jZ3JWa1gxmjNyQ7WUm">
+      <data key="d1">0.28482204</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="125ycExUXrps7Zh5YJGwnwWPWzHhw8dnmQ">
+      <data key="d1">3.05312837</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="1B4UkYMkm1bvZHHSdkCBYnwYWGVLaaSNqU">
+      <data key="d1">0.27382053</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="3KafKPGTDb7a8SA6eDYs6BM5hq756m9Qck">
+      <data key="d1">102.42323582</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="bc1qnl896ekmr43ka6teq9ge9hluune6qkxyyp3z0s">
+      <data key="d1">0.97331273</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="1LZJDT2yMj9UoAYpgVGWGeBNCRGP1J53bw">
+      <data key="d1">2.73142289</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="35iixXsyokV6K3fjyFJ1u292U7VZcnFKHA">
+      <data key="d1">2.78674804</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="bc1q3cgmv4gmx8v626rgtqft3s0g9dkd27pmfwq2vx">
+      <data key="d1">1.49927454</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="3NqjYMsYXovsvyxxzEAmtfVzWf75HiMZVz">
+      <data key="d1">0.34322081</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="1F7rFvzvKD5w6Ygo3VrTSmyRSmeKTjjWcP">
+      <data key="d1">756.07957727</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="bc1qn927y0q82jccfxyq4j6t0c0lgdwk7tjdj2mxa7">
+      <data key="d1">0.97331273</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="336pmqrq59DboBphkioPQyQbWuq8uTEFLo">
+      <data key="d1">0.24384045</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="bc1qnmvuzhdk6w7axjjls0gx9k9we75js35vfmp9ex">
+      <data key="d1">0.3688343</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="36XBUdqqhH3geztXpSnsFaZfS9N7vcSS2Y">
+      <data key="d1">0.33399995</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="18oG7WuqjMeGkTFHDFijEDtDVTZpuY9JZQ">
+      <data key="d1">0.13319016</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2" target="bc1qprdluj0zm4t8azmuqf3u4ejcy0fk8qtf9ly73py5wmyrvsmsl8rs94vfkt">
+      <data key="d1">25871.12267151</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:79a59b029b47ee8de3d0b7de08937955a78befda96ac4d3e92130b0eabd02570" target="3Gtg92Ddi91qY6MyzF7iADC5Ap7gMrVq6g">
+      <data key="d1">3104636.50015876</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+    <edge source="tx:79a59b029b47ee8de3d0b7de08937955a78befda96ac4d3e92130b0eabd02570" target="3FS5qBUJbsApudGxvztuTy2RfSHoEnZaBc">
+      <data key="d1">2491033.5550703</data>
+      <data key="d2">proportional_after_commingling</data>
+    </edge>
+  </graph>
+</graphml>
