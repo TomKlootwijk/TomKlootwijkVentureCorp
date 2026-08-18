@@ -1,0 +1,24 @@
+[
+  {
+    "spent": true,
+    "txid": "ee7f32c91d193f036b70329fcaa32bb5887df3e047cac14daf0cc0d0c6b9dff2",
+    "vin": 37,
+    "status": {
+      "confirmed": true,
+      "block_height": 685722,
+      "block_hash": "00000000000000000009aa62ab929832925f31a9bf7cdf4eda6d365a6dfbf82d",
+      "block_time": 1622510297
+    }
+  },
+  {
+    "spent": true,
+    "txid": "79a59b029b47ee8de3d0b7de08937955a78befda96ac4d3e92130b0eabd02570",
+    "vin": 1,
+    "status": {
+      "confirmed": true,
+      "block_height": 682033,
+      "block_hash": "00000000000000000007e76a63746e67ff1c34d1f5a8316ecf37823e0820688b",
+      "block_time": 1620206572
+    }
+  }
+]

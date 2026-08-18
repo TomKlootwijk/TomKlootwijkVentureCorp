@@ -260,23 +260,6 @@ double mean(const std::vector<float>& values) {
     return std::accumulate(values.begin(), values.end(), 0.0) / static_cast<double>(values.size());
 }
 
-double event_launch_time_ms(void (*launch)()) {
-    cudaEvent_t start{};
-    cudaEvent_t stop{};
-    CUDA_CHECK(cudaEventCreate(&start));
-    CUDA_CHECK(cudaEventCreate(&stop));
-    CUDA_CHECK(cudaEventRecord(start));
-    launch();
-    CUDA_CHECK(cudaGetLastError());
-    CUDA_CHECK(cudaEventRecord(stop));
-    CUDA_CHECK(cudaEventSynchronize(stop));
-    float elapsed = 0;
-    CUDA_CHECK(cudaEventElapsedTime(&elapsed, start, stop));
-    CUDA_CHECK(cudaEventDestroy(start));
-    CUDA_CHECK(cudaEventDestroy(stop));
-    return elapsed;
-}
-
 std::string json_escape(const std::string& value) {
     std::ostringstream out;
     for (const char c : value) {
@@ -383,23 +366,33 @@ int main(int argc, char** argv) {
         metrics.bip32_batch = options.bip32_batch;
         metrics.runs = options.runs;
 
+        constexpr int cpu_runs = 7;
         byte cpu_bip39[64];
-        const auto cpu_bip39_start = std::chrono::steady_clock::now();
-        sara363_cuda::pbkdf2_hmac_sha512_2048(reinterpret_cast<const byte*>(kMnemonic), sizeof(kMnemonic) - 1,
-                                              reinterpret_cast<const byte*>(kSalt), sizeof(kSalt) - 1, cpu_bip39);
-        const auto cpu_bip39_stop = std::chrono::steady_clock::now();
-        metrics.cpu_bip39_ms = std::chrono::duration<double, std::milli>(cpu_bip39_stop - cpu_bip39_start).count();
+        std::vector<double> cpu_bip39_times;
+        Bip32PathResult cpu_bip32{};
+        std::vector<double> cpu_bip32_times;
+        for (int run = 0; run < cpu_runs; ++run) {
+            const auto start = std::chrono::steady_clock::now();
+            sara363_cuda::pbkdf2_hmac_sha512_2048(reinterpret_cast<const byte*>(kMnemonic), sizeof(kMnemonic) - 1,
+                                                  reinterpret_cast<const byte*>(kSalt), sizeof(kSalt) - 1, cpu_bip39);
+            const auto stop = std::chrono::steady_clock::now();
+            cpu_bip39_times.push_back(std::chrono::duration<double, std::milli>(stop - start).count());
+        }
+        metrics.cpu_bip39_ms = std::accumulate(cpu_bip39_times.begin(), cpu_bip39_times.end(), 0.0) / cpu_runs;
         metrics.cpu_bip39_pass = equal_bytes(cpu_bip39, kBip39Expected, 64);
 
-        const auto cpu_bip32_start = std::chrono::steady_clock::now();
-        const Bip32PathResult cpu_bip32 = compute_cpu_bip32();
-        const auto cpu_bip32_stop = std::chrono::steady_clock::now();
-        metrics.cpu_bip32_ms = std::chrono::duration<double, std::milli>(cpu_bip32_stop - cpu_bip32_start).count();
+        for (int run = 0; run < cpu_runs; ++run) {
+            const auto start = std::chrono::steady_clock::now();
+            cpu_bip32 = compute_cpu_bip32();
+            const auto stop = std::chrono::steady_clock::now();
+            cpu_bip32_times.push_back(std::chrono::duration<double, std::milli>(stop - start).count());
+        }
+        metrics.cpu_bip32_ms = std::accumulate(cpu_bip32_times.begin(), cpu_bip32_times.end(), 0.0) / cpu_runs;
         std::cout << "CPU official-vector checks:\n";
         std::cout << "  BIP39 vector (PBKDF2-HMAC-SHA512/2048) " << (metrics.cpu_bip39_pass ? "PASS" : "FAIL") << '\n';
         metrics.cpu_bip32_pass = verify_bip32_path(cpu_bip32, true);
-        std::cout << "  CPU timings: BIP39 " << std::fixed << std::setprecision(3) << metrics.cpu_bip39_ms
-                  << " ms; full BIP32 vector-1 path " << metrics.cpu_bip32_ms << " ms\n\n";
+        std::cout << "  CPU mean timings (" << cpu_runs << " runs): BIP39 " << std::fixed << std::setprecision(3)
+                  << metrics.cpu_bip39_ms << " ms; full BIP32 vector-1 path " << metrics.cpu_bip32_ms << " ms\n\n";
 
         CUDA_CHECK(cudaSetDevice(options.device));
         cudaDeviceProp device{};
